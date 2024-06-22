@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Landing/Login/Login";
+import ForgotPassword from "./pages/Landing/ForgotPassword/ForgotPassword";
 
 function App() {
+  const [sidebar, setSidebar] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/home"
+          element={
+            <div>
+              <Navbar setSidebar={setSidebar} />
+              <Home sidebar={sidebar} />
+            </div>
+          }
+        />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+      </Routes>
     </div>
   );
 }

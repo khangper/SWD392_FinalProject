@@ -1,0 +1,193 @@
+.sidebar {
+  background: #fff;
+  width: 17%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left:0;
+  padding-left: 5px;
+  padding-top: 65px;
+  transition: width 0.5s;
+  overflow-y: auto;
+}
+.sidebar::-webkit-scrollbar {
+  width: 4px; 
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px; 
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px; 
+}
+.small-sidebar {
+  width: 0;
+}
+
+.side-link {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+
+.side-link:hover {
+  background-color: #FFECEC;
+}
+
+.side-link.active {
+  background-color: #FFECEC;
+  color: #ff0000;
+}
+
+.sidebar-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  transition: opacity 0.8s;
+}
+
+.side-link p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  transition: opacity 0.5s;
+  user-select: none;
+}
+
+.side-link p.small {
+  opacity: 0;
+  display: none;
+  transition: 0.6;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+}
+.category-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.dropdown-caret {
+  margin-left: auto;
+
+}
+.dropdown-caret.small {
+  opacity: 0;
+  display: none;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFECEC;
+}
+
+.dropdown-menu a {
+  color: #333;
+  padding: 12px 0;
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  margin-left:40px
+}
+.dropdown-caret-icon {
+  width: 11.5px; 
+  height: 11.5px;
+  user-select: none;
+  margin-right: 15px;
+}
+.dropdown-menu a:hover {
+  background-color: #FFECEC;
+  color: red;
+}
+
+.dropdown-menu.small {
+  display: none;
+} 
+.dropdown-menu.show {
+  display: flex;
+}
+.subscriptions {
+  margin-top: 20px;
+  padding: 0 12px;
+}
+
+.subscriptions-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.subscription-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.subscription-link p {
+  margin: 0 0 0 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.subscription-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.subscription-status {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  margin-left: auto;
+}
+.sidebar-footer {
+  margin-top: 20px;
+  padding: 0 12px;
+}
+
+.sidebar-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding:10px
+}
+
+.sidebar-footer-links div {
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar-footer-links div:hover {
+  text-decoration: underline;
+}
+
+.sidebar-footer-brand {
+  font-weight: bold;
+}
+
+.sidebar-footer-copyright {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 12px;
+}
