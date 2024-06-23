@@ -13,6 +13,7 @@ import report from "../../assets/report.png";
 import send_feedback from "../../assets/send-feedback.png";
 import browse_instructor from "../../assets/browse-instructor.png";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
 const Sidebar = ({ sidebar }) => {
   const [categories, setCategories] = useState(false);
   const [tests, setTests] = useState(false);
@@ -34,7 +35,9 @@ const Sidebar = ({ sidebar }) => {
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
+        <Link to="/AllLiveStream">
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+        </Link>
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
@@ -87,8 +90,8 @@ const Sidebar = ({ sidebar }) => {
         <div className={`dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">About</a>
           <a href="#">Sign In</a>
-          <a href="#">Sign Up</a>
-          <a href="#">Sign Up Steps</a>
+          <Link to="/Sign-up">Sign Up</Link>
+          <Link to="/StepSignUp">Sign Up Steps</Link>
           <a href="#">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
