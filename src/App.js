@@ -11,17 +11,17 @@ function App() {
   const [sidebar, setSidebar] = useState(true);
   return (
     <div>
-       <Routes>
-       <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route
-        path="/"
-        element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
-      >
-        <Route path="home" element={<Home />} />
-      </Route>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route
+          path="/"
+          element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
+        >
+          <Route path="home" element={<Home />} />
+        </Route>
+      </Routes>
     </div>
   );
 }
