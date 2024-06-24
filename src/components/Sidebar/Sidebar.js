@@ -35,7 +35,9 @@ const Sidebar = ({ sidebar }) => {
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
+        <Link to="/AllLiveStream">
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+        </Link>
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
@@ -44,10 +46,10 @@ const Sidebar = ({ sidebar }) => {
       <div className="side-link category-link" onClick={toggleCategories}>
         <img className="sidebar-icon" src={category} alt="Categories Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Categories</p>
-        <span className={`dropdown-caret ${sidebar ? "" : "small"}`}><img className="dropdown-caret-icon" src={dropdown}/></span>
+        <span className={`sidebar-dropdown-caret ${sidebar ? "" : "small"}`}><img className="sidebar-dropdown-caret-icon" src={dropdown}/></span>
       </div>
       {categories && (
-        <div className={`dropdown-menu ${sidebar ? "" : "small"}`}>
+        <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">Development</a>
           <a href="#">Business</a>
           <a href="#">Finance & Accounting</a>
@@ -64,10 +66,10 @@ const Sidebar = ({ sidebar }) => {
       <div className="side-link category-link" onClick={toggleTests}>
         <img className="sidebar-icon" src={test} alt="Tests Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Tests</p>
-        <span className={`dropdown-caret ${sidebar ? "" : "small"}`}><img className="dropdown-caret-icon" src={dropdown} alt="Dropdown Icon" /></span>
+        <span className={`sidebar-dropdown-caret ${sidebar ? "" : "small"}`}><img className="sidebar-dropdown-caret-icon" src={dropdown} alt="Dropdown Icon" /></span>
       </div>
       {tests && (
-        <div className={`dropdown-menu ${sidebar ? "" : "small"}`}>
+        <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">Certification Center</a>
           <a href="#">Certification Fill Form</a>
           <a href="#">Test View</a>
@@ -82,14 +84,14 @@ const Sidebar = ({ sidebar }) => {
       <div className="side-link category-link" onClick={togglePages}>
         <img className="sidebar-icon" src={pages} alt="Pages Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Pages</p>
-        <span className={`dropdown-caret ${sidebar ? "" : "small"}`}><img className="dropdown-caret-icon" src={dropdown} alt="Dropdown Icon" /></span>
+        <span className={`sidebar-dropdown-caret ${sidebar ? "" : "small"}`}><img className="sidebar-dropdown-caret-icon" src={dropdown} alt="Dropdown Icon" /></span>
       </div>
       {page && (
-        <div className={`dropdown-menu ${sidebar ? "" : "small"}`}>
+        <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">About</a>
           <a href="#">Sign In</a>
-          <a href="#">Sign Up</a>
-          <a href="#">Sign Up Steps</a>
+          <Link to="/Sign-up">Sign Up</Link>
+          <Link to="/StepSignUp">Sign Up Steps</Link>
           <a href="#">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>

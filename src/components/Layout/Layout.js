@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import { Outlet } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+
 
 const Layout = ({ sidebar, setSidebar }) => {
   return (
@@ -11,6 +13,7 @@ const Layout = ({ sidebar, setSidebar }) => {
       <div className={`container ${sidebar ? "" : "large-container"}`}>
         <Outlet />
       </div>
+      <Footer sidebar={sidebar}/>
     </div>
   );
 };

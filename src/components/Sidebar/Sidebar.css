@@ -1,16 +1,17 @@
 .sidebar {
   background: #fff;
   width: 17%;
-  height: 100vh;
+  height: calc(100vh - 70px);
   position: fixed;
-  top: 0;
-  left:0;
+  top: 65px; 
+  left: 0;
   padding-left: 5px;
-  padding-top: 65px;
   transition: width 0.5s;
   overflow-y: auto;
+  z-index: 2;
 }
 .sidebar::-webkit-scrollbar {
+  height: calc(100vh - 65px);
   width: 4px; 
 }
 
@@ -81,22 +82,22 @@
   user-select: none;
 }
 
-.dropdown-caret {
+.sidebar-dropdown-caret {
   margin-left: auto;
 
 }
-.dropdown-caret.small {
+.sidebar-dropdown-caret.small {
   opacity: 0;
   display: none;
 }
 
-.dropdown-menu {
+.sidebar-dropdown-menu {
   display: flex;
   flex-direction: column;
   background-color: #FFECEC;
 }
 
-.dropdown-menu a {
+.sidebar-dropdown-menu a {
   color: #333;
   padding: 12px 0;
   font-size: 14px;
@@ -104,21 +105,21 @@
   display: block;
   margin-left:40px
 }
-.dropdown-caret-icon {
+.sidebar-dropdown-caret-icon {
   width: 11.5px; 
   height: 11.5px;
   user-select: none;
   margin-right: 15px;
 }
-.dropdown-menu a:hover {
+.sidebar-dropdown-menu a:hover {
   background-color: #FFECEC;
   color: red;
 }
 
-.dropdown-menu.small {
+.sidebar-dropdown-menu.small {
   display: none;
 } 
-.dropdown-menu.show {
+.sidebar-dropdown-menu.show {
   display: flex;
 }
 .subscriptions {
