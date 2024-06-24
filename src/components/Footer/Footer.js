@@ -1,6 +1,11 @@
 import React from 'react';
 import './Footer.css';
-
+import facebook from '../../assets/facebook.png';
+import x from '../../assets/x.png';
+import google from '../../assets/google+.png';
+import linkedin from '../../assets/linkedin.png';
+import insta from '../../assets/insta.png';
+import pinterest from '../../assets/pinterest.png';
 const Footer = ({ sidebar }) => {
   return (
     <footer className={`footer ${sidebar ? 'footer-container' : 'footer-large-container'}`}>
@@ -32,15 +37,15 @@ const Footer = ({ sidebar }) => {
       </div>
       <div className="footer-bottom">
         <div className="footer-copy">
-          &copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
+          <img src='https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg'/>&copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
         </div>
         <div className="footer-social">
-          <a href="#" className="social-icon">F</a>
-          <a href="#" className="social-icon">T</a>
-          <a href="#" className="social-icon">G+</a>
-          <a href="#" className="social-icon">I</a>
-          <a href="#" className="social-icon">Y</a>
-          <a href="#" className="social-icon">P</a>
+          <img href="#"src={facebook} className="social-icon"/>
+          <img href="#"src={x} className="social-icon"/>
+          <img href="#"src={google} className="social-icon"/>
+          <img href="#"src={linkedin} className="social-icon"/>
+          <img href="#"src={insta} className="social-icon"/>
+          <img href="#"src={pinterest} className="social-icon"/>
         </div>
       </div>
     </footer>

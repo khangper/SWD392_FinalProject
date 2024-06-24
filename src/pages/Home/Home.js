@@ -1,6 +1,26 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./Home.css";
-
+import ratingStar from "../../assets/rating.png";
+import share from "../../assets/share.png";
+import saved_course from "../../assets/saved-course.png";
+import not_interested from "../../assets/not-interested.png";
+import report from "../../assets/report.png";
+import pace from "../../assets/history.png";
+import expert from "../../assets/expert.png";
+import livestream from "../../assets/livestream.png";
+import screen from "../../assets/screen.png";
+import facebook from '../../assets/facebook.png';
+import x from '../../assets/x.png';
+import linkedin from '../../assets/linkedin.png';
+import youtube from '../../assets/youtube.png';
+import development from '../../assets/development.png';
+import business from '../../assets/business.png';
+import it from '../../assets/it.png';
+import design from '../../assets/design.png';
+import marketing from '../../assets/marketing.png';
+import book from '../../assets/book.png';
+import music from '../../assets/music.png';
+import profile_image from '..//../assets/profile-img.jpg';
 const Home = () => {
   const liveStreams = [
     {
@@ -403,33 +423,33 @@ const Home = () => {
       quote:
         "Donec ac ex eu arcu euismod feugiat. In venenatis bibendum nisi, in placerat eros ultricies vitae. Praesent pellentesque blandit scelerisque. Suspendisse potenti.",
       name: "Jassica William",
-      imgSrc: "https://via.placeholder.com/50",
+      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
     },
     {
       id: 2,
       quote:
         "Cras id enim lectus. Fusce at arcu tincidunt, iaculis libero quis, vulputate mauris. Morbi facilisis vitae ligula id aliquam. Nunc consectetur malesuada bibendum.",
       name: "Rock Smith",
-      imgSrc: "https://via.placeholder.com/50",
+      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
     },
     {
       id: 3,
       quote:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos eros ac, sagittis orci.",
       name: "Luoci Marchant",
-      imgSrc: "https://via.placeholder.com/50",
+      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
     },
     {
       id: 4,
       quote: "Nulla bibendum lectus pharetra, tempus eros ac, sagittis orci. Suspendisse posuere dolor neque, at finibus mauris lobortis in. Pellentesque vitae laoreet tortor.",
       name: "Poonam Sharma",
-      imgSrc: "https://via.placeholder.com/50"
+      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg"
     },
     {
       id: 5,
       quote: "Curabitur placerat justo ac mauris condimentum ultricies. In magna tellus, eleifend et volutpat id, sagittis vitae est. Pellentesque vitae laoreet tortor.",
       name: "Davinder Singh",
-      imgSrc: "https://via.placeholder.com/50"
+      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg"
     }
   ];
 
@@ -533,7 +553,7 @@ const Home = () => {
                       <div className="course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
-                          <i></i>
+                          <img className='starIcon'src={ratingStar}></img>
                           {course.rating}
                         </div>
                         <div className="course-timer">{course.hours}</div>
@@ -549,10 +569,10 @@ const Home = () => {
                             ⋮
                           </a>
                           <div className="course-more-dropdown-menu">
-                            <span>Share</span>
-                            <span>Save</span>
-                            <span>Not Interested</span>
-                            <span>Report</span>
+                            <span><img src={share}/>Share</span>
+                            <span><img src={saved_course}/>Save</span>
+                            <span><img src={not_interested}/>Not Interested</span>
+                            <span><img src={report}/>Report</span>
                           </div>
                         </div>
                       </div>
@@ -610,10 +630,10 @@ const Home = () => {
                             ⋮
                           </a>
                           <div className="course-more-dropdown-menu">
-                            <span>Share</span>
-                            <span>Save</span>
-                            <span>Not Interested</span>
-                            <span>Report</span>
+                          <span><img src={share}/>Share</span>
+                            <span><img src={saved_course}/>Save</span>
+                            <span><img src={not_interested}/>Not Interested</span>
+                            <span><img src={report}/>Report</span>
                           </div>
                         </div>
                       </div>
@@ -643,28 +663,28 @@ const Home = () => {
           <section className="home-info-section">
             <div className="home-info-card">
               <div className="home-info-icon-container">
-                <img src="home-info-icon-url" alt="icon" />
+                <img src={pace} alt="icon" />
               </div>
               <h3>Go at your own pace</h3>
               <p>Enjoy lifetime access to courses on Edututs+'s website</p>
             </div>
             <div className="home-info-card">
               <div className="home-info-icon-container">
-                <img src="home-info-icon-url" alt="icon" />
+                <img src={expert} alt="icon" />
               </div>
               <h3>Learn from industry experts</h3>
               <p>Select from top instructors around the world</p>
             </div>
             <div className="home-info-card">
               <div className="home-info-icon-container">
-                <img src="home-info-icon-url" alt="icon" />
+                <img src={livestream} alt="icon" />
               </div>
               <h3>Find video courses on almost any topic</h3>
               <p>Build your library for your career and personal growth</p>
             </div>
             <div className="home-info-card">
               <div className="home-info-icon-container">
-                <img src="home-info-icon-url" alt="icon" />
+                <img src={screen} alt="icon" />
               </div>
               <h3>100,000 online courses</h3>
               <p>Explore a variety of fresh topics</p>
@@ -704,10 +724,10 @@ const Home = () => {
                         {instructor.title}
                       </div>
                       <ul className="social-icons">
-                        <a href="#" className="sc-fb"></a>
-                        <a href="#" className="sc-tw"></a>
-                        <a href="#" className="sc-ln"></a>
-                        <a href="#" className="sc-yt"></a>
+                        <a href="#" className="sc-fb"><img src={facebook}/></a>
+                        <a href="#" className="sc-tw"><img src={x}/></a>
+                        <a href="#" className="sc-ln"><img src={linkedin}/></a>
+                        <a href="#" className="sc-yt"><img src={youtube}/></a>
                       </ul>
                       <div className="popular-instructor-stats">
                         {instructor.students} Students • {instructor.courses}{" "}
@@ -729,25 +749,25 @@ const Home = () => {
           <section className="home-instructor-profile">
             <div className="instructor-profile-image">
               <img
-                src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg"
+                src={profile_image}
                 alt="Instructor Profile"
               />
             </div>
             <div className="instructor-profile-content">
               <div className="instructor-profile-header">
                 <a href="#" className="instructor-name">
-                  John Doe
+                  Joginder Signh
                 </a>
                 <div className="verified-badge"></div>
               </div>
               <div className="home-instructor-profile-title">
-                Wordpress & Plugin Tutor
+                Web Developer, Designer, and Teacher
               </div>
               <ul className="social-icons">
-                <a href="#" className="sc-fb"></a>
-                <a href="#" className="sc-tw"></a>
-                <a href="#" className="sc-ln"></a>
-                <a href="#" className="sc-yt"></a>
+                <a href="#" className="sc-fb"><img src={facebook}/></a>
+                <a href="#" className="sc-tw"><img src={x}/></a>
+                <a href="#" className="sc-ln"><img src={linkedin}/></a>
+                <a href="#" className="sc-yt"><img src={youtube}/></a>
               </ul>
               <div className="instructor-profile-stats">
                 100K Students • 15 Courses
@@ -764,7 +784,8 @@ const Home = () => {
             </div>
             <div className="home-livestream-setup-text">
               <div className="home-livestream-icon">
-                <img></img>
+                <div className="home-livestream-icon-image"><img src={livestream}></img></div>
+
               </div>
               <div className="home-livestream-content">
                 <p>Set up your channel and stream live to your students</p>
@@ -787,13 +808,13 @@ const Home = () => {
               <h4>Top Categories</h4>
             </div>
             <div className="home-featured-categories-list">
-              <span>Development</span>
-              <span>Business</span>
-              <span>IT & Software</span>
-              <span>Design</span>
-              <span>Marketing</span>
-              <span>Personal Development</span>
-              <span>Music</span>
+              <span><img src={development}/>Development</span>
+              <span><img src={business}/>Business</span>
+              <span><img src={it}/>IT & Software</span>
+              <span><img src={design}/>Design</span>
+              <span><img src={marketing}/>Marketing</span>
+              <span><img src={book}/>Personal Development</span>
+              <span><img src={music}/>Music</span>
             </div>
           </section>
 

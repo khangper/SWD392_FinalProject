@@ -9,14 +9,14 @@
   width: 100%;
 }
 .home-left {
-  flex: 0 1 76%;
+  flex: 0 1 75%;
   padding: 0 20px 0 20px;
   background-color: #f7f7f7;
   overflow: hidden;
 }
 
 .home-right {
-  flex: 0 1 24%;
+  flex: 0 1 25%;
   background-color: #f7f7f7;
 }
 .home-bottom{
@@ -215,6 +215,13 @@
   font-weight: 500;
   font-family: "Roboto", sans-serif;
 }
+.course-review .starIcon{
+  width: 15px;
+  height: 15px;
+  top: 1px;
+  position: relative;
+  margin-right: 5px;
+}
 .course-timer {
   bottom: 0;
   position: absolute;
@@ -347,7 +354,7 @@
   min-width: 160px;
   box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
   border: 1px solid rgba(34, 36, 38, 0.15);
-  z-index: 1;
+  z-index: 3;
   right: 0;
   border-radius: 3px;
 }
@@ -364,7 +371,12 @@
 }
 
 .course-more-dropdown-menu span:hover {
-  background-color: #f1f1f1;
+  background-color: #ffecec;
+}
+.course-more-dropdown-menu span img{
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
 }
 
 .home-info-section {
@@ -387,15 +399,15 @@
 
 .home-info-icon-container {
   background: #ffecec;
-  padding: 15px 5px 15px 5px;
+  padding: 10px 15px 10px 15px;
   border-radius: 5px;
   display: inline-block;
   margin-bottom: 10px;
 }
 
 .home-info-card img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .home-info-card h3 {
@@ -503,6 +515,16 @@
   vertical-align: middle;
   margin-bottom: 0 !important;
 }
+.social-icons a img {
+  width: 20px;
+  height: 18px;
+}
+.home-instructor-profile .social-icons a img{
+     width: 20px;
+    height: 18px;
+    top: -8px;
+    position: relative;
+}
 .social-icons .sc-fb,
 .social-icons .sc-tw,
 .social-icons .sc-ln,
@@ -521,6 +543,7 @@
 .sc-fb {
   background: #3b5998;
 }
+
 .sc-tw {
   background: #1da1f2;
 }
@@ -625,17 +648,21 @@
     text-align: center;
     margin-bottom: 20px;
 }
-.home-livestream-icon img{
-  /* display: inline-block; */
+.home-livestream-icon-image{
+  display: inline-block;
   width: 70px;
   height: 70px;
-  /* line-height: 43px; */
-  /* font-size: 30px; */
-  /* text-align: center; */
+  line-height: 43px; 
+  font-size: 30px; 
+   text-align: center;
   padding: 14px 0;
   background: #ffecec;
   border-radius: 100%;
-  /* border-bottom: 1px solid #efefef; */
+   border-bottom: 1px solid #efefef; 
+}
+.home-livestream-setup .home-livestream-icon img{
+  width: 50px;
+  height: 44px;
 }
 .home-livestream-content{
   float: left;
@@ -713,6 +740,13 @@
   font-family: 'Roboto', sans-serif;
   color: #686f7a;
   text-align: left;
+}
+.home-featured-categories-list img{
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+  position: relative;
+  top: 2px;
 }
 .home-become-instuctor{
   background: #fff;

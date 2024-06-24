@@ -1,3 +1,14 @@
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container {
   background: #f7f7f7;
   padding-left: 18%;
@@ -6,13 +17,13 @@
   padding-bottom: 20px;
   transition: padding-left 0.4s;
   overflow-y: auto;
-  min-height: calc(100vh - 70px); /* Adjust to ensure the footer is at the bottom */
+  flex: 1;
 }
 
 .large-container {
   padding-left: 2%;
-  position: absolute;
-  min-height: calc(100vh - 70px); /* Adjust to ensure the footer is at the bottom */
+  position: relative;
+  flex: 1;
 }
 
 @media (max-width: 900px) {
