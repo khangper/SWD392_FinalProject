@@ -13,6 +13,7 @@ import report from "../../assets/report.png";
 import send_feedback from "../../assets/send-feedback.png";
 import browse_instructor from "../../assets/browse-instructor.png";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
 const Sidebar = ({ sidebar }) => {
   const [categories, setCategories] = useState(false);
   const [tests, setTests] = useState(false);
@@ -92,6 +93,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
+          {/* <Link to="live-output">Live Stream View</Link> */}
           <a href="#">Invoice</a>
           <a href="#">Career</a>
           <a href="#">Job Apply</a>

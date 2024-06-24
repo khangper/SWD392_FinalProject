@@ -10,7 +10,7 @@
 
 .large-container {
   padding-left: 2%;
-  position: absolute;
+  /* position: absolute; */
 }
 
 @media (max-width: 900px) {
