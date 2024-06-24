@@ -43,7 +43,7 @@ const Login = () => {
           <span>Or</span> <Link to="/forgot-password" className="forgot-password">Forgot Password?</Link>
         </div>
         <p className="sign-up">
-          Don't have an account? <Link to="/sign-up">Sign Up</Link>
+          Don't have an account? <Link to="/Sign-up">Sign Up</Link>
         </p>
       </div>
       <div className="form-footer">
