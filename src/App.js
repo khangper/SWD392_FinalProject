@@ -6,6 +6,10 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Landing/Login/Login";
 import ForgotPassword from "./pages/Landing/ForgotPassword/ForgotPassword";
 import Layout from "./components/Layout/Layout";
+import AddLiveStream from "./pages/AddLiveStream/AddLiveStream";
+import AllLiveStream from "./pages/AllLiveStream/AllLiveStream";
+import SignUp from "./pages/Landing/SignUp1/SignUp";
+import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -15,11 +19,17 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/SignUp" element={<SignUp/>} />
+        <Route path="/SignUpStep" element={<StepSignUp/>} />
+        
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
         >
           <Route path="home" element={<Home />} />
+          <Route path="add_livestream" element={<AddLiveStream/>} />
+          <Route path="all_livestream" element={<AllLiveStream/>} />
+          
         </Route>
       </Routes>
     </div>

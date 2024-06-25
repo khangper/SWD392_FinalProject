@@ -13,6 +13,7 @@ import report from "../../assets/report.png";
 import send_feedback from "../../assets/send-feedback.png";
 import browse_instructor from "../../assets/browse-instructor.png";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
 const Sidebar = ({ sidebar }) => {
   const [categories, setCategories] = useState(false);
   const [tests, setTests] = useState(false);
@@ -30,11 +31,16 @@ const Sidebar = ({ sidebar }) => {
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
       <div className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
+        <Link to="home">
         <p className={`${sidebar ? "" : "small"}`}>Home</p>
+        </Link>
+        
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
+        <Link to="all_livestream">
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+        </Link>
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
