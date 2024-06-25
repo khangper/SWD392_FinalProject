@@ -4,7 +4,6 @@ import Sidebar from '../Sidebar/Sidebar';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
-
 const Layout = ({ sidebar, setSidebar }) => {
   return (
     <div>
