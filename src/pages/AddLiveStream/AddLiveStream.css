@@ -1,0 +1,327 @@
+/* AddLiveStream.css */
+
+/* Container */
+.container-fluid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure container spans full viewport height */
+}
+
+  /* Row */
+  .row {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  
+  /* Columns */
+  .col-lg-8, .col-md-10 {
+    grid-column: span 1;
+    justify-self: center;
+  }
+  
+
+
+.section3125 {
+    float: left;
+    width: 100%;
+}
+
+
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .nav-item {
+    margin: 0 10px; /* Add spacing between tabs */
+  }
+  
+/* AddLiveStream.css */
+
+.nav-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white; /* Màu chữ mặc định */
+    background-color: #dc3545; /* Màu nền khi chưa được chọn */
+    border-radius: 5px; /* Đường viền bo tròn */
+  }
+  
+  .nav-link.active {
+    background-color: black; /* Màu nền khi được chọn */
+  }
+  
+
+  .add_stream_content {
+    background: #fff;
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #efefef;
+    margin-bottom: 20px;
+    width: 190%;
+    max-width: 846px;
+    margin-left: auto;
+    margin-right: 254px;
+    height: auto;
+}
+
+
+
+.strm_title {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #333;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+.strm_title1 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    color: #333;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+.sf475 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #686f7a;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.sf475 a {
+    font-weight: 500;
+    color: #333;
+}
+
+.sf475 a:hover {
+    color: #ed2a26 !important;
+}
+
+.stm_key {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+    color: #333;
+    line-height: 24px;
+}
+
+.group-form {
+    margin-top: 27px;
+	position: relative;
+}
+
+.group-form label {
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 24px;
+}
+
+._dlor1 {
+    border: 1px solid #efefef;
+    background: #f7f7f7;
+    height: 40px;
+    width: calc(100% - 120px); /* Đặt giá trị mới cho chiều rộng */
+    padding: 0 20px; /* Điều chỉnh padding để không che khuất nội dung */
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    box-sizing: border-box; /* Đảm bảo tính chính xác của kích thước */
+    white-space: nowrap; /* Ngăn chặn quá trình quy xuống dòng */
+    overflow: hidden; /* Ngăn chặn hiển thị nội dung ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm khi nội dung bị cắt bớt */
+}
+
+
+
+._145d1 {
+    height: 40px;
+    padding: 0 20px;
+    background: #ed2a26;
+    color: #fff;
+    border: 0;
+	margin-top: 30px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+._145d1:hover {
+    background: #333;
+    color: #fff;
+}
+
+._145d1 i {
+    font-size: 120%;
+	margin-right: 3px;
+}
+
+/* .ui.toggle._1457s2.checkbox input:checked~.box:before, .ui.toggle._1457s2.checkbox input:checked~label:before {
+    background-color: #ed2a26 !important;
+}
+
+.ui.toggle._1457s2.checkbox input:focus:checked~.box:before, .ui.toggle._1457s2.checkbox input:focus:checked~label:before {
+    background-color: #ed2a26 !important;
+}
+
+.ui.toggle.checkbox .box:before, .ui.toggle.checkbox label:before {
+    display: block;
+    position: absolute;
+    content: '';
+    z-index: 1;
+    -webkit-transform: none;
+    transform: none;
+    border: none;
+    top: 0;
+    background: rgba(0, 0, 0, .05);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 3.5rem;
+    height: 1.5rem;
+    border-radius: 500rem;
+} */
+.ui.toggle.checkbox {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.ui.toggle.checkbox input[type="checkbox"] {
+    display: none; /* Ẩn checkbox để sử dụng custom toggle */
+}
+
+.ui.toggle.checkbox label {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-left: 50px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.ui.toggle.checkbox label:before,
+.ui.toggle.checkbox label:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 24px;
+    transition: background-color 0.4s, transform 0.4s;
+}
+
+.ui.toggle.checkbox label:before {
+    background-color: #ccc;
+    border-radius: 12px;
+}
+
+.ui.toggle.checkbox label:after {
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+}
+
+/* Xử lý khi checkbox được chọn */
+.ui.toggle.checkbox input[type="checkbox"]:checked + label:before {
+    background-color: red;
+}
+
+.ui.toggle.checkbox input[type="checkbox"]:checked + label:after {
+    transform: translateX(16px);
+}
+
+/* Xử lý khi checkbox chưa được chọn */
+.ui.toggle.checkbox input[type="checkbox"]:not(:checked) + label:before {
+    background-color: #ccc;
+}
+
+.ui.toggle.checkbox input[type="checkbox"]:not(:checked) + label:after {
+    transform: translateX(0);
+}
+
+/* Xử lý khi checkbox được nhấn */
+.ui.toggle.checkbox input[type="checkbox"]:active + label:before {
+    background-color: blue;
+}
+
+
+
+
+._145d1 {
+    height: 40px;
+    padding: 0 20px;
+    background: #ed2a26;
+    color: #fff;
+    border: 0;
+	margin-top: 30px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+._145d1:hover {
+    background: #333;
+    color: #fff;
+}
+
+._145d1 i {
+    font-size: 120%;
+	margin-right: 3px;
+}
+
+/* AddLiveStream.css */
+
+.red-button {
+    background-color: #dc3545; /* Màu nền đỏ */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Loại bỏ đường viền */
+    padding: 8px 12px; /* Điều chỉnh padding */
+    border-radius: 5px; /* Đường viền bo tròn */
+    margin-left: 10px; /* Khoảng cách với input */
+  }
+  .input-group {
+    display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử trong cùng một hàng */
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+  }
+  
+
+  
+  ._6tf7s {
+    background-color: #dc3545; /* Màu nền đỏ */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Loại bỏ đường viền */
+    padding: 10px 15px; /* Điều chỉnh padding */
+    border-radius: 4px; /* Đường viền bo tròn */
+    cursor: pointer; /* Con trỏ chuột thành dấu nhấp */
+  }
+  
+
+  
+  /* Thiết lập hover cho nút "Copy" */
+  ._6tf7s:hover {
+    background-color: #c82333; /* Màu nền đỏ sáng khi hover */
+  }

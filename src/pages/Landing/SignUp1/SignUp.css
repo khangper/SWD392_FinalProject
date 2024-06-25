@@ -1,0 +1,130 @@
+.SignUp-input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.SignUp-input-field {
+    width: 80%;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.loginSingUp-btn {
+    font-size: 14px;
+    margin-top: 30px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: #ed2a26;
+    border-radius: 3px;
+    text-align: center;
+    border: 0;
+    width: 80%;
+    height: 40px;
+}
+
+.loginSingUp-btn:hover {
+    color: #fff;
+    background: #333;
+}
+
+.By-signingup {
+    padding: 47px 0 30px;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid #efefef;
+}
+
+.By-signingup a {
+    color: #ed2a26;
+}
+
+.By-signingup a:hover {
+    color: #333 !important;
+    text-decoration: underline !important;
+}
+
+.login-move {
+    width: 38.7px;
+    position: relative;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: Roboto;
+    color: #4183c4;
+    text-align: center;
+}
+
+.LoginMove {
+    width: 38.7px;
+    position: relative;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: Roboto;
+    color: #4183c4;
+    text-align: center;
+}
+
+.remember-meSignUp {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: auto; /* Di chuyển khối qua bên phải */
+    margin-right: 9px;
+}
+
+.Label-signup {
+    text-align: left;
+}
+
+.remember-meSignUp input[type="checkbox"] {
+    display: none;
+    padding-left: 94px;
+}
+
+.remember-meSignUp label {
+    position: relative;
+    padding-left: 94px; /* Space for the custom checkbox */
+    cursor: pointer;
+    color: rgb(21, 21, 21);
+    font-size: 14px;
+    user-select: none;
+    display: inline-block;
+    margin-left: 0; /* Ensure no extra margin on the left */
+}
+
+.remember-meSignUp label:before {
+    content: '';
+    position: absolute;
+    left: 61px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.remember-meSignUp input[type="checkbox"]:checked + label:before {
+    border-color: red;
+    background-color: rgb(255, 255, 255);
+}
+
+.remember-meSignUp label:after {
+    content: '';
+    position: absolute;
+    left: 68px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 2px;
+    height: 7px;
+    border: solid red;
+    border-width: 0 3px 3px 0;
+    opacity: 0;
+}
+
+.remember-meSignUp input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}

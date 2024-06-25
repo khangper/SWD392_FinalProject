@@ -13,6 +13,7 @@ import report from "../../assets/report.png";
 import send_feedback from "../../assets/send-feedback.png";
 import browse_instructor from "../../assets/browse-instructor.png";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
 const Sidebar = ({ sidebar }) => {
   const [categories, setCategories] = useState(false);
   const [tests, setTests] = useState(false);
@@ -30,11 +31,16 @@ const Sidebar = ({ sidebar }) => {
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
       <div className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
+        <Link to="home">
         <p className={`${sidebar ? "" : "small"}`}>Home</p>
+        </Link>
+        
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
+        <Link to="all_livestream">
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+        </Link>
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
@@ -86,8 +92,8 @@ const Sidebar = ({ sidebar }) => {
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">About</a>
-          <a href="#">Sign In</a>
-          <a href="#">Sign Up</a>
+          <Link to="/login">Sign In</Link>
+          <Link to="/SignUpStep">Sign Up</Link>
           <a href="#">Sign Up Steps</a>
           <a href="#">Paid Membership</a>
           <a href="#">Course Detail View</a>
@@ -99,9 +105,9 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
           <a href="#">Search Result</a>
-          <a href="#">Thank you</a>
+          <Link to="Thanks">Thank you</Link>
           <a href="#">Coming Soon</a>
-          <a href="#">Error  404</a>
+          <Link to="error404">Error  404</Link>
         </div>
       )}
       <hr/>
