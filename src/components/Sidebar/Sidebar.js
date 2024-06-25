@@ -29,19 +29,20 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
+      <Link to="home">
       <div className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <Link to="home">
-        <p className={`${sidebar ? "" : "small"}`}>Home</p>
-        </Link>
         
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>
+               
       </div>
+      </Link> 
+      <Link to="all_livestream">
       <div className="side-link">
-        <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
-        <Link to="all_livestream">
+        <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />        
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
-        </Link>
       </div>
+      </Link>
       <div className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
@@ -124,10 +125,13 @@ const Sidebar = ({ sidebar }) => {
           <span className="subscription-status"></span>
         </div>
       </div>
+      <Link to="allinstructorlist">
       <div className="side-link">
         <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
       </div>
+      </Link>
+
       <hr/>
       <div className="side-link">
         <img className="sidebar-icon" src={setting} alt="Setting Icon" /> 
