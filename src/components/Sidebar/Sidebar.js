@@ -95,7 +95,6 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
-          {/* <Link to="live-output">Live Stream View</Link> */}
           <a href="#">Invoice</a>
           <a href="#">Career</a>
           <a href="#">Job Apply</a>
