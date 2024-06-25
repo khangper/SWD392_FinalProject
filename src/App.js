@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Landing/Login/Login";
 import ForgotPassword from "./pages/Landing/ForgotPassword/ForgotPassword";
 import Layout from "./components/Layout/Layout";
+import LiveOutput from "./pages/LiveOutput/LiveOutput";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -20,6 +21,7 @@ function App() {
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
         >
           <Route path="home" element={<Home />} />
+          <Route path="live_output" element={<LiveOutput/>}/>
         </Route>
       </Routes>
     </div>
