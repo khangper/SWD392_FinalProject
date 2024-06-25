@@ -16,7 +16,7 @@ export default function AllLiveStream() {
                     {streamData.map((stream, index) => (
                       <div className="grid-item" key={index}>
                         <div className="stream_1 mb-4">
-                          <a href="/live-output" className="stream_bg">
+                          <a href="/live_output" className="stream_bg">
                             <img src={stream.img} alt={stream.name} />
                             <h4>{stream.name}</h4>
                             <p>live<span></span></p>
