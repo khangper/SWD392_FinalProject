@@ -14,6 +14,8 @@ import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
 
 import AllInstructor1 from "./pages/AllInstructorList/AllInstructor1";
+import Help from "./pages/Help/Help";
+import Help1 from "./pages/Help/Help1";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -34,7 +36,9 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="add_livestream" element={<AddLiveStream/>} />
           <Route path="all_livestream" element={<AllLiveStream/>} />
-          <Route path="allinstructorlist" element={<AllInstructor1/>} />
+          <Route path="allinstructorlist" element={<AllInstructor1/>}/>
+          <Route path="help" element={<Help1/>}/>
+
 
 
           

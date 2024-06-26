@@ -137,10 +137,12 @@ const Sidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={setting} alt="Setting Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
       </div>
+      <Link to="help">
       <div className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </div>
+      </Link>
       <div className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
