@@ -13,6 +13,7 @@ import SignUp from "./pages/Landing/SignUp1/SignUp";
 import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
 import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
+import Explore from "./pages/Explore/Explore";
 
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
           <Route path="live_output" element={<LiveOutput/>}/>
           <Route path="add_livestream" element={<AddLiveStream/>} />
           <Route path="all_livestream" element={<AllLiveStream/>} />
-      
+          <Route path="explore" element={<Explore/>}/>
         </Route>
       </Routes>
     </div>
