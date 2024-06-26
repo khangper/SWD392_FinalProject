@@ -39,13 +39,12 @@
 
 
 .Invoice_Header_Item p {
-    font-size: 22px;
+    font-size: 18px;
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: #fff;
-    padding: 20px 30px;
+    padding: 25px 30px;
     float: right;
-
 }
 
 /* p {
@@ -144,39 +143,55 @@
     margin: 0 50px 0 50px
 }
 
+
+
+.tb_head,
+.user_dt_trans {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid #efefef;
+}
+
+.tb_head {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 0;
+}
+
 .user_dt_trans {
     font-size: 14px;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: #686f7a;
-    text-align: left;
     line-height: 24px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #efefef !important;
-    padding: 15px 20px 0 20px;
+    padding-top: 15px;
 }
 
+.tb_head p,
+.user_dt_trans p {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+    padding: 0 10px;
+    /* Khoảng cách giữa các cột */
+}
 
-
-
-
-.tb_head {
-    vertical-align: bottom;
-    border-bottom: 1px solid #efefef !important;
-    font-size: 14px;
+.tb_head p {
     font-weight: 500;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    padding: 15px 20px 0 20px;
-    display: flex;
-    justify-content: space-between;
 }
+
+.user_dt_trans p {
+    font-weight: 400;
+}
+
 
 .jsk1145 {
     display: flex;
     flex-direction: column;
-    margin: 0 0px 0 530px;
+    margin: 0px 0px 0 420px;
 }
 
 .jsk1145 .totalinv2 {
