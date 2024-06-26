@@ -12,6 +12,7 @@ import SignUp from "./pages/Landing/SignUp1/SignUp";
 import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
 import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
+import About from "./pages/About/About";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -36,6 +37,8 @@ function App() {
           
           
         </Route>
+
+        <Route path="about-us" element={<About/>} />
       </Routes>
     </div>
   );
