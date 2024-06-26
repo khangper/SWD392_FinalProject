@@ -32,14 +32,14 @@ const Sidebar = ({ sidebar }) => {
       <div className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
         <Link to="home">
-        <p className={`${sidebar ? "" : "small"}`}>Home</p>
+          <p className={`${sidebar ? "" : "small"}`}>Home</p>
         </Link>
-        
+
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
         <Link to="all_livestream">
-        <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+          <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
         </Link>
       </div>
       <div className="side-link">
@@ -49,7 +49,7 @@ const Sidebar = ({ sidebar }) => {
       <div className="side-link category-link" onClick={toggleCategories}>
         <img className="sidebar-icon" src={category} alt="Categories Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Categories</p>
-        <span className={`sidebar-dropdown-caret ${sidebar ? "" : "small"}`}><img className="sidebar-dropdown-caret-icon" src={dropdown}/></span>
+        <span className={`sidebar-dropdown-caret ${sidebar ? "" : "small"}`}><img className="sidebar-dropdown-caret-icon" src={dropdown} /></span>
       </div>
       {categories && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
@@ -98,7 +98,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
-          <a href="#">Invoice</a>
+          <Link to="/invoice">Invoice</Link>
           <a href="#">Career</a>
           <a href="#">Job Apply</a>
           <a href="#">Our Blog</a>
@@ -110,7 +110,7 @@ const Sidebar = ({ sidebar }) => {
           <Link to="error404">Error  404</Link>
         </div>
       )}
-      <hr/>
+      <hr />
       <div className="subscriptions">
         <p className="subscriptions-title">SUBSCRIPTIONS</p>
         <div className="subscription-link">
@@ -125,27 +125,27 @@ const Sidebar = ({ sidebar }) => {
         </div>
       </div>
       <div className="side-link">
-        <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" /> 
+        <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
       </div>
-      <hr/>
+      <hr />
       <div className="side-link">
-        <img className="sidebar-icon" src={setting} alt="Setting Icon" /> 
+        <img className="sidebar-icon" src={setting} alt="Setting Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
       </div>
       <div className="side-link">
-        <img className="sidebar-icon" src={help} alt="Help Icon" /> 
+        <img className="sidebar-icon" src={help} alt="Help Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </div>
       <div className="side-link">
-        <img className="sidebar-icon" src={report} alt="Report History Icon" /> 
+        <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
       </div>
       <div className="side-link">
-        <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" /> 
+        <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
       </div>
-      <hr/>
+      <hr />
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
           <div>About</div>
@@ -158,8 +158,8 @@ const Sidebar = ({ sidebar }) => {
           <div>Terms</div>
         </div>
         <div className="sidebar-footer-copyright">
-    © 2024 <span className="sidebar-footer-brand">Cursus</span>. All Rights Reserved.
-  </div>
+          © 2024 <span className="sidebar-footer-brand">Cursus</span>. All Rights Reserved.
+        </div>
       </div>
     </div>
   );
