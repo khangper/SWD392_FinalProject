@@ -29,23 +29,19 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-      <div className="side-link">
+      
+      <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <Link to="home">
-        <p className={`${sidebar ? "" : "small"}`}>Home</p>
-        </Link>
-        
-      </div>
-      <div className="side-link">
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>   
+      </Link>
+      <Link to="all_livestream" className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
-        <Link to="all_livestream">
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
-        </Link>
-      </div>
-      <div className="side-link">
+      </Link>
+      <Link to='explore' className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
-      </div>
+      </Link>
       <div className="side-link category-link" onClick={toggleCategories}>
         <img className="sidebar-icon" src={category} alt="Categories Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Categories</p>
@@ -80,10 +76,10 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">My Certification</a>
         </div>
       )}
-      <div className="side-link">
+      <Link to='saved-course' className="side-link">
         <img className="sidebar-icon" src={saved_course} alt="Saved Courses Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Saved Courses</p>
-      </div>
+      </Link>
       <div className="side-link category-link" onClick={togglePages}>
         <img className="sidebar-icon" src={pages} alt="Pages Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Pages</p>
