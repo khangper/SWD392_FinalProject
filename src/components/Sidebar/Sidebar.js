@@ -88,9 +88,9 @@ const Sidebar = ({ sidebar }) => {
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">About</a>
-          <Link to="/login">Sign In</Link>
-          <Link to="/SignUpStep">Sign Up</Link>
-          <a href="#">Sign Up Steps</a>
+          <a href="/login">Sign In</a>
+          <a href="/SignUp">Sign Up</a>
+          <a href="/SignupStep">Sign Up Steps</a>
           <a href="#">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
@@ -101,9 +101,9 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
           <a href="#">Search Result</a>
-          <Link to="Thanks">Thank you</Link>
+          <a href="/Thanks">Thank you</a>
           <a href="#">Coming Soon</a>
-          <Link to="error404">Error  404</Link>
+          <a href="/error404">Error  404</a>
         </div>
       )}
       <hr/>
@@ -125,10 +125,10 @@ const Sidebar = ({ sidebar }) => {
         <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
       </div>
       <hr/>
-      <div className="side-link">
+      <Link to="setting" className="side-link">
         <img className="sidebar-icon" src={setting} alt="Setting Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
-      </div>
+      </Link>
       <div className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Help</p>

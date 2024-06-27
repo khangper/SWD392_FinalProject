@@ -14,6 +14,7 @@ import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
 import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
 import Explore from "./pages/Explore/Explore";
+import Setting from "./pages/Setting/Setting";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="add_livestream" element={<AddLiveStream/>} />
           <Route path="all_livestream" element={<AllLiveStream/>} />
           <Route path="explore" element={<Explore/>}/>
+          <Route path="setting" element={<Setting/>}/>
         </Route>
       </Routes>
     </div>
