@@ -15,38 +15,35 @@ const About = () => {
       <main>
         <div className="about-background-parent">
           <div className="about-background">
-            <div className="about-about-links">
-              <div className="about-link">
-                <a href="/about-us" className="about-about1">
+            <div className="about-navigation-links-parent">
+              <div className="about-navigation-links">
+                <a href="/about-us" className="about-about">
                   About
                 </a>
               </div>
-              <div className="about-other-links">
-                <div className="about-other-link-items">
-                  {/* <a href="/about-us" className="about-about1">
-                  About
-                </a> */}
-
-                  <a href="/our-blog" className="about-blog">
-                    Blog
-                  </a>
-
-                  <a href="/company-details" className="about-company">
-                    Company
-                  </a>
-                  <a href="/career" className="about-careers">
-                    Careers
-                  </a>
-                  <a href="/press" className="about-press">
-                    Press
-                  </a>
-                </div>
+              <div className="about-navigation-links-1">
+                <a href="/our-blog" className="about-blog">
+                  Blog
+                </a>
+              </div>
+              <div className="about-navigation-links-2">
+                <a href="/company-details" className="about-company">
+                  Company
+                </a>
+              </div>
+              <div className="about-navigation-links-3">
+                <a href="/career" className="about-careers">
+                  Careers
+                </a>
+              </div>
+              <div className="about-navigation-links-4">
+                <a href="/press" className="about-press">
+                  Press
+                </a>
               </div>
             </div>
             <div className="about-learning-heading">
-              <h2 className="about-heading-21">
-                Improving Lives Through Learning
-              </h2>
+              <h2 className="about-heading-2">Insights, ideas, and stories</h2>
             </div>
           </div>
 
@@ -294,11 +291,10 @@ const About = () => {
                     et.
                   </p>
                 </div>
-            
+
                 <button className="about-button-join-our-team">
                   Join Our Team
                 </button>
-                
               </div>
               <img
                 src="https://gambolthemes.net/html-items/cursus-new-demo/images/about/team.jpg"
@@ -307,11 +303,10 @@ const About = () => {
               />
             </div>
           </div>
-
         </div>
       </main>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

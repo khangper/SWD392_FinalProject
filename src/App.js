@@ -13,6 +13,7 @@ import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
 import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
 import About from "./pages/About/About";
+import Blog from "./pages/Blog/Blog";
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -39,6 +40,7 @@ function App() {
         </Route>
 
         <Route path="about-us" element={<About/>} />
+        <Route path="our-blog" element={<Blog/>} />
       </Routes>
     </div>
   );
