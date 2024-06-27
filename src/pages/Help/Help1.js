@@ -49,7 +49,7 @@ export default function Help() {
 </div>
 
 
-      <div className="_215b15">
+      <div className="Help_215b15">
         <div className=".Help-grid-container-input">
           <div className="Help-grid-item-full">
             <div className="col-lg-12">
