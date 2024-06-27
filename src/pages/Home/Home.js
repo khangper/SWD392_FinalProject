@@ -553,7 +553,7 @@ const Home = () => {
                       <div className="course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
-                          <img className='starIcon'src={ratingStar}></img>
+                          <img className='starIcon' src={ratingStar}></img>
                           {course.rating}
                         </div>
                         <div className="course-timer">{course.hours}</div>
@@ -569,10 +569,10 @@ const Home = () => {
                             ⋮
                           </a>
                           <div className="course-more-dropdown-menu">
-                            <span><img src={share}/>Share</span>
-                            <span><img src={saved_course}/>Save</span>
-                            <span><img src={not_interested}/>Not Interested</span>
-                            <span><img src={report}/>Report</span>
+                            <span><img src={share} />Share</span>
+                            <span><img src={saved_course} />Save</span>
+                            <span><img src={not_interested} />Not Interested</span>
+                            <span><img src={report} />Report</span>
                           </div>
                         </div>
                       </div>
@@ -630,10 +630,10 @@ const Home = () => {
                             ⋮
                           </a>
                           <div className="course-more-dropdown-menu">
-                          <span><img src={share}/>Share</span>
-                            <span><img src={saved_course}/>Save</span>
-                            <span><img src={not_interested}/>Not Interested</span>
-                            <span><img src={report}/>Report</span>
+                            <span><img src={share} />Share</span>
+                            <span><img src={saved_course} />Save</span>
+                            <span><img src={not_interested} />Not Interested</span>
+                            <span><img src={report} />Report</span>
                           </div>
                         </div>
                       </div>
@@ -724,10 +724,10 @@ const Home = () => {
                         {instructor.title}
                       </div>
                       <ul className="social-icons">
-                        <a href="#" className="sc-fb"><img src={facebook}/></a>
-                        <a href="#" className="sc-tw"><img src={x}/></a>
-                        <a href="#" className="sc-ln"><img src={linkedin}/></a>
-                        <a href="#" className="sc-yt"><img src={youtube}/></a>
+                        <a href="#" className="sc-fb"><img src={facebook} /></a>
+                        <a href="#" className="sc-tw"><img src={x} /></a>
+                        <a href="#" className="sc-ln"><img src={linkedin} /></a>
+                        <a href="#" className="sc-yt"><img src={youtube} /></a>
                       </ul>
                       <div className="popular-instructor-stats">
                         {instructor.students} Students • {instructor.courses}{" "}
@@ -764,10 +764,10 @@ const Home = () => {
                 Web Developer, Designer, and Teacher
               </div>
               <ul className="social-icons">
-                <a href="#" className="sc-fb"><img src={facebook}/></a>
-                <a href="#" className="sc-tw"><img src={x}/></a>
-                <a href="#" className="sc-ln"><img src={linkedin}/></a>
-                <a href="#" className="sc-yt"><img src={youtube}/></a>
+                <a href="#" className="sc-fb"><img src={facebook} /></a>
+                <a href="#" className="sc-tw"><img src={x} /></a>
+                <a href="#" className="sc-ln"><img src={linkedin} /></a>
+                <a href="#" className="sc-yt"><img src={youtube} /></a>
               </ul>
               <div className="instructor-profile-stats">
                 100K Students • 15 Courses
@@ -808,13 +808,13 @@ const Home = () => {
               <h4>Top Categories</h4>
             </div>
             <div className="home-featured-categories-list">
-              <span><img src={development}/>Development</span>
-              <span><img src={business}/>Business</span>
-              <span><img src={it}/>IT & Software</span>
-              <span><img src={design}/>Design</span>
-              <span><img src={marketing}/>Marketing</span>
-              <span><img src={book}/>Personal Development</span>
-              <span><img src={music}/>Music</span>
+              <span><img src={development} />Development</span>
+              <span><img src={business} />Business</span>
+              <span><img src={it} />IT & Software</span>
+              <span><img src={design} />Design</span>
+              <span><img src={marketing} />Marketing</span>
+              <span><img src={book} />Personal Development</span>
+              <span><img src={music} />Music</span>
             </div>
           </section>
 
@@ -841,15 +841,15 @@ const Home = () => {
               {studentThought.map((studentThought) => (
                 <div key={studentThought.id} className="student-thought-card">
                   <div className="student-thought-content">
-                  <p>"{studentThought.quote}"</p>
+                    <p>"{studentThought.quote}"</p>
                   </div>
-                 
+
                   <div className="student-thought-profile">
                     <div className="student-thought-image">
-                    <img
-                      src={studentThought.imgSrc}
-                    />
-                    </div>             
+                      <img
+                        src={studentThought.imgSrc}
+                      />
+                    </div>
                     <h4>{studentThought.name}</h4>
                   </div>
                 </div>

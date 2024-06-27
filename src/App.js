@@ -15,6 +15,7 @@ import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
 import Invoice from "./pages/Invoice/Invoice";
 import PressReleasePage from "./pages/Press Release Page/PressReleasePage";
+import SearchResult from "./pages/SearchResult/SearchResult";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="error404" element={<Error404 />} />
         <Route path="invoice" element={<Invoice />} />
         <Route path="press" element={<PressReleasePage />} />
+        <Route path="search_result" element={<SearchResult />} />
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}

@@ -104,7 +104,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Our Blog</a>
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
-          <a href="#">Search Result</a>
+          <Link to="search_result">Search Result</Link>
           <Link to="Thanks">Thank you</Link>
           <a href="#">Coming Soon</a>
           <Link to="error404">Error  404</Link>

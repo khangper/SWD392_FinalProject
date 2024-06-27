@@ -43,14 +43,14 @@ export default function AllLiveStream() {
                   </div>
                   <div className="live_text">
                     <div className="live_icon">
-                    <img src={Kayak} alt="Live Icon" />
+                      <img src={Kayak} alt="Live Icon" />
                     </div>
                     <div className="live-content">
                       <p>Set up your channel and stream live to your students</p>
                       <Link to="/add_livestream">
-                      <button className="live_link" >Get Started</button>
+                        <button className="live_link" >Get Started</button>
                       </Link>
-                      
+
                       <span className="livinfo">Info: This feature is only for 'Instructors'.</span>
                     </div>
                   </div>
