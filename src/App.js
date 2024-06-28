@@ -13,6 +13,9 @@ import SignUp from "./pages/Landing/SignUp1/SignUp";
 import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
 import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
+import Invoice from "./pages/Invoice/Invoice";
+import PressReleasePage from "./pages/Press Release Page/PressReleasePage";
+import SearchResult from "./pages/SearchResult/SearchResult";
 import About from "./pages/About/About";
 import Blog from "./pages/Blog/Blog";
 import AllInstructor1 from "./pages/AllInstructorList/AllInstructor1";
@@ -23,6 +26,7 @@ import SendFeedback from "./pages/SendFeedback/SendFeedback";
 import { OtherInstructorView } from "./pages/OtherInstructorView/OtherInstructorView";
 import { MyInstructorProfile } from "./pages/MyInstructorProfile/MyInstructorProfile";
 import { SaveCourses } from "./pages/SaveCourses/SaveCourses";
+
 
 
 function App() {
@@ -37,6 +41,10 @@ function App() {
         <Route path="/SignUpStep" element={<StepSignUp />} />
         <Route path="thanks" element={<Thanks />} />
         <Route path="error404" element={<Error404 />} />
+        <Route path="invoice" element={<Invoice />} />
+        <Route path="press" element={<PressReleasePage />} />
+        <Route path="search_result" element={<SearchResult />} />
+
         <Route path="paidmembership" element={<PaidMembership />} />
         <Route path="about-us" element={<About />} />
         <Route path="our-blog" element={<Blog />} />
