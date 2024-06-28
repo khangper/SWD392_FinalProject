@@ -87,17 +87,17 @@ const Sidebar = ({ sidebar }) => {
       </div>
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
-          <a href="#">About</a>
-          <a href="/login">Sign In</a>
-          <a href="/SignUpStep">Sign Up</a>
-          <a href="/SignUp">Sign Up Steps</a>
+          <a href="about">About</a>
+          <a href="login">Sign In</a>
+          <a href="SignUpStep">Sign Up</a>
+          <a href="SignUp">Sign Up Steps</a>
           <a href="paidmembership">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
           <Link to="/invoice">Invoice</Link>
-          <a href="#">Career</a>
+          <a href="career">Career</a>
           <a href="#">Job Apply</a>
-          <a href="#">Our Blog</a>
+          <a href="our-blog">Our Blog</a>
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
           <a href="search_result">Search Result</a>
@@ -150,10 +150,9 @@ const Sidebar = ({ sidebar }) => {
           <Link to='about-us'>
           <div>About</div>
           </Link>
-
-          <Link to='press'><div>Press</div>
+          <Link to='press'>
+          <div>Press</div>
           </Link>
-          
           <div>Contact Us</div>
           <div>Advertise</div>
           <div>Developers</div>
