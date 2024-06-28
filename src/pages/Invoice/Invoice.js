@@ -72,13 +72,6 @@ const Invoice = () => {
                         </div>
                         <div className='Inv_Detail_Content-Cursus'>
                             <h4>Cursus</h4>
-                            <div class="vdt-list">Cursus LTD</div>
-                            <div class="vdt-list">#1234, Shahid karnail Singh Nagar,</div>
-                            <div class="vdt-list">Near MBD Mall,</div>
-                            <div class="vdt-list">141001</div>
-                            <div class="vdt-list">Ludhiana </div>
-                            <div class="vdt-list">Punjab </div>
-                            <div class="vdt-list">India </div>
                             <div className="vdt-list">Cursus LTD</div>
                             <div className="vdt-list">#1234, Shahid karnail Singh Nagar,</div>
                             <div className="vdt-list">Near MBD Mall,</div>
@@ -114,7 +107,6 @@ const Invoice = () => {
                         <p>Thanks for buying</p>
                     </div>
                     <div className='Right_Footer'>
-                        <a class="print_btn" href="javascript:window.print();">Print</a>
                         <a className="print_btn" href="#">Print</a>
                     </div>
                 </div>

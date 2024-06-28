@@ -29,30 +29,18 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-      <div className="side-link">
+
       <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <Link to="home">
-          <p className={`${sidebar ? "" : "small"}`}>Home</p>
-        </Link>
-
-      </div>
-      <div className="side-link">
-        <p className={`${sidebar ? "" : "small"}`}>Home</p>   
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>
       </Link>
       <Link to="all_livestream" className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
-        <Link to="all_livestream">
-          <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
-        </Link>
-      </div>
-      <div className="side-link">
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
       </Link>
       <Link to='explore' className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
-      </div>
       </Link>
       <div className="side-link category-link" onClick={toggleCategories}>
         <img className="sidebar-icon" src={category} alt="Categories Icon" />
@@ -88,11 +76,9 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">My Certification</a>
         </div>
       )}
-      <div className="side-link">
       <Link to='save-courses' className="side-link">
         <img className="sidebar-icon" src={saved_course} alt="Saved Courses Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Saved Courses</p>
-      </div>
       </Link>
       <div className="side-link category-link" onClick={togglePages}>
         <img className="sidebar-icon" src={pages} alt="Pages Icon" />
@@ -101,11 +87,6 @@ const Sidebar = ({ sidebar }) => {
       </div>
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
-          <a href="#">About</a>
-          <Link to="/login">Sign In</Link>
-          <Link to="/SignUpStep">Sign Up</Link>
-          <a href="#">Sign Up Steps</a>
-          <a href="#">Paid Membership</a>
           <a href="about">About</a>
           <a href="login">Sign In</a>
           <a href="SignUpStep">Sign Up</a>
@@ -114,41 +95,30 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
           <Link to="/invoice">Invoice</Link>
-          <a href="#">Career</a>
           <a href="career">Career</a>
           <a href="#">Job Apply</a>
-          <a href="#">Our Blog</a>
           <a href="our-blog">Our Blog</a>
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
-          <Link to="search_result">Search Result</Link>
-          <Link to="Thanks">Thank you</Link>
           <a href="search_result">Search Result</a>
           <a href="Thanks">Thank you</a>
           <a href="#">Coming Soon</a>
-          <Link to="error404">Error  404</Link>
           <a href="error404">Error  404</a>
         </div>
       )}
       <hr />
       <div className="subscriptions">
         <p className="subscriptions-title">SUBSCRIPTIONS</p>
-        <div className="subscription-link">
         <Link to='/other-instructor-view' className="subscription-link">
           <img className="subscription-icon" src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="Rock Smith" />
           <p>Rock Smith</p>
           <span className="subscription-status"></span>
-        </div>
         </Link>
         <div className="subscription-link">
           <img className="subscription-icon" src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg" alt="Jassica William" />
           <p>Jassica William</p>
           <span className="subscription-status"></span>
         </div>
-      </div>
-      <div className="side-link">
-        <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" />
-        <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
       </div>
       <Link to="allinstructorlist">
         <div className="side-link">
@@ -157,40 +127,31 @@ const Sidebar = ({ sidebar }) => {
         </div>
       </Link>
       <hr />
-      <div className="side-link">
       <Link to='setting' className="side-link">
         <img className="sidebar-icon" src={setting} alt="Setting Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
-      </div>
-      <div className="side-link">
       </Link>
       <Link to='help' className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" />
 
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
-      </div>
-      <div className="side-link">
       </Link>
-      <Link to= 'reporthistory' className="side-link">
+      <Link to='reporthistory' className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
-      </div>
-      <div className="side-link">
       </Link>
       <Link to='sendfeedback' className="side-link">
         <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
-      </div>
-      <hr />
       </Link>
-      <hr/>
+      <hr />
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
           <Link to='about-us'>
-          <div>About</div>
+            <div>About</div>
           </Link>
           <Link to='press'>
-          <div>Press</div>
+            <div>Press</div>
           </Link>
           <div>Contact Us</div>
           <div>Advertise</div>
