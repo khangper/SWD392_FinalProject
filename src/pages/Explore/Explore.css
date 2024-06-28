@@ -7,7 +7,7 @@
   .explore-container .search-box {
     display: flex;
     align-items: center;
-    padding: 6px 12px;
+    padding: 6px 12px;  
     border: 2px solid #e9ecef;
     background-color: white;
     border-radius: 2px;
