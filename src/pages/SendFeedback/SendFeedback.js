@@ -4,7 +4,7 @@ import send_feedback from '..//../assets/send-feedback.png';
 export default function SendFeedback() {
   return (
     <div class="feedback-container">
-    <h2 class="st_title">
+    <h2 class="SendFeedback-title">
         <img class="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />  Send Feedback
     </h2>
     <div class="feedback-grid">

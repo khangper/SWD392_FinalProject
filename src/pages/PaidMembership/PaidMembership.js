@@ -167,12 +167,15 @@ export default function PaidMembership() {
         <p>Wait, what about…</p>
     </div>
     <div class="faq-section">
+
         <details class="faq-item">
             <summary>Is it easy to change plans?</summary>
             <div class="panel-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.le VHS.
             </div>
         </details>
+
+
         <details class="faq-item">
             <summary>Can I cancel at any time?</summary>
             <div class="panel-body">
@@ -187,15 +190,23 @@ export default function PaidMembership() {
             </div>
         </details>
 
-        <details class="faq-item">
-            <summary>Do I have to choose my plan before I start my trial?</summary>
+        <details class="faq-item">          
+            <summary>Do I have to choose my plan before I start my trial?</summary>            
             <div class="panel-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
             </div>
         </details>
 
+        <details class="faq-item">          
+            <summary>Edututs+ isn't for me. Can I have a reufund</summary>            
+            <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+            </div>
+        </details>
+
+
         <details class="faq-item">
-            <summary>Edututs+ isn’t for me. Can I have a refund?</summary>
+            <summary>How do I get my money?	</summary>
             <div class="panel-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
             </div>
