@@ -1,3 +1,4 @@
+
 .header-link1{
     cursor: pointer;
     border: 1px solid #efefef;
@@ -20,6 +21,8 @@
     color: #fff;
 }
 
+
+
 .header-group-icon{
     height: 30px;
     align-self: stretch;
@@ -27,6 +30,7 @@
     max-width: 100%;
     flex-shrink: 0;
 }
+
 
 .header-avatar{
     height: 36px;
@@ -37,6 +41,7 @@
     object-fit: cover;
     border: 2px solid #efefef;
 }
+
 
 .header{
     align-self: stretch;
@@ -55,6 +60,7 @@
     gap: 20px
 }
 
+
 @media screen and (max-width: 1350px){
     .header{
         padding-left: 185px;
@@ -63,10 +69,12 @@
     }
 }
 
+
 @media screen and (max-width: 900px){
     .header{
         padding-left: 92px;
         padding-right: 96px;
         box-sizing: border-box;
     }
+}
 

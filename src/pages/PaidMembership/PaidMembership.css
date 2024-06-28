@@ -1,7 +1,7 @@
 ._215b15 {
     display: grid;
     grid-template-columns: 1fr; /* Sử dụng CSS Grid thay vì Bootstrap col */
-    width: 64%;
+    width: 58%;
     padding: 20px 0 0;
     background: #fff;
     margin-bottom: 17px;
