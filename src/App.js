@@ -13,11 +13,14 @@ import SignUp from "./pages/Landing/SignUp1/SignUp";
 import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
 import { Thanks } from "./pages/Thanks/Thanks";
 import Error404 from "./pages/Error1/Error404";
+import About from "./pages/About/About";
+import Blog from "./pages/Blog/Blog";
 import AllInstructor1 from "./pages/AllInstructorList/AllInstructor1";
 import Help1 from "./pages/Help/Help1";
 import PaidMembership from "./pages/PaidMembership/PaidMembership";
 import ReportHistory from "./pages/ReportHistory/ReportHistory";
 import SendFeedback from "./pages/SendFeedback/SendFeedback";
+
 
 function App() {
   const [sidebar, setSidebar] = useState(true);
@@ -32,6 +35,8 @@ function App() {
         <Route path="thanks" element={<Thanks/>} />
         <Route path="error404" element={<Error404/>} />
         <Route path="paidmembership" element={<PaidMembership/>}/>
+        <Route path="about-us" element={<About/>} />
+        <Route path="our-blog" element={<Blog/>} />
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
