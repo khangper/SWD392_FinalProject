@@ -138,7 +138,7 @@ const Sidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={help} alt="Help Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </Link>
-      <Link to= 'reporthistory"' className="side-link">
+      <Link to= 'reporthistory' className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
       </Link>
@@ -149,8 +149,13 @@ const Sidebar = ({ sidebar }) => {
       <hr/>
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
+          <Link to='about-us'>
           <div>About</div>
-          <div>Press</div>
+          </Link>
+
+          <Link to='press'><div>Press</div>
+          </Link>
+          
           <div>Contact Us</div>
           <div>Advertise</div>
           <div>Developers</div>
