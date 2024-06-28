@@ -34,7 +34,6 @@ const Sidebar = ({ sidebar }) => {
         <Link to="home">
           <p className={`${sidebar ? "" : "small"}`}>Home</p>
         </Link>
-
       </div>
       <div className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
@@ -80,10 +79,10 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">My Certification</a>
         </div>
       )}
-      <div className="side-link">
+      <Link to='save-courses' className="side-link">
         <img className="sidebar-icon" src={saved_course} alt="Saved Courses Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Saved Courses</p>
-      </div>
+      </Link>
       <div className="side-link category-link" onClick={togglePages}>
         <img className="sidebar-icon" src={pages} alt="Pages Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Pages</p>
@@ -92,10 +91,10 @@ const Sidebar = ({ sidebar }) => {
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">About</a>
-          <Link to="/login">Sign In</Link>
-          <Link to="/SignUpStep">Sign Up</Link>
-          <a href="#">Sign Up Steps</a>
-          <a href="#">Paid Membership</a>
+          <a href="/login">Sign In</a>
+          <a href="/SignUpStep">Sign Up</a>
+          <a href="/SignUp">Sign Up Steps</a>
+          <a href="paidmembership">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
           <Link to="/invoice">Invoice</Link>
@@ -104,26 +103,34 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Our Blog</a>
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
-          <Link to="search_result">Search Result</Link>
-          <Link to="Thanks">Thank you</Link>
+          <a href="search_result">Search Result</a>
+          <a href="Thanks">Thank you</a>
           <a href="#">Coming Soon</a>
-          <Link to="error404">Error  404</Link>
+          <a href="error404">Error  404</a>
         </div>
       )}
       <hr />
       <div className="subscriptions">
         <p className="subscriptions-title">SUBSCRIPTIONS</p>
-        <div className="subscription-link">
+        <Link to='/other-instructor-view' className="subscription-link">
           <img className="subscription-icon" src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="Rock Smith" />
           <p>Rock Smith</p>
           <span className="subscription-status"></span>
-        </div>
+        </Link>
         <div className="subscription-link">
           <img className="subscription-icon" src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg" alt="Jassica William" />
           <p>Jassica William</p>
           <span className="subscription-status"></span>
         </div>
       </div>
+      <Link to="allinstructorlist">
+        <div className="side-link">
+          <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" />
+          <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
+        </div>
+      </Link>
+
+      <hr />
       <div className="side-link">
         <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
@@ -145,7 +152,7 @@ const Sidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
       </div>
-      <hr />
+      <hr/>
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
           <div>About</div>
