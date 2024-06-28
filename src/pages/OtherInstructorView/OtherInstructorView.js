@@ -16,7 +16,7 @@ import heart from "../../assets/heart.png";
 import edit from "../../assets/edit.png";
 import deletee from "../../assets/delete.png";
 
-export const OtherInstructorView = () => {
+const OtherInstructorView = () => {
     const [oivtab, setOivtab] = useState('about')
     const [selectOptions, setSelectOptions] = useState('')
 
@@ -585,3 +585,4 @@ export const OtherInstructorView = () => {
     )
 }
 
+export default OtherInstructorView;

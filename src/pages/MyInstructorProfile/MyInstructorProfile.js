@@ -18,7 +18,7 @@ import deletee from "../../assets/delete.png";
 import profile_image from '..//../assets/profile-img.jpg';
 import notification_icon from '..//../assets/notification-icon.png';
 
-export const MyInstructorProfile = () => {
+const MyInstructorProfile = () => {
     const [oivtab, setOivtab] = useState('about')
     const [selectOptions, setSelectOptions] = useState('')
 
@@ -902,3 +902,4 @@ export const MyInstructorProfile = () => {
         </div >
     )
 }
+export default MyInstructorProfile;

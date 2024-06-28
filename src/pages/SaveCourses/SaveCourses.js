@@ -7,7 +7,7 @@ import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
 import card_icon from '..//../assets/cart-icon.png';
 
-export const SaveCourses = () => {
+const SaveCourses = () => {
     return (
         <div>
             <div class="sa4d25">
@@ -219,3 +219,4 @@ export const SaveCourses = () => {
         </div>
     )
 }
+export default SaveCourses;
