@@ -132,7 +132,7 @@ const SearchResult = () => {
                         <div className='Search_Result_Body_Right'>
                             <h4 className="SR_Num_Result">5 Results</h4>
                             {[...Array(5)].map((_, index) => (
-                                <div key={index} className="fcrse_1 MTSR30">
+                                <div key={index} className="SR_fcrse_1 MTSR30">
                                     <a href="https://gambolthemes.net/html-items/cursus-new-demo/course_detail_view.html" className="hf_img">
                                         <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg" alt="" />
                                         <div className="SR_Course_Overlay">
@@ -177,6 +177,13 @@ const SearchResult = () => {
                         </div>
                     </div>
                 </div>
+                <section className="load-more">
+                    <div className="spinner">
+                        <div className="bounce1"></div>
+                        <div className="bounce2"></div>
+                        <div className="bounce3"></div>
+                    </div>
+                </section>
             </div>
             <Footer />
         </>

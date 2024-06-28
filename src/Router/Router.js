@@ -27,8 +27,9 @@ import MyInstructorProfile from '../pages/MyInstructorProfile/MyInstructorProfil
 import SaveCourses from '../pages/SaveCourses/SaveCourses'
 import Explore from '../pages/Explore/Explore'
 import Setting from '../pages/Setting/Setting'
+import ContactUs from '../pages/ContactUs/ContactUs';
 const Router = () => {
-    const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(true);
   return (
     <div>
       <Routes>
@@ -46,12 +47,13 @@ const Router = () => {
         <Route path="paidmembership" element={<PaidMembership />} />
         <Route path="about-us" element={<About />} />
         <Route path="our-blog" element={<Blog />} />
+        <Route path="contactus" element={<ContactUs />} />
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
         >
           <Route path="home" element={<Home />} />
-          <Route path='explore' element={<Explore/>}/>
+          <Route path='explore' element={<Explore />} />
           <Route path="live_output" element={<LiveOutput />} />
           <Route path="add_livestream" element={<AddLiveStream />} />
           <Route path="all_livestream" element={<AllLiveStream />} />

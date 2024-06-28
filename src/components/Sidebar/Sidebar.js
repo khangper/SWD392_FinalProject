@@ -153,7 +153,10 @@ const Sidebar = ({ sidebar }) => {
           <Link to='press'>
             <div>Press</div>
           </Link>
-          <div>Contact Us</div>
+          <Link to='contactus'>
+            <div>Contact Us</div>
+          </Link>
+
           <div>Advertise</div>
           <div>Developers</div>
           <div>Copyright</div>
