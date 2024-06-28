@@ -130,22 +130,22 @@ const Sidebar = ({ sidebar }) => {
         </div>
       </Link>
       <hr />
-      <div className="side-link">
+      <Link to='setting' className="side-link">
         <img className="sidebar-icon" src={setting} alt="Setting Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
-      </div>
-      <div className="side-link">
+      </Link>
+      <Link to='help' className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
-      </div>
-      <div className="side-link">
+      </Link>
+      <Link to= 'reporthistory"' className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
-      </div>
-      <div className="side-link">
+      </Link>
+      <Link to='sendfeedback' className="side-link">
         <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
-      </div>
+      </Link>
       <hr/>
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">

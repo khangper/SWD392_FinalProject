@@ -60,8 +60,8 @@ function App() {
           <Route path="help" element={<Help1 />} />
           <Route path="reporthistory" element={<ReportHistory />} />
           <Route path="sendfeedback" element={<SendFeedback />} />
-          <Route path="/other-instructor-view" element={<OtherInstructorView />} />
-          <Route path='/my-instructor-profile' element={<MyInstructorProfile />} />
+          <Route path="other-instructor-view" element={<OtherInstructorView />} />
+          <Route path='my-instructor-profile' element={<MyInstructorProfile />} />
           <Route path="save-courses" element={<SaveCourses />} />
         </Route>
       </Routes>
