@@ -169,11 +169,11 @@ export default function AllInstructor1() {
     return (
         <div>
                 <header>
-        <div class="explore_search">
-            <div class="ui search focus">
-                <div class="search-box flex-div">
+        <div className="explore_search">
+            <div className="ui search focus">
+                <div className="search-box flex-div">
                 <img src={search_icon} alt='' className='search-icon-allInstructor' />
-                    <input class="prompt srch_explore" type="text" placeholder="       Search Tutors..."/>
+                    <input className="prompt srch_explore" type="text" placeholder="       Search Tutors..."/>
                     
                 </div>
             </div>
