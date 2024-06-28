@@ -29,19 +29,20 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
+      <Link to="home">
       <div className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <Link to="home">
-        <p className={`${sidebar ? "" : "small"}`}>Home</p>
-        </Link>
         
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>
+               
       </div>
+      </Link> 
+      <Link to="all_livestream">
       <div className="side-link">
-        <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
-        <Link to="all_livestream">
+        <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />        
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
-        </Link>
       </div>
+      </Link>
       <div className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
@@ -92,10 +93,10 @@ const Sidebar = ({ sidebar }) => {
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">About</a>
-          <Link to="/login">Sign In</Link>
-          <Link to="/SignUpStep">Sign Up</Link>
-          <a href="#">Sign Up Steps</a>
-          <a href="#">Paid Membership</a>
+          <a href="/login">Sign In</a>
+          <a href="/SignUpStep">Sign Up</a>
+          <a href="/SignUp">Sign Up Steps</a>
+          <a href="paidmembership">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
           <a href="#">Invoice</a>
@@ -105,9 +106,9 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
           <a href="#">Search Result</a>
-          <Link to="Thanks">Thank you</Link>
+          <a href="Thanks">Thank you</a>
           <a href="#">Coming Soon</a>
-          <Link to="error404">Error  404</Link>
+          <a href="error404">Error  404</a>
         </div>
       )}
       <hr/>
@@ -124,27 +125,37 @@ const Sidebar = ({ sidebar }) => {
           <span className="subscription-status"></span>
         </div>
       </div>
+      <Link to="allinstructorlist">
       <div className="side-link">
         <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
       </div>
+      </Link>
+
       <hr/>
       <div className="side-link">
         <img className="sidebar-icon" src={setting} alt="Setting Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
       </div>
+      <Link to="help">
       <div className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" /> 
-        <p className={`${sidebar ? "" : "small"}`}>Help</p>
+        <p className={`${sidebar ? "help" : "small"}`}>Help</p>
       </div>
+      </Link>
+      <Link to="reporthistory">
       <div className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
       </div>
+      </Link>
+      <Link to="sendfeedback">
       <div className="side-link">
         <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" /> 
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
       </div>
+      </Link>   
+
       <hr/>
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
