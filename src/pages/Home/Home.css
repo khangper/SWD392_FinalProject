@@ -57,6 +57,12 @@
   margin-bottom: 20px;
 }
 .live-streams,
+.live-streams{
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+}
 .featured-courses,
 .popular-instructors {
   display: flex;
@@ -77,6 +83,7 @@
   background: rgba(51, 1, 51, 0.1);
   text-align: center;
   width: 160px;
+  width: 140px;
   height: 170px;
   flex-shrink: 0;
 }

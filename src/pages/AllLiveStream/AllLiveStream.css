@@ -195,14 +195,17 @@
 
 .spinner {
     margin: 0 auto 0;
+    margin: 0 auto 20px; /* Dịch chuyển spinner xuống dưới và canh giữa */
     width: 50px;
     text-align: center;
     height: 20px;
+    line-height: 20px;
     border-radius: 100px;
     background-color: #fff;
     line-height: 20px;
     border: 1px solid #efefef;
     cursor: pointer;
+    position: relative; /* Thêm vị trí tương đối để sử dụng cho các vị trí tuyệt đối bên trong */
 }
 
 .spinner > div {
@@ -212,12 +215,23 @@
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    background-color: #333;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out; /* Thêm tiền tố -webkit- cho hỗ trợ Safari và Chrome */
+    animation: sk-bouncedelay 1.4s infinite ease-in-out;
+    position: absolute; /* Để các quả bóng di chuyển theo vị trí tuyệt đối trong .spinner */
 }
 
 .spinner .bounce1 {
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
   background-color: #333;
+    left: 0; /* Đặt vị trí ban đầu của bounce1 */
+    -webkit-animation-delay: -0.32s; /* Độ trễ cho animation */
+    animation-delay: -0.32s;
 }
 
 .spinner .bounce2 {
@@ -225,6 +239,10 @@
   animation-delay: -0.16s;
   background-color: #333;
   opacity: 0.702;
+    left: 50%; /* Đặt vị trí ban đầu của bounce2 */
+    transform: translateX(-50%); /* Dịch chuyển bounce2 về giữa */
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
 }
 
 .spinner .bounce3 {
@@ -232,6 +250,18 @@
   animation-delay: -0.12s;
   background-color: #333;
   opacity: 0.4;
+    right: 0; /* Đặt vị trí ban đầu của bounce3 */
+    -webkit-animation-delay: -0.12s;
+    animation-delay: -0.12s;
+}
+
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0);
+    } 
+    40% {
+        transform: scale(1);
+    }
 }
 
 .fcrse_3 {
@@ -332,3 +362,47 @@
     display: block;
 }
 
+/*Loading*/
+
+/* .loading-live{
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loadingLive{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #686f7a;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px ;
+    animation: animation 1s ease-in-out infinite ;
+}
+
+.set_1{
+    animation-delay:0s ;
+}
+
+.set_2{
+    animation-delay:0.25s ;
+}
+
+.set_3{
+    animation-delay:0.3s ;
+}
+
+
+@keyframes animation {
+   0% {
+    transform: scale(0.5);
+   }
+   50% {
+    transform: scale(1);
+   }
+   100% {
+    transform: scale(0.5);
+   }
+} */

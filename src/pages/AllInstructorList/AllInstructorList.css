@@ -1,0 +1,117 @@
+.All-Instructor-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Chia lưới thành 4 cột */
+  grid-gap: 20px; /* Khoảng cách giữa các grid item */
+}
+
+.All-Instructor-grid-item {
+  background-color: #fff; /* Màu nền cho grid item */
+  padding: 20px; /* Khoảng cách bên trong grid item */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  min-width: 200px; /* Độ rộng tối thiểu của mỗi grid item */
+  min-height: 300px; /* Độ cao tối thiểu của mỗi grid item */
+}
+
+.All-Instructor-tutor_img {
+  width: 100%;
+  text-align: center;
+}
+
+.All-Instructor-tutor_img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 2px solid #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.All-Instructor-tutor_content_dt {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.All-Instructor-tutor150 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.All-Instructor-tutor_name {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.All-Instructor-mef78 i {
+  font-size: 18px;
+  line-height: 15px;
+  color: #1da1f2;
+}
+
+.All-Instructor-tutor_cate {
+  font-size: 13px;
+  color: #686f7a;
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin-bottom: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.All-Instructor-tut1250 {
+  font-size: 12px;
+  margin-top: 20px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  color: #686f7a;
+  text-align: center;
+  display: block;
+}
+
+.All-Instructor-tut1250 .vdt15::after {
+  content: '•';
+  margin: 0 4px;
+}
+
+.All-Instructor-tut1250 .vdt15:last-child::after {
+  display: none;
+  content: '';
+}
+
+.All-Instructor-vdt15 {
+  margin-right: 10px; /* Khoảng cách giữa các thông tin */
+}
+
+
+.srch_explore {
+  margin-bottom: 20px;
+
+  padding: 11px;
+  width: 100%;
+  background: #fff !important;
+  border: 1px solid #e5e5e5 !important;
+  color: #333 !important;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
+}
+
+.srch_explore:focus {
+  border: 1px solid #333 !important;	
+box-shadow: none !important;
+}
+
+.search-icon-allInstructor {
+  position: absolute;
+  /* display: flex; */
+  width: 18px;
+  height: 16px;
+  margin: 0 8px;
+  margin-top: -16px;
+  padding: -10px;
+  /* margin-right: 10px; */
+}

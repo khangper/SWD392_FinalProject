@@ -2,6 +2,7 @@ import React from 'react'
 import './Thanks.css'
 import { Link } from 'react-router-dom'
 export const Thanks = () => {
+const Thanks = () => {
     return (
         <div className="wrapper coming_soon_wrapper">
             {/* <div className="container"> */}
@@ -11,6 +12,7 @@ export const Thanks = () => {
                         <Link to="/home">
                         <div className="ct-logo">
                             <a href="index.html"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></a>
+                            <a href="home"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></a>
                         </div>
                         </Link>
 
@@ -42,4 +44,5 @@ export const Thanks = () => {
             {/* </div> */}
         </div>
     )
-}
+}}
+export default Thanks;

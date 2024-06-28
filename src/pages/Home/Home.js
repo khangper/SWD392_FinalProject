@@ -773,6 +773,7 @@ const Home = () => {
                 100K Students • 15 Courses
               </div>
               <a href="#" className="instructor-profile-redirect">
+              <a href="my-instructor-profile" className="instructor-profile-redirect">
                 Go to profile
               </a>
             </div>

@@ -44,6 +44,7 @@ const Login = () => {
         </div>
         <p className="sign-up">
           Don't have an account? <Link to="/sign-up">Sign Up</Link>
+          Don't have an account? <Link to="/SignUp">Sign Up</Link>
         </p>
       </div>
       <div className="form-footer">
