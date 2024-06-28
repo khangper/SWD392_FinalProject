@@ -4,8 +4,12 @@
 }
 
 .RH-st_title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
 }
 
 .RH-grid-container {
