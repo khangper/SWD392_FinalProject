@@ -27,6 +27,10 @@ import MyInstructorProfile from '../pages/MyInstructorProfile/MyInstructorProfil
 import SaveCourses from '../pages/SaveCourses/SaveCourses'
 import Explore from '../pages/Explore/Explore'
 import Setting from '../pages/Setting/Setting'
+import BlogDetail from '../pages/BlogDetail/BlogDetail';
+import Company from '../pages/Company/Company';
+import Career from '../pages/Career/Career';
+import ApplyJob from '../pages/ApplyJob/ApplyJob';
 const Router = () => {
     const [sidebar, setSidebar] = useState(true);
   return (
@@ -46,6 +50,10 @@ const Router = () => {
         <Route path="paidmembership" element={<PaidMembership />} />
         <Route path="about-us" element={<About />} />
         <Route path="our-blog" element={<Blog />} />
+        <Route path="blog-single-view" element={<BlogDetail />} />
+        <Route path="company-details" element={<Company />} />
+        <Route path="career" element={<Career />} />
+        <Route path="apply-job" element={<ApplyJob />} />
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
