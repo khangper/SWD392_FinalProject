@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './SearchResult.css'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
@@ -10,6 +10,26 @@ import saved_course from "../../assets/saved-course.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
 const SearchResult = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedSort, setSelectedSort] = useState('Sort');
+
+    const sortOptions = [
+        'Most Relevant',
+        'Most Reviewed',
+        'Highest Rated',
+        'Newest',
+        'Lowest Price',
+        'Highest Price'
+    ];
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const handleSortClick = (sortOption) => {
+        setSelectedSort(sortOption);
+        setIsOpen(false);
+    };
     return (
         <>
             <Header />
@@ -35,14 +55,26 @@ const SearchResult = () => {
                         <div className='Search_Result_Body_Left'>
 
                             <div class="SR_Filter">Filters</div>
-                            <div class="SR_Sort">
-                                <p class="">
-                                    Sort
-                                </p>
-                                <span class="SR_Dropdown_Sort ">
-                                    <img className="Sort_Dropdown_Icon" src={dropdown} />
+                            <div className="SR_Sort" onClick={toggleDropdown}>
+                                <p>{selectedSort}</p>
+                                <span className="SR_Dropdown_Sort">
+                                    <img className="Sort_Dropdown_Icon" src={dropdown} alt="Dropdown Icon" />
                                 </span>
+                                {isOpen && (
+                                    <div className="Sort_Menu">
+                                        {sortOptions.map((option, index) => (
+                                            <div
+                                                key={index}
+                                                className="Sort_item"
+                                                onClick={() => handleSortClick(option)}
+                                            >
+                                                {option}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
+
                             {/* <div class="tb_145">
                                 <div class="panel-group accordion" id="accordionfilter">
                                     <div class="panel panel-default">

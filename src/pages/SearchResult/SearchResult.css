@@ -1,7 +1,7 @@
 .Search_Result_Container {
     width: 100%;
     display: flex;
-    padding: 0 250px 0 250px;
+    padding: 0 370px 0 370px;
     flex-direction: column;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .Small_SR_Title_Right {
-    right: 250px;
+    right: 370px;
     display: flex;
     position: absolute;
     font-weight: 400;
@@ -76,7 +76,7 @@
 
 .SR_Left_Col {
     flex: 0 0 auto;
-    width: 25%;
+    width: 30%;
 }
 
 .Search_Result_Body_Left {
@@ -94,11 +94,13 @@
     display: flex;
     align-items: center;
     /* padding: 12px; */
+    width: 200px;
     color: #333;
     text-decoration: none;
     transition: background-color 0.5s;
     position: absolute;
-    left: 30%;
+    left: 36%;
+    cursor: pointer;
 }
 
 .Sort_Dropdown_Icon {
@@ -108,10 +110,36 @@
     margin-right: 15px;
 }
 
+.SR_Dropdown_Sort {
+    display: inline-block;
+}
+
+.Sort_Menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.Sort_item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.Sort_item:hover {
+    background-color: #f1f1f1;
+}
+
 .SR_Right_Col {
     flex: 0 0 auto;
     width: 75%;
-    padding-left: 30px;
+    padding-left: 60px;
 }
 
 .fcrse_1 {
