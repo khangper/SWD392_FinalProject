@@ -174,6 +174,7 @@ export default function PaidMembership() {
             </div>
         </details>
         <details className="faq-item">
+
             <summary>Can I cancel at any time?</summary>
             <div className="panel-body">
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
@@ -186,7 +187,6 @@ export default function PaidMembership() {
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
             </div>
         </details>
-
         <details className="faq-item">
             <summary>Do I have to choose my plan before I start my trial?</summary>
             <div className="panel-body">
@@ -228,21 +228,11 @@ export default function PaidMembership() {
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
             </div>
         </details>
-
-
-       
     </div>
 </div>
 			</div>
-		</div>
-
-    
+		</div>  
 </main>
-        
-
-
-
-
 
         <Footer/>
     </div>

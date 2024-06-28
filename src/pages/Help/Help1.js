@@ -55,7 +55,7 @@ export default function Help() {
             <div className="col-lg-12">
               <div className="course_tabs">
                 <nav>
-                  <div className="nav nav-tabs help_tabs tab_crse justify-content-center" id="nav-tab" role="tablist">
+                  <div className="nav nav-tabs-help help_tabs tab_crse justify-content-center" id="nav-tab" role="tablist">
                     <a
                       className={`tab ${activeTab === 'instructor' ? 'active' : ''}`}
                       id="nav-instructor-tab"
