@@ -1,10 +1,10 @@
 import React from 'react'
 import './Thanks.css'
 import { Link } from 'react-router-dom'
-export const Thanks = () => {
+
+const Thanks = () => {
     return (
         <div className="wrapper coming_soon_wrapper">
-            {/* <div className="container"> */}
             <div className="row">
                 <div className="col-md-12">
                     <div className="cmtk_group">
@@ -43,3 +43,4 @@ export const Thanks = () => {
         </div>
     )
 }
+export default Thanks;

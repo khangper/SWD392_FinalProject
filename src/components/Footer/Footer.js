@@ -9,7 +9,7 @@ import pinterest from '../../assets/pinterest.png';
 const Footer = ({ sidebar }) => {
   return (
     <footer className={`footer ${sidebar ? 'footer-container' : 'footer-large-container'}`}>
-         <div className="footer-links">
+      <div className="footer-links">
         <div className="footer-column">
           <a href="#">About</a>
           <a href="#">Blog</a>
@@ -37,15 +37,15 @@ const Footer = ({ sidebar }) => {
       </div>
       <div className="footer-bottom">
         <div className="footer-copy">
-          <img src='https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg'/>&copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
+          <img src='https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg' />&copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
         </div>
         <div className="footer-social">
-          <img href="#"src={facebook} className="social-icon"/>
-          <img href="#"src={x} className="social-icon"/>
-          <img href="#"src={google} className="social-icon"/>
-          <img href="#"src={linkedin} className="social-icon"/>
-          <img href="#"src={insta} className="social-icon"/>
-          <img href="#"src={pinterest} className="social-icon"/>
+          <img href="#" src={facebook} className="social-icon" />
+          <img href="#" src={x} className="social-icon" />
+          <img href="#" src={google} className="social-icon" />
+          <img href="#" src={linkedin} className="social-icon" />
+          <img href="#" src={insta} className="social-icon" />
+          <img href="#" src={pinterest} className="social-icon" />
         </div>
       </div>
     </footer>
