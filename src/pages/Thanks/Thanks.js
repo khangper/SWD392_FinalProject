@@ -8,12 +8,9 @@ const Thanks = () => {
             <div className="row">
                 <div className="col-md-12">
                     <div className="cmtk_group">
-                        <Link to="/home">
                         <div className="ct-logo">
-                            <a href="index.html"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></a>
+                            <a href="home"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></a>
                         </div>
-                        </Link>
-
                         <div className="cmtk_dt">
                             <h1 className="thnk_coming_title">Thank You</h1>
                             <h4 className="thnk_title1">Your Order is Confirmed!</h4>
