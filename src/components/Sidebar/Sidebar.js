@@ -29,22 +29,19 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-      <div className="side-link">
+      
+      <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <Link to="home">
-          <p className={`${sidebar ? "" : "small"}`}>Home</p>
-        </Link>
-      </div>
-      <div className="side-link">
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>   
+      </Link>
+      <Link to="all_livestream" className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
-        <Link to="all_livestream">
-          <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
-        </Link>
-      </div>
-      <div className="side-link">
+        <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+      </Link>
+      <Link to='explore' className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
-      </div>
+      </Link>
       <div className="side-link category-link" onClick={toggleCategories}>
         <img className="sidebar-icon" src={category} alt="Categories Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Categories</p>
@@ -90,17 +87,17 @@ const Sidebar = ({ sidebar }) => {
       </div>
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
-          <a href="#">About</a>
-          <a href="/login">Sign In</a>
-          <a href="/SignUpStep">Sign Up</a>
-          <a href="/SignUp">Sign Up Steps</a>
+          <a href="about">About</a>
+          <a href="login">Sign In</a>
+          <a href="SignUpStep">Sign Up</a>
+          <a href="SignUp">Sign Up Steps</a>
           <a href="paidmembership">Paid Membership</a>
           <a href="#">Course Detail View</a>
           <a href="#">Checkout</a>
           <Link to="/invoice">Invoice</Link>
-          <a href="#">Career</a>
+          <a href="career">Career</a>
           <a href="#">Job Apply</a>
-          <a href="#">Our Blog</a>
+          <a href="our-blog">Our Blog</a>
           <a href="#">Blog Detail View</a>
           <a href="#">Add Livestream</a>
           <a href="search_result">Search Result</a>
@@ -129,34 +126,33 @@ const Sidebar = ({ sidebar }) => {
           <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
         </div>
       </Link>
-
       <hr />
-      <div className="side-link">
-        <img className="sidebar-icon" src={browse_instructor} alt="Browse Instructor Icon" />
-        <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
-      </div>
-      <hr />
-      <div className="side-link">
+      <Link to='setting' className="side-link">
         <img className="sidebar-icon" src={setting} alt="Setting Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
-      </div>
-      <div className="side-link">
+      </Link>
+      <Link to='help' className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" />
+
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
-      </div>
-      <div className="side-link">
+      </Link>
+      <Link to= 'reporthistory' className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
-      </div>
-      <div className="side-link">
+      </Link>
+      <Link to='sendfeedback' className="side-link">
         <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
-      </div>
+      </Link>
       <hr/>
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
+          <Link to='about-us'>
           <div>About</div>
+          </Link>
+          <Link to='press'>
           <div>Press</div>
+          </Link>
           <div>Contact Us</div>
           <div>Advertise</div>
           <div>Developers</div>

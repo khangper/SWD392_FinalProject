@@ -2,6 +2,15 @@
     padding: 20px;
 }
 
+.SendFeedback-title{
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
 .feedback-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -98,6 +107,15 @@ textarea#id_about {
 }
 
 .add-creen {
-    margin-top: 77px;
+    margin-top: 40px;
+
     margin-bottom: 28px;
+}
+
+.form-group1 label {
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 14px;
 }
