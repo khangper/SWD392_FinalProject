@@ -29,22 +29,19 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-      <div className="side-link">
+      
+      <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <Link to="home">
-          <p className={`${sidebar ? "" : "small"}`}>Home</p>
-        </Link>
-      </div>
-      <div className="side-link">
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>   
+      </Link>
+      <Link to="all_livestream" className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
-        <Link to="all_livestream">
-          <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
-        </Link>
-      </div>
-      <div className="side-link">
+        <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+      </Link>
+      <Link to='explore' className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
-      </div>
+      </Link>
       <div className="side-link category-link" onClick={toggleCategories}>
         <img className="sidebar-icon" src={category} alt="Categories Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Categories</p>
@@ -136,6 +133,7 @@ const Sidebar = ({ sidebar }) => {
       </Link>
       <Link to='help' className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" />
+
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </Link>
       <Link to= 'reporthistory' className="side-link">
