@@ -1,7 +1,8 @@
 import React from 'react'
 import './Thanks.css'
 import { Link } from 'react-router-dom'
-export const Thanks = () => {
+
+const Thanks = () => {
     return (
         <div className="Thanks-wrapper">
             {/* <div className="container"> */}
@@ -43,3 +44,4 @@ export const Thanks = () => {
         </div>
     )
 }
+export default Thanks;

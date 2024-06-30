@@ -24,13 +24,12 @@ import { OtherInstructorView } from "./pages/OtherInstructorView/OtherInstructor
 import { MyInstructorProfile } from "./pages/MyInstructorProfile/MyInstructorProfile";
 import { SaveCourses } from "./pages/SaveCourses/SaveCourses";
 import CoursesDetailView from "./pages/CoursesDetailView/CoursesDetailView";
-import Accordion from "./pages/CoursesDetailView/Accordion";
+
 import CommingSoon from "./pages/CommingSoon/CommingSoon";
-import Test from "./pages/CommingSoon/Test";
+
 
 
 function App() {
-  const [sidebar, setSidebar] = useState(true);
   return (
     <div>
       <Routes>
@@ -45,7 +44,7 @@ function App() {
         <Route path="about-us" element={<About />} />
         <Route path="our-blog" element={<Blog />} />
         <Route path="/comming-soon" element={<CommingSoon />} />
-        <Route path="/test" element={<Test />} />
+
 
         <Route
           path="/"
