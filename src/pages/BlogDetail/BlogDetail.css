@@ -254,14 +254,6 @@
   text-align: right;
 }
 
-.blog-detail-footer-content-2:hover {
-  margin-left: -50px;
-}
-
-.blog-detail-footer-content-1:hover {
-  margin-right: -50px;
-}
-
 .blog-detail-icon-prev,
 .blog-detail-icon-next {
   width: 17px;
@@ -282,6 +274,10 @@
   padding: 60px 0 30px;
   cursor: pointer;
   gap: 20px;
+}
+
+.blog-detail-footer-container-1:hover, .blog-detail-footer-container-2:hover{
+  gap: 10px;
 }
 
 .blog-detail-footer-parent {

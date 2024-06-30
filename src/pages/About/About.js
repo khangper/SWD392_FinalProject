@@ -52,7 +52,7 @@ const About = () => {
               <div className="about-features-wrapper">
                 <div className="about-features-inner-wrapper">
                   <div className="about-heading-2-our-features">
-                    <h2 className="about-heading-22">Our Features</h2>
+                    <h3 className="about-heading-22">Our Features</h3>
                   </div>
                   <div className="about-on-cursus-parent">
                     <div className="about-on-cursus">
@@ -170,7 +170,7 @@ const About = () => {
                   <div className="about-heading-2-our-features">
                     <h2 className="about-heading-22">Our Global Reach</h2>
                   </div>
-                  <div className="about-on-cursus-parent">
+                  <div className="about-our-global-parent">
                     <div className="about-on-cursus">
                       Cursus is the leading global marketplace for teaching and
                       learning, connecting millions of students to the skills
@@ -258,14 +258,12 @@ const About = () => {
             <div className="about-team-content">
               <div className="about-team-wrapper">
                 <div className="about-heading-6-wrapper">
-                  <h2 className="about-heading-6">Meet Our Team</h2>
+                  <h3 className="about-heading-6">Meet Our Team</h3>
                 </div>
                 <div className="about-meet-parent">
                   <div className="about-meet-container">
-                    <p className="about-meet-content">
-                      A perfect blend of creativity and technical wizardry. The
-                      best people formula for great websites!
-                    </p>
+                    A perfect blend of creativity and technical wizardry. The
+                    best people formula for great websites!
                   </div>
                   <div className="about-line-wrappers"></div>
                 </div>

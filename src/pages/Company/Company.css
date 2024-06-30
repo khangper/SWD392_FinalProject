@@ -1,0 +1,439 @@
+/*Expanding learning opportunities*/
+
+.company-about,
+.company-blog,
+.company-careers,
+.company-company,
+.company-press {
+  position: relative;
+  line-height: 20px;
+  font-weight: 550;
+  color: #424242;
+  display: inline-block;
+}
+
+.company-about {
+  min-width: 38px;
+}
+.company-blog {
+  min-width: 29px;
+}
+.company-company {
+  min-width: 60px;
+}
+.company-careers {
+  min-width: 49px;
+}
+.company-press {
+  min-width: 36px;
+}
+
+.company-navigation-links-1,
+.company-navigation-links-2,
+.company-navigation-links-3,
+.company-navigation-links-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.company-navigation-links {
+  padding: 6px 0 0;
+  margin-right: 18px;
+}
+
+.company-navigation-links-4 {
+  padding: 6px 0 0;
+}
+
+.company-navigation-links-1,
+.company-navigation-links-3 {
+  padding: 6px 20px 0 0;
+}
+
+.company-navigation-links-2 {
+  border-bottom: 2px solid #ed2a26;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: -20px;
+  padding: 6px 20px 7px 21px;
+}
+
+.company-navigation-links-parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 14px;
+  max-width: 100%;
+  font-size: 14px;
+}
+
+.company-heading-2 {
+  margin: 0;
+  position: relative;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.company-learning-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 44px 0 47px;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
+  font-size: 24px;
+}
+
+.company-background {
+  align-self: stretch;
+  background-image: url("../../assets/background_about.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px 20px 55px;
+  box-sizing: border-box;
+  position: relative;
+  gap: 65px;
+  min-height: 216px;
+  max-width: 100%;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+/*Our Story*/
+.company-heading-23 {
+  margin: 0;
+  position: relative;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 102.2px;
+}
+
+.company-line-story {
+  border-bottom: 2px solid #ed2a26;
+  width: 50px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.company-heading-2-our-story {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.company-our-story-content {
+  margin: 0;
+}
+
+.company-our-story-container {
+  position: relative;
+  font-size: 14px;
+  line-height: 26px;
+  color: #686f7a;
+}
+
+.company-story-content,
+.company-story-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.company-story-wrapper {
+  gap: 33px;
+}
+
+.company-story-content {
+  padding: 0 0 46px;
+  box-sizing: border-box;
+  min-width: 573.9px;
+  min-height: 313px;
+  max-width: 100%;
+  width: 600px;
+}
+
+.company-story-img {
+  width: 435px;
+  position: relative;
+  max-height: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.company-our-story {
+  align-self: stretch;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* padding: 62px 450px 62px 370px; */
+  padding-top: 62px;
+  padding-bottom: 62px;
+  box-sizing: border-box;
+  gap: 70px;
+  max-width: 100%;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: 24px;
+  color: #333;
+}
+
+/*Office Location*/
+.company-line-wrapper {
+  border-bottom: 2px solid #ed2a26;
+  width: 50px;
+  padding-top: 20px;
+}
+
+.company-heading-3 {
+  margin: 0;
+  font-size: 22px;
+  position: relative;
+  line-height: 26px;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
+  min-width: 122px;
+  color: #333;
+}
+
+.company-location-details-one {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.company-cursus-branches-around {
+  position: relative;
+  line-height: 26px;
+}
+
+.company-location-elements-one,
+.company-office-one-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.company-office-one-description {
+  align-self: stretch;
+  font-style: 16px;
+  color: #686f7a;
+}
+
+.company-location-elements-one {
+  gap: 17px;
+}
+
+.company-office-location-one {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px 0 21px;
+}
+
+.company-image-company {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 3px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.company-gradient,
+.company-link-2 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+}
+
+.company-gradient {
+  /* background: linear-gradient(180deg, transparent, rgba(51, 51, 51, 0.3) 90%); */
+  z-index: 1;
+}
+
+.company-link-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.company-country {
+  position: relative;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 550;
+  color: #333;
+  display: inline-block;
+  min-width: 94px;
+}
+
+.company-address {
+  margin: 0;
+}
+.company-address-container {
+  position: relative;
+  line-height: 26px;
+}
+
+.company-icon-phone {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  flex-shrink: 0;
+  color: #686f7a;
+}
+
+.company-office-two-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 5px;
+}
+
+.company-office-two-address {
+  position: relative;
+  line-height: 26px;
+  display: inline-block;
+  min-width: 96.4px;
+  flex-shrink: 0;
+}
+
+.company-location-details-two {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.company-location-elements-two {
+  flex-direction: row;
+  padding: 0 2px;
+  font-family: inherit;
+}
+
+.company-background-border,
+.company-location-elements-two,
+.company-office-city-one,
+.company-office-full-address-one {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.company-office-full-address-one {
+  flex-direction: column;
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.company-background-border,
+.company-office-city-one {
+  box-sizing: border-box;
+}
+
+.company-office-city-one {
+  flex-direction: row;
+  max-width: 100%;
+}
+
+.company-background-border {
+  height: 386.8px;
+  flex: 1;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #efefef;
+  flex-direction: column;
+  padding: 11px 10px 21.5px 14px;
+  max-width: calc(100% - 800px);
+  text-align: left;
+  font-size: 14px;
+  color: #686f7a;
+  font-family: inherit;
+}
+
+.company-office-link-one,
+.company-office-location-one-parent{
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+.company-office-link-one{
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 50px 340px;
+    box-sizing: border-box;
+    gap: 21px;
+    text-align: left;
+    font-size: 14px;
+    color: #686f7a;
+
+}
+
+.company-office-location-one-parent{
+    align-self: stretch;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #333;
+    font-family: inherit;
+    height: 650px;
+    background-color: #f7f7f7;
+}
+
+@media screen and (max-width: 1630px) {
+  .company-our-story {
+    /* padding-left: 220px; */
+    padding-right: 0;
+  }
+
+  .company-office-link-one{
+    padding-left: 200px;
+    padding-right: 200px ;
+  }
+}
