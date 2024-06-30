@@ -28,6 +28,7 @@ import SaveCourses from '../pages/SaveCourses/SaveCourses'
 import Explore from '../pages/Explore/Explore'
 import Setting from '../pages/Setting/Setting'
 import ContactUs from '../pages/ContactUs/ContactUs';
+import TermsOfUse from '../pages/TermsOfUse/TermsOfUse';
 const Router = () => {
   const [sidebar, setSidebar] = useState(true);
   return (
@@ -48,6 +49,7 @@ const Router = () => {
         <Route path="about-us" element={<About />} />
         <Route path="our-blog" element={<Blog />} />
         <Route path="contactus" element={<ContactUs />} />
+        <Route path="termsofuse" element={<TermsOfUse />} />
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}

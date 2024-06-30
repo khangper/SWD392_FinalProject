@@ -161,7 +161,10 @@ const Sidebar = ({ sidebar }) => {
           <div>Developers</div>
           <div>Copyright</div>
           <div>Privacy Policy</div>
-          <div>Terms</div>
+          <Link to='termsofuse'>
+            <div>Terms</div>
+          </Link>
+
         </div>
         <div className="sidebar-footer-copyright">
           © 2024 <span className="sidebar-footer-brand">Cursus</span>. All Rights Reserved.
