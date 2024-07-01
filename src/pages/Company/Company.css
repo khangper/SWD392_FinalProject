@@ -170,7 +170,6 @@
   padding: 0 0 46px;
   box-sizing: border-box;
   min-width: 573.9px;
-  min-height: 313px;
   max-width: 100%;
   width: 600px;
 }
@@ -192,7 +191,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* padding: 62px 450px 62px 370px; */
   padding-top: 62px;
   padding-bottom: 62px;
   box-sizing: border-box;
@@ -263,8 +261,8 @@
 }
 
 .company-image-company {
-  height: 100%;
-  width: 100%;
+  height: 200px;
+  width: 340px;
   position: absolute;
   margin: 0 !important;
   top: 0;
@@ -280,7 +278,6 @@
 .company-gradient,
 .company-link-2 {
   align-self: stretch;
-  flex: 1;
   position: relative;
   max-width: 100%;
 }
@@ -288,6 +285,8 @@
 .company-gradient {
   /* background: linear-gradient(180deg, transparent, rgba(51, 51, 51, 0.3) 90%); */
   z-index: 1;
+  width: 340px;
+  height: 200px;
 }
 
 .company-link-2 {
@@ -323,6 +322,10 @@
   color: #686f7a;
 }
 
+.company-icon-phone:hover{
+    color: #333;
+}
+
 .company-office-two-title {
   display: flex;
   flex-direction: column;
@@ -347,6 +350,11 @@
   gap: 10px;
 }
 
+.company-location-details-two:hover{
+    color: #333;
+    cursor: pointer;
+}
+
 .company-location-elements-two {
   flex-direction: row;
   padding: 0 2px;
@@ -366,6 +374,7 @@
   flex-direction: column;
   gap: 15px;
   padding-top: 20px;
+  width: 100%;
 }
 
 .company-background-border,
@@ -396,7 +405,7 @@
 .company-office-link-one,
 .company-office-location-one-parent{
     display: flex;
-    justify-content: flex-start;
+    
     max-width: 100%;
 }
 
@@ -404,13 +413,13 @@
     align-self: stretch;
     flex-direction: row;
     align-items: flex-start;
-    padding: 50px 340px;
+    padding: 0 340px;
     box-sizing: border-box;
     gap: 21px;
     text-align: left;
     font-size: 14px;
     color: #686f7a;
-
+    justify-content: space-between;
 }
 
 .company-office-location-one-parent{
@@ -424,16 +433,70 @@
     font-family: inherit;
     height: 650px;
     background-color: #f7f7f7;
+    justify-content: flex-start;
+    gap: 41px
 }
 
 @media screen and (max-width: 1630px) {
-  .company-our-story {
-    /* padding-left: 220px; */
-    padding-right: 0;
-  }
 
   .company-office-link-one{
     padding-left: 200px;
     padding-right: 200px ;
   }
+
+  .company-our-story{
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (max-width: 1350px){
+    .company-background-border{
+        max-width: 100%;
+        display: none;
+    }
+
+    .company-story-content{
+        padding: 0;
+    }
+
+    .company-our-story{
+        gap: 42px;
+        padding: 0 185px 40px;
+        box-sizing: border-box;
+    }
+
+}
+
+@media screen and (max-width: 900px){
+    .company-office-location-one-parent{
+        gap: 20px;
+    }
+
+    .company-story-content{
+        gap: 16px;
+    }
+
+    .company-our-story{
+        gap: 21px;
+        padding: 0 92px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .company-heading-3{
+        font-size: 19px;
+        line-height: 21px;
+    }
+
+    .company-heading-23{
+        font-size: 19px;
+        line-height: 21px;
+    }
+
+    .company-our-story{
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
 }

@@ -52,7 +52,7 @@ const Company = () => {
             <div className="company-story-content">
               <div className="company-story-wrapper">
                 <div className="company-heading-2-our-story">
-                  <h2 className="company-heading-23">Our Story</h2>
+                  <h2 className="company-heading-23">Our Origins</h2>
                   <div className="company-line-story"></div>
                 </div>
                 <div className="company-our-story-container">
@@ -123,16 +123,16 @@ const Company = () => {
 
                 <div className="company-background-border">
                   <div className="company-link-2">
-                    <img src={India} alt="" className="company-image-company" />
+                    <img src={Cali} alt="" className="company-image-company" />
                     <div className="company-gradient" />
                   </div>
                   <div className="company-office-city-one">
                     <div className="company-office-full-address-one">
-                      <div className="company-country">Punjab, India</div>
+                      <div className="company-country">San Francisco, CA</div>
                       <div className="company-address-container">
                         <p className="company-address">
-                          #1235 Sks Nagar St No. 8 Phase 3, Pakhowal Road,
-                          141001, LDH, Punjab, India
+                          586 Lorem st. 5 floor, San Francisco
+                          San Francisco, CA 94107
                         </p>
                       </div>
                       <div className="company-location-elements-two">
@@ -141,7 +141,7 @@ const Company = () => {
                             <FiPhone className="company-icon-phone" />
                           </div>
                           <div className="company-office-two-address">
-                            0161-1234567
+                            +1 415-1234567
                           </div>
                         </div>
                       </div>
@@ -151,16 +151,16 @@ const Company = () => {
 
                 <div className="company-background-border">
                   <div className="company-link-2">
-                    <img src={India} alt="" className="company-image-company" />
+                    <img src={Brazil} alt="" className="company-image-company" />
                     <div className="company-gradient" />
                   </div>
                   <div className="company-office-city-one">
                     <div className="company-office-full-address-one">
-                      <div className="company-country">Punjab, India</div>
+                      <div className="company-country">São Paulo, Brazil</div>
                       <div className="company-address-container">
                         <p className="company-address">
-                          #1235 Sks Nagar St No. 8 Phase 3, Pakhowal Road,
-                          141001, LDH, Punjab, India
+                          Lorem ipsum 589,
+                          Vila Madalena, São Paulo - SP 01443-010
                         </p>
                       </div>
                       <div className="company-location-elements-two">
@@ -169,13 +169,15 @@ const Company = () => {
                             <FiPhone className="company-icon-phone" />
                           </div>
                           <div className="company-office-two-address">
-                            0161-1234567
+                            +55-11-1234567
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                
               </div>
             </div>
           </div>
