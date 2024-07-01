@@ -7,6 +7,7 @@ import mail_icon from "..//../assets/mail-icon.png";
 import notification_icon from "..//../assets/notification-icon.png";
 import profile_image from "..//../assets/profile-img.jpg";
 import moon_image from "..//../assets/moon.png";
+import { Link } from "react-router-dom";
 const Navbar = ({ setSidebar }) => {
   const sampleMessages = [
     {
@@ -135,10 +136,13 @@ const Navbar = ({ setSidebar }) => {
       </div>
       <div className="nav-right flex-div">
         <button className="course-button">Create new course</button>
+        <Link to ="shoppingcart">
         <div className="icon">
           <img src={card_icon} alt="" className="cart-icon" />
           <span className="badge">2</span>
         </div>
+        </Link>
+
         <div className="icon" ref={mailDropdownRef}>
           <img
             src={mail_icon}
