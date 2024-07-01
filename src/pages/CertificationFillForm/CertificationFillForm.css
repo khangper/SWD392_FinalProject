@@ -1,0 +1,259 @@
+.CertificationFillForm_Main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+}
+
+.CertificationFillForm_Title {
+    width: 100%;
+    padding: 20px 0 0;
+    background: #fff;
+    /* margin-bottom: 17px; */
+    padding: 0 370px 0 370px;
+    margin-top: 20px;
+}
+
+.CertificationFillForm_Title_Container {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.CertificationFillForm_Small_Title {
+    width: 100%;
+    float: left;
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.CertificationFillForm_Small_Title_Left {
+    display: flex;
+}
+
+.CertificationFillForm_Small_Title_Left a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
+.CertificationFillForm_Small_Title_Left p {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(33 37 41 / 75%);
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
+.CertificationFillForm_Small_Title_Right {
+    position: absolute;
+    left: 70%;
+}
+
+.CertificationFillForm_Small_Title_Right a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
+.CertificationFillForm_Big_Title {
+    width: 100%;
+}
+
+.CertificationFillForm_Big_Title h2 {
+    font-size: 24px;
+    font-weight: 550;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: left;
+    line-height: 30px;
+}
+
+.CertificationFillForm_Body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #efefef;
+    padding: 0 370px 150px 370px;
+    justify-content: center !important;
+}
+
+.CertificationFillForm_Container {
+    flex: 0 0 auto;
+    width: 80%;
+}
+
+.CertificationFillForm_Form {
+    float: left;
+    width: 100%;
+    margin: 50px 30px 65px;
+}
+
+.CertificationFillForm_Sign_Form {
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    padding: 50px 50px 30px;
+    box-shadow: -0.083333333in 0.5pc 1.125pc -7px rgba(25, 42, 70, .13);
+    flex: 1;
+    float: left;
+    width: 100%;
+    margin-top: 0;
+    text-align: center;
+}
+
+.CertificationFillForm_Sign_Form h2 {
+    font-size: 22px;
+    margin-bottom: 17px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+form {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.SFI40 {
+    margin-top: 40px;
+}
+
+.CertificationFillForm_Sign_Form_Input {
+    font-size: 14px !important;
+    width: 100%;
+    position: relative;
+    font-weight: 400;
+    display: inline-flex;
+    color: rgba(0, 0, 0, .87);
+}
+
+.CertificationFillForm_srch_explore {
+    padding-left: 1em !important;
+    padding-right: 24em !important;
+    height: 40px !important;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 3px !important;
+    background: #fff !important;
+    border: 1px solid #e5e5e5 !important;
+    color: #333 !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
+}
+
+.SFI15 {
+    margin-top: 15px;
+}
+
+.CertificationFillForm_Category_Cop {
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+
+.CertificationFillForm_Category_Cop h4 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-top: 35px !important;
+    text-align: left;
+    line-height: 26px;
+    margin-bottom: 0;
+}
+
+.CertificationFillForm_testtrm145 {
+    padding: 20px 0 10px;
+    margin-bottom: 0 !important;
+    float: left;
+    width: 100%;
+    text-align: left !important;
+}
+
+.CertificationFillForm_Sign_Form p {
+    font-size: 14px;
+    margin-bottom: 47px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #686f7a;
+    text-align: center;
+    line-height: 26px;
+}
+
+.CertificationFillForm_testtrm145 a {
+    color: #ed2a26;
+}
+
+.CertificationFillForm_login_btn {
+    font-size: 14px;
+    margin-top: 30px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: #ed2a26;
+    border-radius: 3px;
+    text-align: center;
+    border: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.CertificationFillForm_questrm145 {
+    padding: 33px 0 5px;
+    margin-bottom: 0 !important;
+}
+
+.CertificationFillForm_questrm145 span {
+    color: #ed2a26;
+    margin: 0 2px;
+}
+
+
+.CertificationFillForm_Category_Cop_Items {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.CertificationFillForm_Category_Cop_Items>div {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    cursor: pointer;
+    padding: 5px 10px;
+    border-bottom: 1px solid #efefef;
+    border-radius: 4px;
+    /* background-color: #f0f0f0; */
+}
+
+
+
+.CertificationFillForm_Category_Cop_Items>div>span {
+    font-weight: bold;
+}
+
+.Category_Cop_Items_Labels {
+    display: none;
+    flex-direction: column;
+    /* Hiển thị các label theo chiều dọc */
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.CertificationFillForm_Category_Cop_Items>div.active>div {
+    display: block;
+}
+
+.CertificationFillForm_Category_Cop_Items label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.CertificationFillForm_Category_Cop_Items input[type="radio"] {
+    margin-right: 5px;
+}

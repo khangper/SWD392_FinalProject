@@ -29,6 +29,7 @@ import Explore from '../pages/Explore/Explore'
 import Setting from '../pages/Setting/Setting'
 import ContactUs from '../pages/ContactUs/ContactUs';
 import TermsOfUse from '../pages/TermsOfUse/TermsOfUse';
+import CertificationFillForm from '../pages/CertificationFillForm/CertificationFillForm';
 const Router = () => {
   const [sidebar, setSidebar] = useState(true);
   return (
@@ -50,6 +51,7 @@ const Router = () => {
         <Route path="our-blog" element={<Blog />} />
         <Route path="contactus" element={<ContactUs />} />
         <Route path="termsofuse" element={<TermsOfUse />} />
+        <Route path="certificationfillform" element={<CertificationFillForm />} />
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
