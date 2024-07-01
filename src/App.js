@@ -11,7 +11,7 @@ import AddLiveStream from "./pages/AddLiveStream/AddLiveStream";
 import AllLiveStream from "./pages/AllLiveStream/AllLiveStream";
 import SignUp from "./pages/Landing/SignUp1/SignUp";
 import StepSignUp from "./pages/Landing/StepSignUp/StepSignUp";
-import { Thanks } from "./pages/Thanks/Thanks";
+
 import Error404 from "./pages/Error1/Error404";
 import About from "./pages/About/About";
 import Blog from "./pages/Blog/Blog";
@@ -20,16 +20,20 @@ import Help1 from "./pages/Help/Help1";
 import PaidMembership from "./pages/PaidMembership/PaidMembership";
 import ReportHistory from "./pages/ReportHistory/ReportHistory";
 import SendFeedback from "./pages/SendFeedback/SendFeedback";
-import { OtherInstructorView } from "./pages/OtherInstructorView/OtherInstructorView";
-import { MyInstructorProfile } from "./pages/MyInstructorProfile/MyInstructorProfile";
-import { SaveCourses } from "./pages/SaveCourses/SaveCourses";
+
 import CoursesDetailView from "./pages/CoursesDetailView/CoursesDetailView";
 
 import CommingSoon from "./pages/CommingSoon/CommingSoon";
+import Thanks from "./pages/Thanks/Thanks";
+import OtherInstructorView from "./pages/OtherInstructorView/OtherInstructorView";
+import MyInstructorProfile from "./pages/MyInstructorProfile/MyInstructorProfile";
+import SaveCourses from "./pages/SaveCourses/SaveCourses";
+import CertificationTest from "./pages/CertificationTest/CertificationTest";
 
 
 
 function App() {
+  const [sidebar, setSidebar] = useState(true);
   return (
     <div>
       <Routes>
@@ -44,7 +48,7 @@ function App() {
         <Route path="about-us" element={<About />} />
         <Route path="our-blog" element={<Blog />} />
         <Route path="/comming-soon" element={<CommingSoon />} />
-
+        <Route path='/certificates-test' element={<CertificationTest />} />
 
         <Route
           path="/"

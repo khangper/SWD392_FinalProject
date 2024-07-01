@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './CoursesDetailView.css'
+import './Accordion.css'
 import ratingStar from "../../assets/rating.png"
 import send_feedback from '..//../assets/send-feedback.png';
 import share from "../../assets/share.png";

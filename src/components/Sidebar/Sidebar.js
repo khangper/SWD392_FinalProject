@@ -29,10 +29,10 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-      
+
       <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <p className={`${sidebar ? "" : "small"}`}>Home</p>   
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>
       </Link>
       <Link to="all_livestream" className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
@@ -136,7 +136,7 @@ const Sidebar = ({ sidebar }) => {
 
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </Link>
-      <Link to= 'reporthistory' className="side-link">
+      <Link to='reporthistory' className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
       </Link>
@@ -144,14 +144,14 @@ const Sidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
       </Link>
-      <hr/>
+      <hr />
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
           <Link to='about-us'>
-          <div>About</div>
+            <div>About</div>
           </Link>
           <Link to='press'>
-          <div>Press</div>
+            <div>Press</div>
           </Link>
           <div>Contact Us</div>
           <div>Advertise</div>
