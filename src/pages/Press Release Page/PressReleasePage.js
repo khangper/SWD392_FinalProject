@@ -28,11 +28,13 @@ const PressReleasePage = () => {
                                     </div>
                                     <div className='Profile_Content'>
                                         <h6>Joginder Singh</h6>
+                                        <i class="uil uil-check-circle">
                                         <i className="uil uil-check-circle">
                                         </i>
                                         <span>gambol943@gmail.com</span>
                                     </div>
                                 </div>
+                                <a href="my_instructor_profile_view.html" class="dp_link_12">View Instructor Profile</a>
                                 <a href="my_instructor_profile_view.html" className="dp_link_12">View Instructor Profile</a>
                             </div>
                         </div> */}

@@ -31,8 +31,17 @@ import BlogDetail from '../pages/BlogDetail/BlogDetail';
 import Company from '../pages/Company/Company';
 import Career from '../pages/Career/Career';
 import ApplyJob from '../pages/ApplyJob/ApplyJob';
+import ContactUs from '../pages/ContactUs/ContactUs';
+import TermsOfUse from '../pages/TermsOfUse/TermsOfUse';
+import CertificationFillForm from '../pages/CertificationFillForm/CertificationFillForm';
+import Checkout from '../pages/Checkout/Checkout';
+import ShoppingCart from '../pages/ShopingCart/ShoppingCart';
+import HelpView1 from '../pages/HelpView1/HelpView1';
+import HelpView2 from '../pages/HelpView2/HelpView2';
+import MyCourse from '../pages/MyCourse/MyCourse';
+
 const Router = () => {
-    const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(true);
   return (
     <div>
       <Routes>
@@ -46,6 +55,13 @@ const Router = () => {
         <Route path="invoice" element={<Invoice />} />
         <Route path="press" element={<PressReleasePage />} />
         <Route path="search_result" element={<SearchResult />} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="shoppingcart" element={<ShoppingCart />} />
+        <Route path="/helpview1" element={<HelpView1 />} />
+        <Route path="/helpview2" element={<HelpView2 />} />
+
+
+
 
         <Route path="paidmembership" element={<PaidMembership />} />
         <Route path="about-us" element={<About />} />
@@ -54,12 +70,15 @@ const Router = () => {
         <Route path="company-details" element={<Company />} />
         <Route path="career" element={<Career />} />
         <Route path="apply-job" element={<ApplyJob />} />
+        <Route path="contactus" element={<ContactUs />} />
+        <Route path="termsofuse" element={<TermsOfUse />} />
+        <Route path="certificationfillform" element={<CertificationFillForm />} />
         <Route
           path="/"
           element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}
         >
           <Route path="home" element={<Home />} />
-          <Route path='explore' element={<Explore/>}/>
+          <Route path='explore' element={<Explore />} />
           <Route path="live_output" element={<LiveOutput />} />
           <Route path="add_livestream" element={<AddLiveStream />} />
           <Route path="all_livestream" element={<AllLiveStream />} />
@@ -71,6 +90,10 @@ const Router = () => {
           <Route path='/my-instructor-profile' element={<MyInstructorProfile />} />
           <Route path="save-courses" element={<SaveCourses />} />
           <Route path="setting" element={<Setting />} />
+          <Route path="mycourse" element={<MyCourse />} />
+
+
+
         </Route>
       </Routes>
     </div>

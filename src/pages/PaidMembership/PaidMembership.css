@@ -1,7 +1,7 @@
-._215b15 {
+.Paidmembership_215b15 {
     display: grid;
     grid-template-columns: 1fr; /* Sử dụng CSS Grid thay vì Bootstrap col */
-    width: 58%;
+    width: 50%;
     padding: 20px 0 0;
     background: #fff;
     margin-bottom: 17px;
@@ -47,7 +47,7 @@
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
-    text-align: center; /* Căn giữa tiêu đề */
+    text-align: left; /* Căn giữa tiêu đề */
     line-height: 30px;
     position: sticky;
     top: 0; /* Đặt vị trí dính (sticky) từ đầu trang */
