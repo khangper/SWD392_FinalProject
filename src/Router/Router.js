@@ -9,17 +9,17 @@ const Router = () => {
   return (
     <div>
     <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        {routes.publicRoutes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-        ))}
+      <Route path="/" element={<Navigate to="/login" />} />
+      {routes.publicRoutes.map((route, index) => (
+        <Route key={index} path={route.path} element={route.element} />
+      ))}
+      <Route element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}>
         {routes.privateRoutes.map((route, index) => (
-            <Route key={index} element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}>
-                <Route path={route.path} element={route.element} />
-            </Route>
+          <Route key={index} path={route.path} element={route.element} />
         ))}
+      </Route>
     </Routes>
-</div>
+  </div>
   )
 }
 
