@@ -58,22 +58,6 @@ function ShoppingCart() {
               <div className="Shopping-Container">
         <div className="Billing-Details-GridContainer">
 
-                         {/* <div className="Shopping-fcrse_1">
-							<a href="course_detail_view.html" className="Shopping-hf_img">
-								<img className="cart_img" src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg" alt=""/>
-							</a>
-							<div className="Shopping-hs_content">
-								<div className="eps_dots eps_dots10 more_dropdown">
-									<a href="#"><img src={Closeshopping} className="shopping-close" /></a>																										
-								</div>
-								<a href="course_detail_view.html" className="Shopping-crse14s ">The Web Developer Bootcamp</a>
-								<a href="#" className="Shopping-crse-cate">Web Development | Python</a>
-								<div className="Shopping-auth1lnkprce">
-									<p className="Shopping-cr1fot">By <a href="#">John Doe</a></p>
-									<div className="Shopping-prce142">$10</div>
-								</div>
-							</div>
-						</div>  */}
 
 
 <div className="Shopping-fcrse-container">
