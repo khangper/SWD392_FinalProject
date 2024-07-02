@@ -2,11 +2,21 @@
     display: grid;
     grid-template-columns: 8fr 4fr;
     gap: 16px;
-
+    margin-top: 90px;
     height: calc(100% - 40px);
     margin: auto;
     padding: 0px 290px;
     box-sizing: border-box;
+}
+
+.Checkoutfix-grid-container {
+    margin-bottom: -97px;
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0px 308px;
+    gap: 20px;
+    margin-bottom: 8px;
 }
 
 .Checkout_215b15 {
