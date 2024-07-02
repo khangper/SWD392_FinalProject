@@ -1,12 +1,4 @@
-.blog-detail-background-parent {
-  align-self: stretch;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  max-width: 100%;
-}
+
 
 .blog-detail-icon {
   width: 10px;
