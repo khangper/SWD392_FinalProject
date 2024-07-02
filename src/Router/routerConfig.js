@@ -35,6 +35,8 @@ import ContactUs from '../pages/ContactUs/ContactUs';
 import TermsOfUse from '../pages/TermsOfUse/TermsOfUse';
 import CertificationFillForm from '../pages/CertificationFillForm/CertificationFillForm';
 import MyCourse from '../pages/MyCourse/MyCourse';
+import CertificationTest from '../pages/CertificationTest/CertificationTest';
+import CommingSoon from '../pages/CommingSoon/CommingSoon';
 
 const publicRoutes = [
   { path: "/login", element: <Login /> },
@@ -60,6 +62,8 @@ const publicRoutes = [
   { path: "/contactus", element: <ContactUs /> },
   { path: "/termofuse", element: <TermsOfUse /> },
   { path: "/certificationfillform", element: <CertificationFillForm /> },
+  { path: "/certificates-test", element: <CertificationTest /> },
+  { path: "/comming-soon", element: <CommingSoon /> },
 ];
 
 const privateRoutes = [
