@@ -1,7 +1,6 @@
 import React from 'react'
 import './Thanks.css'
 import { Link } from 'react-router-dom'
-
 const Thanks = () => {
     return (
         <div className="wrapper coming_soon_wrapper">

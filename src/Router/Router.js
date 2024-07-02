@@ -3,8 +3,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Layout from '../components/Layout/Layout'
 import routes from './routerConfig';
+
 const Router = () => {
-    const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(true);
   return (
     <div>
     <Routes>

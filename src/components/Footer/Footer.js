@@ -26,7 +26,7 @@ const Footer = ({ sidebar }) => {
           <a href="#">Copyright Policy</a>
           <a href="#">Terms</a>
           <a href="#">Privacy Policy</a>
-          <a href="#">Sitemap</a>
+          <a href="sitmap">Sitemap</a>
         </div>
         <div className="footer-column">
           <button className="teach-button">Teach on Cursus</button>

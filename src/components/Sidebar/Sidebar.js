@@ -29,10 +29,10 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-      
+
       <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
-        <p className={`${sidebar ? "" : "small"}`}>Home</p>   
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>
       </Link>
       <Link to="all_livestream" className="side-link">
         <img className="sidebar-icon" src={livestream} alt="Live Streams Icon" />
@@ -70,7 +70,7 @@ const Sidebar = ({ sidebar }) => {
       {tests && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
           <a href="#">Certification Center</a>
-          <a href="#">Certification Fill Form</a>
+          <a href="certificationfillform">Certification Fill Form</a>
           <a href="#">Test View</a>
           <a href="#">Test Result</a>
           <a href="#">My Certification</a>
@@ -93,7 +93,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="SignUp">Sign Up Steps</a>
           <a href="paidmembership">Paid Membership</a>
           <a href="#">Course Detail View</a>
-          <a href="#">Checkout</a>
+          <a href="checkout">Checkout</a>
           <Link to="/invoice">Invoice</Link>
           <a href="career">Career</a>
           <a href="#">Job Apply</a>
@@ -103,6 +103,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="search_result">Search Result</a>
           <a href="Thanks">Thank you</a>
           <a href="#">Coming Soon</a>
+          <a href="mycourse">My Course</a>
           <a href="error404">Error  404</a>
         </div>
       )}
@@ -136,7 +137,7 @@ const Sidebar = ({ sidebar }) => {
 
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </Link>
-      <Link to= 'reporthistory' className="side-link">
+      <Link to='reporthistory' className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
       </Link>
@@ -144,21 +145,27 @@ const Sidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={send_feedback} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
       </Link>
-      <hr/>
+      <hr />
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
           <Link to='about-us'>
-          <div>About</div>
+            <div>About</div>
           </Link>
           <Link to='press'>
-          <div>Press</div>
+            <div>Press</div>
           </Link>
-          <div>Contact Us</div>
+          <Link to='contactus'>
+            <div>Contact Us</div>
+          </Link>
+
           <div>Advertise</div>
           <div>Developers</div>
           <div>Copyright</div>
           <div>Privacy Policy</div>
-          <div>Terms</div>
+          <Link to='termsofuse'>
+            <div>Terms</div>
+          </Link>
+
         </div>
         <div className="sidebar-footer-copyright">
           © 2024 <span className="sidebar-footer-brand">Cursus</span>. All Rights Reserved.

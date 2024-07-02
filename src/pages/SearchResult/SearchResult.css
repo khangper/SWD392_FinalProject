@@ -83,12 +83,23 @@
     display: flex;
     padding: 0px 0 15px;
     border-bottom: 1px solid #e5e5e5;
+
     margin-bottom: 0;
     float: left;
     width: 100%;
+    flex-direction: column;
 }
 
+.SR_Filter_Sort_Container {
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    display: flex;
+}
 
+.icon_tbl {
+    position: absolute;
+    left: 38%;
+}
 
 .SR_Sort {
     display: flex;
@@ -139,10 +150,11 @@
 .SR_Right_Col {
     flex: 0 0 auto;
     width: 75%;
+    width: 70%;
     padding-left: 60px;
 }
 
-.fcrse_1 {
+.SR_fcrse_1 {
     background: #fff;
     width: 100%;
     float: left;
@@ -274,6 +286,7 @@
 .SR_Course_Title {
     display: block;
     font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -373,4 +386,78 @@
     display: inline-block;
     /* -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both; */
+}
+
+.SR_Tbl_Content_Topic h4 {
+    display: inline-block;
+    /* Để các phần tử nằm trên cùng 1 hàng */
+    margin-right: 10px;
+    /* Khoảng cách giữa hai phần tử */
+}
+
+.SR_Tbl_Content_Topic h4:last-child {
+    margin-right: 0;
+    /* Loại bỏ khoảng cách bên phải của phần tử cuối cùng */
+}
+
+.SR_Tbl_Content_Topic h4:hover {
+    cursor: pointer;
+    /* Đổi con trỏ chuột khi di chuột qua */
+}
+
+.SR_Tbl_Content_Topic_Menu {
+    display: none;
+    /* Mặc định ẩn đi */
+    position: absolute;
+    /* Để menu hiển thị đúng vị trí */
+    background-color: white;
+    /* Nền trắng cho menu */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    /* Đổ bóng cho menu */
+    z-index: 1;
+    /* Độ cao lớp hiển thị của menu */
+}
+
+.SR_Tbl_Content_Topic:hover .SR_Tbl_Content_Topic_Menu {
+    display: block;
+    /* Hiển thị menu khi di chuột vào */
+}
+
+.Topic_item {
+    padding: 12px 16px;
+    /* Đệm nội dung của mỗi mục */
+    text-decoration: none;
+    /* Bỏ gạch chân cho các mục */
+    display: block;
+    /* Để mỗi mục nằm trên một hàng */
+}
+
+.Topic_item:hover {
+    background-color: #f1f1f1;
+    /* Nền xám nhạt khi di chuột qua mục */
+    cursor: pointer;
+    /* Đổi con trỏ chuột khi di chuột qua */
+}
+
+.Sort_Tbl {
+    margin-top: 40px;
+}
+
+.explore-container .load-more {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.load-more .spinner {
+    margin: 0 auto 0;
+    width: 50px;
+    text-align: center;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #fff;
+    line-height: 20px;
+    border: 1px solid #efefef;
+    cursor: pointer;
 }
