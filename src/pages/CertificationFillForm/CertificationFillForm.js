@@ -5,13 +5,12 @@ import Footer from '../../components/Footer/Footer';
 
 const CertificationFillForm = () => {
 
-    const [isVisible, setIsVisible] = useState(false);
+    const [visibleSection, setVisibleSection] = useState(null);
     const [selectedOption, setSelectedOption] = useState("");
-    const optionsRef = useRef(null);
+    const optionsRef = useRef([]);
 
-    const toggleOptions = (e) => {
-        e.stopPropagation();
-        setIsVisible(!isVisible);
+    const toggleOptions = (section) => {
+        setVisibleSection(prevSection => (prevSection === section ? null : section));
     };
 
     const handleOptionChange = (event) => {
@@ -19,8 +18,8 @@ const CertificationFillForm = () => {
     };
 
     const handleClickOutside = (event) => {
-        if (optionsRef.current && !optionsRef.current.contains(event.target)) {
-            setIsVisible(false);
+        if (!optionsRef.current.some(ref => ref && ref.contains(event.target))) {
+            setVisibleSection(null);
         }
     };
 
@@ -30,6 +29,7 @@ const CertificationFillForm = () => {
             document.removeEventListener('click', handleClickOutside);
         };
     }, []);
+
 
     return (
         <>
@@ -74,12 +74,12 @@ const CertificationFillForm = () => {
 
                                 <div className='CertificationFillForm_Category_Cop'>
                                     <h4>Select Category</h4>
-                                    <div className='CertificationFillForm_Category_Cop_Items' ref={optionsRef}>
-                                        <div onClick={toggleOptions}>
+                                    <div className='CertificationFillForm_Category_Cop_Items' ref={el => optionsRef.current[0] = el}>
+                                        <div onClick={() => toggleOptions('development')}>
                                             <span>Development</span>
-                                            <span >{isVisible ? '-' : '+'}</span>
+                                            <span>{visibleSection === 'development' ? '-' : '+'}</span>
                                         </div>
-                                        {isVisible && (
+                                        {visibleSection === 'development' && (
                                             <div className='Category_Cop_Items_Labels'>
                                                 <label>
                                                     <input
@@ -205,12 +205,12 @@ const CertificationFillForm = () => {
                                         )}
                                     </div>
 
-                                    <div className='CertificationFillForm_Category_Cop_Items' ref={optionsRef}>
-                                        <div onClick={toggleOptions}>
+                                    <div className='CertificationFillForm_Category_Cop_Items' ref={el => optionsRef.current[1] = el}>
+                                        <div onClick={() => toggleOptions('finance')}>
                                             <span>Finance & Accounting</span>
-                                            <span >{isVisible ? '-' : '+'}</span>
+                                            <span>{visibleSection === 'finance' ? '-' : '+'}</span>
                                         </div>
-                                        {isVisible && (
+                                        {visibleSection === 'finance' && (
                                             <div className='Category_Cop_Items_Labels'>
                                                 <label>
                                                     <input
@@ -277,22 +277,21 @@ const CertificationFillForm = () => {
                                                     />
                                                     Cryptocurrency
                                                 </label>
-
                                             </div>
                                         )}
                                     </div>
 
-                                    <div className='CertificationFillForm_Category_Cop_Items' ref={optionsRef}>
-                                        <div onClick={toggleOptions}>
+                                    <div className='CertificationFillForm_Category_Cop_Items' ref={el => optionsRef.current[2] = el}>
+                                        <div onClick={() => toggleOptions('design')}>
                                             <span>Design</span>
-                                            <span >{isVisible ? '-' : '+'}</span>
+                                            <span>{visibleSection === 'design' ? '-' : '+'}</span>
                                         </div>
-                                        {isVisible && (
+                                        {visibleSection === 'design' && (
                                             <div className='Category_Cop_Items_Labels'>
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Adobe Photoshop"
                                                         checked={selectedOption === "Adobe Photoshop"}
                                                         onChange={handleOptionChange}
@@ -303,7 +302,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Adobe Illustrator"
                                                         checked={selectedOption === "Adobe Illustrator"}
                                                         onChange={handleOptionChange}
@@ -314,7 +313,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Adobe After Effects"
                                                         checked={selectedOption === "Adobe After Effects"}
                                                         onChange={handleOptionChange}
@@ -325,7 +324,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Adobe InDesign"
                                                         checked={selectedOption === "Adobe InDesign"}
                                                         onChange={handleOptionChange}
@@ -336,7 +335,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Unity"
                                                         checked={selectedOption === "Unity"}
                                                         onChange={handleOptionChange}
@@ -347,7 +346,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Drawing"
                                                         checked={selectedOption === "Drawing"}
                                                         onChange={handleOptionChange}
@@ -358,7 +357,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Game Development Fundamentals"
                                                         checked={selectedOption === "Game Development Fundamentals"}
                                                         onChange={handleOptionChange}
@@ -369,7 +368,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="3D Modeling"
                                                         checked={selectedOption === "3D Modeling"}
                                                         onChange={handleOptionChange}
@@ -380,7 +379,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="Motion Graphics"
                                                         checked={selectedOption === "Motion Graphics"}
                                                         onChange={handleOptionChange}
@@ -391,7 +390,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="2D Animation"
                                                         checked={selectedOption === "2D Animation"}
                                                         onChange={handleOptionChange}
@@ -402,7 +401,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Design"
+                                                        name="design"
                                                         value="T-Shirt Design"
                                                         checked={selectedOption === "T-Shirt Design"}
                                                         onChange={handleOptionChange}
@@ -413,17 +412,17 @@ const CertificationFillForm = () => {
                                         )}
                                     </div>
 
-                                    <div className='CertificationFillForm_Category_Cop_Items' ref={optionsRef}>
-                                        <div onClick={toggleOptions}>
+                                    <div className='CertificationFillForm_Category_Cop_Items' ref={el => optionsRef.current[3] = el}>
+                                        <div onClick={() => toggleOptions('marketing')}>
                                             <span>Marketing</span>
-                                            <span >{isVisible ? '-' : '+'}</span>
+                                            <span>{visibleSection === 'marketing' ? '-' : '+'}</span>
                                         </div>
-                                        {isVisible && (
+                                        {visibleSection === 'marketing' && (
                                             <div className='Category_Cop_Items_Labels'>
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="Google Ads (Adwords)"
                                                         checked={selectedOption === "Google Ads (Adwords)"}
                                                         onChange={handleOptionChange}
@@ -434,7 +433,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="Google Ads (Adwords) Certification"
                                                         checked={selectedOption === "Google Ads (Adwords) Certification"}
                                                         onChange={handleOptionChange}
@@ -445,7 +444,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="Social Marketing"
                                                         checked={selectedOption === "Social Marketing"}
                                                         onChange={handleOptionChange}
@@ -456,7 +455,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="Email Marketing"
                                                         checked={selectedOption === "Email Marketing"}
                                                         onChange={handleOptionChange}
@@ -467,7 +466,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="Business Strategy"
                                                         checked={selectedOption === "Business Strategy"}
                                                         onChange={handleOptionChange}
@@ -478,7 +477,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="SEO"
                                                         checked={selectedOption === "SEO"}
                                                         onChange={handleOptionChange}
@@ -489,7 +488,7 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="PPC Advertising"
                                                         checked={selectedOption === "PPC Advertising"}
                                                         onChange={handleOptionChange}
@@ -500,24 +499,23 @@ const CertificationFillForm = () => {
                                                 <label>
                                                     <input
                                                         type="radio"
-                                                        name="Marketing"
+                                                        name="marketing"
                                                         value="Blogging"
                                                         checked={selectedOption === "Blogging"}
                                                         onChange={handleOptionChange}
                                                     />
                                                     Blogging
                                                 </label>
-
                                             </div>
                                         )}
                                     </div>
 
-                                    <div className='CertificationFillForm_Category_Cop_Items' ref={optionsRef}>
-                                        <div onClick={toggleOptions}>
+                                    <div className='CertificationFillForm_Category_Cop_Items' ref={el => optionsRef.current[4] = el}>
+                                        <div onClick={() => toggleOptions('teaching_academy')}>
                                             <span>Teaching & Academy</span>
-                                            <span >{isVisible ? '-' : '+'}</span>
+                                            <span>{visibleSection === 'teaching_academy' ? '-' : '+'}</span>
                                         </div>
-                                        {isVisible && (
+                                        {visibleSection === 'teaching_academy' && (
                                             <div className='Category_Cop_Items_Labels'>
                                                 <label>
                                                     <input
@@ -622,11 +620,11 @@ const CertificationFillForm = () => {
                                                     <input
                                                         type="radio"
                                                         name="teaching_academy"
-                                                        value="Spannish Language"
-                                                        checked={selectedOption === "Spannish Language"}
+                                                        value="Spanish Language"
+                                                        checked={selectedOption === "Spanish Language"}
                                                         onChange={handleOptionChange}
                                                     />
-                                                    Spannish Language
+                                                    Spanish Language
                                                 </label>
                                                 <br />
                                                 <label>
