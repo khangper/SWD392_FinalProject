@@ -55,7 +55,7 @@
     grid-column: span 2;
 }
 
-/* styles.css
+
 .dropbtn-Checkout {
     background-color: #4CAF50;
     color: white;
@@ -491,3 +491,37 @@
     height: 24px; /* Kích thước của biểu tượng, điều chỉnh theo ý muốn */
     margin-right: 8px; /* Khoảng cách giữa biểu tượng và văn bản */
 }
+
+
+.Gg-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    gap: 1rem; /* Gap between grid items */
+    align-items: center;
+    display: flex;
+  }
+  .lbel25 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ui.search.focus .prompt.srch_explore {
+    width: 100%;
+  }
+  
+  .ui.left.icon.input.swdh11.swdh19 {
+    width: 100%;
+  }
+
+  .Ggg-grid-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+  
+.fixed-order-detail {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 10px; /* Adjust as necessary */
+}
+  

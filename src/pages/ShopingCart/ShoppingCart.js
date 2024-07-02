@@ -127,17 +127,21 @@ function ShoppingCart() {
 										<h2>Total</h2>
 										<div className="order_price5">$10</div>
 									</div>
-									<div className="Shopping-coupon_code">
+									<div className="SS-Shopping-coupon_code">
 										<p>Learn now is applied.</p>
-										<div className="coupon_input">
-											<div className="ui shopping focus mt-15">
-												<div className="ui left icon input swdh11 swdh19">
-													<input className=" srch_shopping" type="text" name="couponcode"  id="id_coupon_code" required="" placeholder="Enter Coupon Code"/>
-												</div>
-												<button className="Shopping-code-apply-btn" type="submit">Apply</button>
-											</div>
-										</div>
+										
+
 									</div>
+									<div className="SS-coupon_input">
+  <div className="SS-ui SS-shopping focus mt-15">
+    <div className="SS-input-container">
+      {/* <div className="SS-ui SS-left icon input swdh11 swdh19"> */}
+        <input className="SS-srch_shopping" type="text" name="couponcode" id="id_coupon_code" required="" placeholder="Enter Coupon Code" />
+      {/* </div> */}
+      <button className="SS-Shopping-code-apply-btn" type="submit">Apply</button>
+    </div>
+  </div>
+</div>
 									<a href="#" className="Shopping-chck-btn22">Checkout Now</a>
 								</div>
 						</div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from '../../components/Header-paidmember/Header'
 import { Link } from 'react-router-dom'
 import Block1 from '..//../assets/Block1.png';
+import Footer from '../../components/Footer/Footer'
 
 import "./Checkout.css"
 export default function Checkout() {
@@ -49,7 +50,7 @@ export default function Checkout() {
            <h2>Checkout</h2>
        </div>
    </div>      
- </div>
+      </div>
 
       {/* Body-Checkout */}
 
@@ -519,44 +520,51 @@ export default function Checkout() {
                 </div>
             </div>
         </div>
+        </div>
 
-        <div className="grid-item expiration">
-            <div className="lbel25">
-                <label>Expiration Month</label>
-                <select className="selectpicker" name="card[expire-month]" data-size="5" onChange={handleChange}>
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                </select>
-            </div>
-        </div>
-        <div className="grid-item expiration">
-            <div className="ui search focus lbel25">
-                <label>Expiration Year</label>
-                <div className="ui left icon input swdh11 swdh19">
-                    <input className="prompt srch_explore" type="text" name="card[expire-year]"      onChange={handleChange}  placeholder="Year" />
-                </div>
-            </div>
-        </div>
-        <div className="grid-item expiration">
-            <div className="ui search focus lbel25">
-                <label>CVC</label>
-                <div className="ui left icon input swdh11 swdh19">
-                    <input className="prompt srch_explore" type="text" name="card[cvc]"       onChange={handleChange}placeholder="CVC" />
-                </div>
-            </div>
-        </div>
+       
+
+<div className="Ggg-grid-container">
+  <div className="grid-item expiration">
+  <div className="ui search focus lbel25">
+      <label>Expiration Month</label>
+      <select className="selectpicker" name="card[expire-month]" data-size="5" onChange={handleChange}>
+        <option value="">Month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
     </div>
+  </div>
+  <div className="grid-item expiration">
+    <div className="ui search focus lbel25">
+      <label>Expiration Year</label>
+      <div className="ui left icon input swdh11 swdh19">
+        <input className="prompt srch_explore" type="text" name="card[expire-year]" onChange={handleChange} placeholder="Year" />
+      </div>
+    </div>
+  </div>
+  <div className="grid-item expiration">
+    <div className="ui search focus lbel25">
+      <label>CVC</label>
+      <div className="ui left icon input swdh11 swdh19">
+        <input className="prompt srch_explore" type="text" name="card[cvc]" onChange={handleChange} placeholder="CVC" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
 </form>
 
 
@@ -643,7 +651,7 @@ export default function Checkout() {
 
 			</div>
 
-      <div className="OrderDetail">
+      <div className="OrderDetail ">
                 <div className="checkout_titie">
                     <h4>Order Detail</h4>
                     <img src= "https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg" />
@@ -705,6 +713,8 @@ export default function Checkout() {
 
         </div>
       </div>
+
+      <Footer/>
 
   
 

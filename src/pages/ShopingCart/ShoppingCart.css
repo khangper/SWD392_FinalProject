@@ -139,14 +139,14 @@ img.shopping-close {
     text-align: right;
 }
 
-.Shopping-coupon_code p {
+.SS-Shopping-coupon_code p {
     font-family: 'Roboto', sans-serif;
     padding: 20px 0 20px 0px;
     float: left;
     width: 100%;
 }
 
-.Shopping-code-apply-btn {
+.SS-Shopping-code-apply-btn {
     height: 40px;
     padding: 0 20px;
     border: 0;
@@ -158,29 +158,43 @@ img.shopping-close {
     cursor: pointer; /* Add cursor pointer for better UX */
 }
 
-.Shopping-code-apply-btn:hover {
+.SS-Shopping-code-apply-btn:hover {
     background: #333;
 }
 
-.ui.shopping.focus {
+.ui.SS-shopping.focus {
     position: relative; 
     display: inline-block; /* Ensure the container respects its content */
 }
 
-.ui.left.icon.input.swdh11.swdh19 {
+.ui.SS-left.icon.input.swdh11.swdh19 {
     display: inline-flex; 
 }
 
 
-.srch_shopping {
+.SS-srch_shopping {
     margin-bottom: 20px;
     padding: 11px 165px 11px 11px;
-    width: 100%;
+    width: 82%;
     background: #fff !important;
     border: 1px solid #e5e5e5 !important;
     color: #333 !important;
     box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
 }
+
+
+.SS-input-container.flex-container {
+    display: inline-flex;
+}
+
+.ui.SS-left.icon.input.swdh11.swdh19 {
+    flex: 1;
+}
+
+.Shopping-code-apply-btn {
+    margin-left: 10px; /* Adjust as needed for spacing */
+}
+
 
 .Shopping-chck-btn22{
     font-size: 14px;
