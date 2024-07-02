@@ -37,6 +37,7 @@ export const PATH_NAME = {
     TERMS_OF_USE: '/termsofuse',
     CERTIFICATION_FILL_FORM: '/certificationfillform',
     CERTIFICATION_TEST: '/certificates-test',
-    COMING_SOON: '/coming-soon',
-    ALL_INSTRUCTOR_LIST: '/all-instructor-list',
+    COMING_SOON: '/comming-soon',
+    // ALL_INSTRUCTOR_LIST: '/all-instructor-list',
+    TEST_RESULT: '/test-result'
 };

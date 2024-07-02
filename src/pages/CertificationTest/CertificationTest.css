@@ -1,5 +1,6 @@
 .certification_test {
     font-family: Arial, sans-serif;
+    padding-top: 20px;
   }
   
   .certification_test-header {
@@ -91,6 +92,8 @@
     flex: 0 0 auto;
     width: 33.33333333%;
     margin-bottom: 20px;
+    margin-top: 190px;
+    
   }
 
   .certi_form {
@@ -103,8 +106,8 @@
   
   .ct-question-answer {
     flex: 0 0 auto;
-    width: 58.33333333%;
     margin-bottom: 20px;
+    padding-left: 40%;
   }
 
   .test_timer_bg {
@@ -204,8 +207,7 @@
   }
   
   .sticky {
-    
-    position: sticky;
+    position: fixed;
     top: 0;
     background-color: white;
     z-index: 1000;
