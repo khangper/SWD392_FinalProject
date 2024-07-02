@@ -47,7 +47,8 @@
     font-family: 'Roboto', sans-serif;
     text-align: center;
     line-height: 1em;
-    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2); /* Ensure this is the correct property */
+    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2);
+    /* Ensure this is the correct property */
     padding-bottom: 29px;
 }
 
@@ -58,7 +59,8 @@
     text-align: center;
     line-height: 26px;
     margin-top: 0;
-    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2); /* Ensure this is the correct property */
+    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2);
+    /* Ensure this is the correct property */
 }
 
 .thnk_des {
@@ -68,7 +70,8 @@
     font-family: 'Roboto', sans-serif;
     text-align: center;
     line-height: 26px;
-    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2); /* Ensure this is the correct property */
+    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2);
+    /* Ensure this is the correct property */
     margin-top: 30px;
 }
 

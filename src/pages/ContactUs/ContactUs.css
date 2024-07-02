@@ -1,0 +1,193 @@
+.Contact_Main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+}
+
+.Contact_Title {
+    width: 100%;
+    padding: 20px 0 0;
+    background: #fff;
+    /* margin-bottom: 17px; */
+    padding: 0 370px 0 370px;
+    margin-top: 20px;
+}
+
+.Contact_Title_Container {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.Contact_Small_Title {
+    width: 100%;
+    float: left;
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.Contact_Small_Title_Left {
+    display: flex;
+}
+
+.Contact_Small_Title_Left a,
+p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
+.Contact_Small_Title_Right {
+    position: absolute;
+    left: 70%;
+}
+
+.Contact_Small_Title_Right a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
+.Contact_Big_Title {
+    width: 100%;
+    /* padding-bottom: 20px; */
+}
+
+.Contact_Big_Title h2 {
+    font-size: 24px;
+    font-weight: 550;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: left;
+    line-height: 30px;
+}
+
+.Contact_Body {
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #efefef;
+    padding: 0 370px 150px 370px;
+}
+
+.Contact_Body_Box {
+    flex: 0 0 auto;
+    width: 23%;
+    margin-right: 15px;
+
+}
+
+.Contact_link_step {
+    background: #fff;
+    border-radius: 3px;
+    padding: 30px;
+    border: 1px solid #efefef;
+    box-shadow: -0.083333333in 0.5pc 1.125pc -7px rgba(25, 42, 70, .13);
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    display: block;
+}
+
+.Contact_link_step img {
+    width: 70px;
+}
+
+.Contact_link_step h4 {
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    line-height: 26px;
+    color: #333;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.Contact_Map {
+    flex: 0 0 auto;
+    width: 60%;
+}
+
+.Contact_Information {
+    flex: 0 0 auto;
+    width: 40%;
+    margin-top: 50px;
+}
+
+.Contact_Checkout_Title h4 {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px !important;
+    color: #333;
+    text-align: left;
+    line-height: 26px;
+}
+
+.Contact_Checkout_Title img {
+    padding-bottom: 20px;
+    border-style: none;
+    vertical-align: middle;
+}
+
+.Contact_Detail_Inf {
+    width: 100%;
+    /* margin-top: 10px; */
+}
+
+.Contact_Detail_Inf .Contact_txt_cntct {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    line-height: 26px;
+    color: #686f7a;
+    text-align: left;
+    float: left;
+    width: 100%;
+}
+
+.Contact_Detail_Inf .Contact_cntct_895 {
+    float: left;
+    width: 35%;
+    color: #333;
+    font-weight: 600;
+}
+
+.Contact_Detail_Inf .Contact_txt_cntct p {
+    width: 65%;
+    float: left;
+    line-height: 26px;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+.Contact_Social {
+    flex: 0 0 auto;
+    width: 142%;
+}
+
+.social-icons a {
+    display: inline-block !important;
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-bottom: 0 !important;
+}
+
+.social-icons a img {
+    width: 20px;
+    height: 18px;
+}

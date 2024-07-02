@@ -1,0 +1,537 @@
+.Checkout-Container {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 16px;
+    margin-top: 90px;
+    height: calc(100% - 40px);
+    margin: auto;
+    padding: 0px 290px;
+    box-sizing: border-box;
+}
+
+.Checkoutfix-grid-container {
+    margin-bottom: -97px;
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0px 308px;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.Checkout_215b15 {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 43%;
+    padding: 20px 0 0;
+    background: #fff;
+    margin-bottom: 17px;
+    justify-items: left;
+}
+
+
+
+.Billing-Details{
+    background: #fff;
+    width: 100%;
+    float: left;
+    padding: 30px;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    transition: all .2s ease-in-out;
+    margin-bottom: 30px;
+}
+ 
+.checkout_titie{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px !important;
+    color: #333;
+    text-align: left;
+    line-height: 26px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.Gridcheckout {
+    grid-column: span 1;
+}
+.Gridcheckout-full {
+    grid-column: span 2;
+}
+
+
+.dropbtn-Checkout {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn-Checkout:hover, .dropbtn-Checkout:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown-Checkout {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content-Checkout {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content-Checkout div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-Checkout div:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+} */
+
+
+.panel-group {
+    width: 100%;
+  }
+  
+  .panel-heading-checkout {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+   
+    
+    
+  }
+  
+  .panel-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .edit-icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  .panel-collapse {
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .panel-collapse.show {
+    display: block;
+    max-height: 1000px; 
+  }
+  
+  .lbel25 label {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px !important;
+    color: #333;
+    text-align: left;
+    display: block;
+}
+
+.selectpicker-checkout{
+    width: 100%;
+    padding: 10px;
+    color: #666;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.save_address_btn{
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    margin-top: 30px;
+    color: #fff;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background: #ed2a26;
+    display: block;
+}
+
+.save_address_btn:hover{
+    background-color: #333;
+}
+
+.address_text {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #686f7a;
+    float: left;
+    width: 100%;
+    text-align: left;
+    line-height: 24px;
+    margin-top: 10px;
+}
+
+/**/
+/* CustomTabs.css */
+.Select-custom-tabs-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.Select-custom-tabs-nav {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.Select-custom-tabs-item {
+    flex: 1;
+    text-align: center;
+}
+
+.Select-custom-tabs-link {
+    display: flex; /* Chuyển sang dạng flex để căn giữa */
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+.Select-custom-tabs-link.active {
+    background-color: #f0f0f0;
+}
+
+.Select-custom-tabs-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: red;
+}
+
+.Select-custom-tabs-content {
+    padding: 20px;
+}
+
+.Select-custom-tabs-pane {
+    display: none;
+}
+
+.Select-custom-tabs-pane.active {
+    display: block;
+}
+
+/* Icon styles */
+.Select-custom-tabs-link i {
+    margin-bottom: 5px;
+}
+
+.fa {
+    font-size: 24px;
+}
+
+.Select-basic_form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.ui.search.focus {
+    margin-top: 30px;
+}
+
+.lbel25 {
+    margin-top: 30px;
+}
+
+.Select-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px; /* Khoảng cách giữa các phần tử */
+}
+
+
+.gg-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Chia container thành 2 cột */
+    gap: 20px; /* Khoảng cách giữa các grid item */
+}
+
+
+
+.grid-item {
+    grid-column: span 1; /* Mỗi item chiếm 1 cột mặc định */
+}
+
+.grid-item.holder-card {
+    grid-column: span 1; /* Holder Name và Card Number chiếm 1 cột */
+}
+
+.grid-item.expiration {
+    
+    align-items: center; /* Căn giữa các thành phần trong expiration */
+}
+
+.grid-item.expiration label {
+    margin-right: 10px; /* Khoảng cách giữa label và input/select */
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Trong trường hợp responsive, chỉ có 1 cột */
+    }
+
+    .grid-item.holder-card,
+    .grid-item.expiration {
+        grid-column: span 1; /* Cho Holder Name, Card Number và Expiration chiếm toàn bộ container khi nhỏ hơn 768px */
+    }
+}
+
+.CC-grid-container{
+    display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+        gap: 20px;
+}
+
+.Paypal-grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* spacing between grid items */
+}
+
+.financial-institutes__logo img {
+    width: 48px;
+    height: 30px;
+}
+
+.t-body {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px !important;
+    color: #686f7a;
+    line-height: 26px;
+    text-align: left;
+    margin-top: 25px !important;
+}
+
+.t2-body {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px !important;
+    color: #686f7a;
+    line-height: 26px;
+    text-align: left;
+    margin-top: 0px !important;
+}
+
+.media {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* hoặc h-mt2 nếu bạn có lớp này định nghĩa sẵn */
+}
+
+.media__item {
+    margin-right: 10px;
+}
+
+.media__body {
+    display: flex;
+}
+
+.financial-institutes {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.financial-institutes__logo {
+    margin-right: 10px;
+}
+
+.financial-institutes__logo img {
+    width: 50px; /* điều chỉnh kích thước theo ý muốn */
+    height: auto;
+}
+
+.order_dt_section {
+	float: left;
+	width: 100%;
+    margin-top: 7px;
+}
+
+.order_title {
+	float: left;
+	width: 100%;
+	padding: 20px 0;
+    border-bottom: 1px solid #efefef;
+}
+
+.order_title h4 {
+	font-size: 16px;
+	font-weight: 600;
+	font-family: 'Roboto', sans-serif;
+	color: #333;
+	float: left;
+	margin-bottom: 0;
+	line-height: 24px;
+	width: 70%;
+	text-align: left;
+}
+
+.order_title .order_price {
+	font-size: 16px;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	color: #686f7a;
+	text-align: right;
+	float: right;
+	width: 30%;
+	margin-bottom: 0;
+}
+
+.order_title h6 {
+	font-size: 16px;
+	font-weight: 500;
+	font-family: 'Roboto', sans-serif;
+	color: #686f7a;
+	float: left;
+	width: 70%;
+	text-align: left;
+	line-height: 24px;
+	margin-bottom: 0;
+}
+
+.chckot_btn {
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    margin-top: 30px;
+    float: right;
+    color: #fff;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background: #ed2a26;
+	display: block;
+}
+
+.chckot_btn:hover {
+    color: #fff !important;
+    background: #333;
+}
+
+.order_title .order_price5 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: right;
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+}
+
+.scr_text {
+	font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #686f7a;
+    text-align: center;
+    float: left;
+    width: 100%;
+	margin-top: 27px;
+}
+
+.scr_text i {
+	font-size: 120%;
+	margin-right: 5px;
+}
+
+.order_title h2 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    float: left;
+    width: 70%;
+    text-align: left;
+    line-height: 24px;
+    margin-bottom: 0;
+}
+
+.block-icon-page {
+    width: 24px; /* Kích thước của biểu tượng, điều chỉnh theo ý muốn */
+    height: 24px; /* Kích thước của biểu tượng, điều chỉnh theo ý muốn */
+    margin-right: 8px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+
+.Gg-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    gap: 1rem; /* Gap between grid items */
+    align-items: center;
+    display: flex;
+  }
+  .lbel25 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ui.search.focus .prompt.srch_explore {
+    width: 100%;
+  }
+  
+  .ui.left.icon.input.swdh11.swdh19 {
+    width: 100%;
+  }
+
+  .Ggg-grid-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+  
+.fixed-order-detail {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 10px; /* Adjust as necessary */
+}
+  
