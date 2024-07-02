@@ -6,13 +6,14 @@
 
 .sa4d25 {
     margin: 20px 0;
-}
 
-.container-fluid {
+  }  
+  .ALL-Live-container-fluid {
     padding: 0 15px;
-}
+  }
+  
+  .ALL-Live-grid-container {
 
-.grid-container {
     display: grid;
     grid-template-columns: 1fr 300px;
     gap: 20px;

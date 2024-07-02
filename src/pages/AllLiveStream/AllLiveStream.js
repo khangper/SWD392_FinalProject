@@ -6,8 +6,8 @@ export default function AllLiveStream() {
   return (
     <div className="wrapper">
       <div className="sa4d25">
-        <div className="container-fluid">
-          <div className="grid-container">
+        <div className="ALL-Live-container-fluid">
+          <div className="ALL-Live-grid-container">
             <div className="main-content">
               <div className="section3125">
                 <h4 className="item_title">All Live Streams</h4>
