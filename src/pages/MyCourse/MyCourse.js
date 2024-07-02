@@ -140,7 +140,7 @@ function MyCourse() {
 <thead className="MyCourse-thead-s">
   <tr>
     <th className="MyCourse-text-center" scope="col">Item No.</th>
-    <th>Title</th>
+    <th className="MyCourse-text-center">Title</th>
     <th className="MyCourse-text-center" scope="col">Publish Date</th>
     <th className="MyCourse-text-center" scope="col">Sales</th>
     <th className="MyCourse-text-center" scope="col">Parts</th>

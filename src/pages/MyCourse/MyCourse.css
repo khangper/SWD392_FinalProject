@@ -18,6 +18,7 @@
   
   .MyCourse-text-center {
     text-align: center; /* Căn giữa nội dung của các cột */
+
   }
   
   .table {
@@ -40,7 +41,7 @@
   .MyCourse-nav-item a.active {
     background-color: #ed2a26;
     color: #fff;
-    border-color: #007bff;
+  
   }
   
   .MyCourse-nav-link {
@@ -48,7 +49,7 @@
     cursor: pointer;
     color: black;
     background-color:white;
-    border-radius: 5px;
+   
 }
 
 table.table.ucp-table {
@@ -161,4 +162,19 @@ table.MyCourse-table.ucp-table {
 
 b.MyCourse-course_active {
     color: #ed2a26;
+}
+
+.ucp-table thead tr th {
+    color: #333;
+    font-size: 14px;
+    background-color: #ffecec;
+}
+
+th.MyCourse-text-center {
+    font-weight: 500;
+    padding: 14px !important;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    color: #333 !important;
+    font-weight: 900;
 }
