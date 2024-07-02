@@ -72,6 +72,40 @@ const SearchResult = () => {
         { name: 'Free', count: 50 },
     ];
 
+    const features = [
+        { name: 'Captions', count: 4780 },
+        { name: 'Quizzes', count: 890 },
+        { name: 'Coding Exercises', count: 350 },
+        { name: 'Practice Tests', count: 1050 }
+    ];
+
+    const ratings = [
+        { name: '5.0 & up', count: 5000 },
+        { name: '4.0 & up', count: 2500 },
+        { name: '3.0 & up', count: 1500 },
+        { name: '2.0 & up', count: 122 }
+    ];
+
+    const videodurations = [
+        { name: '0-2 Hours', count: 500 },
+        { name: '3-6 Hours', count: 150 },
+        { name: '7-18 Hours', count: 90 },
+        { name: '19+ Hours', count: 25 }
+    ];
+
+    const closecaptions = [
+        { name: 'English', count: 300 },
+        { name: 'Español', count: 210 },
+        { name: 'Português', count: 170 },
+        { name: 'Italiano', count: 174 },
+        { name: 'Français', count: 120 },
+        { name: 'Polski', count: 130 },
+        { name: 'Deutsch', count: 30 },
+        { name: 'Bahasa Indonesia', count: 20 },
+        { name: 'ภาษาไทย', count: 10 }
+
+    ];
+
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
@@ -110,7 +144,7 @@ const SearchResult = () => {
                 <div className='Search_Result_Title'>
                     <div className='Small_SR_Title'>
                         <div className='Small_SR_Title_Left'>
-                            <a href="index.html">Home</a>
+                            <a href="/home">Home&nbsp;</a>
                             <p>/ Search Results</p>
                         </div>
                         <div className='Small_SR_Title_Right'>
@@ -166,7 +200,6 @@ const SearchResult = () => {
                                                         checked={selectedOption === topic.name}
                                                         onChange={handleOptionChange}
                                                     />
-                                                    {console.log(topic.name)}
                                                     {topic.name} ({topic.count})
                                                 </label>
                                             ))}
@@ -190,7 +223,6 @@ const SearchResult = () => {
                                                         checked={selectedOption === level.name}
                                                         onChange={handleOptionChange}
                                                     />
-                                                    {console.log(level.name)}
                                                     {level.name} ({level.count})
                                                 </label>
                                             ))}
@@ -198,9 +230,10 @@ const SearchResult = () => {
                                     )}
                                 </div>
 
+
                                 <div className='SR_Tbl_Content' ref={el => optionsRef.current[2] = el}>
                                     <div onClick={() => toggleOptions('languages')}>
-                                        <span>Language</span>
+                                        <span>Languages</span>
                                         <span>{visibleSection === 'languages' ? '-' : '+'}</span>
                                     </div>
                                     {visibleSection === 'languages' && (
@@ -209,7 +242,7 @@ const SearchResult = () => {
                                                 <label key={index}>
                                                     <input
                                                         type="radio"
-                                                        name="level"
+                                                        name="language"
                                                         value={language.name}
                                                         checked={selectedOption === language.name}
                                                         onChange={handleOptionChange}
@@ -223,7 +256,7 @@ const SearchResult = () => {
 
                                 <div className='SR_Tbl_Content' ref={el => optionsRef.current[3] = el}>
                                     <div onClick={() => toggleOptions('prices')}>
-                                        <span>Price</span>
+                                        <span>Prices</span>
                                         <span>{visibleSection === 'prices' ? '-' : '+'}</span>
                                     </div>
                                     {visibleSection === 'prices' && (
@@ -232,12 +265,104 @@ const SearchResult = () => {
                                                 <label key={index}>
                                                     <input
                                                         type="radio"
-                                                        name="level"
+                                                        name="price"
                                                         value={price.name}
                                                         checked={selectedOption === price.name}
                                                         onChange={handleOptionChange}
                                                     />
                                                     {price.name} ({price.count})
+                                                </label>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className='SR_Tbl_Content' ref={el => optionsRef.current[4] = el}>
+                                    <div onClick={() => toggleOptions('features')}>
+                                        <span>Features</span>
+                                        <span>{visibleSection === 'features' ? '-' : '+'}</span>
+                                    </div>
+                                    {visibleSection === 'features' && (
+                                        <div className='SR_Tbl_Content_Topic_Menu'>
+                                            {features.map((feature, index) => (
+                                                <label key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        name="feature"
+                                                        value={feature.name}
+                                                        checked={selectedOption === feature.name}
+                                                        onChange={handleOptionChange}
+                                                    />
+                                                    {feature.name} ({feature.count})
+                                                </label>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className='SR_Tbl_Content' ref={el => optionsRef.current[5] = el}>
+                                    <div onClick={() => toggleOptions('ratings')}>
+                                        <span>Ratings</span>
+                                        <span>{visibleSection === 'ratings' ? '-' : '+'}</span>
+                                    </div>
+                                    {visibleSection === 'ratings' && (
+                                        <div className='SR_Tbl_Content_Topic_Menu'>
+                                            {ratings.map((rating, index) => (
+                                                <label key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        name="rating"
+                                                        value={rating.name}
+                                                        checked={selectedOption === rating.name}
+                                                        onChange={handleOptionChange}
+                                                    />
+                                                    {rating.name} ({rating.count})
+                                                </label>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className='SR_Tbl_Content' ref={el => optionsRef.current[6] = el}>
+                                    <div onClick={() => toggleOptions('videodurations')}>
+                                        <span>Video Durations</span>
+                                        <span>{visibleSection === 'videodurations' ? '-' : '+'}</span>
+                                    </div>
+                                    {visibleSection === 'videodurations' && (
+                                        <div className='SR_Tbl_Content_Topic_Menu'>
+                                            {videodurations.map((videoduration, index) => (
+                                                <label key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        name="videoduration"
+                                                        value={videoduration.name}
+                                                        checked={selectedOption === videoduration.name}
+                                                        onChange={handleOptionChange}
+                                                    />
+                                                    {videoduration.name} ({videoduration.count})
+                                                </label>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className='SR_Tbl_Content' ref={el => optionsRef.current[7] = el}>
+                                    <div onClick={() => toggleOptions('closecaptions')}>
+                                        <span>Close Captions</span>
+                                        <span>{visibleSection === 'closecaptions' ? '-' : '+'}</span>
+                                    </div>
+                                    {visibleSection === 'closecaptions' && (
+                                        <div className='SR_Tbl_Content_Topic_Menu'>
+                                            {closecaptions.map((closecaption, index) => (
+                                                <label key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        name="closecaption"
+                                                        value={closecaption.name}
+                                                        checked={selectedOption === closecaption.name}
+                                                        onChange={handleOptionChange}
+                                                    />
+                                                    {closecaption.name} ({closecaption.count})
                                                 </label>
                                             ))}
                                         </div>
