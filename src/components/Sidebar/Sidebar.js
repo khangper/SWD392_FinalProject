@@ -93,7 +93,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="SignUp">Sign Up Steps</a>
           <a href="paidmembership">Paid Membership</a>
           <a href="#">Course Detail View</a>
-          <a href="#">Checkout</a>
+          <a href="checkout">Checkout</a>
           <Link to="/invoice">Invoice</Link>
           <a href="career">Career</a>
           <a href="#">Job Apply</a>
@@ -103,6 +103,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="search_result">Search Result</a>
           <a href="Thanks">Thank you</a>
           <a href="#">Coming Soon</a>
+          <a href="mycourse">My Course</a>
           <a href="error404">Error  404</a>
         </div>
       )}

@@ -11,6 +11,7 @@ import Account from '..//../assets/Account.png';
 import Destop from '..//../assets/Destop.png';
 import BookHelp from '..//../assets/BookHelp.png';
 import MobileHelp from '..//../assets/MobileHelp.png';
+import { Link } from 'react-router-dom';
 
 
 
@@ -32,13 +33,25 @@ export default function Help() {
               <div className="help_stitle">
                <h2>How may we help you?</h2>
                <div className="explore_search">
-            <div className="ui search focus">
+            {/* <div className="ui search focus">
                 <div className="search-box flex-div">
                 <img src={search_icon} alt='' className='search-icon-allInstructor' />
                     <input className="prompt srch_explore" type="text" placeholder="       Search Tutors..."/>
                     
                 </div>
+            </div> */}
+            <div className="explore-container">
+            <section className="search-box">
+        <img src={search_icon} alt="Search Icon" className="search-icon" />
+        <input
+          type="text"
+          placeholder="Search Tutors"
+        />
+      </section>
             </div>
+
+
+
         </div>
             </div>
           </div>
@@ -92,8 +105,9 @@ export default function Help() {
   </div>
   <div className="section3126 mt-20">
     <div className="Help1-Grid-container">
+   
       <div className="value_props50">
-        <a href="#">
+        <a href="/helpview1">
           <div className="value_icon">
           <img src={Wallet} alt='' className='Help-icon-page' />
           </div>
@@ -103,8 +117,10 @@ export default function Help() {
           </div>
         </a>
       </div>
-      <div className="value_props50">
-        <a href="#">
+      
+
+<div className="value_props50">
+        <a href="/helpview2">
           <div className="value_icon">
           <img src={Megaphone2} alt='' className='Help-icon-page' />
           </div>
@@ -114,6 +130,8 @@ export default function Help() {
           </div>
         </a>
       </div>
+
+
       <div className="value_props50">
         <a href="#">
           <div className="value_icon">
