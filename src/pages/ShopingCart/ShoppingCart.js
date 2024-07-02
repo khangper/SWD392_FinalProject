@@ -32,25 +32,25 @@ function ShoppingCart() {
     <div className="ShoppingPage">
               <Header/>
 
-              <div className="Shopping-conten">   
-    <div className="row">
-       <div className="title125">
-           <div className="titleleft">
-               <div className="ttl121">
-                   <nav aria-label="breadcrumb">
-                       <div className="breadcrumb">
-                           <Link href="index.html" className="breadcrumb-item">Home</Link>
-                           <Link className="breadcrumb-item active" aria-current="page">/Shopping Cart</Link>
-                       </div>
-                   </nav>
-               </div>
-           </div>
-       </div>
-       <div className="Paidmember-title" >
-           <h2>Shopping Cart</h2>
-       </div>
-   </div>      
-              </div>
+              <div className="HelpView1-grid-container">
+    <div className="HelpView-title125">
+        <div className="HelpView-titleleft">
+            <div className="HelpView-ttl121">
+                <nav aria-label="breadcrumb">
+                    <ol className="HelpView-breadcrumb">
+                        <li className="HelpView-breadcrumb-item"><a href="index.html">Home</a></li>
+                        
+                        <li className="HelpView-breadcrumb-item active" aria-current="page">/Shopping Cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <div className="HelpView-title126">
+        <h2>Shopping Cart</h2>
+    </div>
+             </div>
 
               {/* Body ShoppingPage */}
 
@@ -58,22 +58,6 @@ function ShoppingCart() {
               <div className="Shopping-Container">
         <div className="Billing-Details-GridContainer">
 
-                         {/* <div className="Shopping-fcrse_1">
-							<a href="course_detail_view.html" className="Shopping-hf_img">
-								<img className="cart_img" src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg" alt=""/>
-							</a>
-							<div className="Shopping-hs_content">
-								<div className="eps_dots eps_dots10 more_dropdown">
-									<a href="#"><img src={Closeshopping} className="shopping-close" /></a>																										
-								</div>
-								<a href="course_detail_view.html" className="Shopping-crse14s ">The Web Developer Bootcamp</a>
-								<a href="#" className="Shopping-crse-cate">Web Development | Python</a>
-								<div className="Shopping-auth1lnkprce">
-									<p className="Shopping-cr1fot">By <a href="#">John Doe</a></p>
-									<div className="Shopping-prce142">$10</div>
-								</div>
-							</div>
-						</div>  */}
 
 
 <div className="Shopping-fcrse-container">
