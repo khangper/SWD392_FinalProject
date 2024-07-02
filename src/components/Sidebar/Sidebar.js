@@ -87,7 +87,7 @@ const Sidebar = ({ sidebar }) => {
       </div>
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
-          <a href="about">About</a>
+          <a href="about-us">About</a>
           <a href="login">Sign In</a>
           <a href="SignUpStep">Sign Up</a>
           <a href="SignUp">Sign Up Steps</a>
