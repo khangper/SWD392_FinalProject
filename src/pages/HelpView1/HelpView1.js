@@ -43,7 +43,7 @@ function HelpView1() {
     <div className="HelpView-title126">
         <h2>Promote Your Course With Coupons and Referral Links</h2>
     </div>
-</div>
+        </div>
 
 
 

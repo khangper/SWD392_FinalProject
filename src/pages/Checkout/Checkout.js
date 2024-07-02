@@ -31,26 +31,30 @@ export default function Checkout() {
   return (
     <div className="CheckoutPage">
       <Header/>
+
+
       
-      <div className="Checkout_215b15">   
-    <div className="row">
-       <div className="title125">
-           <div className="titleleft">
-               <div className="ttl121">
-                   <nav aria-label="breadcrumb">
-                       <div className="breadcrumb">
-                           <Link href="index.html" className="breadcrumb-item">Home</Link>
-                           <Link className="breadcrumb-item active" aria-current="page">/Paid Membership/Checkout</Link>
-                       </div>
-                   </nav>
-               </div>
-           </div>
-       </div>
-       <div className="Paidmember-title" >
-           <h2>Checkout</h2>
-       </div>
-   </div>      
-      </div>
+      <div className="Checkoutfix-grid-container">
+    <div className="HelpView-title125">
+        <div className="HelpView-titleleft">
+            <div className="HelpView-ttl121">
+                <nav aria-label="breadcrumb">
+                    <ol className="HelpView-breadcrumb">
+                        <li className="HelpView-breadcrumb-item"><a href="index.html">Home</a></li>
+                        
+                        <li className="HelpView-breadcrumb-item active" aria-current="page">/Paidmember ship/ Checkout</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <div className="HelpView-title126">
+        <h2>Checkout</h2>
+    </div>
+             </div>
+      
+
 
       {/* Body-Checkout */}
 
