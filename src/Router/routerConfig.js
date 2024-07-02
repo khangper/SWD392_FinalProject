@@ -23,6 +23,18 @@ import SearchResult from "../pages/SearchResult/SearchResult";
 import SendFeedback from "../pages/SendFeedback/SendFeedback";
 import Setting from "../pages/Setting/Setting";
 import Thanks from "../pages/Thanks/Thanks";
+import BlogDetail from "../pages/BlogDetail/BlogDetail";
+import Checkout from '../pages/Checkout/Checkout';
+import ShoppingCart from '../pages/ShopingCart/ShoppingCart';
+import HelpView1 from '../pages/HelpView1/HelpView1';
+import HelpView2 from '../pages/HelpView2/HelpView2';
+import Company from '../pages/Company/Company';
+import Career from '../pages/Career/Career';
+import ApplyJob from '../pages/ApplyJob/ApplyJob';
+import ContactUs from '../pages/ContactUs/ContactUs';
+import TermsOfUse from '../pages/TermsOfUse/TermsOfUse';
+import CertificationFillForm from '../pages/CertificationFillForm/CertificationFillForm';
+import MyCourse from '../pages/MyCourse/MyCourse';
 
 const publicRoutes = [
     { path: "/login", element: <Login /> },
@@ -36,7 +48,18 @@ const publicRoutes = [
     { path: "/search_result", element: <SearchResult /> },
     { path: "/paidmembership", element: <PaidMembership /> },
     { path: "/about-us", element: <About /> },
-    { path: "/our-blog", element: <Blog /> }
+    { path: "/our-blog", element: <Blog /> },
+    { path: "/blog-single-view", element: <BlogDetail /> },
+    { path: "/checkout", element: <Checkout /> },
+    { path: "/shoppingcart", element: <ShoppingCart /> },
+    { path: "/helpview1", element: <HelpView1 /> },
+    { path: "/helpview2", element: <HelpView2 /> },
+    { path: "/company-details", element: <Company /> },
+    { path: "/career", element: <Career /> },
+    { path: "/apply-job", element: <ApplyJob /> },
+    { path: "/contactus", element: <ContactUs /> },
+    { path: "/termofuse", element: <TermsOfUse /> },
+    { path: "/certificationfillform", element: <CertificationFillForm /> },
 ];
 
 const privateRoutes = [
@@ -52,7 +75,8 @@ const privateRoutes = [
     { path: "/other-instructor-view", element: <OtherInstructorView /> },
     { path: "/my-instructor-profile", element: <MyInstructorProfile /> },
     { path: "/save-courses", element: <SaveCourses /> },
-    { path: "/setting", element: <Setting /> }
+    { path: "/setting", element: <Setting /> },
+    { path: "/mycourse", element: <MyCourse /> },
 ];
 
 const routes = { publicRoutes, privateRoutes };
