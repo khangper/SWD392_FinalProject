@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './CertificationTest.css'
+import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header/Header'
+
 const CertificationTest = () => {
     const [sticky, setSticky] = useState(false)
     useEffect(() => {
@@ -35,7 +38,7 @@ const CertificationTest = () => {
     return (
 
         <div>
-
+            <Header />
             <div className="certification_test">
                 <div className="certification_test-header">
                     <div className="certification_test-container">
@@ -64,6 +67,7 @@ const CertificationTest = () => {
                         </div>
                     </div>
                 </div>
+
                 <div className="certification_test-question">
                     <div className="certification_test-container">
                         <div className="certification_test-row">
@@ -738,7 +742,7 @@ const CertificationTest = () => {
                         </div>
                     </div>
                 </div>
-
+                <Footer />
 
             </div>
 
