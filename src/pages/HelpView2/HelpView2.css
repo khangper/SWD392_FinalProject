@@ -1,0 +1,21 @@
+.HelpView-vew121 {
+	font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+	text-align: left;
+	line-height: 26px;
+	color: #333;
+}
+
+.HelpView-vew121:hover {
+	text-decoration: underline !important;
+	color: #333;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+
+.mb-30{
+    margin-bottom: 30px;
+}

@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header-paidmember/Header'
 import Footer from '../../components/Footer/Footer'
 import { Link } from 'react-router-dom'
 import ".//PaidMembership.css";
 import check from '..//../assets/check.png';
 import Closepaidment from '..//../assets/Close-paidment.png';
-import plus from '..//../assets/pluse.png';
+
 
 
 export default function PaidMembership() {
@@ -13,9 +13,9 @@ export default function PaidMembership() {
     <div >
         <Header />
 <main>
-              <div className="_215b15">
+      <div className="Paidmembership_215b15">
     
-        <div className="row">
+         <div className="row">
             <div className="title125">
                 <div className="titleleft">
                     <div className="ttl121">
