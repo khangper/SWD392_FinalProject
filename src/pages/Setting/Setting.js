@@ -13,6 +13,10 @@ const Setting = () => {
     useState(false);
   const [repliesToCommentsChecked, setRepliesToCommentsChecked] =
     useState(false);
+
+  const [showOnSearchChecked, setShowOnSearchChecked] = useState(false);
+  const [showCoursesChecked, setShowCoursesChecked] = useState(false);
+
     const [selectedMethod, setSelectedMethod] = useState("paypal");
 
     const countries = [
@@ -506,18 +510,18 @@ const Setting = () => {
             <div className="basic-profile-form">
               <div
                 className={`checkbox-content ${
-                  subscriptionsChecked ? "checked" : ""
+                  showOnSearchChecked ? "checked" : ""
                 }`}
               >
                 <input
                   className="hidden"
                   type="checkbox"
-                  id="subscriptions"
-                  name="subscriptions"
-                  checked={subscriptionsChecked}
-                  onChange={(e) => setSubscriptionsChecked(e.target.checked)}
+                  id="showonOnSearch"
+                  name="showonOnSearch"
+                  checked={showOnSearchChecked}
+                  onChange={(e) => setShowOnSearchChecked(e.target.checked)}
                 />
-                <label htmlFor="subscriptions"></label>
+                <label htmlFor="showonOnSearch"></label>
                 <div className="label-text-privacy">
                 <p>
                    Show your profile on search engines.
@@ -526,20 +530,20 @@ const Setting = () => {
               </div>
               <div
                 className={`checkbox-content ${
-                  recommendedCoursesChecked ? "checked" : ""
+                  showCoursesChecked ? "checked" : ""
                 }`}
               >
                 <input
                   className="hidden"
                   type="checkbox"
-                  id="recommended-courses"
-                  name="recommended-courses"
-                  checked={recommendedCoursesChecked}
+                  id="show-courses"
+                  name="show-courses"
+                  checked={showCoursesChecked}
                   onChange={(e) =>
-                    setRecommendedCoursesChecked(e.target.checked)
+                    setShowCoursesChecked(e.target.checked)
                   }
                 />
-                <label htmlFor="recommended-courses"></label>
+                <label htmlFor="show-courses"></label>
                 <div className="label-text-privacy">         
                   <p>Show courses you're taking on your profile page</p>
                 </div>
