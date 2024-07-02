@@ -136,7 +136,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
 }
-.help-block{
+.basic-profile-form .help-block{
     display: block;
     font-size: 11px;
     margin-top: 5px;
@@ -145,6 +145,7 @@
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
     text-align: left;
+    width: 100%;
 }
 
 .form-group textarea {
@@ -162,7 +163,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     align-self: flex-start; 
-    margin-top: 16px;
+    margin: 20px 0;
 }
 .divider{
     width: 65%;
@@ -170,7 +171,7 @@
     margin-top: 50px;
 }
 .save-changes-button:hover {
-    background-color: #d00;
+    background-color: black;
 }
 .basic-profile-links{
     margin-top: 47px;
@@ -178,4 +179,390 @@
 .link-group{
     width: 65%;
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
 }
+.link-group .form-group{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+.link-label{
+    background-color: #dedfe0;
+    padding: 10px 16px ;
+    color: #686f7a;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    
+}
+.link-label-group{
+    display: flex;
+    flex: 1
+}
+.checkbox-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 16px 0;
+}
+
+.checkbox-content input {
+    width: 3.5rem;
+    height: 1.5rem;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-content label {
+    position: relative;
+    width: 3.4rem;
+    height: 1.5rem;
+    background: rgba(0, 0, 0, .05);
+    border-radius: 500rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    top: -8px
+}
+
+.checkbox-content label::before {
+    content: '';
+    position: absolute;
+    width: 1.3rem;
+    height: 1.3rem;
+    top: 0.1rem;
+    left: 0.1rem;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.checkbox-content input:checked + label {
+    background: #ed2a26;
+}
+
+.checkbox-content input:checked + label::before {
+    transform: translateX(2rem);
+}
+
+.label-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-title {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.label-text p {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+.basic-profile-header a {
+    color: #4183c4;
+    text-decoration: none;
+}
+.label-text-privacy{
+    top:-8px;
+    position: relative;
+}
+.label-text-privacy p{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 14px;
+    text-align: left;
+    line-height: 26px;
+}
+.billing-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 65%;
+    margin-top: 30px;
+  }
+  
+  .billing-dropdown .dropdown-toggle {
+    background-color: #fff;
+    color: #009688;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .billing-dropdown .dropdown-toggle.active,
+  .billing-dropdown .dropdown-toggle.selected {
+    color: #009688;
+  }
+  .billing-dropdown .dropdown-toggle .arrow {
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(45deg);
+  }
+  
+  .billing-dropdown .dropdown-menu {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 230px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .billing-dropdown .dropdown-menu .dropdown-item {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .billing-dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .billing-dropdown .dropdown-menu .dropdown-item.selected {
+    background-color: #f9f9f9;
+    color: red;
+  }
+  .sales-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 65%;
+    margin: 30px 0;
+  }
+  
+  .sales-grid-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sales-grid-item {
+    text-align: center;
+    flex: 1;
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .sales-grid-row:first-child .sales-grid-item:first-child,
+  .sales-grid-row:last-child .sales-grid-item:first-child {
+    text-align: left;
+    color: #00bfa5;
+    font-weight: bold;
+  }
+  
+  .sales-grid-row:first-child .sales-grid-item:not(:first-child),
+  .sales-grid-row:last-child .sales-grid-item:not(:first-child) {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .sales-grid-row:last-child .sales-grid-item {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .sales-grid-item:not(:first-child) {
+    text-align: center;
+  }
+  
+  .sales-grid-item:last-child {
+    text-align: right;
+  }
+  .withdrawal-method {
+    width: 100%;
+    margin: 30px 0;
+  }
+  
+  .radio-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .radio-button {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+  }
+  
+  .radio-button.selected {
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 8px;
+    display: none;
+  }
+  
+  .account-details-wrapper {
+    position: relative;
+  }
+  
+  .account-details {
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .account-details-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .account-details.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .account-details.fade-out {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
+  .account-details h4 {
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
+  }
+  
+  .account-details p {
+    color: #686f7a;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .account-details .price{
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .account-details a{
+    color:#4183c4;
+  }
+  .account-details input[type="email"],
+  .account-details input[type="text"],
+  .account-details select {
+    width: 33%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+  }
+  
+  .account-details select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  .set-payout-btn {
+    background-color: #f00;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    width: 15%;
+  }
+  
+  .set-payout-btn:hover {
+    background-color: #d00;
+  }
+  .api-text a{
+        color:#4183c4;
+  }
+  .api-btn{
+    margin-top: 30px;
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 3px;
+    border: 2px solid #efefef;
+    color: #686f7a;
+    background: #fff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+  }
+  .api-btn:hover{
+    background: black;
+    color: white;
+  }
+  .nt_apt {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .info-icon {
+    color: #ed2a26;
+    margin-right: 8px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ed2a26;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 10px;
+    font-weight: bold;
+    font-size: 9px;
+    position: relative;
+    top: -3px;
+  }
+  .close-account-group{
+    margin-top: 32px;
+    width: 33%;
+  }
+  .close-account-btn{
+    background-color: #f00;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin: 20px 0;
+  }

@@ -82,13 +82,23 @@
 .Search_Result_Body_Left {
     display: flex;
     padding: 0px 0 15px;
-    border-bottom: 1px solid #e5e5e5;
+
     margin-bottom: 0;
     float: left;
     width: 100%;
+    flex-direction: column;
 }
 
+.SR_Filter_Sort_Container {
+    border-bottom: 1px solid #e5e5e5;
+    width: 100%;
+    display: flex;
+}
 
+.icon_tbl {
+    position: absolute;
+    left: 38%;
+}
 
 .SR_Sort {
     display: flex;
@@ -139,10 +149,11 @@
 .SR_Right_Col {
     flex: 0 0 auto;
     width: 75%;
+    width: 70%;
     padding-left: 60px;
 }
 
-.fcrse_1 {
+.SR_fcrse_1 {
     background: #fff;
     width: 100%;
     float: left;
@@ -274,6 +285,7 @@
 .SR_Course_Title {
     display: block;
     font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     color: #333;
@@ -317,8 +329,6 @@
     color: #333;
     text-align: right;
 }
-
-.SR_cart_btn {}
 
 .MTSR30 {
     margin-top: 30px;
@@ -373,4 +383,72 @@
     display: inline-block;
     /* -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both; */
+}
+
+
+
+/* .explore-container .load-more {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 30px;
+} */
+
+.load-more .spinner {
+    margin: 0 auto 0;
+    width: 50px;
+    text-align: center;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #fff;
+    line-height: 20px;
+    border: 1px solid #efefef;
+    cursor: pointer;
+}
+
+.Sort_Tbl {
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+
+.SR_Tbl_Content {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.SR_Tbl_Content>div {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    cursor: pointer;
+    padding: 5px 10px;
+    border-bottom: 1px solid #efefef;
+    border-radius: 4px;
+    /* background-color: #f0f0f0; */
+}
+
+.SR_Tbl_Content>div>span {
+    font-weight: bold;
+}
+
+.SR_Tbl_Content_Topic_Menu {
+    display: none;
+    flex-direction: column;
+    /* Hiển thị các label theo chiều dọc */
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.SR_Tbl_Content_Topic_Menu>div.active>div {
+    display: block;
+}
+
+.SR_Tbl_Content_Topic_Menu label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.SR_Tbl_Content_Topic_Menu input[type="radio"] {
+    margin-right: 5px;
 }

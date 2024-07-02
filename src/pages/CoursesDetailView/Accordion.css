@@ -1,0 +1,101 @@
+.accordion-container {
+  padding-top: 53px;
+    font-family: Arial, sans-serif;
+  }
+  
+.accordion-expand-holder span {
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+  .accordion-header {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .accordion-header:hover {
+    background-color: #ddd;
+  }
+  
+  .section-header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .section-title-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .crse_icon {
+    margin-right: 10px;
+  }
+  
+  .section-title-text {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .section-header-right {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .num-items-in-section,
+  .section-header-length {
+    margin-left: 10px;
+  }
+  
+  .accordion-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 10px;
+  }
+  
+  .lecture-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .left-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon_142 {
+    margin-right: 10px;
+  }
+  
+  .title {
+    font-size: 14px;
+  }
+  
+  .details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .preview-text {
+    margin-right: 10px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .preview-text:hover {
+    text-decoration: underline;
+  }
+  
+  .content-summary {
+    font-size: 12px;
+    color: #888;
+  }
+  

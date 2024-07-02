@@ -550,7 +550,7 @@ const Home = () => {
                   <div key={course.id} className="course-card">
                     <a>
                       <img src={course.imgSrc} alt={course.title} />
-                      <div className="course-overlay">
+                      <div className="home-course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
                           <img className='starIcon' src={ratingStar}></img>
@@ -616,7 +616,7 @@ const Home = () => {
                   <div key={course.id} className="course-card">
                     <a>
                       <img src={course.imgSrc} alt={course.title} />
-                      <div className="course-overlay">
+                      <div className="home-course-overlay">
                         <div className="course-timer">{course.hours}</div>
                       </div>
                     </a>
