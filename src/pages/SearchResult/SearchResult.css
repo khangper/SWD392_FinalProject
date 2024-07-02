@@ -82,7 +82,6 @@
 .Search_Result_Body_Left {
     display: flex;
     padding: 0px 0 15px;
-    border-bottom: 1px solid #e5e5e5;
 
     margin-bottom: 0;
     float: left;
@@ -388,67 +387,14 @@
     animation: sk-bouncedelay 1.4s infinite ease-in-out both; */
 }
 
-.SR_Tbl_Content_Topic h4 {
-    display: inline-block;
-    /* Để các phần tử nằm trên cùng 1 hàng */
-    margin-right: 10px;
-    /* Khoảng cách giữa hai phần tử */
-}
 
-.SR_Tbl_Content_Topic h4:last-child {
-    margin-right: 0;
-    /* Loại bỏ khoảng cách bên phải của phần tử cuối cùng */
-}
 
-.SR_Tbl_Content_Topic h4:hover {
-    cursor: pointer;
-    /* Đổi con trỏ chuột khi di chuột qua */
-}
-
-.SR_Tbl_Content_Topic_Menu {
-    display: none;
-    /* Mặc định ẩn đi */
-    position: absolute;
-    /* Để menu hiển thị đúng vị trí */
-    background-color: white;
-    /* Nền trắng cho menu */
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    /* Đổ bóng cho menu */
-    z-index: 1;
-    /* Độ cao lớp hiển thị của menu */
-}
-
-.SR_Tbl_Content_Topic:hover .SR_Tbl_Content_Topic_Menu {
-    display: block;
-    /* Hiển thị menu khi di chuột vào */
-}
-
-.Topic_item {
-    padding: 12px 16px;
-    /* Đệm nội dung của mỗi mục */
-    text-decoration: none;
-    /* Bỏ gạch chân cho các mục */
-    display: block;
-    /* Để mỗi mục nằm trên một hàng */
-}
-
-.Topic_item:hover {
-    background-color: #f1f1f1;
-    /* Nền xám nhạt khi di chuột qua mục */
-    cursor: pointer;
-    /* Đổi con trỏ chuột khi di chuột qua */
-}
-
-.Sort_Tbl {
-    margin-top: 40px;
-}
-
-.explore-container .load-more {
+/* .explore-container .load-more {
     float: left;
     width: 100%;
     margin-bottom: 20px;
     margin-top: 30px;
-}
+} */
 
 .load-more .spinner {
     margin: 0 auto 0;
@@ -460,4 +406,51 @@
     line-height: 20px;
     border: 1px solid #efefef;
     cursor: pointer;
+}
+
+.Sort_Tbl {
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+
+.SR_Tbl_Content {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.SR_Tbl_Content>div {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    cursor: pointer;
+    padding: 5px 10px;
+    border-bottom: 1px solid #efefef;
+    border-radius: 4px;
+    /* background-color: #f0f0f0; */
+}
+
+.SR_Tbl_Content>div>span {
+    font-weight: bold;
+}
+
+.SR_Tbl_Content_Topic_Menu {
+    display: none;
+    flex-direction: column;
+    /* Hiển thị các label theo chiều dọc */
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.SR_Tbl_Content_Topic_Menu>div.active>div {
+    display: block;
+}
+
+.SR_Tbl_Content_Topic_Menu label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.SR_Tbl_Content_Topic_Menu input[type="radio"] {
+    margin-right: 5px;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './SearchResult.css';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -14,6 +14,9 @@ const SearchResult = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState('Sort');
     const [selectedTopic, setSelectedTopic] = useState('Topic');
+    const [visibleSection, setVisibleSection] = useState(null);
+    const [selectedOption, setSelectedOption] = useState("");
+    const optionsRef = useRef([]);
 
     const sortOptions = [
         'Most Relevant',
@@ -23,15 +26,6 @@ const SearchResult = () => {
         'Lowest Price',
         'Highest Price'
     ];
-
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
-
-    const handleSortClick = (sortOption) => {
-        setSelectedSort(sortOption);
-        setIsOpen(false);
-    };
 
     const topics = [
         { name: 'SEO', count: 428 },
@@ -50,14 +44,36 @@ const SearchResult = () => {
         { name: 'Wordpress for Ecommerce', count: 5894 }
     ];
 
-    const toggleTopic = () => {
+    const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleTopicClick = (topic) => {
-        setSelectedTopic(topic.name);
+    const toggleOptions = (section) => {
+        setVisibleSection(prevSection => (prevSection === section ? null : section));
+    };
+
+    const handleSortClick = (sortOption) => {
+        setSelectedSort(sortOption);
         setIsOpen(false);
     };
+
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+
+    };
+
+    const handleClickOutside = (event) => {
+        if (!optionsRef.current.some(ref => ref && ref.contains(event.target))) {
+            setVisibleSection(null);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
 
     return (
         <>
@@ -81,6 +97,7 @@ const SearchResult = () => {
                 <div className='Search_Result_Body'>
                     <div className='SR_Left_Col'>
                         <div className='Search_Result_Body_Left'>
+
                             <div className='SR_Filter_Sort_Container'>
                                 <div className="SR_Filter">Filters</div>
                                 <div className="SR_Sort" onClick={toggleDropdown}>
@@ -103,27 +120,30 @@ const SearchResult = () => {
                                     )}
                                 </div>
                             </div>
+
                             <div className='Sort_Tbl'>
-                                <div className="SR_Tbl_Content">
-                                    <div className="SR_Tbl_Content_Topic" onClick={toggleTopic}>
-                                        <h4>
-                                            {selectedTopic || 'Topic'}
-                                        </h4>
-                                        <h4 className='icon_tbl'>+</h4>
-                                        {isOpen && (
-                                            <div className="SR_Tbl_Content_Topic_Menu">
-                                                {topics.map((topic, index) => (
-                                                    <div
-                                                        key={index}
-                                                        className="Topic_item"
-                                                        onClick={() => handleTopicClick(topic)}
-                                                    >
-                                                        {topic.name} ({topic.count})
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
+                                <div className='SR_Tbl_Content' ref={el => optionsRef.current[0] = el}>
+                                    <div onClick={() => toggleOptions('topics')}>
+                                        <span>{selectedTopic}</span>
+                                        <span>{visibleSection === 'topics' ? '-' : '+'}</span>
                                     </div>
+                                    {visibleSection === 'topics' && (
+                                        <div className='SR_Tbl_Content_Topic_Menu'>
+                                            {topics.map((topic, index) => (
+                                                <label key={index}>
+                                                    <input
+                                                        type="radio"
+                                                        name="topic"
+                                                        value={topic.name}
+                                                        checked={selectedOption === topic.name}
+                                                        onChange={handleOptionChange}
+                                                    />
+                                                    {console.log(topic.name)}
+                                                    {topic.name} ({topic.count})
+                                                </label>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -138,9 +158,8 @@ const SearchResult = () => {
                                         <div className="SR_Course_Overlay">
                                             <div className="SR_badge_seller">Bestseller</div>
                                             <div className="SR_crse_reviews">
-                                                <i className="uil uil-star">
-                                                    {/* <img className='starIcon' src={ratingStar} alt='rating' /> */}
-                                                </i>4.5
+                                                <i className="uil uil-star"></i>
+                                                4.5
                                             </div>
                                             <span className="SR_play_btn1"><i className="uil uil-play"></i></span>
                                             <div className="SR_crse_timer">
