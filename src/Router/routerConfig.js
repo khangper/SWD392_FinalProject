@@ -39,6 +39,7 @@ import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
 import TestResult from "../pages/TestResult/TestResult";
+import Message from "../pages/Message/Message";
 
 const publicRoutes = [
   { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -84,6 +85,7 @@ const privateRoutes = [
   { path: PATH_NAME.SAVE_COURSES, element: <SaveCourses /> },
   { path: PATH_NAME.SETTING, element: <Setting /> },
   { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
+  { path: PATH_NAME.MESSAGE, element: <Message /> },
 ];
 
 const routes = { publicRoutes, privateRoutes };
