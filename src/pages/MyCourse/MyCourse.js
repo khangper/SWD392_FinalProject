@@ -1,6 +1,27 @@
 import React, { useState } from 'react';
 import "./MyCourse.css";
+import DeleteMyCourse from '..//../assets/garbage.png';
+import EditMyCourse from '..//../assets/Edit-mycourse.png';
+import DowLoadMyCourse from '..//../assets/DowLoadMyCourse.png';
+import Printer from '..//../assets/Printer.png';
+import MyCourseBook from '..//../assets/MyCourse-Book.png';
+import discount from '..//../assets/discount.png';
+import uploadmc from '..//../assets/uploadmc.png';
+import Megaphone2 from '..//../assets/Megaphone2.png';
+
+
 function MyCourse() {
+  const openTab = (tabId) => {
+    setActiveTab(tabId); // Hàm mở tab
+};
+
+const [isOpen, setIsOpen] = useState(false);
+
+const toggleDropdown = () => {
+setIsOpen(!isOpen);
+};
+
+  
     // My course
     const courses = [
         {
@@ -59,6 +80,86 @@ function MyCourse() {
           actionDelete: '#'
         }
       ];
+    // My Purchase
+    const MyPurchase = [
+      {
+        itemNo: '1',
+        title: 'Course Title Here',
+        Vendor: 'Zoena Singh',
+        Category: 'Web Development',
+        DeliveryType: 'Download',
+        Price: '$15',
+        Purchase:'25 March 2020',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      {
+        itemNo: '2',
+        title: 'Course Title Here',
+        Vendor: 'Rock William',
+        Category: 'C++',
+        DeliveryType: 'Download',
+        Price: '$20',
+        Purchase:'25 March 2020',        
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      
+
+    ];  
+    //UpComing Course
+    const UpComming = [
+      {
+        itemNo: '01',
+        title: 'Course Title Here',
+        Thumbnail: 'View',
+        Category: 'Web Development',
+        Price: '$15',
+        Purchase:'9 April 2020',
+        Status:'Pending',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      {
+        itemNo: '02',
+        title: 'Course Title Here',
+        Thumbnail: 'View',
+        Category: 'Graphic Design',
+        Price: '$12',
+        Purchase:'8 April 2020',
+        Status:'Pending',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      {
+        itemNo: '03',
+        title: 'Course Title Here',
+        Thumbnail: 'View',
+        Category: 'Photography',
+        Price: '$6',
+        Purchase:'7 April 2020',
+        Status:'Pending',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      
+
+    ]; 
+    // Discount
+    const Discount = [
+      {
+        itemNo: '01',
+        title: 'Course Title Here',
+        StartDate: '02 November 2019',
+        EndDate: '19 November 2019',
+        Discount: '20%',
+        Status: 'Active',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      
+
+    ];
 
 
   const [activeTab, setActiveTab] = useState('my-courses');
@@ -69,6 +170,30 @@ function MyCourse() {
 
   return (
     <div className="MyCoursePage">
+
+       <div className="MyCoursePage-grid-container">
+           <div className="MyCoursePage-grid-item">
+                <div className="MyCoursePage-st_title">
+                 <img src={MyCourseBook}  className="Edit-icon" />                  
+                  Course                                  
+                </div> 
+           </div>
+       </div>
+
+       <div className="MyCoursePage1-grid-container">
+           <div className="MyCoursePage1-grid-item">
+           <div className="MyCoursePage1-card_dash1">
+							<div className="MyCoursePage1-card_dash_left1">
+              <img src={MyCourseBook}  className="Edit-icon" />   
+								<h1>Jump Into Course Creation</h1>
+							</div>
+							<div className="MyCoursePage1-card_dash_right1">
+								<button className="MyCoursePage1-create_btn_dash">Create Your Course</button>
+							</div>
+						</div>
+           </div>
+      </div>
+
 
 
 
@@ -82,7 +207,7 @@ function MyCourse() {
             role="tab"
             aria-selected={activeTab === 'my-courses'}
           >
-            <i className="uil uil-book-alt"></i> My Courses
+            <img src={MyCourseBook}  className="Edit-icon" />    My Courses
           </a>
         </div>
         <div className="MyCourse-nav-item">
@@ -92,7 +217,7 @@ function MyCourse() {
             role="tab"
             aria-selected={activeTab === 'my-purchases'}
           >
-            <i className="uil uil-download-alt"></i> My Purchases
+        <img src={DowLoadMyCourse}  className="Edit-icon" />My Purchases
           </a>
         </div>
         <div className="MyCourse-nav-item">
@@ -102,7 +227,7 @@ function MyCourse() {
             role="tab"
             aria-selected={activeTab === 'upcoming-courses'}
           >
-            <i className="uil uil-upload-alt"></i> Upcoming Courses
+            <img src={uploadmc}  className="Edit-icon" /> Upcoming Courses
           </a>
         </div>
         <div className="MyCourse-nav-item">
@@ -112,7 +237,7 @@ function MyCourse() {
             role="tab"
             aria-selected={activeTab === 'discounts'}
           >
-            <i className="uil uil-tag-alt"></i> Discounts
+            <img src={discount}  className="Edit-icon" /> Discounts
           </a>
         </div>
         <div className="MyCourse-nav-item">
@@ -122,7 +247,7 @@ function MyCourse() {
             role="tab"
             aria-selected={activeTab === 'promotions'}
           >
-            <i className="uil uil-megaphone"></i> Promotions
+            <img src={Megaphone2}  className="Edit-icon" /> Promotions
           </a>
         </div>
       </div>
@@ -132,7 +257,7 @@ function MyCourse() {
           <div className="MyCourse-tab-pane active" id="my-courses-tab" role="tabpanel">
             {/* Nội dung cho tab My Courses */}
 
-            <div className="MyCouser-containerr">
+                <div className="MyCouser-containerr">
                     <div className="MyCouser-table-container">
                     <table className="MyCourse-table ucp-table">
 
@@ -160,8 +285,11 @@ function MyCourse() {
       <td className="MyCourse-text-center" ><a href="#">{course.category} </a></td>
       <td className="MyCourse-text-center"><b className="MyCourse-course_active">{course.status}</b></td>
       <td className="MyCourse-text-center">
-        <a href={course.actionEdit} title="Edit" className="MyCourse-gray-s"><i className="uil uil-edit-alt"></i></a>
-        <a href={course.actionDelete} title="Delete" className="MyCourse-gray-s"><i className="uil uil-trash-alt"></i></a>
+        {/* <a href={course.actionEdit} title="Edit" className="MyCourse-gray-s"><img src={EditMyCourse}  className="search-icon" /></a> */}
+        <img src={EditMyCourse}  className="Edit-icon" />
+        <img src={DeleteMyCourse}  className="Edit-icon" />
+
+
       </td>
     </tr>
   ))}
@@ -176,29 +304,220 @@ function MyCourse() {
         {activeTab === 'my-purchases' && (
           <div className="MyCourse-tab-pane active" id="my-purchases-tab" role="tabpanel">
             {/* Nội dung cho tab My Purchases */}
-            <h4>My Purchases</h4>
-            <p>Content for My Purchases tab goes here.</p>
+                <div className="MyCouser-containerr">
+                    <div className="MyCouser-table-container">
+                    <table className="MyCourse-table ucp-table">
+
+
+<thead className="MyCourse-thead-s">
+  <tr>
+    <th className="MyCourse-text-center" scope="col">Item No.</th>
+    <th className="MyCourse-text-center">Title</th>
+    <th className="MyCourse-text-center" scope="col">Vendor</th>
+    <th className="MyCourse-text-center" scope="col">Category</th>
+    <th className="MyCourse-text-center" scope="col">Delivery Type</th>
+    <th className="MyCourse-text-center" scope="col">Price</th>
+    <th className="MyCourse-text-center" scope="col">Purchase Date</th>
+    <th className="MyCourse-text-center" scope="col">Action</th>
+  </tr>
+</thead>
+<tbody>
+  {MyPurchase.map(course => (
+    <tr key={course.itemNo}>
+      <td className="MyCourse-text-center">{course.itemNo}</td>
+      <td>{course.title}</td>
+      <td className="MyCourse-text-center" ><a href="#">{course.Vendor} </a></td>
+      <td className="MyCourse-text-center" ><a href="#">{course.Category} </a></td>
+      <td className="MyCourse-text-center"><b className="MyCourse-course_active">{course.DeliveryType}</b></td>
+      <td className="MyCourse-text-center">{course.Price}</td>
+      <td className="MyCourse-text-center">{course.Purchase}</td>
+      <td className="MyCourse-text-center">
+        <img src={DowLoadMyCourse}  className="Edit-icon" />
+        <img src={DeleteMyCourse}  className="Edit-icon" />
+        <img src={Printer}  className="Edit-icon" />
+
+      </td>
+    </tr>
+  ))}
+</tbody>
+     </table>
+                    </div>
+
+                </div>
           </div>
         )}
         {activeTab === 'upcoming-courses' && (
           <div className="MyCourse-tab-pane active" id="upcoming-courses-tab" role="tabpanel">
             {/* Nội dung cho tab Upcoming Courses */}
-            <h4>Upcoming Courses</h4>
-            <p>Content for Upcoming Courses tab goes here.</p>
+                 <div className="MyCouser-containerr">
+                    <div className="MyCouser-table-container">
+                    <table className="MyCourse-table ucp-table">
+
+
+<thead className="MyCourse-thead-s">
+  <tr>
+    <th className="MyCourse-text-center" scope="col">Item No.</th>
+    <th className="MyCourse-text-center">Title</th>
+    <th className="MyCourse-text-center" scope="col">Thumbnail</th>
+    <th className="MyCourse-text-center" scope="col">Category</th>
+    <th className="MyCourse-text-center" scope="col">Price</th>
+    <th className="MyCourse-text-center" scope="col">Date</th>
+    <th className="MyCourse-text-center" scope="col">Status</th>
+    <th className="MyCourse-text-center" scope="col">Action</th>
+  </tr>
+</thead>
+<tbody>
+  {UpComming.map(course => (
+    <tr key={course.itemNo}>
+      <td className="MyCourse-text-center">{course.itemNo}</td>
+      <td>{course.title}</td>
+      <td className="MyCourse-text-center" ><a href="#">{course.Thumbnail} </a></td>
+      <td className="MyCourse-text-center" ><a href="#">{course.Category} </a></td>
+
+      <td className="MyCourse-text-center">{course.Price}</td>
+      <td className="MyCourse-text-center">{course.Purchase}</td>
+      <td className="MyCourse-text-center"><b className="MyCourse-course_active">{course.Status}</b></td>
+      <td className="MyCourse-text-center">
+        <img src={EditMyCourse}  className="Edit-icon" />
+        <img src={DeleteMyCourse}  className="Edit-icon" />
+      </td>
+    </tr>
+  ))}
+</tbody>
+     </table>
+                    </div>
+
+                </div>
           </div>
         )}
         {activeTab === 'discounts' && (
           <div className="MyCourse-tab-pane active" id="discounts-tab" role="tabpanel">
             {/* Nội dung cho tab Discounts */}
-            <h4>Discounts</h4>
-            <p>Content for Discounts tab goes here.</p>
+             <div className=" Mc-panel-default Mt-30">
+        <div className="panel-heading-checkout" onClick={toggleDropdown}>       
+            <span className="edit-title">New Discount</span>
+			      <span className="edit-icon">{isOpen ? '−' : '✚'}</span>         
+        </div>
+        <div className={`panel-collapse ${isOpen ? 'show' : ''}`}>
+          <div className="panel-body basic_form">
+          <div className="MC-grid-container">
+															<div className="MC-grid-item">
+
+                              
+  <div className="MC1-grid-container">
+  <div className="MC1-grid-item">
+    <div className="ui MC-search focus mt-20 Mc-lbel25">	
+      <label>Course*</label>
+    </div>
+    <select className="ui dropdown Mc-cntry152 prompt MC-srch_explore">
+      <option value="">Select Course</option>
+      <option value="1">Course Title Here</option>
+      <option value="2">Course Title Here</option>
+      <option value="3">Course Title Here</option>
+      <option value="4">Course Title Here</option>
+      <option value="5">Course Title Here</option>
+      <option value="6">Course Title Here</option>
+      <option value="7">Course Title Here</option>
+    </select>
+  </div>
+  
+  <div className="MC1-grid-item">
+    <div className="ui MC-search focus mt-20 Mc-lbel25">
+      <label>Discount Amount</label>
+      <div className="ui left icon input swdh19">
+        <input className="prompt MC-srch_explore" type="number" placeholder="Percent (eg. 20 for 20%)"/>															
+      </div>
+    </div>
+  </div>
+
+  <div className="MC1-grid-item">
+    <div className="ui MC-search focus mt-20 Mc-lbel25">
+      <label>Start Date</label>
+      <div className="ui left icon input swdh19">
+        <input className="prompt MC-srch_explore datepicker-here" type="text" data-language="en" placeholder="dd/mm/yyyy"/>															
+      </div>
+    </div>	
+  </div>
+
+  <div className="MC1-grid-item">
+    <div className="ui MC-search focus mt-20 Mc-lbel25">
+      <label>End Date</label>
+      <div className="ui left icon input swdh19">
+        <input className="prompt MC-srch_explore datepicker-here" type="text" data-language="en" placeholder="dd/mm/yyyy"/>															
+      </div>
+    </div>
+  </div>
+
+  <div className="MC1-grid-item">
+    <button className="Mc-discount_btn" type="submit">Save Changes</button>	
+  </div>
+</div>																
+	</div>
+  	</div>
+
+          </div>
+        </div>
+             </div>
+
+
+             <div className="MyCouser-containerr">
+                    <div className="MyCouser-table-container">
+                    <table className="MyCourse-table ucp-table">
+
+
+<thead className="MyCourse-thead-s">
+  <tr>
+    <th className="MyCourse-text-center" scope="col">Item No.</th>
+    <th className="MyCourse-text-center">Title</th>
+    <th className="MyCourse-text-center" scope="col">Start Date</th>
+    <th className="MyCourse-text-center" scope="col">End Date</th>
+    <th className="MyCourse-text-center" scope="col">Discount</th>
+    <th className="MyCourse-text-center" scope="col">Status</th>
+    <th className="MyCourse-text-center" scope="col">Action</th>
+  </tr>
+</thead>
+<tbody>
+  {Discount.map(course => (
+    <tr key={course.itemNo}>
+      <td className="MyCourse-text-center">{course.itemNo}</td>
+      <td>{course.title}</td>
+      <td className="MyCourse-text-center">{course.StartDate}</td>
+      <td className="MyCourse-text-center">{course.EndDate}</td>
+      <td className="MyCourse-text-center">{course.Discount}</td>
+      <td className="MyCourse-text-center"><b className="MyCourse-course_active">{course.Status}</b></td>
+      <td className="MyCourse-text-center">
+        <img src={EditMyCourse}  className="Edit-icon" />
+        <img src={DeleteMyCourse}  className="Edit-icon" />
+      </td>
+    </tr>
+  ))}
+</tbody>
+     </table>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
           </div>
         )}
         {activeTab === 'promotions' && (
           <div className="MyCourse-tab-pane active" id="promotions-tab" role="tabpanel">
             {/* Nội dung cho tab Promotions */}
-            <h4>Promotions</h4>
-            <p>Content for Promotions tab goes here.</p>
+                <div className="MyCourse-tab-pane " id="pills-promotions" role="tabpanel" aria-labelledby="pills-promotions-tab">
+									<div className="MyCourse-promotion_tab mb-10">
+										<img src="https://gambolthemes.net/html-items/cursus-new-demo/images/dashboard/promotion.svg" alt=""/>
+										<h4>Baby promotion plan is activated!</h4>
+										<p>By activating promotion plans you can improve course views and sales.</p>
+										<button className="MyCourse-plan_link_btn">Change New Plan</button>
+									</div>
+								</div>
           </div>
         )}
       </div>

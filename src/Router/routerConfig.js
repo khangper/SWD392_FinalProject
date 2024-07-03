@@ -38,6 +38,7 @@ import MyCourse from '../pages/MyCourse/MyCourse';
 import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
+import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
 
 const publicRoutes = [
     { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -82,6 +83,8 @@ const publicRoutes = [
     { path: PATH_NAME.SAVE_COURSES, element: <SaveCourses /> },
     { path: PATH_NAME.SETTING, element: <Setting /> },
     { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
+    { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse/> },
+
   ];
 
 const routes = { publicRoutes, privateRoutes };
