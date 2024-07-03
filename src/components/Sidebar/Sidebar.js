@@ -105,6 +105,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="coming-soon">Coming Soon</a>
           <a href="mycourse">My Course</a>
           <a href="error404">Error  404</a>
+          <a href="vertification">Vertification</a>
         </div>
       )}
       <hr />
