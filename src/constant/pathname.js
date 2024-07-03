@@ -39,5 +39,6 @@ export const PATH_NAME = {
     CERTIFICATION_TEST: '/certificates-test',
     COMING_SOON: '/coming-soon',
     PURCHASE_COURSE: '/PurchaseCourse',
+    NOTIFICATON: '/notification',
     
 };

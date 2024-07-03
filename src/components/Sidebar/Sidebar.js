@@ -104,7 +104,8 @@ const Sidebar = ({ sidebar }) => {
           <a href="Thanks">Thank you</a>
           <a href="coming-soon">Coming Soon</a>
           <a href="mycourse">My Course</a>
-          <a href="PurchaseCourse">Purchase Course</a>          
+          <a href="PurchaseCourse">Purchase Course</a>
+          <a href="notification">Notification</a>          
           <a href="error404">Error  404</a>
         </div>
       )}

@@ -39,6 +39,7 @@ import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
 import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
+import Notification from "../pages/Notification/Notification";
 
 const publicRoutes = [
     { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -84,6 +85,8 @@ const publicRoutes = [
     { path: PATH_NAME.SETTING, element: <Setting /> },
     { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
     { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse/> },
+    { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
+
 
   ];
 
