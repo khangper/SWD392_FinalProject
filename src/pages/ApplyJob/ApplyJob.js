@@ -178,8 +178,8 @@ const ApplyJob = () => {
                     />
                   </div>
                   <div className="apply-job-border-form">
-                    <select name="gender" defaultValue="">
-                      <option value="">Gender</option>
+                    <select name="gender" defaultValue="" required>
+                      <option hidden value="">Gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
@@ -246,7 +246,7 @@ const ApplyJob = () => {
                     name="infor"
                     id="infor"
                     placeholder="Add a cover letter or anything else you want to share"
-                    rows={30}
+                    rows={10}
                     cols={10}
                   ></textarea>
                 </div>
