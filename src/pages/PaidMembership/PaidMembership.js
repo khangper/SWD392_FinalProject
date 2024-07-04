@@ -13,29 +13,26 @@ export default function PaidMembership() {
     <div >
         <Header />
 <main>
-      <div className="Paidmembership_215b15">
-    
-         <div className="row">
-            <div className="title125">
-                <div className="titleleft">
-                    <div className="ttl121">
-                        <nav aria-label="breadcrumb">
-                            <div className="breadcrumb">
-                                <Link href="index.html" className="breadcrumb-item">Home</Link>
-                                <Link className="breadcrumb-item active" aria-current="page">/Paid Membership</Link>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
+<div className="HelpView1-grid-container">
+    <div className="HelpView-title125">
+        <div className="HelpView-titleleft">
+            <div className="HelpView-ttl121">
+                <nav aria-label="breadcrumb">
+                    <ol className="HelpView-breadcrumb">
+                        <li className="HelpView-breadcrumb-item"><a href="index.html">Home</a></li>
+                        
+                        <li className="HelpView-breadcrumb-item active" aria-current="page">/Paymember Ship</li>
+                    </ol>
+                </nav>
             </div>
-
-            <div className="Paidmember-title" >
-                <h2>Paid Membership</h2>
-            </div>
-
         </div>
 
-              </div>
+    </div>
+    <div className="HelpView-title126">
+        <h2>Paymember Ship</h2>
+    </div>
+             </div>
+
 
 
               <div className="memb4d25">
