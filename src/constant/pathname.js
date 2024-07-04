@@ -40,4 +40,5 @@ export const PATH_NAME = {
     COMING_SOON: '/coming-soon',
     ALL_INSTRUCTOR_LIST: '/all-instructor-list',
     SITEMAP: '/sitemap',
+    EARNING: '/instructor-earning',
 };
