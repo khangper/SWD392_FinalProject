@@ -41,5 +41,7 @@ export const PATH_NAME = {
     // ALL_INSTRUCTOR_LIST: '/all-instructor-list',
     TEST_RESULT: '/test-result',
     MESSAGE: '/message',
+    COURSES_DETAIL_VIEW: '/courses-detail-view',
+    PREVIEWS: '/previews',
 
 };

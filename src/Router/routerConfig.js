@@ -40,6 +40,8 @@ import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
 import TestResult from "../pages/TestResult/TestResult";
 import Message from "../pages/Message/Message";
+import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
+import Previews from "../pages/Previews/Previews";
 
 const publicRoutes = [
   { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -86,6 +88,8 @@ const privateRoutes = [
   { path: PATH_NAME.SETTING, element: <Setting /> },
   { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
   { path: PATH_NAME.MESSAGE, element: <Message /> },
+  { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
+  { path: PATH_NAME.PREVIEWS, element: <Previews /> }
 ];
 
 const routes = { publicRoutes, privateRoutes };
