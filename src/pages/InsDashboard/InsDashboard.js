@@ -305,7 +305,7 @@ const InsDashboard = () => {
               <div className="sc-card">
                 <a href="#" className="pa-title">
                   The Complete JavaScript Course 2020: Build Real Projects!
-                  <span class="pa-pending-icon">Pending</span>
+                  <span className="pa-pending-icon">Pending</span>
                 </a>
                 <p className="submit-course">
                   Submmited <span>1 days ago</span>
