@@ -574,7 +574,7 @@ export default function Checkout() {
 
                 </div>
                 <div className={activeTab === 'bank-method-tab' ? 'Select-custom-tabs-pane active' : 'Select-custom-tabs-pane'} id="bank-method-tab">
-                <form className="CC-grid-container">
+                <form className="CheckoutCC-grid-container">
     <div className="item">
         <div className="ui search focus mt-30 lbel25">
             <label>Account Holder Name</label>

@@ -282,3 +282,11 @@ a.pp-2.d-flex {
     display: contents;
 	overflow: hidden;
 }
+
+.lecture-sidebar-curriculum-wrap {
+    display: table-footer-group;
+}
+
+.download-grid-item.DC-sibardow {
+    margin-top: -235px;
+}
