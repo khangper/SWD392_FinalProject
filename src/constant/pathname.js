@@ -38,4 +38,5 @@ export const PATH_NAME = {
     CERTIFICATION_FILL_FORM: '/certificationfillform',
     CERTIFICATION_TEST: '/certificates-test',
     COMING_SOON: '/coming-soon',
+    INS_DASHBOARD: '/ins-dashboard',
 };
