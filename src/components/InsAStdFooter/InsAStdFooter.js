@@ -8,7 +8,7 @@ import insta from '../../assets/insta.png';
 import pinterest from '../../assets/pinterest.png';
 const InsAStdFooter = ({sidebar}) => {
   return (
-    <footer className={`footer ${sidebar ? 'footer-container' : 'footer-large-container'}`}>
+    <footer className={`footer ${sidebar ? 'footer-instructor' : 'footer-instructor-large'}`}>
       <div className='footer-top'>
         <div className="ins-footer-links">
         <a href='#'>Copyright Policy</a>
