@@ -4,6 +4,7 @@ import EditMyCourse from '..//../assets/Edit-mycourse.png';
 import MyCourseBook from '..//../assets/MyCourse-Book.png';
 import DowLoadMyCourse from '..//../assets/DowLoadMyCourse.png';
 import Printer from '..//../assets/Printer.png';
+import { Link } from 'react-router-dom';
 
 function PurchaseCourse() {
 
@@ -71,7 +72,7 @@ function PurchaseCourse() {
       <td>{course.title}</td>
       <td className="MyCourse-text-center" ><a href="#">{course.Vendor} </a></td>
       <td className="MyCourse-text-center" ><a href="#">{course.Category} </a></td>
-      <td className="MyCourse-text-center"><b className="MyCourse-course_active">{course.DeliveryType}</b></td>
+      <td className="MyCourse-text-center"><Link to="/dowloadcourse"><b className="MyCourse-course_active">{course.DeliveryType}</b></Link></td>
       <td className="MyCourse-text-center">{course.Price}</td>
       <td className="MyCourse-text-center">{course.Purchase}</td>
       <td className="MyCourse-text-center">

@@ -37,14 +37,14 @@ function Notification() {
       ];
   return (
     <div className="NotificationPage">
-        <div class="NT-grid-container">
-          <div class="NT-grid-item">
-          <h2 class="NT-st_title"><img src={notification_icon}  className="Edit-icon" /> Notifications</h2>
+        <div className="NT-grid-container">
+          <div className="NT-grid-item">
+          <h2 className="NT-st_title"><img src={notification_icon}  className="Edit-icon" /> Notifications</h2>
           </div>
         </div>  
-        <div class="NT-grid-container">
-          <div class="NT-grid-item">
-          <a href="#" class="NT-setting_noti">Notification Setting</a>
+        <div className="NT-grid-container">
+          <div className="NT-grid-item">
+          <a href="#" className="NT-setting_noti">Notification Setting</a>
           
           <div className="NT-all_msg_bg">
       {notifications.map(notification => (

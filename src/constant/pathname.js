@@ -40,5 +40,10 @@ export const PATH_NAME = {
     COMING_SOON: '/coming-soon',
     PURCHASE_COURSE: '/PurchaseCourse',
     NOTIFICATON: '/notification',
+    DOWLOADCOURSE: '/dowloadcourse',
+    COURSEVIEW: '/courseview',
+    CERTIFICATION_CENTER: '/certificationcenter',
+
+
     
 };
