@@ -38,43 +38,53 @@ import MyCourse from '../pages/MyCourse/MyCourse';
 import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
+import TestResult from "../pages/TestResult/TestResult";
+import Message from "../pages/Message/Message";
+import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
+import Previews from "../pages/Previews/Previews";
+import InsDashboard from "../pages/InsDashboard/InsDashboard";
+import Sitemap from "../pages/Sitemap/Sitemap";
+import Earning from "../pages/Earning/Earning";
+import Vertification from "../pages/Vertification/Vertification";
 import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
 import Notification from "../pages/Notification/Notification";
 import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
-import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
 import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
+import MyCertifications from "../pages/MyCertifications/MyCertifications";
+import Payout from "../pages/Payout/Payout";
+
 
 const publicRoutes = [
-    { path: PATH_NAME.LOGIN, element: <Login /> },
-    { path: PATH_NAME.FORGOT_PASSWORD, element: <ForgotPassword /> },
-    { path: PATH_NAME.SIGN_UP, element: <SignUp /> },
-    { path: PATH_NAME.SIGN_UP_STEP, element: <StepSignUp /> },
-    { path: PATH_NAME.THANKS, element: <Thanks /> },
-    { path: PATH_NAME.ERROR_404, element: <Error404 /> },
-    { path: PATH_NAME.INVOICE, element: <Invoice /> },
-    { path: PATH_NAME.PRESS, element: <PressReleasePage /> },
-    { path: PATH_NAME.SEARCH_RESULT, element: <SearchResult /> },
-    { path: PATH_NAME.PAID_MEMBERSHIP, element: <PaidMembership /> },
-    { path: PATH_NAME.ABOUT_US, element: <About /> },
-    { path: PATH_NAME.OUR_BLOG, element: <Blog /> },
-    { path: PATH_NAME.BLOG_SINGLE_VIEW, element: <BlogDetail /> },
-    { path: PATH_NAME.CHECKOUT, element: <Checkout /> },
-    { path: PATH_NAME.SHOPPING_CART, element: <ShoppingCart /> },
-    { path: PATH_NAME.HELP_VIEW_1, element: <HelpView1 /> },
-    { path: PATH_NAME.HELP_VIEW_2, element: <HelpView2 /> },
-    { path: PATH_NAME.COMPANY_DETAILS, element: <Company /> },
-    { path: PATH_NAME.CAREER, element: <Career /> },
-    { path: PATH_NAME.APPLY_JOB, element: <ApplyJob /> },
-    { path: PATH_NAME.CONTACT_US, element: <ContactUs /> },
-    { path: PATH_NAME.TERMS_OF_USE, element: <TermsOfUse /> },
-    { path: PATH_NAME.CERTIFICATION_FILL_FORM, element: <CertificationFillForm /> },
-    { path: PATH_NAME.CERTIFICATION_TEST, element: <CertificationTest /> },
-    { path: PATH_NAME.COMING_SOON, element: <CommingSoon /> },
-    { path: PATH_NAME.DOWLOADCOURSE, element: <DowloadCourse /> },
-    { path: PATH_NAME.CERTIFICATION_CENTER, element: <CertificationCenter /> },
+  { path: PATH_NAME.LOGIN, element: <Login /> },
+  { path: PATH_NAME.FORGOT_PASSWORD, element: <ForgotPassword /> },
+  { path: PATH_NAME.SIGN_UP, element: <SignUp /> },
+  { path: PATH_NAME.SIGN_UP_STEP, element: <StepSignUp /> },
+  { path: PATH_NAME.THANKS, element: <Thanks /> },
+  { path: PATH_NAME.ERROR_404, element: <Error404 /> },
+  { path: PATH_NAME.INVOICE, element: <Invoice /> },
+  { path: PATH_NAME.PRESS, element: <PressReleasePage /> },
+  { path: PATH_NAME.SEARCH_RESULT, element: <SearchResult /> },
+  { path: PATH_NAME.PAID_MEMBERSHIP, element: <PaidMembership /> },
+  { path: PATH_NAME.ABOUT_US, element: <About /> },
+  { path: PATH_NAME.OUR_BLOG, element: <Blog /> },
+  { path: PATH_NAME.BLOG_SINGLE_VIEW, element: <BlogDetail /> },
+  { path: PATH_NAME.CHECKOUT, element: <Checkout /> },
+  { path: PATH_NAME.SHOPPING_CART, element: <ShoppingCart /> },
+  { path: PATH_NAME.HELP_VIEW_1, element: <HelpView1 /> },
+  { path: PATH_NAME.HELP_VIEW_2, element: <HelpView2 /> },
+  { path: PATH_NAME.COMPANY_DETAILS, element: <Company /> },
+  { path: PATH_NAME.CAREER, element: <Career /> },
+  { path: PATH_NAME.APPLY_JOB, element: <ApplyJob /> },
+  { path: PATH_NAME.CONTACT_US, element: <ContactUs /> },
+  { path: PATH_NAME.TERMS_OF_USE, element: <TermsOfUse /> },
+  { path: PATH_NAME.CERTIFICATION_FILL_FORM, element: <CertificationFillForm /> },
+  { path: PATH_NAME.CERTIFICATION_TEST, element: <CertificationTest /> },
+  { path: PATH_NAME.COMING_SOON, element: <CommingSoon /> },
+  { path: PATH_NAME.DOWLOADCOURSE, element: <DowloadCourse /> },
+  { path: PATH_NAME.CERTIFICATION_CENTER, element: <CertificationCenter /> },
+     { path: PATH_NAME.TEST_RESULT, element: <TestResult /> },
+];
 
-
-  ];
   
   const privateRoutes = [
     { path: PATH_NAME.HOME, element: <Home /> },
@@ -91,12 +101,20 @@ const publicRoutes = [
     { path: PATH_NAME.SAVE_COURSES, element: <SaveCourses /> },
     { path: PATH_NAME.SETTING, element: <Setting /> },
     { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
+    { path: PATH_NAME.INS_DASHBOARD, element: <InsDashboard /> },
+    { path: PATH_NAME.SITEMAP, element: <Sitemap />},
+    { path: PATH_NAME.EARNING, element: <Earning />},
     { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse/> },
     { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
     { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView/> },
-
-  
+    { path: PATH_NAME.VERTIFICATION, element: <Vertification/> },
+    { path: PATH_NAME.PAYOUT, element: <Payout />},
+    { path: PATH_NAME.MESSAGE, element: <Message /> },
+  { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
+  { path: PATH_NAME.PREVIEWS, element: <Previews /> },
+     { path: PATH_NAME.MYCERTIFICATIONS, element: <MyCertifications /> },
   ];
+
 
 const routes = { publicRoutes, privateRoutes };
 

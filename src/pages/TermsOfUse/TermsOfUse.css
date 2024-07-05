@@ -68,6 +68,10 @@ p {
 .Terms_Small_Title_Right img {
     border-radius: 3px;
     margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
 .Terms_Big_Title {

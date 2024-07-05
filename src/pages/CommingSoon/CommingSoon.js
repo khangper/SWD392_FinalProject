@@ -32,43 +32,16 @@ const CommingSoon = () => {
 
     return (
         <div className="Thanks-wrapper">
-            {/* <div className="container"> */}
             <div className="Thanks-row">
                 <div className="Thanks-col-md-12">
                     <div className="Thanks-cmtk_group">
                         <Link to="/home">
                             <div className="Thanks-ct-logo">
-                                <a href="index.html"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></a>
+                                <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" />
                             </div>
                         </Link>
 
                         <div className="Thanks-cmtk_dt">
-                            {/* <div className='cs-time'>
-                                <div className='cs-timer'>
-                                    <span className="cs_coming_title">
-                                        335 :
-                                    </span>
-                                    <label>Days</label>
-                                </div>
-                                <div className='cs-timer'>
-                                    <span className="cs_coming_title">
-                                        00 :
-                                    </span>
-                                    <label>Hours</label>
-                                </div>
-                                <div className='cs-timer'>
-                                    <span className="cs_coming_title">
-                                        00 :
-                                    </span>
-                                    <label>Minutes</label>
-                                </div>
-                                <div className='cs-timer'>
-                                    <span className="cs_coming_title">
-                                        00
-                                    </span>
-                                    <label>Seconds</label>
-                                </div>
-                            </div> */}
                             <div className='cs-time'>
                                 <div className='cs-timer'>
                                     <span className="cs_coming_title">
@@ -96,12 +69,12 @@ const CommingSoon = () => {
                                 </div>
                             </div>
                             <h4 className="cs-thnk_title1">We will be comming soon!</h4>
-                            <div class="cs-search">
+                            <div className="cs-search">
                                 <form>
-                                    <div class="cs-search-box">
-                                        <div class="cs-search-input">
-                                            <input class="cs-input" type="email" name="emailaddress" value="" id="id_email" required="" maxlength="64" placeholder="Email address" />
-                                            <button class="cs-submit" type="submit">Notify Me</button>
+                                    <div className="cs-search-box">
+                                        <div className="cs-search-input">
+                                            <input className="cs-input" type="email" name="emailaddress" id="id_email" required="" maxLength="64" placeholder="Email address" />
+                                            <button className="cs-submit" type="submit">Notify Me</button>
                                         </div>
                                     </div>
                                 </form>

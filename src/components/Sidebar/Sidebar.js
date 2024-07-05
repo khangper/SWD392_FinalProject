@@ -29,7 +29,6 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-
       <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Home</p>
@@ -105,8 +104,10 @@ const Sidebar = ({ sidebar }) => {
           <a href="coming-soon">Coming Soon</a>
           <a href="mycourse">My Course</a>
           <a href="PurchaseCourse">Purchase Course</a>
-          <a href="notification">Notification</a>          
+          <a href="notification">Notification</a>
           <a href="error404">Error  404</a>
+          <a href="vertification">Vertification</a>
+          <a href="mycertifications">My Certifications</a>
         </div>
       )}
       <hr />

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import menu_icon from "..//../assets/menu.png";
 import search_icon from "..//../assets/search.png";
@@ -8,6 +8,7 @@ import notification_icon from "..//../assets/notification-icon.png";
 import profile_image from "..//../assets/profile-img.jpg";
 import moon_image from "..//../assets/moon.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Router/AuthContext";
 const Navbar = ({ setSidebar }) => {
   const sampleMessages = [
     {
@@ -114,6 +115,8 @@ const Navbar = ({ setSidebar }) => {
   const sidebar_toggle = () => {
     setSidebar((prev) => !prev);
   };
+
+  const { logout } = useContext(AuthContext);
 
   return (
     <nav className="flex-div">
@@ -252,7 +255,7 @@ const Navbar = ({ setSidebar }) => {
               <div className="profile-item"> Setting</div>
               <div className="profile-item">Help</div>
               <div className="profile-item"> Send Feedback</div>
-              <div className="profile-item"> Sign Out</div>
+              <div className="profile-item" onClick={logout}> Sign Out</div>
             </div>
           )}
         </div>
