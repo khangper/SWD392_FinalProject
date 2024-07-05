@@ -71,13 +71,17 @@
   }
   
   .user-status {
-    display: flex;
-    align-items: center;
+    min-height: 44px;
+    padding: 0;
+    position: relative;
+    float: left;
+    width: 100%;
   }
   
   .user-avatar {
+    margin-top: 0px;
+    float: left;
     position: relative;
-    margin-right: 15px;
   }
   
   .user-avatar img {
@@ -99,22 +103,45 @@
   }
   
   .user-status-title {
+    color: #333;
     font-size: 16px;
-    font-weight: bold;
-    margin: 0;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4285714286em;
+    text-align: left;
+    padding-left: 65px;
+    display: block;
+    margin-bottom: 6px;
   }
   
   .user-status-text {
+    color: #686f7a;
     font-size: 14px;
-    color: #888;
-    margin: 5px 0;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: -110px;
+    margin-bottom: 0;
+    margin-left: 65px;
   }
   
   .user-status-time {
-    font-size: 12px;
-    color: #bbb;
+    margin-top: 0;
+    position: absolute;
+    top: 2px;
+    right: 0;
   }
   
+  .user-status .user-status-time {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    color: #afafaf;
+}
+
   /* Chatbox */
   .chatbox_right {
     display: flex;
@@ -148,6 +175,9 @@
     padding: 3px 10px;
     border-radius: 20px;
     margin-left: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
   }
   
   .messages-line {
@@ -263,3 +293,10 @@
     height: 18px;
   }
   
+  .group_messages::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .messages-line::-webkit-scrollbar {
+    width: 0;
+  }

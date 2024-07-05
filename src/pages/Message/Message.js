@@ -120,7 +120,7 @@ const Message = () => {
                                     <div className="col-xl-8 col-lg-7 col-md-12">
                                         <div className="chatbox_right">
                                             <div className="chat_header">
-                                                <div className="user-status">
+                                                <div className="user-status-box1">
                                                     <div className="user-avatar">
                                                         <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="" />
                                                     </div>
