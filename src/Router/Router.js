@@ -3,12 +3,14 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import Layout from '../components/Layout/Layout'
 import routes from './routerConfig';
+import { AuthProvider } from './AuthContext';
 
 const Router = () => {
   const [sidebar, setSidebar] = useState(true);
   return (
     <div>
-    <Routes>
+      <AuthProvider>
+      <Routes>
       <Route path="/" element={<Navigate to="/login" />} />
       {routes.publicRoutes.map((route, index) => (
         <Route key={index} path={route.path} element={route.element} />
@@ -19,6 +21,8 @@ const Router = () => {
         ))}
       </Route>
     </Routes>
+      </AuthProvider>
+   
   </div>
   )
 }

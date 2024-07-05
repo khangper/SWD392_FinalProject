@@ -29,7 +29,6 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-
       <Link to='home' className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Home</p>
