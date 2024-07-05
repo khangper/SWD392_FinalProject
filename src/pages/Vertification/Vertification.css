@@ -34,12 +34,9 @@
 
 .Vertification_Body_Content img {
     width: 200px;
-}
-
-img,
-svg {
     vertical-align: middle;
 }
+
 
 .Vertification_Body_Content h4 {
     font-size: 24px;
