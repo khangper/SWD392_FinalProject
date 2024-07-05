@@ -49,7 +49,6 @@ import Vertification from "../pages/Vertification/Vertification";
 import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
 import Notification from "../pages/Notification/Notification";
 import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
-import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
 import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
 
 const publicRoutes = [
