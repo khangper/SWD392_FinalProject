@@ -47,8 +47,10 @@ export const PATH_NAME = {
     DOWLOADCOURSE: '/dowloadcourse',
     CERTIFICATION_CENTER: '/certificationcenter',
    SITEMAP: '/sitemap',
-    EARNING: '/instructor-earning',
-   PAYOUT: '/instructor-payout',
+    EARNING: '/earning',
+   PAYOUT: '/payout',
    VERTIFICATION: '/vertification',
-    MYCERTIFICATIONS: '/mycertifications'
+    MYCERTIFICATIONS: '/mycertifications',
+    COMING_SOON: '/coming-soon',
+    CREDIT: '/credits',
 };
