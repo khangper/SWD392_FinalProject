@@ -216,7 +216,7 @@ strong {
     z-index: 1;
     height: calc(1.5em + .75rem + 2px);
     padding: 1.3rem 2rem;
-    font-weight: 550 !important;
+    font-weight: 500 !important;
     line-height: 0;
     color: #686f7a !important;
     background-color: #fff;
