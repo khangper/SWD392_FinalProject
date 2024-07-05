@@ -21,6 +21,7 @@
   display: inline-block;
   min-width: 73px;
   font-size: 18px;
+  margin-bottom: 0 !important;
 }
 
 .earning-label,
