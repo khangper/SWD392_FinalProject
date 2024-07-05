@@ -1,4 +1,5 @@
 import React from 'react'
+import './Previews.css'
 import star from "../../assets/star.png";
 import ratingStar from "../../assets/rating.png"
 import search from "../../assets/search.png";
@@ -14,80 +15,80 @@ const Previews = () => {
                                 <h3>Student Feedback</h3>
                                 <div className="total_rating">
                                     <div className="_rate001">4.6</div>
-                                    <div className="rating-box">
+                                    <div className="p-rating-box">
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
-                                        <img className='starIcon' src={ratingStar}></img>
+                                        <img className='p-star' src={ratingStar}></img>
                                     </div>
-                                    <div className="_rate002">Course Rating</div>
+                                    <div className="p-rate002">Course Rating</div>
                                 </div>
                                 <div className="_rate003">
                                     <div className="_rate004">
-                                        <div className="progress progress1">
+                                        <div className="p-progress">
                                             <div className="progress-bar w-70"></div>
                                         </div>
-                                        <div className="rating-box">
+                                        <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                         </div>
-                                        <div className="_rate002">70%</div>
+                                        <div className="p-rate002">70%</div>
                                     </div>
                                     <div className="_rate004">
-                                        <div className="progress progress1">
+                                        <div className="p-progress">
                                             <div className="progress-bar w-30"></div>
                                         </div>
-                                        <div className="rating-box">
+                                        <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
-                                            <img className='starIcon' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
                                         </div>
-                                        <div className="_rate002">40%</div>
+                                        <div className="p-rate002">40%</div>
                                     </div>
                                     <div className="_rate004">
-                                        <div className="progress progress1">
+                                        <div className="p-progress">
                                             <div className="progress-bar w-5"></div>
                                         </div>
-                                        <div className="rating-box">
+                                        <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
-                                            <img className='starIcon' src={ratingStar}></img>
-                                            <img className='starIcon' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
                                         </div>
-                                        <div className="_rate002">5%</div>
+                                        <div className="p-rate002">5%</div>
                                     </div>
                                     <div className="_rate004">
-                                        <div className="progress progress1">
+                                        <div className="p-progress">
                                             <div className="progress-bar w-2"></div>
                                         </div>
-                                        <div className="rating-box">
+                                        <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
-                                            <img className='starIcon' src={ratingStar}></img>
-                                            <img className='starIcon' src={ratingStar}></img>
-                                            <img className='starIcon' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
                                         </div>
-                                        <div className="_rate002">1%</div>
+                                        <div className="p-rate002">1%</div>
                                     </div>
                                     <div className="_rate004">
-                                        <div className="progress progress1">
+                                        <div className="p-progress">
                                             <div className="progress-bar w-1"></div>
                                         </div>
-                                        <div className="rating-box">
+                                        <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
-                                            <img className='starIcon' src={ratingStar}></img>
-                                            <img className='starIcon' src={ratingStar}></img>
-                                            <img className='starIcon' src={ratingStar}></img>
-                                            <img className='starIcon' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
                                         </div>
-                                        <div className="_rate002">1%</div>
+                                        <div className="p-rate002">1%</div>
                                     </div>
                                 </div>
                             </div>
@@ -105,20 +106,20 @@ const Previews = () => {
                             <div className="review_all120">
                                 <div className="review_item">
                                     <div className="review_usr_dt">
-                                        <div class="oiv-img160">
+                                        <div className="oiv-img160">
                                             <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="" />
                                         </div>
-                                        <div class="oiv-cmnt_name">
-                                            <h4 class="oiv-tutor_name">John Doe</h4>
-                                            <span class="oiv-cmnt_time">2 hour ago</span>
+                                        <div className="oiv-cmnt_name">
+                                            <h4 className="oiv-tutor_name">John Doe</h4>
+                                            <span className="oiv-cmnt_time">2 hour ago</span>
                                         </div>
                                     </div>
-                                    <div className="rating-box ">
+                                    <div className="p-rating-box ">
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
-                                        <img className='starIcon' src={ratingStar}></img>
+                                        <img className='p-star' src={ratingStar}></img>
                                     </div>
                                     <p className="cdv-cmnt_text_message">Nam gravida elit a velit rutrum, eget dapibus ex elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
                                     <div className="cdv-check-helpful">
@@ -126,11 +127,11 @@ const Previews = () => {
                                         <div className="radio--group-inline-container">
                                             <div className="radio-item">
                                                 <input id="radio-1" name="radio" type="radio" />
-                                                <label for="radio-1" className="radio-label">Yes</label>
+                                                <label htmlFor="radio-1" className="radio-label">Yes</label>
                                             </div>
                                             <div className="radio-item">
                                                 <input id="radio-2" name="radio" type="radio" />
-                                                <label for="radio-2" className="radio-label">No</label>
+                                                <label htmlFor="radio-2" className="radio-label">No</label>
                                             </div>
                                         </div>
                                         <a href="#" className="report145">Report</a>
@@ -138,20 +139,20 @@ const Previews = () => {
                                 </div>
                                 <div className="review_item">
                                     <div className="review_usr_dt">
-                                        <div class="oiv-img160">
+                                        <div className="oiv-img160">
                                             <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="" />
                                         </div>
-                                        <div class="oiv-cmnt_name">
-                                            <h4 class="oiv-tutor_name">John Doe</h4>
-                                            <span class="oiv-cmnt_time">2 hour ago</span>
+                                        <div className="oiv-cmnt_name">
+                                            <h4 className="oiv-tutor_name">John Doe</h4>
+                                            <span className="oiv-cmnt_time">2 hour ago</span>
                                         </div>
                                     </div>
-                                    <div className="rating-box ">
+                                    <div className="p-rating-box ">
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
-                                        <img className='starIcon' src={ratingStar}></img>
+                                        <img className='p-star' src={ratingStar}></img>
                                     </div>
                                     <p className="cdv-cmnt_text_message">Nam gravida elit a velit rutrum, eget dapibus ex elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
                                     <div className="cdv-check-helpful">
@@ -159,11 +160,11 @@ const Previews = () => {
                                         <div className="radio--group-inline-container">
                                             <div className="radio-item">
                                                 <input id="radio-1" name="radio" type="radio" />
-                                                <label for="radio-1" className="radio-label">Yes</label>
+                                                <label htmlFor="radio-1" className="radio-label">Yes</label>
                                             </div>
                                             <div className="radio-item">
                                                 <input id="radio-2" name="radio" type="radio" />
-                                                <label for="radio-2" className="radio-label">No</label>
+                                                <label htmlFor="radio-2" className="radio-label">No</label>
                                             </div>
                                         </div>
                                         <a href="#" className="report145">Report</a>
@@ -171,20 +172,20 @@ const Previews = () => {
                                 </div>
                                 <div className="review_item">
                                     <div className="review_usr_dt">
-                                        <div class="oiv-img160">
+                                        <div className="oiv-img160">
                                             <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="" />
                                         </div>
-                                        <div class="oiv-cmnt_name">
-                                            <h4 class="oiv-tutor_name">John Doe</h4>
-                                            <span class="oiv-cmnt_time">2 hour ago</span>
+                                        <div className="oiv-cmnt_name">
+                                            <h4 className="oiv-tutor_name">John Doe</h4>
+                                            <span className="oiv-cmnt_time">2 hour ago</span>
                                         </div>
                                     </div>
-                                    <div className="rating-box ">
+                                    <div className="p-rating-box ">
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
-                                        <img className='starIcon' src={ratingStar}></img>
+                                        <img className='p-star' src={ratingStar}></img>
                                     </div>
                                     <p className="cdv-cmnt_text_message">Nam gravida elit a velit rutrum, eget dapibus ex elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
                                     <div className="cdv-check-helpful">
@@ -192,11 +193,11 @@ const Previews = () => {
                                         <div className="radio--group-inline-container">
                                             <div className="radio-item">
                                                 <input id="radio-1" name="radio" type="radio" />
-                                                <label for="radio-1" className="radio-label">Yes</label>
+                                                <label htmlFor="radio-1" className="radio-label">Yes</label>
                                             </div>
                                             <div className="radio-item">
                                                 <input id="radio-2" name="radio" type="radio" />
-                                                <label for="radio-2" className="radio-label">No</label>
+                                                <label htmlFor="radio-2" className="radio-label">No</label>
                                             </div>
                                         </div>
                                         <a href="#" className="report145">Report</a>
@@ -204,20 +205,20 @@ const Previews = () => {
                                 </div>
                                 <div className="review_item">
                                     <div className="review_usr_dt">
-                                        <div class="oiv-img160">
+                                        <div className="oiv-img160">
                                             <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="" />
                                         </div>
-                                        <div class="oiv-cmnt_name">
-                                            <h4 class="oiv-tutor_name">John Doe</h4>
-                                            <span class="oiv-cmnt_time">2 hour ago</span>
+                                        <div className="oiv-cmnt_name">
+                                            <h4 className="oiv-tutor_name">John Doe</h4>
+                                            <span className="oiv-cmnt_time">2 hour ago</span>
                                         </div>
                                     </div>
-                                    <div className="rating-box ">
+                                    <div className="p-rating-box ">
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
-                                        <img className='starIcon' src={ratingStar}></img>
+                                        <img className='p-star' src={ratingStar}></img>
                                     </div>
                                     <p className="cdv-cmnt_text_message">Nam gravida elit a velit rutrum, eget dapibus ex elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
                                     <div className="cdv-check-helpful">
@@ -225,11 +226,11 @@ const Previews = () => {
                                         <div className="radio--group-inline-container">
                                             <div className="radio-item">
                                                 <input id="radio-1" name="radio" type="radio" />
-                                                <label for="radio-1" className="radio-label">Yes</label>
+                                                <label htmlFor="radio-1" className="radio-label">Yes</label>
                                             </div>
                                             <div className="radio-item">
                                                 <input id="radio-2" name="radio" type="radio" />
-                                                <label for="radio-2" className="radio-label">No</label>
+                                                <label htmlFor="radio-2" className="radio-label">No</label>
                                             </div>
                                         </div>
                                         <a href="#" className="report145">Report</a>
@@ -237,20 +238,20 @@ const Previews = () => {
                                 </div>
                                 <div className="review_item">
                                     <div className="review_usr_dt">
-                                        <div class="oiv-img160">
+                                        <div className="oiv-img160">
                                             <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg" alt="" />
                                         </div>
-                                        <div class="oiv-cmnt_name">
-                                            <h4 class="oiv-tutor_name">John Doe</h4>
-                                            <span class="oiv-cmnt_time">2 hour ago</span>
+                                        <div className="oiv-cmnt_name">
+                                            <h4 className="oiv-tutor_name">John Doe</h4>
+                                            <span className="oiv-cmnt_time">2 hour ago</span>
                                         </div>
                                     </div>
-                                    <div className="rating-box ">
+                                    <div className="p-rating-box ">
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
-                                        <img className='starIcon' src={ratingStar}></img>
+                                        <img className='p-star' src={ratingStar}></img>
                                     </div>
                                     <p className="cdv-cmnt_text_message">Nam gravida elit a velit rutrum, eget dapibus ex elementum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce lacinia, nunc sit amet tincidunt venenatis.</p>
                                     <div className="cdv-check-helpful">
@@ -258,11 +259,11 @@ const Previews = () => {
                                         <div className="radio--group-inline-container">
                                             <div className="radio-item">
                                                 <input id="radio-1" name="radio" type="radio" />
-                                                <label for="radio-1" className="radio-label">Yes</label>
+                                                <label htmlFor="radio-1" className="radio-label">Yes</label>
                                             </div>
                                             <div className="radio-item">
                                                 <input id="radio-2" name="radio" type="radio" />
-                                                <label for="radio-2" className="radio-label">No</label>
+                                                <label htmlFor="radio-2" className="radio-label">No</label>
                                             </div>
                                         </div>
                                         <a href="#" className="report145">Report</a>

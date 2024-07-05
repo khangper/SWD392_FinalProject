@@ -68,7 +68,7 @@ const TestResult = () => {
                                 <div className="test_result-content">
                                     <h2>Congratulation! Joginder</h2>
                                     <p>You are eligible for this certificate</p>
-                                    <a href="http://gambolthemes.net/html-imgs/certificate.jpg" className="ts-download" download="w3logo" target="_blank">Download Certificate</a>
+                                    <a href="http://gambolthemes.net/html-imgs/certificate.jpg" className="ts-download" download="w3logo">Download Certificate</a>
                                 </div>
                             </div>
                         </div>
