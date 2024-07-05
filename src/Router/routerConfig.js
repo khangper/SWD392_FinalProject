@@ -38,13 +38,21 @@ import MyCourse from '../pages/MyCourse/MyCourse';
 import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
+import TestResult from "../pages/TestResult/TestResult";
+import Message from "../pages/Message/Message";
+import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
+import Previews from "../pages/Previews/Previews";
+import InsDashboard from "../pages/InsDashboard/InsDashboard";
+import Sitemap from "../pages/Sitemap/Sitemap";
+import Earning from "../pages/Earning/Earning";
 import Vertification from "../pages/Vertification/Vertification";
 import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
 import Notification from "../pages/Notification/Notification";
 import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
-import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
 import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
 import MyCertifications from "../pages/MyCertifications/MyCertifications";
+import Payout from "../pages/Payout/Payout";
+
 
 const publicRoutes = [
   { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -74,33 +82,39 @@ const publicRoutes = [
   { path: PATH_NAME.COMING_SOON, element: <CommingSoon /> },
   { path: PATH_NAME.DOWLOADCOURSE, element: <DowloadCourse /> },
   { path: PATH_NAME.CERTIFICATION_CENTER, element: <CertificationCenter /> },
-
-
+     { path: PATH_NAME.TEST_RESULT, element: <TestResult /> },
 ];
 
-const privateRoutes = [
-  { path: PATH_NAME.HOME, element: <Home /> },
-  { path: PATH_NAME.EXPLORE, element: <Explore /> },
-  { path: PATH_NAME.LIVE_OUTPUT, element: <LiveOutput /> },
-  { path: PATH_NAME.ADD_LIVE_STREAM, element: <AddLiveStream /> },
-  { path: PATH_NAME.ALL_LIVE_STREAM, element: <AllLiveStream /> },
-  { path: PATH_NAME.ALL_INSTRUCTOR_LIST, element: <AllInstructor1 /> },
-  { path: PATH_NAME.HELP, element: <Help /> },
-  { path: PATH_NAME.REPORT_HISTORY, element: <ReportHistory /> },
-  { path: PATH_NAME.SEND_FEEDBACK, element: <SendFeedback /> },
-  { path: PATH_NAME.OTHER_INSTRUCTOR_VIEW, element: <OtherInstructorView /> },
-  { path: PATH_NAME.MY_INSTRUCTOR_PROFILE, element: <MyInstructorProfile /> },
-  { path: PATH_NAME.SAVE_COURSES, element: <SaveCourses /> },
-  { path: PATH_NAME.SETTING, element: <Setting /> },
-  { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
-  { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse /> },
-  { path: PATH_NAME.NOTIFICATON, element: <Notification /> },
-  { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView /> },
-  { path: PATH_NAME.VERTIFICATION, element: <Vertification /> },
-  { path: PATH_NAME.MYCERTIFICATIONS, element: <MyCertifications /> },
+  
+  const privateRoutes = [
+    { path: PATH_NAME.HOME, element: <Home /> },
+    { path: PATH_NAME.EXPLORE, element: <Explore /> },
+    { path: PATH_NAME.LIVE_OUTPUT, element: <LiveOutput /> },
+    { path: PATH_NAME.ADD_LIVE_STREAM, element: <AddLiveStream /> },
+    { path: PATH_NAME.ALL_LIVE_STREAM, element: <AllLiveStream /> },
+    { path: PATH_NAME.ALL_INSTRUCTOR_LIST, element: <AllInstructor1 /> },
+    { path: PATH_NAME.HELP, element: <Help /> },
+    { path: PATH_NAME.REPORT_HISTORY, element: <ReportHistory /> },
+    { path: PATH_NAME.SEND_FEEDBACK, element: <SendFeedback /> },
+    { path: PATH_NAME.OTHER_INSTRUCTOR_VIEW, element: <OtherInstructorView /> },
+    { path: PATH_NAME.MY_INSTRUCTOR_PROFILE, element: <MyInstructorProfile /> },
+    { path: PATH_NAME.SAVE_COURSES, element: <SaveCourses /> },
+    { path: PATH_NAME.SETTING, element: <Setting /> },
+    { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
+    { path: PATH_NAME.INS_DASHBOARD, element: <InsDashboard /> },
+    { path: PATH_NAME.SITEMAP, element: <Sitemap />},
+    { path: PATH_NAME.EARNING, element: <Earning />},
+    { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse/> },
+    { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
+    { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView/> },
+    { path: PATH_NAME.VERTIFICATION, element: <Vertification/> },
+    { path: PATH_NAME.PAYOUT, element: <Payout />},
+    { path: PATH_NAME.MESSAGE, element: <Message /> },
+  { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
+  { path: PATH_NAME.PREVIEWS, element: <Previews /> },
+     { path: PATH_NAME.MYCERTIFICATIONS, element: <MyCertifications /> },
+  ];
 
-
-];
 
 const routes = { publicRoutes, privateRoutes };
 
