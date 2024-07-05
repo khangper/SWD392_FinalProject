@@ -23,6 +23,22 @@
 
 }
 
+.Small_SR_Title_Left a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
+.Small_SR_Title_Left p {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(33 37 41 / 75%);
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+}
+
 .Small_SR_Title_Right {
     right: 370px;
     display: flex;
@@ -48,6 +64,10 @@
 .Small_SR_Title_Right img {
     border-radius: 3px;
     margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    padding-top: 5px;
+    padding-left: 10px;
 }
 
 .Main_Title {

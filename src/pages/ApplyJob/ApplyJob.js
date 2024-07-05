@@ -4,8 +4,10 @@ import Header from "../../components/Header/Header";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdCloudUpload } from "react-icons/md";
 import Footer from "../../components/Footer/Footer";
+import { Select } from "antd";
 
 const ApplyJob = () => {
+  const { Option } = Select;
   return (
     <div className="apply-job">
       <Header />
@@ -177,13 +179,17 @@ const ApplyJob = () => {
                       name="phonenumber"
                     />
                   </div>
-                  <div className="apply-job-border-form">
-                    <select name="gender" defaultValue="">
-                      <option value="">Gender</option>
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                    </select>
-                  </div>
+                 
+
+                  <Select
+                  className="apply-job-select"
+                    placeholder="Gender"
+                    style={{color: 'lightgray'}}
+                  >
+                    <Option value="option1">Male</Option>
+                    <Option value="option2">Female</Option>
+                    
+                  </Select>
                 </div>
 
                 <div className="apply-job-heading-42">Resume/CV*</div>
@@ -246,7 +252,7 @@ const ApplyJob = () => {
                     name="infor"
                     id="infor"
                     placeholder="Add a cover letter or anything else you want to share"
-                    rows={30}
+                    rows={10}
                     cols={10}
                   ></textarea>
                 </div>
@@ -259,7 +265,7 @@ const ApplyJob = () => {
           </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
