@@ -539,7 +539,8 @@
   overflow: hidden;
 }
 
-.social-icons {
+.popular-instructor-content .social-icons,
+.home-instructor-profile .social-icons {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -548,14 +549,14 @@
   gap: 5px;
 }
 
-.social-icons a {
+.popular-instructor-content .social-icons a {
   display: inline-block !important;
   margin-right: 5px;
   vertical-align: middle;
   margin-bottom: 0 !important;
 }
 
-.social-icons a img {
+.popular-instructor-content .social-icons a img {
   width: 20px;
   height: 18px;
 }
@@ -572,15 +573,15 @@
 .social-icons .sc-ln,
 .social-icons .sc-yt {
   font-size: 20px;
-  float: none;
-  width: 35px;
-  height: 36px;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 40px;
-  padding: 9px 0;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
+    float: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    padding: 9px 0;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
 }
 
 .sc-fb {
