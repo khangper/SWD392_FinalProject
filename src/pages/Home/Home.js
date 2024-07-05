@@ -21,6 +21,7 @@ import marketing from '../../assets/marketing.png';
 import book from '../../assets/book.png';
 import music from '../../assets/music.png';
 import profile_image from '..//../assets/profile-img.jpg';
+import { Link } from "react-router-dom";
 const Home = () => {
   const liveStreams = [
     {
@@ -548,13 +549,17 @@ const Home = () => {
               <div className="featured-courses" ref={featuredCoursesRef}>
                 {featuredCourses.map((course) => (
                   <div key={course.id} className="course-card">
-                    <a>
+                    <a href="/courses-detail-view">
+
                       <img src={course.imgSrc} alt={course.title} />
+
                       <div className="home-course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
+
                           <img className='starIcon' src={ratingStar}></img>
                           {course.rating}
+
                         </div>
                         <div className="course-timer">{course.hours}</div>
                       </div>
