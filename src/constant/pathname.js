@@ -46,5 +46,6 @@ export const PATH_NAME = {
     ALL_INSTRUCTOR_LIST: '/all-instructor-list',
     SITEMAP: '/sitemap',
     EARNING: '/instructor-earning',
-    VERTIFICATION: '/vertification'
+    VERTIFICATION: '/vertification',
+    PAYOUT: '/instructor-payout',
 };

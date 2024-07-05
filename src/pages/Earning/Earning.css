@@ -82,7 +82,7 @@
   justify-content: center;
   box-sizing: border-box;
   gap: 20px;
-  padding: 30px 0 55px;
+  padding: 30px 10px 55px;
   min-width: 250px;
   min-height: 157px;
   max-width: 100%;
@@ -224,6 +224,9 @@
 .earning-table-2{
     flex: 0.672;
     min-width: 680px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .earning-wrapper{
@@ -246,9 +249,6 @@
 
     .earning-table-2{
         padding-top: 50px;
-        display: flex;
-        gap: 30px;
-        flex-direction: column;
     }
 
 }

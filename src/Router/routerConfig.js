@@ -46,6 +46,7 @@ import Notification from "../pages/Notification/Notification";
 import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
 import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
 import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
+import Payout from "../pages/Payout/Payout";
 
 
 const publicRoutes = [
@@ -96,11 +97,13 @@ const publicRoutes = [
     { path: PATH_NAME.SETTING, element: <Setting /> },
     { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
     { path: PATH_NAME.SITEMAP, element: <Sitemap />},
-    { path: PATH_NAME.EARNING, element: <Earning />}
+    { path: PATH_NAME.EARNING, element: <Earning />},
     { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse/> },
     { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
     { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView/> },
     { path: PATH_NAME.VERTIFICATION, element: <Vertification/> },
+
+    { path: PATH_NAME.PAYOUT, element: <Payout />},
 
   ];
 
