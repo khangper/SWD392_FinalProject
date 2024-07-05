@@ -12,7 +12,7 @@ export default function AllLiveStream() {
               <div className="section3125">
                 <h4 className="item_title">All Live Streams</h4>
                 <div className="la5lo1">
-                  <div className="grid-row">
+                  <div className="AllLive-grid-row">
                     {streamData.map((stream, index) => (
                       <div className="grid-item" key={index}>
                         <div className="stream_1 mb-4">

@@ -33,13 +33,6 @@ export default function Help() {
               <div className="help_stitle">
                <h2>How may we help you?</h2>
                <div className="explore_search">
-            {/* <div className="ui search focus">
-                <div className="search-box flex-div">
-                <img src={search_icon} alt='' className='search-icon-allInstructor' />
-                    <input className="prompt srch_explore" type="text" placeholder="       Search Tutors..."/>
-                    
-                </div>
-            </div> */}
             <div className="explore-container">
             <section className="search-box">
         <img src={search_icon} alt="Search Icon" className="search-icon" />

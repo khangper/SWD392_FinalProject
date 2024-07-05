@@ -16,7 +16,7 @@ export const PATH_NAME = {
     LOGIN: '/login',
     FORGOT_PASSWORD: '/forgot-password',
     SIGN_UP: '/sign-up',
-    SIGN_UP_STEP: '/SignUpStep',
+    SIGN_UP_STEP: '/SignUp',
     THANKS: '/thanks',
     ERROR_404: '/error404',
     INVOICE: '/invoice',
@@ -38,7 +38,13 @@ export const PATH_NAME = {
     CERTIFICATION_FILL_FORM: '/certificationfillform',
     CERTIFICATION_TEST: '/certificates-test',
     COMING_SOON: '/coming-soon',
+    PURCHASE_COURSE: '/PurchaseCourse',
+    NOTIFICATON: '/notification',
+    DOWLOADCOURSE: '/dowloadcourse',
+    COURSEVIEW: '/courseview',
+    CERTIFICATION_CENTER: '/certificationcenter',
     ALL_INSTRUCTOR_LIST: '/all-instructor-list',
     SITEMAP: '/sitemap',
     EARNING: '/instructor-earning',
+    VERTIFICATION: '/vertification'
 };

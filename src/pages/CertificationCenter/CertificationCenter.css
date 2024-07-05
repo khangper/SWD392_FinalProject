@@ -1,0 +1,378 @@
+.CC-grid-container{
+    display: grid;
+  grid-template-columns: 1fr; 
+
+}
+  .CC_215certibg {
+    float: left;
+    width: 100%;
+    padding: 80px 0;
+    background: #333;
+    position: relative;
+}
+
+.CC_215certibg:before {
+    content: "";
+    
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    pointer-events: none;
+    background-size: cover;
+    opacity: 0.1;
+}
+
+
+.CC-cert_banner_text {
+	text-align: center;
+}
+
+.CC-cert_banner_text h1 {
+	font-size: 60px;
+    font-weight: 600;
+	font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+	text-align: center;
+	color: #fff;
+}
+
+.CC-cert_banner_text p {
+	font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 400;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	color: #fff;
+}
+
+.CC-certi_icons {
+	padding-top: 56px;
+}
+
+
+.CC-certi_icons li {
+	display: inline-block;
+}
+
+.CC-edttslogo img {
+    width: 135px;
+}
+
+.CC-edttslogo1 img {
+    width: 135px;
+}
+.CC-edttsplus img {
+    width: 80px;
+    margin: 24px 40px;
+}
+.CC-certi-btn {
+    margin-top: 80px;
+    border: 0;
+    height: 50px;
+    text-align: center;
+    padding: 0 100px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    border-radius: 3px;
+    background: #ed2a26;
+}
+.CC-certi-btn:hover{
+    cursor: pointer;
+}
+
+.CC_215xd5 {
+    padding: 62px 0;
+    float: left;
+    width: 100%;
+	background: #fff;
+}
+.CC-title889 h2 {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 7px !important;
+    text-align: center;
+    color: #333;
+    line-height: 26px;
+}
+.CC1-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1061px;
+    margin: 0 auto;
+ }
+.CC1-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text if needed */
+    padding: 1rem; /* Optional: Add padding to each grid item */
+}
+.ui[class*="left icon"].swdh19.input>input {
+    padding-left: 1em !important;
+    padding-right: 2em !important;
+    height: 40px !important;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.CC-login-btn {
+    font-size: 14px;
+    margin-top: -21px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: #ed2a26;
+    border-radius: 3px;
+    text-align: center;
+    border: 0;
+    width: 100%;
+    height: 40px;
+}
+.CC-login-btn:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+.CC-title589 h2 {
+	font-size: 24px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 17px !important;
+	text-align: center;
+	color: #333;
+	line-height: 26px;
+}
+.CC-title589 p {
+	font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0 !important;
+	text-align: center;
+	color: #686f7a;
+	line-height: 26px;
+	padding: 0 300px;
+}
+.CC-tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+}
+.CC-tabs li {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.3s ease;
+    font-weight: 600;
+}
+.CC-tabs li:hover {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.CC-tabs li.active {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+.tab-content {
+    margin-top: 69px;
+}
+.CC-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: padding-left 0.4s;
+    overflow-y: auto;
+    flex: 1 1;
+}
+.CC-certificates {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .CC-certificates .CC3-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 80px;
+  }
+  
+
+  .CC-certilink__152 {
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    padding: 20px;
+    box-shadow: none;
+    flex: 1;
+    float: left;
+    color: #333 !important;
+    width: 100%;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -34px;
+    text-align: center;
+}
+
+.CC-certilink__152:hover {
+    color: #fff !important;
+	background: #ed2a26 ;
+}
+
+
+.CC_485td5 {
+    padding: 62px 0;
+    float: left;
+    width: 100%;
+	position: relative;
+	background: #333;
+}
+
+.CC_485td5:before {
+    content: "";
+   
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    pointer-events: none;
+    background-size: cover;
+    opacity: 0.06;
+}
+
+.CC-titleceti89 h2 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 17px !important;
+    text-align: center;
+    color: #fff;
+    line-height: 26px;
+}
+
+
+.CC4-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: max-content;
+    display: flex;
+}
+
+.CC4-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items within each grid item */
+    text-align: center;
+}
+
+
+  .who_get {
+    text-align: center;
+    margin-top: 43px;
+}
+
+.who_img {
+    width: 150px;
+    height: 150px;
+    background: #fff;
+    border-radius: 100%;
+    display: inline-block;
+	padding: 23px 0;
+	border: 5px solid #fff;
+	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.who_get img {
+    width: 90px;
+}
+.who_get h4 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin-top: 27px;
+    text-align: center;
+    line-height: 26px;
+}
+.CC-title589 h2 {
+	font-size: 24px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 17px !important;
+	text-align: center;
+	color: #333;
+	line-height: 26px;
+}
+.CC-title589 p {
+	font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0 !important;
+	text-align: center;
+	color: #686f7a;
+	line-height: 26px;
+	padding: 0 300px;
+}
+.CC5-grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Adjust the columns as needed */
+    gap: 20px; /* Adjust the gap between grid items as needed */
+    padding: 0 180px;
+}
+.CC-knowledge_dts {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.CC-knowledge_dts p {
+	font-size: 14px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 26px;
+    color: #686f7a;
+    text-align: center;
+}
+.CC-knowledge_btn {
+    margin-top: 23px;
+    border: 0;
+    height: 50px;
+    text-align: center;
+    padding: 0 100px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    border-radius: 3px;
+    background: #ed2a26;
+}
+
+.CC-knowledge_btn:hover {
+    color: #fff;
+    background: #333;
+}
+.CC6-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0px 1px;
+}
