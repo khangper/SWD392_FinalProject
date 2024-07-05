@@ -68,7 +68,7 @@ const Vertification = () => {
                                             <label className="Verti_custom_file_label" >
                                                 No Choose
                                                 <button className='Verti_custom_file_label_btn'>
-                                                    Upload file
+                                                    Upload File
                                                 </button>
                                             </label>
                                         </div>

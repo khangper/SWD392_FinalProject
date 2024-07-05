@@ -1,0 +1,229 @@
+.payout-wallet-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.payout-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 2.8px;
+}
+
+.payout-payout {
+  position: relative;
+  line-height: 26px;
+  font-weight: 550;
+  color: #333;
+  min-width: 73px;
+  font-size: 18px;
+  margin-bottom: 0 !important;
+}
+
+.payout-label,
+.payout-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.payout-label {
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.payout-title {
+  align-items: flex-start;
+}
+
+.payout-next-wrapper,
+.payout-account-wrapper {
+  border: 1px solid #efefef;
+  background-color: #fff;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  border-radius: 3px;
+}
+
+.payout-label {
+  flex: 1;
+  position: relative;
+  line-height: 21px;
+  font-weight: 550;
+  max-width: 100%;
+  color: #333;
+  font-size: 16px;
+}
+
+.payout-label-wrapper,
+.payout-via-wrapper,
+.payout-added-wrapper {
+  align-self: stretch;
+  border-bottom: 1px solid #efefef;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+
+.payout-label-wrapper {
+  flex-direction: row;
+  padding: 16.8px 28px 16px;
+}
+.payout-coin {
+  position: relative;
+  line-height: 24px;
+  font-size: 26px;
+  display: inline-block;
+  color: #a1a1a1;
+  white-space: nowrap;
+  font-weight: 550;
+}
+
+.payout-via {
+  position: relative;
+  line-height: 24px;
+  align-self: stretch;
+  font-size: 12px;
+  font-weight: 600;
+  color: #686f7a;
+}
+
+.payout-via-wrapper,
+.payout-added-wrapper {
+  flex-direction: column;
+  padding: 16.8px 20px 16px;
+  gap: 10px;
+}
+
+.payout-day-wrapper,
+.payout-button-wrapper {
+  align-self: stretch;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 16.8px 20px 16px;
+}
+
+.payout-day {
+  position: relative;
+  line-height: 26px;
+  font-size: 12px;
+  color: #686f7a;
+}
+
+.payout-day span {
+  font-weight: 600;
+}
+
+.payout-image {
+  width: 75px;
+  height: 28px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.payout-added {
+  position: relative;
+  line-height: 24px;
+  font-size: 14px;
+  color: #686f7a;
+  font-weight: 550;
+}
+
+.payout-added span {
+  font-weight: 500;
+}
+
+.payout-button {
+  display: flex;
+  padding: 13px 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  background-color: #ed2a26;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.payout-button:hover {
+  background-color: #333;
+}
+
+.payout-parent{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.payout-next-account-parent{
+    flex: 0.328;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.payout-table{
+    flex: 0.672;
+}
+
+.payout-table table {
+    text-align: left;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    color: #333;
+    border-collapse: collapse;
+    border-radius: 3px;
+    min-width: 600px;
+}
+
+.payout-table th, .payout-table td{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.payout-table th{
+    padding: 15px;
+    font-weight: 550;
+    background-color: #ffecec;
+}
+.payout-table td{
+    padding: 15px 20px;
+    background-color: #fff;
+}
+
+.payout-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1050px) {
+    .payout-parent{
+        display: block;
+    }
+
+    .payout-table{
+        padding-top: 30px;
+    }
+
+    .payout-wrapper{
+        padding-bottom: 30px;
+    }
+}

@@ -37,6 +37,10 @@ export const PATH_NAME = {
     TERMS_OF_USE: '/termsofuse',
     CERTIFICATION_FILL_FORM: '/certificationfillform',
     CERTIFICATION_TEST: '/certificates-test',
+    TEST_RESULT: '/test-result',
+    MESSAGE: '/message',
+    COURSES_DETAIL_VIEW: '/courses-detail-view',
+    PREVIEWS: '/previews',
     COMING_SOON: '/coming-soon',
     INS_DASHBOARD: '/ins-dashboard',
     PURCHASE_COURSE: '/PurchaseCourse',
@@ -44,8 +48,9 @@ export const PATH_NAME = {
     DOWLOADCOURSE: '/dowloadcourse',
     COURSEVIEW: '/courseview',
     CERTIFICATION_CENTER: '/certificationcenter',
-    ALL_INSTRUCTOR_LIST: '/all-instructor-list',
-    SITEMAP: '/sitemap',
+   SITEMAP: '/sitemap',
     EARNING: '/instructor-earning',
-    VERTIFICATION: '/vertification'
+   PAYOUT: '/instructor-payout',
+   VERTIFICATION: '/vertification',
+    MYCERTIFICATIONS: '/mycertifications'
 };
