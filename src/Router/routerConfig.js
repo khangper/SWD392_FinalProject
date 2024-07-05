@@ -38,6 +38,7 @@ import MyCourse from '../pages/MyCourse/MyCourse';
 import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
+import Vertification from "../pages/Vertification/Vertification";
 import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
 import Notification from "../pages/Notification/Notification";
 import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";

@@ -66,15 +66,15 @@ const ContactUs = () => {
                                 </span>
                                 <p>#1235 Sks Nagar St No. 8 Phase 3, Pakhowal Road, 141001, LDH, Punjab, India</p>
                             </div>
-                            <div class="Contact_txt_cntct">
-                                <span class="Contact_cntct_895">
-                                    <i class="uil uil-envelope"></i>Email Address :
+                            <div className="Contact_txt_cntct">
+                                <span className="Contact_cntct_895">
+                                    <i className="uil uil-envelope"></i>Email Address :
                                 </span>
                                 <p>Info@edututsplus@gmail.com</p>
                             </div>
-                            <div class="Contact_txt_cntct">
-                                <span class="Contact_cntct_895">
-                                    <i class="uil uil-mobile-android-alt"></i>Phone Number:
+                            <div className="Contact_txt_cntct">
+                                <span className="Contact_cntct_895">
+                                    <i className="uil uil-mobile-android-alt"></i>Phone Number:
                                 </span>
                                 <p>+911234567890, 01610000000</p>
                             </div>
