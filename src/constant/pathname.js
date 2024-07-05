@@ -44,7 +44,6 @@ export const PATH_NAME = {
     DOWLOADCOURSE: '/dowloadcourse',
     COURSEVIEW: '/courseview',
     CERTIFICATION_CENTER: '/certificationcenter',
-    ALL_INSTRUCTOR_LIST: '/all-instructor-list',
     SITEMAP: '/sitemap',
     EARNING: '/instructor-earning',
     VERTIFICATION: '/vertification'
