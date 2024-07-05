@@ -52,6 +52,7 @@ import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
 import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
 import MyCertifications from "../pages/MyCertifications/MyCertifications";
 import Payout from "../pages/Payout/Payout";
+import Analytics from "../pages/Analytics/Analytics";
 
 
 const publicRoutes = [
@@ -112,6 +113,7 @@ const publicRoutes = [
   { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
   { path: PATH_NAME.PREVIEWS, element: <Previews /> },
      { path: PATH_NAME.MYCERTIFICATIONS, element: <MyCertifications /> },
+     { path: PATH_NAME.ANALYTICS, element: <Analytics /> },
   ];
 
 

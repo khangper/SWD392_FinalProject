@@ -1,0 +1,64 @@
+.analytics-container{
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+.top-chart-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top-chart-header{
+    width: 100%;
+}
+.top-chart-title{
+    font-size: 20px;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+.top-chart-title img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    position: relative;
+    top:4px;
+}
+.top-chart-container{
+    width: 100%;
+    display: flex;
+}
+.top-chart-item{
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+.analytics-card{
+    background: #fff !important;
+    border: 1px solid #efefef !important;
+    border-radius: 3px !important;
+    margin-top: 30px;
+    padding: 10px;
+}
+.analytics-card-body{
+    padding: 1rem 1rem;
+}
+.analytics-card-body h2{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: left;
+    line-height: 26px;
+    margin-top: 0;
+}
+.analytics-card-body p{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #686f7a;
+    text-align: left;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
