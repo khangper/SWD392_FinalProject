@@ -1,0 +1,186 @@
+.MyCertifications_Container {
+    width: 100%;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.MyCertifications_Header {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.MyCertifications_Header_Title {
+    font-size: 20px;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.MyCertifications_Body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.MyCertifications_Body_Col {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.MyCertifications_card_dash1 {
+    background: #fff;
+    margin-top: 30px;
+    float: left;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    padding: 30px 20px;
+}
+
+.MyCertifications_card_dash_left1 {
+    float: left;
+    display: flex;
+    padding: 4px 0;
+}
+
+.MyCertifications_card_dash_left1 h1 {
+    font-size: 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0 !important;
+    text-align: left;
+    margin-top: 0;
+}
+
+.MyCertifications_card_dash_right1 {
+    float: right;
+}
+
+.MyCertifications_create_btn_dash {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: #ed2a26;
+    padding: 0px 20px;
+    border-radius: 3px;
+    border: 0;
+    height: 40px;
+}
+
+.MyCertifications_table_cerificate {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.MyCertifications_table_responsive {
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+
+.MyCertifications_ucp_table {
+    margin-bottom: 0px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.MyCertifications_table {
+    width: 100%;
+    vertical-align: top;
+    caption-side: bottom;
+    border-collapse: collapse;
+    margin: 0px auto 0px;
+    font-size: 14px;
+    border-spacing: 0;
+}
+
+.MyCertifications_table>thead {
+    vertical-align: bottom;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+
+.MyCertifications_text_center {
+    text-align: center !important;
+}
+
+.MyCertifications_ucp_table thead tr th:first-child {
+    border-bottom-left-radius: 4px;
+}
+
+.MyCertifications_ucp_table th:first-child {
+    border-top: 0 !important;
+}
+
+.MyCertifications_ucp_table thead tr th {
+    color: #333;
+    font-size: 14px;
+    background-color: #ffecec;
+}
+
+.MyCertifications_ucp_table thead th {
+    vertical-align: bottom;
+    border-bottom: 0 !important;
+}
+
+
+/* -------------------------------------------------------*/
+
+.MyCertifications_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.MyCertifications_ucp_table th,
+.MyCertifications_ucp_table td {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.MyCertifications_thead_s {
+    background-color: #ffdddd;
+}
+
+.MyCertifications_text_center {
+    text-align: center;
+}
+
+.MyCertifications_cell_ta {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.MyCertifications_gray_s a {
+    color: #888;
+    text-decoration: none;
+}
+
+.MyCertifications_gray_s i {
+    font-size: 18px;
+}
+
+.MyCertifications_table_responsive {
+    overflow-x: auto;
+}
+
+
+a {
+    color: #4183c4;
+    text-decoration: none;
+}
