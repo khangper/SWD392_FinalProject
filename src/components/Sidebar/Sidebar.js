@@ -71,7 +71,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="/certificationcenter">Certification Center</a>
           <a href="certificationfillform">Certification Fill Form</a>
           <a href="/certificates-test">Test View</a>
-          <a href="#">Test Result</a>
+          <a href="/test-result">Test Result</a>
           <a href="#">My Certification</a>
         </div>
       )}
@@ -101,7 +101,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="#">Add Livestream</a>
           <a href="search_result">Search Result</a>
           <a href="Thanks">Thank you</a>
-          <a href="coming-soon">Coming Soon</a>
+          <a href="comming-soon">Coming Soon</a>
           <a href="mycourse">My Course</a>
           <a href="PurchaseCourse">Purchase Course</a>
           <a href="notification">Notification</a>

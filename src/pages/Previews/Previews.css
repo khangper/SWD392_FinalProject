@@ -1,0 +1,25 @@
+.p-star {
+    width: 20px;
+    top: 1px;
+    position: relative;
+    margin-right: 2px;
+}
+
+.p-progress {
+    width: 30%;
+    height: 10px;
+    background-color: #e0e0e0;
+    margin-right: 10px;
+}
+
+.p-rating-box {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.p-rate002 {
+    width: 2%;
+    margin-left: 10px;
+    font-size: 1em;
+}
