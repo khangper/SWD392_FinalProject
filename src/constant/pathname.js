@@ -51,5 +51,6 @@ export const PATH_NAME = {
     CERTIFICATION_CENTER: '/certificationcenter',
     SITEMAP: '/sitemap',
     EARNING: '/instructor-earning',
-    VERTIFICATION: '/vertification'
+    VERTIFICATION: '/vertification',
+    PAYOUT: '/instructor-payout',
 };

@@ -50,6 +50,7 @@ import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
 import Notification from "../pages/Notification/Notification";
 import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
 import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
+import Payout from "../pages/Payout/Payout";
 
 const publicRoutes = [
     { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -105,6 +106,7 @@ const publicRoutes = [
     { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
     { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView/> },
     { path: PATH_NAME.VERTIFICATION, element: <Vertification/> },
+    { path: PATH_NAME.PAYOUT, element: <Payout />},
     { path: PATH_NAME.MESSAGE, element: <Message /> },
   { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
   { path: PATH_NAME.PREVIEWS, element: <Previews /> }
