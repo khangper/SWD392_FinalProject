@@ -43,7 +43,7 @@ const InsSidebar = ({sidebar}) => {
       <img className="sidebar-icon" src={notificationsIcon} alt="Notifications Icon" />
       <p className={`${sidebar ? '' : 'small'}`}>Notifications</p>
     </Link>
-    <Link to="/certificates" className="side-link">
+    <Link to="/mycertifications" className="side-link">
       <img className="sidebar-icon" src={certificatesIcon} alt="Certificates Icon" />
       <p className={`${sidebar ? '' : 'small'}`}>My Certificates</p>
     </Link>
@@ -51,11 +51,11 @@ const InsSidebar = ({sidebar}) => {
       <img className="sidebar-icon" src={reviewsIcon} alt="Reviews Icon" />
       <p className={`${sidebar ? '' : 'small'}`}>Reviews</p>
     </Link>
-    <Link to="/earning" className="side-link">
+    <Link to="/instructor-earning" className="side-link">
       <img className="sidebar-icon" src={earningIcon} alt="Earning Icon" />
       <p className={`${sidebar ? '' : 'small'}`}>Earning</p>
     </Link>
-    <Link to="/payout" className="side-link">
+    <Link to="/instructor-payout" className="side-link">
       <img className="sidebar-icon" src={payoutIcon} alt="Payout Icon" />
       <p className={`${sidebar ? '' : 'small'}`}>Payout</p>
     </Link>
@@ -63,7 +63,7 @@ const InsSidebar = ({sidebar}) => {
       <img className="sidebar-icon" src={statementsIcon} alt="Statements Icon" />
       <p className={`${sidebar ? '' : 'small'}`}>Statements</p>
     </Link>
-    <Link to="/verification" className="side-link">
+    <Link to="/vertification" className="side-link">
       <img className="sidebar-icon" src={verificationIcon} alt="Verification Icon" />
       <p className={`${sidebar ? '' : 'small'}`}>Verification</p>
     </Link>

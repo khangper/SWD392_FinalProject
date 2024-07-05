@@ -6,13 +6,15 @@ import DowLoadMyCourse from '..//../assets/DowLoadMyCourse.png';
 import Printer from '..//../assets/Printer.png';
 import MyCourseBook from '..//../assets/MyCourse-Book.png';
 import discount from '..//../assets/discount.png';
-import uploadmc from '..//../assets/uploadmc.png';
+import uploadmc1 from '..//../assets/uploadmc1.png';
 import Megaphone2 from '..//../assets/Megaphone2.png';
+import DowLoadMyCourse1 from '..//../assets/DowLoadMyCourse1.png';
+import MyCourseBook1 from '..//../assets/MyCourse-Book1.png';
 
 
 function MyCourse() {
   const openTab = (tabId) => {
-    setActiveTab(tabId); // Hàm mở tab
+    setActiveTab(tabId); 
 };
 
 const [isOpen, setIsOpen] = useState(false);
@@ -184,7 +186,7 @@ setIsOpen(!isOpen);
            <div className="MyCoursePage1-grid-item">
            <div className="MyCoursePage1-card_dash1">
 							<div className="MyCoursePage1-card_dash_left1">
-              <img src={MyCourseBook}  className="Edit-icon" />   
+              <img src={MyCourseBook}  className="Edit-icon1" />   
 								<h1>Jump Into Course Creation</h1>
 							</div>
 							<div className="MyCoursePage1-card_dash_right1">
@@ -207,7 +209,7 @@ setIsOpen(!isOpen);
             role="tab"
             aria-selected={activeTab === 'my-courses'}
           >
-            <img src={MyCourseBook}  className="Edit-icon" />    My Courses
+            <img src={MyCourseBook1}  className="Edit-icon" />    My Courses
           </a>
         </div>
         <div className="MyCourse-nav-item">
@@ -217,7 +219,7 @@ setIsOpen(!isOpen);
             role="tab"
             aria-selected={activeTab === 'my-purchases'}
           >
-        <img src={DowLoadMyCourse}  className="Edit-icon" />My Purchases
+        <img src={DowLoadMyCourse1}  className="Edit-icon" />My Purchases
           </a>
         </div>
         <div className="MyCourse-nav-item">
@@ -227,7 +229,7 @@ setIsOpen(!isOpen);
             role="tab"
             aria-selected={activeTab === 'upcoming-courses'}
           >
-            <img src={uploadmc}  className="Edit-icon" /> Upcoming Courses
+            <img src={uploadmc1}  className="Edit-icon" /> Upcoming Courses
           </a>
         </div>
         <div className="MyCourse-nav-item">

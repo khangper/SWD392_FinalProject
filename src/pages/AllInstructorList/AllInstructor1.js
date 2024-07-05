@@ -196,7 +196,7 @@ export default function AllInstructor1() {
                             </div>
                         </div>
                         <div className="All-Instructor-tutor_cate">{instructor.category}</div>
-                        <ul className="social-icons">
+                        <ul className="All-social-icons">
                             <li><a href="#" className="sc-fb"><img src={facebook} alt="Facebook" /></a></li>
                             <li><a href="#" className="sc-tw"><img src={x} alt="Twitter" /></a></li>
                             <li><a href="#" className="sc-ln"><img src={linkedin} alt="LinkedIn" /></a></li>
