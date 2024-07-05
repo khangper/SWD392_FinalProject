@@ -84,7 +84,7 @@
   justify-content: flex-start;
 }
 
-.apply-job-breadcrumb-content{
+.apply-job-breadcrumb-content {
   width: 100%;
   max-width: 100%;
   flex-direction: row;
@@ -94,7 +94,7 @@
 }
 /*Apply For This Job*/
 
-.apply-job-apply-for-button{
+.apply-job-apply-for-button {
   display: flex;
   padding: 13px 15px;
   justify-content: center;
@@ -111,35 +111,38 @@
   background-color: #333;
 }
 
-.apply-job-horizontal-border, .apply-job-horizontal-border-wrapper{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    max-width: 100%;
+.apply-job-horizontal-border,
+.apply-job-horizontal-border-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
 }
 
-.apply-job-horizontal-border{
-    flex: 1;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 0 0 30px;
+.apply-job-horizontal-border {
+  flex: 1;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 30px;
 }
 
-.apply-job-horizontal-border-wrapper{
-    align-self: stretch;
+.apply-job-horizontal-border-wrapper {
+  align-self: stretch;
 }
 
-.apply-job-content, .apply-job-content-1{
-    margin: 0;
+.apply-job-content,
+.apply-job-content-1 {
+  margin: 0;
 }
 
-.apply-job-content-container, .apply-job-content-container-1{
-    position: relative;
-    line-height: 26px;
+.apply-job-content-container,
+.apply-job-content-container-1 {
+  position: relative;
+  line-height: 26px;
 }
 
-.apply-job-content-container-1{
-    margin-left: 10px;
+.apply-job-content-container-1 {
+  margin-left: 10px;
 }
 
 .apply-job-heading-41 {
@@ -152,40 +155,41 @@
   max-width: 100%;
 }
 
-.apply-job-description{
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 0 0 30px;
+.apply-job-description {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 30px;
 }
 
-.apply-job-application-parent, .apply-job-application{
-    display: flex;
-    align-items: flex-start;
-    max-width: 100%;
+.apply-job-application-parent,
+.apply-job-application {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
 }
 
-.apply-job-application-parent{
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 30px;
-    width: 780px;
-    padding: 0 2.5px;
+.apply-job-application-parent {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  width: 780px;
+  padding: 0 2.5px;
 }
 
-.apply-job-application{
-    align-self: stretch;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 40px;
-    padding-bottom: 70px;
-    box-sizing: border-box;
-    background-color: #f7f7f7;
+.apply-job-application {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 70px;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
 }
 
-.apply-job-wrapper{
-    display: flex;
+.apply-job-wrapper {
+  display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   max-width: 100%;
@@ -199,37 +203,42 @@
 }
 
 .apply-job-border-form {
-    flex: 1; 
-    position: relative;
+  flex: 1;
+  position: relative;
 }
 .apply-job-border-form input,
 .apply-job-border-form textarea,
-.apply-job-border-form select {
-    width: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    padding: 10px;
-    background: #fff;
-    border: 1px solid #e5e5e5 !important;
-    outline: 0;
-    color: rgba(0, 0, 0, .87);
-    border-radius: 3px !important;
-    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
+.apply-job-select .ant-select-selector {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #e5e5e5 !important;
+  outline: 0;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 3px !important;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
 }
 
-.apply-job-border-form input::placeholder, .apply-job-border-form textarea::placeholder{
-    color: lightgray;
+.apply-job-select .ant-select-selector{
+  font-size: 13px;
 }
 
-.apply-job-form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px 0;
+.apply-job-border-form input::placeholder,
+.apply-job-border-form textarea::placeholder {
+  color: lightgray;
 }
 
-.apply-job-heading-42{
-    position: relative;
+.apply-job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.apply-job-heading-42 {
+  position: relative;
   font-size: 14px;
   line-height: 26px;
   font-weight: 550;
@@ -238,56 +247,57 @@
   max-width: 100%;
 }
 
-.apply-job-submit-application, .apply-job-links{
-    width: 100%;
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 0 0 50px;
+.apply-job-submit-application,
+.apply-job-links {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 50px;
 }
 
-.apply-job-additional-infor{
-    width: 100%;
-    gap: 40px;
-    display: flex;
-    flex-direction: column;
+.apply-job-additional-infor {
+  width: 100%;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
 }
-.apply-job-cv-form{
-    border: 1px solid #e5e5e5;
-    position: relative;
-    padding: 30px;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    background-color: #fff;
-}
-
-.apply-job-cv-form input{
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 3px;
-    cursor: pointer;
+.apply-job-cv-form {
+  border: 1px solid #e5e5e5;
+  position: relative;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  background-color: #fff;
 }
 
-.apply-job-icon-upload{
+.apply-job-cv-form input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.apply-job-icon-upload {
   width: 30px;
   height: 30px;
 }
 
-.apply-job-drap-text h4{
-    font-size: 16px;
-    color: #333;
+.apply-job-drap-text h4 {
+  font-size: 16px;
+  color: #333;
 }
 
-.apply-job-submit-button{
-    display: flex;
+.apply-job-submit-button {
+  display: flex;
   padding: 13px 15px;
   justify-content: center;
   align-items: center;
@@ -297,10 +307,9 @@
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-width: 160px;
-
+  width: 160px;
 }
 
-.apply-job-submit-button:hover{
-    background-color: #333;
+.apply-job-submit-button:hover {
+  background-color: #333;
 }

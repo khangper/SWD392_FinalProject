@@ -1,0 +1,16 @@
+.footer-instructor {
+    padding-left: 18%;
+  }
+  
+  .footer-instructor-large {
+    padding-left: 5%;
+  }
+  
+.ins-footer-links a{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    padding-right: 20px;
+    color: #fff;
+}
