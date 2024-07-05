@@ -38,6 +38,10 @@ import MyCourse from '../pages/MyCourse/MyCourse';
 import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
+import TestResult from "../pages/TestResult/TestResult";
+import Message from "../pages/Message/Message";
+import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
+import Previews from "../pages/Previews/Previews";
 import InsDashboard from "../pages/InsDashboard/InsDashboard";
 import Sitemap from "../pages/Sitemap/Sitemap";
 import Earning from "../pages/Earning/Earning";
@@ -76,7 +80,7 @@ const publicRoutes = [
     { path: PATH_NAME.COMING_SOON, element: <CommingSoon /> },
     { path: PATH_NAME.DOWLOADCOURSE, element: <DowloadCourse /> },
     { path: PATH_NAME.CERTIFICATION_CENTER, element: <CertificationCenter /> },
-
+  { path: PATH_NAME.TEST_RESULT, element: <TestResult /> },
 
   ];
   
@@ -102,6 +106,9 @@ const publicRoutes = [
     { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
     { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView/> },
     { path: PATH_NAME.VERTIFICATION, element: <Vertification/> },
+    { path: PATH_NAME.MESSAGE, element: <Message /> },
+  { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
+  { path: PATH_NAME.PREVIEWS, element: <Previews /> }
   ];
 
 const routes = { publicRoutes, privateRoutes };
