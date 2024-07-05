@@ -38,6 +38,11 @@ import MyCourse from '../pages/MyCourse/MyCourse';
 import CertificationTest from '../pages/CertificationTest/CertificationTest';
 import CommingSoon from '../pages/CommingSoon/CommingSoon';
 import { PATH_NAME } from "../constant/pathname";
+import PurchaseCourse from "../pages/PurchaseCourse/PurchaseCourse";
+import Notification from "../pages/Notification/Notification";
+import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
+import CoursesDetailView from "../pages/CoursesDetailView/CoursesDetailView";
+import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
 
 const publicRoutes = [
     { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -65,6 +70,10 @@ const publicRoutes = [
     { path: PATH_NAME.CERTIFICATION_FILL_FORM, element: <CertificationFillForm /> },
     { path: PATH_NAME.CERTIFICATION_TEST, element: <CertificationTest /> },
     { path: PATH_NAME.COMING_SOON, element: <CommingSoon /> },
+    { path: PATH_NAME.DOWLOADCOURSE, element: <DowloadCourse /> },
+    { path: PATH_NAME.CERTIFICATION_CENTER, element: <CertificationCenter /> },
+
+
   ];
   
   const privateRoutes = [
@@ -82,6 +91,11 @@ const publicRoutes = [
     { path: PATH_NAME.SAVE_COURSES, element: <SaveCourses /> },
     { path: PATH_NAME.SETTING, element: <Setting /> },
     { path: PATH_NAME.MY_COURSE, element: <MyCourse /> },
+    { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse/> },
+    { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
+    { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView/> },
+
+  
   ];
 
 const routes = { publicRoutes, privateRoutes };

@@ -1,0 +1,140 @@
+.NT-grid-container{
+   display: grid;
+  grid-template-columns: repeat(12, 1fr); 
+  gap: 10px; 
+
+}
+
+.NT-grid-item{
+    grid-column: span 12;
+}
+
+.NT-st_title {
+    font-size: 20px;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.NT-setting_noti {
+    margin-top: 40px;
+    float: left;
+    padding: 10px 20px;
+    color: #fff;
+    background: #ed2a26;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.NT-setting_noti:hover {
+    color: #fff !important;
+    background: #333;
+}
+
+.NT-all_msg_bg {
+	background: #fff;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    padding: 0;
+	float: left;
+	width: 100%;
+}
+
+.NT-channel_my {
+	padding: 15px !important;
+    border-bottom: 1px solid #efefef !important;
+    min-width: 100%;
+    max-width: 100%;
+    white-space: normal;
+	display: block;
+}
+
+.NT-channel_my:last-child {
+    border-bottom: 0 !important;
+}
+
+.NT-channel_my:hover {
+    background:#ffecec !important;
+}
+
+.NT-profile_link {
+    display: flex;
+}
+
+.NT-profile_link img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+	border: 2px solid #fff;
+	border-radius: 100%;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.NT-pd_content {
+    width: 80%;
+	white-space: normal;
+}
+
+.NT-pd_content h6 {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+	position: relative;
+}
+
+.NT-pd_content span {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    color: #686f7a;
+    text-align: left;
+}
+
+.NT-pd_content p {
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 8px;
+    color: #686f7a;
+    text-align: left;
+    margin-top: 8px;
+	line-height: 20px;
+}
+
+.pd_content span.NT-nm_time {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    color: #afafaf;
+    text-align: left;
+}
+
+.NT-noti__text5 {
+	font-size: 14px !important;
+}
+
+.NT-crse_bl {
+	font-weight: 600;
+	font-family: 'Roboto', sans-serif;
+	color: #686f7a;
+}
+
+.pd_content span.NT-nm_time {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    color: #afafaf;
+    text-align: left;
+}

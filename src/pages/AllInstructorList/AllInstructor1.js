@@ -184,7 +184,7 @@ export default function AllInstructor1() {
     <div className="All-Instructor-grid-container">
         {instructorsData.map((instructor, index) => (
             <div key={index} className="All-Instructor-grid-item">
-                <div className="fcrse_1 mt-30">
+                <div className="All-Instructor-fcrse_1 mt-30">
                     <div className="All-Instructor-tutor_img">
                         <a href="instructor_profile_view.html"><img src={instructor.image} alt={instructor.name} /></a>
                     </div>
