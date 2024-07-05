@@ -263,3 +263,10 @@
     height: 18px;
   }
   
+  .group_messages::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .messages-line::-webkit-scrollbar {
+    width: 0;
+  }
