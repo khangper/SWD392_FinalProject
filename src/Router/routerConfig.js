@@ -106,7 +106,6 @@ const publicRoutes = [
     { path: PATH_NAME.EARNING, element: <Earning />},
     { path: PATH_NAME.PURCHASE_COURSE, element: <PurchaseCourse/> },
     { path: PATH_NAME.NOTIFICATON, element: <Notification/> },
-    { path: PATH_NAME.COURSEVIEW, element: <CoursesDetailView/> },
     { path: PATH_NAME.VERTIFICATION, element: <Vertification/> },
     { path: PATH_NAME.PAYOUT, element: <Payout />},
     { path: PATH_NAME.MESSAGE, element: <Message /> },
