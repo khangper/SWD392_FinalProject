@@ -44,7 +44,6 @@ export const PATH_NAME = {
     COURSEVIEW: '/courseview',
     CERTIFICATION_CENTER: '/certificationcenter',
     ALL_INSTRUCTOR_LIST: '/all-instructor-list',
-    VERTIFICATION: '/vertification'
     VERTIFICATION: '/vertification',
     MYCERTIFICATIONS: '/mycertifications'
 };
