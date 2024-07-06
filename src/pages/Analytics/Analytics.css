@@ -1,7 +1,7 @@
 .analytics-container{
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
+    background-color: #f7f7f7;
 }
 .top-chart-section{
     display: flex;
@@ -29,10 +29,11 @@
 .top-chart-container{
     width: 100%;
     display: flex;
+    gap:20px;
 }
 .top-chart-item{
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 32.28%;
 }
 .analytics-card{
     background: #fff !important;
@@ -62,3 +63,142 @@
     line-height: 26px;
     margin-bottom: 10px;
 }
+.chartjs-wrapper{
+    height: 100px;
+}
+.middle-chart-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.middle-chart-container{
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.middle-chart-header{
+    padding: 1.2rem 2rem;
+    margin-bottom: 0;
+    background-color: #fff !important;
+    border-bottom: 1px solid #efefef !important;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+}
+.middle-chart-title{
+    font-size: 18px !important;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif !important;
+    color: #333 !important;
+}
+.middle-chart-body{
+    height: 450px;
+    padding: 3rem !important;
+}
+.middle2-chart-container{
+    display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+}
+.middle-chart-left {
+    flex: 0 1 65%;
+    background-color: #fff;
+    overflow: hidden;
+    padding-right: 20px;
+  }
+  
+  .middle-chart-right {
+    flex: 0 1 35%;
+    background-color: #fff;
+  }
+  .middle-chart-left-footer{
+    padding: .75rem 1.25rem;
+    background-color: #fff;
+    border-top: 1px solid #efefef !important;
+  }
+  .middle-chart-left-footer a{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: left;
+    line-height: 26px;
+    margin-bottom: 0;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    text-transform: uppercase;
+  }
+  .middle-chart-left-footer a:hover{
+    text-decoration: underline;
+  }
+  .middle-chart-right-content{
+    padding: 10px 30px;
+  }
+  .middle-chart-right-content p{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #686f7a;
+    text-align: left;
+    line-height: 26px;
+    margin-top: .5rem !important;
+    margin-bottom: .5rem
+  }
+  .middle-chart-right-content h4{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: left;
+    line-height: 26px;
+    margin-bottom: 2px;
+    margin-top: 12px;
+  }
+  .middle-chart-right-content-divider{
+    border-bottom: 1px solid #dee2e6 !important;
+}
+.middle-chart-right-wrapper{
+    padding: 2rem !important;
+}
+.bottom-chart-section {
+    background-color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  .course-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .course-table th, .course-table td {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: none;
+    border-right: none; 
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .course-table th {
+    background-color: #ffecec;
+    color: #333;
+  }
+  
+  .course-table tbody tr:nth-child(even) {
+    background-color: #fff;
+  }
+  
+  .course-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .bottom-chart-thumbnail-img {
+    width: 120px;
+    height: auto;
+    border-radius: 3px;
+  }
+  

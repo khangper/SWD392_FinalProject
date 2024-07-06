@@ -11,7 +11,8 @@ const BarChart = () => {
       {
         label: "Subscribers",
         data: [6, 3, 4, 3, 6, 9, 4, 8, 9, 5, 8, 3, 4],
-        backgroundColor: "#ed2a26"
+        backgroundColor: "#ed2a26",
+        barThickness: 10 
       }
     ]
   };
@@ -54,7 +55,7 @@ const BarChart = () => {
   };
 
   return (
-    <div style={{ height: '200px', width: '300px' }}>
+    <div style={{ height: '100px', width: '344px' }}>
       <Bar data={data} options={options} />
     </div>
   );
