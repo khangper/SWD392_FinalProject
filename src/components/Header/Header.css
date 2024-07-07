@@ -49,12 +49,19 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    top: 0;
-    z-index: 99;
-    position: -webkit-sticky;
-    position: sticky;
     gap: 20px;
     padding: 10px 450px 12px 370px !important;
+}
+
+.message{
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+.dropdown{
+    top: 60px !important;
+    right: 450px !important;
+    border-radius: 3px !important;
 }
 
 @media screen and (max-width: 1350px) {

@@ -53,10 +53,10 @@
     align-items: flex-end;
     justify-content: space-between;
     padding: 7px 313px 12px 313px;
-    top: 0;
+    /* top: 0;
     z-index: 99;  
     position: -webkit-sticky;
-    position: sticky;
+    position: sticky; */
     gap: 20px
 }
 
