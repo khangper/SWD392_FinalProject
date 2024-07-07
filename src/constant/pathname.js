@@ -56,4 +56,8 @@ export const PATH_NAME = {
     CREDIT: '/credits',
       STATEMENTIS: '/statements',
     STATEMENTST: '/statementst',
+        ANALYTICS: "/analytics",
+  CREATE_NEW_COURSE: "/create-course",
+  STD_DASHBOARD: "/student-dashboard",
 };
+

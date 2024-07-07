@@ -5,7 +5,7 @@ import sendmessage from '../../assets/sendmessage.png'
 const Message = () => {
     return (
         <div>
-            <div className="message">
+            <div className="message-section">
                 <div className="message-container">
                     <div className="message-row">
                         <div className="message-col-lg-12">
