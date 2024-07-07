@@ -51,7 +51,7 @@ const Header = () => {
           onClick={toggleProfileDropdown}
         />
         {isProfileDropdownOpen && (
-          <div className="dropdown">
+          <div className="dropdowns">
             <div className="dropdown-item">
               <div className="dropdown-link">
                 <img src={avatar} alt="Profile" className="profile-pic" />
