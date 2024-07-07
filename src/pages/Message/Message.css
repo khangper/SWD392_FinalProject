@@ -1,5 +1,5 @@
 /* Container for messages */
-.message {
+.message-section {
     display: flex;
     flex-direction: column;
     padding: 20px;

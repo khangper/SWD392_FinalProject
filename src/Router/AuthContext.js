@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
       if (foundUser.role === 'instructor') {
         navigate('/ins-dashboard');
       } else if (foundUser.role === 'student') {
-        navigate('/student-home');
+        navigate('/student-dashboard');
       } else {
         navigate('/home');
       }
