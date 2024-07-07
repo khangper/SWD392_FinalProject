@@ -24,19 +24,19 @@ import SendFeedback from "../pages/SendFeedback/SendFeedback";
 import Setting from "../pages/Setting/Setting";
 import Thanks from "../pages/Thanks/Thanks";
 import BlogDetail from "../pages/BlogDetail/BlogDetail";
-import Checkout from '../pages/Checkout/Checkout';
-import ShoppingCart from '../pages/ShopingCart/ShoppingCart';
-import HelpView1 from '../pages/HelpView1/HelpView1';
-import HelpView2 from '../pages/HelpView2/HelpView2';
-import Company from '../pages/Company/Company';
-import Career from '../pages/Career/Career';
-import ApplyJob from '../pages/ApplyJob/ApplyJob';
-import ContactUs from '../pages/ContactUs/ContactUs';
-import TermsOfUse from '../pages/TermsOfUse/TermsOfUse';
-import CertificationFillForm from '../pages/CertificationFillForm/CertificationFillForm';
-import MyCourse from '../pages/MyCourse/MyCourse';
-import CertificationTest from '../pages/CertificationTest/CertificationTest';
-import CommingSoon from '../pages/CommingSoon/CommingSoon';
+import Checkout from "../pages/Checkout/Checkout";
+import ShoppingCart from "../pages/ShopingCart/ShoppingCart";
+import HelpView1 from "../pages/HelpView1/HelpView1";
+import HelpView2 from "../pages/HelpView2/HelpView2";
+import Company from "../pages/Company/Company";
+import Career from "../pages/Career/Career";
+import ApplyJob from "../pages/ApplyJob/ApplyJob";
+import ContactUs from "../pages/ContactUs/ContactUs";
+import TermsOfUse from "../pages/TermsOfUse/TermsOfUse";
+import CertificationFillForm from "../pages/CertificationFillForm/CertificationFillForm";
+import MyCourse from "../pages/MyCourse/MyCourse";
+import CertificationTest from "../pages/CertificationTest/CertificationTest";
+import CommingSoon from "../pages/CommingSoon/CommingSoon";
 import { PATH_NAME } from "../constant/pathname";
 import TestResult from "../pages/TestResult/TestResult";
 import Message from "../pages/Message/Message";
@@ -58,8 +58,6 @@ import StdDashboard from "../pages/StdDashboard/StdDashboard";
 import Credit from "../pages/Credit/Credit";
 import StatementIS from "../pages/Statements/StatementIS/StatementIS";
 import StatementST from "../pages/Statements/StatementST/StatementST";
-
-
 
 const publicRoutes = [
   { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -84,14 +82,16 @@ const publicRoutes = [
   { path: PATH_NAME.APPLY_JOB, element: <ApplyJob /> },
   { path: PATH_NAME.CONTACT_US, element: <ContactUs /> },
   { path: PATH_NAME.TERMS_OF_USE, element: <TermsOfUse /> },
-  { path: PATH_NAME.CERTIFICATION_FILL_FORM, element: <CertificationFillForm /> },
+  {
+    path: PATH_NAME.CERTIFICATION_FILL_FORM,
+    element: <CertificationFillForm />,
+  },
   { path: PATH_NAME.CERTIFICATION_TEST, element: <CertificationTest /> },
   { path: PATH_NAME.COMING_SOON, element: <CommingSoon /> },
   { path: PATH_NAME.DOWLOADCOURSE, element: <DowloadCourse /> },
   { path: PATH_NAME.CERTIFICATION_CENTER, element: <CertificationCenter /> },
   { path: PATH_NAME.TEST_RESULT, element: <TestResult /> },
 ];
-
 
 const privateRoutes = [
   { path: PATH_NAME.HOME, element: <Home /> },
@@ -118,16 +118,14 @@ const privateRoutes = [
   { path: PATH_NAME.MESSAGE, element: <Message /> },
   { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
   { path: PATH_NAME.PREVIEWS, element: <Previews /> },
-     { path: PATH_NAME.ANALYTICS, element: <Analytics /> },
-     { path: PATH_NAME.CREATE_NEW_COURSE, element: <CreateNewCourse /> },
-     { path: PATH_NAME.STD_DASHBOARD, element: <StdDashboard /> },
+  { path: PATH_NAME.ANALYTICS, element: <Analytics /> },
+  { path: PATH_NAME.CREATE_NEW_COURSE, element: <CreateNewCourse /> },
+  { path: PATH_NAME.STD_DASHBOARD, element: <StdDashboard /> },
   { path: PATH_NAME.MYCERTIFICATIONS, element: <MyCertifications /> },
-  { path: PATH_NAME.CREDIT, element: <Credit />},
+  { path: PATH_NAME.CREDIT, element: <Credit /> },
   { path: PATH_NAME.STATEMENTIS, element: <StatementIS /> },
   { path: PATH_NAME.STATEMENTST, element: <StatementST /> },
-  ];
-
-
+];
 
 const routes = { publicRoutes, privateRoutes };
 

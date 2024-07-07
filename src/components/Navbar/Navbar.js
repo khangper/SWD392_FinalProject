@@ -138,7 +138,9 @@ const Navbar = ({ setSidebar }) => {
         </div>
       </div>
       <div className="nav-right flex-div">
-        <button className="course-button">Create new course</button>
+        <Link to="/create-course">
+          <button className="course-button">Create new course</button>
+        </Link>
         <Link to="shoppingcart">
           <div className="icon">
             <img src={card_icon} alt="" className="cart-icon" />
@@ -250,12 +252,25 @@ const Navbar = ({ setSidebar }) => {
                   </span>
                 </div>
               </div>
-              <div className="profile-item"> Cursus Dashboard</div>
-              <div className="profile-item"> Paid Memberships</div>
-              <div className="profile-item"> Setting</div>
-              <div className="profile-item">Help</div>
-              <div className="profile-item"> Send Feedback</div>
-              <div className="profile-item" onClick={logout}> Sign Out</div>
+              <a href="ins-dashboard">
+                <div className="profile-item"> Cursus Dashboard</div>
+              </a>
+              <a href="paidmembership">
+                <div className="profile-item"> Paid Memberships</div>
+              </a>
+              <a href="setting">
+                <div className="profile-item"> Setting</div>
+              </a>
+              <a href="help">
+                <div className="profile-item">Help</div>
+              </a>
+              <a href="sendfeedback">
+                <div className="profile-item"> Send Feedback</div>
+              </a>
+              <div className="profile-item" onClick={logout}>
+                {" "}
+                Sign Out
+              </div>
             </div>
           )}
         </div>

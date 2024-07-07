@@ -1,14 +1,18 @@
-import React from 'react';
-import './Footer.css';
-import facebook from '../../assets/facebook.png';
-import x from '../../assets/x.png';
-import google from '../../assets/google+.png';
-import linkedin from '../../assets/linkedin.png';
-import insta from '../../assets/insta.png';
-import pinterest from '../../assets/pinterest.png';
+import React from "react";
+import "./Footer.css";
+import facebook from "../../assets/facebook.png";
+import x from "../../assets/x.png";
+import google from "../../assets/google+.png";
+import linkedin from "../../assets/linkedin.png";
+import insta from "../../assets/insta.png";
+import pinterest from "../../assets/pinterest.png";
 const Footer = ({ sidebar }) => {
   return (
-    <footer className={`footer ${sidebar ? 'footer-container' : 'footer-large-container'}`}>
+    <footer
+      className={`footer ${
+        sidebar ? "footer-container" : "footer-large-container"
+      }`}
+    >
       <div className="footer-links">
         <div className="footer-column">
           <a href="about-us">About</a>
@@ -31,13 +35,16 @@ const Footer = ({ sidebar }) => {
         <div className="footer-column">
           <button className="teach-button">Teach on Cursus</button>
           <div className="language-selector">
-            <button>Language <span>&#9660;</span></button>
+            <button>
+              Language <span>&#9660;</span>
+            </button>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
         <div className="footer-copy">
-          <img src='https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg' />&copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
+          <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg" />
+          &copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
         </div>
         <div className="footer-social">
           <img href="#" src={facebook} className="social-icon" />
