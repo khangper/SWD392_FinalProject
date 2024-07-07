@@ -1,28 +1,28 @@
 .Paidmembership_215b15 {
     display: grid;
-    grid-template-columns: 1fr; /* Sử dụng CSS Grid thay vì Bootstrap col */
+    grid-template-columns: 1fr; 
     width: 50%;
     padding: 20px 0 0;
     background: #fff;
     margin-bottom: 17px;
-    justify-items: left; /* Đặt các mục vào giữa theo chiều ngang */
+    justify-items: left; 
 }
 
 .title125 {
     width: 100%;
-    float: none; /* Bỏ float để nội dung căn giữa */
-    text-align: left; /* Căn giữa nội dung */
+    float: none; 
+    text-align: left; 
 }
 
 .titleleft {
-    float: none; /* Bỏ float để nội dung căn giữa */
-    text-align: left; /* Căn giữa nội dung */
+    float: none;
+    text-align: left; 
 }
 
 .ttl121 .breadcrumb {
     background-color: #fff !important;
     padding: 0 !important;
-    text-align: center; /* Căn giữa các breadcrumb */
+    text-align: center; 
 }
 
 .ttl121 .breadcrumb-item a {
@@ -38,7 +38,7 @@
 }
 
 .Paidmember-title {
-    text-align: center; /* Căn giữa tiêu đề */
+    text-align: center; 
     margin-top: 34px;
 }
 
@@ -47,10 +47,10 @@
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #333;
-    text-align: left; /* Căn giữa tiêu đề */
+    text-align: left; 
     line-height: 30px;
     position: sticky;
-    top: 0; /* Đặt vị trí dính (sticky) từ đầu trang */
+    top: 0; 
 }
 
 .PMMS-container {
@@ -120,12 +120,9 @@
     border-radius: 4px;
     cursor: pointer;
 }
-
 .prmb-btn:hover {
     background-color: #0056b3;
 }
-
-
 .membership-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -144,8 +141,6 @@
     transition: all .2s ease-in-out;
     margin-top: 47px;
   }
-
-
   .membership-title {
     display: flex;
     justify-content: space-between;
@@ -164,8 +159,6 @@
     text-align: left;
     line-height: 26px;
   }
-
-
   .save-price {
     font-size: 0.9em;
     color: #777;
@@ -179,7 +172,6 @@
     text-align: left;
     line-height: 26px;
 }
-  
   .accordion {
     margin-bottom: 15px;
   }
@@ -198,9 +190,6 @@
     font-family: 'Roboto', sans-serif;
     /* justify-content: space-between; */
   }
-
-
-
   .faq-item summary {
     font-size: 18px;
     font-weight: 500;
@@ -291,4 +280,50 @@
 .panel-body {
   padding: 15px;
   background-color: #fff;
+}
+
+.details-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer; /* Optional: makes it clear the summary is clickable */
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+.Check-icon {
+  margin-right: 8px; /* Adjust spacing as needed */
+}
+
+.details-summary .icon {
+  font-size: 1.5em; /* Adjust size as needed */
+  transition: transform 0.2s;
+}
+
+img.Check-icon {
+  width: 18px;
+  margin-right: 7px;
+}
+
+summary.details-summary1 {
+  padding: 18px; 
+}
+
+.prmb_btn1 {
+  margin-top: 14px;
+  width: 100%;
+  height: 50px;
+  border-radius: 3px;
+  border: 0;
+  background: #ed2a26;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+}
+.prmb_btn1:hover {
+  background-color: #313437;
 }
