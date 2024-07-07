@@ -181,6 +181,12 @@ th.MyCourse-text-center {
 .Edit-icon{
     margin-right: 6px;
     width: 14px;
+    background: none;
+}
+
+.Edit-icon1{
+    margin-right: 2px;
+    width: 30px;
 }
 
 .MyCoursePage-grid-container{
