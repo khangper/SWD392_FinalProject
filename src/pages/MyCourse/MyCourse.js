@@ -6,160 +6,161 @@ import DowLoadMyCourse from '..//../assets/DowLoadMyCourse.png';
 import Printer from '..//../assets/Printer.png';
 import MyCourseBook from '..//../assets/MyCourse-Book.png';
 import discount from '..//../assets/discount.png';
-import uploadmc from '..//../assets/uploadmc.png';
+import uploadmc1 from '..//../assets/uploadmc1.png';
 import Megaphone2 from '..//../assets/Megaphone2.png';
+import DowLoadMyCourse1 from '..//../assets/DowLoadMyCourse1.png';
+import MyCourseBook1 from '..//../assets/MyCourse-Book1.png';
 
 
 function MyCourse() {
   const openTab = (tabId) => {
-    setActiveTab(tabId); // Hàm mở tab
-  };
+    setActiveTab(tabId); 
+};
 
-  const [isOpen, setIsOpen] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+const toggleDropdown = () => {
+setIsOpen(!isOpen);
+};
 
+  
+    // My course
+    const courses = [
+        {
+          itemNo: 'IT-001',
+          title: 'Course Title Here',
+          publishDate: '06 April 2020 | 08:31',
+          sales: 15,
+          parts: 5,
+          category: 'Web Development',
+          status: 'Active',
+          actionEdit: '#',
+          actionDelete: '#'
+        },
+        {
+          itemNo: 'IT-002',
+          title: 'Course Title Here',
+          publishDate: '05 April 2020 | 05:15',
+          sales: 30,
+          parts: 3,
+          category: 'Graphic Design',
+          status: 'Active',
+          actionEdit: '#',
+          actionDelete: '#'
+        },
+        {
+          itemNo: 'IT-003',
+          title: 'Course Title',
+          publishDate: '03 April 2020 | 01:30',
+          sales: 14,
+          parts: 5,
+          category: 'Bootstrap',
+          status: 'Active',
+          actionEdit: '#',
+          actionDelete: '#'
+        },
+        {
+          itemNo: 'IT-004',
+          title: 'Course Title Here',
+          publishDate: '02 April 2020 | 05:15',
+          sales: 110,
+          parts: 9,
+          category: 'Game Development',
+          status: 'Active',
+          actionEdit: '#',
+          actionDelete: '#'
+        },
+        {
+          itemNo: 'IT-005',
+          title: 'Course Title Here',
+          publishDate: '28 March 2020 | 05:15',
+          sales: 185,
+          parts: 10,
+          category: 'C++',
+          status: 'Active',
+          actionEdit: '#',
+          actionDelete: '#'
+        }
+      ];
+    // My Purchase
+    const MyPurchase = [
+      {
+        itemNo: '1',
+        title: 'Course Title Here',
+        Vendor: 'Zoena Singh',
+        Category: 'Web Development',
+        DeliveryType: 'Download',
+        Price: '$15',
+        Purchase:'25 March 2020',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      {
+        itemNo: '2',
+        title: 'Course Title Here',
+        Vendor: 'Rock William',
+        Category: 'C++',
+        DeliveryType: 'Download',
+        Price: '$20',
+        Purchase:'25 March 2020',        
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+    ];  
+    //UpComing Course
+    const UpComming = [
+      {
+        itemNo: '01',
+        title: 'Course Title Here',
+        Thumbnail: 'View',
+        Category: 'Web Development',
+        Price: '$15',
+        Purchase:'9 April 2020',
+        Status:'Pending',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      {
+        itemNo: '02',
+        title: 'Course Title Here',
+        Thumbnail: 'View',
+        Category: 'Graphic Design',
+        Price: '$12',
+        Purchase:'8 April 2020',
+        Status:'Pending',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      {
+        itemNo: '03',
+        title: 'Course Title Here',
+        Thumbnail: 'View',
+        Category: 'Photography',
+        Price: '$6',
+        Purchase:'7 April 2020',
+        Status:'Pending',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      
 
-  // My course
-  const courses = [
-    {
-      itemNo: 'IT-001',
-      title: 'Course Title Here',
-      publishDate: '06 April 2020 | 08:31',
-      sales: 15,
-      parts: 5,
-      category: 'Web Development',
-      status: 'Active',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-    {
-      itemNo: 'IT-002',
-      title: 'Course Title Here',
-      publishDate: '05 April 2020 | 05:15',
-      sales: 30,
-      parts: 3,
-      category: 'Graphic Design',
-      status: 'Active',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-    {
-      itemNo: 'IT-003',
-      title: 'Course Title',
-      publishDate: '03 April 2020 | 01:30',
-      sales: 14,
-      parts: 5,
-      category: 'Bootstrap',
-      status: 'Active',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-    {
-      itemNo: 'IT-004',
-      title: 'Course Title Here',
-      publishDate: '02 April 2020 | 05:15',
-      sales: 110,
-      parts: 9,
-      category: 'Game Development',
-      status: 'Active',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-    {
-      itemNo: 'IT-005',
-      title: 'Course Title Here',
-      publishDate: '28 March 2020 | 05:15',
-      sales: 185,
-      parts: 10,
-      category: 'C++',
-      status: 'Active',
-      actionEdit: '#',
-      actionDelete: '#'
-    }
-  ];
-  // My Purchase
-  const MyPurchase = [
-    {
-      itemNo: '1',
-      title: 'Course Title Here',
-      Vendor: 'Zoena Singh',
-      Category: 'Web Development',
-      DeliveryType: 'Download',
-      Price: '$15',
-      Purchase: '25 March 2020',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-    {
-      itemNo: '2',
-      title: 'Course Title Here',
-      Vendor: 'Rock William',
-      Category: 'C++',
-      DeliveryType: 'Download',
-      Price: '$20',
-      Purchase: '25 March 2020',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
+    ]; 
+    // Discount
+    const Discount = [
+      {
+        itemNo: '01',
+        title: 'Course Title Here',
+        StartDate: '02 November 2019',
+        EndDate: '19 November 2019',
+        Discount: '20%',
+        Status: 'Active',
+        actionEdit: '#',
+        actionDelete: '#'
+      },
+      
 
+    ];
 
-  ];
-  //UpComing Course
-  const UpComming = [
-    {
-      itemNo: '01',
-      title: 'Course Title Here',
-      Thumbnail: 'View',
-      Category: 'Web Development',
-      Price: '$15',
-      Purchase: '9 April 2020',
-      Status: 'Pending',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-    {
-      itemNo: '02',
-      title: 'Course Title Here',
-      Thumbnail: 'View',
-      Category: 'Graphic Design',
-      Price: '$12',
-      Purchase: '8 April 2020',
-      Status: 'Pending',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-    {
-      itemNo: '03',
-      title: 'Course Title Here',
-      Thumbnail: 'View',
-      Category: 'Photography',
-      Price: '$6',
-      Purchase: '7 April 2020',
-      Status: 'Pending',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-
-
-  ];
-  // Discount
-  const Discount = [
-    {
-      itemNo: '01',
-      title: 'Course Title Here',
-      StartDate: '02 November 2019',
-      EndDate: '19 November 2019',
-      Discount: '20%',
-      Status: 'Active',
-      actionEdit: '#',
-      actionDelete: '#'
-    },
-
-
-  ];
 
 
   const [activeTab, setActiveTab] = useState('my-courses');
@@ -170,88 +171,83 @@ function MyCourse() {
 
   return (
     <div className="MyCoursePage">
+       <div className="MyCoursePage-grid-container">
+           <div className="MyCoursePage-grid-item">
+                <div className="MyCoursePage-st_title">
+                 <img src={MyCourseBook}  className="Edit-icon" />                  
+                  Course                                  
+                </div> 
+           </div>
+       </div>
 
-      <div className="MyCoursePage-grid-container">
-        <div className="MyCoursePage-grid-item">
-          <div className="MyCoursePage-st_title">
-            <img src={MyCourseBook} className="Edit-icon" />
-            Course
-          </div>
-        </div>
+       <div className="MyCoursePage1-grid-container">
+           <div className="MyCoursePage1-grid-item">
+           <div className="MyCoursePage1-card_dash1">
+							<div className="MyCoursePage1-card_dash_left1">
+              <img src={MyCourseBook}  className="Edit-icon1" />   
+								<h1>Jump Into Course Creation</h1>
+							</div>
+							<div className="MyCoursePage1-card_dash_right1">
+								<button className="MyCoursePage1-create_btn_dash">Create Your Course</button>
+							</div>
+						</div>
+           </div>
       </div>
 
-      <div className="MyCoursePage1-grid-container">
-        <div className="MyCoursePage1-grid-item">
-          <div className="MyCoursePage1-card_dash1">
-            <div className="MyCoursePage1-card_dash_left1">
-              <img src={MyCourseBook} className="Edit-icon" />
-              <h1>Jump Into Course Creation</h1>
-            </div>
-            <div className="MyCoursePage1-card_dash_right1">
-              <button className="MyCoursePage1-create_btn_dash">Create Your Course</button>
-            </div>
+        {/* Body myCourse */}
+    <div className="MyCourse-selec-container">
+      <div className="MyCourse-nav-container MyCourse-my_crse_nav" id="pills-tab" role="tablist">
+        <div className="MyCourse-nav-item">
+          <a
+            className={`MyCourse-nav-link ${activeTab === 'my-courses' ? 'active' : ''}`}
+            onClick={() => handleTabClick('my-courses')}
+            role="tab"
+            aria-selected={activeTab === 'my-courses'}
+          >
+            <img src={MyCourseBook1}  className="Edit-icon" />    My Courses
+          </a>
+        </div>
+        <div className="MyCourse-nav-item">
+          <a
+            className={`MyCourse-nav-link ${activeTab === 'my-purchases' ? 'active' : ''}`}
+            onClick={() => handleTabClick('my-purchases')}
+            role="tab"
+            aria-selected={activeTab === 'my-purchases'}
+          >
+        <img src={DowLoadMyCourse1}  className="Edit-icon" />My Purchases
+          </a>
+        </div>
+        <div className="MyCourse-nav-item">
+          <a
+            className={`MyCourse-nav-link ${activeTab === 'upcoming-courses' ? 'active' : ''}`}
+            onClick={() => handleTabClick('upcoming-courses')}
+            role="tab"
+            aria-selected={activeTab === 'upcoming-courses'}
+          >
+            <img src={uploadmc1}  className="Edit-icon" /> Upcoming Courses
+          </a>
+        </div>
+        <div className="MyCourse-nav-item">
+          <a
+            className={`MyCourse-nav-link ${activeTab === 'discounts' ? 'active' : ''}`}
+            onClick={() => handleTabClick('discounts')}
+            role="tab"
+            aria-selected={activeTab === 'discounts'}
+          >
+            <img src={discount}  className="Edit-icon" /> Discounts
+          </a>
+        </div>
+        <div className="MyCourse-nav-item">
+          <a
+            className={`MyCourse-nav-link ${activeTab === 'promotions' ? 'active' : ''}`}
+            onClick={() => handleTabClick('promotions')}
+            role="tab"
+            aria-selected={activeTab === 'promotions'}
+          >
+            <img src={Megaphone2}  className="Edit-icon" /> Promotions
+          </a> 
           </div>
         </div>
-      </div>
-
-
-
-
-      {/* Body myCourse */}
-      <div className="MyCourse-selec-container">
-        <div className="MyCourse-nav-container MyCourse-my_crse_nav" id="pills-tab" role="tablist">
-          <div className="MyCourse-nav-item">
-            <a
-              className={`MyCourse-nav-link ${activeTab === 'my-courses' ? 'active' : ''}`}
-              onClick={() => handleTabClick('my-courses')}
-              role="tab"
-              aria-selected={activeTab === 'my-courses'}
-            >
-              <img src={MyCourseBook} className="Edit-icon" />    My Courses
-            </a>
-          </div>
-          <div className="MyCourse-nav-item">
-            <a
-              className={`MyCourse-nav-link ${activeTab === 'my-purchases' ? 'active' : ''}`}
-              onClick={() => handleTabClick('my-purchases')}
-              role="tab"
-              aria-selected={activeTab === 'my-purchases'}
-            >
-              <img src={DowLoadMyCourse} className="Edit-icon" />My Purchases
-            </a>
-          </div>
-          <div className="MyCourse-nav-item">
-            <a
-              className={`MyCourse-nav-link ${activeTab === 'upcoming-courses' ? 'active' : ''}`}
-              onClick={() => handleTabClick('upcoming-courses')}
-              role="tab"
-              aria-selected={activeTab === 'upcoming-courses'}
-            >
-              <img src={uploadmc} className="Edit-icon" /> Upcoming Courses
-            </a>
-          </div>
-          <div className="MyCourse-nav-item">
-            <a
-              className={`MyCourse-nav-link ${activeTab === 'discounts' ? 'active' : ''}`}
-              onClick={() => handleTabClick('discounts')}
-              role="tab"
-              aria-selected={activeTab === 'discounts'}
-            >
-              <img src={discount} className="Edit-icon" /> Discounts
-            </a>
-          </div>
-          <div className="MyCourse-nav-item">
-            <a
-              className={`MyCourse-nav-link ${activeTab === 'promotions' ? 'active' : ''}`}
-              onClick={() => handleTabClick('promotions')}
-              role="tab"
-              aria-selected={activeTab === 'promotions'}
-            >
-              <img src={Megaphone2} className="Edit-icon" /> Promotions
-            </a>
-          </div>
-        </div>
-
         <div className="MyCourse-tab-content">
           {activeTab === 'my-courses' && (
             <div className="MyCourse-tab-pane active" id="my-courses-tab" role="tabpanel">
