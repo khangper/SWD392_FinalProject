@@ -1,5 +1,4 @@
-
-.header-link1{
+.header-link1 {
     cursor: pointer;
     border: 1px solid #efefef;
     padding: 6px 19px 8px 21px;
@@ -15,7 +14,7 @@
     font-size: 14px;
 }
 
-.header-link1:hover{
+.header-link1:hover {
     background-color: #333;
     box-sizing: border-box;
     color: #fff;
@@ -23,7 +22,7 @@
 
 
 
-.header-group-icon{
+.header-group-icon {
     height: 30px;
     align-self: stretch;
     position: relative;
@@ -31,8 +30,7 @@
     flex-shrink: 0;
 }
 
-
-.header-avatar{
+.header-avatar {
     height: 36px;
     width: 36px;
     position: relative;
@@ -42,8 +40,7 @@
     border: 2px solid #efefef;
 }
 
-
-.header{
+.header {
     align-self: stretch;
     box-shadow: 0 5px 15px -9px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -52,29 +49,26 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 10px 370px 12px 370px;
     top: 0;
-    z-index: 99;  
+    z-index: 99;
     position: -webkit-sticky;
     position: sticky;
-    gap: 20px
+    gap: 20px;
+    padding: 10px 450px 12px 370px !important;
 }
 
-
-@media screen and (max-width: 1350px){
-    .header{
+@media screen and (max-width: 1350px) {
+    .header {
         padding-left: 185px;
         padding-right: 193px;
         box-sizing: border-box;
     }
 }
 
-
-@media screen and (max-width: 900px){
-    .header{
+@media screen and (max-width: 900px) {
+    .header {
         padding-left: 92px;
         padding-right: 96px;
         box-sizing: border-box;
     }
 }
-

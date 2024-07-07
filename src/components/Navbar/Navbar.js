@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import menu_icon from "..//../assets/menu.png";
 import search_icon from "..//../assets/search.png";
@@ -7,6 +7,8 @@ import mail_icon from "..//../assets/mail-icon.png";
 import notification_icon from "..//../assets/notification-icon.png";
 import profile_image from "..//../assets/profile-img.jpg";
 import moon_image from "..//../assets/moon.png";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../Router/AuthContext";
 const Navbar = ({ setSidebar }) => {
   const sampleMessages = [
     {
@@ -114,6 +116,8 @@ const Navbar = ({ setSidebar }) => {
     setSidebar((prev) => !prev);
   };
 
+  const { logout } = useContext(AuthContext);
+
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
@@ -134,11 +138,16 @@ const Navbar = ({ setSidebar }) => {
         </div>
       </div>
       <div className="nav-right flex-div">
-        <button className="course-button">Create new course</button>
-        <div className="icon">
-          <img src={card_icon} alt="" className="cart-icon" />
-          <span className="badge">2</span>
-        </div>
+        <Link to="/create-course">
+          <button className="course-button">Create new course</button>
+        </Link>
+        <Link to="shoppingcart">
+          <div className="icon">
+            <img src={card_icon} alt="" className="cart-icon" />
+            <span className="badge">2</span>
+          </div>
+        </Link>
+
         <div className="icon" ref={mailDropdownRef}>
           <img
             src={mail_icon}
@@ -243,12 +252,25 @@ const Navbar = ({ setSidebar }) => {
                   </span>
                 </div>
               </div>
-              <div className="profile-item"> Cursus Dashboard</div>
-              <div className="profile-item"> Paid Memberships</div>
-              <div className="profile-item"> Setting</div>
-              <div className="profile-item">Help</div>
-              <div className="profile-item"> Send Feedback</div>
-              <div className="profile-item"> Sign Out</div>
+              <a href="ins-dashboard">
+                <div className="profile-item"> Cursus Dashboard</div>
+              </a>
+              <a href="paidmembership">
+                <div className="profile-item"> Paid Memberships</div>
+              </a>
+              <a href="setting">
+                <div className="profile-item"> Setting</div>
+              </a>
+              <a href="help">
+                <div className="profile-item">Help</div>
+              </a>
+              <a href="sendfeedback">
+                <div className="profile-item"> Send Feedback</div>
+              </a>
+              <div className="profile-item" onClick={logout}>
+                {" "}
+                Sign Out
+              </div>
             </div>
           )}
         </div>

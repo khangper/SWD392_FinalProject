@@ -9,18 +9,19 @@ import pace from "../../assets/history.png";
 import expert from "../../assets/expert.png";
 import livestream from "../../assets/livestream.png";
 import screen from "../../assets/screen.png";
-import facebook from '../../assets/facebook.png';
-import x from '../../assets/x.png';
-import linkedin from '../../assets/linkedin.png';
-import youtube from '../../assets/youtube.png';
-import development from '../../assets/development.png';
-import business from '../../assets/business.png';
-import it from '../../assets/it.png';
-import design from '../../assets/design.png';
-import marketing from '../../assets/marketing.png';
-import book from '../../assets/book.png';
-import music from '../../assets/music.png';
-import profile_image from '..//../assets/profile-img.jpg';
+import facebook from "../../assets/facebook.png";
+import x from "../../assets/x.png";
+import linkedin from "../../assets/linkedin.png";
+import youtube from "../../assets/youtube.png";
+import development from "../../assets/development.png";
+import business from "../../assets/business.png";
+import it from "../../assets/it.png";
+import design from "../../assets/design.png";
+import marketing from "../../assets/marketing.png";
+import book from "../../assets/book.png";
+import music from "../../assets/music.png";
+import profile_image from "..//../assets/profile-img.jpg";
+import { Link } from "react-router-dom";
 const Home = () => {
   const liveStreams = [
     {
@@ -423,34 +424,41 @@ const Home = () => {
       quote:
         "Donec ac ex eu arcu euismod feugiat. In venenatis bibendum nisi, in placerat eros ultricies vitae. Praesent pellentesque blandit scelerisque. Suspendisse potenti.",
       name: "Jassica William",
-      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
     },
     {
       id: 2,
       quote:
         "Cras id enim lectus. Fusce at arcu tincidunt, iaculis libero quis, vulputate mauris. Morbi facilisis vitae ligula id aliquam. Nunc consectetur malesuada bibendum.",
       name: "Rock Smith",
-      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
     },
     {
       id: 3,
       quote:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos eros ac, sagittis orci.",
       name: "Luoci Marchant",
-      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
     },
     {
       id: 4,
-      quote: "Nulla bibendum lectus pharetra, tempus eros ac, sagittis orci. Suspendisse posuere dolor neque, at finibus mauris lobortis in. Pellentesque vitae laoreet tortor.",
+      quote:
+        "Nulla bibendum lectus pharetra, tempus eros ac, sagittis orci. Suspendisse posuere dolor neque, at finibus mauris lobortis in. Pellentesque vitae laoreet tortor.",
       name: "Poonam Sharma",
-      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg"
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
     },
     {
       id: 5,
-      quote: "Curabitur placerat justo ac mauris condimentum ultricies. In magna tellus, eleifend et volutpat id, sagittis vitae est. Pellentesque vitae laoreet tortor.",
+      quote:
+        "Curabitur placerat justo ac mauris condimentum ultricies. In magna tellus, eleifend et volutpat id, sagittis vitae est. Pellentesque vitae laoreet tortor.",
       name: "Davinder Singh",
-      imgSrc: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg"
-    }
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
+    },
   ];
 
   const liveStreamRef = useRef(null);
@@ -503,7 +511,7 @@ const Home = () => {
           <section className="live-streams-section">
             <div className="live-streams-header">
               <h2 className="live-streams-title">Live Streams</h2>
-              <a href="#" className="see-all-link">
+              <a href="/all_livestream" className="see-all-link">
                 See all
               </a>
             </div>
@@ -515,7 +523,7 @@ const Home = () => {
               <div className="live-streams" ref={liveStreamRef}>
                 {liveStreams.map((stream) => (
                   <div key={stream.id} className="stream-card">
-                    <a href="#" className="stream-link">
+                    <a href="/live_output" className="stream-link">
                       <img src={stream.imgSrc} alt={stream.name} />
                       <h4>{stream.name}</h4>
                       <p>
@@ -548,12 +556,13 @@ const Home = () => {
               <div className="featured-courses" ref={featuredCoursesRef}>
                 {featuredCourses.map((course) => (
                   <div key={course.id} className="course-card">
-                    <a>
+                    <a href="/courses-detail-view">
                       <img src={course.imgSrc} alt={course.title} />
-                      <div className="course-overlay">
+
+                      <div className="home-course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
-                          <img className='starIcon' src={ratingStar}></img>
+                          <img className="starIcon" src={ratingStar}></img>
                           {course.rating}
                         </div>
                         <div className="course-timer">{course.hours}</div>
@@ -569,10 +578,22 @@ const Home = () => {
                             ⋮
                           </a>
                           <div className="course-more-dropdown-menu">
-                            <span><img src={share} />Share</span>
-                            <span><img src={saved_course} />Save</span>
-                            <span><img src={not_interested} />Not Interested</span>
-                            <span><img src={report} />Report</span>
+                            <span>
+                              <img src={share} />
+                              Share
+                            </span>
+                            <span>
+                              <img src={saved_course} />
+                              Save
+                            </span>
+                            <span>
+                              <img src={not_interested} />
+                              Not Interested
+                            </span>
+                            <span>
+                              <img src={report} />
+                              Report
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -614,9 +635,9 @@ const Home = () => {
               <div className="featured-courses" ref={newestCoursesRef}>
                 {newestCourses.map((course) => (
                   <div key={course.id} className="course-card">
-                    <a>
+                    <a href="/courses-detail-view">
                       <img src={course.imgSrc} alt={course.title} />
-                      <div className="course-overlay">
+                      <div className="home-course-overlay">
                         <div className="course-timer">{course.hours}</div>
                       </div>
                     </a>
@@ -630,10 +651,22 @@ const Home = () => {
                             ⋮
                           </a>
                           <div className="course-more-dropdown-menu">
-                            <span><img src={share} />Share</span>
-                            <span><img src={saved_course} />Save</span>
-                            <span><img src={not_interested} />Not Interested</span>
-                            <span><img src={report} />Report</span>
+                            <span>
+                              <img src={share} />
+                              Share
+                            </span>
+                            <span>
+                              <img src={saved_course} />
+                              Save
+                            </span>
+                            <span>
+                              <img src={not_interested} />
+                              Not Interested
+                            </span>
+                            <span>
+                              <img src={report} />
+                              Report
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -694,7 +727,7 @@ const Home = () => {
           <section className="popular-instructors-section">
             <div className="popular-instructors-header">
               <h2 className="popular-instructors-title">Popular Instructor</h2>
-              <a href="#" className="see-all-link">
+              <a href="/allinstructorlist" className="see-all-link">
                 See all
               </a>
             </div>
@@ -706,34 +739,44 @@ const Home = () => {
               <div className="popular-instructors" ref={popularInstructorRef}>
                 {popularInstructor.map((instructor) => (
                   <div key={instructor.id} className="popular-instructors-card">
-                    <div className="popular-instructor-image">
-                      <img
-                        src={instructor.imgSrc}
-                        alt={instructor.name}
-                        className="popular-instructor-photo"
-                      />
-                    </div>
-                    <div className="popular-instructor-content">
-                      <div className="popular-instructor-profile">
-                        <a href="#" className="instructor-name">
-                          {instructor.name}
-                        </a>
-                        <div className="verified-badge"></div>
+                    <a href="/other-instructor-view">
+                      <div className="popular-instructor-image">
+                        <img
+                          src={instructor.imgSrc}
+                          alt={instructor.name}
+                          className="popular-instructor-photo"
+                        />
                       </div>
-                      <div className="popular-instructor-title">
-                        {instructor.title}
+                      <div className="popular-instructor-content">
+                        <div className="popular-instructor-profile">
+                          <a href="#" className="instructor-name">
+                            {instructor.name}
+                          </a>
+                          <div className="verified-badge"></div>
+                        </div>
+                        <div className="popular-instructor-title">
+                          {instructor.title}
+                        </div>
+                        <ul className="social-icons">
+                          <a href="#" className="sc-fb">
+                            <img src={facebook} />
+                          </a>
+                          <a href="#" className="sc-tw">
+                            <img src={x} />
+                          </a>
+                          <a href="#" className="sc-ln">
+                            <img src={linkedin} />
+                          </a>
+                          <a href="#" className="sc-yt">
+                            <img src={youtube} />
+                          </a>
+                        </ul>
+                        <div className="popular-instructor-stats">
+                          {instructor.students} Students • {instructor.courses}{" "}
+                          Courses
+                        </div>
                       </div>
-                      <ul className="social-icons">
-                        <a href="#" className="sc-fb"><img src={facebook} /></a>
-                        <a href="#" className="sc-tw"><img src={x} /></a>
-                        <a href="#" className="sc-ln"><img src={linkedin} /></a>
-                        <a href="#" className="sc-yt"><img src={youtube} /></a>
-                      </ul>
-                      <div className="popular-instructor-stats">
-                        {instructor.students} Students • {instructor.courses}{" "}
-                        Courses
-                      </div>
-                    </div>
+                    </a>
                   </div>
                 ))}
               </div>
@@ -748,10 +791,7 @@ const Home = () => {
         <div className="home-right">
           <section className="home-instructor-profile">
             <div className="instructor-profile-image">
-              <img
-                src={profile_image}
-                alt="Instructor Profile"
-              />
+              <img src={profile_image} alt="Instructor Profile" />
             </div>
             <div className="instructor-profile-content">
               <div className="instructor-profile-header">
@@ -764,15 +804,26 @@ const Home = () => {
                 Web Developer, Designer, and Teacher
               </div>
               <ul className="social-icons">
-                <a href="#" className="sc-fb"><img src={facebook} /></a>
-                <a href="#" className="sc-tw"><img src={x} /></a>
-                <a href="#" className="sc-ln"><img src={linkedin} /></a>
-                <a href="#" className="sc-yt"><img src={youtube} /></a>
+                <a href="#" className="sc-fb">
+                  <img src={facebook} />
+                </a>
+                <a href="#" className="sc-tw">
+                  <img src={x} />
+                </a>
+                <a href="#" className="sc-ln">
+                  <img src={linkedin} />
+                </a>
+                <a href="#" className="sc-yt">
+                  <img src={youtube} />
+                </a>
               </ul>
               <div className="instructor-profile-stats">
                 100K Students • 15 Courses
               </div>
-              <a href="my-instructor-profile" className="instructor-profile-redirect">
+              <a
+                href="my-instructor-profile"
+                className="instructor-profile-redirect"
+              >
                 Go to profile
               </a>
             </div>
@@ -784,12 +835,15 @@ const Home = () => {
             </div>
             <div className="home-livestream-setup-text">
               <div className="home-livestream-icon">
-                <div className="home-livestream-icon-image"><img src={livestream}></img></div>
-
+                <div className="home-livestream-icon-image">
+                  <img src={livestream}></img>
+                </div>
               </div>
               <div className="home-livestream-content">
                 <p>Set up your channel and stream live to your students</p>
-                <button className="home-livestream-link">Get Started</button>
+                <Link to="/add_livestream">
+                  <button className="home-livestream-link">Get Started</button>
+                </Link>
                 <span className="home-livestream-info">
                   Info: This feature only for 'Instructor'
                 </span>
@@ -808,13 +862,34 @@ const Home = () => {
               <h4>Top Categories</h4>
             </div>
             <div className="home-featured-categories-list">
-              <span><img src={development} />Development</span>
-              <span><img src={business} />Business</span>
-              <span><img src={it} />IT & Software</span>
-              <span><img src={design} />Design</span>
-              <span><img src={marketing} />Marketing</span>
-              <span><img src={book} />Personal Development</span>
-              <span><img src={music} />Music</span>
+              <span>
+                <img src={development} />
+                Development
+              </span>
+              <span>
+                <img src={business} />
+                Business
+              </span>
+              <span>
+                <img src={it} />
+                IT & Software
+              </span>
+              <span>
+                <img src={design} />
+                Design
+              </span>
+              <span>
+                <img src={marketing} />
+                Marketing
+              </span>
+              <span>
+                <img src={book} />
+                Personal Development
+              </span>
+              <span>
+                <img src={music} />
+                Music
+              </span>
             </div>
           </section>
 
@@ -846,9 +921,7 @@ const Home = () => {
 
                   <div className="student-thought-profile">
                     <div className="student-thought-image">
-                      <img
-                        src={studentThought.imgSrc}
-                      />
+                      <img src={studentThought.imgSrc} />
                     </div>
                     <h4>{studentThought.name}</h4>
                   </div>

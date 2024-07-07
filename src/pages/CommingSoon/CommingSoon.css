@@ -1,0 +1,74 @@
+.cs-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.cs_coming_title {
+    font-size: 80px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: 1em;
+    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2); /* Ensure this is the correct property */
+    padding-bottom: 29px;
+}
+
+.cs-timer {
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    width: 16%;
+}
+
+.cs-thnk_title1 {
+    font-size: 24px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.cs-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 20px;
+}
+
+.cs-search-box {
+    display: flex;
+}
+
+.cs-search-input {
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cs-input {
+    padding-left: 2em !important;
+    padding-right: 8em !important;
+    height: 50px !important;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid #fff !important;
+}
+
+.cs-submit {
+    background-color: #e53935; /* Màu nút */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cs-submit:hover {
+    background-color: #d32f2f; /* Màu khi hover */
+}

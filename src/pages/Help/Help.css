@@ -2,6 +2,38 @@
     padding: 0 0px;
   }
   
+  .explore-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .explore-container .search-box {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;  
+    border: 2px solid #e9ecef;
+    background-color: white;
+    border-radius: 2px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .explore-container .search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+  .explore-container .search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
   .Help-grid-container-input {
     display: grid;
     grid-template-columns: repeat(12, 1fr);

@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center; /* Center vertically */
     min-height: 100vh; /* Ensure container spans full viewport height */
+    user-select: none;
 }
 
   /* Row */
@@ -64,7 +65,7 @@
     border-radius: 10px;
     border: 1px solid #efefef;
     margin-bottom: 20px;
-    width: 190%;
+    width: 100%;
     max-width: 846px;
     margin-left: auto;
     margin-right: 254px;
