@@ -53,4 +53,5 @@ export const PATH_NAME = {
   MYCERTIFICATIONS: "/mycertifications",
   ANALYTICS: "/analytics",
   CREATE_NEW_COURSE: "/create-course",
+  STD_DASHBOARD: "/student-dashboard",
 };
