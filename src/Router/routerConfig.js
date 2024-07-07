@@ -52,6 +52,7 @@ import DowloadCourse from "../pages/PurchaseCourse/DowloadCourse/DowloadCourse";
 import CertificationCenter from "../pages/CertificationCenter/CertificationCenter";
 import MyCertifications from "../pages/MyCertifications/MyCertifications";
 import Payout from "../pages/Payout/Payout";
+import Credit from "../pages/Credit/Credit";
 import StatementIS from "../pages/Statements/StatementIS/StatementIS";
 import StatementST from "../pages/Statements/StatementST/StatementST";
 
@@ -114,9 +115,11 @@ const privateRoutes = [
   { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
   { path: PATH_NAME.PREVIEWS, element: <Previews /> },
   { path: PATH_NAME.MYCERTIFICATIONS, element: <MyCertifications /> },
+  { path: PATH_NAME.CREDIT, element: <Credit />},
   { path: PATH_NAME.STATEMENTIS, element: <StatementIS /> },
   { path: PATH_NAME.STATEMENTST, element: <StatementST /> },
-];
+  ];
+
 
 
 const routes = { publicRoutes, privateRoutes };
