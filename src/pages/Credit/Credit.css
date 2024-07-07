@@ -1,0 +1,377 @@
+.credit-wallet-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.credit-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 2.8px;
+}
+
+.credit-credit {
+  position: relative;
+  line-height: 26px;
+  font-weight: 550;
+  color: #333;
+  min-width: 73px;
+  font-size: 18px;
+  margin-bottom: 0 !important;
+}
+
+.credit-label,
+.credit-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.credit-label {
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.credit-title {
+  align-items: flex-start;
+}
+
+.credit-next-wrapper,
+.credit-account-wrapper {
+  border: 1px solid #efefef;
+  background-color: #fff;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  border-radius: 3px;
+}
+
+.credit-label {
+  flex: 1;
+  position: relative;
+  line-height: 21px;
+  font-weight: 550;
+  max-width: 100%;
+  color: #333;
+  font-size: 16px;
+}
+
+.credit-label-wrapper,
+.credit-via-wrapper,
+.credit-added-wrapper {
+  align-self: stretch;
+  border-bottom: 1px solid #efefef;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+
+.credit-label-wrapper {
+  flex-direction: row;
+  padding: 16.8px 28px 16px;
+}
+.credit-coin {
+  position: relative;
+  line-height: 24px;
+  font-size: 26px;
+  display: inline-block;
+  color: #a1a1a1;
+  white-space: nowrap;
+  font-weight: 550;
+}
+
+.credit-via {
+  position: relative;
+  line-height: 24px;
+  align-self: stretch;
+  font-size: 12px;
+  font-weight: 600;
+  color: #686f7a;
+}
+
+.credit-via-wrapper,
+.credit-added-wrapper {
+  flex-direction: column;
+  padding: 16.8px 20px 16px;
+  gap: 10px;
+}
+
+.credit-day-wrapper,
+.credit-button-wrapper {
+  align-self: stretch;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 16.8px 20px 16px;
+}
+
+.credit-day {
+  position: relative;
+  line-height: 26px;
+  font-size: 12px;
+  color: #686f7a;
+}
+
+.credit-day span {
+  font-weight: 600;
+}
+
+.credit-image {
+  width: 80px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.credit-added {
+  position: relative;
+  line-height: 24px;
+  font-size: 14px;
+  color: #686f7a;
+  font-weight: 550;
+}
+
+.credit-added span {
+  font-weight: 500;
+}
+
+.credit-button, .credit-add-credit-button{
+  display: flex;
+  padding: 13px 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  background-color: #ed2a26;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.credit-button:hover {
+  background-color: #333;
+}
+
+.credit-next-account-parent {
+  flex: 0.328;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.credit-parent {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.credit-table-parent {
+  flex: 0.672;
+}
+
+.credit-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.credit-input-parent {
+  padding: 30px 28px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.credit-input-parent label,
+.credit-label-input label,
+.credit-label-select label {
+  position: relative;
+  color: #333;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 550;
+}
+
+.credit-add-balance {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.credit-add-credit {
+  border: 1px solid #efefef;
+  background-color: #fff;
+  max-width: 100%;
+}
+
+.credit-icon-dollar {
+  width: 18px;
+  height: 18px;
+  color: rgb(172, 172, 172);
+}
+
+.credit-button-dollar {
+  padding: 8px 5px 5px 18px;
+  border: 0;
+  background-color: transparent;
+}
+
+.credit-icon-dollar:hover {
+  color: #333;
+}
+
+.credit-icon-input,
+.credit-input {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.credit-input {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  height: 30px;
+  flex-direction: column;
+  padding: 5.2px 0 0 15px;
+  font-size: 14px;
+  max-width: 100%;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.credit-icon-input {
+  flex-direction: row;
+  flex: 1;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  gap: 1.4px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.credit-icon-input:hover {
+  color: #333;
+}
+
+.credit-input::placeholder {
+  color: lightgray;
+}
+
+.credit-input-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.credit-label-input, .credit-label-select {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.credit-label-input input,
+.credit-select-month .ant-select-selector {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 10px 15px;
+  background: #fff;
+  border: 1px solid #e5e5e5 !important;
+  outline: 0;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 3px !important;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
+}
+
+.credit-select-month .ant-select-selector {
+  font-size: 13px;
+  padding: 18px 15px !important;
+}
+
+.credit-select-month .ant-select-arrow {
+  color: #333 !important;
+  padding-top: 10px !important;
+}
+
+.credit-holder-card, .credit-expiration-parent{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.credit-label-input input::placeholder {
+  color: lightgray;
+}
+
+.credit-button-wrappers{
+    align-self: stretch;
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 20px 0;
+}
+
+.credit-table table {
+    text-align: left;
+    font-size: 14px;
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    color: #333;
+    border-collapse: collapse;
+    border-radius: 3px;
+    min-width: 600px;
+}
+
+.credit-table th, .credit-table td{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.credit-table th{
+    padding: 15px;
+    font-weight: 550;
+    background-color: #ffecec;
+}
+.credit-table td{
+    padding: 15px 20px;
+    background-color: #fff;
+}
+
+.credit-table-parent{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.credit{
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1050px) {
+  .credit-parent {
+    display: block;
+  }
+
+  .credit-wrapper {
+    padding-bottom: 30px;
+  }
+  .credit-table-parent{
+    padding-top: 30px;
+  }
+}

@@ -139,11 +139,11 @@ const Navbar = ({ setSidebar }) => {
       </div>
       <div className="nav-right flex-div">
         <button className="course-button">Create new course</button>
-        <Link to ="shoppingcart">
-        <div className="icon">
-          <img src={card_icon} alt="" className="cart-icon" />
-          <span className="badge">2</span>
-        </div>
+        <Link to="shoppingcart">
+          <div className="icon">
+            <img src={card_icon} alt="" className="cart-icon" />
+            <span className="badge">2</span>
+          </div>
         </Link>
 
         <div className="icon" ref={mailDropdownRef}>

@@ -1,0 +1,248 @@
+.statementis {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  .statementis-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .statementis-col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .statementis-col-lg-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+    padding-right: 15px;
+  }
+  
+  .statementis-col-lg-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+    padding-left: 15px;
+  }
+  
+  .st_title {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  
+  .st_title i {
+    margin-right: 10px;
+  }
+  
+  .top_countries {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top_countries_title {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .top_countries_title h2 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .statement_content .tt-body {
+    font-weight: 400 !important;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+    line-height: 26px;
+    color: #686f7a !important;
+    text-align: left;
+  }
+  
+  .apply_instructor_btn {
+    display: inline-block;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: #ed2a26;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 30px;
+    border-radius: 3px;
+    margin-top: 14px;
+  }
+  
+  .statement_invoice_content {
+    text-align: center;
+  }
+  
+  .date_selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .ui.dropdown.skills-search {
+    width: 70%;
+  }
+  
+  .st_download_btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .more_options_tt {
+    list-style: none;
+    padding: 0;
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .more_options_tt li {
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .more_options_tt .more_items_14 {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .more_options_tt .more_items_14.active {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .explore_search {
+    flex: 1;
+  }
+  
+  .ui.search .input {
+    width: 100%;
+  }
+  
+  .sis-box-iput {
+    width: 100%;
+  }
+  
+  .sis-box-iput .prompt {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .sis-box-iput .icon {
+    color: #ddd;
+  }
+  
+  .sis-box-iput .icon.icon8 {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .sis-search {
+    background: #fff !important;
+    border: 1px solid #e5e5e5 !important;
+    color: #333 !important;
+    box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  .ui.selection {
+    position: relative;
+    display: inline-block;
+    width: 50rem !important;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .section-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .section-title-text {
+    margin-left: 5px;
+    margin-right: 15px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .dropdown-menu .top {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu .top:hover {
+    background-color: #f5f5f5;
+  }
+
+.statement-summary__table {
+  margin: 0px auto 0px;
+  font-size: 14px;
+  width: 100%;
+}
+  
+.t-heading {
+  font-weight: 400 !important;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 15px;
+    line-height: 26px;
+    color: #686f7a !important;
+    text-align: left;
+}
+
+.t-currency {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  line-height: 24px;
+  margin-bottom: 10px !important;
+}
+
+.tt__earning {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  margin-right: 5px;
+}
+
+.js-earnings__earnings-wrapper {
+  color: #82b541;
+}
+
+.js-earnings__fees-wrapper {
+  color: #ed2a26;
+}
