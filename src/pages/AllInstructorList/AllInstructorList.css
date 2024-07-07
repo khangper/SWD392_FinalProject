@@ -127,3 +127,63 @@ box-shadow: none !important;
   padding: -10px;
   /* margin-right: 10px; */
 }
+
+.All-social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.All-social-icons a {
+  display: inline-block !important;
+  margin-right: 5px;
+  vertical-align: middle;
+  margin-bottom: 0 !important;
+}
+
+.All-social-icons a img {
+  width: 20px;
+  height: 18px;
+}
+
+.home-instructor-profile .All-social-icons a img {
+  width: 20px;
+  height: 18px;
+  top: -8px;
+  position: relative;
+}
+
+.All-social-icons .sc-fb,
+.All-social-icons .sc-tw,
+.All-social-icons .sc-ln,
+.All-social-icons .sc-yt {
+  font-size: 20px;
+  float: none;
+  width: 35px;
+  height: 36px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  padding: 0px 0;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.sc-fb {
+  background: #3b5998;
+}
+
+.sc-tw {
+  background: #1da1f2;
+}
+
+.sc-ln {
+  background: #8d6cab;
+}
+
+.sc-yt {
+  background: #ff0000;
+}
