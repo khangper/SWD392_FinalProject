@@ -333,7 +333,7 @@ ul {
     list-style: none;
 }
 
-ul li {
+.courses_detail_view-box2 ul li {
     margin-bottom: 10px;
     line-height: 1.5;
 }

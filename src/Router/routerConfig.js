@@ -53,6 +53,7 @@ import CertificationCenter from "../pages/CertificationCenter/CertificationCente
 import MyCertifications from "../pages/MyCertifications/MyCertifications";
 import Payout from "../pages/Payout/Payout";
 import Analytics from "../pages/Analytics/Analytics";
+import CreateNewCourse from "../pages/CreateNewCourse/CreateNewCourse";
 
 
 const publicRoutes = [
@@ -114,6 +115,7 @@ const publicRoutes = [
   { path: PATH_NAME.PREVIEWS, element: <Previews /> },
      { path: PATH_NAME.MYCERTIFICATIONS, element: <MyCertifications /> },
      { path: PATH_NAME.ANALYTICS, element: <Analytics /> },
+     { path: PATH_NAME.CREATE_NEW_COURSE, element: <CreateNewCourse /> },
   ];
 
 
