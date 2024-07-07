@@ -71,11 +71,11 @@ const InsSidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={reviewsIcon} alt="Reviews Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Reviews</p>
       </Link>
-      <Link to="/instructor-earning" className="side-link">
+      <Link to="/earning" className="side-link">
         <img className="sidebar-icon" src={earningIcon} alt="Earning Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Earning</p>
       </Link>
-      <Link to="/instructor-payout" className="side-link">
+      <Link to="/payout" className="side-link">
         <img className="sidebar-icon" src={payoutIcon} alt="Payout Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Payout</p>
       </Link>

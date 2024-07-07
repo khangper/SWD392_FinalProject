@@ -180,9 +180,11 @@ function MyCourse() {
               <h1>Jump Into Course Creation</h1>
             </div>
             <div className="MyCoursePage1-card_dash_right1">
-              <button className="MyCoursePage1-create_btn_dash">
-                Create Your Course
-              </button>
+              <a href="/create-course">
+                <button className="MyCoursePage1-create_btn_dash">
+                  Create Your Course
+                </button>
+              </a>
             </div>
           </div>
         </div>

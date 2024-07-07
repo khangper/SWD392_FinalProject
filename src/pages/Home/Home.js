@@ -522,16 +522,18 @@ const Home = () => {
               ></button>
               <div className="live-streams" ref={liveStreamRef}>
                 {liveStreams.map((stream) => (
-                  <div key={stream.id} className="stream-card">
-                    <a href="#" className="stream-link">
-                      <img src={stream.imgSrc} alt={stream.name} />
-                      <h4>{stream.name}</h4>
-                      <p>
-                        live
-                        <span></span>
-                      </p>
-                    </a>
-                  </div>
+                  <a href="/live_output">
+                    <div key={stream.id} className="stream-card">
+                      <a href="/live_output" className="stream-link">
+                        <img src={stream.imgSrc} alt={stream.name} />
+                        <h4>{stream.name}</h4>
+                        <p>
+                          live
+                          <span></span>
+                        </p>
+                      </a>
+                    </div>
+                  </a>
                 ))}
               </div>
               <button
@@ -635,7 +637,7 @@ const Home = () => {
               <div className="featured-courses" ref={newestCoursesRef}>
                 {newestCourses.map((course) => (
                   <div key={course.id} className="course-card">
-                    <a>
+                    <a href="/courses-detail-view">
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
                         <div className="course-timer">{course.hours}</div>
@@ -738,44 +740,49 @@ const Home = () => {
               ></button>
               <div className="popular-instructors" ref={popularInstructorRef}>
                 {popularInstructor.map((instructor) => (
-                  <div key={instructor.id} className="popular-instructors-card">
-                    <div className="popular-instructor-image">
-                      <img
-                        src={instructor.imgSrc}
-                        alt={instructor.name}
-                        className="popular-instructor-photo"
-                      />
+                  <Link to="/other-instructor-view">
+                    <div
+                      key={instructor.id}
+                      className="popular-instructors-card"
+                    >
+                      <div className="popular-instructor-image">
+                        <img
+                          src={instructor.imgSrc}
+                          alt={instructor.name}
+                          className="popular-instructor-photo"
+                        />
+                      </div>
+                      <div className="popular-instructor-content">
+                        <div className="popular-instructor-profile">
+                          <a href="#" className="instructor-name">
+                            {instructor.name}
+                          </a>
+                          <div className="verified-badge"></div>
+                        </div>
+                        <div className="popular-instructor-title">
+                          {instructor.title}
+                        </div>
+                        <ul className="social-icons">
+                          <a href="#" className="sc-fb">
+                            <img src={facebook} />
+                          </a>
+                          <a href="#" className="sc-tw">
+                            <img src={x} />
+                          </a>
+                          <a href="#" className="sc-ln">
+                            <img src={linkedin} />
+                          </a>
+                          <a href="#" className="sc-yt">
+                            <img src={youtube} />
+                          </a>
+                        </ul>
+                        <div className="popular-instructor-stats">
+                          {instructor.students} Students • {instructor.courses}{" "}
+                          Courses
+                        </div>
+                      </div>
                     </div>
-                    <div className="popular-instructor-content">
-                      <div className="popular-instructor-profile">
-                        <a href="#" className="instructor-name">
-                          {instructor.name}
-                        </a>
-                        <div className="verified-badge"></div>
-                      </div>
-                      <div className="popular-instructor-title">
-                        {instructor.title}
-                      </div>
-                      <ul className="social-icons">
-                        <a href="#" className="sc-fb">
-                          <img src={facebook} />
-                        </a>
-                        <a href="#" className="sc-tw">
-                          <img src={x} />
-                        </a>
-                        <a href="#" className="sc-ln">
-                          <img src={linkedin} />
-                        </a>
-                        <a href="#" className="sc-yt">
-                          <img src={youtube} />
-                        </a>
-                      </ul>
-                      <div className="popular-instructor-stats">
-                        {instructor.students} Students • {instructor.courses}{" "}
-                        Courses
-                      </div>
-                    </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
               <button

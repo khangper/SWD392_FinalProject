@@ -84,7 +84,9 @@ const Sidebar = ({ sidebar }) => {
           <a href="certificationfillform">Certification Fill Form</a>
           <a href="/certificates-test">Test View</a>
           <a href="/test-result">Test Result</a>
-          <a href="#">My Certification</a>
+          <a href="https://gambolthemes.net/html-imgs/certificate.jpg">
+            My Certification
+          </a>
         </div>
       )}
       <Link to="save-courses" className="side-link">
@@ -120,7 +122,7 @@ const Sidebar = ({ sidebar }) => {
           <a href="apply-job">Job Apply</a>
           <a href="our-blog">Our Blog</a>
           <a href="blog-single-view">Blog Detail View</a>
-          <a href="#">Add Livestream</a>
+          <a href="add_livestream">Add Livestream</a>
           <a href="search_result">Search Result</a>
           <a href="Thanks">Thank you</a>
           <a href="comming-soon">Coming Soon</a>
@@ -200,11 +202,18 @@ const Sidebar = ({ sidebar }) => {
           <Link to="contactus">
             <div>Contact Us</div>
           </Link>
-
-          <div>Advertise</div>
-          <div>Developers</div>
-          <div>Copyright</div>
-          <div>Privacy Policy</div>
+          <Link to="coming-soon">
+            <div>Advertise</div>
+          </Link>
+          <Link to="coming-soon">
+            <div>Developers</div>
+          </Link>
+          <Link to="termsofuse">
+            <div>Copyright</div>
+          </Link>
+          <Link to="termsofuse">
+            <div>Privacy Policy</div>
+          </Link>
           <Link to="termsofuse">
             <div>Terms</div>
           </Link>
