@@ -522,18 +522,16 @@ const Home = () => {
               ></button>
               <div className="live-streams" ref={liveStreamRef}>
                 {liveStreams.map((stream) => (
-                  <a href="/live_output">
-                    <div key={stream.id} className="stream-card">
-                      <a href="/live_output" className="stream-link">
-                        <img src={stream.imgSrc} alt={stream.name} />
-                        <h4>{stream.name}</h4>
-                        <p>
-                          live
-                          <span></span>
-                        </p>
-                      </a>
-                    </div>
-                  </a>
+                  <div key={stream.id} className="stream-card">
+                    <a href="/live_output" className="stream-link">
+                      <img src={stream.imgSrc} alt={stream.name} />
+                      <h4>{stream.name}</h4>
+                      <p>
+                        live
+                        <span></span>
+                      </p>
+                    </a>
+                  </div>
                 ))}
               </div>
               <button
@@ -740,11 +738,8 @@ const Home = () => {
               ></button>
               <div className="popular-instructors" ref={popularInstructorRef}>
                 {popularInstructor.map((instructor) => (
-                  <Link to="/other-instructor-view">
-                    <div
-                      key={instructor.id}
-                      className="popular-instructors-card"
-                    >
+                  <div key={instructor.id} className="popular-instructors-card">
+                    <a href="/other-instructor-view">
                       <div className="popular-instructor-image">
                         <img
                           src={instructor.imgSrc}
@@ -781,8 +776,8 @@ const Home = () => {
                           Courses
                         </div>
                       </div>
-                    </div>
-                  </Link>
+                    </a>
+                  </div>
                 ))}
               </div>
               <button

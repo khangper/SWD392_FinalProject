@@ -212,18 +212,16 @@ const Explore = () => {
           ></button>
           <div className="live-streams" ref={liveStreamRef}>
             {liveStreams.map((stream) => (
-              <a href="/live_output">
-                <div key={stream.id} className="stream-card">
-                  <a href="/live_output" className="stream-link">
-                    <img src={stream.imgSrc} alt={stream.name} />
-                    <h4>{stream.name}</h4>
-                    <p>
-                      live
-                      <span></span>
-                    </p>
-                  </a>
-                </div>
-              </a>
+              <div key={stream.id} className="stream-card">
+                <a href="/live_output" className="stream-link">
+                  <img src={stream.imgSrc} alt={stream.name} />
+                  <h4>{stream.name}</h4>
+                  <p>
+                    live
+                    <span></span>
+                  </p>
+                </a>
+              </div>
             ))}
           </div>
           <button
