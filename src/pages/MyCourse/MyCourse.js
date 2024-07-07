@@ -257,7 +257,6 @@ function MyCourse() {
             </a>
           </div>
         </div>
-
         <div className="MyCourse-tab-content">
           {activeTab === "my-courses" && (
             <div

@@ -117,9 +117,9 @@ const Sidebar = ({ sidebar }) => {
           <a href="checkout">Checkout</a>
           <Link to="/invoice">Invoice</Link>
           <a href="career">Career</a>
-          <a href="#">Job Apply</a>
+          <a href="apply-job">Job Apply</a>
           <a href="our-blog">Our Blog</a>
-          <a href="#">Blog Detail View</a>
+          <a href="blog-single-view">Blog Detail View</a>
           <a href="#">Add Livestream</a>
           <a href="search_result">Search Result</a>
           <a href="Thanks">Thank you</a>

@@ -15,22 +15,22 @@ const Footer = ({ sidebar }) => {
     >
       <div className="footer-links">
         <div className="footer-column">
-          <a href="#">About</a>
-          <a href="#">Blog</a>
-          <a href="#">Careers</a>
-          <a href="#">Press</a>
+          <a href="about-us">About</a>
+          <a href="our-blog">Blog</a>
+          <a href="career">Careers</a>
+          <a href="press">Press</a>
         </div>
         <div className="footer-column">
-          <a href="/help">Help</a>
-          <a href="#">Advertise</a>
-          <a href="#">Developers</a>
-          <a href="#">Contact Us</a>
+          <a href="help">Help</a>
+          <a href="coming-soon">Advertise</a>
+          <a href="coming-soon">Developers</a>
+          <a href="contactus">Contact Us</a>
         </div>
         <div className="footer-column">
-          <a href="#">Copyright Policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Privacy Policy</a>
-          <a href="sitmap">Sitemap</a>
+          <a href="termofuse">Copyright Policy</a>
+          <a href="termofuse">Terms</a>
+          <a href="termofuse">Privacy Policy</a>
+          <a href="sitemap">Sitemap</a>
         </div>
         <div className="footer-column">
           <button className="teach-button">Teach on Cursus</button>

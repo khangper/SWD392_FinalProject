@@ -35,7 +35,7 @@ const Layout = ({ sidebar, setSidebar }) => {
     return <Footer sidebar={sidebar} />;
   };
 
-  const containerClass = user?.role === 'instructor' ? (sidebar ? 'container instructor' : 'container instructor-large') : (sidebar ? 'container' : 'container large-container');
+  const containerClass = user?.role === 'instructor' || user?.role === 'student' ? (sidebar ? 'container instructor' : 'container instructor-large') : (sidebar ? 'container' : 'container large-container');
 
   return (
     <div>
