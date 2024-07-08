@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './CommingSoon.css'
 import { Link } from 'react-router-dom'
+import { PATH_NAME } from '../../constant/pathname'
 const CommingSoon = () => {
     const calculateTimeLeft = () => {
         const difference = +new Date('2025-01-01') - +new Date();
@@ -35,7 +36,7 @@ const CommingSoon = () => {
             <div className="Thanks-row">
                 <div className="Thanks-col-md-12">
                     <div className="Thanks-cmtk_group">
-                        <Link to="/home">
+                        <Link to={PATH_NAME.HOME}>
                             <div className="Thanks-ct-logo">
                                 <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" />
                             </div>

@@ -9,6 +9,7 @@ import profile_image from "..//../assets/profile-img.jpg";
 import moon_image from "..//../assets/moon.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthContext";
+import { PATH_NAME } from "../../constant/pathname";
 const Navbar = ({ setSidebar }) => {
   const sampleMessages = [
     {
@@ -28,7 +29,7 @@ const Navbar = ({ setSidebar }) => {
     {
       id: 3,
       name: "Jass",
-      text: "Thanks Sir, Such a nice video.",
+      text: "Thanks Sir, Such Link nice video.",
       time: "25 min ago",
       profileImage: profile_image,
     },
@@ -160,7 +161,7 @@ const Navbar = ({ setSidebar }) => {
             <div className="dropdown">
               {sampleMessages.map((message) => (
                 <div key={message.id} className="dropdown-item">
-                  <div className="dropdown-link">
+                  <Link to={PATH_NAME.MESSAGE} className="dropdown-link">
                     <img
                       src={message.profileImage}
                       alt="Profile"
@@ -171,12 +172,12 @@ const Navbar = ({ setSidebar }) => {
                       <p className="text">{message.text}</p>
                       <span className="time">{message.time}</span>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
-              <a href="#" className="view-all-btn">
+              <Link to={PATH_NAME.MESSAGE} className="view-all-btn">
                 View All
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -192,7 +193,7 @@ const Navbar = ({ setSidebar }) => {
             <div className="dropdown">
               {sampleNotifications.map((message) => (
                 <div key={message.id} className="dropdown-item">
-                  <div className="dropdown-link">
+                  <Link to={PATH_NAME.NOTIFICATON} className="dropdown-link">
                     <img
                       src={message.profileImage}
                       alt="Profile"
@@ -203,12 +204,12 @@ const Navbar = ({ setSidebar }) => {
                       <p className="text">{message.text}</p>
                       <span className="time">{message.time}</span>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
-              <a href="#" className="view-all-btn">
+              <Link to={PATH_NAME.NOTIFICATON} className="view-all-btn">
                 View All
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -236,9 +237,9 @@ const Navbar = ({ setSidebar }) => {
                     <span>gambol943@gmail.com</span>
                   </div>
                 </div>
-                <a href="#" className="profile-link">
+                <Link to={PATH_NAME.MY_INSTRUCTOR_PROFILE} className="profile-link">
                   View Instructor Profile
-                </a>
+                </Link>
               </div>
               <div className="dark-mode-switch-btn">
                 <div className="dark-mode-container">
@@ -252,21 +253,21 @@ const Navbar = ({ setSidebar }) => {
                   </span>
                 </div>
               </div>
-              <a href="ins-dashboard">
+              <Link to={PATH_NAME.INS_DASHBOARD}>
                 <div className="profile-item"> Cursus Dashboard</div>
-              </a>
-              <a href="paidmembership">
+              </Link>
+              <Link to={PATH_NAME.PAID_MEMBERSHIP}>
                 <div className="profile-item"> Paid Memberships</div>
-              </a>
-              <a href="setting">
+              </Link>
+              <Link to={PATH_NAME.SETTING}>
                 <div className="profile-item"> Setting</div>
-              </a>
-              <a href="help">
+              </Link>
+              <Link to={PATH_NAME.HELP}>
                 <div className="profile-item">Help</div>
-              </a>
-              <a href="sendfeedback">
+              </Link>
+              <Link to={PATH_NAME.SEND_FEEDBACK}>
                 <div className="profile-item"> Send Feedback</div>
-              </a>
+              </Link>
               <div className="profile-item" onClick={logout}>
                 {" "}
                 Sign Out

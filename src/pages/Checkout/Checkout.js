@@ -3,7 +3,7 @@ import Header from "../../components/Header-paidmember/Header";
 import { Link } from "react-router-dom";
 import Block1 from "..//../assets/Block1.png";
 import Footer from "../../components/Footer/Footer";
-
+import { PATH_NAME } from "../../constant/pathname";
 import "./Checkout.css";
 export default function Checkout() {
   const [selectedCountry, setSelectedCountry] = useState("1");
@@ -39,7 +39,7 @@ export default function Checkout() {
               <nav aria-label="breadcrumb">
                 <ol className="HelpView-breadcrumb">
                   <li className="HelpView-breadcrumb-item">
-                    <a href="index.html">Home</a>
+                    <Link to={PATH_NAME.HOME}>Home</Link>
                   </li>
 
                   <li
