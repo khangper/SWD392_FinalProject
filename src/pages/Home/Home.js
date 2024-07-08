@@ -22,6 +22,7 @@ import book from "../../assets/book.png";
 import music from "../../assets/music.png";
 import profile_image from "..//../assets/profile-img.jpg";
 import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 const Home = () => {
   const liveStreams = [
     {
@@ -511,9 +512,9 @@ const Home = () => {
           <section className="live-streams-section">
             <div className="live-streams-header">
               <h2 className="live-streams-title">Live Streams</h2>
-              <a href="/all_livestream" className="see-all-link">
+              <Link to={PATH_NAME.ALL_LIVE_STREAM} className="see-all-link">
                 See all
-              </a>
+              </Link>
             </div>
             <div className="live-streams-container">
               <button
@@ -523,14 +524,14 @@ const Home = () => {
               <div className="live-streams" ref={liveStreamRef}>
                 {liveStreams.map((stream) => (
                   <div key={stream.id} className="stream-card">
-                    <a href="/live_output" className="stream-link">
+                    <Link to={PATH_NAME.LIVE_OUTPUT} className="stream-link">
                       <img src={stream.imgSrc} alt={stream.name} />
                       <h4>{stream.name}</h4>
                       <p>
                         live
                         <span></span>
                       </p>
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -556,7 +557,7 @@ const Home = () => {
               <div className="featured-courses" ref={featuredCoursesRef}>
                 {featuredCourses.map((course) => (
                   <div key={course.id} className="course-card">
-                    <a href="/courses-detail-view">
+                    <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
                       <img src={course.imgSrc} alt={course.title} />
 
                       <div className="home-course-overlay">
@@ -567,7 +568,7 @@ const Home = () => {
                         </div>
                         <div className="course-timer">{course.hours}</div>
                       </div>
-                    </a>
+                    </Link>
                     <div className="course-details">
                       <div className="course-details-header">
                         <p className="course-view-and-date">
@@ -635,12 +636,12 @@ const Home = () => {
               <div className="featured-courses" ref={newestCoursesRef}>
                 {newestCourses.map((course) => (
                   <div key={course.id} className="course-card">
-                    <a href="/courses-detail-view">
+                    <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
                         <div className="course-timer">{course.hours}</div>
                       </div>
-                    </a>
+                    </Link>
                     <div className="course-details">
                       <div className="course-details-header">
                         <p className="course-view-and-date">
@@ -727,9 +728,9 @@ const Home = () => {
           <section className="popular-instructors-section">
             <div className="popular-instructors-header">
               <h2 className="popular-instructors-title">Popular Instructor</h2>
-              <a href="/allinstructorlist" className="see-all-link">
+              <Link to={PATH_NAME.ALL_INSTRUCTOR_LIST} className="see-all-link">
                 See all
-              </a>
+              </Link>
             </div>
             <div className="popular-instructors-container">
               <button
@@ -820,12 +821,12 @@ const Home = () => {
               <div className="instructor-profile-stats">
                 100K Students • 15 Courses
               </div>
-              <a
-                href="my-instructor-profile"
+              <Link
+                to={PATH_NAME.MY_INSTRUCTOR_PROFILE}
                 className="instructor-profile-redirect"
               >
                 Go to profile
-              </a>
+              </Link>
             </div>
           </section>
 
@@ -841,7 +842,7 @@ const Home = () => {
               </div>
               <div className="home-livestream-content">
                 <p>Set up your channel and stream live to your students</p>
-                <Link to="/add_livestream">
+                <Link to={PATH_NAME.ADD_LIVE_STREAM}>
                   <button className="home-livestream-link">Get Started</button>
                 </Link>
                 <span className="home-livestream-info">
