@@ -5,7 +5,8 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { MdCloudUpload } from "react-icons/md";
 import Footer from "../../components/Footer/Footer";
 import { Select } from "antd";
-
+import { PATH_NAME } from "../../constant/pathname";
+import { Link } from "react-router-dom";
 const ApplyJob = () => {
   const { Option } = Select;
   return (
@@ -16,13 +17,13 @@ const ApplyJob = () => {
           <div className="apply-job-breadcrumb-content">
             <div className="apply-job-breadcrumb-title">
               <div className="apply-job-breadcrumb-list">
-                <a href="/home" className="apply-job-home">
+                <Link to={PATH_NAME.HOME} className="apply-job-home">
                   Home
-                </a>
+                </Link>
                 <div className="apply-job-breadcrumb-items">/</div>
-                <a href="/career" className="apply-job-career">
+                <Link to={PATH_NAME.CAREER} className="apply-job-career">
                   Career
-                </a>
+                </Link>
                 <div className="apply-job-breadcrumb-items-1">/</div>
                 <div className="apply-job-data-engineer">Data Engineer</div>
               </div>
@@ -30,9 +31,9 @@ const ApplyJob = () => {
             </div>
             <div className="apply-job-back-to-career-link">
               <MdKeyboardDoubleArrowLeft className="apply-job-icon" />
-              <a href="/career" className="apply-job-back-to-career">
+              <Link to={PATH_NAME.CAREER} className="apply-job-back-to-career">
                 Back to Career
-              </a>
+              </Link>
             </div>
           </div>
 

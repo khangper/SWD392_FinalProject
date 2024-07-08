@@ -14,6 +14,7 @@ import send_feedback from "../../assets/send-feedback.png";
 import browse_instructor from "../../assets/browse-instructor.png";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 const Sidebar = ({ sidebar }) => {
   const [categories, setCategories] = useState(false);
   const [tests, setTests] = useState(false);
@@ -29,11 +30,11 @@ const Sidebar = ({ sidebar }) => {
   };
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
-      <Link to="home" className="side-link">
+      <Link to={PATH_NAME.HOME} className="side-link">
         <img className="sidebar-icon" src={home} alt="Home Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Home</p>
       </Link>
-      <Link to="all_livestream" className="side-link">
+      <Link to={PATH_NAME.ALL_LIVE_STREAM} className="side-link">
         <img
           className="sidebar-icon"
           src={livestream}
@@ -41,7 +42,7 @@ const Sidebar = ({ sidebar }) => {
         />
         <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
       </Link>
-      <Link to="explore" className="side-link">
+      <Link to={PATH_NAME.EXPLORE} className="side-link">
         <img className="sidebar-icon" src={explore} alt="Explore Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
       </Link>
@@ -49,22 +50,22 @@ const Sidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={category} alt="Categories Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Categories</p>
         <span className={`sidebar-dropdown-caret ${sidebar ? "" : "small"}`}>
-          <img className="sidebar-dropdown-caret-icon" src={dropdown} />
+          <img className="sidebar-dropdown-caret-icon" src={dropdown} alt=""/>
         </span>
       </div>
       {categories && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
-          <a href="#">Development</a>
-          <a href="#">Business</a>
-          <a href="#">Finance & Accounting</a>
-          <a href="#">IT & Software</a>
-          <a href="#">Office Productivity</a>
-          <a href="#">Personal Development</a>
-          <a href="#">Design</a>
-          <a href="#">Marketing</a>
-          <a href="#">Lifestyle</a>
-          <a href="#">Photography</a>
-          <a href="#">Health & Fitness</a>
+          <Link to={PATH_NAME.SITEMAP}>Development</Link>
+          <Link to={PATH_NAME.SITEMAP}>Business</Link>
+          <Link to={PATH_NAME.SITEMAP}>Finance & Accounting</Link>
+          <Link to={PATH_NAME.SITEMAP}>IT & Software</Link>
+          <Link to={PATH_NAME.SITEMAP}>Office Productivity</Link>
+          <Link to={PATH_NAME.SITEMAP}>Personal Development</Link>
+          <Link to={PATH_NAME.SITEMAP}>Design</Link>
+          <Link to={PATH_NAME.SITEMAP}>Marketing</Link>
+          <Link to={PATH_NAME.SITEMAP}>Lifestyle</Link>
+          <Link to={PATH_NAME.SITEMAP}>Photography</Link>
+          <Link to={PATH_NAME.SITEMAP}>Health & Fitness</Link>
         </div>
       )}
       <div className="side-link category-link" onClick={toggleTests}>
@@ -80,16 +81,16 @@ const Sidebar = ({ sidebar }) => {
       </div>
       {tests && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
-          <a href="/certificationcenter">Certification Center</a>
-          <a href="certificationfillform">Certification Fill Form</a>
-          <a href="/certificates-test">Test View</a>
-          <a href="/test-result">Test Result</a>
-          <a href="https://gambolthemes.net/html-imgs/certificate.jpg">
+          <Link to={PATH_NAME.CERTIFICATION_CENTER}>Certification Center</Link>
+          <Link to={PATH_NAME.CERTIFICATION_FILL_FORM}>Certification Fill Form</Link>
+          <Link to={PATH_NAME.CERTIFICATION_TEST}>Test View</Link>
+          <Link to={PATH_NAME.TEST_RESULT}>Test Result</Link>
+          <Link to="https://gambolthemes.net/html-imgs/certificate.jpg">
             My Certification
-          </a>
+          </Link>
         </div>
       )}
-      <Link to="save-courses" className="side-link">
+      <Link to={PATH_NAME.SAVE_COURSES} className="side-link">
         <img
           className="sidebar-icon"
           src={saved_course}
@@ -110,35 +111,35 @@ const Sidebar = ({ sidebar }) => {
       </div>
       {page && (
         <div className={`sidebar-dropdown-menu ${sidebar ? "" : "small"}`}>
-          <a href="about-us">About</a>
-          <a href="login">Sign In</a>
-          <a href="sign-up">Sign Up</a>
-          <a href="SignUpStep">Sign Up Steps</a>
-          <a href="paidmembership">Paid Membership</a>
-          <a href="#">Course Detail View</a>
-          <a href="checkout">Checkout</a>
-          <Link to="/invoice">Invoice</Link>
-          <a href="career">Career</a>
-          <a href="apply-job">Job Apply</a>
-          <a href="our-blog">Our Blog</a>
-          <a href="blog-single-view">Blog Detail View</a>
-          <a href="add_livestream">Add Livestream</a>
-          <a href="search_result">Search Result</a>
-          <a href="Thanks">Thank you</a>
-          <a href="comming-soon">Coming Soon</a>
-          <a href="mycourse">My Course</a>
-          <a href="PurchaseCourse">Purchase Course</a>
-          <a href="notification">Notification</a>
-          <a href="error404">Error 404</a>
-          <a href="vertification">Vertification</a>
-          <a href="mycertifications">My Certifications</a>
-          <a href="createcourse">Create Course</a>
+          <Link to={PATH_NAME.ABOUT_US}>About</Link>
+          <Link to={PATH_NAME.LOGIN}>Sign In</Link>
+          <Link to={PATH_NAME.SIGN_UP}>Sign Up</Link>
+          <Link to={PATH_NAME.SIGN_UP_STEP}>Sign Up Steps</Link>
+          <Link to={PATH_NAME.PAID_MEMBERSHIP}>Paid Membership</Link>
+          <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>Course Detail View</Link>
+          <Link to={PATH_NAME.CHECKOUT}>Checkout</Link>
+          <Link to={PATH_NAME.INVOICE}>Invoice</Link>
+          <Link to={PATH_NAME.CAREER}>Career</Link>
+          <Link to={PATH_NAME.APPLY_JOB}>Job Apply</Link>
+          <Link to={PATH_NAME.OUR_BLOG}>Our Blog</Link>
+          <Link to={PATH_NAME.BLOG_SINGLE_VIEW}>Blog Detail View</Link>
+          <Link to={PATH_NAME.ADD_LIVE_STREAM}>Add Livestream</Link>
+          <Link to={PATH_NAME.SEARCH_RESULT}>Search Result</Link>
+          <Link to={PATH_NAME.THANKS}>Thank you</Link>
+          <Link to={PATH_NAME.COMING_SOON}>Coming Soon</Link>
+          <Link to={PATH_NAME.MY_COURSE}>My Course</Link>
+          <Link to={PATH_NAME.PURCHASE_COURSE}>Purchase Course</Link>
+          <Link to={PATH_NAME.NOTIFICATON}>Notification</Link>
+          <Link to={PATH_NAME.ERROR_404}>Error 404</Link>
+          <Link to={PATH_NAME.VERTIFICATION}>Vertification</Link>
+          <Link to={PATH_NAME.MYCERTIFICATIONS}>My Certifications</Link>
+          <Link to={PATH_NAME.CREATE_NEW_COURSE}>Create Course</Link>
         </div>
       )}
       <hr />
       <div className="subscriptions">
         <p className="subscriptions-title">SUBSCRIPTIONS</p>
-        <Link to="/other-instructor-view" className="subscription-link">
+        <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="subscription-link">
           <img
             className="subscription-icon"
             src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg"
@@ -148,7 +149,7 @@ const Sidebar = ({ sidebar }) => {
           <span className="subscription-status"></span>
         </Link>
 
-        <Link to="/other-instructor-view" className="subscription-link">
+        <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="subscription-link">
           <img
             className="subscription-icon"
             src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg"
@@ -158,7 +159,7 @@ const Sidebar = ({ sidebar }) => {
           <span className="subscription-status"></span>
         </Link>
       </div>
-      <Link to="allinstructorlist">
+      <Link to={PATH_NAME.ALL_INSTRUCTOR_LIST}>
         <div className="side-link">
           <img
             className="sidebar-icon"
@@ -169,20 +170,20 @@ const Sidebar = ({ sidebar }) => {
         </div>
       </Link>
       <hr />
-      <Link to="setting" className="side-link">
+      <Link to={PATH_NAME.SETTING} className="side-link">
         <img className="sidebar-icon" src={setting} alt="Setting Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Setting</p>
       </Link>
-      <Link to="help" className="side-link">
+      <Link to={PATH_NAME.HELP} className="side-link">
         <img className="sidebar-icon" src={help} alt="Help Icon" />
 
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </Link>
-      <Link to="reporthistory" className="side-link">
+      <Link to={PATH_NAME.REPORT_HISTORY} className="side-link">
         <img className="sidebar-icon" src={report} alt="Report History Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Report History</p>
       </Link>
-      <Link to="sendfeedback" className="side-link">
+      <Link to={PATH_NAME.SEND_FEEDBACK} className="side-link">
         <img
           className="sidebar-icon"
           src={send_feedback}
@@ -193,28 +194,28 @@ const Sidebar = ({ sidebar }) => {
       <hr />
       <div className="-sidebar-footer">
         <div className="sidebar-footer-links">
-          <Link to="about-us">
+          <Link to={PATH_NAME.ABOUT_US}>
             <div>About</div>
           </Link>
-          <Link to="press">
+          <Link to={PATH_NAME.PRESS}>
             <div>Press</div>
           </Link>
-          <Link to="contactus">
+          <Link to={PATH_NAME.CONTACT_US}>
             <div>Contact Us</div>
           </Link>
-          <Link to="coming-soon">
+          <Link to={PATH_NAME.COMING_SOON}>
             <div>Advertise</div>
           </Link>
-          <Link to="coming-soon">
+          <Link to={PATH_NAME.COMING_SOON}>
             <div>Developers</div>
           </Link>
-          <Link to="termsofuse">
+          <Link to={PATH_NAME.TERMS_OF_USE}>
             <div>Copyright</div>
           </Link>
-          <Link to="termsofuse">
+          <Link to={PATH_NAME.TERMS_OF_USE}>
             <div>Privacy Policy</div>
           </Link>
-          <Link to="termsofuse">
+          <Link to={PATH_NAME.TERMS_OF_USE}>
             <div>Terms</div>
           </Link>
         </div>

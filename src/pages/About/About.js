@@ -7,7 +7,7 @@ import { GoPeople } from "react-icons/go";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { SlGlobe } from "react-icons/sl";
 import Footer from "../../components/Footer/Footer";
-
+import { PATH_NAME } from "../../constant/pathname";
 const About = () => {
   return (
     <div className="about">
@@ -17,29 +17,29 @@ const About = () => {
           <div className="about-background">
             <div className="about-navigation-links-parent">
               <div className="about-navigation-links">
-                <a href="/about-us" className="about-about">
+                <Link to={PATH_NAME.ABOUT_US} className="about-about">
                   About
-                </a>
+                </Link>
               </div>
               <div className="about-navigation-links-1">
-                <a href="/our-blog" className="about-blog">
+                <Link to={PATH_NAME.OUR_BLOG} className="about-blog">
                   Blog
-                </a>
+                </Link>
               </div>
               <div className="about-navigation-links-2">
-                <a href="/company-details" className="about-company">
+                <Link to={PATH_NAME.COMPANY_DETAILS} className="about-company">
                   Company
-                </a>
+                </Link>
               </div>
               <div className="about-navigation-links-3">
-                <a href="/career" className="about-careers">
+                <Link to={PATH_NAME.CAREER} className="about-careers">
                   Careers
-                </a>
+                </Link>
               </div>
               <div className="about-navigation-links-4">
-                <a href="/press" className="about-press">
+                <Link to={PATH_NAME.PRESS} className="about-press">
                   Press
-                </a>
+                </Link>
               </div>
             </div>
             <div className="about-learning-heading">
@@ -150,13 +150,13 @@ const About = () => {
                 <div className="about-our-story-container">
                   <p className="about-our-story-content">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    consectetur vel dolor id ultrices. Proin a magna at mi
+                    consectetur vel dolor id ultrices. Proin Link magna at mi
                     pretium pulvinar in eu enim. Nulla vel lacus lectus. Donec
                     at venenatis augue. Nam vitae purus placerat, hendrerit nisl
                     id, finibus magna. Etiam pharetra gravida ornare. Donec
                     sagittis, ipsum in egestas egestas, dui lorem sollicitudin
                     justo, ut ullamcorper velit neque eu velit. Ut et fringilla
-                    elit. Mauris augue augue, auctor a blandit ac, convallis
+                    elit. Mauris augue augue, auctor Link blandit ac, convallis
                     eget neque. Curabitur in ante ante. Nullam laoreet tempus
                     erat at ornare. In nisl nisi, dapibus eget facilisis sit
                     amet, commodo quis nibh.
