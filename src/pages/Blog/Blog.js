@@ -10,6 +10,44 @@ import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 const Blog = () => {
+  const blog_details = [
+    {
+      id: 1,
+      img: big_blog,
+      views: "109k",
+      day: "March 10, 2020",
+      title: "Blog Title Here",
+      content:
+        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+    },
+    {
+      id: 2,
+      img: big_blog,
+      views: "109k",
+      day: "March 10, 2020",
+      title: "Blog Title Here",
+      content:
+        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+    },
+    {
+      id: 3,
+      img: big_blog,
+      views: "109k",
+      day: "March 10, 2020",
+      title: "Blog Title Here",
+      content:
+        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+    },
+    {
+      id: 4,
+      img: big_blog,
+      views: "109k",
+      day: "March 10, 2020",
+      title: "Blog Title Here",
+      content:
+        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+    },
+  ];
   return (
     <div className="blog">
       <Header />
@@ -105,184 +143,53 @@ const Blog = () => {
               </form>
 
               <div className="blog-backgroundBorder-group">
-                <div className="blog-backgroundBorder-1">
-                  <div className="blog-link">
-                    <Link to={PATH_NAME.BLOG_SINGLE_VIEW}>
-                      <img src={big_blog} alt="" className="blog-img-blog" />
+                {blog_details.map((blog) => (
+                  <div key={blog.id} className="blog-backgroundBorder-1">
+                    <div className="blog-link">
+                      <Link to={PATH_NAME.BLOG_SINGLE_VIEW}>
+                        <img src={blog.img} alt="" className="blog-img-blog" />
 
-                      <div className="blog-gradient" />
-                    </Link>
-                  </div>
-                  <div className="blog-backgroundBorder-inner">
-                    <div className="blog-frame-group">
-                      <div className="blog-frame-container">
-                        <div className="blog-frame-div">
-                          <div className="blog-views-parent">
-                            <div className="blog-views">109k views</div>
-                            <div className="blog-point">•</div>
+                        <div className="blog-gradient" />
+                      </Link>
+                    </div>
+                    <div className="blog-backgroundBorder-inner">
+                      <div className="blog-frame-group">
+                        <div className="blog-frame-container">
+                          <div className="blog-frame-div">
+                            <div className="blog-views-parent">
+                              <div className="blog-views">
+                                {blog.views} views
+                              </div>
+                              <div className="blog-point">•</div>
+                            </div>
+                            <div className="blog-time-post">{blog.day}</div>
                           </div>
-                          <div className="blog-time-post">March 10, 2020</div>
+                          <Link
+                            to={PATH_NAME.BLOG_SINGLE_VIEW}
+                            className="blog-title"
+                          >
+                            {blog.title}
+                          </Link>
                         </div>
-                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-title">
-                          Blog Title Here
-                        </Link>
-                      </div>
-                      <div className="blog-content-container">
-                        <p className="blog-content">
-                          Donec eget arcu vel mauris lacinia vestibulum id eu
-                          elit. Nam metus odio, iaculis eu nunc et, interdum
-                          mollis arcu. Pellentesque viverra faucibus diam. In
-                          sit amet laoreet dolor, vitae fringilla quam interdum
-                          mollis arcu.
-                        </p>
-                      </div>
-                      <div className="blog-read-more-parent">
-                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
-                          Read More
-                        </Link>
-                        <div className="blog-arrow-icon-wrapper">
-                          <IoArrowForwardOutline className="blog-arrow-icon" />
+                        <div className="blog-content-container">
+                          <p className="blog-content">{blog.content}</p>
+                        </div>
+                        <div className="blog-read-more-parent">
+                          <Link
+                            to={PATH_NAME.BLOG_SINGLE_VIEW}
+                            className="blog-read-more"
+                          >
+                            Read More
+                          </Link>
+                          <div className="blog-arrow-icon-wrapper">
+                            <IoArrowForwardOutline className="blog-arrow-icon" />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="blog-backgroundBorder-1">
-                  <div className="blog-link">
-                    <img src={big_blog} alt="" className="blog-img-blog" />
-                    <div className="blog-gradient" />
-                  </div>
-                  <div className="blog-backgroundBorder-inner">
-                    <div className="blog-frame-group">
-                      <div className="blog-frame-container">
-                        <div className="blog-frame-div">
-                          <div className="blog-views-parent">
-                            <div className="blog-views">109k views</div>
-                            <div className="blog-point">•</div>
-                          </div>
-                          <div className="blog-time-post">March 10, 2020</div>
-                        </div>
-                        <div className="blog-title">Blog Title Here</div>
-                      </div>
-                      <div className="blog-content-container">
-                        <p className="blog-content">
-                          Donec eget arcu vel mauris lacinia vestibulum id eu
-                          elit. Nam metus odio, iaculis eu nunc et, interdum
-                          mollis arcu. Pellentesque viverra faucibus diam. In
-                          sit amet laoreet dolor, vitae fringilla quam interdum
-                          mollis arcu.
-                        </p>
-                      </div>
-                      <div className="blog-read-more-parent">
-                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
-                          Read More
-                        </Link>
-                        <div className="blog-arrow-icon-wrapper">
-                          <IoArrowForwardOutline className="blog-arrow-icon" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="blog-backgroundBorder-1">
-                  <div className="blog-link">
-                    <img src={big_blog} alt="" className="blog-img-blog" />
-                    <div className="blog-gradient" />
-                  </div>
-                  <div className="blog-backgroundBorder-inner">
-                    <div className="blog-frame-group">
-                      <div className="blog-frame-container">
-                        <div className="blog-frame-div">
-                          <div className="blog-views-parent">
-                            <div className="blog-views">109k views</div>
-                            <div className="blog-point">•</div>
-                          </div>
-                          <div className="blog-time-post">March 10, 2020</div>
-                        </div>
-                        <div className="blog-title">Blog Title Here</div>
-                      </div>
-                      <div className="blog-content-container">
-                        <p className="blog-content">
-                          Donec eget arcu vel mauris lacinia vestibulum id eu
-                          elit. Nam metus odio, iaculis eu nunc et, interdum
-                          mollis arcu. Pellentesque viverra faucibus diam. In
-                          sit amet laoreet dolor, vitae fringilla quam interdum
-                          mollis arcu.
-                        </p>
-                      </div>
-                      <div className="blog-read-more-parent">
-                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
-                          Read More
-                        </Link>
-                        <div className="blog-arrow-icon-wrapper">
-                          <IoArrowForwardOutline className="blog-arrow-icon" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="blog-backgroundBorder-1">
-                  <div className="blog-link">
-                    <img src={big_blog} alt="" className="blog-img-blog" />
-                    <div className="blog-gradient" />
-                  </div>
-                  <div className="blog-backgroundBorder-inner">
-                    <div className="blog-frame-group">
-                      <div className="blog-frame-container">
-                        <div className="blog-frame-div">
-                          <div className="blog-views-parent">
-                            <div className="blog-views">109k views</div>
-                            <div className="blog-point">•</div>
-                          </div>
-                          <div className="blog-time-post">March 10, 2020</div>
-                        </div>
-                        <div className="blog-title">Blog Title Here</div>
-                      </div>
-                      <div className="blog-content-container">
-                        <p className="blog-content">
-                          Donec eget arcu vel mauris lacinia vestibulum id eu
-                          elit. Nam metus odio, iaculis eu nunc et, interdum
-                          mollis arcu. Pellentesque viverra faucibus diam. In
-                          sit amet laoreet dolor, vitae fringilla quam interdum
-                          mollis arcu.
-                        </p>
-                      </div>
-                      <div className="blog-read-more-parent">
-                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
-                          Read More
-                        </Link>
-                        <div className="blog-arrow-icon-wrapper">
-                          <IoArrowForwardOutline className="blog-arrow-icon" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
-
-              {/* <div className="blog-nav-page-navigation-example">
-            <div className="blog-link-previous">
-              <div className="blog-prev">PREV</div>
-            </div>
-            <div className="blog-link-1">
-              <div className="blog-number-1">1</div>
-            </div>
-            <div className="blog-link-2">
-              <div className="blog-number-2">2</div>
-            </div>
-            <div className="blog-link-3">
-              <div className="blog-number-3">...</div>
-            </div>
-            <div className="blog-link-4">
-              <div className="blog-number-4">24</div>
-            </div>
-            <div className="blog-link-next">
-              <div className="blog-next">NEXT</div>
-            </div>
-          </div> */}
             </div>
 
             <div className="blog-nav-page-navigation-example">

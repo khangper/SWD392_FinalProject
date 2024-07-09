@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./LiveOutput.css";
 import avatar from "../../assets/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png";
 import { IoEyeOutline } from "react-icons/io5";
@@ -6,10 +6,121 @@ import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 import { GoShareAndroid } from "react-icons/go";
 import { CiLocationArrow1 } from "react-icons/ci";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 
 const LiveOutput = () => {
+  const message = [
+    {
+      id: 1,
+      username: "John Doe",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+    },
+    {
+      id: 2,
+      username: "John Doe",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+    },
+    {
+      id: 3,
+      username: "John Doe",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+    },
+    {
+      id: 4,
+      username: "John Doe",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+    },
+    {
+      id: 5,
+      username: "John Doe",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+    },
+    {
+      id: 6,
+      username: "John Doe",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+    },
+    {
+      id: 7,
+      username: "John Doe",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+    },
+  ];
+
+  const liveStreams = [
+    {
+      id: 1,
+      name: "John Doe",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
+    },
+    {
+      id: 2,
+      name: "Jassica",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
+    },
+    {
+      id: 3,
+      name: "Edutut+",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
+    },
+    {
+      id: 4,
+      name: "Joginder Singh",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
+    },
+    {
+      id: 5,
+      name: "Zoena",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
+    },
+    {
+      id: 6,
+      name: "Albert Dua",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
+    },
+    {
+      id: 7,
+      name: "Amritpal",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
+    },
+    {
+      id: 8,
+      name: "Jimmy",
+      status: "live",
+      imgSrc:
+        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
+    },
+  ];
+
+  const liveStreamRef = useRef(null);
+  const scrollLeftLiveStream = () => {
+    liveStreamRef.current.scrollBy({ left: -247.5, behavior: "smooth" });
+  };
+  const scrollRightLiveStream = () => {
+    liveStreamRef.current.scrollBy({ left: 247.5, behavior: "smooth" });
+  };
   return (
     <section className="liveoutput-frame-wrapper">
       <div className="liveoutput-frame-parent">
@@ -71,45 +182,18 @@ const LiveOutput = () => {
                 <p className="liveoutput-heading-41">Live Chat</p>
               </div>
               <div className="liveoutput-container-1">
-                <div className="liveoutput-chat-message">
-                  <div className="liveoutput-chat-user">
-                    <div className="liveoutput-username">John Doe</div>
-                    <div className="liveoutput-content">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Cum eius voluptatibus provident
+                {message.map((message) => (
+                  <div key={message.id} className="liveoutput-chat-message">
+                    <div className="liveoutput-chat-user">
+                      <div className="liveoutput-username">
+                        {message.username}
+                      </div>
+                      <div className="liveoutput-content">
+                        {message.content}
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="liveoutput-chat-message">
-                  <div className="liveoutput-chat-user">
-                    <div className="liveoutput-username">John Doe</div>
-                    <div className="liveoutput-content">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Cum eius voluptatibus provident
-                    </div>
-                  </div>
-                </div>
-
-                <div className="liveoutput-chat-message">
-                  <div className="liveoutput-chat-user">
-                    <div className="liveoutput-username">John Doe</div>
-                    <div className="liveoutput-content">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Cum eius voluptatibus provident
-                    </div>
-                  </div>
-                </div>
-
-                <div className="liveoutput-chat-message">
-                  <div className="liveoutput-chat-user">
-                    <div className="liveoutput-username">John Doe</div>
-                    <div className="liveoutput-content">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Cum eius voluptatibus provident
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="liveoutput-horizontalBorder1">
@@ -135,97 +219,33 @@ const LiveOutput = () => {
                 <div className="liveoutput-see-all">See all</div>
               </div>
             </div>
-            <div className="liveoutput-container2">
-              <div className="liveoutput-overlay">
-                <div className="liveoutput-link">
-                  <img src={avatar} alt="" className="liveoutput-img-icon" />
-                  <div className="liveoutput-stream-preview-details">
-                    <div className="liveoutput-name">John Doe</div>
-                    <div className="liveoutput-live-indicator-container">
-                      <div className="liveoutput-live-indicator-inner">
-                        <div className="liveoutput-live">live</div>
-                        <div className="liveoutput-live-indicator-background">
-                          <div className="liveoutput-background" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button className="liveoutput-arrow-left">
-                  <IoIosArrowBack />
-                </button>
-              </div>
 
-              <div className="liveoutput-overlay">
-                <div className="liveoutput-link">
-                  <img src={avatar} alt="" className="liveoutput-img-icon" />
-                  <div className="liveoutput-stream-preview-details">
-                    <div className="liveoutput-name">John Doe</div>
-                    <div className="liveoutput-live-indicator-container">
-                      <div className="liveoutput-live-indicator-inner">
-                        <div className="liveoutput-live">live</div>
-                        <div className="liveoutput-live-indicator-background">
-                          <div className="liveoutput-background" />
-                        </div>
-                      </div>
-                    </div>
+            <div className="liveoutput-live-stream-container">
+              <button
+                className="liveoutput-scroll-buttons left"
+                onClick={scrollLeftLiveStream}
+              ></button>
+              <div className="liveoutput-live-stream" ref={liveStreamRef}>
+                {liveStreams.map((stream) => (
+                  <div key={stream.id} className="liveoutput-stream-cards">
+                    <Link
+                      to={PATH_NAME.LIVE_OUTPUT}
+                      className="liveoutput-stream-links"
+                    >
+                      <img src={stream.imgSrc} alt={stream.name} />
+                      <h4>{stream.name}</h4>
+                      <p>
+                        live
+                        <span></span>
+                      </p>
+                    </Link>
                   </div>
-                </div>
+                ))}
               </div>
-
-              <div className="liveoutput-overlay">
-                <div className="liveoutput-link">
-                  <img src={avatar} alt="" className="liveoutput-img-icon" />
-                  <div className="liveoutput-stream-preview-details">
-                    <div className="liveoutput-name">John Doe</div>
-                    <div className="liveoutput-live-indicator-container">
-                      <div className="liveoutput-live-indicator-inner">
-                        <div className="liveoutput-live">live</div>
-                        <div className="liveoutput-live-indicator-background">
-                          <div className="liveoutput-background" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="liveoutput-overlay">
-                <div className="liveoutput-link">
-                  <img src={avatar} alt="" className="liveoutput-img-icon" />
-                  <div className="liveoutput-stream-preview-details">
-                    <div className="liveoutput-name">John Doe</div>
-                    <div className="liveoutput-live-indicator-container">
-                      <div className="liveoutput-live-indicator-inner">
-                        <div className="liveoutput-live">live</div>
-                        <div className="liveoutput-live-indicator-background">
-                          <div className="liveoutput-background" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="liveoutput-overlay">
-                <div className="liveoutput-link">
-                  <img src={avatar} alt="" className="liveoutput-img-icon" />
-                  <div className="liveoutput-stream-preview-details">
-                    <div className="liveoutput-name">John Doe</div>
-                    <div className="liveoutput-live-indicator-container">
-                      <div className="liveoutput-live-indicator-inner">
-                        <div className="liveoutput-live">live</div>
-                        <div className="liveoutput-live-indicator-background">
-                          <div className="liveoutput-background" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <button className="liveoutput-arrow-right">
-                  <IoIosArrowForward />
-                </button>
-              </div>
+              <button
+                className="liveoutput-scroll-buttons right"
+                onClick={scrollRightLiveStream}
+              ></button>
             </div>
           </div>
         </div>
