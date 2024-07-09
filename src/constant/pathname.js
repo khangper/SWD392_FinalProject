@@ -52,7 +52,6 @@ export const PATH_NAME = {
   PAYOUT: "/payout",
   VERTIFICATION: "/vertification",
   MYCERTIFICATIONS: "/mycertifications",
-  COMING_SOON: "/coming-soon",
   CREDIT: "/credits",
   STATEMENTIS: "/statements",
   STATEMENTST: "/statementst",
