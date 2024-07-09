@@ -2,6 +2,7 @@ import React from 'react';
 import './AllLiveStream.css';
 import Kayak from '..//../assets/kayak.png';
 import { Link } from 'react-router-dom';
+import { PATH_NAME } from '../../constant/pathname';
 export default function AllLiveStream() {
   return (
     <div className="wrapper">
@@ -16,11 +17,11 @@ export default function AllLiveStream() {
                     {streamData.map((stream, index) => (
                       <div className="grid-item" key={index}>
                         <div className="stream_1 mb-4">
-                          <a href="/live_output" className="stream_bg">
+                          <Link to={PATH_NAME.LIVE_OUTPUT} className="stream_bg">
                             <img src={stream.img} alt={stream.name} />
                             <h4>{stream.name}</h4>
                             <p>live<span></span></p>
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     ))}
@@ -49,7 +50,7 @@ export default function AllLiveStream() {
                     </div>
                     <div className="live-content">
                       <p>Set up your channel and stream live to your students</p>
-                      <Link to="/add_livestream">
+                      <Link to={PATH_NAME.ADD_LIVE_STREAM}>
                         <button className="live_link" >Get Started</button>
                       </Link>
 

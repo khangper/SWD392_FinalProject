@@ -43,7 +43,7 @@
 }
 
 
-.header{
+.header1{
     align-self: stretch;
     box-shadow: 0 5px 15px -9px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -62,7 +62,7 @@
 
 
 @media screen and (max-width: 1350px){
-    .header{
+    .header1{
         padding-left: 185px;
         padding-right: 193px;
         box-sizing: border-box;
@@ -71,7 +71,7 @@
 
 
 @media screen and (max-width: 900px){
-    .header{
+    .header1{
         padding-left: 92px;
         padding-right: 96px;
         box-sizing: border-box;
