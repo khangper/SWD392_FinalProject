@@ -3,19 +3,14 @@ import "./StdSidebar.css";
 import { Link } from "react-router-dom";
 import dashboardIcon from "../../assets/dashboard.png";
 import coursesIcon from "../../assets/BookHelp.png";
-import analyticsIcon from "../../assets/chart.png";
-import createCourseIcon from "../../assets/browse-instructor.png";
 import messagesIcon from "../../assets/message.png";
 import notificationsIcon from "../../assets/notification-icon.png";
 import certificatesIcon from "../../assets/prize.png";
 import reviewsIcon from "../../assets/rating.png";
-import earningIcon from "../../assets/earning.png";
 import payoutIcon from "../../assets/payout.png";
 import statementsIcon from "../../assets/pages.png";
-import verificationIcon from "../../assets/verified.png";
 import settingIcon from "../../assets/setting.png";
 import feedbackIcon from "../../assets/send-feedback.png";
-import helpIcon from "../../assets/help.png";
 const StdSidebar = ({ sidebar }) => {
   return (
     <div className={`ins-sidebar ${sidebar ? "" : "ins-small-sidebar"}`}>

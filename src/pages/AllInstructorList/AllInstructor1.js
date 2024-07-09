@@ -6,6 +6,7 @@ import youtube from "../../assets/youtube.png";
 import "./AllInstructorList.css";
 import search_icon from "..//../assets/search.png";
 import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 export default function AllInstructor1() {
   // Dữ liệu giáo viên (instructors)
   const instructorsData = [
@@ -196,14 +197,14 @@ export default function AllInstructor1() {
             <div key={index} className="All-Instructor-grid-item">
               <div className="All-Instructor-fcrse_1 mt-30">
                 <div className="All-Instructor-tutor_img">
-                  <Link to="/other-instructor-view">
+                  <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}>
                     <img src={instructor.image} alt={instructor.name} />
                   </Link>
                 </div>
                 <div className="All-Instructor-tutor_content_dt">
                   <div className="All-Instructor-tutor150">
                     <Link
-                      to="/other-instructor-view"
+                      to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
                       className="All-Instructor-tutor_name"
                     >
                       {instructor.name}

@@ -16,7 +16,7 @@ export const PATH_NAME = {
   LOGIN: "/login",
   FORGOT_PASSWORD: "/forgot-password",
   SIGN_UP: "/sign-up",
-  SIGN_UP_STEP: "/SignUp",
+  SIGN_UP_STEP: "/SignUpStep",
   THANKS: "/thanks",
   ERROR_404: "/error404",
   INVOICE: "/invoice",

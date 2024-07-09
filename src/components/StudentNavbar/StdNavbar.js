@@ -1,14 +1,16 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import "./StdNavbar.css";
-import menu_icon from "..//../assets/menu.png";
-import search_icon from "..//../assets/search.png";
-import card_icon from "..//../assets/cart-icon.png";
-import mail_icon from "..//../assets/mail-icon.png";
-import notification_icon from "..//../assets/notification-icon.png";
-import profile_image from "..//../assets/profile-img.jpg";
-import moon_image from "..//../assets/moon.png";
+import menu_icon from "../../assets/menu.png";
+import search_icon from "../../assets/search.png";
+import card_icon from "../../assets/cart-icon.png";
+import mail_icon from "../../assets/mail-icon.png";
+import notification_icon from "../../assets/notification-icon.png";
+import profile_image from "../../assets/profile-img.jpg";
+import moon_image from "../../assets/moon.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthContext";
+import { PATH_NAME } from "../../constant/pathname";
+
 const StdNavbar = ({ setSidebar }) => {
   const sampleMessages = [
     {
@@ -138,11 +140,11 @@ const StdNavbar = ({ setSidebar }) => {
         </div>
       </div>
       <div className="nav-right flex-div">
-        <Link to ="shoppingcart">
-        <div className="icon">
-          <img src={card_icon} alt="" className="cart-icon" />
-          <span className="badge">2</span>
-        </div>
+        <Link to={PATH_NAME.SHOPPING_CART}>
+          <div className="icon">
+            <img src={card_icon} alt="" className="cart-icon" />
+            <span className="badge">2</span>
+          </div>
         </Link>
 
         <div className="icon" ref={mailDropdownRef}>
@@ -171,9 +173,9 @@ const StdNavbar = ({ setSidebar }) => {
                   </div>
                 </div>
               ))}
-              <a href="#" className="view-all-btn">
+              <Link to={PATH_NAME.MESSAGE} className="view-all-btn">
                 View All
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -189,7 +191,7 @@ const StdNavbar = ({ setSidebar }) => {
             <div className="dropdown">
               {sampleNotifications.map((message) => (
                 <div key={message.id} className="dropdown-item">
-                  <div className="dropdown-link">
+                  <Link to={PATH_NAME.NOTIFICATON} className="dropdown-link">
                     <img
                       src={message.profileImage}
                       alt="Profile"
@@ -200,12 +202,12 @@ const StdNavbar = ({ setSidebar }) => {
                       <p className="text">{message.text}</p>
                       <span className="time">{message.time}</span>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
-              <a href="#" className="view-all-btn">
+              <Link to={PATH_NAME.NOTIFICATON} className="view-all-btn">
                 View All
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -233,9 +235,9 @@ const StdNavbar = ({ setSidebar }) => {
                     <span>gambol943@gmail.com</span>
                   </div>
                 </div>
-                <a href="#" className="profile-link">
+                <Link to={PATH_NAME.MY_INSTRUCTOR_PROFILE} className="profile-link">
                   View Instructor Profile
-                </a>
+                </Link>
               </div>
               <div className="dark-mode-switch-btn">
                 <div className="dark-mode-container">
@@ -249,12 +251,25 @@ const StdNavbar = ({ setSidebar }) => {
                   </span>
                 </div>
               </div>
-              <div className="profile-item"> Cursus Dashboard</div>
-              <div className="profile-item"> Paid Memberships</div>
-              <div className="profile-item"> Setting</div>
-              <div className="profile-item">Help</div>
-              <div className="profile-item"> Send Feedback</div>
-              <div className="profile-item" onClick={logout}> Sign Out</div>
+              <Link to={PATH_NAME.INS_DASHBOARD}>
+                <div className="profile-item"> Cursus Dashboard</div>
+              </Link>
+              <Link to={PATH_NAME.PAID_MEMBERSHIP}>
+                <div className="profile-item"> Paid Memberships</div>
+              </Link>
+              <Link to={PATH_NAME.SETTING}>
+                <div className="profile-item"> Setting</div>
+              </Link>
+              <Link to={PATH_NAME.HELP}>
+                <div className="profile-item">Help</div>
+              </Link>
+              <Link to={PATH_NAME.SEND_FEEDBACK}>
+                <div className="profile-item"> Send Feedback</div>
+              </Link>
+              <div className="profile-item" onClick={logout}>
+                {" "}
+                Sign Out
+              </div>
             </div>
           )}
         </div>
