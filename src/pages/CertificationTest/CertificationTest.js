@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './CertificationTest.css'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
+import { PATH_NAME } from '../../constant/pathname'
+import { Link } from 'react-router-dom'
 
 const CertificationTest = () => {
     const [sticky, setSticky] = useState(false)
@@ -49,15 +51,15 @@ const CertificationTest = () => {
                                         <div className="ct-ttl121">
                                             <div>
                                                 <div className="ct-breadcrumb">
-                                                    <p className="breadcrumb-item"><a href="index.html">Home</a></p>
-                                                    <p className="breadcrumb-item"><a href="certification_center.html">Certification Center</a></p>
-                                                    <p className="breadcrumb-item active" aria-current="page"><a href="certification_center.html">WordPress Test View</a></p>
+                                                    <p className="breadcrumb-item"><Link className='link' to={PATH_NAME.HOME}>Home</Link></p>
+                                                    <p className="breadcrumb-item"><Link className='link' to={PATH_NAME.CERTIFICATION_CENTER}>Certification Center</Link></p>
+                                                    <p className="breadcrumb-item active" aria-current="page"><Link className='link' to={PATH_NAME.CERTIFICATION_CENTER}>WordPress Test View</Link></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="ct-titleright">
-                                        <a href="certification_center.html" className="blog_link"><i className="uil uil-angle-double-left"></i>  Back to Certification Center</a>
+                                        <Link to={PATH_NAME.CERTIFICATION_CENTER} className="blog_link"><i className="uil uil-angle-double-left"></i>  Back to Certification Center</Link>
                                     </div>
                                 </div>
                                 <div className="ct-title126">

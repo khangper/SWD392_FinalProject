@@ -14,7 +14,7 @@ import { PiHandshakeLight } from "react-icons/pi";
 import { TfiAnchor } from "react-icons/tfi";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
-
+import { PATH_NAME } from "../../constant/pathname";
 const Career = () => {
   const benefits = [
     {
@@ -115,29 +115,29 @@ const Career = () => {
           <div className="career-background">
             <div className="career-navigation-links-parent">
               <div className="career-navigation-links">
-                <a href="/about-us" className="career-about">
+                <Link to={PATH_NAME.ABOUT_US} className="career-about">
                   About
-                </a>
+                </Link>
               </div>
               <div className="career-navigation-links-1">
-                <a href="/our-blog" className="career-blog">
+                <Link to={PATH_NAME.OUR_BLOG} className="career-blog">
                   Blog
-                </a>
+                </Link>
               </div>
               <div className="career-navigation-links-2">
-                <a href="/company-details" className="career-company">
+                <Link to={PATH_NAME.COMPANY_DETAILS} className="career-company">
                   Company
-                </a>
+                </Link>
               </div>
               <div className="career-navigation-links-3">
-                <a href="/career" className="career-careers">
+                <Link to={PATH_NAME.CAREER} className="career-careers">
                   Careers
-                </a>
+                </Link>
               </div>
               <div className="career-navigation-links-4">
-                <a href="/press" className="career-press">
+                <Link to={PATH_NAME.PRESS} className="career-press">
                   Press
-                </a>
+                </Link>
               </div>
             </div>
             <div className="career-heading-2-wrapper">
@@ -275,7 +275,7 @@ const Career = () => {
                             {openRole.country}
                           </div>
                         </div>
-                        <Link to="/apply-job">
+                        <Link to={PATH_NAME.APPLY_JOB}>
                           <button className="career-button-learn-more">
                             Learn More and Apply
                           </button>

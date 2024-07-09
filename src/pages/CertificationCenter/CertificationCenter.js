@@ -3,7 +3,7 @@ import './/CertificationCenter.css'
 import Header from '../../components/Header-paidmember/Header'
 import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'
-
+import { PATH_NAME } from '../../constant/pathname'
 
 function CertificationCenter() {
 
@@ -26,7 +26,7 @@ function CertificationCenter() {
 								<li><div className="CC-edttsplus"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/cerificate_center/plus.svg" alt=""/></div></li>
 								<li><a href="#" className="CC-edttslogo1"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/cerificate_center/certicon.svg" alt=""/></a></li>
 							 </ul>
-							 <Link to="/certificationfillform">
+							 <Link to={PATH_NAME.CERTIFICATION_FILL_FORM}>
                <button className="CC-certi-btn">Start Certification</button>
                </Link>
 						       </div>
