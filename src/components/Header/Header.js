@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import "./Header.css";
 import avatar from "../../assets/profile-img.jpg";
 import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 import moon_image from "../../assets/moon.png";
 import { AuthContext } from "../../Router/AuthContext";
 
@@ -33,10 +34,10 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link to="/home">
+      <Link to={PATH_NAME.HOME}>
         <button className="header-link1">Back To Cursus</button>
       </Link>
-      <Link to="/home">
+      <Link to={PATH_NAME.HOME}>
         <img
           src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
           alt=""

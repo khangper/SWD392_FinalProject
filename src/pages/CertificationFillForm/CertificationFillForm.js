@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import './CertificationFillForm.css';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-
+import { PATH_NAME } from '../../constant/pathname';
+import { Link } from 'react-router-dom';
 const CertificationFillForm = () => {
 
     const [visibleSection, setVisibleSection] = useState(null);
@@ -39,12 +40,12 @@ const CertificationFillForm = () => {
                     <div className='CertificationFillForm_Title_Container'>
                         <div className='CertificationFillForm_Small_Title'>
                             <div className='CertificationFillForm_Small_Title_Left'>
-                                <a href="/home">Home&nbsp;</a>
-                                <a href='/certificationcenter'> / Certification Center&nbsp;</a>
+                                <Link to={PATH_NAME.HOME}>Home&nbsp;</Link>
+                                <Link to={PATH_NAME.CERTIFICATION_CENTER}> / Certification Center&nbsp;</Link>
                                 <p> / Certification Fill Form</p>
                             </div>
                             <div className='CertificationFillForm_Small_Title_Right'>
-                                <a href="/certificationcenter">Back to Certification Center</a>
+                                <Link to={PATH_NAME.CERTIFICATION_CENTER}>Back to Certification Center</Link>
                             </div>
                         </div>
                         <div className='CertificationFillForm_Big_Title'>
@@ -655,8 +656,8 @@ const CertificationFillForm = () => {
                                 </div>
 
                                 <p className="CertificationFillForm_testtrm145">
-                                    By signing up, you agree to our
-                                    <a href="#">Privacy Policy</a> and <a href="#">Terms and Conditions</a>.
+                                    By signing up, you agree to our 
+                                    <Link to={PATH_NAME.TERMS_OF_USE}> Privacy Policy</Link> and <Link to={PATH_NAME.TERMS_OF_USE}>Terms and Conditions</Link>.
                                 </p>
 
                                 <button className="CertificationFillForm_login_btn" type="submit">Lets Go</button>

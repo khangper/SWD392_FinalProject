@@ -8,7 +8,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import big_blog from "../../assets/big_blog.jpg";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
-
+import { PATH_NAME } from "../../constant/pathname";
 const Blog = () => {
   return (
     <div className="blog">
@@ -18,29 +18,29 @@ const Blog = () => {
           <div className="blog-background">
             <div className="blog-navigation-links-parent">
               <div className="blog-navigation-links">
-                <a href="/about-us" className="blog-about">
+                <Link to={PATH_NAME.ABOUT_US} className="blog-about">
                   About
-                </a>
+                </Link>
               </div>
               <div className="blog-navigation-links-1">
-                <a href="/our-blog" className="blog-blog">
+                <Link to={PATH_NAME.OUR_BLOG} className="blog-blog">
                   Blog
-                </a>
+                </Link>
               </div>
               <div className="blog-navigation-links-2">
-                <a href="/company-details" className="blog-company">
+                <Link to={PATH_NAME.COMPANY_DETAILS} className="blog-company">
                   Company
-                </a>
+                </Link>
               </div>
               <div className="blog-navigation-links-3">
-                <a href="/career" className="blog-careers">
+                <Link to={PATH_NAME.CAREER} className="blog-careers">
                   Careers
-                </a>
+                </Link>
               </div>
               <div className="blog-navigation-links-4">
-                <a href="/press" className="blog-press">
+                <Link to={PATH_NAME.PRESS} className="blog-press">
                   Press
-                </a>
+                </Link>
               </div>
             </div>
             <div className="blog-heading-2-wrapper">
@@ -97,9 +97,9 @@ const Blog = () => {
                     <div className="blog-learn-more-link">
                       <p className="blog-learn-more">Learn More</p>
                     </div>
-                    <a href="#" className="blog-help-center">
+                    <Link to="#" className="blog-help-center">
                       Cursus Help Center
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </form>
@@ -107,7 +107,7 @@ const Blog = () => {
               <div className="blog-backgroundBorder-group">
                 <div className="blog-backgroundBorder-1">
                   <div className="blog-link">
-                    <Link to="/blog-single-view">
+                    <Link to={PATH_NAME.BLOG_SINGLE_VIEW}>
                       <img src={big_blog} alt="" className="blog-img-blog" />
 
                       <div className="blog-gradient" />
@@ -123,9 +123,9 @@ const Blog = () => {
                           </div>
                           <div className="blog-time-post">March 10, 2020</div>
                         </div>
-                        <a href="/blog-single-view" className="blog-title">
+                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-title">
                           Blog Title Here
-                        </a>
+                        </Link>
                       </div>
                       <div className="blog-content-container">
                         <p className="blog-content">
@@ -137,9 +137,9 @@ const Blog = () => {
                         </p>
                       </div>
                       <div className="blog-read-more-parent">
-                        <a href="/blog-single-view" className="blog-read-more">
+                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
                           Read More
-                        </a>
+                        </Link>
                         <div className="blog-arrow-icon-wrapper">
                           <IoArrowForwardOutline className="blog-arrow-icon" />
                         </div>
@@ -175,9 +175,9 @@ const Blog = () => {
                         </p>
                       </div>
                       <div className="blog-read-more-parent">
-                        <a href="/blog-single-view" className="blog-read-more">
+                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
                           Read More
-                        </a>
+                        </Link>
                         <div className="blog-arrow-icon-wrapper">
                           <IoArrowForwardOutline className="blog-arrow-icon" />
                         </div>
@@ -213,9 +213,9 @@ const Blog = () => {
                         </p>
                       </div>
                       <div className="blog-read-more-parent">
-                        <a href="/blog-single-view" className="blog-read-more">
+                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
                           Read More
-                        </a>
+                        </Link>
                         <div className="blog-arrow-icon-wrapper">
                           <IoArrowForwardOutline className="blog-arrow-icon" />
                         </div>
@@ -251,9 +251,9 @@ const Blog = () => {
                         </p>
                       </div>
                       <div className="blog-read-more-parent">
-                        <a href="/blog-single-view" className="blog-read-more">
+                        <Link to={PATH_NAME.BLOG_SINGLE_VIEW} className="blog-read-more">
                           Read More
-                        </a>
+                        </Link>
                         <div className="blog-arrow-icon-wrapper">
                           <IoArrowForwardOutline className="blog-arrow-icon" />
                         </div>

@@ -60,16 +60,16 @@
   
 
 
-  .breadcrumb-item a {
+  .breadcrumb-item .link {
     text-decoration: none;
     
   }
   
-  .breadcrumb-item a:hover {
+  .breadcrumb-item .link:hover {
     text-decoration: underline;
   }
   
-  .ct-titleright a {
+  .ct-titleright .link {
     text-decoration: none;
     display: flex;
     align-items: center;
