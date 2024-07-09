@@ -201,7 +201,7 @@ const Explore = () => {
       <section className="live-streams-section">
         <div className="live-streams-header">
           <h2 className="live-streams-title">Live Streams</h2>
-          <a href="#" className="see-all-link">
+          <a href="/all_livestream" className="see-all-link">
             See all
           </a>
         </div>
@@ -213,7 +213,7 @@ const Explore = () => {
           <div className="live-streams" ref={liveStreamRef}>
             {liveStreams.map((stream) => (
               <div key={stream.id} className="stream-card">
-                <a href="#" className="stream-link">
+                <a href="/live_output" className="stream-link">
                   <img src={stream.imgSrc} alt={stream.name} />
                   <h4>{stream.name}</h4>
                   <p>
@@ -236,7 +236,7 @@ const Explore = () => {
           <div className="featured-courses">
             {featuredCourses.map((course) => (
               <div key={course.id} className="course-card">
-                <a>
+                <a href="/courses-detail-view">
                   <img src={course.imgSrc} alt={course.title} />
                   <div className="course-overlay">
                     <div className="badge-seller">Best seller</div>

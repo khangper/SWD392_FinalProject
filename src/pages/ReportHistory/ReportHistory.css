@@ -63,7 +63,9 @@
     line-height: 26px;
     color: #4183c4;
 }
-
+.RH-Content{
+    list-style: none;
+}
 @media (min-width: 992px) {
     .RH-grid-container {
         grid-template-columns: repeat(12, 1fr);

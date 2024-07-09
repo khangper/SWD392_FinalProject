@@ -5,6 +5,8 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import big_blog from "../../assets/big_blog.jpg";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import Footer from "../../components/Footer/Footer";
+import { PATH_NAME } from "../../constant/pathname";
+import { Link } from "react-router-dom";
 
 const BlogDetail = () => {
   return (
@@ -15,13 +17,13 @@ const BlogDetail = () => {
           <div className="blog-detail-breadcrumb-content">
             <div className="blog-detail-breadcrumb-title">
               <div className="blog-detail-breadcrumb-list">
-                <a href="/home" className="blog-detail-home">
+                <Link to={PATH_NAME.HOME} className="blog-detail-home">
                   Home
-                </a>
+                </Link>
                 <div className="blog-detail-breadcrumb-items">/</div>
-                <a href="/our-blog" className="blog-detail-our-blog">
+                <Link to={PATH_NAME.OUR_BLOG} className="blog-detail-our-blog">
                   Our Blog
-                </a>
+                </Link>
                 <div className="blog-detail-breadcrumb-items-1">/</div>
                 <div className="blog-detail-single-blog-view">
                   Single Blog View
@@ -31,9 +33,9 @@ const BlogDetail = () => {
             </div>
             <div className="blog-detail-back-to-blog-link">
               <MdKeyboardDoubleArrowLeft className="blog-detail-icon" />
-              <a href="/our-blog" className="blog-detail-back-to-blog">
+              <Link to="/our-blog" className="blog-detail-back-to-blog">
                 Back to Blog
-              </a>
+              </Link>
             </div>
           </div>
 
