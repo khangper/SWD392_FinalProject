@@ -832,7 +832,7 @@ export default function Checkout() {
                   <h3>Total</h3>
                   <div className="order_price">$51</div>
                 </div>
-                <Link to="/invoice">
+                <Link to={PATH_NAME.INVOICE}>
                   <button className="chckot_btn" type="submit">
                     Confirm Checkout
                   </button>

@@ -9,6 +9,7 @@ import report from "../../assets/report.png";
 import card_icon from "..//../assets/cart-icon.png";
 import Closeshopping from "..//../assets/Close-shopping.png";
 import Footer from "../../components/Footer/Footer";
+import { PATH_NAME } from "../../constant/pathname";
 
 function ShoppingCart() {
   const courses = [
@@ -134,9 +135,9 @@ function ShoppingCart() {
                     </div>
                   </div>
                 </div>
-                <a href="/checkout" className="Shopping-chck-btn22">
+                <Link to={PATH_NAME.CHECKOUT} className="Shopping-chck-btn22">
                   Checkout Now
-                </a>
+                </Link>
               </div>
             </div>
           </div>
