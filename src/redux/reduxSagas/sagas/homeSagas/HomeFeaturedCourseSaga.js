@@ -5,7 +5,7 @@ import { FETCH_HOME_FEATURED_COURSES_REQUEST } from '../../../../constant/data';
 
 function* fetchHomeFeaturedCourses() {
   try {
-    const response = yield call(fetch, 'https://667a74cabd627f0dcc8f08d0.mockapi.io/ojt-repo/home_featuredcourse');
+    const response = yield call(fetch, 'https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/home_featuredcourse');
     const data = yield response.json();
     if (response.ok) {
       yield put(fetchHomeFeaturedCoursesSuccess(data));

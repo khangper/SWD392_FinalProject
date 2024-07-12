@@ -3,7 +3,7 @@ import { fetchHomeLiveStreamsSuccess, fetchHomeLiveStreamsFailure } from '../../
 import { FETCH_HOME_LIVESTREAM_REQUEST } from '../../../../constant/data';
 function* fetchHomeLiveStreams() {
     try {
-      const response = yield call(fetch, 'https://667a74cabd627f0dcc8f08d0.mockapi.io/ojt-repo/home_livestream');
+      const response = yield call(fetch, 'https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/home_livestream');
       const data = yield response.json();
       if (response.ok) {
         yield put(fetchHomeLiveStreamsSuccess(data));
