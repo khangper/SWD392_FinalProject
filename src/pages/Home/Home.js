@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Home.css";
 import ratingStar from "../../assets/rating.png";
 import share from "../../assets/share.png";
@@ -23,172 +23,21 @@ import music from "../../assets/music.png";
 import profile_image from "..//../assets/profile-img.jpg";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHomeLiveStreamsRequest } from "../../redux/reduxActions/homeActions/HomeLivestreamAction";
+import { fetchHomeFeaturedCoursesRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
 const Home = () => {
-  const liveStreams = [
-    {
-      id: 1,
-      name: "John Doe",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-    },
-    {
-      id: 2,
-      name: "Jassica",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-      id: 3,
-      name: "Edutut+",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-    },
-    {
-      id: 4,
-      name: "Joginder Singh",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
-    },
-    {
-      id: 5,
-      name: "Zoena",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-    },
-    {
-      id: 6,
-      name: "Albert Dua",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
-    },
-    {
-      id: 7,
-      name: "Amritpal",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-    },
-    {
-      id: 8,
-      name: "Jimmy",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { liveStreams } = useSelector((state) => state.home_livestream);
+  const { featuredCourses } = useSelector((state) => state.home_featuredcourse);
+  
+  
+  useEffect(() => {
+    dispatch(fetchHomeLiveStreamsRequest());
+    dispatch(fetchHomeFeaturedCoursesRequest())
+  }, [dispatch]);
 
-  const featuredCourses = [
-    {
-      id: 1,
-      title: "Complete Python Bootcamp: Go from zero to hero in Python 3",
-      author: "John Doe",
-      views: "109k",
-      date: "15 days ago",
-      category: "Web Development | Python",
-      price: "$10",
-      hours: "25 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
-    },
-    {
-      id: 2,
-      title: "The Complete JavaScript Course 2020: Build Real Projects!",
-      author: "Jassica William",
-      views: "5M",
-      date: "15 days ago",
-      category: "Development | JavaScript",
-      price: "$5",
-      hours: "28 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg",
-    },
-    {
-      id: 3,
-      title: "Beginning C++ Programming - From Beginner to Beyond",
-      author: "Joginder Singh",
-      views: "1M",
-      date: "18 days ago",
-      category: "Development | C++",
-      price: "$13",
-      hours: "12 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-3.jpg",
-    },
-    {
-      id: 4,
-      title: "The Complete Digital Marketing Course - 12 Courses in 1",
-      author: "Poonam Verma",
-      views: "153k",
-      date: "3 months ago",
-      category: "Digital Marketing | Marketing",
-      price: "$12",
-      hours: "1 hour",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-4.jpg",
-    },
-    {
-      id: 5,
-      title: "Microsoft Excel - Excel from Beginner to Advanced",
-      author: "Rock William",
-      views: "53k",
-      date: "14 days ago",
-      category: "Office Productivity | Excel",
-      price: "$6",
-      hours: "1.5 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-5.jpg",
-    },
-    {
-      id: 6,
-      title: "Angular 8 - The Complete Guide (2020 Edition)",
-      author: "John Doe",
-      views: "253k",
-      date: "10 days ago",
-      category: "Development | Angular",
-      price: "$15",
-      hours: "36 hours",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-6.jpg",
-    },
-    {
-      id: 7,
-      title: "WordPress for Beginners: Create a Website Step by Step",
-      author: "Sabnam Singh",
-      views: "109k",
-      date: "15 days ago",
-      category: "Design | Wordpress",
-      price: "$18",
-      hours: "5.4 hours",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-7.jpg",
-    },
-    {
-      id: 8,
-      title: "CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)",
-      author: "Jashanpreet Singh",
-      views: "196k",
-      date: "1 month ago",
-      category: "Design | CSS",
-      price: "$10",
-      hours: "23 hours",
-      rating: 4.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-8.jpg",
-    },
-  ];
+
   const newestCourses = [
     {
       id: 1,
@@ -740,8 +589,7 @@ const Home = () => {
               <div className="popular-instructors" ref={popularInstructorRef}>
                 {popularInstructor.map((instructor) => (
                   <div key={instructor.id} className="popular-instructors-card">
-                    <a href="/other-instructor-view">
-                      <div className="popular-instructor-image">
+                     <div className="popular-instructor-image">
                         <img
                           src={instructor.imgSrc}
                           alt={instructor.name}
@@ -750,9 +598,9 @@ const Home = () => {
                       </div>
                       <div className="popular-instructor-content">
                         <div className="popular-instructor-profile">
-                          <a href="#" className="instructor-name">
+                          <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="instructor-name">
                             {instructor.name}
-                          </a>
+                          </Link>
                           <div className="verified-badge"></div>
                         </div>
                         <div className="popular-instructor-title">
@@ -777,7 +625,6 @@ const Home = () => {
                           Courses
                         </div>
                       </div>
-                    </a>
                   </div>
                 ))}
               </div>
