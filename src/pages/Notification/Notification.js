@@ -1,6 +1,8 @@
 import React from "react";
 import "./Notification.css";
 import notification_icon from "..//../assets/notification-icon.png";
+import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 function Notification() {
   const notifications = [
     {
@@ -49,9 +51,9 @@ function Notification() {
       </div>
       <div className="NT-grid-container">
         <div className="NT-grid-item">
-          <a href="/setting" className="NT-setting_noti">
+          <Link to={PATH_NAME.SETTING} className="NT-setting_noti">
             Notification Setting
-          </a>
+          </Link>
 
           <div className="NT-all_msg_bg">
             {notifications.map((notification) => (

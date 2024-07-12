@@ -4,7 +4,7 @@ export const PATH_NAME = {
   LIVE_OUTPUT: "/live_output",
   ADD_LIVE_STREAM: "/add_livestream",
   ALL_LIVE_STREAM: "/all_livestream",
-  ALL_INSTRUCTOR_LIST: "/allinstructorlist",
+  ALL_INSTRUCTOR_LIST: "/allinstructorlist/:id",
   HELP: "/help",
   REPORT_HISTORY: "/reporthistory",
   SEND_FEEDBACK: "/sendfeedback",
