@@ -6,7 +6,7 @@ import HomeFeaturedCourseReducer from './reducers/homeReducers/HomeFeatureCourse
 
 const rootReducer = combineReducers({
     home_livestream: HomeLivestreamReducer,
-    home_featuredcourse: HomeFeaturedCourseReducer
+    home_featuredcourse: HomeFeaturedCourseReducer,
   streams: streamsReducer,
   allinstructor: instructorReducer,
 });
