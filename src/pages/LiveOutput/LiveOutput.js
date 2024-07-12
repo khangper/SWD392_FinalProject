@@ -215,9 +215,11 @@ const LiveOutput = () => {
           <div className="liveoutput-live-streams-container">
             <div className="liveoutput-live-streams-header">
               <div className="liveoutput-heading-42">Live Streams</div>
+              <Link to={PATH_NAME.ALL_LIVE_STREAM}>
               <div className="liveoutput-see-all-link">
                 <div className="liveoutput-see-all">See all</div>
               </div>
+              </Link>
             </div>
 
             <div className="liveoutput-live-stream-container">
