@@ -1,46 +1,22 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./ShoppingCart.css";
 import Header from "../../components/Header-paidmember/Header";
 import { Link } from "react-router-dom";
-import share from "../../assets/share.png";
-import saved_course from "../../assets/saved-course.png";
-import not_interested from "../../assets/not-interested.png";
-import report from "../../assets/report.png";
-import card_icon from "..//../assets/cart-icon.png";
-import Closeshopping from "..//../assets/Close-shopping.png";
+import Closeshopping from "../../assets/Close-shopping.png";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
+import { removeFromCart } from "../../redux/reduxActions/ShoppingCartAction";
 
 function ShoppingCart() {
-  const [courses, setCourses] = useState([
-    {
-      id: 1,
-      imageSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg",
-      detailLink: "course_detail_view.html",
-      title: "The Web Developer Bootcamp",
-      category: "Web Development | Python",
-      author: "John Doe",
-      price: "$10",
-    },
-    // Add more course objects here
-    {
-      id: 2,
-      imageSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-3.jpg",
-      detailLink: "course_detail_view.html",
-      title: "The Web Developer Bootcamp",
-      category: "Web Development | Python",
-      author: "John Doe",
-      price: "$20",
-    },
-  ]);
+  const dispatch = useDispatch();
+  const courses = useSelector((state) => state.cart.cart);
 
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
 
   const removeCourse = (courseId) => {
-    setCourses(courses.filter((course) => course.id !== courseId));
+    dispatch(removeFromCart(courseId));
   };
 
   const applyCouponCode = () => {
@@ -53,7 +29,6 @@ function ShoppingCart() {
     }
   };
 
-  // Calculate the total price
   const totalPrice = courses.reduce((acc, course) => {
     const price = parseFloat(course.price.replace("$", ""));
     return acc + price;
@@ -90,7 +65,6 @@ function ShoppingCart() {
         </div>
       </div>
 
-      {/* Body ShoppingPage */}
       <main>
         <div className="Shopping-Container">
           <div className="Billing-Details-GridContainer">
@@ -98,7 +72,7 @@ function ShoppingCart() {
               {courses.map((course) => (
                 <div className="Shopping-fcrse_1" key={course.id}>
                   <a href={course.detailLink} className="Shopping-hf_img">
-                    <img className="cart_img" src={course.imageSrc} alt="" />
+                    <img className="cart_img" src={course.imgSrc} alt="" />
                   </a>
                   <div className="Shopping-hs_content">
                     <div className="eps_dots eps_dots10 more_dropdown">
