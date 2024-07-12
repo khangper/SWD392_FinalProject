@@ -116,10 +116,10 @@ const LiveOutput = () => {
 
   const liveStreamRef = useRef(null);
   const scrollLeftLiveStream = () => {
-    liveStreamRef.current.scrollBy({ left: -247.5, behavior: "smooth" });
+    liveStreamRef.current.scrollBy({ left: -198, behavior: "smooth" });
   };
   const scrollRightLiveStream = () => {
-    liveStreamRef.current.scrollBy({ left: 247.5, behavior: "smooth" });
+    liveStreamRef.current.scrollBy({ left: 198, behavior: "smooth" });
   };
   return (
     <section className="liveoutput-frame-wrapper">
