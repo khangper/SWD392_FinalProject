@@ -1,257 +1,155 @@
-import React from "react";
-import facebook from "../../assets/facebook.png";
-import x from "../../assets/x.png";
-import linkedin from "../../assets/linkedin.png";
-import youtube from "../../assets/youtube.png";
-import "./AllInstructorList.css";
-import search_icon from "..//../assets/search.png";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchInstructorsRequest,
+  searchInstructorsRequest,
+} from "../../redux/reduxActions/instructorActions";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
-export default function AllInstructor1() {
-  // Dữ liệu giáo viên (instructors)
-  const instructorsData = [
-    {
-      name: "John Doe",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-      category: "Wordpress & Plugin Tutor",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "100K Students",
-      courses: "15 Courses",
-    },
-    {
-      name: "Kerstin Cable",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-      category: "Language Learning Coach, Writer, Online Tutor",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "14K Students",
-      courses: "11 Courses",
-    },
-    {
-      name: "Jose Portilla",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-      category: "Head of Data Science, Pierian Data Inc.",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "1M Students",
-      courses: "25 Courses",
-    },
-    {
-      name: "Jose Portilla",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-      category: "Head of Data Science, Pierian Data Inc.",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "1M Students",
-      courses: "25 Courses",
-    },
-    {
-      name: "Kyle Pew",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-      category: "Microsoft Certified Trainer - 380,000+ Udemy Students",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "300K Students",
-      courses: "18 Courses",
-    },
-    {
-      name: "Jaysen Batchelor",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-      category: "Illustrator & Designer",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "491K Students",
-      courses: "13 Courses",
-    },
-    {
-      name: "Quinton Batchelor",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-      category: "Photographer & Instructor",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "364K Students",
-      courses: "6 Courses",
-    },
-    {
-      name: "Eli Natoli",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-10.jpg",
-      category: "Entrepreneur - Passionate Teacher",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "115K Students",
-      courses: "8 Courses",
-    },
-    {
-      name: "Sunny William",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-11.jpg",
-      category: "Entrepreneur - Passionate Teacher",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "615K Students",
-      courses: "12 Courses",
-    },
-    {
-      name: "Neha Smith",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-12.jpg",
-      category: "English Teacher",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "15K Students",
-      courses: "5 Courses",
-    },
-    {
-      name: "Sukhwinder Singh",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-13.jpg",
-      category: "Web Development",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "215K Students",
-      courses: "15 Courses",
-    },
-    {
-      name: "Saloni Prabhakar",
-      image:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-14.jpg",
-      category: "Photographer",
-      socialLinks: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-      students: "10K Students",
-      courses: "3 Courses",
-    },
-  ];
+import "./AllInstructorList.css";
+import searchIcon from "../../assets/search.png";
+import facebookIcon from "../../assets/facebook.png";
+import xIcon from "../../assets/x.png";
+import linkedinIcon from "../../assets/linkedin.png";
+import youtubeIcon from "../../assets/youtube.png";
 
+const AllInstructor1 = () => {
+  const dispatch = useDispatch();
+  const { instructors, loading, error } = useSelector(
+    (state) => state.allinstructor
+  );
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    dispatch(fetchInstructorsRequest());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (searchQuery && Array.isArray(instructors) && instructors.length === 0) {
+      window.location.reload();
+    }
+  }, [instructors, searchQuery]);
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      dispatch(searchInstructorsRequest(searchQuery));
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="Allinstructor-main-loader">
+        <div className="lds-facebook">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!Array.isArray(instructors) || instructors.length === 0) {
+    return (
+      <div className="NotFind-instructor">
+        <div className="explore-container">
+          <section className="search-box">
+            <img src={searchIcon} alt="Search Icon" className="search-icon" />
+            <input
+              type="text"
+              placeholder="Search Tutors"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              onKeyDown={handleKeyDown}
+            />
+          </section>
+        </div>
+        <div className="Notfindmessinstructor">No instructors found.</div>
+      </div>
+    );
+  }
   return (
     <div>
       <header>
         <div className="explore-container">
           <section className="search-box">
-            <img src={search_icon} alt="Search Icon" className="search-icon" />
-            <input type="text" placeholder="Search Tutors" />
+            <img src={searchIcon} alt="Search Icon" className="search-icon" />
+            <input
+              type="text"
+              placeholder="Search Tutors"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              onKeyDown={handleKeyDown}
+            />
           </section>
         </div>
       </header>
 
       <main>
         <div className="All-Instructor-grid-container">
-          {instructorsData.map((instructor, index) => (
-            <div key={index} className="All-Instructor-grid-item">
-              <div className="All-Instructor-fcrse_1 mt-30">
-                <div className="All-Instructor-tutor_img">
-                  <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}>
+          {instructors.map((instructor) => (
+            <Link key={instructor.id} to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}>
+              {/* <Link key={instructor.id} to={`${PATH_NAME.OTHER_INSTRUCTOR_VIEW}/${instructor.id}`}></Link> */}
+              <div className="All-Instructor-grid-item">
+                <div className="All-Instructor-fcrse_1 mt-30">
+                  <div className="All-Instructor-tutor_img">
                     <img src={instructor.image} alt={instructor.name} />
-                  </Link>
-                </div>
-                <div className="All-Instructor-tutor_content_dt">
-                  <div className="All-Instructor-tutor150">
-                    <Link
-                      to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
-                      className="All-Instructor-tutor_name"
-                    >
-                      {instructor.name}
-                    </Link>
-                    <div className="All-Instructor-mef78" title="Verify">
-                      <div className="verified-badge"></div>
+                  </div>
+                  <div className="All-Instructor-tutor_content_dt">
+                    <div className="All-Instructor-tutor150">
+                      <div className="All-Instructor-tutor_name">
+                        {instructor.name}
+                      </div>
+                      <div className="All-Instructor-mef78" title="Verify">
+                        <div className="verified-badge"></div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="All-Instructor-tutor_cate">
-                    {instructor.category}
-                  </div>
-                  <ul className="All-social-icons">
-                    <li>
-                      <a href="#" className="sc-fb">
-                        <img src={facebook} alt="Facebook" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="sc-tw">
-                        <img src={x} alt="Twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="sc-ln">
-                        <img src={linkedin} alt="LinkedIn" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="sc-yt">
-                        <img src={youtube} alt="YouTube" />
-                      </a>
-                    </li>
-                  </ul>
-                  <div className="All-Instructor-tut1250">
-                    <span className="All-Instructor-vdt15">
-                      {instructor.students}
-                    </span>
-                    <span className="All-Instructor-vdt15">
-                      {instructor.courses}
-                    </span>
+                    <div className="All-Instructor-tutor_cate">
+                      {instructor.category}
+                    </div>
+                    <div className="All-social-icons">
+                      <div className="AllIn_icon">
+                        <div href={instructor.facebook} className="sc-fb">
+                          <img src={facebookIcon} alt="Facebook" />
+                        </div>
+                      </div>
+                      <div className="AllIn_icon">
+                        <div href={instructor.twitter} className="sc-tw">
+                          <img src={xIcon} alt="Twitter" />
+                        </div>
+                      </div>
+                      <div className="AllIn_icon">
+                        <div href={instructor.linkedin} className="sc-ln">
+                          <img src={linkedinIcon} alt="LinkedIn" />
+                        </div>
+                      </div>
+                      <div className="AllIn_icon">
+                        <div href={instructor.youtube} className="sc-yt">
+                          <img src={youtubeIcon} alt="YouTube" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="All-Instructor-tut1250">
+                      <span className="All-Instructor-vdt15">
+                        {instructor.students}
+                      </span>
+                      <span className="All-Instructor-vdt15">
+                        {instructor.courses}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-
         <div className="main-loader mt-20">
           <div className="spinner">
             <div className="bounce1"></div>
@@ -262,4 +160,175 @@ export default function AllInstructor1() {
       </main>
     </div>
   );
-}
+};
+
+export default AllInstructor1;
+
+// import React, { useEffect, useState } from "react";
+// import { useSelector, useDispatch } from "react-redux";
+// import {
+//   fetchInstructorsRequest,
+//   searchInstructorsRequest,
+// } from "../../redux/reduxActions/instructorActions";
+// import { Link } from "react-router-dom";
+// import { PATH_NAME } from "../../constant/pathname";
+// import "./AllInstructorList.css";
+// import searchIcon from "../../assets/search.png";
+// import facebookIcon from "../../assets/facebook.png";
+// import xIcon from "../../assets/x.png";
+// import linkedinIcon from "../../assets/linkedin.png";
+// import youtubeIcon from "../../assets/youtube.png";
+
+// const AllInstructor1 = () => {
+//   const dispatch = useDispatch();
+//   const { instructors, loading, error } = useSelector(
+//     (state) => state.allinstructor
+//   );
+//   const [searchQuery, setSearchQuery] = useState("");
+
+//   useEffect(() => {
+//     dispatch(fetchInstructorsRequest());
+//   }, [dispatch]);
+
+//   const handleSearchChange = (event) => {
+//     setSearchQuery(event.target.value);
+//   };
+
+//   const handleKeyDown = (event) => {
+//     if (event.key === "Enter") {
+//       dispatch(searchInstructorsRequest(searchQuery));
+//     }
+//   };
+
+//   if (loading) {
+//     return (
+//       <div className="Allinstructor-main-loader">
+//         <div className="lds-facebook">
+//           <div></div>
+//           <div></div>
+//           <div></div>
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   if (error) {
+//     return <div>Error: {error}</div>;
+//   }
+
+//   if (!Array.isArray(instructors) || instructors.length === 0) {
+//     return (
+//       <div className="NotFind-instructor">
+//         <div className="explore-container">
+//           <section className="search-box">
+//             <img src={searchIcon} alt="Search Icon" className="search-icon" />
+//             <input
+//               type="text"
+//               placeholder="Search Tutors"
+//               value={searchQuery}
+//               onChange={handleSearchChange}
+//               onKeyDown={handleKeyDown}
+//             />
+//           </section>
+//         </div>
+//         <div className="Notfindmessinstructor">No instructors found.</div>
+//       </div>
+//     );
+//   }
+
+//   return (
+//     <div>
+//       <header>
+//         <div className="explore-container">
+//           <section className="search-box">
+//             <img src={searchIcon} alt="Search Icon" className="search-icon" />
+//             <input
+//               type="text"
+//               placeholder="Search Tutors"
+//               value={searchQuery}
+//               onChange={handleSearchChange}
+//               onKeyDown={handleKeyDown}
+//             />
+//           </section>
+//         </div>
+//       </header>
+
+//       <main>
+//         <div className="All-Instructor-grid-container">
+//           {instructors.map((instructor) => (
+//             <Link
+//               key={instructor.id}
+//               to={`${PATH_NAME.OTHER_INSTRUCTOR_VIEW}/${instructor.id}`}
+//               className="All-Instructor-grid-item-link"
+//             >
+//               <div className="All-Instructor-grid-item">
+//                 <div className="All-Instructor-fcrse_1 mt-30">
+//                   <div className="All-Instructor-tutor_img">
+//                     <img src={instructor.image} alt={instructor.name} />
+//                   </div>
+//                   <div className="All-Instructor-tutor_content_dt">
+//                     <div className="All-Instructor-tutor150">
+//                       <div className="All-Instructor-tutor_name">
+//                         {instructor.name}
+//                       </div>
+//                       <div className="All-Instructor-mef78" title="Verify">
+//                         <div className="verified-badge"></div>
+//                       </div>
+//                     </div>
+//                     <div className="All-Instructor-tutor_cate">
+//                       {instructor.category}
+//                     </div>
+//                     <div className="All-social-icons">
+//                       <a
+//                         href={instructor.facebook}
+//                         className="AllIn_icon sc-fb"
+//                         target="_blank"
+//                         rel="noopener noreferrer"
+//                       >
+//                         <img src={facebookIcon} alt="Facebook" />
+//                       </a>
+//                       <a
+//                         href={instructor.twitter}
+//                         className="AllIn_icon sc-tw"
+//                         target="_blank"
+//                         rel="noopener noreferrer"
+//                       >
+//                         <img src={xIcon} alt="Twitter" />
+//                       </a>
+//                       <a
+//                         href={instructor.linkedin}
+//                         className="AllIn_icon sc-ln"
+//                         target="_blank"
+//                         rel="noopener noreferrer"
+//                       >
+//                         <img src={linkedinIcon} alt="LinkedIn" />
+//                       </a>
+//                       <a
+//                         href={instructor.youtube}
+//                         className="AllIn_icon sc-yt"
+//                         target="_blank"
+//                         rel="noopener noreferrer"
+//                       >
+//                         <img src={youtubeIcon} alt="YouTube" />
+//                       </a>
+//                     </div>
+//                     <div className="All-Instructor-tut1250">
+//                       <span className="All-Instructor-vdt15">
+//                         {instructor.students}
+//                       </span>
+//                       <span className="All-Instructor-vdt15">
+//                         {instructor.courses}
+//                       </span>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </div>
+//             </Link>
+//           ))}
+//         </div>
+//       </main>
+//     </div>
+//   );
+// };
+
+// export default AllInstructor1;

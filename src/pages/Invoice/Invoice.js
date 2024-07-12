@@ -1,5 +1,7 @@
 import React from "react";
 import "./Invoice.css";
+import { Link } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 
 const Invoice = () => {
   return (
@@ -7,12 +9,12 @@ const Invoice = () => {
       <div className="Invoice_Header">
         <div className="Invoice_Header_Item">
           <div className="Header_Logo">
-            <a href="/home">
+            <Link to={PATH_NAME.HOME}>
               <img
                 src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <p>Invoice</p>
         </div>
