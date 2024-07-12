@@ -1,10 +1,5 @@
-// instructorActions.js
-// export const FETCH_INSTRUCTORS_REQUEST = "FETCH_INSTRUCTORS_REQUEST";
-// export const FETCH_INSTRUCTORS_SUCCESS = "FETCH_INSTRUCTORS_SUCCESS";
-// export const FETCH_INSTRUCTORS_FAILURE = "FETCH_INSTRUCTORS_FAILURE";
-// export const SEARCH_INSTRUCTORS_REQUEST = "SEARCH_INSTRUCTORS_REQUEST";
-
 import {
+  FETCH_INSTRUCTOR_BY_ID_REQUEST,
   FETCH_INSTRUCTORS_FAILURE,
   FETCH_INSTRUCTORS_REQUEST,
   FETCH_INSTRUCTORS_SUCCESS,
@@ -28,4 +23,9 @@ export const fetchInstructorsFailure = (error) => ({
 export const searchInstructorsRequest = (query) => ({
   type: SEARCH_INSTRUCTORS_REQUEST,
   payload: query,
+});
+
+export const fetchInstructorByIdRequest = (id) => ({
+  type: FETCH_INSTRUCTOR_BY_ID_REQUEST,
+  payload: id,
 });

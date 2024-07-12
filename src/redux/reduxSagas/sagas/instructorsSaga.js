@@ -2,8 +2,10 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import {
   fetchInstructorsSuccess,
   fetchInstructorsFailure,
+  fetchInstructorByIdRequest,
 } from "../../reduxActions/instructorActions";
 import {
+  FETCH_INSTRUCTOR_BY_ID_REQUEST,
   FETCH_INSTRUCTORS_REQUEST,
   SEARCH_INSTRUCTORS_REQUEST,
 } from "../../../constant/data";
@@ -33,4 +35,5 @@ function* searchInstructors(action) {
 export default function* instructorsSaga() {
   yield takeLatest(FETCH_INSTRUCTORS_REQUEST, fetchInstructors);
   yield takeLatest(SEARCH_INSTRUCTORS_REQUEST, searchInstructors);
+  yield takeLatest(FETCH_INSTRUCTOR_BY_ID_REQUEST, fetchInstructorByIdRequest);
 }

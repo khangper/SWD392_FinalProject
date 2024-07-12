@@ -216,3 +216,23 @@ img.shopping-close {
 .Shopping-chck-btn22:hover{
     background-color: #333;
 }
+
+.shopping-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .shopping-close-button img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .shopping-close-button:hover img {
+    opacity: 0.7;
+  }
