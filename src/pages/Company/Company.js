@@ -6,8 +6,36 @@ import Cali from "../../assets/Cali.png";
 import Brazil from "../../assets/Brazil.png";
 import { FiPhone } from "react-icons/fi";
 import Footer from "../../components/Footer/Footer";
+import { PATH_NAME } from "../../constant/pathname";
+import { Link } from "react-router-dom";
 
 const Company = () => {
+  const company_office = [
+    {
+      id: 1,
+      img: India,
+      country: "Punjab, India",
+      address:
+        "#1235 Sks Nagar St No. 8 Phase 3, Pakhowal Road, 141001, LDH, Punjab, India",
+      phone: "0161-1234567",
+    },
+
+    {
+      id: 2,
+      img: Cali,
+      country: "San Francisco, CA",
+      address: "586 Lorem st. 5 floor, San Francisco San Francisco, CA 94107",
+      phone: "+1 415-1234567",
+    },
+
+    {
+      id: 3,
+      img: Brazil,
+      country: "São Paulo, Brazil",
+      address: "Lorem ipsum 589, Vila Madalena, São Paulo - SP 01443-010",
+      phone: "+55-11-1234567",
+    },
+  ];
   return (
     <div className="company">
       <Header />
@@ -16,29 +44,32 @@ const Company = () => {
           <div className="company-background">
             <div className="company-navigation-links-parent">
               <div className="company-navigation-links">
-                <a href="/about-us" className="company-about">
+                <Link to={PATH_NAME.ABOUT_US} className="company-about">
                   About
-                </a>
+                </Link>
               </div>
               <div className="company-navigation-links-1">
-                <a href="/our-blog" className="company-blog">
+                <Link to={PATH_NAME.OUR_BLOG} className="company-blog">
                   Blog
-                </a>
+                </Link>
               </div>
               <div className="company-navigation-links-2">
-                <a href="/company-details" className="company-company">
+                <Link
+                  to={PATH_NAME.COMPANY_DETAILS}
+                  className="company-company"
+                >
                   Company
-                </a>
+                </Link>
               </div>
               <div className="company-navigation-links-3">
-                <a href="/career" className="company-careers">
+                <Link to={PATH_NAME.CAREER} className="company-careers">
                   Careers
-                </a>
+                </Link>
               </div>
               <div className="company-navigation-links-4">
-                <a href="/press" className="company-press">
+                <Link to={PATH_NAME.PRESS} className="company-press">
                   Press
-                </a>
+                </Link>
               </div>
             </div>
             <div className="company-learning-heading">
@@ -93,91 +124,36 @@ const Company = () => {
                 </div>
               </div>
               <div className="company-office-link-one">
-                <div className="company-background-border">
-                  <div className="company-link-2">
-                    <img src={India} alt="" className="company-image-company" />
-                    <div className="company-gradient" />
-                  </div>
-                  <div className="company-office-city-one">
-                    <div className="company-office-full-address-one">
-                      <div className="company-country">Punjab, India</div>
-                      <div className="company-address-container">
-                        <p className="company-address">
-                          #1235 Sks Nagar St No. 8 Phase 3, Pakhowal Road,
-                          141001, LDH, Punjab, India
-                        </p>
-                      </div>
-                      <div className="company-location-elements-two">
-                        <div className="company-location-details-two">
-                          <div className="company-office-two-title">
-                            <FiPhone className="company-icon-phone" />
-                          </div>
-                          <div className="company-office-two-address">
-                            0161-1234567
+                {company_office.map((office) => (
+                  <div key={office.id} className="company-background-border">
+                    <div className="company-link-2">
+                      <img
+                        src={office.img}
+                        alt=""
+                        className="company-image-company"
+                      />
+                      <div className="company-gradient" />
+                    </div>
+                    <div className="company-office-city-one">
+                      <div className="company-office-full-address-one">
+                        <div className="company-country">{office.country}</div>
+                        <div className="company-address-container">
+                          <p className="company-address">{office.address}</p>
+                        </div>
+                        <div className="company-location-elements-two">
+                          <div className="company-location-details-two">
+                            <div className="company-office-two-title">
+                              <FiPhone className="company-icon-phone" />
+                            </div>
+                            <div className="company-office-two-address">
+                              {office.phone}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="company-background-border">
-                  <div className="company-link-2">
-                    <img src={Cali} alt="" className="company-image-company" />
-                    <div className="company-gradient" />
-                  </div>
-                  <div className="company-office-city-one">
-                    <div className="company-office-full-address-one">
-                      <div className="company-country">San Francisco, CA</div>
-                      <div className="company-address-container">
-                        <p className="company-address">
-                          586 Lorem st. 5 floor, San Francisco
-                          San Francisco, CA 94107
-                        </p>
-                      </div>
-                      <div className="company-location-elements-two">
-                        <div className="company-location-details-two">
-                          <div className="company-office-two-title">
-                            <FiPhone className="company-icon-phone" />
-                          </div>
-                          <div className="company-office-two-address">
-                            +1 415-1234567
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="company-background-border">
-                  <div className="company-link-2">
-                    <img src={Brazil} alt="" className="company-image-company" />
-                    <div className="company-gradient" />
-                  </div>
-                  <div className="company-office-city-one">
-                    <div className="company-office-full-address-one">
-                      <div className="company-country">São Paulo, Brazil</div>
-                      <div className="company-address-container">
-                        <p className="company-address">
-                          Lorem ipsum 589,
-                          Vila Madalena, São Paulo - SP 01443-010
-                        </p>
-                      </div>
-                      <div className="company-location-elements-two">
-                        <div className="company-location-details-two">
-                          <div className="company-office-two-title">
-                            <FiPhone className="company-icon-phone" />
-                          </div>
-                          <div className="company-office-two-address">
-                            +55-11-1234567
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                
+                ))}
               </div>
             </div>
           </div>
