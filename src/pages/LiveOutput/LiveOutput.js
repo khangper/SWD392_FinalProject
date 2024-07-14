@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./LiveOutput.css";
 import avatar from "../../assets/114-1149878_setting-user-avatar-in-specific-size-without-breaking.png";
 import { IoEyeOutline } from "react-icons/io5";
@@ -8,8 +8,18 @@ import { GoShareAndroid } from "react-icons/go";
 import { CiLocationArrow1 } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchLiveOutputLiveStreamsRequest } from "../../redux/reduxActions/liveOutputActions/liveOutputLiveActions";
 
 const LiveOutput = () => {
+  const dispatch = useDispatch();
+
+  const { liveStreams } = useSelector((state) => state.live_output_livestream);
+
+  useEffect(() => {
+    dispatch(fetchLiveOutputLiveStreamsRequest());
+  }, [dispatch]);
+
   const message = [
     {
       id: 1,
@@ -55,65 +65,7 @@ const LiveOutput = () => {
     },
   ];
 
-  const liveStreams = [
-    {
-      id: 1,
-      name: "John Doe",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-    },
-    {
-      id: 2,
-      name: "Jassica",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-      id: 3,
-      name: "Edutut+",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-    },
-    {
-      id: 4,
-      name: "Joginder Singh",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
-    },
-    {
-      id: 5,
-      name: "Zoena",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-    },
-    {
-      id: 6,
-      name: "Albert Dua",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
-    },
-    {
-      id: 7,
-      name: "Amritpal",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-    },
-    {
-      id: 8,
-      name: "Jimmy",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-    },
-  ];
-
+  
   const liveStreamRef = useRef(null);
   const scrollLeftLiveStream = () => {
     liveStreamRef.current.scrollBy({ left: -198, behavior: "smooth" });
@@ -216,9 +168,9 @@ const LiveOutput = () => {
             <div className="liveoutput-live-streams-header">
               <div className="liveoutput-heading-42">Live Streams</div>
               <Link to={PATH_NAME.ALL_LIVE_STREAM}>
-              <div className="liveoutput-see-all-link">
-                <div className="liveoutput-see-all">See all</div>
-              </div>
+                <div className="liveoutput-see-all-link">
+                  <div className="liveoutput-see-all">See all</div>
+                </div>
               </Link>
             </div>
 
