@@ -4,6 +4,15 @@ import {
   FETCH_EARNING_TABLE_FAILURE,
 } from "../../../../constant/data";
 
+function formatCurrency(earning) {
+  return earning.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
 const initialState = {
   itemSales: [],
   loading: false,
@@ -22,7 +31,10 @@ const EarningTableReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        itemSales: action.payload,
+        itemSales: action.payload.map((item) => ({
+          ...item,
+          formattedEarning: formatCurrency(item.earning),
+        })),
       };
     case FETCH_EARNING_TABLE_FAILURE:
       return {

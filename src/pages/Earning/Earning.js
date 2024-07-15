@@ -132,7 +132,7 @@ const Earning = () => {
                     <tr key={item.id}>
                       <td>{item.date}</td>
                       <td>{item.numberOfItems}</td>
-                      <td>${item.earning}</td>
+                      <td>{item.formattedEarning}</td>
                     </tr>
                   ))}
                 </tbody>
