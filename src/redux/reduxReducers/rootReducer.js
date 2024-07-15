@@ -8,6 +8,7 @@ import BlogReducer from "./reducers/blogReducers/BlogReducer";
 import EarningTableReducer from "./reducers/earningReducers/EarningTableReducers";
 import EarningTopCountryReducer from "./reducers/earningReducers/EarningTopCountryReducer";
 import PayoutTableReducer from "./reducers/payoutReducers/PayoutTableReducer";
+import CreditTableReducer from "./reducers/creditReducers/CreditTableReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   earning_table: EarningTableReducer,
   earning_top_country: EarningTopCountryReducer,
   payout_table: PayoutTableReducer,
+  credit_table: CreditTableReducer,
 });
 
 export default rootReducer;

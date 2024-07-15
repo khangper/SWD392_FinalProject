@@ -9,6 +9,7 @@ import { watchFetchBlogs } from "./sagas/blogSagas/BlogSagas";
 import { watchFetchEarningTable } from "./sagas/earningSagas/EarningTableSaga";
 import { watchFetchEarningTopCountry } from "./sagas/earningSagas/EarningTopContrySaga";
 import { watchFetchPayoutTable } from "./sagas/payoutSagas/PayoutTableSaga";
+import { watchFetchCreditTable } from "./sagas/creditSagas/CreditTableSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -21,5 +22,6 @@ export default function* rootSaga() {
     watchFetchEarningTable(),
     watchFetchEarningTopCountry(),
     watchFetchPayoutTable(),
+    watchFetchCreditTable(),
   ]);
 }
