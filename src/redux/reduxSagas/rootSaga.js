@@ -6,6 +6,9 @@ import { watchFetchHomeLiveStreams } from "./sagas/homeSagas/HomeLivestreamSaga"
 import { watchFetchHomeFeaturedCourses } from "./sagas/homeSagas/HomeFeaturedCourseSaga";
 import { watchFetchLiveOutputLiveStreams } from "./sagas/liveOutputSagas/liveOutputLivestreamSagas";
 import { watchFetchBlogs } from "./sagas/blogSagas/BlogSagas";
+import { watchFetchEarningTable } from "./sagas/earningSagas/EarningTableSaga";
+import { watchFetchEarningTopCountry } from "./sagas/earningSagas/EarningTopContrySaga";
+import { watchFetchPayoutTable } from "./sagas/payoutSagas/PayoutTableSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -15,5 +18,8 @@ export default function* rootSaga() {
     watchFetchHomeFeaturedCourses(),
     watchFetchLiveOutputLiveStreams(),
     watchFetchBlogs(),
+    watchFetchEarningTable(),
+    watchFetchEarningTopCountry(),
+    watchFetchPayoutTable(),
   ]);
 }

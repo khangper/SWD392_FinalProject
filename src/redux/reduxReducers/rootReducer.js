@@ -5,6 +5,9 @@ import HomeLivestreamReducer from "./reducers/homeReducers/HomeLivestreamReducer
 import HomeFeaturedCourseReducer from "./reducers/homeReducers/HomeFeatureCourseReducer";
 import liveOutputLivestreamReducers from "./reducers/liveOutputReducers/liveOutputLivestreamReducers";
 import BlogReducer from "./reducers/blogReducers/BlogReducer";
+import EarningTableReducer from "./reducers/earningReducers/EarningTableReducers";
+import EarningTopCountryReducer from "./reducers/earningReducers/EarningTopCountryReducer";
+import PayoutTableReducer from "./reducers/payoutReducers/PayoutTableReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
@@ -13,6 +16,9 @@ const rootReducer = combineReducers({
   allinstructor: instructorReducer,
   live_output_livestream: liveOutputLivestreamReducers,
   blogs: BlogReducer,
+  earning_table: EarningTableReducer,
+  earning_top_country: EarningTopCountryReducer,
+  payout_table: PayoutTableReducer,
 });
 
 export default rootReducer;

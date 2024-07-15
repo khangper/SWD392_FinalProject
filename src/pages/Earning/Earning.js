@@ -1,119 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Earning.css";
 import { MdOutlineAttachMoney } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEarningTableRequest } from "../../redux/reduxActions/earningActions/EarningTableAction";
+import { fetchEarningTopCountryRequest } from "../../redux/reduxActions/earningActions/EarningTopCountryAction";
 
 const Earning = () => {
-  const countries = [
-    {
-      id: 1,
-      country: "United States",
-      coin: "$48",
-    },
-    {
-      id: 2,
-      country: "Bulgaria",
-      coin: "$35",
-    },
-    {
-      id: 3,
-      country: "Dominica",
-      coin: "$25",
-    },
-    {
-      id: 4,
-      country: "Italy",
-      coin: "$18",
-    },
-    {
-      id: 5,
-      country: "Korea, Republic of",
-      coin: "$18",
-    },
-    {
-      id: 6,
-      country: "Malaysia",
-      coin: "$10",
-    },
-    {
-      id: 7,
-      country: "Netherlands",
-      coin: "$8",
-    },
-    {
-      id: 8,
-      country: "Thailand",
-      coin: "$5",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { itemSales } = useSelector((state) => state.earning_table);
+  const { topCountries } = useSelector((state) => state.earning_top_country);
 
-  const itemSales = [
-    {
-      id: 1,
-      date: "1,Wednesday",
-      item: 3,
-      earning: "$120.50",
-    },
-    {
-      id: 2,
-      date: "2,Thursday",
-      item: 2,
-      earning: "$84.00",
-    },
-    {
-      id: 3,
-      date: "4,Saturday",
-      item: 4,
-      earning: "$150.50",
-    },
-    {
-      id: 4,
-      date: "5,Sunday",
-      item: 3,
-      earning: "$102.24",
-    },
-    {
-      id: 5,
-      date: "6,Monday",
-      item: 2,
-      earning: "$80.50",
-    },
-    {
-      id: 6,
-      date: "7,Tuesday",
-      item: 3,
-      earning: "$70.50",
-    },
-    {
-      id: 7,
-      date: "8,Wednesday",
-      item: 5,
-      earning: "$130.00",
-    },
-    {
-      id: 8,
-      date: "9,Thursday",
-      item: 3,
-      earning: "$95.50",
-    },
-    {
-      id: 9,
-      date: "10,Friday",
-      item: 4,
-      earning: "$152.50",
-    },
-    {
-      id: 10,
-      date: "11,Saturday",
-      item: 3,
-      earning: "$100.40",
-    },
-    {
-      id: 11,
-      date: "12,Sunday",
-      item: 2,
-      earning: "$60.14",
-    },
-  ];
+  useEffect(() => {
+    dispatch(fetchEarningTableRequest());
+    dispatch(fetchEarningTopCountryRequest());
+  }, [dispatch]);
+
+  //Calculate the total earnings
+  const totalEarning = itemSales.reduce((acc, itemSale) => {
+    return acc + itemSale.earning;
+  }, 0);
+
+  const formattedTotalEarning = totalEarning.toLocaleString('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+});
+
+  //Calculate thr total item
+  const totalItem = itemSales.reduce((acc, itemSale) => {
+    return acc + itemSale.numberOfItems;
+  }, 0);
 
   return (
     <main className="earning">
@@ -136,7 +53,7 @@ const Earning = () => {
               </div>
             </div>
             <div className="earning-heading-2-wrapper">
-              <div className="earning-heading-2">$1146.78</div>
+              <div className="earning-heading-2">$1,146.78</div>
             </div>
           </div>
           <div className="earning-paragraph-background">
@@ -144,7 +61,7 @@ const Earning = () => {
               <div className="earning-heading-1">Your balance:</div>
             </div>
             <div className="earning-heading-2-wrapper">
-              <div className="earning-heading-2">$1146.78</div>
+              <div className="earning-heading-2">$1,146.78</div>
             </div>
           </div>
           <div className="earning-paragraph-background">
@@ -154,7 +71,7 @@ const Earning = () => {
               </div>
             </div>
             <div className="earning-heading-2-wrapper">
-              <div className="earning-heading-2">$95895.54</div>
+              <div className="earning-heading-2">$95,895.54</div>
             </div>
           </div>
         </div>
@@ -171,10 +88,10 @@ const Earning = () => {
                 </tr>
               </thead>
               <tbody>
-                {countries.map((country) => (
+                {topCountries.map((country) => (
                   <tr key={country.id}>
                     <td>{country.country}</td>
-                    <td className="earning-table-coin">{country.coin}</td>
+                    <td className="earning-table-coin">${country.price}</td>
                   </tr>
                 ))}
               </tbody>
@@ -202,32 +119,31 @@ const Earning = () => {
             </div>
 
             <div className="earning-table-data">
-                <table className="earning-table-items">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Item Sales Counts</th>
-                            <th>Earning</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {itemSales.map((item)=>(
-                        <tr key={item.id}>
-                            <td>{item.date}</td>
-                            <td>{item.item}</td>
-                            <td>{item.earning}</td>
-                        </tr>
-                    ))}
-                        
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Total</td>
-                            <td>34</td>
-                            <td>$1146.78</td>
-                        </tr>
-                    </tfoot>
-                </table>
+              <table className="earning-table-items">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Item Sales Counts</th>
+                    <th>Earning</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {itemSales.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.date}</td>
+                      <td>{item.numberOfItems}</td>
+                      <td>${item.earning}</td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td>Total</td>
+                    <td>{totalItem}</td>
+                    <td>{formattedTotalEarning}</td>
+                  </tr>
+                </tfoot>
+              </table>
             </div>
           </div>
         </div>

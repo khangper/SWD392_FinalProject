@@ -253,4 +253,12 @@
         padding-top: 50px;
     }
 
+    .earning-summary{
+      display: block;
+    }
+
+    .earning-paragraph-background{
+      margin-bottom: 20px;
+    }
+
 }
