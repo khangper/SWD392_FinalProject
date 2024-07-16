@@ -1,9 +1,11 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { fetchHomeLiveStreamsSuccess, fetchHomeLiveStreamsFailure } from '../../../reduxActions/homeActions/HomeLivestreamAction';
-import { FETCH_HOME_LIVESTREAM_REQUEST } from '../../../../constant/data';
+import { API_KEY, FETCH_HOME_LIVESTREAM_REQUEST } from '../../../../constant/data';
+import { startLoading, stopLoading } from '../../../reduxActions/LoadingAction';
 function* fetchHomeLiveStreams() {
     try {
-      const response = yield call(fetch, 'https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/home_livestream');
+      yield put(startLoading());
+      const response = yield call(fetch, `${API_KEY}home_livestream`);
       const data = yield response.json();
       if (response.ok) {
         yield put(fetchHomeLiveStreamsSuccess(data));
@@ -12,6 +14,8 @@ function* fetchHomeLiveStreams() {
       }
     } catch (error) {
       yield put(fetchHomeLiveStreamsFailure(error.message));
+    } finally{
+      yield put(stopLoading());
     }
   }
   

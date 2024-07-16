@@ -1,3 +1,6 @@
+.about{
+  font-family: 'Roboto', sans-serif;
+}
 .about-background-parent {
   flex-direction: column;
   align-items: flex-start;
@@ -20,21 +23,6 @@
   display: inline-block;
 }
 
-.about-about {
-  min-width: 38px;
-}
-.about-blog {
-  min-width: 29px;
-}
-.about-company {
-  min-width: 60px;
-}
-.about-careers {
-  min-width: 49px;
-}
-.about-press {
-  min-width: 36px;
-}
 
 .about-navigation-links-1,
 .about-navigation-links-2,
@@ -52,17 +40,14 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 6px 20px 7px 21px;
 }
 
+.about-navigation-links,
 .about-navigation-links-1,
 .about-navigation-links-2,
-.about-navigation-links-3 {
-  padding: 6px 20px 0 0;
-}
-
+.about-navigation-links-3,
 .about-navigation-links-4 {
-  padding: 6px 0 0;
+  padding: 6px 20px;
 }
 
 .about-navigation-links-parent {
@@ -70,7 +55,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: row;
-  gap: 14px;
   max-width: 100%;
   font-size: 14px;
 }
