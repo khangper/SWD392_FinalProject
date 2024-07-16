@@ -1,11 +1,13 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { fetchHomeFeaturedCoursesFailure, fetchHomeFeaturedCoursesSuccess } from '../../../reduxActions/homeActions/HomeFeaturedCourseAction';
-import { FETCH_HOME_FEATURED_COURSES_REQUEST } from '../../../../constant/data';
+import { API_KEY, FETCH_HOME_FEATURED_COURSES_REQUEST } from '../../../../constant/data';
+import { startLoading, stopLoading } from '../../../reduxActions/LoadingAction';
 
 
 function* fetchHomeFeaturedCourses() {
   try {
-    const response = yield call(fetch, 'https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/home_featuredcourse');
+    yield put(startLoading());
+    const response = yield call(fetch, `${API_KEY}home_featuredcourse`);
     const data = yield response.json();
     if (response.ok) {
       yield put(fetchHomeFeaturedCoursesSuccess(data));
@@ -14,6 +16,8 @@ function* fetchHomeFeaturedCourses() {
     }
   } catch (error) {
     yield put(fetchHomeFeaturedCoursesFailure(error.message));
+  }finally{
+    yield put(stopLoading());
   }
 }
 

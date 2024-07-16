@@ -637,16 +637,6 @@
     font-size: 20px;
 }
 
-.oiv-dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
 .eps_dots:hover .oiv-dropdown-content {
     display: block;
 }

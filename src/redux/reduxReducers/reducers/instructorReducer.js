@@ -1,5 +1,7 @@
 import {
   FETCH_INSTRUCTOR_BY_ID_REQUEST,
+  FETCH_INSTRUCTOR_BY_ID_SUCCESS,
+  FETCH_INSTRUCTOR_BY_ID_FAILURE,
   FETCH_INSTRUCTORS_FAILURE,
   FETCH_INSTRUCTORS_REQUEST,
   FETCH_INSTRUCTORS_SUCCESS,
@@ -8,6 +10,7 @@ import {
 
 const initialState = {
   instructors: [],
+  instructorDetail: null,
   loading: false,
   error: null,
 };
@@ -23,6 +26,10 @@ const instructorReducer = (state = initialState, action) => {
       return { ...state, loading: false, error: action.payload };
     case FETCH_INSTRUCTOR_BY_ID_REQUEST:
       return { ...state, loading: true, error: null };
+    case FETCH_INSTRUCTOR_BY_ID_SUCCESS:
+      return { ...state, loading: false, instructorDetail: action.payload };
+    case FETCH_INSTRUCTOR_BY_ID_FAILURE:
+      return { ...state, loading: false, error: action.payload };
     default:
       return state;
   }
