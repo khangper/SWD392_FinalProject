@@ -10,7 +10,7 @@ import loadingReducer from "./reducers/LoadingReducer";
 import HomeNewestCourseReducer from "./reducers/homeReducers/HomeNewestCourseReducer";
 import HomePopularInstructorReducer from "./reducers/homeReducers/HomePopularInstructorReducer";
 import HomeStudentThoughtReducer from "./reducers/homeReducers/HomeStudentThoughtReducer";
-  import liveOutputLivestreamReducers from "./reducers/liveOutputReducers/liveOutputLivestreamReducers";
+import liveOutputLivestreamReducers from "./reducers/liveOutputReducers/liveOutputLivestreamReducers";
 import BlogReducer from "./reducers/blogReducers/BlogReducer";
 import EarningTableReducer from "./reducers/earningReducers/EarningTableReducers";
 import EarningTopCountryReducer from "./reducers/earningReducers/EarningTopCountryReducer";
@@ -21,13 +21,15 @@ import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
 import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
 import mycertificationReducer from "./reducers/MyCertificationsReducer";
+import statementSTReducer from "./reducers/StatementSTReducer";
+import statementISReducer from "./reducers/StatementISReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
   home_featuredcourse: HomeFeaturedCourseReducer,
-   home_newestcourse: HomeNewestCourseReducer,
-    home_popularinstructor: HomePopularInstructorReducer,
-    home_studentthought: HomeStudentThoughtReducer,
+  home_newestcourse: HomeNewestCourseReducer,
+  home_popularinstructor: HomePopularInstructorReducer,
+  home_studentthought: HomeStudentThoughtReducer,
   streams: streamsReducer,
   allinstructor: instructorReducer,
   loading: loadingReducer,
@@ -45,6 +47,8 @@ const rootReducer = combineReducers({
   cart: ShoppingCartReducer,
   courses: courseReducer,
   mycertifications: mycertificationReducer,
+  statementST: statementSTReducer,
+  statementIS: statementISReducer,
 });
 
 export default rootReducer;

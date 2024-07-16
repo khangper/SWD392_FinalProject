@@ -53,7 +53,7 @@ export const PATH_NAME = {
   VERTIFICATION: "/vertification",
   MYCERTIFICATIONS: "/mycertifications",
   CREDIT: "/credits",
-  STATEMENTIS: "/statements",
+  STATEMENTIS: "/statementis",
   STATEMENTST: "/statementst",
   ANALYTICS: "/analytics",
   CREATE_NEW_COURSE: "/create-course",
