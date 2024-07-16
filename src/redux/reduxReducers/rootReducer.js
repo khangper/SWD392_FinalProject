@@ -14,7 +14,6 @@ import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
 import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
 
-
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
   home_featuredcourse: HomeFeaturedCourseReducer,
