@@ -104,12 +104,12 @@
     vertical-align: bottom;
 }
 
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
+.MyCertifications_ucp_table tbody,
+.MyCertifications_ucp_table td,
+.MyCertifications_ucp_table tfoot,
+.MyCertifications_ucp_table th,
+.MyCertifications_ucp_table thead,
+.MyCertifications_ucp_table tr {
     border-color: inherit;
     border-style: solid;
     border-width: 0;
@@ -180,7 +180,7 @@ tr {
 }
 
 
-/* a {
+.MyCertifications_text_center a {
     color: #4183c4;
     text-decoration: none;
-} */
+}

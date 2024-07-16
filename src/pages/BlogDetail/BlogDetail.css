@@ -91,7 +91,7 @@
   max-width: 100%;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px 430px 0 360px;
+  padding: 20px 190px 0;
   height: 120px;
 }
 
@@ -160,6 +160,7 @@
 .blog-detail-paragraph {
   margin: 0;
   font-size: 14px;
+  color: #686f7a;
 }
 
 .blog-detail-content-container {
@@ -232,6 +233,7 @@
   font-weight: 550;
   margin: 0 !important;
   color: #333;
+  font-size: 16px !important;
 }
 
 .blog-detail-footer-content-1,
@@ -281,31 +283,24 @@
   height: 180px;
   max-width: 100%;
   background-color: #f7f7f7;
-  padding: 0 360px;
+  padding: 0 180px;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1350px) {
-  .blog-detail-breadcrumb-content,
+@media screen and (max-width: 1250px) {
   .blog-detail-footer-parent {
-    max-width: 100%;
-    box-sizing: border-box;
-    padding-right: 180px;
-    padding-left: 180px;
+    padding-right: 90px;
+    padding-left: 90px;
   }
 }
 
 @media screen and (max-width: 900px) {
   .blog-detail-breadcrumb-content {
-    max-width: 100%;
-    box-sizing: border-box;
     padding-left: 80px;
     padding-right: 80px;
   }
 
   .blog-detail-footer-parent {
-    max-width: 100%;
-    box-sizing: border-box;
     padding-left: 40px;
     padding-right: 40px;
   }
