@@ -4,6 +4,10 @@
   grid-gap: 20px; 
 }
 
+.All-Instructor-grid-container li {
+  list-style: none;
+}
+
 .All-Instructor-grid-item {
   background-color: #fff; 
   padding: 20px 0px;

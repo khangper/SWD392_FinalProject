@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Blog.css";
 import Header from "../../components/Header/Header";
 import { FaTwitter } from "react-icons/fa";
@@ -9,45 +9,54 @@ import big_blog from "../../assets/big_blog.jpg";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogRequest } from "../../redux/reduxActions/blogActions/BlogAction";
+import numeral from "numeral";
 const Blog = () => {
-  const blog_details = [
-    {
-      id: 1,
-      img: big_blog,
-      views: "109k",
-      day: "March 10, 2020",
-      title: "Blog Title Here",
-      content:
-        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-    },
-    {
-      id: 2,
-      img: big_blog,
-      views: "109k",
-      day: "March 10, 2020",
-      title: "Blog Title Here",
-      content:
-        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-    },
-    {
-      id: 3,
-      img: big_blog,
-      views: "109k",
-      day: "March 10, 2020",
-      title: "Blog Title Here",
-      content:
-        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-    },
-    {
-      id: 4,
-      img: big_blog,
-      views: "109k",
-      day: "March 10, 2020",
-      title: "Blog Title Here",
-      content:
-        "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { blogs } = useSelector((state) => state.blogs);
+
+  useEffect(() => {
+    dispatch(fetchBlogRequest());
+  }, [dispatch]);
+  // const blog_details = [
+  //   {
+  //     id: 1,
+  //     img: big_blog,
+  //     views: "109k",
+  //     day: "March 10, 2020",
+  //     title: "Blog Title Here",
+  //     content:
+  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+  //   },
+  //   {
+  //     id: 2,
+  //     img: big_blog,
+  //     views: "109k",
+  //     day: "March 10, 2020",
+  //     title: "Blog Title Here",
+  //     content:
+  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+  //   },
+  //   {
+  //     id: 3,
+  //     img: big_blog,
+  //     views: "109k",
+  //     day: "March 10, 2020",
+  //     title: "Blog Title Here",
+  //     content:
+  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+  //   },
+  //   {
+  //     id: 4,
+  //     img: big_blog,
+  //     views: "109k",
+  //     day: "March 10, 2020",
+  //     title: "Blog Title Here",
+  //     content:
+  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
+  //   },
+  // ];
   return (
     <div className="blog">
       <Header />
@@ -143,11 +152,15 @@ const Blog = () => {
               </form>
 
               <div className="blog-backgroundBorder-group">
-                {blog_details.map((blog) => (
+                {blogs.map((blog) => (
                   <div key={blog.id} className="blog-backgroundBorder-1">
                     <div className="blog-link">
                       <Link to={PATH_NAME.BLOG_SINGLE_VIEW}>
-                        <img src={blog.img} alt="" className="blog-img-blog" />
+                        <img
+                          src={blog.thumbnails}
+                          alt=""
+                          className="blog-img-blog"
+                        />
 
                         <div className="blog-gradient" />
                       </Link>
@@ -158,11 +171,17 @@ const Blog = () => {
                           <div className="blog-frame-div">
                             <div className="blog-views-parent">
                               <div className="blog-views">
-                                {blog.views} views
+                                {numeral(blog.viewCount)
+                                  .format("0.a")
+                                  .replace(/m/g, "M")
+                                  .replace(/k/g, "K")}{" "}
+                                views
                               </div>
                               <div className="blog-point">•</div>
                             </div>
-                            <div className="blog-time-post">{blog.day}</div>
+                            <div className="blog-time-post">
+                              {blog.createdAt}
+                            </div>
                           </div>
                           <Link
                             to={PATH_NAME.BLOG_SINGLE_VIEW}

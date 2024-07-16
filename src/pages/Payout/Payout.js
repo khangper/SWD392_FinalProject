@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Payout.css";
 import { LuWallet } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPayoutTableRequest } from "../../redux/reduxActions/payoutActions/PayoutTableAction";
 
 const Payout = () => {
+  const dispatch = useDispatch();
+  const { payout } = useSelector((state) => state.payout_table);
+
+  useEffect(() => {
+    dispatch(fetchPayoutTableRequest());
+  }, [dispatch]);
   return (
     <main className="payout">
       <div className="payout-wrapper">
@@ -23,7 +31,7 @@ const Payout = () => {
                 <div className="payout-label">Next payout</div>
               </div>
               <div className="payout-via-wrapper">
-                <div className="payout-coin">$4568.50</div>
+                <div className="payout-coin">$4,568.50</div>
                 <div className="payout-via">via Payoneer</div>
               </div>
               <div className="payout-day-wrapper">
@@ -46,13 +54,12 @@ const Payout = () => {
                   Added: <span>01 Mar 2020</span>
                 </div>
               </div>
-              
+
               <div className="payout-button-wrapper">
-              <Link to='#'>             
-                <button className="payout-button">Set Account</button>              
+                <Link to="#">
+                  <button className="payout-button">Set Account</button>
                 </Link>
               </div>
-              
             </div>
           </div>
           <div className="payout-table">
@@ -65,17 +72,14 @@ const Payout = () => {
                 </tr>
               </thead>
               <tbody>
+              {payout.map((payout)=>(
                 <tr>
-                  <td>$2550.54</td>
-                  <td>Payoneer</td>
-                  <td>15 Mar 2020</td>
+                  <td>{payout.formattedAmount}</td>
+                  <td>{payout.method}</td>
+                  <td>{payout.date}</td>
                 </tr>
-
-                <tr>
-                  <td>$1950.14</td>
-                  <td>Payoneer</td>
-                  <td>15 Feb 2020</td>
-                </tr>
+              ))}
+                
               </tbody>
             </table>
           </div>
