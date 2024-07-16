@@ -9,13 +9,22 @@ import share from "../../assets/share.png";
 import saved_course from "../../assets/saved-course.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
+import { useDispatch, useSelector } from "react-redux";
+import{fetchSearchResultRequest} from '../../redux/reduxActions/searchresultAction'
 
 const SearchResult = () => {
+    const dispatch = useDispatch();
+    const { sr_course } = useSelector((state) => state.searchresult);
+
     const [isOpen, setIsOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState('Sort');
     const [visibleSection, setVisibleSection] = useState(null);
     const [selectedOption, setSelectedOption] = useState("");
     const optionsRef = useRef([]);
+
+    useEffect(() => {
+        dispatch(fetchSearchResultRequest())
+    }, [dispatch]);
 
     const sortOptions = [
         'Most Relevant',
@@ -429,7 +438,7 @@ const SearchResult = () => {
                     <div className='SR_Right_Col'>
                         <div className='Search_Result_Body_Right'>
                             <h4 className="SR_Num_Result">{RS_Courses.length} Results</h4>
-                            {RS_Courses.map((course) => (
+                            {sr_course.map((course) => (
                                 <div key={course.id} className="SR_fcrse_1 MTSR30">
                                     <a href="https://gambolthemes.net/html-items/cursus-new-demo/course_detail_view.html" className="hf_img">
                                         <img src={course.imgSrc} alt="" />

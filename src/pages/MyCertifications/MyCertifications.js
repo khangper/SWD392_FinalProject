@@ -1,8 +1,35 @@
 import React from 'react';
 import './MyCertifications.css';
-import garbage from '..//../assets/garbage.png'
+import garbage from '../../assets/garbage.png';
 
 const MyCertifications = () => {
+    const certifications = [
+        {
+            id: 1,
+            name: 'WordPress Certificate',
+            score1: 15,
+            score2: 20,
+            date: '6 April 2019',
+            link: 'https://gambolthemes.net/html-imgs/certificate.jpg'
+        },
+        {
+            id: 2,
+            name: 'WordPress Pro Certificate',
+            score1: 14,
+            score2: 20,
+            date: '4 April 2019',
+            link: 'http://gambolthemes.net/html-imgs/certificate.jpg'
+        },
+        {
+            id: 3,
+            name: 'HTML CSS Certificate',
+            score1: 18,
+            score2: 20,
+            date: '3 April 2019',
+            link: 'http://gambolthemes.net/html-imgs/certificate.jpg'
+        }
+    ];
+
     return (
         <div className='MyCertifications_Container'>
             <div className='MyCertifications_Header'>
@@ -40,46 +67,28 @@ const MyCertifications = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td className="MyCertifications_text_center">1</td>
-                                        <td className="MyCertifications_cell_ta">WordPress Certificate</td>
-                                        <td className="MyCertifications_text_center">15</td>
-                                        <td className="MyCertifications_text_center">20</td>
-                                        <td className="MyCertifications_text_center">6 April 2019</td>
-                                        <td className="MyCertifications_text_center"><a href="https://gambolthemes.net/html-imgs/certificate.jpg" target="_blank" rel="noopener noreferrer">View</a></td>
-                                        <td className="MyCertifications_text_center">
-                                            <a href="#" title="Delete" className="MyCertifications_gray_s"><img src={garbage} className="Edit-icon" /></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="MyCertifications_text_center">2</td>
-                                        <td className="MyCertifications_cell_ta">WordPress Pro Certificate</td>
-                                        <td className="MyCertifications_text_center">14</td>
-                                        <td className="MyCertifications_text_center">20</td>
-                                        <td className="MyCertifications_text_center">4 April 2019</td>
-                                        <td className="MyCertifications_text_center"><a href="http://gambolthemes.net/html-imgs/certificate.jpg" target="_blank" rel="noopener noreferrer">View</a></td>
-                                        <td className="MyCertifications_text_center">
-                                            <a href="#" title="Delete" className="MyCertifications_gray_s"><img src={garbage} className="Edit-icon" /></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="MyCertifications_text_center">3</td>
-                                        <td className="MyCertifications_cell_ta">HTML CSS Certificate</td>
-                                        <td className="MyCertifications_text_center">18</td>
-                                        <td className="MyCertifications_text_center">20</td>
-                                        <td className="MyCertifications_text_center">3 April 2019</td>
-                                        <td className="MyCertifications_text_center"><a href="http://gambolthemes.net/html-imgs/certificate.jpg" target="_blank" rel="noopener noreferrer">View</a></td>
-                                        <td className="MyCertifications_text_center">
-                                            <a href="#" title="Delete" className="MyCertifications_gray_s"><img src={garbage} className="Edit-icon" /></a>
-                                        </td>
-                                    </tr>
+                                    {certifications.map(cert => (
+                                        <tr key={cert.id}>
+                                            <td className="MyCertifications_text_center">{cert.id}</td>
+                                            <td className="MyCertifications_cell_ta">{cert.name}</td>
+                                            <td className="MyCertifications_text_center">{cert.score1}</td>
+                                            <td className="MyCertifications_text_center">{cert.score2}</td>
+                                            <td className="MyCertifications_text_center">{cert.date}</td>
+                                            <td className="MyCertifications_text_center">
+                                                <a href={cert.link} target="_blank" rel="noopener noreferrer">View</a>
+                                            </td>
+                                            <td className="MyCertifications_text_center">
+                                                <a href="#" title="Delete" className="MyCertifications_gray_s"><img src={garbage} className="Edit-icon" alt="Delete" /></a>
+                                            </td>
+                                        </tr>
+                                    ))}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
