@@ -10,7 +10,9 @@
 // import {
 //   fetchSaveCoursesRequest,
 //   fetchSaveCoursesSuccess,
+//   deleteSaveCourseRequest,
 // } from "../../redux/reduxActions/SaveCourseAction";
+// import { addToCart } from "../../redux/reduxActions/ShoppingCartAction";
 
 // const SaveCourses = () => {
 //   const dispatch = useDispatch();
@@ -35,11 +37,15 @@
 //   };
 
 //   const removeSelectedCourses = () => {
-//     const updatedCourses = courses.filter(
-//       (course) => !selectedCourses.includes(course.id)
-//     );
-//     dispatch(fetchSaveCoursesSuccess(updatedCourses));
+//     selectedCourses.forEach((id) => {
+//       dispatch(deleteSaveCourseRequest(id));
+//     });
 //     setSelectedCourses([]);
+//   };
+
+//   const handleAddToCart = (course, event) => {
+//     event.stopPropagation(); // Prevent the event from bubbling up to the parent elements
+//     dispatch(addToCart(course));
 //   };
 
 //   if (loading) {
@@ -79,7 +85,7 @@
 //                     className="rmv-btn"
 //                     onClick={(e) => {
 //                       e.preventDefault();
-//                       removeSelectedCourses(); // Gọi hàm xóa khóa học đã chọn
+//                       removeSelectedCourses();
 //                     }}
 //                   >
 //                     <i className="uil uil-trash-alt"></i>Remove Selected Courses
@@ -192,7 +198,7 @@
 //                                       href="#"
 //                                       onClick={(e) => e.preventDefault()}
 //                                     >
-//                                       John Doe
+//                                       {course.author}
 //                                     </a>
 //                                   </p>
 //                                   <div className="oiv-price">
@@ -201,7 +207,7 @@
 //                                   <button
 //                                     className="sc-cart"
 //                                     title="cart"
-//                                     onClick={(e) => e.stopPropagation()}
+//                                     onClick={(e) => handleAddToCart(course, e)}
 //                                   >
 //                                     <img
 //                                       src={card_icon}
@@ -228,11 +234,6 @@
 // };
 
 // export default SaveCourses;
-
-// src/components/SaveCourses/SaveCourses.js
-
-// src/components/SaveCourses/SaveCourses.js
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./SaveCourses.css";
@@ -244,7 +245,7 @@ import report from "../../assets/report.png";
 import card_icon from "../../assets/cart-icon.png";
 import {
   fetchSaveCoursesRequest,
-  fetchSaveCoursesSuccess,
+  deleteSaveCourseRequest,
 } from "../../redux/reduxActions/SaveCourseAction";
 import { addToCart } from "../../redux/reduxActions/ShoppingCartAction";
 
@@ -271,10 +272,9 @@ const SaveCourses = () => {
   };
 
   const removeSelectedCourses = () => {
-    const updatedCourses = courses.filter(
-      (course) => !selectedCourses.includes(course.id)
-    );
-    dispatch(fetchSaveCoursesSuccess(updatedCourses));
+    selectedCourses.forEach((id) => {
+      dispatch(deleteSaveCourseRequest(id));
+    });
     setSelectedCourses([]);
   };
 

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import "./ShoppingCart.css";
 import Header from "../../components/Header-paidmember/Header";
 import { Link } from "react-router-dom";
@@ -7,17 +7,16 @@ import Closeshopping from "../../assets/Close-shopping.png";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
 import { removeFromCart } from "../../redux/reduxActions/ShoppingCartAction";
+import { ShoppingCart_API_URL } from "../../constant/data";
 
 function ShoppingCart() {
   const dispatch = useDispatch();
-  const courses = useSelector((state) => state.cart.cart);
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
-
-  const removeCourse = (courseId) => {
-    dispatch(removeFromCart(courseId));
-  };
 
   const applyCouponCode = () => {
     const discountValue = parseFloat(couponCode);
@@ -36,10 +35,54 @@ function ShoppingCart() {
 
   const discountedTotal = Math.max(totalPrice - discount, 0);
 
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch(ShoppingCart_API_URL);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setCourses(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  const removeCourse = async (courseId) => {
+    try {
+      const response = await fetch(`${ShoppingCart_API_URL}/${courseId}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to remove course");
+      }
+
+      setCourses(courses.filter((course) => course.id !== courseId));
+      dispatch(removeFromCart(courseId));
+    } catch (error) {
+      console.error(error.message);
+      alert("Error removing course");
+    }
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="ShoppingPage">
       <Header />
-
       <div className="HelpView1-grid-container">
         <div className="HelpView-title125">
           <div className="HelpView-titleleft">
@@ -47,7 +90,7 @@ function ShoppingCart() {
               <nav aria-label="breadcrumb">
                 <ol className="HelpView-breadcrumb">
                   <li className="HelpView-breadcrumb-item">
-                    <a href="index.html">Home</a>
+                    <a href="/">Home</a>
                   </li>
                   <li
                     className="HelpView-breadcrumb-item active"
@@ -64,7 +107,6 @@ function ShoppingCart() {
           <h2>Shopping Cart</h2>
         </div>
       </div>
-
       <main>
         <div className="Shopping-Container">
           <div className="Billing-Details-GridContainer">
@@ -80,7 +122,11 @@ function ShoppingCart() {
                         onClick={() => removeCourse(course.id)}
                         className="shopping-close-button"
                       >
-                        <img src={Closeshopping} className="shopping-close" />
+                        <img
+                          src={Closeshopping}
+                          className="shopping-close"
+                          alt="Remove"
+                        />
                       </button>
                     </div>
                     <a href={course.detailLink} className="Shopping-crse14s">
@@ -100,12 +146,14 @@ function ShoppingCart() {
               ))}
             </div>
           </div>
-
           <div className="OrderSumury-GridContainer">
             <div className="membership_chk_bg rght1528">
               <div className="checkout_title">
                 <h4>Total</h4>
-                <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg" />
+                <img
+                  src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg"
+                  alt="line"
+                />
               </div>
               <div className="order_dt_section">
                 <div className="order_title">
@@ -156,7 +204,6 @@ function ShoppingCart() {
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );

@@ -5,6 +5,7 @@ import HomeLivestreamReducer from "./reducers/homeReducers/HomeLivestreamReducer
 import HomeFeaturedCourseReducer from "./reducers/homeReducers/HomeFeatureCourseReducer";
 import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
+import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   allinstructor: instructorReducer,
   saveCourses: saveCourseReducer,
   cart: ShoppingCartReducer,
+  courses: courseReducer,
 });
 
 export default rootReducer;
