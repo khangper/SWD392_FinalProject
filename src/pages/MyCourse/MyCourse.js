@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MyCourse.css";
 import DeleteMyCourse from "..//../assets/garbage.png";
 import EditMyCourse from "..//../assets/Edit-mycourse.png";
@@ -11,7 +11,44 @@ import Megaphone2 from "..//../assets/Megaphone2.png";
 import DowLoadMyCourse1 from "..//../assets/DowLoadMyCourse1.png";
 import MyCourseBook1 from "..//../assets/MyCourse-Book1.png";
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchCoursesRequest,
+  editCourseRequest,
+  deleteCourseRequest,
+} from "../../redux/reduxActions/MyCourse/CourseAction";
 function MyCourse() {
+  // My Course
+  const handleDelete = (courseId) => {
+    dispatch(deleteCourseRequest(courseId));
+  };
+  const dispatch = useDispatch();
+  const { courses, loading, error } = useSelector((state) => state.courses);
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentCourse, setCurrentCourse] = useState(null);
+
+  useEffect(() => {
+    dispatch(fetchCoursesRequest());
+  }, [dispatch]);
+
+  const handleEdit = (course) => {
+    setCurrentCourse(course);
+    setIsEditing(true);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(editCourseRequest(currentCourse));
+    setIsEditing(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setCurrentCourse((prevCourse) => ({
+      ...prevCourse,
+      [name]: value,
+    }));
+  };
   const openTab = (tabId) => {
     setActiveTab(tabId);
   };
@@ -22,64 +59,6 @@ function MyCourse() {
     setIsOpen(!isOpen);
   };
 
-  // My course
-  const courses = [
-    {
-      itemNo: "IT-001",
-      title: "Course Title Here",
-      publishDate: "06 April 2020 | 08:31",
-      sales: 15,
-      parts: 5,
-      category: "Web Development",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-002",
-      title: "Course Title Here",
-      publishDate: "05 April 2020 | 05:15",
-      sales: 30,
-      parts: 3,
-      category: "Graphic Design",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-003",
-      title: "Course Title",
-      publishDate: "03 April 2020 | 01:30",
-      sales: 14,
-      parts: 5,
-      category: "Bootstrap",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-004",
-      title: "Course Title Here",
-      publishDate: "02 April 2020 | 05:15",
-      sales: 110,
-      parts: 9,
-      category: "Game Development",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-005",
-      title: "Course Title Here",
-      publishDate: "28 March 2020 | 05:15",
-      sales: 185,
-      parts: 10,
-      category: "C++",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-  ];
   // My Purchase
   const MyPurchase = [
     {
@@ -267,7 +246,6 @@ function MyCourse() {
               role="tabpanel"
             >
               {/* Nội dung cho tab My Courses */}
-
               <div className="MyCouser-containerr">
                 <div className="MyCouser-table-container">
                   <table className="MyCourse-table ucp-table">
@@ -298,8 +276,18 @@ function MyCourse() {
                       </tr>
                     </thead>
                     <tbody>
+                      {loading && (
+                        <tr>
+                          <td colSpan="8">Loading...</td>
+                        </tr>
+                      )}
+                      {error && (
+                        <tr>
+                          <td colSpan="8">Error: {error}</td>
+                        </tr>
+                      )}
                       {courses.map((course) => (
-                        <tr key={course.itemNo}>
+                        <tr key={course.id}>
                           <td className="MyCourse-text-center">
                             {course.itemNo}
                           </td>
@@ -314,7 +302,7 @@ function MyCourse() {
                             {course.parts}
                           </td>
                           <td className="MyCourse-text-center">
-                            <a href="#">{course.category} </a>
+                            <a href="#">{course.category}</a>
                           </td>
                           <td className="MyCourse-text-center">
                             <b className="MyCourse-course_active">
@@ -322,15 +310,110 @@ function MyCourse() {
                             </b>
                           </td>
                           <td className="MyCourse-text-center">
-                            {/* <a href={course.actionEdit} title="Edit" className="MyCourse-gray-s"><img src={EditMyCourse}  className="search-icon" /></a> */}
-                            <img src={EditMyCourse} className="Edit-icon" />
-                            <img src={DeleteMyCourse} className="Edit-icon" />
+                            <img
+                              src={EditMyCourse}
+                              className="Edit-icon"
+                              onClick={() => handleEdit(course)}
+                              alt="Edit"
+                            />
+                            <img
+                              src={DeleteMyCourse}
+                              className="Edit-icon"
+                              onClick={() => handleDelete(course.id)}
+                              alt="Delete"
+                            />
                           </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
+                {isEditing && currentCourse && (
+                  <div className="edit-form-overlay">
+                    <div className="edit-form">
+                      <h2>Edit Course</h2>
+                      <form onSubmit={handleSubmit}>
+                        <label>
+                          Item No.:
+                          <input
+                            type="text"
+                            name="itemNo"
+                            value={currentCourse.itemNo}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Title:
+                          <input
+                            type="text"
+                            name="title"
+                            value={currentCourse.title}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Publish Date:
+                          <input
+                            type="text"
+                            name="publishDate"
+                            value={currentCourse.publishDate}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Sales:
+                          <input
+                            type="number"
+                            name="sales"
+                            value={currentCourse.sales}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Parts:
+                          <input
+                            type="text"
+                            name="parts"
+                            value={currentCourse.parts}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Category:
+                          <input
+                            type="text"
+                            name="category"
+                            value={currentCourse.category}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Status:
+                          <input
+                            type="text"
+                            name="status"
+                            value={currentCourse.status}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <button type="submit">Save</button>
+                        <button
+                          type="button"
+                          onClick={() => setIsEditing(false)}
+                        >
+                          Cancel
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
