@@ -4,7 +4,7 @@ import {
   fetchInstructorsRequest,
   searchInstructorsRequest,
 } from "../../redux/reduxActions/instructorActions";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import "./AllInstructorList.css";
 import searchIcon from "../../assets/search.png";
@@ -14,6 +14,10 @@ import linkedinIcon from "../../assets/linkedin.png";
 import youtubeIcon from "../../assets/youtube.png";
 
 const AllInstructor1 = () => {
+  const navigate = useNavigate();
+  const handleInstructorClick = (id) => {
+    navigate(`${PATH_NAME.OTHER_INSTRUCTOR_VIEW.replace(':id', id)}`);
+  };
   const dispatch = useDispatch();
   const { instructors, loading, error } = useSelector(
     (state) => state.allinstructor
@@ -95,8 +99,11 @@ const AllInstructor1 = () => {
       <main>
         <div className="All-Instructor-grid-container">
           {instructors.map((instructor) => (
-            <Link key={instructor.id} to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}>
-              {/* <Link key={instructor.id} to={`${PATH_NAME.OTHER_INSTRUCTOR_VIEW}/${instructor.id}`}></Link> */}
+            // <Link key={instructor.id} to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}>
+
+            // <Link key={instructor.id} to={`${PATH_NAME.OTHER_INSTRUCTOR_VIEW}/${instructor.id}`}>
+
+            <li key={instructor.id} onClick={() => handleInstructorClick(instructor.id)}>
               <div className="All-Instructor-grid-item">
                 <div className="All-Instructor-fcrse_1 mt-30">
                   <div className="All-Instructor-tutor_img">
@@ -147,7 +154,8 @@ const AllInstructor1 = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </li>
+            // </Link>
           ))}
         </div>
         <div className="main-loader mt-20">

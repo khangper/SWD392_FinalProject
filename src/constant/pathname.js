@@ -8,7 +8,7 @@ export const PATH_NAME = {
   HELP: "/help",
   REPORT_HISTORY: "/reporthistory",
   SEND_FEEDBACK: "/sendfeedback",
-  OTHER_INSTRUCTOR_VIEW: "/other-instructor-view",
+  OTHER_INSTRUCTOR_VIEW: "/other-instructor-view/:id",
   MY_INSTRUCTOR_PROFILE: "/my-instructor-profile",
   SAVE_COURSES: "/save-courses",
   SETTING: "/setting",
