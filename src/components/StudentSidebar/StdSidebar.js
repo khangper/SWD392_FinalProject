@@ -14,7 +14,7 @@ import feedbackIcon from "../../assets/send-feedback.png";
 const StdSidebar = ({ sidebar }) => {
   return (
     <div className={`ins-sidebar ${sidebar ? "" : "ins-small-sidebar"}`}>
-      <Link to="/ins-dashboard" className="side-link">
+      <Link to="/student-dashboard" className="side-link">
         <img
           className="sidebar-icon"
           src={dashboardIcon}

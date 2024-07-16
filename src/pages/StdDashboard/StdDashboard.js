@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./StdDashboard.css";
 import dashboardIcon from "../../assets/dashboard.png";
-import coursesIcon from "../../assets/BookHelp.png";
 const StdDashboard = () => {
   const dashboardCards = [
     {
@@ -19,44 +18,7 @@ const StdDashboard = () => {
       newBadgeClass: "new-enroll",
     },
   ];
-  const courses = [
-    {
-      id: 1,
-      title: "Complete Python Bootcamp: Go from zero to hero in Python 3",
-      views: "1.5k",
-      purchased: "150",
-      likes: "1k",
-      comments: "875",
-      reviews: "105",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
-      date: "First 2 days 22 hours",
-    },
-    {
-      id: 2,
-      title: "The Complete JavaScript Course 2020: Build Real Projects!",
-      views: "175k",
-      purchased: "1k",
-      likes: "85k",
-      comments: "915",
-      reviews: "255",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg",
-      date: "Second 4 days 9 hours",
-    },
-    {
-      id: 3,
-      title: "Beginning C++ Programming - From Beginner to Beyond",
-      views: "17k",
-      purchased: "25",
-      likes: "15k",
-      comments: "155",
-      reviews: "15",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-3.jpg",
-      date: "Third 6 days 11 hours",
-    },
-  ];
+
   const newsItems = [
     {
       id: 1,
@@ -83,14 +45,8 @@ const StdDashboard = () => {
       link: "#",
     },
   ];
-  const coursePerformanceRef = useRef(null);
   const newsPerformanceRef = useRef(null);
-  const scrollLeftCourse = () => {
-    coursePerformanceRef.current.scrollBy({ left: -410, behavior: "smooth" });
-  };
-  const scrollRightCourse = () => {
-    coursePerformanceRef.current.scrollBy({ left: 410, behavior: "smooth" });
-  };
+
   const scrollLeftNews = () => {
     newsPerformanceRef.current.scrollBy({ left: -410, behavior: "smooth" });
   };
