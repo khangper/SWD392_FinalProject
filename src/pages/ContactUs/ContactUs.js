@@ -54,6 +54,7 @@ const ContactUs = () => {
                         </a>
                     </div>
                     <div className='Contact_Map'></div>
+
                     <div className='Contact_Information'>
                         <div className="Contact_Checkout_Title">
                             <h4>Contact Information</h4>
