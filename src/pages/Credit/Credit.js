@@ -164,7 +164,7 @@ const Credit = () => {
                 </thead>
                 <tbody>
                 {credit.map((credit)=>(
-                  <tr>
+                  <tr key={credit.id}>
                     <td>{credit.formattedAmount}</td>
                     <td>{credit.method}</td>
                     <td>{credit.date}</td>
