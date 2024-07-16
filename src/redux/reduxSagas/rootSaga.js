@@ -8,6 +8,7 @@ import searchresultSaga from "./sagas/searchresultSaga";
 import { watchSaveCourses } from "./sagas/SaveCourseSaga";
 import { watchAddToCart } from "./sagas/ShoppingCartSaga";
 import courseSaga from "./sagas/MyCourseSaga/CourseSaga";
+import MyCertificationsSaga from "./sagas/MyCertificationsSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -18,6 +19,7 @@ export default function* rootSaga() {
     watchSaveCourses(),
     watchAddToCart(),
     courseSaga(),
-     searchresultSaga(),
+    searchresultSaga(),
+    MyCertificationsSaga(),
   ]);
 }

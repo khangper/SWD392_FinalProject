@@ -1,34 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './MyCertifications.css';
 import garbage from '../../assets/garbage.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMyCertificationRequest, deleteMyCertificationRequest } from '../../redux/reduxActions/MyCertificationsAction';
 
 const MyCertifications = () => {
-    const certifications = [
-        {
-            id: 1,
-            name: 'WordPress Certificate',
-            score1: 15,
-            score2: 20,
-            date: '6 April 2019',
-            link: 'https://gambolthemes.net/html-imgs/certificate.jpg'
-        },
-        {
-            id: 2,
-            name: 'WordPress Pro Certificate',
-            score1: 14,
-            score2: 20,
-            date: '4 April 2019',
-            link: 'http://gambolthemes.net/html-imgs/certificate.jpg'
-        },
-        {
-            id: 3,
-            name: 'HTML CSS Certificate',
-            score1: 18,
-            score2: 20,
-            date: '3 April 2019',
-            link: 'http://gambolthemes.net/html-imgs/certificate.jpg'
-        }
-    ];
+    const dispatch = useDispatch();
+    const { certifications, loading, error } = useSelector((state) => state.mycertifications);
+
+    useEffect(() => {
+        dispatch(fetchMyCertificationRequest());
+    }, [dispatch]);
+
+    const handleDelete = (certificationId) => {
+        dispatch(deleteMyCertificationRequest(certificationId));
+    };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
         <div className='MyCertifications_Container'>
@@ -78,7 +72,13 @@ const MyCertifications = () => {
                                                 <a href={cert.link} target="_blank" rel="noopener noreferrer">View</a>
                                             </td>
                                             <td className="MyCertifications_text_center">
-                                                <a href="#" title="Delete" className="MyCertifications_gray_s"><img src={garbage} className="Edit-icon" alt="Delete" /></a>
+                                                <a href="#" title="Delete" className="MyCertifications_gray_s" onClick={(e) => { e.preventDefault(); handleDelete(cert.id); }}>
+                                                    <img
+                                                        src={garbage}
+                                                        className="Edit-icon"
+                                                        alt="Delete"
+                                                    />
+                                                </a>
                                             </td>
                                         </tr>
                                     ))}
