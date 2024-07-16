@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./OtherInstructorView.css";
 import facebook from "../../assets/facebook.png";
 import x from "../../assets/x.png";
@@ -15,12 +15,26 @@ import dislike from "../../assets/dislike.png";
 import heart from "../../assets/heart.png";
 import edit from "../../assets/edit.png";
 import deletee from "../../assets/delete.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchInstructorByIdRequest } from "../../redux/reduxActions/instructorActions";
 
 const OtherInstructorView = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const { instructors, loading, error } = useSelector(
+    (state) => state.allinstructor
+  );
+  const instructorDetail = instructors.find(instructor => instructor.id === id);
   const [oivtab, setOivtab] = useState("about");
   const [selectOptions, setSelectOptions] = useState("");
+
+  useEffect(() => {
+    if (!instructorDetail) {
+      dispatch(fetchInstructorByIdRequest(id));
+    }
+  }, [dispatch, id, instructorDetail]);
 
   const handleoivTabChange = (tab) => {
     setOivtab(tab);
@@ -41,14 +55,11 @@ const OtherInstructorView = () => {
                     <div className="other_instructor_view-col-lg-6">
                       <div className="other_instructor_view-avatar">
                         <div className="other_instructor_view-img">
-                          <img
-                            src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg"
-                            alt=""
-                          />
+                          <img src={instructorDetail.image} alt={instructorDetail.name} />
                         </div>
                         <div className="other_instructor_view-name-career">
-                          <h2>John Doe</h2>
-                          <span>Web Developer</span>
+                          <h2>{instructorDetail.name}</h2>
+                          <span>{instructorDetail.category}</span>
                         </div>
                       </div>
                       <ul className="other_instructor_view-more_info">
@@ -58,7 +69,7 @@ const OtherInstructorView = () => {
                               Enroll Students
                             </div>
                             <div className="other_instructor_view-number">
-                              612K
+                              {instructorDetail.students}
                             </div>
                           </div>
                         </li>
@@ -68,7 +79,7 @@ const OtherInstructorView = () => {
                               Courses
                             </div>
                             <div className="other_instructor_view-number">
-                              8
+                              {instructorDetail.courses}
                             </div>
                           </div>
                         </li>
@@ -151,17 +162,15 @@ const OtherInstructorView = () => {
                         <div className="oiv-nav-about">About</div>
                       </div>
                       <div
-                        className={`tab ${
-                          oivtab === "courses" ? "active" : ""
-                        }`}
+                        className={`tab ${oivtab === "courses" ? "active" : ""
+                          }`}
                         onClick={() => handleoivTabChange("courses")}
                       >
                         <div className="oiv-nav-courses">Courses</div>
                       </div>
                       <div
-                        className={`tab ${
-                          oivtab === "discussion" ? "active" : ""
-                        }`}
+                        className={`tab ${oivtab === "discussion" ? "active" : ""
+                          }`}
                         onClick={() => handleoivTabChange("discussion")}
                       >
                         <div className="oiv-nav-discussion">Discussion</div>

@@ -6,6 +6,7 @@ import saved_course from "../../assets/saved-course.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
 import card_icon from '..//../assets/cart-icon.png';
+import deletes from "../../assets/delete.png";
 
 const SaveCourses = () => {
     return (
@@ -58,10 +59,8 @@ const SaveCourses = () => {
                                                                         ⋮
                                                                     </a>
                                                                     <div className="oiv-dropdown-content">
-                                                                        <span><img src={share} />Share</span>
-                                                                        <span><img src={saved_course} />Save</span>
-                                                                        <span><img src={not_interested} />Not Interested</span>
-                                                                        <span><img src={report} />Report</span>
+                                                                        <span><img src={deletes} />Remove</span>
+
                                                                     </div>
                                                                 </div>
 
