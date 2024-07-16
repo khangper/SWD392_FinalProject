@@ -10,7 +10,8 @@ import {
   SEARCH_INSTRUCTORS_REQUEST,
 } from "../../../constant/data";
 
-const API_URL = "https://668dde68bf9912d4c92c0fc3.mockapi.io/Allinstructor";
+const API_URL =
+  "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/AllInstructor";
 
 function* fetchInstructors() {
   try {

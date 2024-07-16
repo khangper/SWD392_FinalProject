@@ -11,7 +11,7 @@ function* fetchStreams() {
   try {
     const response = yield call(
       fetch,
-      "https://668dde68bf9912d4c92c0fc3.mockapi.io/alllivestream"
+      "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/AllLiveStream"
     );
     const data = yield response.json();
     yield put(fetchStreamsSuccess(data));
