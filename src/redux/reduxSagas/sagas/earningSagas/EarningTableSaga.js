@@ -17,7 +17,7 @@ function* fetchEarningTable() {
       yield put(fetchEarningTableSuccess(data));
     } else {
       yield put(
-        fetchEarningTableFailure(data.message || "Failed to fetch blog")
+        fetchEarningTableFailure(data.message || "Failed to fetch")
       );
     }
   } catch (error) {

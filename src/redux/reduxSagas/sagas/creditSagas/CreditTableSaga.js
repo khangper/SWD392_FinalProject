@@ -18,7 +18,7 @@ function* fetchCreditTable() {
       yield put(fetchCreditTableSuccess(data));
     } else {
       yield put(
-        fetchCreditTableFailure(data.message || "Failed to fetch blog")
+        fetchCreditTableFailure(data.message || "Failed to fetch")
       );
     }
   } catch (error) {

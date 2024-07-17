@@ -20,6 +20,8 @@ import searchresultSaga from "./sagas/searchresultSaga";
 import { watchSaveCourses } from "./sagas/SaveCourseSaga";
 import { watchAddToCart } from "./sagas/ShoppingCartSaga";
 import courseSaga from "./sagas/MyCourseSaga/CourseSaga";
+import { watchFetchPressNews } from "./sagas/pressSagas/PressNewsSaga";
+import { watchFetchPressRelease } from "./sagas/pressSagas/PressReleaseSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -43,6 +45,8 @@ export default function* rootSaga() {
     watchAddToCart(),
     courseSaga(),
      searchresultSaga(),
+    watchFetchPressNews(),
+    watchFetchPressRelease(),
   ]);
 
 }

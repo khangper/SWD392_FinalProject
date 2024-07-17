@@ -17,7 +17,7 @@ function* fetchEarningTopCountry() {
     if (response.ok) {
       yield put(fetchEarningTopCountrySuccess(data));
     } else {
-      yield put(fetchEarningTopCountryFailure(data.message || "Failed to fetch blog"));
+      yield put(fetchEarningTopCountryFailure(data.message || "Failed to fetch"));
     }
   } catch (error) {
     yield put(fetchEarningTopCountryFailure(error.message));

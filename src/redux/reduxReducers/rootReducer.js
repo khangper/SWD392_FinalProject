@@ -20,6 +20,8 @@ import searchresultReducer from "./reducers/searchresultReducer";
 import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
 import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
+import PressNewsReducer from "./reducers/pressReducers/PressNewsReducer";
+import PressReleaseReducer from "./reducers/pressReducers/PressReleaseReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
@@ -43,6 +45,8 @@ const rootReducer = combineReducers({
   saveCourses: saveCourseReducer,
   cart: ShoppingCartReducer,
   courses: courseReducer,
+  press_news: PressNewsReducer,
+  press_release: PressReleaseReducer,
 });
 
 export default rootReducer;

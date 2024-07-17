@@ -17,7 +17,7 @@ function* fetchPayoutTable() {
     if (response.ok) {
       yield put(fetchPayoutTableSuccess(data));
     } else {
-      yield put(fetchPayoutTableFailure(data.message || "Failed to fetch blog"));
+      yield put(fetchPayoutTableFailure(data.message || "Failed to fetch"));
     }
   } catch (error) {
     yield put(fetchPayoutTableFailure(error.message));
