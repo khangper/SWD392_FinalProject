@@ -127,7 +127,7 @@ const OtherInstructorView = () => {
                         <span>
                           <i className="uil uil-windsock"></i>
                         </span>
-                        <Link to={PATH_NAME.REPORT_HISTORY}>
+                        <Link to={PATH_NAME.REPORT_HISTORY} className="report-profile">
                           Report Profile
                         </Link>
                       </a>

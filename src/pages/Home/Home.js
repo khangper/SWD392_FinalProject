@@ -143,8 +143,8 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={featuredCoursesRef}>
                 {featuredCourses.map((course) => (
-                  <li key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
-                    <div className="course-card">
+                  <li  className="course-card" key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
+                    <div>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
                         <div className="badge-seller">Best seller</div>
