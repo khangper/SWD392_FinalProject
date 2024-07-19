@@ -543,8 +543,8 @@
   overflow: hidden;
 }
 
-.popular-instructor-content .social-icons,
-.home-instructor-profile .social-icons {
+.popular-instructor-content .social-icons-1,
+.home-instructor-profile .social-icons-1 {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -553,29 +553,29 @@
   gap: 5px;
 }
 
-.popular-instructor-content .social-icons a {
+.popular-instructor-content .social-icons-1 a {
   display: inline-block !important;
   margin-right: 5px;
   vertical-align: middle;
   margin-bottom: 0 !important;
 }
 
-.popular-instructor-content .social-icons a img {
+.popular-instructor-content .social-icons-1 a img {
   width: 20px;
   height: 18px;
 }
 
-.home-instructor-profile .social-icons a img {
+.home-instructor-profile .social-icons-1 a img {
   width: 18px;
   height: 19px;
   top: -3px;
   position: relative;
 }
 
-.social-icons .sc-fb,
-.social-icons .sc-tw,
-.social-icons .sc-ln,
-.social-icons .sc-yt {
+.social-icons-1 .sc-fb,
+.social-icons-1 .sc-tw,
+.social-icons-1 .sc-ln,
+.social-icons-1 .sc-yt {
   font-size: 20px;
     float: none;
     width: 36px;

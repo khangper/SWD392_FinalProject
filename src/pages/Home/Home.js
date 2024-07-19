@@ -323,7 +323,7 @@ const Home = () => {
                       <div className="popular-instructor-title">
                         {instructor.title}
                       </div>
-                      <ul className="social-icons">
+                      <ul className="social-icons-1">
                         <a href="#" className="sc-fb">
                           <img src={facebook} />
                         </a>
@@ -368,7 +368,7 @@ const Home = () => {
               <div className="home-instructor-profile-title">
                 Web Developer, Designer, and Teacher
               </div>
-              <ul className="social-icons">
+              <ul className="social-icons-1">
                 <a href="#" className="sc-fb">
                   <img src={facebook} />
                 </a>
