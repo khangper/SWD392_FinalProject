@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchNotificationsRequest } from "../../redux/reduxActions/NotificationActions/notificationActions";
+import { fetchNotificationsStudentRequest } from "../../redux/reduxActions/NotificationActions/notificationStudentAction";
 import notification_icon from "../../assets/notification-icon.png";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import "./Notification.css";
 
-function Notification() {
+function NotificationStudent() {
   const dispatch = useDispatch();
   const { notifications, loading, error } = useSelector(
-    (state) => state.notification
+    (state) => state.notificationStudent
   );
 
   useEffect(() => {
-    dispatch(fetchNotificationsRequest());
+    dispatch(fetchNotificationsStudentRequest());
   }, [dispatch]);
 
   return (
@@ -73,4 +73,4 @@ function Notification() {
   );
 }
 
-export default Notification;
+export default NotificationStudent;

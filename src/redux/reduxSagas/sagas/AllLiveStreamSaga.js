@@ -5,18 +5,19 @@ import {
   fetchStreamsFailure,
 } from "../../reduxActions/liveStreamAction";
 
-import { FETCH_STREAMS_REQUEST } from "../../../constant/data";
+import { API_KEY, FETCH_STREAMS_REQUEST } from "../../../constant/data";
+import { startLoading, stopLoading } from "../../reduxActions/LoadingAction";
 
 function* fetchStreams() {
   try {
-    const response = yield call(
-      fetch,
-      "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/AllLiveStream"
-    );
+    yield put(startLoading());
+    const response = yield call(fetch, `${API_KEY}AllLiveStream`);
     const data = yield response.json();
     yield put(fetchStreamsSuccess(data));
   } catch (error) {
     yield put(fetchStreamsFailure(error.toString()));
+  } finally {
+    yield put(stopLoading());
   }
 }
 

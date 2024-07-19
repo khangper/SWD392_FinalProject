@@ -10,7 +10,7 @@ import { watchFetchHomeStudentThoughts } from "./sagas/homeSagas/HomeStudentThou
 import { watchFetchInsDashboardCards } from "./sagas/insDashboardSagas/InsDashboardCardSaga";
 import { watchFetchInsDashboardCourses } from "./sagas/insDashboardSagas/InsDashboardCourseSaga";
 import { watchFetchInsDashboardNews } from "./sagas/insDashboardSagas/InsDashboardNewSaga";
-  import { watchFetchLiveOutputLiveStreams } from "./sagas/liveOutputSagas/liveOutputLivestreamSagas";
+import { watchFetchLiveOutputLiveStreams } from "./sagas/liveOutputSagas/liveOutputLivestreamSagas";
 import { watchFetchBlogs } from "./sagas/blogSagas/BlogSagas";
 import { watchFetchEarningTable } from "./sagas/earningSagas/EarningTableSaga";
 import { watchFetchEarningTopCountry } from "./sagas/earningSagas/EarningTopContrySaga";
@@ -20,8 +20,13 @@ import searchresultSaga from "./sagas/searchresultSaga";
 import { watchSaveCourses } from "./sagas/SaveCourseSaga";
 import { watchAddToCart } from "./sagas/ShoppingCartSaga";
 import courseSaga from "./sagas/MyCourseSaga/CourseSaga";
-import { watchFetchPressNews } from "./sagas/pressSagas/PressNewsSaga";
+  import { watchFetchPressNews } from "./sagas/pressSagas/PressNewsSaga";
 import { watchFetchPressRelease } from "./sagas/pressSagas/PressReleaseSaga";
+import upcommingCourseSaga from "./sagas/MyCourseSaga/UpcommingCourseSaga";
+import myPurchaseCourseSaga from "./sagas/MyCourseSaga/MyPurchaseSaga";
+import discountSaga from "./sagas/MyCourseSaga/DiscountSaga";
+import { watchFetchNotifications } from "./sagas/NotificationSagas/NotificationInstructorSaga";
+import { watchFetchNotificationsStudent } from "./sagas/NotificationSagas/NotificationStudentSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -29,13 +34,13 @@ export default function* rootSaga() {
     instructorsSaga(),
     watchFetchHomeLiveStreams(),
     watchFetchHomeFeaturedCourses(),
-                  watchFetchHomeNewestCourses(),
-              watchFetchHomePopularInstructors(),
-              watchFetchHomeStudentThoughts(),
-              watchFetchInsDashboardCards(),
-              watchFetchInsDashboardCourses(),
-              watchFetchInsDashboardNews(),
-      watchFetchLiveOutputLiveStreams(),
+    watchFetchHomeNewestCourses(),
+    watchFetchHomePopularInstructors(),
+    watchFetchHomeStudentThoughts(),
+    watchFetchInsDashboardCards(),
+    watchFetchInsDashboardCourses(),
+    watchFetchInsDashboardNews(),
+    watchFetchLiveOutputLiveStreams(),
     watchFetchBlogs(),
     watchFetchEarningTable(),
     watchFetchEarningTopCountry(),
@@ -44,9 +49,13 @@ export default function* rootSaga() {
     watchSaveCourses(),
     watchAddToCart(),
     courseSaga(),
-     searchresultSaga(),
-    watchFetchPressNews(),
+    searchresultSaga(),
+     watchFetchPressNews(),
     watchFetchPressRelease(),
+    upcommingCourseSaga(),
+    myPurchaseCourseSaga(),
+    discountSaga(),
+    watchFetchNotifications(),
+    watchFetchNotificationsStudent(),
   ]);
-
 }
