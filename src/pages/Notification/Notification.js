@@ -1,51 +1,32 @@
-import React from "react";
-import "./Notification.css";
-import notification_icon from "..//../assets/notification-icon.png";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNotificationsRequest } from "../../redux/reduxActions/NotificationActions/notificationActions";
+import notification_icon from "../../assets/notification-icon.png";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
+import "./Notification.css";
+
 function Notification() {
-  const notifications = [
-    {
-      id: 1,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-      name: "Rock William",
-      text: "Like Your Comment On Video",
-      videoTitle: "How to create sidebar menu",
-      time: "2 min ago",
-    },
-    {
-      id: 2,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-      name: "Jassica Smith",
-      text: "Added New Review In Video",
-      videoTitle: "Full Stack PHP Developer",
-      time: "12 min ago",
-    },
-    {
-      id: 3,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-9.jpg",
-      text: "Your Membership Activated.",
-      time: "20 min ago",
-    },
-    {
-      id: 4,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-9.jpg",
-      text: "Your Course Approved Now.",
-      courseLink: "#",
-      courseTitle: "How to create sidebar menu",
-      time: "20 min ago",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { notifications, loading, error } = useSelector(
+    (state) => state.notification
+  );
+
+  useEffect(() => {
+    dispatch(fetchNotificationsRequest());
+  }, [dispatch]);
+
   return (
     <div className="NotificationPage">
       <div className="NT-grid-container">
         <div className="NT-grid-item">
           <h2 className="NT-st_title">
-            <img src={notification_icon} className="Edit-icon" /> Notifications
+            <img
+              src={notification_icon}
+              className="Edit-icon"
+              alt="Notification Icon"
+            />{" "}
+            Notifications
           </h2>
         </div>
       </div>
@@ -54,8 +35,9 @@ function Notification() {
           <Link to={PATH_NAME.SETTING} className="NT-setting_noti">
             Notification Setting
           </Link>
-
           <div className="NT-all_msg_bg">
+            {loading && <p>Loading...</p>}
+            {error && <p>Error: {error}</p>}
             {notifications.map((notification) => (
               <div className="NT-channel_my" key={notification.id}>
                 <div className="NT-profile_link">
@@ -69,7 +51,7 @@ function Notification() {
                       )}
                       {notification.courseTitle && (
                         <>
-                          Your Course Approved Now.{" "}
+                          {" "}
                           <a
                             href={notification.courseLink}
                             className="NT-crse_bl"

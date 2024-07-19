@@ -5,25 +5,30 @@ import {
   fetchInstructorsmoreSuccess,
   fetchInstructorsmoreFailure,
   fetchInstructorByIdSuccess,
-  fetchInstructorByIdFailure
+  fetchInstructorByIdFailure,
 } from "../../reduxActions/instructorActions";
 import {
+  API_KEY,
   FETCH_INSTRUCTOR_BY_ID_REQUEST,
   FETCH_INSTRUCTORS_REQUEST,
   FETCH_INSTRUCTORS_MORE_REQUEST,
   SEARCH_INSTRUCTORS_REQUEST,
 } from "../../../constant/data";
-
-const API_URL =
+  const API_URL =
   "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/AllInstructor";
 const API_URL2 = 'https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/Instructormore'
+import { startLoading, stopLoading } from "../../reduxActions/LoadingAction";
+
 function* fetchInstructors() {
   try {
-    const response = yield call(fetch, API_URL);
+    yield put(startLoading());
+    const response = yield call(fetch, `${API_KEY}AllInstructor`);
     const data = yield response.json();
     yield put(fetchInstructorsSuccess(data));
   } catch (error) {
     yield put(fetchInstructorsFailure(error.toString()));
+  } finally {
+    yield put(stopLoading());
   }
 }
 function* fetchInstructorsmore() {
@@ -37,21 +42,33 @@ function* fetchInstructorsmore() {
 }
 function* searchInstructors(action) {
   try {
-    const response = yield call(fetch, `${API_URL}?search=${action.payload}`);
+    yield put(startLoading());
+    const response = yield call(
+      fetch,
+      `${API_KEY}AllInstructor?search=${action.payload}`
+    );
     const data = yield response.json();
     yield put(fetchInstructorsSuccess(data));
   } catch (error) {
     yield put(fetchInstructorsFailure(error.toString()));
+  } finally {
+    yield put(stopLoading());
   }
 }
 
 function* fetchInstructorById(action) {
   try {
-    const response = yield call(fetch, `${API_URL}/${action.payload}`);
+    yield put(startLoading());
+    const response = yield call(
+      fetch,
+      `${API_KEY}AllInstructor/${action.payload}`
+    );
     const data = yield response.json();
     yield put(fetchInstructorByIdSuccess(data));
   } catch (error) {
     yield put(fetchInstructorByIdFailure(error.toString()));
+  } finally {
+    yield put(stopLoading());
   }
 }
 

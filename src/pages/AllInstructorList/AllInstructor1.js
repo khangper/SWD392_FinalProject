@@ -16,7 +16,7 @@ import youtubeIcon from "../../assets/youtube.png";
 const AllInstructor1 = () => {
   const navigate = useNavigate();
   const handleInstructorClick = (id) => {
-    navigate(`${PATH_NAME.OTHER_INSTRUCTOR_VIEW.replace(':id', id)}`);
+    navigate(`${PATH_NAME.OTHER_INSTRUCTOR_VIEW.replace(":id", id)}`);
   };
   const dispatch = useDispatch();
   const [searchQuery, setSearchQuery] = useState("");
@@ -43,17 +43,17 @@ const AllInstructor1 = () => {
     }
   };
 
-  if (loading) {
-    return (
-      <div className="Allinstructor-main-loader">
-        <div className="lds-facebook">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     // <div className="Allinstructor-main-loader">
+  //     //   <div className="lds-facebook">
+  //     //     <div></div>
+  //     //     <div></div>
+  //     //     <div></div>
+  //     //   </div>
+  //     // </div>
+  //   );
+  // }
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -97,12 +97,11 @@ const AllInstructor1 = () => {
 
       <main>
         <div className="All-Instructor-grid-container">
-          {instructors?.map((instructor) => (
-            // <Link key={instructor.id} to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}>
-
-            // <Link key={instructor.id} to={`${PATH_NAME.OTHER_INSTRUCTOR_VIEW}/${instructor.id}`}>
-
-            <li key={instructor.id} onClick={() => handleInstructorClick(instructor.id)}>
+          {instructors.map((instructor) => (
+            <li
+              key={instructor.id}
+              onClick={() => handleInstructorClick(instructor.id)}
+            >
               <div className="All-Instructor-grid-item">
                 <div className="All-Instructor-fcrse_1 mt-30">
                   <div className="All-Instructor-tutor_img">
@@ -157,13 +156,13 @@ const AllInstructor1 = () => {
             // </Link>
           ))}
         </div>
-        <div className="main-loader mt-20">
+        {/* <div className="main-loader mt-20">
           <div className="spinner">
             <div className="bounce1"></div>
             <div className="bounce2"></div>
             <div className="bounce3"></div>
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   );

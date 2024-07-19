@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import "./ShoppingCart.css";
 import Header from "../../components/Header-paidmember/Header";
 import { Link } from "react-router-dom";
@@ -7,14 +8,15 @@ import Closeshopping from "../../assets/Close-shopping.png";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
 import { removeFromCart } from "../../redux/reduxActions/ShoppingCartAction";
-import { ShoppingCart_API_URL } from "../../constant/data";
 
 function ShoppingCart() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const ShoppingCart_API_URL =
+    "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/ShoppingCart";
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
 
@@ -70,6 +72,14 @@ function ShoppingCart() {
       console.error(error.message);
       alert("Error removing course");
     }
+  };
+
+  const handleCheckout = () => {
+    navigate(PATH_NAME.CHECKOUT, {
+      state: {
+        total: discountedTotal,
+      },
+    });
   };
 
   if (loading) {
@@ -196,9 +206,12 @@ function ShoppingCart() {
                     </div>
                   </div>
                 </div>
-                <Link to={PATH_NAME.CHECKOUT} className="Shopping-chck-btn22">
+                <button
+                  onClick={handleCheckout}
+                  className="Shopping-chck-btn22"
+                >
                   Checkout Now
-                </Link>
+                </button>
               </div>
             </div>
           </div>

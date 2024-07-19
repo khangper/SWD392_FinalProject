@@ -4,14 +4,13 @@ import {
   fetchBlogFailure,
 } from "../../../reduxActions/blogActions/BlogAction";
 
-import { FETCH_BLOG_REQUEST } from "../../../../constant/data";
+import { API_KEY, FETCH_BLOG_REQUEST } from "../../../../constant/data";
+import { startLoading, stopLoading } from "../../../reduxActions/LoadingAction";
 
 function* fetchBlogs() {
   try {
-    const response = yield call(
-      fetch,
-      "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/blogs"
-    );
+    yield put(startLoading());
+    const response = yield call(fetch, `${API_KEY}blogs`);
 
     const data = yield response.json();
     if (response.ok) {
@@ -21,6 +20,8 @@ function* fetchBlogs() {
     }
   } catch (error) {
     yield put(fetchBlogFailure(error.message));
+  } finally {
+    yield put(stopLoading());
   }
 }
 

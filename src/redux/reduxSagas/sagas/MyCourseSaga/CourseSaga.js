@@ -13,24 +13,28 @@ import {
   FETCH_COURSES_REQUEST,
 } from "../../../../constant/data";
 
+import { API_KEY } from "../../../../constant/data";
+import { startLoading, stopLoading } from "../../../reduxActions/LoadingAction";
+
 function* fetchCourses() {
   try {
-    const response = yield call(
-      fetch,
-      "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/MyCourseCourse"
-    );
+    yield put(startLoading());
+    const response = yield call(fetch, `${API_KEY}MyCourseCourse`);
     const data = yield response.json();
     yield put(fetchCoursesSuccess(data));
   } catch (error) {
     yield put(fetchCoursesFailure(error.toString()));
+  } finally {
+    yield put(stopLoading());
   }
 }
 
 function* editCourse(action) {
   try {
+    yield put(startLoading());
     const response = yield call(
       fetch,
-      `https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/MyCourseCourse/${action.payload.id}`,
+      `${API_KEY}MyCourseCourse/${action.payload.id}`,
       {
         method: "PUT",
         headers: {
@@ -43,21 +47,22 @@ function* editCourse(action) {
     yield put(editCourseSuccess(data));
   } catch (error) {
     yield put(editCourseFailure(error.toString()));
+  } finally {
+    yield put(stopLoading());
   }
 }
 
 function* deleteCourse(action) {
   try {
-    yield call(
-      fetch,
-      `https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/MyCourseCourse/${action.payload}`,
-      {
-        method: "DELETE",
-      }
-    );
+    yield put(startLoading());
+    yield call(fetch, `${API_KEY}MyCourseCourse/${action.payload}`, {
+      method: "DELETE",
+    });
     yield put(deleteCourseSuccess(action.payload));
   } catch (error) {
     yield put(deleteCourseFailure(error.toString()));
+  } finally {
+    yield put(stopLoading());
   }
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./PressReleasePage.css";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
@@ -7,54 +7,67 @@ import { RiFacebookBoxFill } from "react-icons/ri";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
 import { PATH_NAME } from "../../constant/pathname";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPressNewsRequest } from "../../redux/reduxActions/pressActions/PressNewsAction";
+import { fetchPressReleaseRequest } from "../../redux/reduxActions/pressActions/PressReleaseAction";
 
 const PressReleasePage = () => {
-  const news = [
-    {
-      id: 1,
-      day: "March 10, 2020",
-      title: "Press News Title",
-      content:
-        " Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam...",
-    },
-    {
-      id: 2,
-      day: "March 10, 2020",
-      title: "Press News Title",
-      content:
-        " Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam...",
-    },
-    {
-      id: 3,
-      day: "March 10, 2020",
-      title: "Press News Title",
-      content:
-        " Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam...",
-    },
-  ];
+  // const news = [
+  //   {
+  //     id: 1,
+  //     day: "March 10, 2020",
+  //     title: "Press News Title",
+  //     content:
+  //       " Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam...",
+  //   },
+  //   {
+  //     id: 2,
+  //     day: "March 10, 2020",
+  //     title: "Press News Title",
+  //     content:
+  //       " Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam...",
+  //   },
+  //   {
+  //     id: 3,
+  //     day: "March 10, 2020",
+  //     title: "Press News Title",
+  //     content:
+  //       " Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam...",
+  //   },
+  // ];
 
-  const release = [
-    {
-      id: 1,
-      day: "March 10, 2020",
-      title: "Press Release Title",
-    },
-    {
-      id: 2,
-      day: "March 10, 2020",
-      title: "Press Release Title",
-    },
-    {
-      id: 3,
-      day: "March 10, 2020",
-      title: "Press Release Title",
-    },
-    {
-      id: 4,
-      day: "March 10, 2020",
-      title: "Press Release Title",
-    },
-  ];
+  // const release = [
+  //   {
+  //     id: 1,
+  //     day: "March 10, 2020",
+  //     title: "Press Release Title",
+  //   },
+  //   {
+  //     id: 2,
+  //     day: "March 10, 2020",
+  //     title: "Press Release Title",
+  //   },
+  //   {
+  //     id: 3,
+  //     day: "March 10, 2020",
+  //     title: "Press Release Title",
+  //   },
+  //   {
+  //     id: 4,
+  //     day: "March 10, 2020",
+  //     title: "Press Release Title",
+  //   },
+  // ];
+
+  const dispatch = useDispatch();
+  const { news } = useSelector((state) => state.press_news);
+  const { release } = useSelector((state) => state.press_release);
+
+  useEffect(() => {
+    dispatch(fetchPressNewsRequest());
+    dispatch(fetchPressReleaseRequest());
+  }, [dispatch]);
+
   return (
     <div className="press">
       <Header />
@@ -133,7 +146,7 @@ const PressReleasePage = () => {
               <div className="press-news-title-parent">
                 {news.map((news) => (
                   <div key={news.id} className="press-news-title-items">
-                    <div className="press-day">{news.day}</div>
+                    <div className="press-day">{news.createdAt}</div>
                     <h3>{news.title}</h3>
                     <p>{news.content}</p>
                     <div className="press-read-more">
@@ -158,7 +171,7 @@ const PressReleasePage = () => {
               <div className="press-release-title-parent">
                 {release.map((release) => (
                   <div key={release.id} className="press-release-title-items">
-                    <div className="press-day">{release.day}</div>
+                    <div className="press-day">{release.createdAt}</div>
                     <h3>{release.title}</h3>
                   </div>
                 ))}

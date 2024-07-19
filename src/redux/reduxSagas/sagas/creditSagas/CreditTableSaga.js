@@ -4,25 +4,24 @@ import {
   fetchCreditTableFailure,
 } from "../../../reduxActions/creditActions/CreditTableAction";
 
-import { FETCH_CREDIT_TABLE_REQUEST } from "../../../../constant/data";
+import { API_KEY, FETCH_CREDIT_TABLE_REQUEST } from "../../../../constant/data";
+import { startLoading, stopLoading } from "../../../reduxActions/LoadingAction";
 
 function* fetchCreditTable() {
   try {
-    const response = yield call(
-      fetch,
-      "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/credit_table"
-    );
+    yield put(startLoading());
+    const response = yield call(fetch, `${API_KEY}credit_table`);
 
     const data = yield response.json();
     if (response.ok) {
       yield put(fetchCreditTableSuccess(data));
     } else {
-      yield put(
-        fetchCreditTableFailure(data.message || "Failed to fetch blog")
-      );
+      yield put(fetchCreditTableFailure(data.message || "Failed to fetch"));
     }
   } catch (error) {
     yield put(fetchCreditTableFailure(error.message));
+  } finally {
+    yield put(stopLoading());
   }
 }
 
