@@ -22,15 +22,15 @@ export default function AllLiveStream() {
             <div className="main-content">
               <div className="section3125">
                 <h4 className="item_title">All Live Streams</h4>
-                {loading && (
-                  <div className="Allinstructor-main-loader">
-                    <div className="lds-facebook">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                  </div>
-                )}
+                {/* {loading && (
+                  // <div className="Allinstructor-main-loader">
+                  //   <div className="lds-facebook">
+                  //     <div></div>
+                  //     <div></div>
+                  //     <div></div>
+                  //   </div>
+                  // </div>
+                )} */}
                 {error && <p>Error: {error}</p>}
                 <div className="la5lo1">
                   <div className="AllLive-grid-row">

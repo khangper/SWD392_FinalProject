@@ -20,9 +20,16 @@ import searchresultReducer from "./reducers/searchresultReducer";
 import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
 import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
-import mycertificationReducer from "./reducers/MyCertificationsReducer";
+  import mycertificationReducer from "./reducers/MyCertificationsReducer";
 import statementSTReducer from "./reducers/StatementSTReducer";
 import statementISReducer from "./reducers/StatementISReducer";
+  import PressNewsReducer from "./reducers/pressReducers/PressNewsReducer";
+import PressReleaseReducer from "./reducers/pressReducers/PressReleaseReducer";
+import upcommingCourseReducer from "./reducers/MyCourseReducers/UpcommingCourseReducer";
+import myPurchaseCourseReducer from "./reducers/MyCourseReducers/MyPurchaseReducer";
+import discountReducer from "./reducers/MyCourseReducers/DiscountReducer";
+import notificationReducer from "./reducers/NotificationReducers/NotificationInstructorReducer";
+import notificationstudentReducer from "./reducers/NotificationReducers/NotificationStudentReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
@@ -46,9 +53,16 @@ const rootReducer = combineReducers({
   saveCourses: saveCourseReducer,
   cart: ShoppingCartReducer,
   courses: courseReducer,
-  mycertifications: mycertificationReducer,
+   mycertifications: mycertificationReducer,
   statementST: statementSTReducer,
   statementIS: statementISReducer,
+   press_news: PressNewsReducer,
+  press_release: PressReleaseReducer,
+  upcommingCourses: upcommingCourseReducer,
+  myPurchaseCourses: myPurchaseCourseReducer,
+  discount: discountReducer,
+  notification: notificationReducer,
+  notificationStudent: notificationstudentReducer,
 });
 
 export default rootReducer;
