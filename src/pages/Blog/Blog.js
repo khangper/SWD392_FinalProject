@@ -5,7 +5,6 @@ import { FaTwitter } from "react-icons/fa";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { AiOutlineSearch } from "react-icons/ai";
-import big_blog from "../../assets/big_blog.jpg";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
@@ -19,44 +18,7 @@ const Blog = () => {
   useEffect(() => {
     dispatch(fetchBlogRequest());
   }, [dispatch]);
-  // const blog_details = [
-  //   {
-  //     id: 1,
-  //     img: big_blog,
-  //     views: "109k",
-  //     day: "March 10, 2020",
-  //     title: "Blog Title Here",
-  //     content:
-  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-  //   },
-  //   {
-  //     id: 2,
-  //     img: big_blog,
-  //     views: "109k",
-  //     day: "March 10, 2020",
-  //     title: "Blog Title Here",
-  //     content:
-  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-  //   },
-  //   {
-  //     id: 3,
-  //     img: big_blog,
-  //     views: "109k",
-  //     day: "March 10, 2020",
-  //     title: "Blog Title Here",
-  //     content:
-  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-  //   },
-  //   {
-  //     id: 4,
-  //     img: big_blog,
-  //     views: "109k",
-  //     day: "March 10, 2020",
-  //     title: "Blog Title Here",
-  //     content:
-  //       "Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam metus odio, iaculis eu nunc et, interdum mollis arcu. Pellentesque viverra faucibus diam. In sit amet laoreet dolor, vitae fringilla quam interdum mollis arcu.",
-  //   },
-  // ];
+
   return (
     <div className="blog">
       <Header />

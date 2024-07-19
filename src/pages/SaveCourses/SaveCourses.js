@@ -573,11 +573,10 @@ const SaveCourses = () => {
                         {courses.map((course) => (
                           <div
                             key={course.id}
-                            className={`mip-oiv-course ${
-                              selectedCourses.includes(course.id)
-                                ? "selected"
-                                : ""
-                            }`}
+                            className={`mip-oiv-course ${selectedCourses.includes(course.id)
+                              ? "selected"
+                              : ""
+                              }`}
                             onClick={(e) => handleCourseClick(e, course.id)}
                           >
                             <div className="mip-oiv-course-detail">

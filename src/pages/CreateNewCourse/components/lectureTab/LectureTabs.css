@@ -1,0 +1,29 @@
+.lecture-tab-buttons {
+    padding: 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .lecture-tab-button {
+    flex: 1;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid #ccc;
+    transition: background 0.3s;
+    text-align: center;
+    border-radius: 3px;
+  }
+  .lecture-tab-button + .lecture-tab-button {
+    margin-left: 5px;
+  }
+
+  .lecture-tab-button:not(.active):hover {
+    background: #f1f1f1;
+  }
+  
+  .lecture-tab-button.active {
+    background: red;
+    color: white;
+  }
+  
