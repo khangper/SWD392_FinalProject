@@ -202,7 +202,9 @@
 
 .press-help-links-wrapper {
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding: 0 70px 0 70px;
 }
 
@@ -390,3 +392,18 @@
   background-color: #f7f7f7;
 }
 
+@media screen and (max-width: 1050px){
+  .press-backgroundBorder-parent{
+    display: block;
+    padding: 50px 40px;
+  }
+
+  .press-backgroundBorder{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .press-help-links-wrapper{
+    padding: 0;
+  }
+}

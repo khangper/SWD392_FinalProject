@@ -11,7 +11,6 @@
   display: inline-block;
 }
 
-
 .blog-navigation-links,
 .blog-navigation-links-2,
 .blog-navigation-links-3,
@@ -113,12 +112,11 @@
   border: 0;
   outline: 0;
   background-color: transparent;
-  height: 30px;
+  width: 100%;
   flex-direction: column;
-  padding: 2px 0 0;
+  padding: 10px;
   box-sizing: border-box;
   font-size: 14px;
-  padding-left: 5px;
 }
 
 .blog-input,
@@ -325,8 +323,9 @@
 
 .blog-help-links-wrapper {
   flex-direction: row;
-  justify-content: flex-end;
-  padding: 0 70px 0 70px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .blog-backgroundBorder {
@@ -444,6 +443,7 @@
 .blog-content {
   margin: 0;
   font-size: 13.5px;
+  color: #686f7a !important;
 }
 
 .blog-content-container,
@@ -529,7 +529,7 @@
   gap: 20px;
   text-align: left;
   font-size: 14px;
-  color: #686f7a;
+  color: #686f7a !important;
 }
 
 .blog-backgroundBorder-parent,
@@ -553,7 +553,6 @@
   box-sizing: border-box;
   gap: 21px;
   max-width: 100%;
-  
 }
 
 .blog-background-main {
@@ -758,96 +757,40 @@
   letter-spacing: normal;
 }
 
-@media screen and (max-width: 1250px) {
-  .blog-background-main{
-    padding-left: 50px !important;
-    padding-right: 50px !important;
+@media screen and (max-width: 1250px){
+  .blog-content{
+    padding-right: 120px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+
+   .blog-background-main {
+    padding: 50px 100px 30px !important;
+    
   }
 
-}
-@media screen and (max-width: 1050px) {
   .blog-backgroundBorder-inner,
   .blog-link {
     flex: 1;
   }
 
-  .blog-backgroundBorder-parent,
-  .blog-frame-parent {
-    height: auto;
+  .blog-backgroundBorder-parent {
+    display: block;
   }
 
-  .blog-inner {
-    padding-bottom: 103px;
-    box-sizing: border-box;
-  }
 
   .blog-backgroundBorder-1 {
     flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .blog-backgroundBorder-inner {
-    min-width: 100%;
-  }
-
-  .blog-backgroundBorder {
-    display: none;
   }
 
   .blog-backgroundBorder-group {
     max-width: 100%;
   }
 
-  .blog-backgroundBorder-parent {
-    padding-bottom: 213px;
-    box-sizing: border-box;
-  }
-
-  .blog-frame-parent {
-    gap: 26px;
-  }
-
-  .blog-inner {
-    padding-bottom: 67px;
-    box-sizing: border-box;
-  }
-
-  .blog {
-    gap: 25px;
+  .blog-backgroundBorder{
+    margin-bottom: 40px;
   }
 }
-@media screen and (max-width: 450px) {
-  .blog-navigation-links-parent {
-    flex-wrap: wrap;
-  }
 
-  .blog-heading-2 {
-    font-size: 19px;
-    line-height: 24px;
-  }
 
-  .blog-heading-2-wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
-
-  .blog-background {
-    gap: 32px;
-  }
-
-  .blog-link {
-    min-width: 100%;
-  }
-
-  .blog-help-links-wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
-
-  .blog {
-    height: auto;
-  }
-}

@@ -20,6 +20,8 @@ import searchresultReducer from "./reducers/searchresultReducer";
 import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
 import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
+  import PressNewsReducer from "./reducers/pressReducers/PressNewsReducer";
+import PressReleaseReducer from "./reducers/pressReducers/PressReleaseReducer";
 import upcommingCourseReducer from "./reducers/MyCourseReducers/UpcommingCourseReducer";
 import myPurchaseCourseReducer from "./reducers/MyCourseReducers/MyPurchaseReducer";
 import discountReducer from "./reducers/MyCourseReducers/DiscountReducer";
@@ -48,6 +50,8 @@ const rootReducer = combineReducers({
   saveCourses: saveCourseReducer,
   cart: ShoppingCartReducer,
   courses: courseReducer,
+   press_news: PressNewsReducer,
+  press_release: PressReleaseReducer,
   upcommingCourses: upcommingCourseReducer,
   myPurchaseCourses: myPurchaseCourseReducer,
   discount: discountReducer,
