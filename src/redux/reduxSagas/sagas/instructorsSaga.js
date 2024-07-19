@@ -14,10 +14,12 @@ import {
   FETCH_INSTRUCTORS_MORE_REQUEST,
   SEARCH_INSTRUCTORS_REQUEST,
 } from "../../../constant/data";
-  const API_URL =
-  "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/AllInstructor";
-const API_URL2 = 'https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/Instructormore'
+ 
 import { startLoading, stopLoading } from "../../reduxActions/LoadingAction";
+
+const API_URL =
+"https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/AllInstructor";
+const API_URL2 = 'https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/Instructormore'
 
 function* fetchInstructors() {
   try {
