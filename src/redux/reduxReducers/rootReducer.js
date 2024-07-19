@@ -10,7 +10,7 @@ import loadingReducer from "./reducers/LoadingReducer";
 import HomeNewestCourseReducer from "./reducers/homeReducers/HomeNewestCourseReducer";
 import HomePopularInstructorReducer from "./reducers/homeReducers/HomePopularInstructorReducer";
 import HomeStudentThoughtReducer from "./reducers/homeReducers/HomeStudentThoughtReducer";
-  import liveOutputLivestreamReducers from "./reducers/liveOutputReducers/liveOutputLivestreamReducers";
+import liveOutputLivestreamReducers from "./reducers/liveOutputReducers/liveOutputLivestreamReducers";
 import BlogReducer from "./reducers/blogReducers/BlogReducer";
 import EarningTableReducer from "./reducers/earningReducers/EarningTableReducers";
 import EarningTopCountryReducer from "./reducers/earningReducers/EarningTopCountryReducer";
@@ -20,13 +20,26 @@ import searchresultReducer from "./reducers/searchresultReducer";
 import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
 import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
+import coursesdReducer from "./reducers/CoursesDReducer";
+import commentsReducer from "./reducers/CommentReducer";
+import chatReducer from "./reducers/MessageReducer";
+  import mycertificationReducer from "./reducers/MyCertificationsReducer";
+import statementSTReducer from "./reducers/StatementSTReducer";
+import statementISReducer from "./reducers/StatementISReducer";
+  import PressNewsReducer from "./reducers/pressReducers/PressNewsReducer";
+import PressReleaseReducer from "./reducers/pressReducers/PressReleaseReducer";
+import upcommingCourseReducer from "./reducers/MyCourseReducers/UpcommingCourseReducer";
+import myPurchaseCourseReducer from "./reducers/MyCourseReducers/MyPurchaseReducer";
+import discountReducer from "./reducers/MyCourseReducers/DiscountReducer";
+import notificationReducer from "./reducers/NotificationReducers/NotificationInstructorReducer";
+import notificationstudentReducer from "./reducers/NotificationReducers/NotificationStudentReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
   home_featuredcourse: HomeFeaturedCourseReducer,
-   home_newestcourse: HomeNewestCourseReducer,
-    home_popularinstructor: HomePopularInstructorReducer,
-    home_studentthought: HomeStudentThoughtReducer,
+  home_newestcourse: HomeNewestCourseReducer,
+  home_popularinstructor: HomePopularInstructorReducer,
+  home_studentthought: HomeStudentThoughtReducer,
   streams: streamsReducer,
   allinstructor: instructorReducer,
   loading: loadingReducer,
@@ -43,6 +56,19 @@ const rootReducer = combineReducers({
   saveCourses: saveCourseReducer,
   cart: ShoppingCartReducer,
   courses: courseReducer,
+    coursesd: coursesdReducer,
+  comments: commentsReducer,
+  message: chatReducer,
+   mycertifications: mycertificationReducer,
+  statementST: statementSTReducer,
+  statementIS: statementISReducer,
+   press_news: PressNewsReducer,
+  press_release: PressReleaseReducer,
+  upcommingCourses: upcommingCourseReducer,
+  myPurchaseCourses: myPurchaseCourseReducer,
+  discount: discountReducer,
+  notification: notificationReducer,
+  notificationStudent: notificationstudentReducer,
 });
 
 export default rootReducer;

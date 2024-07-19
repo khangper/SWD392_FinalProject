@@ -10,7 +10,7 @@ import saved_course from "../../assets/saved-course.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
 import { useDispatch, useSelector } from "react-redux";
-import{fetchSearchResultRequest} from '../../redux/reduxActions/searchresultAction'
+import { fetchSearchResultRequest } from '../../redux/reduxActions/searchresultAction'
 
 const SearchResult = () => {
     const dispatch = useDispatch();

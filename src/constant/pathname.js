@@ -1,5 +1,5 @@
 export const PATH_NAME = {
-  HOME: "/home",
+  HOME: "/home/:id",
   EXPLORE: "/explore",
   LIVE_OUTPUT: "/live_output/:id",
   ADD_LIVE_STREAM: "/add_livestream",
@@ -39,7 +39,7 @@ export const PATH_NAME = {
   CERTIFICATION_TEST: "/certificates-test",
   TEST_RESULT: "/test-result",
   MESSAGE: "/messages",
-  COURSES_DETAIL_VIEW: "/courses-detail-view",
+  COURSES_DETAIL_VIEW: "/courses-detail-view/:id",
   PREVIEWS: "/reviews",
   COMING_SOON: "/coming-soon",
   INS_DASHBOARD: "/ins-dashboard",
@@ -53,9 +53,10 @@ export const PATH_NAME = {
   VERTIFICATION: "/vertification",
   MYCERTIFICATIONS: "/mycertifications",
   CREDIT: "/credits",
-  STATEMENTIS: "/statements",
+  STATEMENTIS: "/statementis",
   STATEMENTST: "/statementst",
   ANALYTICS: "/analytics",
   CREATE_NEW_COURSE: "/create-course",
   STD_DASHBOARD: "/student-dashboard",
+  NOTIFICATIONSTUDENT: "/notificationsstudent",
 };

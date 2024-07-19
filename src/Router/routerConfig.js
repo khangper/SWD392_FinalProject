@@ -58,6 +58,7 @@ import StdDashboard from "../pages/StdDashboard/StdDashboard";
 import Credit from "../pages/Credit/Credit";
 import StatementIS from "../pages/Statements/StatementIS/StatementIS";
 import StatementST from "../pages/Statements/StatementST/StatementST";
+import NotificationStudent from "../pages/Notification/NotificationStudent";
 
 const publicRoutes = [
   { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -125,6 +126,7 @@ const privateRoutes = [
   { path: PATH_NAME.CREDIT, element: <Credit /> },
   { path: PATH_NAME.STATEMENTIS, element: <StatementIS /> },
   { path: PATH_NAME.STATEMENTST, element: <StatementST /> },
+  { path: PATH_NAME.NOTIFICATIONSTUDENT, element: <NotificationStudent /> },
 ];
 
 const routes = { publicRoutes, privateRoutes };

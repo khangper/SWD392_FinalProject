@@ -3,14 +3,13 @@ import {
   addToCartSuccess,
   addToCartFailure,
 } from "../../../redux/reduxActions/ShoppingCartAction";
-import { ADD_TO_CART } from "../../../constant/data";
-
-const API_URL =
-  "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/ShoppingCart";
+import { ADD_TO_CART, API_KEY } from "../../../constant/data";
+import { startLoading, stopLoading } from "../../reduxActions/LoadingAction";
 
 function* addToCartSaga(action) {
   try {
-    const response = yield call(fetch, API_URL, {
+    yield put(startLoading());
+    const response = yield call(fetch, `${API_KEY}ShoppingCart`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,10 +25,11 @@ function* addToCartSaga(action) {
     yield put(addToCartSuccess(data));
   } catch (error) {
     yield put(addToCartFailure(error.message));
+  } finally {
+    yield put(stopLoading());
   }
 }
 
-// Theo dõi hành động thêm vào giỏ hàng
 export function* watchAddToCart() {
   yield takeLatest(ADD_TO_CART, addToCartSaga);
 }
