@@ -4,7 +4,7 @@ import {
   fetchInstructorsRequest,
   searchInstructorsRequest,
 } from "../../redux/reduxActions/instructorActions";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import "./AllInstructorList.css";
 import searchIcon from "../../assets/search.png";
@@ -19,11 +19,10 @@ const AllInstructor1 = () => {
     navigate(`${PATH_NAME.OTHER_INSTRUCTOR_VIEW.replace(":id", id)}`);
   };
   const dispatch = useDispatch();
+  const [searchQuery, setSearchQuery] = useState("");
   const { instructors, loading, error } = useSelector(
     (state) => state.allinstructor
   );
-  const [searchQuery, setSearchQuery] = useState("");
-
   useEffect(() => {
     dispatch(fetchInstructorsRequest());
   }, [dispatch]);

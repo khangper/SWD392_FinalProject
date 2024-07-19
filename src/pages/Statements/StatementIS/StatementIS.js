@@ -1,7 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import './StatementIS.css'
 import dropdown from "../../../assets/dropdown.png";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchStatementISRequest } from '../../../redux/reduxActions/StatementISAction';
 const StatementIS = () => {
+    const dispatch = useDispatch();
+    const { statementIS } = useSelector((state) => state.statementIS);
+
+    useEffect(() => {
+        dispatch(fetchStatementISRequest());
+    }, [dispatch]);
+
     const [isOpen, setIsOpen] = useState(false);
     const [selectedValue, setSelectedValue] = useState('Monthly Invoices');
 
@@ -13,77 +22,83 @@ const StatementIS = () => {
 
     const courses = [
         {
+            id: 1,
             date: '13 Apr 2020',
             orderID: '123456',
             type: 'Buy',
             title: 'Course Title Here',
             amount: '$17',
+            fee: '-$5'
         },
         {
+            id: 2,
             date: '13 Apr 2020',
             orderID: '123456',
             type: 'Buy',
             title: 'Course Title Here',
             amount: '$17',
+            fee: '-$5'
         },
         {
+            id: 3,
             date: '13 Apr 2020',
             orderID: '123456',
             type: 'Buy',
             title: 'Course Title Here',
             amount: '$17',
+            fee: '-$5'
         },
 
     ];
 
     return (
         <div className='statementis'>
-            <div class="statementis-row">
-                <div class="statementis-col-lg-12">
-                    <h2 class="st_title"><i class="uil uil-file-alt"></i> Statements</h2>
+            <div className="statementis-row">
+                <div className="statementis-col-lg-12">
+                    <h2 className="st_title"><i className="uil uil-file-alt"></i> Statements</h2>
                 </div>
             </div>
-            <div class="statementis-row">
-                <div class="statementis-col-lg-8">
-                    <div class="top_countries mt-30">
-                        <div class="top_countries_title">
+            <div className="statementis-row">
+                <div className="statementis-col-lg-8">
+                    <div className="top_countries mt-30">
+                        <div className="top_countries_title">
                             <h2>Earnings</h2>
                         </div>
-                        <div class="statement_content">
-                            <p class="tt-body">If you are not an instrutor, you can't use this section.</p>
+                        <div className="statement_content">
+                            <p className="tt-body">If you are not an instrutor, you can't use this section.</p>
                             <div>
-                                <table class="statement-summary__table">
+                                <table className="statement-summary__table">
                                     <thead>
                                         <tr>
                                             <th>
-                                                <p class="t-heading">My funds</p>
+                                                <p className="t-heading">My funds</p>
                                             </th>
                                             <th>
-                                                <p class="t-heading">Earnings</p>
+                                                <p className="t-heading">Earnings</p>
                                             </th>
                                             <th>
-                                                <p class="t-heading">Cursus Fees</p>
+                                                <p className="t-heading">Cursus Fees</p>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="statement-summary__funds">
-                                                <p class="js-earnings__instructor-funds-wrapper">
-                                                    <span class=""></span>
-                                                    <span class="js-earnngs__instructor-funds t-currency">$289.64</span>
+                                            <td className="statement-summary__funds">
+                                                <p className="js-earnings__instructor-funds-wrapper">
+                                                    <span className=""></span>
+                                                    <span className="js-earnngs__instructor-funds t-currency">$289.64</span>
                                                 </p>
                                             </td>
-                                            <td class="statement-summary__earnings">
-                                                <p class="js-earnings__earnings-wrapper">
-                                                    <span class="tt__earning">+</span>
-                                                    <span class="js-earnings__earnings t-currency">$458.00</span>
+                                            <td className="statement-summary__earnings">
+                                                <p className="js-earnings__earnings-wrapper">
+                                                    <span className="tt__earning">+</span>
+                                                    <span className="js-earnings__earnings t-currency">$458.00</span>
                                                 </p>
                                             </td>
-                                            <td class="statement-summary__fees">
-                                                <p class="js-earnings__fees-wrapper">
-                                                    <span class="tt__earning">-</span>
-                                                    <span class="js-earnings__fees t-currency">$154.86</span>
+                                            <td className="statement-summary__fees">
+                                                <p className="js-earnings__fees-wrapper">
+                                                    <span className="tt__earning">-</span>
+                                                    <span className="js-earnings__fees t-currency">$154.86</span>
                                                 </p>
                                             </td>
                                         </tr>
@@ -94,13 +109,13 @@ const StatementIS = () => {
                     </div>
                 </div>
 
-                <div class="statementis-col-lg-4">
-                    <div class="top_countries mt-30">
-                        <div class="top_countries_title">
+                <div className="statementis-col-lg-4">
+                    <div className="top_countries mt-30">
+                        <div className="top_countries_title">
                             <h2>View Invoices</h2>
                         </div>
-                        <div class="statement_invoice_content">
-                            <div class="date_selector">
+                        <div className="statement_invoice_content">
+                            <div className="date_selector">
                                 <div className="ui selection" tabIndex="0" onClick={toggleDropdown}>
                                     <input name="date" type="hidden" value={selectedValue} />
                                     <div className='sis-drop'>
@@ -122,29 +137,29 @@ const StatementIS = () => {
                                         </div>
                                     )}
                                 </div>
-                                <button class="st_download_btn"><i class="uil uil-download-alt"></i></button>
+                                <button className="st_download_btn"><i className="uil uil-download-alt"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="statementis-col-lg-12">
-                    <div class="more_options_tt">
+                <div className="statementis-col-lg-12">
+                    <div className="more_options_tt">
                         <li>
                             <div>
-                                <button class="more_items_14 active">This Month</button>
+                                <button className="more_items_14 active">This Month</button>
                             </div>
                         </li>
                         <li>
                             <div>
-                                <button class="more_items_14">Last Month</button>
+                                <button className="more_items_14">Last Month</button>
                             </div>
                         </li>
                         <li>
-                            <div class="explore_search">
-                                <div class="sis-search-box">
-                                    <div class="sis-box-iput">
-                                        <input class="sis-search" type="text" placeholder="Document Number" />
-                                        <i class="uil uil-search-alt icon icon8"></i>
+                            <div className="explore_search">
+                                <div className="sis-search-box">
+                                    <div className="sis-box-iput">
+                                        <input className="sis-search" type="text" placeholder="Document Number" />
+                                        <i className="uil uil-search-alt icon icon8"></i>
                                     </div>
                                 </div>
                             </div>
@@ -167,18 +182,20 @@ const StatementIS = () => {
                                     <th className="MyCourse-text-center" scope="col">Type</th>
                                     <th className="MyCourse-text-center" scope="col">Title</th>
                                     <th className="MyCourse-text-center" scope="col">Amount</th>
+                                    <th className="MyCourse-text-center" scope="col">Fees</th>
                                     <th className="MyCourse-text-center" scope="col">Invoice</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                                {courses.map(course => (
-                                    <tr key={course.orderID}>
+                                {statementIS.map(course => (
+                                    <tr key={course.id}>
                                         <td className="MyCourse-text-center">{course.date}</td>
                                         <td>{course.orderID}</td>
                                         <td className="MyCourse-text-center">{course.type}</td>
                                         <td className="MyCourse-text-center">{course.title}</td>
                                         <td className="MyCourse-text-center">{course.amount}</td>
+                                        <td className="MyCourse-text-center">{course.fee}</td>
                                         <td className="MyCourse-text-center">
                                             <a href="#">View</a>
                                         </td>
@@ -192,6 +209,7 @@ const StatementIS = () => {
 
             </div>
         </div>
+
     )
 }
 

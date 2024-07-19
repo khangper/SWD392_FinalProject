@@ -250,7 +250,7 @@
 .course-timer {
   bottom: 0;
   position: absolute;
-  margin-bottom: 10px;
+  margin-bottom: -115px;
   right: 0;
   margin-right: 10px;
   color: #fff;

@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { PATH_NAME } from '../constant/pathname';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       } else if (foundUser.role === 'student') {
         navigate('/student-dashboard');
       } else {
-        navigate('/home');
+        navigate(PATH_NAME.HOME);
       }
     } else {
       console.error('Login failed: user not found');
