@@ -10,7 +10,7 @@ import { watchFetchHomeStudentThoughts } from "./sagas/homeSagas/HomeStudentThou
 import { watchFetchInsDashboardCards } from "./sagas/insDashboardSagas/InsDashboardCardSaga";
 import { watchFetchInsDashboardCourses } from "./sagas/insDashboardSagas/InsDashboardCourseSaga";
 import { watchFetchInsDashboardNews } from "./sagas/insDashboardSagas/InsDashboardNewSaga";
-  import { watchFetchLiveOutputLiveStreams } from "./sagas/liveOutputSagas/liveOutputLivestreamSagas";
+import { watchFetchLiveOutputLiveStreams } from "./sagas/liveOutputSagas/liveOutputLivestreamSagas";
 import { watchFetchBlogs } from "./sagas/blogSagas/BlogSagas";
 import { watchFetchEarningTable } from "./sagas/earningSagas/EarningTableSaga";
 import { watchFetchEarningTopCountry } from "./sagas/earningSagas/EarningTopContrySaga";
@@ -20,6 +20,9 @@ import searchresultSaga from "./sagas/searchresultSaga";
 import { watchSaveCourses } from "./sagas/SaveCourseSaga";
 import { watchAddToCart } from "./sagas/ShoppingCartSaga";
 import courseSaga from "./sagas/MyCourseSaga/CourseSaga";
+import coursesDSaga from "./sagas/CoursesDSaga";
+import commentsSaga from "./sagas/CommentsSaga";
+import watchFetchChatMessages from "./sagas/MessageSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -27,13 +30,13 @@ export default function* rootSaga() {
     instructorsSaga(),
     watchFetchHomeLiveStreams(),
     watchFetchHomeFeaturedCourses(),
-                  watchFetchHomeNewestCourses(),
-              watchFetchHomePopularInstructors(),
-              watchFetchHomeStudentThoughts(),
-              watchFetchInsDashboardCards(),
-              watchFetchInsDashboardCourses(),
-              watchFetchInsDashboardNews(),
-      watchFetchLiveOutputLiveStreams(),
+    watchFetchHomeNewestCourses(),
+    watchFetchHomePopularInstructors(),
+    watchFetchHomeStudentThoughts(),
+    watchFetchInsDashboardCards(),
+    watchFetchInsDashboardCourses(),
+    watchFetchInsDashboardNews(),
+    watchFetchLiveOutputLiveStreams(),
     watchFetchBlogs(),
     watchFetchEarningTable(),
     watchFetchEarningTopCountry(),
@@ -42,7 +45,10 @@ export default function* rootSaga() {
     watchSaveCourses(),
     watchAddToCart(),
     courseSaga(),
-     searchresultSaga(),
+    searchresultSaga(),
+    coursesDSaga(),
+    commentsSaga(),
+    watchFetchChatMessages(),
   ]);
 
 }

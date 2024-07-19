@@ -7,6 +7,7 @@ import google from "../../../assets/google.png";
 import emailIcon from "../../../assets/email.png";
 import passwordIcon from "../../../assets/password.png";
 import { AuthContext } from "../../../Router/AuthContext";
+import { PATH_NAME } from "../../../constant/pathname";
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-logo-container">
-        <Link to="/home">
+        <Link to={PATH_NAME.HOME}>
           <img
             src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
             alt="Cursus Logo"
