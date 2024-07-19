@@ -8,9 +8,16 @@ import blackMenuIcon from "../../assets/black-menu.png";
 import editIcon from "../../assets/edit.png";
 import binIcon from "../../assets/bin.png";
 import addIcon from "../../assets/add.png";
+import imageIcon from '../../assets/image.png';
+import priceIcon from "../../assets/price.png";
+import submitIcon from "../../assets/submit.png";
+import createIcon from "../../assets/create.png";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Select from 'react-select';
+import LectureModal from "./components/lectureModal/LectureModal";
+import { LectureTab, LectureTabs } from "./components/lectureTab/LectureTabs";
+import PriceTabs from "./components/priceTab/PriceTabs";
 
 const CreateNewCourse = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -263,6 +270,15 @@ const CreateNewCourse = () => {
     const draggedItem = newItems.splice(draggedItemIndex, 1)[0];
     newItems.splice(index, 0, draggedItem);
     setItems(newItems);
+  };
+  const [showLectureModal, setShowLectureModal] = useState(false);
+
+  const handleOpenLectureModal = () => {
+    setShowLectureModal(true);
+  };
+
+  const handleCloseLectureModal = () => {
+    setShowLectureModal(false);
   };
 return (
     <div className="create-new-course-container">
@@ -531,21 +547,239 @@ return (
             ))}
           </div>
           <div className="section-add-item-wrap">
-          <button className="section-add-btn"><img src={addIcon} alt="add icon"/> Lecture</button>
+          <button className="section-add-btn"  onClick={handleOpenLectureModal} ><img src={addIcon} alt="add icon"/> Lecture</button>
           <button className="section-add-btn"><img src={addIcon} alt="add icon"/> Quiz</button>
           <button className="section-add-btn"><img src={addIcon} alt="add icon"/> Assignment</button>
           </div>
 </div>
+<LectureModal showModal={showLectureModal} closeModal={handleCloseLectureModal}/>
               </div>
             </div>
           )}
           {currentStep === 2 && (
-          <div>
-
+          <div className="content-tab-container">
+ <div className="content-tab-header">
+                <h3>
+                  <img src={imageIcon} />
+                  Media
+                </h3>  
+              </div>
+              <div className="video-content-tab">
+                <span className="video-info">
+                      Select your preferred video type. (.mp4, YouTube, Vimeo
+                      etc.)
+                    </span>
+                    <div className="video-category">
+                      <LectureTabs>
+                        <LectureTab label="HTML5(MP4)">
+                          <div className="html5-tab">
+                            <div className="html5-block">
+                              <div className="html5-left-course">
+                                <div className="html5-upload-file">
+                                  <div className="html5-upload-btn">
+                                    <input type="file" />
+                                    <label htmlFor="Videofile" title="Zip">
+                                      Upload Video
+                                    </label>
+                                  </div>
+                                  <span>File format: .mp4</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="create-new-course-video-body">
+                            <div className="content-tab-title">
+                  <h4>Course thumbnail*</h4>
+                </div>
+                <div className="thumb-item">
+                  <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/thumbnail-demo.jpg"/>
+                  <div className="thumb-dt">
+                <div className="html5-upload-btn">
+                                    <input type="file" />
+                                    <label htmlFor="Videofile" title="Zip">
+                                      Choose thumbnail
+                                    </label>
+                                  </div>
+                                  <span className="upload-id">
+                                  Size: 590x300 pixels. Supports: jpg,jpeg, or png
+                                  </span>
+                </div>
+                </div>
+                
+                            </div>
+                     
+                          </div>
+                        </LectureTab>
+                        <LectureTab label="External URL">
+                          <div className="html5-tab">
+                            <div className="content-tab-title">
+                              <h4>External URL*</h4>
+                            </div>
+                            <div className="form-group">
+                              <input
+                                type="text"
+                                id="headline"
+                                name="headline"
+                                placeholder="External Video URL"
+                              />
+                            </div>
+                            <div className="create-new-course-video-body">
+                            <div className="content-tab-title">
+                  <h4>Course thumbnail*</h4>
+                </div>
+                <div className="thumb-item">
+                  <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/thumbnail-demo.jpg"/>
+                  <div className="thumb-dt">
+                <div className="html5-upload-btn">
+                                    <input type="file" />
+                                    <label htmlFor="Videofile" title="Zip">
+                                      Choose thumbnail
+                                    </label>
+                                  </div>
+                                  <span className="upload-id">
+                                  Size: 590x300 pixels. Supports: jpg,jpeg, or png
+                                  </span>
+                </div>
+                </div>
+                
+                            </div>
+                          </div>
+                        </LectureTab>
+                        <LectureTab label="YouTube">
+                          <div className="html5-tab">
+                            <div className="content-tab-title">
+                              <h4>Youtube URL*</h4>
+                            </div>
+                            <div className="form-group">
+                              <input
+                                type="text"
+                                id="headline"
+                                name="headline"
+                                placeholder="Youtube Video URL"
+                              />
+                            </div>
+                            <div className="create-new-course-video-body">
+                            <div className="content-tab-title">
+                  <h4>Course thumbnail*</h4>
+                </div>
+                <div className="thumb-item">
+                  <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/thumbnail-demo.jpg"/>
+                  <div className="thumb-dt">
+                <div className="html5-upload-btn">
+                                    <input type="file" />
+                                    <label htmlFor="Videofile" title="Zip">
+                                      Choose thumbnail
+                                    </label>
+                                  </div>
+                                  <span className="upload-id">
+                                  Size: 590x300 pixels. Supports: jpg,jpeg, or png
+                                  </span>
+                </div>
+                </div>
+                
+                            </div>
+                          </div>
+                        </LectureTab>
+                        <LectureTab label="Vimeo">
+                          <div className="html5-tab">
+                            <div className="content-tab-title">
+                              <h4>Vimeo URL*</h4>
+                            </div>
+                            <div className="form-group">
+                              <input
+                                type="text"
+                                id="headline"
+                                name="headline"
+                                placeholder="Vimeo Video URL"
+                              />
+                            </div>
+                            <div className="create-new-course-video-body">
+                            <div className="content-tab-title">
+                  <h4>Course thumbnail*</h4>
+                </div>
+                <div className="thumb-item">
+                  <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/thumbnail-demo.jpg"/>
+                  <div className="thumb-dt">
+                <div className="html5-upload-btn">
+                                    <input type="file" />
+                                    <label htmlFor="Videofile" title="Zip">
+                                      Choose thumbnail
+                                    </label>
+                                  </div>
+                                  <span className="upload-id">
+                                  Size: 590x300 pixels. Supports: jpg,jpeg, or png
+                                  </span>
+                </div>
+                </div>
+                
+                            </div>
+                          </div>
+                        </LectureTab>
+                        <LectureTab label="embedded">
+                          <div className="html5-tab">
+                            <div className="content-tab-title">
+                              <h4>Embedded Code*</h4>
+                            </div>
+                            <div className="form-group">
+                              <textarea
+                                type="text"
+                                id="headline"
+                                name="headline"
+                                placeholder="External Video URL"
+                              />
+                            </div>
+                            <div className="create-new-course-video-body">
+                            <div className="content-tab-title">
+                  <h4>Course thumbnail*</h4>
+                </div>
+                <div className="thumb-item">
+                  <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/thumbnail-demo.jpg"/>
+                  <div className="thumb-dt">
+                <div className="html5-upload-btn">
+                                    <input type="file" />
+                                    <label htmlFor="Videofile" title="Zip">
+                                      Choose thumbnail
+                                    </label>
+                                  </div>
+                                  <span className="upload-id">
+                                  Size: 590x300 pixels. Supports: jpg,jpeg, or png
+                                  </span>
+                </div>
+                </div>
+                
+                            </div>
+                          </div>
+                        </LectureTab>
+                      </LectureTabs>
+                    </div>
+                </div>
             </div>
           )}
-          {currentStep === 3 && <div>Content for Price</div>}
-          {currentStep === 4 && <div>Content for Publish</div>}
+          {currentStep === 3 && 
+          <div className="content-tab-container">
+<div className="content-tab-header">
+                <h3>
+                  <img src={priceIcon} />
+                  Price
+                </h3>  
+              </div>
+              <div className="content-tab-content">
+                <PriceTabs/>
+              </div>
+            </div>}
+          {currentStep === 4 && 
+          <div className="content-tab-container">
+<div className="content-tab-header">
+                <h3>
+                  <img src={submitIcon} />
+                  Submit
+                </h3>  
+              </div>
+              <div className="publish-block">
+                <img src={createIcon}/>
+                <p>Your course is in a draft state. Students cannot view, purchase or enroll in this course. For students that are already enrolled, this course will not appear on their student Dashboard.</p>
+              </div>
+            </div>
+            }
         </section>
         <div className="step-footer step-tab-pager">
           <button
