@@ -35,6 +35,10 @@
   width: 100%;
 }
 
+.featured-courses li {
+  list-style: none;
+}
+
 .live-streams-container,
 .featured-courses-container,
 .popular-instructors-container {
@@ -250,7 +254,7 @@
 .course-timer {
   bottom: 0;
   position: absolute;
-  margin-bottom: -115px;
+  margin-bottom: 10px;
   right: 0;
   margin-right: 10px;
   color: #fff;
