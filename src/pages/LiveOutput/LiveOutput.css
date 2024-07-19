@@ -147,7 +147,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 30.2px;
-  min-width: 800px;
   max-width: 100%;
 }
 
@@ -423,7 +422,7 @@
   background-position: center;
   background: rgba(51, 1, 51, 0.1);
   text-align: center;
-  width: 186px;
+  width: 188px;
   flex-shrink: 0;
 }
 
