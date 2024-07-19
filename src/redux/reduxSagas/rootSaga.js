@@ -20,6 +20,9 @@ import searchresultSaga from "./sagas/searchresultSaga";
 import { watchSaveCourses } from "./sagas/SaveCourseSaga";
 import { watchAddToCart } from "./sagas/ShoppingCartSaga";
 import courseSaga from "./sagas/MyCourseSaga/CourseSaga";
+import coursesDSaga from "./sagas/CoursesDSaga";
+import commentsSaga from "./sagas/CommentsSaga";
+import watchFetchChatMessages from "./sagas/MessageSaga";
   import MyCertificationsSaga from "./sagas/MyCertificationsSaga";
 import statementSTSaga from "./sagas/StatementSTSaga";
 import statementISSaga from "./sagas/StatementISSaga";
@@ -30,6 +33,7 @@ import myPurchaseCourseSaga from "./sagas/MyCourseSaga/MyPurchaseSaga";
 import discountSaga from "./sagas/MyCourseSaga/DiscountSaga";
 import { watchFetchNotifications } from "./sagas/NotificationSagas/NotificationInstructorSaga";
 import { watchFetchNotificationsStudent } from "./sagas/NotificationSagas/NotificationStudentSaga";
+
 
 export default function* rootSaga() {
   yield all([
@@ -53,6 +57,9 @@ export default function* rootSaga() {
     watchAddToCart(),
     courseSaga(),
     searchresultSaga(),
+     coursesDSaga(),
+    commentsSaga(),
+    watchFetchChatMessages(),
       MyCertificationsSaga(),
     statementSTSaga(),
     statementISSaga(),

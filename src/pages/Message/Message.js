@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Message.css";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -10,6 +11,21 @@ import { PiFlagCheckered } from "react-icons/pi";
 import { BsVolumeMute } from "react-icons/bs";
 
 const Message = () => {
+  const dispatch = useDispatch();
+    const { loading, messages, error } = useSelector(state => state.message);
+
+    useEffect(() => {
+        dispatch(fetchChatMessagesRequest());
+    }, [dispatch]);
+
+    if (loading) {
+        return <p>Loading...</p>;
+    }
+
+    if (error) {
+        return <p>Error: {error}</p>;
+    }
+  
   return (
     <div>
       <div className="message-section">

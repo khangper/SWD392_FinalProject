@@ -21,7 +21,7 @@ import marketing from "../../assets/marketing.png";
 import book from "../../assets/book.png";
 import music from "../../assets/music.png";
 import profile_image from "..//../assets/profile-img.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHomeLiveStreamsRequest } from "../../redux/reduxActions/homeActions/HomeLivestreamAction";
@@ -36,7 +36,11 @@ const Home = () => {
   const { newestCourses } = useSelector((state) => state.home_newestcourse);
   const { popularInstructors } = useSelector((state) => state.home_popularinstructor);
   const { studentThoughts } = useSelector((state) => state.home_studentthought);
+  const navigate = useNavigate();
 
+  const handleCoursesmoreClick = (id) => {
+    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(':id', id)}`);
+  };
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
     dispatch(fetchHomeFeaturedCoursesRequest());
@@ -139,62 +143,41 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={featuredCoursesRef}>
                 {featuredCourses.map((course) => (
-                  <div key={course.id} className="course-card">
-                    <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
+                  <li key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
+                    <div className="course-card">
                       <img src={course.imgSrc} alt={course.title} />
-
                       <div className="home-course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
-                          <img className="starIcon" src={ratingStar}></img>
+                          <img className="starIcon" src={ratingStar} alt="rating" />
                           {course.rating}
                         </div>
                         <div className="course-timer">{course.hours}</div>
                       </div>
-                    </Link>
-                    <div className="course-details">
-                      <div className="course-details-header">
-                        <p className="course-view-and-date">
-                          {course.views} views • {course.date}
-                        </p>
-                        <div className="course-more-dropdown">
-                          <a href="#" className="dropdown-button">
-                            ⋮
-                          </a>
-                          <div className="course-more-dropdown-menu">
-                            <span>
-                              <img src={share} />
-                              Share
-                            </span>
-                            <span>
-                              <img src={saved_course} />
-                              Save
-                            </span>
-                            <span>
-                              <img src={not_interested} />
-                              Not Interested
-                            </span>
-                            <span>
-                              <img src={report} />
-                              Report
-                            </span>
+                      <div className="course-details">
+                        <div className="course-details-header">
+                          <p className="course-view-and-date">
+                            {course.views} views • {course.date}
+                          </p>
+                          <div className="course-more-dropdown">
+                            <a href="#" className="dropdown-button">⋮</a>
+                            <div className="course-more-dropdown-menu">
+                              <span><img src={share} alt="share" /> Share</span>
+                              <span><img src={saved_course} alt="save" /> Save</span>
+                              <span><img src={not_interested} alt="not interested" /> Not Interested</span>
+                              <span><img src={report} alt="report" /> Report</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <a href="#" className="course-title">
-                        {course.title}
-                      </a>
-                      <a href="#" className="course-category">
-                        {course.category}
-                      </a>
-                      <div className="course-info">
-                        <p className="course-author">
-                          By <a href="#">{course.author}</a>
-                        </p>
-                        <div className="course-price">{course.price}</div>
+                        <a href="#" className="course-title">{course.title}</a>
+                        <a href="#" className="course-category">{course.category}</a>
+                        <div className="course-info">
+                          <p className="course-author">By <a href="#">{course.author}</a></p>
+                          <div className="course-price">{course.price}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </li>
                 ))}
               </div>
               <button
@@ -323,42 +306,42 @@ const Home = () => {
               <div className="popular-instructors" ref={popularInstructorRef}>
                 {popularInstructors.map((instructor) => (
                   <div key={instructor.id} className="popular-instructors-card">
-                     <div className="popular-instructor-image">
-                        <img
-                          src={instructor.imgSrc}
-                          alt={instructor.name}
-                          className="popular-instructor-photo"
-                        />
+                    <div className="popular-instructor-image">
+                      <img
+                        src={instructor.imgSrc}
+                        alt={instructor.name}
+                        className="popular-instructor-photo"
+                      />
+                    </div>
+                    <div className="popular-instructor-content">
+                      <div className="popular-instructor-profile">
+                        <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="instructor-name">
+                          {instructor.name}
+                        </Link>
+                        <div className="verified-badge"></div>
                       </div>
-                      <div className="popular-instructor-content">
-                        <div className="popular-instructor-profile">
-                          <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="instructor-name">
-                            {instructor.name}
-                          </Link>
-                          <div className="verified-badge"></div>
-                        </div>
-                        <div className="popular-instructor-title">
-                          {instructor.title}
-                        </div>
-                        <ul className="social-icons">
-                          <a href="#" className="sc-fb">
-                            <img src={facebook} />
-                          </a>
-                          <a href="#" className="sc-tw">
-                            <img src={x} />
-                          </a>
-                          <a href="#" className="sc-ln">
-                            <img src={linkedin} />
-                          </a>
-                          <a href="#" className="sc-yt">
-                            <img src={youtube} />
-                          </a>
-                        </ul>
-                        <div className="popular-instructor-stats">
-                          {instructor.students} Students • {instructor.courses}{" "}
-                          Courses
-                        </div>
+                      <div className="popular-instructor-title">
+                        {instructor.title}
                       </div>
+                      <ul className="social-icons">
+                        <a href="#" className="sc-fb">
+                          <img src={facebook} />
+                        </a>
+                        <a href="#" className="sc-tw">
+                          <img src={x} />
+                        </a>
+                        <a href="#" className="sc-ln">
+                          <img src={linkedin} />
+                        </a>
+                        <a href="#" className="sc-yt">
+                          <img src={youtube} />
+                        </a>
+                      </ul>
+                      <div className="popular-instructor-stats">
+                        {instructor.students} Students • {instructor.courses}{" "}
+                        Courses
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -378,7 +361,7 @@ const Home = () => {
             <div className="instructor-profile-content">
               <div className="instructor-profile-header">
                 <a href="#" className="instructor-name">
-                  Joginder Signh
+
                 </a>
                 <div className="verified-badge"></div>
               </div>

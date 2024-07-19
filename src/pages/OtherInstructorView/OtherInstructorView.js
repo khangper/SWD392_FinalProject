@@ -19,13 +19,15 @@ import { Link, useParams } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchInstructorByIdRequest } from "../../redux/reduxActions/instructorActions";
-
+import { fetchCoursesDRequest } from "../../redux/reduxActions/CoursesDAction";
+import { fetchCommentsRequest } from "../../redux/reduxActions/CommentAction";
 const OtherInstructorView = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { instructors, loading, error } = useSelector(
     (state) => state.allinstructor
   );
+
   const instructorDetail = instructors.find(instructor => instructor.id === id);
   const [oivtab, setOivtab] = useState("about");
   const [selectOptions, setSelectOptions] = useState("");
@@ -35,6 +37,18 @@ const OtherInstructorView = () => {
       dispatch(fetchInstructorByIdRequest(id));
     }
   }, [dispatch, id, instructorDetail]);
+
+  const { coursesd } = useSelector((state) => state.coursesd);
+
+  useEffect(() => {
+    dispatch(fetchCoursesDRequest());
+  }, [dispatch]);
+
+  const { comments } = useSelector((state) => state.comments);
+
+  useEffect(() => {
+    dispatch(fetchCommentsRequest());
+  }, [dispatch]);
 
   const handleoivTabChange = (tab) => {
     setOivtab(tab);
@@ -69,7 +83,7 @@ const OtherInstructorView = () => {
                               Enroll Students
                             </div>
                             <div className="other_instructor_view-number">
-                              {instructorDetail.students}
+                              200k
                             </div>
                           </div>
                         </li>
@@ -79,7 +93,7 @@ const OtherInstructorView = () => {
                               Courses
                             </div>
                             <div className="other_instructor_view-number">
-                              {instructorDetail.courses}
+                              20
                             </div>
                           </div>
                         </li>
@@ -224,685 +238,58 @@ const OtherInstructorView = () => {
                           <h3>My courses (8)</h3>
                           <div className="other_instructor_view-list_courses">
                             <div className="other_instructor_view-row">
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="oiv-badge_seller">
-                                        Bestseller
+                              {coursesd.map((course) => (
+                                <div className="oiv-course" key={course.id}>
+                                  <div className="oiv-course-detail">
+                                    <a href="course_detail_view.html" className="fcrse_img">
+                                      <img src={course.image} alt='' />
+                                      <div className="oiv-course-overlay">
+                                        {course.bestseller && (
+                                          <div className="oiv-badge_seller">Bestseller</div>
+                                        )}
+                                        <div className="crse_reviews">
+                                          <img className="starIcon" src={ratingStar} alt="rating" />
+                                          {course.ratingStar}
+                                        </div>
+                                        <div className="crse_timer">{course.time}</div>
                                       </div>
-                                      <div className="crse_reviews">
-                                        <img
-                                          className="starIcon"
-                                          src={ratingStar}
-                                        ></img>
-                                        4.5
+                                    </a>
+                                    <div className="fcrse_contents">
+                                      <div className="fcrse_content">
+                                        <div className="other_instructor_view-time_view">
+                                          <span className="view">{course.view} • </span>
+                                          <span className="time">{course.day}</span>
+                                        </div>
+                                        <div className="eps_dots more_dropdown">
+                                          <a href="#" className="oiv-dropdown-button">⋮</a>
+                                          <div className="oiv-dropdown-content">
+                                            <span><img src={share} alt="share" />Share</span>
+                                            <span><img src={saved_course} alt="save" />Save</span>
+                                            <span><img src={not_interested} alt="not interested" />Not Interested</span>
+                                            <span><img src={report} alt="report" />Report</span>
+                                          </div>
+                                        </div>
                                       </div>
+                                      <a href="course_detail_view.html" className="oiv-detail">
+                                        {course.detail}
+                                      </a>
+                                      <a href="#" className="oiv-career">
+                                        {course.career}
+                                      </a>
+                                      <div className="other_instructor_view-publisher">
+                                        <p className="oiv-publisher">
+                                          By <a href="#">{course.author}</a>
+                                        </p>
+                                        <div className="oiv-price">{course.price}</div>
+                                        <button className="oiv-cart" title="cart">
+                                          <img src={card_icon} alt="cart" className="oiv-cart-icon" />
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
 
-                                      <div className="crse_timer">25 hours</div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="view">
-                                          109k views •{" "}
-                                        </span>
-                                        <span className="time">
-                                          15 days ago
-                                        </span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      Complete Python Bootcamp: Go from zero to
-                                      hero in Python 3
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Web Development | Python
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$10</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="oiv-badge_seller">
-                                        Bestseller
-                                      </div>
-                                      <div className="crse_reviews">
-                                        <img
-                                          className="starIcon"
-                                          src={ratingStar}
-                                        ></img>
-                                        4.5
-                                      </div>
-
-                                      <div className="crse_timer">28 hours</div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="vdt14">
-                                          5M views •{" "}
-                                        </span>
-                                        <span className="vdt14">
-                                          15 days ago
-                                        </span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      The Complete JavaScript Course 2020: Build
-                                      Real Projects!
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Development | JavaScript
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$5</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-20.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="crse_reviews">
-                                        <img
-                                          className="starIcon"
-                                          src={ratingStar}
-                                        ></img>
-                                        5.0
-                                      </div>
-
-                                      <div className="crse_timer">21 hours</div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="vdt14">
-                                          200 Views •{" "}
-                                        </span>
-                                        <span className="vdt14">
-                                          4 days ago
-                                        </span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      WordPress Development - Themes, Plugins
-                                      &amp; Gutenberg
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Design | Wordpress
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$14</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-4.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="oiv-badge_seller">
-                                        Bestseller
-                                      </div>
-                                      <div className="crse_reviews">
-                                        <img
-                                          className="starIcon"
-                                          src={ratingStar}
-                                        ></img>
-                                        5.0
-                                      </div>
-
-                                      <div className="crse_timer">1 hour</div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="vdt14">
-                                          153k views •{" "}
-                                        </span>
-                                        <span className="vdt14">
-                                          3 months ago
-                                        </span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      The Complete Digital Marketing Course - 12
-                                      Courses in 1
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Digital Marketing | Marketing
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$12</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-13.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="crse_timer">30 hours</div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="vdt14">
-                                          20 Views •{" "}
-                                        </span>
-                                        <span className="vdt14">1 day ago</span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      The Complete Node.js Developer Course (3rd
-                                      Edition)
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Development | Node.js
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$3</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-7.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="oiv-badge_seller">
-                                        Bestseller
-                                      </div>
-                                      <div className="crse_reviews">
-                                        <img
-                                          className="starIcon"
-                                          src={ratingStar}
-                                        ></img>
-                                        5.0
-                                      </div>
-
-                                      <div className="crse_timer">
-                                        5.4 hours
-                                      </div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="vdt14">
-                                          109k views •{" "}
-                                        </span>
-                                        <span className="vdt14">
-                                          15 days ago
-                                        </span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      WordPress for Beginners: Create a Website
-                                      Step by Step
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Design | Wordpress
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$18</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-8.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="oiv-badge_seller">
-                                        Bestseller
-                                      </div>
-                                      <div className="crse_reviews">
-                                        <img
-                                          className="starIcon"
-                                          src={ratingStar}
-                                        ></img>
-                                        4.0
-                                      </div>
-
-                                      <div className="crse_timer">23 hours</div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="vdt14">
-                                          196k views •{" "}
-                                        </span>
-                                        <span className="vdt14">
-                                          1 month ago
-                                        </span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      CSS - The Complete Guide 2020 (incl.
-                                      Flexbox, Grid &amp; Sass)
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Design | CSS
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$10</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="oiv-course">
-                                <div className="oiv-course-detail">
-                                  <a
-                                    href="course_detail_view.html"
-                                    className="fcrse_img"
-                                  >
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-16.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-course-overlay">
-                                      <div className="crse_timer">22 hours</div>
-                                    </div>
-                                  </a>
-                                  <div className="fcrse_contents">
-                                    <div className="fcrse_content">
-                                      <div className="other_instructor_view-time_view">
-                                        <span className="vdt14">
-                                          11 Views •{" "}
-                                        </span>
-                                        <span className="vdt14">
-                                          5 Days ago
-                                        </span>
-                                      </div>
-                                      <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
-                                        <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={share} />
-                                            Share
-                                          </span>
-                                          <span>
-                                            <img src={saved_course} />
-                                            Save
-                                          </span>
-                                          <span>
-                                            <img src={not_interested} />
-                                            Not Interested
-                                          </span>
-                                          <span>
-                                            <img src={report} />
-                                            Report
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <a
-                                      href="course_detail_view.html"
-                                      className="oiv-detail"
-                                    >
-                                      Vue JS 2 - The Complete Guide (incl. Vue
-                                      Router &amp; Vuex)
-                                    </a>
-                                    <a href="#" className="oiv-career">
-                                      Development | Vue JS
-                                    </a>
-                                    <div className="other_instructor_view-publisher">
-                                      <p className="oiv-publisher">
-                                        By <a href="#">John Doe</a>
-                                      </p>
-                                      <div className="oiv-price">$10</div>
-                                      <button className="oiv-cart" title="cart">
-                                        <img
-                                          src={card_icon}
-                                          alt=""
-                                          className="oiv-cart-icon"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </div>
                           </div>
                         </div>
@@ -935,113 +322,59 @@ const OtherInstructorView = () => {
                                   Comment
                                 </button>
                               </div>
-                              <div className="oiv-history-comment">
-                                <div className="oiv-review_item">
-                                  <div className="oiv-review_usr_dt">
-                                    <img
-                                      src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg"
-                                      alt=""
-                                    />
-                                    <div className="oiv-cmnt_name">
-                                      <h4 className="oiv-tutor_name">
-                                        John Doe
-                                      </h4>
-                                      <span className="oiv-cmnt_time">
-                                        2 hour ago
-                                      </span>
-                                    </div>
-                                    <div className="eps_dots more_dropdown">
-                                      <a
-                                        href="#"
-                                        className="oiv-dropdown-button"
-                                      >
-                                        ⋮
-                                      </a>
-                                      <div className="oiv-dropdown-content">
-                                        <span>
-                                          <img src={edit} />
-                                          Edit
-                                        </span>
-                                        <span>
-                                          <img src={deletee} />
-                                          Delete
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <p className="oiv-cmnt_text_message">
-                                    Nam gravida elit a velit rutrum, eget
-                                    dapibus ex elementum. Interdum et malesuada
-                                    fames ac ante ipsum primis in faucibus.
-                                    Fusce lacinia, nunc sit amet tincidunt
-                                    venenatis.
-                                  </p>
-                                  <div className="oiv-contact_icon">
-                                    <a href="#" className="oiv-report">
-                                      <img src={like} /> 10
-                                    </a>
-                                    <a href="#" className="oiv-report">
-                                      <img src={dislike} /> 1
-                                    </a>
-                                    <a href="#" className="oiv-report">
-                                      <img src={heart} />
-                                    </a>
-                                    <a href="#" className="oiv-report ml-3">
-                                      Reply
-                                    </a>
-                                  </div>
-                                </div>
-                                <div className="oiv-review_reply">
+                              {comments.map((comment) => (
+                                <div className="oiv-history-comment" key={comment.id}>
                                   <div className="oiv-review_item">
                                     <div className="oiv-review_usr_dt">
-                                      <img
-                                        src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg"
-                                        alt=""
-                                      />
+                                      <img src={comment.userImage} alt="" />
                                       <div className="oiv-cmnt_name">
-                                        <h4 className="oiv-tutor_name">
-                                          Rock Doe
-                                        </h4>
-                                        <span className="oiv-cmnt_time">
-                                          1 hour ago
-                                        </span>
+                                        <h4 className="oiv-tutor_name">{comment.userName}</h4>
+                                        <span className="oiv-cmnt_time">{comment.timeAgo}</span>
                                       </div>
                                       <div className="eps_dots more_dropdown">
-                                        <a
-                                          href="#"
-                                          className="oiv-dropdown-button"
-                                        >
-                                          ⋮
-                                        </a>
+                                        <a href="#" className="oiv-dropdown-button">⋮</a>
                                         <div className="oiv-dropdown-content">
-                                          <span>
-                                            <img src={deletee} />
-                                            Delete
-                                          </span>
+                                          <span><img src={edit} alt="edit" /> Edit</span>
+                                          <span><img src={deletee} alt="delete" /> Delete</span>
                                         </div>
                                       </div>
                                     </div>
-                                    <p className="oiv-cmnt_text_message">
-                                      Fusce lacinia, nunc sit amet tincidunt
-                                      venenatis.
-                                    </p>
+                                    <p className="oiv-cmnt_text_message">{comment.message}</p>
                                     <div className="oiv-contact_icon">
-                                      <a href="#" className="oiv-report">
-                                        <img src={like} />4
-                                      </a>
-                                      <a href="#" className="oiv-report">
-                                        <img src={dislike} /> 2
-                                      </a>
-                                      <a href="#" className="oiv-report">
-                                        <img src={heart} />
-                                      </a>
-                                      <a href="#" className="oiv-report ml-3">
-                                        Reply
-                                      </a>
+                                      <a href="#" className="oiv-report"><img src={like} alt="like" /> {comment.likes}</a>
+                                      <a href="#" className="oiv-report"><img src={dislike} alt="dislike" /> {comment.dislikes}</a>
+                                      <a href="#" className="oiv-report"><img src={heart} alt="heart" /></a>
+                                      <a href="#" className="oiv-report ml-3">Reply</a>
                                     </div>
                                   </div>
+                                  {comment.replies && comment.replies.map((reply) => (
+                                    <div className="oiv-review_reply" key={reply.id}>
+                                      <div className="oiv-review_item">
+                                        <div className="oiv-review_usr_dt">
+                                          <img src={reply.userImage} alt="" />
+                                          <div className="oiv-cmnt_name">
+                                            <h4 className="oiv-tutor_name">{reply.userName}</h4>
+                                            <span className="oiv-cmnt_time">{reply.timeAgo}</span>
+                                          </div>
+                                          <div className="eps_dots more_dropdown">
+                                            <a href="#" className="oiv-dropdown-button">⋮</a>
+                                            <div className="oiv-dropdown-content">
+                                              <span><img src={deletee} alt="delete" /> Delete</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <p className="oiv-cmnt_text_message">{reply.message}</p>
+                                        <div className="oiv-contact_icon">
+                                          <a href="#" className="oiv-report"><img src={like} alt="like" /> {reply.likes}</a>
+                                          <a href="#" className="oiv-report"><img src={dislike} alt="dislike" /> {reply.dislikes}</a>
+                                          <a href="#" className="oiv-report"><img src={heart} alt="heart" /></a>
+                                          <a href="#" className="oiv-report ml-3">Reply</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  ))}
                                 </div>
-                              </div>
+                              ))}
                             </div>
                           </div>
                         </div>
