@@ -9,6 +9,9 @@ import like from "../../assets/like.png";
 import dislike from "../../assets/dislike.png";
 import star from "../../assets/star.png";
 import search from "../../assets/search.png";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchHomeFeaturedCoursesDetailRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
 
 const CoursesDetailView = () => {
   const sections = [
@@ -539,19 +542,31 @@ const CoursesDetailView = () => {
   const [oivtab, setOivtab] = useState("about");
   const [selectOptions, setSelectOptions] = useState("");
 
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { loading, error, featuredCourses } = useSelector((state) => state.home_featuredcourse);
+
+  const currentCourseDetail = featuredCourses.find(courseDetail => courseDetail.id === id)
+
+  useEffect(() => {
+    if (!currentCourseDetail) {
+      dispatch(fetchHomeFeaturedCoursesDetailRequest(id));
+    }
+  }, [dispatch, id, currentCourseDetail]);
+
+
   const handleoivTabChange = (tab) => {
     setOivtab(tab);
   };
-
-  const handleSelectChange = (event) => {
-    setSelectOptions(event.target.value);
-  };
-
   const [accordion, setAccordion] = useState(null);
 
   const toggleAccordion = (index) => {
     setAccordion(accordion === index ? null : index);
   };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!currentCourseDetail) return <div>Course not found</div>;
   return (
     <div>
       <div className="courses_detail_view-div1">
@@ -564,7 +579,7 @@ const CoursesDetailView = () => {
                     <div className="cdv-preview_video">
                       <a href="#" className="fcrse_img">
                         <img
-                          src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg"
+                          src={currentCourseDetail.imgSrc}
                           alt=""
                         />
                         <div className="cdv-course-overlay">

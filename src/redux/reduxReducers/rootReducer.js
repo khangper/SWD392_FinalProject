@@ -20,6 +20,9 @@ import searchresultReducer from "./reducers/searchresultReducer";
 import saveCourseReducer from "./reducers/SaveCourseReducer";
 import ShoppingCartReducer from "./reducers/ShoppingCartReducer";
 import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
+import coursesdReducer from "./reducers/CoursesDReducer";
+import commentsReducer from "./reducers/CommentReducer";
+import chatReducer from "./reducers/MessageReducer";
   import mycertificationReducer from "./reducers/MyCertificationsReducer";
 import statementSTReducer from "./reducers/StatementSTReducer";
 import statementISReducer from "./reducers/StatementISReducer";
@@ -53,6 +56,9 @@ const rootReducer = combineReducers({
   saveCourses: saveCourseReducer,
   cart: ShoppingCartReducer,
   courses: courseReducer,
+    coursesd: coursesdReducer,
+  comments: commentsReducer,
+  message: chatReducer,
    mycertifications: mycertificationReducer,
   statementST: statementSTReducer,
   statementIS: statementISReducer,

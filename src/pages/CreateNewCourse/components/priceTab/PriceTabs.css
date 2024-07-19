@@ -1,0 +1,63 @@
+.price-course-pricing-tabs {
+    width: 100%;
+  }
+  
+  .price-tab-buttons {
+    display: flex;
+    padding: 30px 0 5px;
+  }
+  
+  .price-tab-button {
+    flex: 1;
+    border-radius: 0 !important;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    border-left: 0;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    color: #333;
+    background: #f7f7f7;
+    padding: 12px !important;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+  }
+  
+  .price-tab-button.price-active {
+    background: red;
+    color: white;
+  }
+  
+  .price-tab-content {
+    padding-top: 35px;
+    margin-bottom: 0;
+  }
+  
+  .price-tab-panel {
+    display: flex;
+    justify-content: center;
+  }
+
+.lbl-quiz{
+    margin-left: 50px;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #231f20;
+    cursor: pointer;
+    top:-2px;
+    position: relative;
+}
+.mt-3{
+    margin-top: 1rem !important;
+}
+.price-tab-block p{
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 150px;
+}
+.headline-group-2{
+    width: 30%;
+}
