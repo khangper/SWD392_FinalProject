@@ -34,6 +34,7 @@ import discountSaga from "./sagas/MyCourseSaga/DiscountSaga";
 import { watchFetchNotifications } from "./sagas/NotificationSagas/NotificationInstructorSaga";
 import { watchFetchNotificationsStudent } from "./sagas/NotificationSagas/NotificationStudentSaga";
 import { watchLiveById } from "./sagas/liveOutputSagas/liveoutputLiveByIdSaga";
+import { watchBlogDetail } from "./sagas/blogSagas/BlogDetailSaga";
 
 
 export default function* rootSaga() {
@@ -72,5 +73,6 @@ export default function* rootSaga() {
     watchFetchNotifications(),
     watchFetchNotificationsStudent(),
     watchLiveById(),
+    watchBlogDetail(),
   ]);
 }

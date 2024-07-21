@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./BlogDetail.css";
 import Header from "../../components/Header/Header";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
@@ -6,9 +6,24 @@ import big_blog from "../../assets/big_blog.jpg";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogDetailRequest } from "../../redux/reduxActions/blogActions/BlogDetailAction";
+import numeral from "numeral";
 
 const BlogDetail = () => {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const { blog } = useSelector((state) => state.blogDetail);
+
+  useEffect(() => {
+    dispatch(fetchBlogDetailRequest(id));
+  }, [dispatch, id]);
+
+  if (!blog) {
+    return null;
+  }
+
   return (
     <div className="blog-detail">
       <Header />
@@ -29,7 +44,9 @@ const BlogDetail = () => {
                   Single Blog View
                 </div>
               </div>
-              <h3 className="blog-detail-heading-1">Blog Title Here</h3>
+              <h3 className="blog-detail-heading-1">
+                {blog.blog_detail.title}
+              </h3>
             </div>
             <div className="blog-detail-back-to-blog-link">
               <MdKeyboardDoubleArrowLeft className="blog-detail-icon" />
@@ -42,15 +59,27 @@ const BlogDetail = () => {
           <div className="blog-detail-blog-content">
             <div className="blog-detail-blog-post">
               <div className="blog-detail-blog-image">
-                <img src={big_blog} alt="" className="blog-detail-big-blog" />
+                <img
+                  src={blog.blog_detail.thumbnails}
+                  alt=""
+                  className="blog-detail-big-blog"
+                />
               </div>
               <div className="blog-detail-blog-meta">
                 <div className="blog-detail-paragraph-text">
                   <div className="blog-detail-view-count">
-                    <div className="blog-detail-views">109k views</div>
+                    <div className="blog-detail-views">
+                      {numeral(blog.blog_detail.viewCount)
+                        .format("0.a")
+                        .replace(/m/g, "M")
+                        .replace(/k/g, "K")}{" "}
+                      views
+                    </div>
                     <div className="blog-detail-point">•</div>
                   </div>
-                  <div className="blog-detail-time-post">March 10, 2020</div>
+                  <div className="blog-detail-time-post">
+                    {blog.blog_detail.createdAt}
+                  </div>
                 </div>
                 <div className="blog-detail-content-container">
                   <p className="blog-detail-paragraph">
