@@ -33,6 +33,7 @@ import myPurchaseCourseSaga from "./sagas/MyCourseSaga/MyPurchaseSaga";
 import discountSaga from "./sagas/MyCourseSaga/DiscountSaga";
 import { watchFetchNotifications } from "./sagas/NotificationSagas/NotificationInstructorSaga";
 import { watchFetchNotificationsStudent } from "./sagas/NotificationSagas/NotificationStudentSaga";
+import { watchLiveById } from "./sagas/liveOutputSagas/liveoutputLiveByIdSaga";
 
 
 export default function* rootSaga() {
@@ -70,5 +71,6 @@ export default function* rootSaga() {
     discountSaga(),
     watchFetchNotifications(),
     watchFetchNotificationsStudent(),
+    watchLiveById(),
   ]);
 }
