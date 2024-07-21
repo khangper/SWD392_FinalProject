@@ -6,7 +6,7 @@
 }
 
 .p-progress {
-    width: 30%;
+    width:  30%;
     height: 10px;
     background-color: #e0e0e0;
     margin-right: 10px;
@@ -22,4 +22,29 @@
     width: 2%;
     margin-left: 10px;
     font-size: 1em;
+}
+
+.p-progress-bar {
+    height: 10px;
+    background-color: red;
+}
+.p-progress-bar1 {
+    height: 10px;
+    background-color: red;
+    width: 80%;
+}
+.p-progress-bar2 {
+    height: 10px;
+    background-color: red;
+    width: 60%;
+}
+.p-progress-bar3 {
+    height: 10px;
+    background-color: red;
+    width: 40%;
+}
+.p-progress-bar4 {
+    height: 10px;
+    background-color: red;
+    width: 20%;
 }

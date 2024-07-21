@@ -40,6 +40,7 @@ export const PATH_NAME = {
   TEST_RESULT: "/test-result",
   MESSAGE: "/messages",
   COURSES_DETAIL_VIEW: "/courses-detail-view/:id",
+  NEWEST_COURSES_DETAIL_VIEW: "/newsest-courses-detail-view/:id",
   PREVIEWS: "/reviews",
   COMING_SOON: "/coming-soon",
   INS_DASHBOARD: "/ins-dashboard",

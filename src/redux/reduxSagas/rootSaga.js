@@ -23,10 +23,10 @@ import courseSaga from "./sagas/MyCourseSaga/CourseSaga";
 import coursesDSaga from "./sagas/CoursesDSaga";
 import commentsSaga from "./sagas/CommentsSaga";
 import watchFetchChatMessages from "./sagas/MessageSaga";
-  import MyCertificationsSaga from "./sagas/MyCertificationsSaga";
+import MyCertificationsSaga from "./sagas/MyCertificationsSaga";
 import statementSTSaga from "./sagas/StatementSTSaga";
 import statementISSaga from "./sagas/StatementISSaga";
-  import { watchFetchPressNews } from "./sagas/pressSagas/PressNewsSaga";
+import { watchFetchPressNews } from "./sagas/pressSagas/PressNewsSaga";
 import { watchFetchPressRelease } from "./sagas/pressSagas/PressReleaseSaga";
 import upcommingCourseSaga from "./sagas/MyCourseSaga/UpcommingCourseSaga";
 import myPurchaseCourseSaga from "./sagas/MyCourseSaga/MyPurchaseSaga";
@@ -57,13 +57,13 @@ export default function* rootSaga() {
     watchAddToCart(),
     courseSaga(),
     searchresultSaga(),
-     coursesDSaga(),
+    coursesDSaga(),
     commentsSaga(),
     watchFetchChatMessages(),
-      MyCertificationsSaga(),
+    MyCertificationsSaga(),
     statementSTSaga(),
     statementISSaga(),
-     watchFetchPressNews(),
+    watchFetchPressNews(),
     watchFetchPressRelease(),
     upcommingCourseSaga(),
     myPurchaseCourseSaga(),

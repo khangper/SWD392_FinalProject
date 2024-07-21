@@ -14,7 +14,7 @@ const Previews = () => {
                             <div className="reviews_left">
                                 <h3>Student Feedback</h3>
                                 <div className="total_rating">
-                                    <div className="_rate001">4.6</div>
+                                    <div className="_rate001">4.0</div>
                                     <div className="p-rating-box">
                                         <img src={star} className='cdv-rate-star' />
                                         <img src={star} className='cdv-rate-star' />
@@ -27,7 +27,7 @@ const Previews = () => {
                                 <div className="_rate003">
                                     <div className="_rate004">
                                         <div className="p-progress">
-                                            <div className="progress-bar w-70"></div>
+                                            <div className="p-progress-bar"></div>
                                         </div>
                                         <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
@@ -36,50 +36,50 @@ const Previews = () => {
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                         </div>
-                                        <div className="p-rate002">70%</div>
+                                        <div className="p-rate002"> 100%</div>
                                     </div>
                                     <div className="_rate004">
                                         <div className="p-progress">
-                                            <div className="progress-bar w-30"></div>
+                                            <div className="p-progress-bar1"></div>
                                         </div>
                                         <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
                                             <img src={star} className='cdv-rate-star' />
+                                            <img className='p-star' src={ratingStar}></img>
+                                        </div>
+                                        <div className="p-rate002">80%</div>
+                                    </div>
+                                    <div className="_rate004">
+                                        <div className="p-progress">
+                                            <div className="p-progress-bar2"></div>
+                                        </div>
+                                        <div className="p-rating-box">
+                                            <img src={star} className='cdv-rate-star' />
+                                            <img src={star} className='cdv-rate-star' />
+                                            <img src={star} className='cdv-rate-star' />
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
+                                        </div>
+                                        <div className="p-rate002">60%</div>
+                                    </div>
+                                    <div className="_rate004">
+                                        <div className="p-progress">
+                                            <div className="p-progress-bar3"></div>
+                                        </div>
+                                        <div className="p-rating-box">
+                                            <img src={star} className='cdv-rate-star' />
+                                            <img src={star} className='cdv-rate-star' />
+                                            <img className='p-star' src={ratingStar}></img>
+                                            <img className='p-star' src={ratingStar}></img>
                                             <img className='p-star' src={ratingStar}></img>
                                         </div>
                                         <div className="p-rate002">40%</div>
                                     </div>
                                     <div className="_rate004">
                                         <div className="p-progress">
-                                            <div className="progress-bar w-5"></div>
-                                        </div>
-                                        <div className="p-rating-box">
-                                            <img src={star} className='cdv-rate-star' />
-                                            <img src={star} className='cdv-rate-star' />
-                                            <img src={star} className='cdv-rate-star' />
-                                            <img className='p-star' src={ratingStar}></img>
-                                            <img className='p-star' src={ratingStar}></img>
-                                        </div>
-                                        <div className="p-rate002">5%</div>
-                                    </div>
-                                    <div className="_rate004">
-                                        <div className="p-progress">
-                                            <div className="progress-bar w-2"></div>
-                                        </div>
-                                        <div className="p-rating-box">
-                                            <img src={star} className='cdv-rate-star' />
-                                            <img src={star} className='cdv-rate-star' />
-                                            <img className='p-star' src={ratingStar}></img>
-                                            <img className='p-star' src={ratingStar}></img>
-                                            <img className='p-star' src={ratingStar}></img>
-                                        </div>
-                                        <div className="p-rate002">1%</div>
-                                    </div>
-                                    <div className="_rate004">
-                                        <div className="p-progress">
-                                            <div className="progress-bar w-1"></div>
+                                            <div className="p-progress-bar4"></div>
                                         </div>
                                         <div className="p-rating-box">
                                             <img src={star} className='cdv-rate-star' />
@@ -88,7 +88,7 @@ const Previews = () => {
                                             <img className='p-star' src={ratingStar}></img>
                                             <img className='p-star' src={ratingStar}></img>
                                         </div>
-                                        <div className="p-rate002">1%</div>
+                                        <div className="p-rate002">20%</div>
                                     </div>
                                 </div>
                             </div>
