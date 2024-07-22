@@ -249,7 +249,8 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={newestCoursesRef}>
                 {filteredNewestCourses.map((course) => (
-                  <div key={course.id} className="course-card"  onClick={() => handleNewestCoursesmoreClick(course.id)}>
+                  <li key={course.id} className="course-card" onClick={() => handleNewestCoursesmoreClick(course.id)}>
+                  <div >
                     <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
@@ -284,21 +285,22 @@ const Home = () => {
                             </span>
                           </div>
                         </div>
-                        <a href="#" className="course-title">
-                          {course.title}
-                        </a>
-                        <a href="#" className="course-category">
-                          {course.category}
-                        </a>
-                        <div className="course-info">
-                          <p className="course-author">
-                            By <a href="#">{course.author}</a>
-                          </p>
-                          <div className="course-price">{course.price}</div>
-                        </div>
+                      </div>
+                      <a href="#" className="course-title">
+                        {course.title}
+                      </a>
+                      <a href="#" className="course-category">
+                        {course.category}
+                      </a>
+                      <div className="course-info">
+                        <p className="course-author">
+                          By <a href="#">{course.author}</a>
+                        </p>
+                        <div className="course-price">{course.price}</div>
                       </div>
                     </div>
-                  </li>
+                  </div>
+                </li>
                 ))}
               </div>
               <button
