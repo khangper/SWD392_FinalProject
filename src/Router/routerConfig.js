@@ -59,6 +59,7 @@ import Credit from "../pages/Credit/Credit";
 import StatementIS from "../pages/Statements/StatementIS/StatementIS";
 import StatementST from "../pages/Statements/StatementST/StatementST";
 import NotificationStudent from "../pages/Notification/NotificationStudent";
+import NewestCoursesDetailView from "../pages/CoursesDetailView/NewestCoursesDetailView";
 
 const publicRoutes = [
   { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -118,6 +119,7 @@ const privateRoutes = [
   { path: PATH_NAME.PAYOUT, element: <Payout /> },
   { path: PATH_NAME.MESSAGE, element: <Message /> },
   { path: PATH_NAME.COURSES_DETAIL_VIEW, element: <CoursesDetailView /> },
+  { path: PATH_NAME.NEWEST_COURSES_DETAIL_VIEW, element: <NewestCoursesDetailView /> },
   { path: PATH_NAME.PREVIEWS, element: <Previews /> },
   { path: PATH_NAME.ANALYTICS, element: <Analytics /> },
   { path: PATH_NAME.CREATE_NEW_COURSE, element: <CreateNewCourse /> },
