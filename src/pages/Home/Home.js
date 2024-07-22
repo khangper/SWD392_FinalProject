@@ -52,6 +52,9 @@ const Home = () => {
   const handleNewestCoursesmoreClick = (id) => {
     navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`);
   };
+  const handlePopularInstructorDetailClick = (id) => {
+    navigate(`${PATH_NAME.OTHER_POPULAR_INSTRUCTOR_VIEW.replace(':id', id)}`);
+  };
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
     dispatch(fetchHomeFeaturedCoursesRequest());
@@ -133,7 +136,7 @@ const Home = () => {
               <div className="live-streams" ref={liveStreamRef}>
                 {filteredLiveStreams.map((stream) => (
                   <div key={stream.id} className="stream-card"
-                   onClick={() => handleLiveStreamClick(stream.id)}>
+                    onClick={() => handleLiveStreamClick(stream.id)}>
                     <Link to={PATH_NAME.LIVE_OUTPUT} className="stream-link">
                       <img src={stream.imgSrc} alt={stream.name} />
                       <h4>{stream.name}</h4>
@@ -166,7 +169,7 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={featuredCoursesRef}>
                 {filteredFeaturedCourses.map((course) => (
-                  <li  className="course-card" key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
+                  <li className="course-card" key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
                     <div>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
@@ -250,57 +253,57 @@ const Home = () => {
               <div className="featured-courses" ref={newestCoursesRef}>
                 {filteredNewestCourses.map((course) => (
                   <li key={course.id} className="course-card" onClick={() => handleNewestCoursesmoreClick(course.id)}>
-                  <div >
-                    <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
-                      <img src={course.imgSrc} alt={course.title} />
-                      <div className="home-course-overlay">
-                        <div className="course-timer">{course.hours}</div>
-                      </div>
-                    </Link>
-                    <div className="course-details">
-                      <div className="course-details-header">
-                        <p className="course-view-and-date">
-                          {course.views} views • {course.date}
-                        </p>
-                        <div className="course-more-dropdown">
-                          <a href="#" className="dropdown-button">
-                            ⋮
-                          </a>
-                          <div className="course-more-dropdown-menu">
-                            <span>
-                              <img src={share} />
-                              Share
-                            </span>
-                            <span>
-                              <img src={saved_course} />
-                              Save
-                            </span>
-                            <span>
-                              <img src={not_interested} />
-                              Not Interested
-                            </span>
-                            <span>
-                              <img src={report} />
-                              Report
-                            </span>
+                    <div >
+                      <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
+                        <img src={course.imgSrc} alt={course.title} />
+                        <div className="home-course-overlay">
+                          <div className="course-timer">{course.hours}</div>
+                        </div>
+                      </Link>
+                      <div className="course-details">
+                        <div className="course-details-header">
+                          <p className="course-view-and-date">
+                            {course.views} views • {course.date}
+                          </p>
+                          <div className="course-more-dropdown">
+                            <a href="#" className="dropdown-button">
+                              ⋮
+                            </a>
+                            <div className="course-more-dropdown-menu">
+                              <span>
+                                <img src={share} />
+                                Share
+                              </span>
+                              <span>
+                                <img src={saved_course} />
+                                Save
+                              </span>
+                              <span>
+                                <img src={not_interested} />
+                                Not Interested
+                              </span>
+                              <span>
+                                <img src={report} />
+                                Report
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <a href="#" className="course-title">
-                        {course.title}
-                      </a>
-                      <a href="#" className="course-category">
-                        {course.category}
-                      </a>
-                      <div className="course-info">
-                        <p className="course-author">
-                          By <a href="#">{course.author}</a>
-                        </p>
-                        <div className="course-price">{course.price}</div>
+                        <a href="#" className="course-title">
+                          {course.title}
+                        </a>
+                        <a href="#" className="course-category">
+                          {course.category}
+                        </a>
+                        <div className="course-info">
+                          <p className="course-author">
+                            By <a href="#">{course.author}</a>
+                          </p>
+                          <div className="course-price">{course.price}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
                 ))}
               </div>
               <button
@@ -354,45 +357,48 @@ const Home = () => {
                 onClick={() => scrollLeftInstructor(popularInstructorRef)}
               ></button>
               <div className="popular-instructors" ref={popularInstructorRef}>
+
                 {filteredPopularInstructors.map((instructor) => (
-                  <div key={instructor.id} className="popular-instructors-card">
-                    <div className="popular-instructor-image">
-                      <img
-                        src={instructor.imgSrc}
-                        alt={instructor.name}
-                        className="popular-instructor-photo"
-                      />
-                    </div>
-                    <div className="popular-instructor-content">
-                      <div className="popular-instructor-profile">
-                        <Link
-                          to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
-                          className="instructor-name"
-                        >
-                          {instructor.name}
-                        </Link>
-                        <div className="verified-badge"></div>
+                  <div key={instructor.id} className="popular-instructors-card" onClick={() => handlePopularInstructorDetailClick(instructor.id)}>
+                    <div>
+                      <div className="popular-instructor-image">
+                        <img
+                          src={instructor.imgSrc}
+                          alt={instructor.name}
+                          className="popular-instructor-photo"
+                        />
                       </div>
-                      <div className="popular-instructor-title">
-                        {instructor.title}
-                      </div>
-                      <ul className="social-icons-1">
-                        <a href="#" className="sc-fb">
-                          <img src={facebook} />
-                        </a>
-                        <a href="#" className="sc-tw">
-                          <img src={x} />
-                        </a>
-                        <a href="#" className="sc-ln">
-                          <img src={linkedin} />
-                        </a>
-                        <a href="#" className="sc-yt">
-                          <img src={youtube} />
-                        </a>
-                      </ul>
-                      <div className="popular-instructor-stats">
-                        {instructor.students} Students • {instructor.courses}{" "}
-                        Courses
+                      <div className="popular-instructor-content">
+                        <div className="popular-instructor-profile">
+                          <Link
+                            to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
+                            className="instructor-name"
+                          >
+                            {instructor.name}
+                          </Link>
+                          <div className="verified-badge"></div>
+                        </div>
+                        <div className="popular-instructor-title">
+                          {instructor.title}
+                        </div>
+                        <ul className="social-icons-1">
+                          <a href="#" className="sc-fb">
+                            <img src={facebook} />
+                          </a>
+                          <a href="#" className="sc-tw">
+                            <img src={x} />
+                          </a>
+                          <a href="#" className="sc-ln">
+                            <img src={linkedin} />
+                          </a>
+                          <a href="#" className="sc-yt">
+                            <img src={youtube} />
+                          </a>
+                        </ul>
+                        <div className="popular-instructor-stats">
+                          {instructor.students} Students • {instructor.courses}{" "}
+                          Courses
+                        </div>
                       </div>
                     </div>
                   </div>
