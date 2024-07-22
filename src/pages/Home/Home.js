@@ -47,6 +47,9 @@ const Home = () => {
   const handleCoursesmoreClick = (id) => {
     navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`);
   };
+  const handleNewestCoursesmoreClick = (id) => {
+    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`);
+  };
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
     dispatch(fetchHomeFeaturedCoursesRequest());
@@ -216,6 +219,7 @@ const Home = () => {
                       </div>
                     </div>
                   </li>
+
                 ))}
               </div>
               <button
@@ -239,56 +243,58 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={newestCoursesRef}>
                 {newestCourses.map((course) => (
-                  <div key={course.id} className="course-card">
-                    <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
-                      <img src={course.imgSrc} alt={course.title} />
-                      <div className="home-course-overlay">
-                        <div className="course-timer">{course.hours}</div>
-                      </div>
-                    </Link>
-                    <div className="course-details">
-                      <div className="course-details-header">
-                        <p className="course-view-and-date">
-                          {course.views} views • {course.date}
-                        </p>
-                        <div className="course-more-dropdown">
-                          <a href="#" className="dropdown-button">
-                            ⋮
-                          </a>
-                          <div className="course-more-dropdown-menu">
-                            <span>
-                              <img src={share} />
-                              Share
-                            </span>
-                            <span>
-                              <img src={saved_course} />
-                              Save
-                            </span>
-                            <span>
-                              <img src={not_interested} />
-                              Not Interested
-                            </span>
-                            <span>
-                              <img src={report} />
-                              Report
-                            </span>
+                  <li key={course.id} className="course-card" onClick={() => handleNewestCoursesmoreClick(course.id)}>
+                    <div >
+                      <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
+                        <img src={course.imgSrc} alt={course.title} />
+                        <div className="home-course-overlay">
+                          <div className="course-timer">{course.hours}</div>
+                        </div>
+                      </Link>
+                      <div className="course-details">
+                        <div className="course-details-header">
+                          <p className="course-view-and-date">
+                            {course.views} views • {course.date}
+                          </p>
+                          <div className="course-more-dropdown">
+                            <a href="#" className="dropdown-button">
+                              ⋮
+                            </a>
+                            <div className="course-more-dropdown-menu">
+                              <span>
+                                <img src={share} />
+                                Share
+                              </span>
+                              <span>
+                                <img src={saved_course} />
+                                Save
+                              </span>
+                              <span>
+                                <img src={not_interested} />
+                                Not Interested
+                              </span>
+                              <span>
+                                <img src={report} />
+                                Report
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <a href="#" className="course-title">
-                        {course.title}
-                      </a>
-                      <a href="#" className="course-category">
-                        {course.category}
-                      </a>
-                      <div className="course-info">
-                        <p className="course-author">
-                          By <a href="#">{course.author}</a>
-                        </p>
-                        <div className="course-price">{course.price}</div>
+                        <a href="#" className="course-title">
+                          {course.title}
+                        </a>
+                        <a href="#" className="course-category">
+                          {course.category}
+                        </a>
+                        <div className="course-info">
+                          <p className="course-author">
+                            By <a href="#">{course.author}</a>
+                          </p>
+                          <div className="course-price">{course.price}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </li>
                 ))}
               </div>
               <button
