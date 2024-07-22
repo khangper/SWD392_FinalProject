@@ -33,7 +33,7 @@ import myPurchaseCourseReducer from "./reducers/MyCourseReducers/MyPurchaseReduc
 import discountReducer from "./reducers/MyCourseReducers/DiscountReducer";
 import notificationReducer from "./reducers/NotificationReducers/NotificationInstructorReducer";
 import notificationstudentReducer from "./reducers/NotificationReducers/NotificationStudentReducer";
-
+import searchReducer from "./reducers/searchReducers/SearchSlice"
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
   home_featuredcourse: HomeFeaturedCourseReducer,
@@ -69,6 +69,7 @@ const rootReducer = combineReducers({
   discount: discountReducer,
   notification: notificationReducer,
   notificationStudent: notificationstudentReducer,
+  search: searchReducer,
 });
 
 export default rootReducer;
