@@ -33,7 +33,9 @@ import myPurchaseCourseSaga from "./sagas/MyCourseSaga/MyPurchaseSaga";
 import discountSaga from "./sagas/MyCourseSaga/DiscountSaga";
 import { watchFetchNotifications } from "./sagas/NotificationSagas/NotificationInstructorSaga";
 import { watchFetchNotificationsStudent } from "./sagas/NotificationSagas/NotificationStudentSaga";
-
+import { watchLiveById } from "./sagas/liveOutputSagas/liveoutputLiveByIdSaga";
+import { watchBlogDetail } from "./sagas/blogSagas/BlogDetailSaga";
+import { watchFetchReview } from "./sagas/reviewSagas/reviewSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -70,5 +72,8 @@ export default function* rootSaga() {
     discountSaga(),
     watchFetchNotifications(),
     watchFetchNotificationsStudent(),
+    watchLiveById(),
+    watchBlogDetail(),
+    watchFetchReview(),
   ]);
 }
