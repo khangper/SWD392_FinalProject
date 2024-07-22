@@ -208,8 +208,9 @@
   
   .sticky {
     position: fixed;
-    top: 0;
+    top: 4px;
     background-color: white;
     z-index: 1000;
-  }
+    width: 30%;
+}
   

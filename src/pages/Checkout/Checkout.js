@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../../components/Header-paidmember/Header";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Block1 from "..//../assets/Block1.png";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
@@ -27,6 +27,18 @@ export default function Checkout() {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { total } = location.state || { total: 0 };
+  const originalPrice = total + 2; // Assuming $2.00 is the GST
+
+  const handleInvoice = () => {
+    navigate(PATH_NAME.INVOICE, {
+      state: {
+        originalPrice: originalPrice,
+      },
+    });
   };
   return (
     <div className="CheckoutPage">
@@ -98,7 +110,7 @@ export default function Checkout() {
                             </div>
                           </div>
                         </div>
-                        {/* Add other form fields here */}
+
                         <div className="Gridcheckout">
                           <div className="ui search focus mt-30 lbel25">
                             <label>Last Name*</label>
@@ -812,31 +824,34 @@ export default function Checkout() {
                 </div>
               </div>
             </div>
-
-            <div className="OrderDetail ">
+            <div className="OrderDetail">
               <div className="checkout_titie">
                 <h4>Order Detail</h4>
-                <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg" />
+                <img
+                  src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg"
+                  alt="line"
+                />
               </div>
-
               <div className="order_dt_section">
                 <div className="order_title">
                   <h4>Baby Plan</h4>
-                  <div className="order_price">$49</div>
+                  <div className="order_price">${total.toFixed(2)}</div>
                 </div>
                 <div className="order_title">
                   <h6>Taxes(GST)</h6>
-                  <div className="order_price">$2</div>
+                  <div className="order_price">$2.00</div>
                 </div>
                 <div className="order_title">
                   <h3>Total</h3>
-                  <div className="order_price">$51</div>
+                  <div className="order_price">${originalPrice.toFixed(2)}</div>
                 </div>
-                <Link to="/invoice">
-                  <button className="chckot_btn" type="submit">
-                    Confirm Checkout
-                  </button>
-                </Link>
+                <button
+                  onClick={handleInvoice}
+                  className="chckot_btn"
+                  type="submit"
+                >
+                  Confirm Checkout
+                </button>
               </div>
             </div>
           </div>
@@ -852,21 +867,18 @@ export default function Checkout() {
             <div className="order_dt_section">
               <div className="order_title">
                 <h4>Baby Plan</h4>
-                <div className="order_price">$49</div>
+                <div className="order_price">${total.toFixed(2)}</div>
               </div>
               <div className="order_title">
                 <h6>Taxes(GST)</h6>
-                <div className="order_price">$2</div>
+                <div className="order_price">$2.00</div>
               </div>
               <div className="order_title">
                 <h2>Total</h2>
-                <div className="order_price">$51</div>
+                <div className="order_price">${originalPrice.toFixed(2)}</div>
               </div>
 
-              <div className="scr_text">
-                {/* <img src={Block1} alt="Secure Checkout Icon" className="block-icon-page" /> */}
-                Secure checkout
-              </div>
+              <div className="scr_text">Secure checkout</div>
             </div>
           </div>
         </div>

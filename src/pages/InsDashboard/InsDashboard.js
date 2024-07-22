@@ -1,76 +1,24 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./InsDashboard.css";
 import dashboardIcon from "../../assets/dashboard.png";
 import coursesIcon from "../../assets/BookHelp.png";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchInsDashboardCardRequest } from "../../redux/reduxActions/insDashboardActions/InsDashboardCardAction";
+import { fetchInsDashboardCourseRequest } from "../../redux/reduxActions/insDashboardActions/InsDashboardCourseAction";
+import { fetchInsDashboardNewRequest } from "../../redux/reduxActions/insDashboardActions/InsDashboardNewAction";
+
 const InsDashboard = () => {
-  const dashboardCards = [
-    {
-      title: "Total Sales",
-      amount: "$350",
-      newAmount: "New $50",
-      icon: "https://gambolthemes.net/html-items/cursus-new-demo/images/dashboard/achievement.svg",
-      newBadgeClass: "new-sales",
-    },
-    {
-      title: "Total Enroll",
-      amount: "1500",
-      newAmount: "New 125",
-      icon: "https://gambolthemes.net/html-items/cursus-new-demo/images/dashboard/graduation-cap.svg",
-      newBadgeClass: "new-enroll",
-    },
-    {
-      title: "Total Courses",
-      amount: "130",
-      newAmount: "New 5",
-      icon: "https://gambolthemes.net/html-items/cursus-new-demo/images/dashboard/online-course.svg",
-      newBadgeClass: "new-courses",
-    },
-    {
-      title: "Total Students",
-      amount: "2650",
-      newAmount: "New 245",
-      icon: "https://gambolthemes.net/html-items/cursus-new-demo/images/dashboard/knowledge.svg",
-      newBadgeClass: "new-students",
-    },
-  ];
-  const courses = [
-    {
-      id: 1,
-      title: "Complete Python Bootcamp: Go from zero to hero in Python 3",
-      views: "1.5k",
-      purchased: "150",
-      likes: "1k",
-      comments: "875",
-      reviews: "105",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
-      date: "First 2 days 22 hours",
-    },
-    {
-      id: 2,
-      title: "The Complete JavaScript Course 2020: Build Real Projects!",
-      views: "175k",
-      purchased: "1k",
-      likes: "85k",
-      comments: "915",
-      reviews: "255",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg",
-      date: "Second 4 days 9 hours",
-    },
-    {
-      id: 3,
-      title: "Beginning C++ Programming - From Beginner to Beyond",
-      views: "17k",
-      purchased: "25",
-      likes: "15k",
-      comments: "155",
-      reviews: "15",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-3.jpg",
-      date: "Third 6 days 11 hours",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { insDashboardCards } = useSelector((state) => state.ins_dashboard_card);
+  const { insDashboardCourses } = useSelector((state) => state.ins_dashboard_course);
+  const { insDashboardNews } = useSelector((state) => state.ins_dashboard_new);
+  useEffect(() => {
+    dispatch(fetchInsDashboardCardRequest());
+    dispatch(fetchInsDashboardCourseRequest());
+    dispatch(fetchInsDashboardNewRequest());
+  }, [dispatch]);
+
+
   const newsItems = [
     {
       id: 1,
@@ -121,7 +69,7 @@ const InsDashboard = () => {
           </h2>
         </div>
         <section className="dashboard-cards">
-          {dashboardCards.map((card, index) => (
+          {insDashboardCards.map((card, index) => (
             <div className="dashboard-card" key={index}>
               <div className="card-content">
                 <div className="card-info">
@@ -175,7 +123,7 @@ const InsDashboard = () => {
                 className="course-performance-container"
                 ref={coursePerformanceRef}
               >
-                {courses.map((course) => (
+                {insDashboardCourses.map((course) => (
                   <div key={course.id} className="course-performance-card">
                     <a>
                       <img src={course.imgSrc} alt={course.title} />
@@ -232,7 +180,7 @@ const InsDashboard = () => {
                 className="course-performance-container"
                 ref={newsPerformanceRef}
               >
-                {newsItems.map((news) => (
+                {insDashboardNews.map((news) => (
                   <div key={news.id} className="course-performance-card">
                     <a>
                       <img src={news.icon} alt={news.title} />

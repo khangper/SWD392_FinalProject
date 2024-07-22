@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Credit.css";
 import { LuWallet } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { PiCurrencyDollarLight } from "react-icons/pi";
 import { Select } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCreditTableRequest } from "../../redux/reduxActions/creditActions/CreditTableAction";
 
 const Credit = () => {
   const { Option } = Select;
+  const dispatch = useDispatch();
+  const { credit } = useSelector((state) => state.credit_table);
+
+  useEffect(() => {
+    dispatch(fetchCreditTableRequest());
+  }, [dispatch]);
   return (
     <main className="credit">
       <div className="credit-wrapper">
@@ -155,17 +163,14 @@ const Credit = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>$50.50</td>
-                    <td>Mastercard</td>
-                    <td>15 Mar 2020</td>
+                {credit.map((credit)=>(
+                  <tr key={credit.id}>
+                    <td>{credit.formattedAmount}</td>
+                    <td>{credit.method}</td>
+                    <td>{credit.date}</td>
                   </tr>
-
-                  <tr>
-                    <td>$50.50</td>
-                    <td>Mastercard</td>
-                    <td>15 Feb 2020</td>
-                  </tr>
+                ))}
+                  
                 </tbody>
               </table>
             </div>

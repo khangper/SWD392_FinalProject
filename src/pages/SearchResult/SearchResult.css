@@ -230,7 +230,7 @@
 .SR_crse_reviews {
     color: #fff;
     background: #fdcc0d;
-    display: inline-block;
+    display: inline-flex;
     padding: 3px 15px 3px 10px;
     border-radius: 3px;
     font-size: 14px;
@@ -470,5 +470,13 @@
 }
 
 .SR_Tbl_Content_Topic_Menu input[type="radio"] {
+    margin-right: 5px;
+}
+
+.RS_starIcon {
+    width: 15px !important;
+    height: 15px !important;
+    top: 1px;
+    position: relative;
     margin-right: 5px;
 }

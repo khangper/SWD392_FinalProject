@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MyCourse.css";
 import DeleteMyCourse from "..//../assets/garbage.png";
 import EditMyCourse from "..//../assets/Edit-mycourse.png";
@@ -11,7 +11,149 @@ import Megaphone2 from "..//../assets/Megaphone2.png";
 import DowLoadMyCourse1 from "..//../assets/DowLoadMyCourse1.png";
 import MyCourseBook1 from "..//../assets/MyCourse-Book1.png";
 
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchCoursesRequest,
+  editCourseRequest,
+  deleteCourseRequest,
+} from "../../redux/reduxActions/MyCourse/CourseAction";
+import {
+  fetchUpcommingCoursesRequest,
+  editUpcommingCourseRequest,
+  deleteUpcommingCourseRequest,
+} from "../../redux/reduxActions/MyCourse/UpcommingCourseActions";
+import {
+  deleteMyPurchaseCourseRequest,
+  fetchMyPurchaseCoursesRequest,
+} from "../../redux/reduxActions/MyCourse/MyPurchaseAction";
+import {
+  fetchDiscountRequest,
+  editDiscountRequest,
+  deleteDiscountRequest,
+} from "../../redux/reduxActions/MyCourse/DiscountAction";
+import { PATH_NAME } from "../../constant/pathname";
+import { Link } from "react-router-dom";
 function MyCourse() {
+  // My Course
+  const handleDelete = (courseId) => {
+    dispatch(deleteCourseRequest(courseId));
+  };
+  const dispatch = useDispatch();
+  const { courses, loading, error } = useSelector((state) => state.courses);
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentCourse, setCurrentCourse] = useState(null);
+
+  useEffect(() => {
+    dispatch(fetchCoursesRequest());
+  }, [dispatch]);
+
+  const handleEdit = (course) => {
+    setCurrentCourse(course);
+    setIsEditing(true);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(editCourseRequest(currentCourse));
+    setIsEditing(false);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setCurrentCourse((prevCourse) => ({
+      ...prevCourse,
+      [name]: value,
+    }));
+  };
+
+  // UpComing
+  const dispatchUpcomming = useDispatch();
+  const { upcommingCourses, loadingUpcomming, errorUpcomming } = useSelector(
+    (state) => state.upcommingCourses
+  );
+  const [isEditingUpcoming, setIsEditingUpcoming] = useState(false);
+  const [currentUpcomingCourse, setCurrentUpcomingCourse] = useState(null);
+
+  useEffect(() => {
+    dispatchUpcomming(fetchUpcommingCoursesRequest());
+  }, [dispatchUpcomming]);
+
+  const handleEditUpcoming = (course) => {
+    setCurrentUpcomingCourse({
+      ...course,
+      Price: course.Price.startsWith("$") ? course.Price : `$${course.Price}`,
+    });
+    setIsEditingUpcoming(true);
+  };
+
+  const handleDeleteUpcoming = (courseId) => {
+    dispatch(deleteUpcommingCourseRequest(courseId));
+  };
+
+  const handleSubmitUpcoming = (e) => {
+    e.preventDefault();
+    const updatedCourse = {
+      ...currentUpcomingCourse,
+      Price: currentUpcomingCourse.Price.replace("$", ""),
+    };
+    dispatch(editUpcommingCourseRequest(updatedCourse));
+    setIsEditingUpcoming(false);
+  };
+
+  const handleInputChangeUpcoming = (e) => {
+    const { name, value } = e.target;
+    setCurrentUpcomingCourse((prevCourse) => ({
+      ...prevCourse,
+      [name]: value,
+    }));
+  };
+  //Purchase Course
+  const dispatchPurchase = useDispatch();
+  const { myPurchaseCourses, loadingPurchase, errorPurchase } = useSelector(
+    (state) => state.myPurchaseCourses
+  );
+
+  useEffect(() => {
+    dispatchPurchase(fetchMyPurchaseCoursesRequest());
+  }, [dispatchPurchase]);
+
+  const handleDeletePurchase = (courseId) => {
+    dispatch(deleteMyPurchaseCourseRequest(courseId));
+  };
+  const discountDispatch = useDispatch();
+  const { discounts, discountLoading, discountError } = useSelector(
+    (state) => state.discount
+  );
+  const [discountIsEditing, setDiscountIsEditing] = useState(false);
+  const [currentDiscount, setCurrentDiscount] = useState(null);
+
+  useEffect(() => {
+    discountDispatch(fetchDiscountRequest());
+  }, [discountDispatch]);
+
+  const handleDiscountEdit = (discount) => {
+    setCurrentDiscount(discount);
+    setDiscountIsEditing(true);
+  };
+
+  const handleDiscountDelete = (discountId) => {
+    discountDispatch(deleteDiscountRequest(discountId));
+  };
+
+  const handleDiscountSubmit = (e) => {
+    e.preventDefault();
+    discountDispatch(editDiscountRequest(currentDiscount));
+    setDiscountIsEditing(false);
+  };
+
+  const handleDiscountInputChange = (e) => {
+    const { name, value } = e.target;
+    setCurrentDiscount((prevDiscount) => ({
+      ...prevDiscount,
+      [name]: value,
+    }));
+  };
+
   const openTab = (tabId) => {
     setActiveTab(tabId);
   };
@@ -22,138 +164,18 @@ function MyCourse() {
     setIsOpen(!isOpen);
   };
 
-  // My course
-  const courses = [
-    {
-      itemNo: "IT-001",
-      title: "Course Title Here",
-      publishDate: "06 April 2020 | 08:31",
-      sales: 15,
-      parts: 5,
-      category: "Web Development",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-002",
-      title: "Course Title Here",
-      publishDate: "05 April 2020 | 05:15",
-      sales: 30,
-      parts: 3,
-      category: "Graphic Design",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-003",
-      title: "Course Title",
-      publishDate: "03 April 2020 | 01:30",
-      sales: 14,
-      parts: 5,
-      category: "Bootstrap",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-004",
-      title: "Course Title Here",
-      publishDate: "02 April 2020 | 05:15",
-      sales: 110,
-      parts: 9,
-      category: "Game Development",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "IT-005",
-      title: "Course Title Here",
-      publishDate: "28 March 2020 | 05:15",
-      sales: 185,
-      parts: 10,
-      category: "C++",
-      status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-  ];
-  // My Purchase
-  const MyPurchase = [
-    {
-      itemNo: "1",
-      title: "Course Title Here",
-      Vendor: "Zoena Singh",
-      Category: "Web Development",
-      DeliveryType: "Download",
-      Price: "$15",
-      Purchase: "25 March 2020",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "2",
-      title: "Course Title Here",
-      Vendor: "Rock William",
-      Category: "C++",
-      DeliveryType: "Download",
-      Price: "$20",
-      Purchase: "25 March 2020",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-  ];
-  //UpComing Course
-  const UpComming = [
-    {
-      itemNo: "01",
-      title: "Course Title Here",
-      Thumbnail: "View",
-      Category: "Web Development",
-      Price: "$15",
-      Purchase: "9 April 2020",
-      Status: "Pending",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "02",
-      title: "Course Title Here",
-      Thumbnail: "View",
-      Category: "Graphic Design",
-      Price: "$12",
-      Purchase: "8 April 2020",
-      Status: "Pending",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-    {
-      itemNo: "03",
-      title: "Course Title Here",
-      Thumbnail: "View",
-      Category: "Photography",
-      Price: "$6",
-      Purchase: "7 April 2020",
-      Status: "Pending",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-  ];
-  // Discount
-  const Discount = [
-    {
-      itemNo: "01",
-      title: "Course Title Here",
-      StartDate: "02 November 2019",
-      EndDate: "19 November 2019",
-      Discount: "20%",
-      Status: "Active",
-      actionEdit: "#",
-      actionDelete: "#",
-    },
-  ];
+  // const Discount = [
+  //   {
+  //     itemNo: "01",
+  //     title: "Course Title Here",
+  //     StartDate: "02 November 2019",
+  //     EndDate: "19 November 2019",
+  //     Discount: "20%",
+  //     Status: "Active",
+  //     actionEdit: "#",
+  //     actionDelete: "#",
+  //   },
+  // ];
 
   const [activeTab, setActiveTab] = useState("my-courses");
 
@@ -267,7 +289,6 @@ function MyCourse() {
               role="tabpanel"
             >
               {/* Nội dung cho tab My Courses */}
-
               <div className="MyCouser-containerr">
                 <div className="MyCouser-table-container">
                   <table className="MyCourse-table ucp-table">
@@ -298,8 +319,18 @@ function MyCourse() {
                       </tr>
                     </thead>
                     <tbody>
+                      {loading && (
+                        <tr>
+                          <td colSpan="8">Loading...</td>
+                        </tr>
+                      )}
+                      {error && (
+                        <tr>
+                          <td colSpan="8">Error: {error}</td>
+                        </tr>
+                      )}
                       {courses.map((course) => (
-                        <tr key={course.itemNo}>
+                        <tr key={course.id}>
                           <td className="MyCourse-text-center">
                             {course.itemNo}
                           </td>
@@ -314,7 +345,7 @@ function MyCourse() {
                             {course.parts}
                           </td>
                           <td className="MyCourse-text-center">
-                            <a href="#">{course.category} </a>
+                            <a href="#">{course.category}</a>
                           </td>
                           <td className="MyCourse-text-center">
                             <b className="MyCourse-course_active">
@@ -322,15 +353,110 @@ function MyCourse() {
                             </b>
                           </td>
                           <td className="MyCourse-text-center">
-                            {/* <a href={course.actionEdit} title="Edit" className="MyCourse-gray-s"><img src={EditMyCourse}  className="search-icon" /></a> */}
-                            <img src={EditMyCourse} className="Edit-icon" />
-                            <img src={DeleteMyCourse} className="Edit-icon" />
+                            <img
+                              src={EditMyCourse}
+                              className="Edit-icon"
+                              onClick={() => handleEdit(course)}
+                              alt="Edit"
+                            />
+                            <img
+                              src={DeleteMyCourse}
+                              className="Edit-icon"
+                              onClick={() => handleDelete(course.id)}
+                              alt="Delete"
+                            />
                           </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
+                {isEditing && currentCourse && (
+                  <div className="edit-form-overlay">
+                    <div className="edit-form">
+                      <h2>Edit Course</h2>
+                      <form onSubmit={handleSubmit}>
+                        <label>
+                          Item No.:
+                          <input
+                            type="text"
+                            name="itemNo"
+                            value={currentCourse.itemNo}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Title:
+                          <input
+                            type="text"
+                            name="title"
+                            value={currentCourse.title}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Publish Date:
+                          <input
+                            type="text"
+                            name="publishDate"
+                            value={currentCourse.publishDate}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Sales:
+                          <input
+                            type="number"
+                            name="sales"
+                            value={currentCourse.sales}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Parts:
+                          <input
+                            type="text"
+                            name="parts"
+                            value={currentCourse.parts}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Category:
+                          <input
+                            type="text"
+                            name="category"
+                            value={currentCourse.category}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Status:
+                          <input
+                            type="text"
+                            name="status"
+                            value={currentCourse.status}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </label>
+                        <button type="submit">Save</button>
+                        <button
+                          type="button"
+                          onClick={() => setIsEditing(false)}
+                        >
+                          Cancel
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -341,8 +467,8 @@ function MyCourse() {
               role="tabpanel"
             >
               {/* Nội dung cho tab My Purchases */}
-              <div className="MyCouser-containerr">
-                <div className="MyCouser-table-container">
+              <div className="MyCourse-container">
+                <div className="MyCourse-table-container">
                   <table className="MyCourse-table ucp-table">
                     <thead className="MyCourse-thead-s">
                       <tr>
@@ -371,17 +497,27 @@ function MyCourse() {
                       </tr>
                     </thead>
                     <tbody>
-                      {MyPurchase.map((course) => (
+                      {loadingPurchase && (
+                        <tr>
+                          <td colSpan="8">Loading...</td>
+                        </tr>
+                      )}
+                      {errorPurchase && (
+                        <tr>
+                          <td colSpan="8">Error: {errorPurchase}</td>
+                        </tr>
+                      )}
+                      {myPurchaseCourses.map((course) => (
                         <tr key={course.itemNo}>
                           <td className="MyCourse-text-center">
                             {course.itemNo}
                           </td>
                           <td>{course.title}</td>
                           <td className="MyCourse-text-center">
-                            <a href="#">{course.Vendor} </a>
+                            <a href="#">{course.Vendor}</a>
                           </td>
                           <td className="MyCourse-text-center">
-                            <a href="#">{course.Category} </a>
+                            <a href="#">{course.Category}</a>
                           </td>
                           <td className="MyCourse-text-center">
                             <b className="MyCourse-course_active">
@@ -395,8 +531,20 @@ function MyCourse() {
                             {course.Purchase}
                           </td>
                           <td className="MyCourse-text-center">
-                            <img src={DowLoadMyCourse} className="Edit-icon" />
-                            <img src={DeleteMyCourse} className="Edit-icon" />
+                            <Link to={PATH_NAME.DOWLOADCOURSE}>
+                              <img
+                                src={DowLoadMyCourse}
+                                className="Edit-icon"
+                              />
+                            </Link>
+                            <img
+                              src={DeleteMyCourse}
+                              className="Edit-icon"
+                              onClick={() =>
+                                handleDeletePurchase(course.itemNo)
+                              }
+                              alt="Delete"
+                            />
                             <img src={Printer} className="Edit-icon" />
                           </td>
                         </tr>
@@ -414,8 +562,8 @@ function MyCourse() {
               role="tabpanel"
             >
               {/* Nội dung cho tab Upcoming Courses */}
-              <div className="MyCouser-containerr">
-                <div className="MyCouser-table-container">
+              <div className="MyCourse-container">
+                <div className="MyCourse-table-container">
                   <table className="MyCourse-table ucp-table">
                     <thead className="MyCourse-thead-s">
                       <tr>
@@ -444,19 +592,28 @@ function MyCourse() {
                       </tr>
                     </thead>
                     <tbody>
-                      {UpComming.map((course) => (
+                      {loadingUpcomming && (
+                        <tr>
+                          <td colSpan="8">Loading...</td>
+                        </tr>
+                      )}
+                      {errorUpcomming && (
+                        <tr>
+                          <td colSpan="8">Error: {errorUpcomming}</td>
+                        </tr>
+                      )}
+                      {upcommingCourses.map((course) => (
                         <tr key={course.itemNo}>
                           <td className="MyCourse-text-center">
                             {course.itemNo}
                           </td>
                           <td>{course.title}</td>
                           <td className="MyCourse-text-center">
-                            <a href="#">{course.Thumbnail} </a>
+                            <a href="#">{course.Thumbnail}</a>
                           </td>
                           <td className="MyCourse-text-center">
-                            <a href="#">{course.Category} </a>
+                            <a href="#">{course.Category}</a>
                           </td>
-
                           <td className="MyCourse-text-center">
                             {course.Price}
                           </td>
@@ -469,14 +626,112 @@ function MyCourse() {
                             </b>
                           </td>
                           <td className="MyCourse-text-center">
-                            <img src={EditMyCourse} className="Edit-icon" />
-                            <img src={DeleteMyCourse} className="Edit-icon" />
+                            <img
+                              src={EditMyCourse}
+                              className="Edit-icon"
+                              onClick={() => handleEditUpcoming(course)}
+                              alt="Edit"
+                            />
+                            <img
+                              src={DeleteMyCourse}
+                              className="Edit-icon"
+                              onClick={() =>
+                                handleDeleteUpcoming(course.itemNo)
+                              }
+                              alt="Delete"
+                            />
                           </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
+                {isEditingUpcoming && currentUpcomingCourse && (
+                  <div className="edit-form-overlay">
+                    <div className="edit-form">
+                      <h2>Edit Course</h2>
+                      <form onSubmit={handleSubmitUpcoming}>
+                        <label>
+                          Item No.:
+                          <input
+                            type="text"
+                            name="itemNo"
+                            value={currentUpcomingCourse.itemNo}
+                            onChange={handleInputChangeUpcoming}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Title:
+                          <input
+                            type="text"
+                            name="title"
+                            value={currentUpcomingCourse.title}
+                            onChange={handleInputChangeUpcoming}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Thumbnail:
+                          <input
+                            type="text"
+                            name="Thumbnail"
+                            value={currentUpcomingCourse.Thumbnail}
+                            onChange={handleInputChangeUpcoming}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Category:
+                          <input
+                            type="text"
+                            name="Category"
+                            value={currentUpcomingCourse.Category}
+                            onChange={handleInputChangeUpcoming}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Price:
+                          <input
+                            type="text"
+                            name="Price"
+                            value={currentUpcomingCourse.Price}
+                            onChange={handleInputChangeUpcoming}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Date:
+                          <input
+                            type="text"
+                            name="Purchase"
+                            value={currentUpcomingCourse.Purchase}
+                            onChange={handleInputChangeUpcoming}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Status:
+                          <input
+                            type="text"
+                            name="Status"
+                            value={currentUpcomingCourse.Status}
+                            onChange={handleInputChangeUpcoming}
+                            required
+                          />
+                        </label>
+                        <button type="submit">Save</button>
+                        <button
+                          type="button"
+                          onClick={() => setIsEditingUpcoming(false)}
+                        >
+                          Cancel
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -596,35 +851,131 @@ function MyCourse() {
                       </tr>
                     </thead>
                     <tbody>
-                      {Discount.map((course) => (
-                        <tr key={course.itemNo}>
+                      {discountLoading && (
+                        <tr>
+                          <td colSpan="7">Loading...</td>
+                        </tr>
+                      )}
+                      {discountError && (
+                        <tr>
+                          <td colSpan="7">Error: {discountError}</td>
+                        </tr>
+                      )}
+                      {discounts.map((discount) => (
+                        <tr key={discount.id}>
                           <td className="MyCourse-text-center">
-                            {course.itemNo}
+                            {discount.itemNo}
                           </td>
-                          <td>{course.title}</td>
+                          <td>{discount.title}</td>
                           <td className="MyCourse-text-center">
-                            {course.StartDate}
+                            {discount.StartDate}
                           </td>
                           <td className="MyCourse-text-center">
-                            {course.EndDate}
+                            {discount.EndDate}
                           </td>
                           <td className="MyCourse-text-center">
-                            {course.Discount}
+                            {discount.Discount}
                           </td>
                           <td className="MyCourse-text-center">
                             <b className="MyCourse-course_active">
-                              {course.Status}
+                              {discount.Status}
                             </b>
                           </td>
                           <td className="MyCourse-text-center">
-                            <img src={EditMyCourse} className="Edit-icon" />
-                            <img src={DeleteMyCourse} className="Edit-icon" />
+                            <img
+                              src={EditMyCourse}
+                              className="Edit-icon"
+                              onClick={() => handleDiscountEdit(discount)}
+                              alt="Edit"
+                            />
+                            <img
+                              src={DeleteMyCourse}
+                              className="Edit-icon"
+                              onClick={() => handleDiscountDelete(discount.id)}
+                              alt="Delete"
+                            />
                           </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
+                {discountIsEditing && currentDiscount && (
+                  <div className="edit-form-overlay">
+                    <div className="edit-form">
+                      <h2>Edit Discount</h2>
+                      <form onSubmit={handleDiscountSubmit}>
+                        <label>
+                          Item No.:
+                          <input
+                            type="text"
+                            name="itemNo"
+                            value={currentDiscount.itemNo}
+                            onChange={handleDiscountInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Title:
+                          <input
+                            type="text"
+                            name="title"
+                            value={currentDiscount.title}
+                            onChange={handleDiscountInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Start Date:
+                          <input
+                            type="text"
+                            name="StartDate"
+                            value={currentDiscount.StartDate}
+                            onChange={handleDiscountInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          End Date:
+                          <input
+                            type="text"
+                            name="EndDate"
+                            value={currentDiscount.EndDate}
+                            onChange={handleDiscountInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Discount:
+                          <input
+                            type="text"
+                            name="Discount"
+                            value={currentDiscount.Discount}
+                            onChange={handleDiscountInputChange}
+                            required
+                          />
+                        </label>
+                        <label>
+                          Status:
+                          <input
+                            type="text"
+                            name="Status"
+                            value={currentDiscount.Status}
+                            onChange={handleDiscountInputChange}
+                            required
+                          />
+                        </label>
+                        <button type="submit">Save</button>
+                        <button
+                          type="button"
+                          onClick={() => setDiscountIsEditing(false)}
+                        >
+                          Cancel
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           )}

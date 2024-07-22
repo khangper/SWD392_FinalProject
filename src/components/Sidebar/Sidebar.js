@@ -139,7 +139,7 @@ const Sidebar = ({ sidebar }) => {
       <hr />
       <div className="subscriptions">
         <p className="subscriptions-title">SUBSCRIPTIONS</p>
-        <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="subscription-link">
+        <Link to="/other-instructor-view/2" className="subscription-link">
           <img
             className="subscription-icon"
             src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg"
@@ -149,7 +149,7 @@ const Sidebar = ({ sidebar }) => {
           <span className="subscription-status"></span>
         </Link>
 
-        <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="subscription-link">
+        <Link to="/other-instructor-view/3" className="subscription-link">
           <img
             className="subscription-icon"
             src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg"

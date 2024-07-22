@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Home.css";
 import ratingStar from "../../assets/rating.png";
 import share from "../../assets/share.png";
@@ -21,446 +21,55 @@ import marketing from "../../assets/marketing.png";
 import book from "../../assets/book.png";
 import music from "../../assets/music.png";
 import profile_image from "..//../assets/profile-img.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHomeLiveStreamsRequest } from "../../redux/reduxActions/homeActions/HomeLivestreamAction";
+import { fetchHomeFeaturedCoursesRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
+import { fetchHomeNewestCoursesRequest } from "../../redux/reduxActions/homeActions/HomeNewestCourseAction";
+import { fetchHomePopularInstructorRequest } from "../../redux/reduxActions/homeActions/HomePopularInstructorAction";
+import { fetchHomeStudentThoughtRequest } from "../../redux/reduxActions/homeActions/HomeStudentThoughtAction";
+
 const Home = () => {
-  const liveStreams = [
-    {
-      id: 1,
-      name: "John Doe",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-    },
-    {
-      id: 2,
-      name: "Jassica",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-      id: 3,
-      name: "Edutut+",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-    },
-    {
-      id: 4,
-      name: "Joginder Singh",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
-    },
-    {
-      id: 5,
-      name: "Zoena",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-    },
-    {
-      id: 6,
-      name: "Albert Dua",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
-    },
-    {
-      id: 7,
-      name: "Amritpal",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-    },
-    {
-      id: 8,
-      name: "Jimmy",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-    },
-  ];
+  const dispatch = useDispatch();
+  const { liveStreams } = useSelector((state) => state.home_livestream);
+  const { featuredCourses } = useSelector((state) => state.home_featuredcourse);
+  const { newestCourses } = useSelector((state) => state.home_newestcourse);
+  const { popularInstructors } = useSelector(
+    (state) => state.home_popularinstructor
+  );
+  const { studentThoughts } = useSelector((state) => state.home_studentthought);
+  const searchQuery = useSelector(state => state.search.query);
+  const navigate = useNavigate();
 
-  const featuredCourses = [
-    {
-      id: 1,
-      title: "Complete Python Bootcamp: Go from zero to hero in Python 3",
-      author: "John Doe",
-      views: "109k",
-      date: "15 days ago",
-      category: "Web Development | Python",
-      price: "$10",
-      hours: "25 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
-    },
-    {
-      id: 2,
-      title: "The Complete JavaScript Course 2020: Build Real Projects!",
-      author: "Jassica William",
-      views: "5M",
-      date: "15 days ago",
-      category: "Development | JavaScript",
-      price: "$5",
-      hours: "28 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg",
-    },
-    {
-      id: 3,
-      title: "Beginning C++ Programming - From Beginner to Beyond",
-      author: "Joginder Singh",
-      views: "1M",
-      date: "18 days ago",
-      category: "Development | C++",
-      price: "$13",
-      hours: "12 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-3.jpg",
-    },
-    {
-      id: 4,
-      title: "The Complete Digital Marketing Course - 12 Courses in 1",
-      author: "Poonam Verma",
-      views: "153k",
-      date: "3 months ago",
-      category: "Digital Marketing | Marketing",
-      price: "$12",
-      hours: "1 hour",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-4.jpg",
-    },
-    {
-      id: 5,
-      title: "Microsoft Excel - Excel from Beginner to Advanced",
-      author: "Rock William",
-      views: "53k",
-      date: "14 days ago",
-      category: "Office Productivity | Excel",
-      price: "$6",
-      hours: "1.5 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-5.jpg",
-    },
-    {
-      id: 6,
-      title: "Angular 8 - The Complete Guide (2020 Edition)",
-      author: "John Doe",
-      views: "253k",
-      date: "10 days ago",
-      category: "Development | Angular",
-      price: "$15",
-      hours: "36 hours",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-6.jpg",
-    },
-    {
-      id: 7,
-      title: "WordPress for Beginners: Create a Website Step by Step",
-      author: "Sabnam Singh",
-      views: "109k",
-      date: "15 days ago",
-      category: "Design | Wordpress",
-      price: "$18",
-      hours: "5.4 hours",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-7.jpg",
-    },
-    {
-      id: 8,
-      title: "CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)",
-      author: "Jashanpreet Singh",
-      views: "196k",
-      date: "1 month ago",
-      category: "Design | CSS",
-      price: "$10",
-      hours: "23 hours",
-      rating: 4.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-8.jpg",
-    },
-  ];
-  const newestCourses = [
-    {
-      id: 1,
-      title: "Build Responsive Real World Websites with HTML5 and CSS3",
-      views: "15",
-      date: "10 min ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-13.jpg",
-      price: "$4",
-      hours: "12 hours",
-      author: "John Doe",
-      category: "Development | CSS",
-      rating: 4.5,
-    },
-    {
-      id: 2,
-      title: "The Complete JavaScript Course 2020: Build Real Projects!",
-      views: "5",
-      date: "15 min ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-14.jpg",
-      price: "$5",
-      hours: "28 hours",
-      author: "Jassica William",
-      category: "Development | JavaScript",
-      rating: 4.5,
-    },
-    {
-      id: 3,
-      title: "The Complete Front-End Web Development Course!",
-      views: "25",
-      date: "2 hours ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-15.jpg",
-      price: "$9",
-      hours: "15 hours",
-      author: "Joginder Singh",
-      category: "Development | Web Development",
-      rating: 4.5,
-    },
-    {
-      id: 4,
-      title: "Ethical Hacking - Most Advanced Level Penetration Testing",
-      views: "15",
-      date: "6 hours ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-16.jpg",
-      price: "$10",
-      hours: "1 hour",
-      author: "Poonam Verma",
-      category: "IT & Software | Ethical Hacking",
-      rating: 5.0,
-    },
-    {
-      id: 5,
-      title: "Advanced CSS and Sass: Flexbox, Grid, Animations and More!",
-      views: "45",
-      date: "20 hours ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-17.jpg",
-      price: "$6",
-      hours: "28 hours",
-      author: "Rock William",
-      category: "Development | Sass",
-      rating: 3.5,
-    },
-    {
-      id: 6,
-      title: "The Complete Node.js Developer Course (3rd Edition)",
-      views: "20",
-      date: "1 day ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-18.jpg",
-      price: "$3",
-      hours: "30 hours",
-      author: "John Doe",
-      category: "Development | Node.js",
-      rating: 5.0,
-    },
-    {
-      id: 7,
-      title: "WordPress Development - Themes, Plugins & Gutenberg",
-      views: "200",
-      date: "4 days ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-19.jpg",
-      price: "$14",
-      hours: "21 hours",
-      author: "Joy Dua",
-      category: "Design | Wordpress",
-      rating: 5.0,
-    },
-    {
-      id: 8,
-      title: "Vue JS 2 - The Complete Guide (incl. Vue Router & Vuex)",
-      views: "11",
-      date: "5 days ago",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-20.jpg",
-      price: "$10",
-      hours: "22 hours",
-      author: "Manreet Kaur",
-      category: "Development | Vue JS",
-      rating: 4.0,
-    },
-  ];
+  const handleLiveStreamClick = (id) => {
+    navigate(`${PATH_NAME.LIVE_OUTPUT.replace(":id", id)}`, { replace: true });
+  };
 
-  const popularInstructor = [
-    {
-      id: 1,
-      name: "John Doe",
-      title: "Wordpress & Plugin Tutor",
-      students: "100K",
-      courses: 15,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-    {
-      id: 2,
-      name: "Kerstin Cable",
-      title: "Language Learning Coach, Writer, Online Tutor",
-      students: "14K",
-      courses: 11,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-    {
-      id: 3,
-      name: "Jose Portilla",
-      title: "Head of Data Science, Pierian Data Inc.",
-      students: "1M",
-      courses: 25,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-    {
-      id: 4,
-      name: "Farhat Amin",
-      title: "Cookery Coach",
-      students: "1.5K",
-      courses: 9,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-    {
-      id: 5,
-      name: "Kyle Pew",
-      title: "Microsoft Certified Trainer - 380,000+ Udemy Students",
-      students: "300K",
-      courses: 18,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-    {
-      id: 6,
-      name: "Jaysen Batchelor",
-      title: "Illustrator & Designer",
-      students: "491K",
-      courses: 13,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-    {
-      id: 7,
-      name: "Quinton Batchelor",
-      title: "Photographer & Instructor",
-      students: "364K",
-      courses: 6,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-    {
-      id: 8,
-      name: "Eli Natoli",
-      title: "Entrepreneur - Passionate Teacher",
-      students: "615K",
-      courses: 12,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-      social: {
-        facebook: "#",
-        twitter: "#",
-        linkedin: "#",
-        youtube: "#",
-      },
-    },
-  ];
+  const handleCoursesmoreClick = (id) => {
+    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`);
+  };
+  const handleNewestCoursesmoreClick = (id) => {
+    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`);
+  };
+  useEffect(() => {
+    dispatch(fetchHomeLiveStreamsRequest());
+    dispatch(fetchHomeFeaturedCoursesRequest());
+    dispatch(fetchHomeNewestCoursesRequest());
+    dispatch(fetchHomePopularInstructorRequest());
+    dispatch(fetchHomeStudentThoughtRequest());
+  }, [dispatch]);
+  const filterData = (data, query) => {
+    if (!Array.isArray(data)) return [];
+    if (!query) return data;
+    return data.filter(item => JSON.stringify(item).toLowerCase().includes(query.toLowerCase()));
+  };
 
-  const studentThought = [
-    {
-      id: 1,
-      quote:
-        "Donec ac ex eu arcu euismod feugiat. In venenatis bibendum nisi, in placerat eros ultricies vitae. Praesent pellentesque blandit scelerisque. Suspendisse potenti.",
-      name: "Jassica William",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-    },
-    {
-      id: 2,
-      quote:
-        "Cras id enim lectus. Fusce at arcu tincidunt, iaculis libero quis, vulputate mauris. Morbi facilisis vitae ligula id aliquam. Nunc consectetur malesuada bibendum.",
-      name: "Rock Smith",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-      id: 3,
-      quote:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos eros ac, sagittis orci.",
-      name: "Luoci Marchant",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-    },
-    {
-      id: 4,
-      quote:
-        "Nulla bibendum lectus pharetra, tempus eros ac, sagittis orci. Suspendisse posuere dolor neque, at finibus mauris lobortis in. Pellentesque vitae laoreet tortor.",
-      name: "Poonam Sharma",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
-    },
-    {
-      id: 5,
-      quote:
-        "Curabitur placerat justo ac mauris condimentum ultricies. In magna tellus, eleifend et volutpat id, sagittis vitae est. Pellentesque vitae laoreet tortor.",
-      name: "Davinder Singh",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-    },
-  ];
+  const filteredLiveStreams = filterData(liveStreams, searchQuery);
+  const filteredFeaturedCourses = filterData(featuredCourses, searchQuery);
+  const filteredNewestCourses = filterData(newestCourses, searchQuery);
+  const filteredPopularInstructors = filterData(popularInstructors, searchQuery);
+  const filteredStudentThoughts = filterData(studentThoughts, searchQuery);
 
   const liveStreamRef = useRef(null);
   const scrollLeftLiveStream = () => {
@@ -522,8 +131,9 @@ const Home = () => {
                 onClick={scrollLeftLiveStream}
               ></button>
               <div className="live-streams" ref={liveStreamRef}>
-                {liveStreams.map((stream) => (
-                  <div key={stream.id} className="stream-card">
+                {filteredLiveStreams.map((stream) => (
+                  <div key={stream.id} className="stream-card"
+                   onClick={() => handleLiveStreamClick(stream.id)}>
                     <Link to={PATH_NAME.LIVE_OUTPUT} className="stream-link">
                       <img src={stream.imgSrc} alt={stream.name} />
                       <h4>{stream.name}</h4>
@@ -555,63 +165,67 @@ const Home = () => {
                 onClick={() => scrollLeftCourse(featuredCoursesRef)}
               ></button>
               <div className="featured-courses" ref={featuredCoursesRef}>
-                {featuredCourses.map((course) => (
-                  <div key={course.id} className="course-card">
-                    <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
+                {filteredFeaturedCourses.map((course) => (
+                  <li  className="course-card" key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
+                    <div>
                       <img src={course.imgSrc} alt={course.title} />
-
                       <div className="home-course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
-                          <img className="starIcon" src={ratingStar}></img>
+                          <img
+                            className="starIcon"
+                            src={ratingStar}
+                            alt="rating"
+                          />
                           {course.rating}
                         </div>
                         <div className="course-timer">{course.hours}</div>
                       </div>
-                    </Link>
-                    <div className="course-details">
-                      <div className="course-details-header">
-                        <p className="course-view-and-date">
-                          {course.views} views • {course.date}
-                        </p>
-                        <div className="course-more-dropdown">
-                          <a href="#" className="dropdown-button">
-                            ⋮
-                          </a>
-                          <div className="course-more-dropdown-menu">
-                            <span>
-                              <img src={share} />
-                              Share
-                            </span>
-                            <span>
-                              <img src={saved_course} />
-                              Save
-                            </span>
-                            <span>
-                              <img src={not_interested} />
-                              Not Interested
-                            </span>
-                            <span>
-                              <img src={report} />
-                              Report
-                            </span>
+                      <div className="course-details">
+                        <div className="course-details-header">
+                          <p className="course-view-and-date">
+                            {course.views} views • {course.date}
+                          </p>
+                          <div className="course-more-dropdown">
+                            <a href="#" className="dropdown-button">
+                              ⋮
+                            </a>
+                            <div className="course-more-dropdown-menu">
+                              <span>
+                                <img src={share} alt="share" /> Share
+                              </span>
+                              <span>
+                                <img src={saved_course} alt="save" /> Save
+                              </span>
+                              <span>
+                                <img
+                                  src={not_interested}
+                                  alt="not interested"
+                                />{" "}
+                                Not Interested
+                              </span>
+                              <span>
+                                <img src={report} alt="report" /> Report
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <a href="#" className="course-title">
-                        {course.title}
-                      </a>
-                      <a href="#" className="course-category">
-                        {course.category}
-                      </a>
-                      <div className="course-info">
-                        <p className="course-author">
-                          By <a href="#">{course.author}</a>
-                        </p>
-                        <div className="course-price">{course.price}</div>
+                        <a href="#" className="course-title">
+                          {course.title}
+                        </a>
+                        <a href="#" className="course-category">
+                          {course.category}
+                        </a>
+                        <div className="course-info">
+                          <p className="course-author">
+                            By <a href="#">{course.author}</a>
+                          </p>
+                          <div className="course-price">{course.price}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </li>
+
                 ))}
               </div>
               <button
@@ -634,8 +248,9 @@ const Home = () => {
                 onClick={() => scrollLeftNewestCourse(newestCoursesRef)}
               ></button>
               <div className="featured-courses" ref={newestCoursesRef}>
-                {newestCourses.map((course) => (
-                  <div key={course.id} className="course-card">
+                {filteredNewestCourses.map((course) => (
+                  <li key={course.id} className="course-card" onClick={() => handleNewestCoursesmoreClick(course.id)}>
+                  <div >
                     <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
@@ -685,6 +300,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+                </li>
                 ))}
               </div>
               <button
@@ -738,46 +354,47 @@ const Home = () => {
                 onClick={() => scrollLeftInstructor(popularInstructorRef)}
               ></button>
               <div className="popular-instructors" ref={popularInstructorRef}>
-                {popularInstructor.map((instructor) => (
+                {filteredPopularInstructors.map((instructor) => (
                   <div key={instructor.id} className="popular-instructors-card">
-                    <a href="/other-instructor-view">
-                      <div className="popular-instructor-image">
-                        <img
-                          src={instructor.imgSrc}
-                          alt={instructor.name}
-                          className="popular-instructor-photo"
-                        />
+                    <div className="popular-instructor-image">
+                      <img
+                        src={instructor.imgSrc}
+                        alt={instructor.name}
+                        className="popular-instructor-photo"
+                      />
+                    </div>
+                    <div className="popular-instructor-content">
+                      <div className="popular-instructor-profile">
+                        <Link
+                          to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
+                          className="instructor-name"
+                        >
+                          {instructor.name}
+                        </Link>
+                        <div className="verified-badge"></div>
                       </div>
-                      <div className="popular-instructor-content">
-                        <div className="popular-instructor-profile">
-                          <a href="#" className="instructor-name">
-                            {instructor.name}
-                          </a>
-                          <div className="verified-badge"></div>
-                        </div>
-                        <div className="popular-instructor-title">
-                          {instructor.title}
-                        </div>
-                        <ul className="social-icons">
-                          <a href="#" className="sc-fb">
-                            <img src={facebook} />
-                          </a>
-                          <a href="#" className="sc-tw">
-                            <img src={x} />
-                          </a>
-                          <a href="#" className="sc-ln">
-                            <img src={linkedin} />
-                          </a>
-                          <a href="#" className="sc-yt">
-                            <img src={youtube} />
-                          </a>
-                        </ul>
-                        <div className="popular-instructor-stats">
-                          {instructor.students} Students • {instructor.courses}{" "}
-                          Courses
-                        </div>
+                      <div className="popular-instructor-title">
+                        {instructor.title}
                       </div>
-                    </a>
+                      <ul className="social-icons-1">
+                        <a href="#" className="sc-fb">
+                          <img src={facebook} />
+                        </a>
+                        <a href="#" className="sc-tw">
+                          <img src={x} />
+                        </a>
+                        <a href="#" className="sc-ln">
+                          <img src={linkedin} />
+                        </a>
+                        <a href="#" className="sc-yt">
+                          <img src={youtube} />
+                        </a>
+                      </ul>
+                      <div className="popular-instructor-stats">
+                        {instructor.students} Students • {instructor.courses}{" "}
+                        Courses
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -797,14 +414,14 @@ const Home = () => {
             <div className="instructor-profile-content">
               <div className="instructor-profile-header">
                 <a href="#" className="instructor-name">
-                  Joginder Signh
+                  John Doe
                 </a>
                 <div className="verified-badge"></div>
               </div>
               <div className="home-instructor-profile-title">
                 Web Developer, Designer, and Teacher
               </div>
-              <ul className="social-icons">
+              <ul className="social-icons-1">
                 <a href="#" className="sc-fb">
                   <img src={facebook} />
                 </a>
@@ -914,7 +531,7 @@ const Home = () => {
               onClick={scrollLeftStudent}
             ></button>
             <div className="student-thought" ref={studentThoughtRef}>
-              {studentThought.map((studentThought) => (
+              {filteredStudentThoughts.map((studentThought) => (
                 <div key={studentThought.id} className="student-thought-card">
                   <div className="student-thought-content">
                     <p>"{studentThought.quote}"</p>

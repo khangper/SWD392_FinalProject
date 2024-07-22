@@ -9,6 +9,10 @@ import like from "../../assets/like.png";
 import dislike from "../../assets/dislike.png";
 import star from "../../assets/star.png";
 import search from "../../assets/search.png";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { fetchHomeFeaturedCoursesDetailRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
+import { fetchNewestCourseDetailRequest } from "../../redux/reduxActions/homeActions/HomeNewestCourseAction";
 
 const CoursesDetailView = () => {
   const sections = [
@@ -537,21 +541,39 @@ const CoursesDetailView = () => {
     },
   ];
   const [oivtab, setOivtab] = useState("about");
-  const [selectOptions, setSelectOptions] = useState("");
+
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { loading, error, featuredCourses } = useSelector((state) => state.home_featuredcourse);
+  const { newestCourses } = useSelector((state) => state.home_newestcourse);
+
+  const currentCourseDetail = featuredCourses.find(courseDetail => courseDetail.id === id)
+  const newestCourseDetail = newestCourses.find(course => course.id === id)
+
+  useEffect(() => {
+    if (!currentCourseDetail) {
+      dispatch(fetchHomeFeaturedCoursesDetailRequest(id));
+    }
+  }, [dispatch, id, currentCourseDetail]);
+
+  useEffect(() => {
+    if (!newestCourseDetail) {
+      dispatch(fetchNewestCourseDetailRequest(id));
+    }
+  }, [dispatch, id, newestCourseDetail]);
 
   const handleoivTabChange = (tab) => {
     setOivtab(tab);
   };
-
-  const handleSelectChange = (event) => {
-    setSelectOptions(event.target.value);
-  };
-
   const [accordion, setAccordion] = useState(null);
 
   const toggleAccordion = (index) => {
     setAccordion(accordion === index ? null : index);
   };
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!currentCourseDetail) return <div>Course not found</div>;
   return (
     <div>
       <div className="courses_detail_view-div1">
@@ -564,7 +586,7 @@ const CoursesDetailView = () => {
                     <div className="cdv-preview_video">
                       <a href="#" className="fcrse_img">
                         <img
-                          src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg"
+                          src={currentCourseDetail.imgSrc}
                           alt=""
                         />
                         <div className="cdv-course-overlay">
@@ -595,7 +617,7 @@ const CoursesDetailView = () => {
                   </div>
                   <div className="courses_detail_view-box2">
                     <div className="cdv-label1">
-                      <h2>The Web Developer Bootcamp</h2>
+                      <h2>{currentCourseDetail.title}</h2>
                       <span className="cdv-label2">
                         The only course you need to learn web development -
                         HTML, CSS, JS, Node, and More!
@@ -603,12 +625,12 @@ const CoursesDetailView = () => {
                     </div>
                     <div className="cdv-rate_star">
                       <div className="crse_reviews mr-2">
-                        <img className="starIcon" src={ratingStar}></img>5.3.2
+                        <img className="starIcon" src={ratingStar}></img>{currentCourseDetail.rating}
                       </div>
                       (81,665 ratings)
                     </div>
                     <div className="cdv-rate_star">
-                      114,521 students enrolled
+                      {currentCourseDetail.views} students enrolled
                     </div>
                     <div className="cdv-language">
                       <div className="cdv-language-label1">

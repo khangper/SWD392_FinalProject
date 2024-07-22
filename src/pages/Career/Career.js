@@ -1,8 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Career.css";
 import Header from "../../components/Header/Header";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
 import learner from "../../assets/Learners.png";
 import { PiMapPinLineBold } from "react-icons/pi";
 import { PiAirplaneTilt } from "react-icons/pi";
@@ -107,6 +105,53 @@ const Career = () => {
       country: "India",
     },
   ];
+  const culture = [
+    {
+      id: 1,
+      img: learner,
+      title: "We are learners",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan. Nunc at tortor tellus. Cras dignissim velit velit, ac sollicitudin mi bibendum in. In vel nibh sodales, venenatis eros a, vulputate ligula.",
+    },
+
+    {
+      id: 2,
+      img: learner,
+      title: "We are navigators",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan. Nunc at tortor tellus. Cras dignissim velit velit, ac sollicitudin mi bibendum in. In vel nibh sodales, venenatis eros a, vulputate ligula.",
+    },
+    {
+      id: 3,
+      img: learner,
+      title: "We are global",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan. Nunc at tortor tellus. Cras dignissim velit velit, ac sollicitudin mi bibendum in. In vel nibh sodales, venenatis eros a, vulputate ligula.",
+    },
+    {
+      id: 4,
+      img: learner,
+      title: "We make an impact",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan. Nunc at tortor tellus. Cras dignissim velit velit, ac sollicitudin mi bibendum in. In vel nibh sodales, venenatis eros a, vulputate ligula.",
+    },
+    {
+      id: 5,
+      img: learner,
+      title: "We are learners",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan. Nunc at tortor tellus. Cras dignissim velit velit, ac sollicitudin mi bibendum in. In vel nibh sodales, venenatis eros a, vulputate ligula.",
+    },
+  ];
+
+  const cultureRef = useRef(null);
+
+  const scrollLeftStudent = () => {
+    cultureRef.current.scrollBy({ left: -1000, behavior: "smooth" });
+  };
+  const scrollRightStudent = () => {
+    cultureRef.current.scrollBy({ left: 1000, behavior: "smooth" });
+  };
   return (
     <div className="career">
       <Header />
@@ -184,29 +229,31 @@ const Career = () => {
 
           <div className="career-culture-container-wrapper">
             <div className="career-culture-container">
-              <button className="career-button-arrow-left">
-                <IoIosArrowBack />
-              </button>
-              <div className="career-image-description">
-                <div className="career-culture-image-container">
-                  <img src={learner} alt="" className="career-image-career" />
-                </div>
-                <div className="career-culture-title-container">
-                  <div className="career-heading-43">We are learners</div>
-                </div>
-                <div className="career-content-container">
-                  <p className="career-content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nullam eget enim in turpis consequat tempor sed id neque.
-                    Nam at felis et elit auctor accumsan. Nunc at tortor tellus.
-                    Cras dignissim velit velit, ac sollicitudin mi bibendum in.
-                    In vel nibh sodales, venenatis eros a, vulputate ligula.
-                  </p>
-                </div>
+              <button
+                className="career-button left"
+                onClick={scrollLeftStudent}
+              ></button>
+              <div className="career-culture-parent" ref={cultureRef}>
+                {culture.map((culture) => (
+                  <div key={culture.id} className="career-image-description">
+                    <div className="career-link">
+                      <img
+                        src={culture.img}
+                        alt=""
+                        className="career-image-career"
+                      />
+
+                      <h4 className="career-heading-43">{culture.title}</h4>
+
+                      <p className="career-contents">{culture.content}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <button className="career-button-arrow-right">
-                <IoIosArrowForward />
-              </button>
+              <button
+                className="career-button right"
+                onClick={scrollRightStudent}
+              ></button>
             </div>
           </div>
 

@@ -9,13 +9,22 @@ import share from "../../assets/share.png";
 import saved_course from "../../assets/saved-course.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSearchResultRequest } from '../../redux/reduxActions/searchresultAction'
 
 const SearchResult = () => {
+    const dispatch = useDispatch();
+    const { sr_course } = useSelector((state) => state.searchresult);
+
     const [isOpen, setIsOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState('Sort');
     const [visibleSection, setVisibleSection] = useState(null);
     const [selectedOption, setSelectedOption] = useState("");
     const optionsRef = useRef([]);
+
+    useEffect(() => {
+        dispatch(fetchSearchResultRequest())
+    }, [dispatch]);
 
     const sortOptions = [
         'Most Relevant',
@@ -104,6 +113,61 @@ const SearchResult = () => {
         { name: 'Bahasa Indonesia', count: 20 },
         { name: 'ภาษาไทย', count: 10 }
 
+    ];
+
+    const RS_Courses = [
+        {
+            id: 1,
+            title: "Complete Python Bootcamp: Go from zero to hero in Python 3",
+            views: "109k",
+            date: "15 days ago",
+            imgSrc:
+                "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
+            price: "$10",
+            hours: "25 hours",
+            author: "John Doe",
+            category: "Web Development | Python",
+            rating: 4.5,
+        },
+        {
+            id: 2,
+            title: "The Complete JavaScript Course 2020: Build Real Projects!",
+            views: "5M",
+            date: "15 days ago",
+            imgSrc:
+                "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg",
+            price: "$5",
+            hours: "28 hours",
+            author: "Jassica William",
+            category: "Development | JavaScript",
+            rating: 4.5,
+        },
+        {
+            id: 3,
+            title: "Beginning C++ Programming - From Beginner to Beyond",
+            views: "1M",
+            date: "18 days ago",
+            imgSrc:
+                "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-3.jpg",
+            price: "$13",
+            hours: "12 hours",
+            author: "Joginder Singh",
+            category: "Development | C++",
+            rating: 4.5,
+        },
+        {
+            id: 4,
+            title: "The Complete Digital Marketing Course - 12 Courses in 1",
+            views: "153k",
+            date: "3 months ago",
+            imgSrc:
+                "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-4.jpg",
+            price: "$12",
+            hours: "1 hour",
+            author: "Poonam Verma",
+            category: "Digital Marketing | Marketing",
+            rating: 5.0,
+        },
     ];
 
     const toggleDropdown = () => {
@@ -373,20 +437,21 @@ const SearchResult = () => {
                     </div>
                     <div className='SR_Right_Col'>
                         <div className='Search_Result_Body_Right'>
-                            <h4 className="SR_Num_Result">5 Results</h4>
-                            {[...Array(5)].map((_, index) => (
-                                <div key={index} className="SR_fcrse_1 MTSR30">
+                            <h4 className="SR_Num_Result">{RS_Courses.length} Results</h4>
+                            {sr_course.map((course) => (
+                                <div key={course.id} className="SR_fcrse_1 MTSR30">
                                     <a href="https://gambolthemes.net/html-items/cursus-new-demo/course_detail_view.html" className="hf_img">
-                                        <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg" alt="" />
+                                        <img src={course.imgSrc} alt="" />
                                         <div className="SR_Course_Overlay">
                                             <div className="SR_badge_seller">Bestseller</div>
                                             <div className="SR_crse_reviews">
                                                 <i className="uil uil-star"></i>
-                                                4.5
+                                                <img className="RS_starIcon" src={ratingStar}></img>
+                                                {course.rating}
                                             </div>
                                             <span className="SR_play_btn1"><i className="uil uil-play"></i></span>
                                             <div className="SR_crse_timer">
-                                                25 hours
+                                                {course.hours}
                                             </div>
                                         </div>
                                     </a>
@@ -403,14 +468,14 @@ const SearchResult = () => {
                                             </div>
                                         </div>
                                         <div className="SR_Course_View">
-                                            <span className="SR_Course_View14">109k views</span>
-                                            <span className="SR_Course_View14">15 days ago</span>
+                                            <span className="SR_Course_View14">{course.views} views |&nbsp;</span>
+                                            <span className="SR_Course_View14">{course.date}</span>
                                         </div>
-                                        <a href="course_detail_view.html" className="SR_Course_Title">Complete Python Bootcamp: Go from zero to hero in Python 3</a>
-                                        <a href="#" className="SR_Course_Sub_Title">Web Development | Python</a>
+                                        <a href="course_detail_view.html" className="SR_Course_Title">{course.title}</a>
+                                        <a href="#" className="SR_Course_Sub_Title">{course.category}</a>
                                         <div className="SR_Course_Cart">
-                                            <p className="SR_Course_Author">By <a href="#">John Doe</a></p>
-                                            <div className="SR_Course_Price">$10</div>
+                                            <p className="SR_Course_Author">By <a href="#">{course.author}</a></p>
+                                            <div className="SR_Course_Price">{course.price}</div>
                                             <button className="SR_cart_btn" title="cart"><i className="uil uil-shopping-cart-alt"></i></button>
                                         </div>
                                     </div>

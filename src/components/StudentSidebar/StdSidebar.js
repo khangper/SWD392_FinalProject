@@ -14,7 +14,7 @@ import feedbackIcon from "../../assets/send-feedback.png";
 const StdSidebar = ({ sidebar }) => {
   return (
     <div className={`ins-sidebar ${sidebar ? "" : "ins-small-sidebar"}`}>
-      <Link to="/ins-dashboard" className="side-link">
+      <Link to="/student-dashboard" className="side-link">
         <img
           className="sidebar-icon"
           src={dashboardIcon}
@@ -30,7 +30,7 @@ const StdSidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={messagesIcon} alt="Messages Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Messages</p>
       </Link>
-      <Link to="/notifications" className="side-link">
+      <Link to="/notificationsstudent" className="side-link">
         <img
           className="sidebar-icon"
           src={notificationsIcon}
@@ -54,7 +54,7 @@ const StdSidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={payoutIcon} alt="Payout Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Credit</p>
       </Link>
-      <Link to="/statements" className="side-link">
+      <Link to="/statementst" className="side-link">
         <img
           className="sidebar-icon"
           src={statementsIcon}

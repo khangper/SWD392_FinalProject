@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Explore.css";
 import search_icon from "..//../assets/search.png";
 import ratingStar from "../../assets/rating.png";
@@ -6,172 +6,39 @@ import share from "../../assets/share.png";
 import saved_course from "../../assets/saved-course.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
-const Explore = () => {
-  const liveStreams = [
-    {
-      id: 1,
-      name: "John Doe",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-    },
-    {
-      id: 2,
-      name: "Jassica",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-      id: 3,
-      name: "Edutut+",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-3.jpg",
-    },
-    {
-      id: 4,
-      name: "Joginder Singh",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
-    },
-    {
-      id: 5,
-      name: "Zoena",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-    },
-    {
-      id: 6,
-      name: "Albert Dua",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
-    },
-    {
-      id: 7,
-      name: "Amritpal",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-    },
-    {
-      id: 8,
-      name: "Jimmy",
-      status: "live",
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-    },
-  ];
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHomeLiveStreamsRequest } from "../../redux/reduxActions/homeActions/HomeLivestreamAction";
+import { fetchHomeFeaturedCoursesRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
+import { addSaveCourseRequest } from "../../redux/reduxActions/SaveCourseAction";
 
-  const featuredCourses = [
-    {
-      id: 1,
-      title: "Complete Python Bootcamp: Go from zero to hero in Python 3",
-      author: "John Doe",
-      views: "109k",
-      date: "15 days ago",
-      category: "Web Development | Python",
-      price: "$10",
-      hours: "25 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
-    },
-    {
-      id: 2,
-      title: "The Complete JavaScript Course 2020: Build Real Projects!",
-      author: "Jassica William",
-      views: "5M",
-      date: "15 days ago",
-      category: "Development | JavaScript",
-      price: "$5",
-      hours: "28 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg",
-    },
-    {
-      id: 3,
-      title: "Beginning C++ Programming - From Beginner to Beyond",
-      author: "Joginder Singh",
-      views: "1M",
-      date: "18 days ago",
-      category: "Development | C++",
-      price: "$13",
-      hours: "12 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-3.jpg",
-    },
-    {
-      id: 4,
-      title: "The Complete Digital Marketing Course - 12 Courses in 1",
-      author: "Poonam Verma",
-      views: "153k",
-      date: "3 months ago",
-      category: "Digital Marketing | Marketing",
-      price: "$12",
-      hours: "1 hour",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-4.jpg",
-    },
-    {
-      id: 5,
-      title: "Microsoft Excel - Excel from Beginner to Advanced",
-      author: "Rock William",
-      views: "53k",
-      date: "14 days ago",
-      category: "Office Productivity | Excel",
-      price: "$6",
-      hours: "1.5 hours",
-      rating: 4.5,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-5.jpg",
-    },
-    {
-      id: 6,
-      title: "Angular 8 - The Complete Guide (2020 Edition)",
-      author: "John Doe",
-      views: "253k",
-      date: "10 days ago",
-      category: "Development | Angular",
-      price: "$15",
-      hours: "36 hours",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-6.jpg",
-    },
-    {
-      id: 7,
-      title: "WordPress for Beginners: Create a Website Step by Step",
-      author: "Sabnam Singh",
-      views: "109k",
-      date: "15 days ago",
-      category: "Design | Wordpress",
-      price: "$18",
-      hours: "5.4 hours",
-      rating: 5.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-7.jpg",
-    },
-    {
-      id: 8,
-      title: "CSS - The Complete Guide 2020 (incl. Flexbox, Grid & Sass)",
-      author: "Jashanpreet Singh",
-      views: "196k",
-      date: "1 month ago",
-      category: "Design | CSS",
-      price: "$10",
-      hours: "23 hours",
-      rating: 4.0,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-8.jpg",
-    },
-  ];
+const Explore = () => {
+  const { liveStreams } = useSelector((state) => state.home_livestream);
+  const { featuredCourses } = useSelector((state) => state.home_featuredcourse);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchHomeLiveStreamsRequest());
+    dispatch(fetchHomeFeaturedCoursesRequest());
+  }, [dispatch]);
+
+  const handleSaveCourse = (course, event) => {
+    event.stopPropagation();
+
+    const mappedCourse = {
+      id: course.id,
+      title: course.title,
+      author: course.author || "Unknown Author",
+      views: course.views.replace(" Views", "").replace(" views", ""),
+      date: course.timeAgo || course.date,
+      category: course.category,
+      price: course.price,
+      hours: course.duration || course.hours,
+      rating: course.rating,
+      imgSrc: course.imgSrc,
+    };
+
+    dispatch(addSaveCourseRequest(mappedCourse));
+  };
 
   const liveStreamRef = useRef(null);
   const scrollLeftLiveStream = () => {
@@ -261,7 +128,7 @@ const Explore = () => {
                           <img src={share} />
                           Share
                         </span>
-                        <span>
+                        <span onClick={(e) => handleSaveCourse(course, e)}>
                           <img src={saved_course} />
                           Save
                         </span>
