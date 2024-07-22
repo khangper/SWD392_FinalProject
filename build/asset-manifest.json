@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.8e7e2d67.css",
-    "main.js": "/static/js/main.da28176f.js",
+    "main.css": "/static/css/main.49d7aeec.css",
+    "main.js": "/static/js/main.3ba99fcd.js",
     "static/js/453.79ef8a5e.chunk.js": "/static/js/453.79ef8a5e.chunk.js",
     "static/media/big_blog.jpg": "/static/media/big_blog.a13838bddb8677ec0743.jpg",
     "static/media/background_about.jpg": "/static/media/background_about.94bc36225f563739a337.jpg",
     "static/media/Brazil.png": "/static/media/Brazil.b72510d55c60bed25f53.png",
     "static/media/India.png": "/static/media/India.6178615d6399024b6149.png",
     "static/media/Cali.png": "/static/media/Cali.bbd294a719d3095193a0.png",
-    "static/media/sendmessage.png": "/static/media/sendmessage.a78e3415a6e18108311a.png",
     "static/media/star.png": "/static/media/star.8fb4765dba0a2e4ba1ad.png",
     "static/media/tablerow.png": "/static/media/tablerow.2eb8c58cf183bd8e4a82.png",
     "static/media/Learners.png": "/static/media/Learners.10ff8a7dea24d57ec50e.png",
@@ -38,12 +37,12 @@
     "static/media/rating.png": "/static/media/rating.b47e6e2c848cd0fe8ae1.png",
     "static/media/notification-icon.png": "/static/media/notification-icon.b6e1be4108a318e88bd9.png",
     "index.html": "/index.html",
-    "main.8e7e2d67.css.map": "/static/css/main.8e7e2d67.css.map",
-    "main.da28176f.js.map": "/static/js/main.da28176f.js.map",
+    "main.49d7aeec.css.map": "/static/css/main.49d7aeec.css.map",
+    "main.3ba99fcd.js.map": "/static/js/main.3ba99fcd.js.map",
     "453.79ef8a5e.chunk.js.map": "/static/js/453.79ef8a5e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8e7e2d67.css",
-    "static/js/main.da28176f.js"
+    "static/css/main.49d7aeec.css",
+    "static/js/main.3ba99fcd.js"
   ]
 }
