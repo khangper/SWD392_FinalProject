@@ -1,5 +1,5 @@
 export const PATH_NAME = {
-  HOME: "/home/:id",
+  HOME: "/home",
   EXPLORE: "/explore",
   LIVE_OUTPUT: "/live_output/:id",
   ADD_LIVE_STREAM: "/add_livestream",
@@ -25,7 +25,7 @@ export const PATH_NAME = {
   PAID_MEMBERSHIP: "/paidmembership",
   ABOUT_US: "/about-us",
   OUR_BLOG: "/our-blog",
-  BLOG_SINGLE_VIEW: "/blog-single-view",
+  BLOG_SINGLE_VIEW: "/blog-single-view/:id",
   CHECKOUT: "/checkout",
   SHOPPING_CART: "/shoppingcart",
   HELP_VIEW_1: "/helpview1",
