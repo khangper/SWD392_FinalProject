@@ -1,9 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Invoice.css";
-import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 
 const Invoice = () => {
+  const location = useLocation();
+  const { originalPrice } = location.state || { originalPrice: 0 };
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const ShoppingCart_API_URL =
+    "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/ShoppingCart";
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch(ShoppingCart_API_URL);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setCourses(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  if (loading) {
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  // Tính tổng totalAmount của các mặt hàng
+  const totalAmount = courses.reduce((acc, course) => {
+    const price = parseFloat(course.price.replace("$", ""));
+    const vat = price * 0.2;
+    const total = price + vat;
+    return acc + total;
+  }, 0);
+
   return (
     <div className="Invoice_Container">
       <div className="Invoice_Header">
@@ -12,7 +54,7 @@ const Invoice = () => {
             <Link to={PATH_NAME.HOME}>
               <img
                 src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg"
-                alt=""
+                alt="Logo"
               />
             </Link>
           </div>
@@ -50,24 +92,20 @@ const Invoice = () => {
             <div className="Inv_Detail_Content-To">
               <h4>To</h4>
               <div className="vdt-list">Rock William</div>
-
               <div className="vdt-list">133, Dracut</div>
-
               <div className="vdt-list">Massachusetts</div>
-
               <div className="vdt-list">01826</div>
-
               <div className="vdt-list">United States</div>
             </div>
             <div className="Inv_Detail_Content-Cursus">
               <h4>Cursus</h4>
               <div className="vdt-list">Cursus LTD</div>
-              <div className="vdt-list">#1234, Shahid karnail Singh Nagar,</div>
+              <div className="vdt-list">#1234, Shahid Karnail Singh Nagar,</div>
               <div className="vdt-list">Near MBD Mall,</div>
               <div className="vdt-list">141001</div>
-              <div className="vdt-list">Ludhiana </div>
-              <div className="vdt-list">Punjab </div>
-              <div className="vdt-list">India </div>
+              <div className="vdt-list">Ludhiana</div>
+              <div className="vdt-list">Punjab</div>
+              <div className="vdt-list">India</div>
             </div>
           </div>
         </div>
@@ -75,17 +113,26 @@ const Invoice = () => {
           <div className="tb_head">
             <p>Item</p>
             <p>Price</p>
-            <p>Vat(20%)</p>
+            <p>VAT (20%)</p>
             <p>Total Amount</p>
           </div>
-          <div className="user_dt_trans">
-            <p>Item Tittle</p>
-            <p>$79.00</p>
-            <p>$10.00</p>
-            <p>$89.00</p>
-          </div>
+          {courses.map((course) => {
+            const price = parseFloat(course.price.replace("$", ""));
+            const vat = price * 0.2;
+            const totalAmount = price + vat;
+            return (
+              <div className="user_dt_trans" key={course.id}>
+                <p>{course.title}</p>
+                <p>${price.toFixed(2)}</p>
+                <p>${vat.toFixed(2)}</p>
+                <p>${totalAmount.toFixed(2)}</p>
+              </div>
+            );
+          })}
           <div className="user_dt_trans jsk1145">
-            <div className="totalinv2">Invoice Total : USD $220.00</div>
+            <div className="totalinv2">
+              Invoice Total : USD ${totalAmount.toFixed(2)}
+            </div>
             <p>Paid via Paypal</p>
           </div>
         </div>

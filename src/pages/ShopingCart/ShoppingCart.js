@@ -83,7 +83,6 @@ function ShoppingCart() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
   }
 
   if (error) {

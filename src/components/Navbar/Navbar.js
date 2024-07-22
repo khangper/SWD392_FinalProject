@@ -10,6 +10,8 @@ import moon_image from "..//../assets/moon.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthContext";
 import { PATH_NAME } from "../../constant/pathname";
+import { useDispatch } from "react-redux";
+import { setSearchQuery } from "../../redux/reduxReducers/reducers/searchReducers/SearchSlice";
 const Navbar = ({ setSidebar }) => {
   const sampleMessages = [
     {
@@ -119,6 +121,13 @@ const Navbar = ({ setSidebar }) => {
 
   const { logout } = useContext(AuthContext);
 
+  const [search, setSearch] = useState('');
+  const dispatch = useDispatch();
+  const handleSearch = (e) => {
+    if (e.key === 'Enter') {
+      dispatch(setSearchQuery(search));
+    }
+  };
   return (
     <nav className="flex-div">
       <div className="nav-left flex-div">
@@ -135,6 +144,9 @@ const Navbar = ({ setSidebar }) => {
           <input
             type="text"
             placeholder="Search for Tuts Videos, Tutors, Tests and more..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyPress={handleSearch}
           />
         </div>
       </div>
@@ -237,7 +249,10 @@ const Navbar = ({ setSidebar }) => {
                     <span>gambol943@gmail.com</span>
                   </div>
                 </div>
-                <Link to={PATH_NAME.MY_INSTRUCTOR_PROFILE} className="profile-link">
+                <Link
+                  to={PATH_NAME.MY_INSTRUCTOR_PROFILE}
+                  className="profile-link"
+                >
                   View Instructor Profile
                 </Link>
               </div>

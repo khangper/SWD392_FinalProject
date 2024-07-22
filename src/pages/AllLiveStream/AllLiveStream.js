@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./AllLiveStream.css";
 import Kayak from "../../assets/kayak.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchStreamsRequest } from "../../redux/reduxActions/liveStreamAction";
@@ -9,6 +9,11 @@ import { fetchStreamsRequest } from "../../redux/reduxActions/liveStreamAction";
 export default function AllLiveStream() {
   const dispatch = useDispatch();
   const { streams, loading, error } = useSelector((state) => state.streams);
+  const navigate = useNavigate();
+
+  const handleLiveStreamClick = (id) => {
+    navigate(`${PATH_NAME.LIVE_OUTPUT.replace(":id", id)}`, { replace: true });
+  };
 
   useEffect(() => {
     dispatch(fetchStreamsRequest());
@@ -35,7 +40,7 @@ export default function AllLiveStream() {
                 <div className="la5lo1">
                   <div className="AllLive-grid-row">
                     {streams.map((stream, index) => (
-                      <div className="grid-item" key={index}>
+                      <div className="grid-item" key={index} onClick={()=>handleLiveStreamClick(stream.id)}>
                         <div className="stream_1 mb-4">
                           <Link
                             to={PATH_NAME.LIVE_OUTPUT}
