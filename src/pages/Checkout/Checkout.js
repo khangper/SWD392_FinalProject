@@ -1,30 +1,12 @@
 import React, { useState } from "react";
 import Header from "../../components/Header-paidmember/Header";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Block1 from "..//../assets/Block1.png";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
 import "./Checkout.css";
 export default function Checkout() {
   const [selectedCountry, setSelectedCountry] = useState("1");
-  // const location = useLocation();
-  // const { total, originalPrice, discount } = location.state || {
-  //   total: 0,
-  //   originalPrice: 0,
-  //   discount: 0,
-  // };
-
-  // // Check if total, originalPrice, and discount are defined before accessing toFixed method
-  // const formattedTotal = total ? total.toFixed(2) : "0.00";
-  // const formattedOriginalPrice = originalPrice
-  //   ? originalPrice.toFixed(2)
-  //   : "0.00";
-  // const formattedDiscount = discount ? discount.toFixed(2) : "0.00";
-  const location = useLocation();
-  const { total } = location.state || { total: 0 }; // Default value for safety
-
-  // Assuming GST and other details are placeholders for now
-  const originalPrice = total + 2; // Example calculation
 
   const handleChangeselect = (event) => {
     setSelectedCountry(event.target.value);
@@ -45,6 +27,18 @@ export default function Checkout() {
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { total } = location.state || { total: 0 };
+  const originalPrice = total + 2; // Assuming $2.00 is the GST
+
+  const handleInvoice = () => {
+    navigate(PATH_NAME.INVOICE, {
+      state: {
+        originalPrice: originalPrice,
+      },
+    });
   };
   return (
     <div className="CheckoutPage">
@@ -845,17 +839,19 @@ export default function Checkout() {
                 </div>
                 <div className="order_title">
                   <h6>Taxes(GST)</h6>
-                  <div className="order_price">$2</div> {/* Assuming GST */}
+                  <div className="order_price">$2.00</div>
                 </div>
                 <div className="order_title">
                   <h3>Total</h3>
                   <div className="order_price">${originalPrice.toFixed(2)}</div>
                 </div>
-                <Link to={PATH_NAME.INVOICE}>
-                  <button className="chckot_btn" type="submit">
-                    Confirm Checkout
-                  </button>
-                </Link>
+                <button
+                  onClick={handleInvoice}
+                  className="chckot_btn"
+                  type="submit"
+                >
+                  Confirm Checkout
+                </button>
               </div>
             </div>
           </div>
@@ -875,7 +871,7 @@ export default function Checkout() {
               </div>
               <div className="order_title">
                 <h6>Taxes(GST)</h6>
-                <div className="order_price">$2</div>
+                <div className="order_price">$2.00</div>
               </div>
               <div className="order_title">
                 <h2>Total</h2>

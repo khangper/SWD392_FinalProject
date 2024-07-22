@@ -68,19 +68,17 @@ p {
 }
 
 .Contact_Body {
-
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     background-color: #efefef;
-    padding: 0 370px 150px 370px;
+    padding: 0 180px 150px 180px;
 }
 
 .Contact_Body_Box {
     flex: 0 0 auto;
     width: 23%;
-    margin-right: 15px;
-
+    margin-right: 14px;
 }
 
 .Contact_link_step {
@@ -110,6 +108,7 @@ p {
 }
 
 .Contact_Map {
+    margin-top: 52px;
     flex: 0 0 auto;
     width: 60%;
 }
@@ -170,9 +169,7 @@ p {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
     gap: 5px;
-
 }
 
 .Contact_Social {
@@ -191,3 +188,22 @@ p {
     width: 20px;
     height: 18px;
 }
+
+.Contact_Detail_Inf {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Contact_txt_cntct {
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .Contact_Social {
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  
+
+  
+
+  

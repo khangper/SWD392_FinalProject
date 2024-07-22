@@ -31,6 +31,8 @@ import {
   editDiscountRequest,
   deleteDiscountRequest,
 } from "../../redux/reduxActions/MyCourse/DiscountAction";
+import { PATH_NAME } from "../../constant/pathname";
+import { Link } from "react-router-dom";
 function MyCourse() {
   // My Course
   const handleDelete = (courseId) => {
@@ -529,7 +531,12 @@ function MyCourse() {
                             {course.Purchase}
                           </td>
                           <td className="MyCourse-text-center">
-                            <img src={DowLoadMyCourse} className="Edit-icon" />
+                            <Link to={PATH_NAME.DOWLOADCOURSE}>
+                              <img
+                                src={DowLoadMyCourse}
+                                className="Edit-icon"
+                              />
+                            </Link>
                             <img
                               src={DeleteMyCourse}
                               className="Edit-icon"
