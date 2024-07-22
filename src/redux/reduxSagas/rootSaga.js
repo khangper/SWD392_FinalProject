@@ -23,17 +23,19 @@ import courseSaga from "./sagas/MyCourseSaga/CourseSaga";
 import coursesDSaga from "./sagas/CoursesDSaga";
 import commentsSaga from "./sagas/CommentsSaga";
 import watchFetchChatMessages from "./sagas/MessageSaga";
-  import MyCertificationsSaga from "./sagas/MyCertificationsSaga";
+import MyCertificationsSaga from "./sagas/MyCertificationsSaga";
 import statementSTSaga from "./sagas/StatementSTSaga";
 import statementISSaga from "./sagas/StatementISSaga";
-  import { watchFetchPressNews } from "./sagas/pressSagas/PressNewsSaga";
+import { watchFetchPressNews } from "./sagas/pressSagas/PressNewsSaga";
 import { watchFetchPressRelease } from "./sagas/pressSagas/PressReleaseSaga";
 import upcommingCourseSaga from "./sagas/MyCourseSaga/UpcommingCourseSaga";
 import myPurchaseCourseSaga from "./sagas/MyCourseSaga/MyPurchaseSaga";
 import discountSaga from "./sagas/MyCourseSaga/DiscountSaga";
 import { watchFetchNotifications } from "./sagas/NotificationSagas/NotificationInstructorSaga";
 import { watchFetchNotificationsStudent } from "./sagas/NotificationSagas/NotificationStudentSaga";
-
+import { watchLiveById } from "./sagas/liveOutputSagas/liveoutputLiveByIdSaga";
+import { watchBlogDetail } from "./sagas/blogSagas/BlogDetailSaga";
+import { watchFetchReview } from "./sagas/reviewSagas/reviewSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -57,18 +59,21 @@ export default function* rootSaga() {
     watchAddToCart(),
     courseSaga(),
     searchresultSaga(),
-     coursesDSaga(),
+    coursesDSaga(),
     commentsSaga(),
     watchFetchChatMessages(),
-      MyCertificationsSaga(),
+    MyCertificationsSaga(),
     statementSTSaga(),
     statementISSaga(),
-     watchFetchPressNews(),
+    watchFetchPressNews(),
     watchFetchPressRelease(),
     upcommingCourseSaga(),
     myPurchaseCourseSaga(),
     discountSaga(),
     watchFetchNotifications(),
     watchFetchNotificationsStudent(),
+    watchLiveById(),
+    watchBlogDetail(),
+    watchFetchReview(),
   ]);
 }

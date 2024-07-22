@@ -23,17 +23,21 @@ import courseReducer from "./reducers/MyCourseReducers/CourseReducer";
 import coursesdReducer from "./reducers/CoursesDReducer";
 import commentsReducer from "./reducers/CommentReducer";
 import chatReducer from "./reducers/MessageReducer";
-  import mycertificationReducer from "./reducers/MyCertificationsReducer";
+import mycertificationReducer from "./reducers/MyCertificationsReducer";
 import statementSTReducer from "./reducers/StatementSTReducer";
 import statementISReducer from "./reducers/StatementISReducer";
-  import PressNewsReducer from "./reducers/pressReducers/PressNewsReducer";
+import PressNewsReducer from "./reducers/pressReducers/PressNewsReducer";
 import PressReleaseReducer from "./reducers/pressReducers/PressReleaseReducer";
 import upcommingCourseReducer from "./reducers/MyCourseReducers/UpcommingCourseReducer";
 import myPurchaseCourseReducer from "./reducers/MyCourseReducers/MyPurchaseReducer";
 import discountReducer from "./reducers/MyCourseReducers/DiscountReducer";
 import notificationReducer from "./reducers/NotificationReducers/NotificationInstructorReducer";
 import notificationstudentReducer from "./reducers/NotificationReducers/NotificationStudentReducer";
-import searchReducer from "./reducers/searchReducers/SearchSlice"
+  import searchReducer from "./reducers/searchReducers/SearchSlice"
+import livestreamById from "./reducers/liveOutputReducers/liveoutputLiveByIdReducer";
+import blogDetailReducer from "./reducers/blogReducers/BlogDetailReducer";
+import ReviewReducer from "./reducers/reviewReducers/reviewReducer";
+
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
   home_featuredcourse: HomeFeaturedCourseReducer,
@@ -56,13 +60,13 @@ const rootReducer = combineReducers({
   saveCourses: saveCourseReducer,
   cart: ShoppingCartReducer,
   courses: courseReducer,
-    coursesd: coursesdReducer,
+  coursesd: coursesdReducer,
   comments: commentsReducer,
   message: chatReducer,
-   mycertifications: mycertificationReducer,
+  mycertifications: mycertificationReducer,
   statementST: statementSTReducer,
   statementIS: statementISReducer,
-   press_news: PressNewsReducer,
+  press_news: PressNewsReducer,
   press_release: PressReleaseReducer,
   upcommingCourses: upcommingCourseReducer,
   myPurchaseCourses: myPurchaseCourseReducer,
@@ -70,6 +74,9 @@ const rootReducer = combineReducers({
   notification: notificationReducer,
   notificationStudent: notificationstudentReducer,
   search: searchReducer,
+  livestreamById: livestreamById,
+  blogDetail: blogDetailReducer,
+  review: ReviewReducer,
 });
 
 export default rootReducer;

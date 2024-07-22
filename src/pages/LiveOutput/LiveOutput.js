@@ -6,13 +6,17 @@ import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
 import { GoShareAndroid } from "react-icons/go";
 import { CiLocationArrow1 } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLiveOutputLiveStreamsRequest } from "../../redux/reduxActions/liveOutputActions/liveOutputLiveActions";
+import { fetchLivestreamByIdRequest } from "../../redux/reduxActions/liveOutputActions/liveoutputLiveByIdAction";
 
 const LiveOutput = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
+
+  const { live } = useSelector((state) => state.livestreamById);
 
   const { liveStreams } = useSelector((state) => state.live_output_livestream);
 
@@ -20,52 +24,78 @@ const LiveOutput = () => {
     dispatch(fetchLiveOutputLiveStreamsRequest());
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(fetchLivestreamByIdRequest(id));
+  }, [dispatch, id]);
+
+  const navigate = useNavigate();
+  const handleLiveStreamClick = (id) => {
+    navigate(`${PATH_NAME.LIVE_OUTPUT.replace(":id", id)}`, { replace: true });
+  };
+
   const message = [
     {
       id: 1,
       username: "John Doe",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet molestie leo ac pellentesque",
     },
     {
       id: 2,
-      username: "John Doe",
+      username: "Poonam",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Class aptent taciti sociosqu ad litora torquent per conubia nostra",
     },
     {
       id: 3,
-      username: "John Doe",
+      username: "Jass",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Nulla sollicitudin nec nisi at pellentesque. Cras fringilla est et sem tempor",
     },
     {
       id: 4,
-      username: "John Doe",
+      username: "Albert Smith",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Pellentesque ultricies risus sit amet congue euismod",
     },
     {
       id: 5,
-      username: "John Doe",
+      username: "Jassica William",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Nullam efficitur tristique consequat",
     },
     {
       id: 6,
-      username: "John Doe",
+      username: "Joy Dua",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Proin sed leo eleifend,",
     },
     {
       id: 7,
-      username: "John Doe",
+      username: "Zoena Singh",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Aliquam dignissim elementum sem id rutrum",
+    },
+    {
+      id: 8,
+      username: "Amritpal Singh",
+      content:
+        "Fusce a elit at libero sollicitudin tincidunt",
+    },
+    {
+      id: 9,
+      username: "Johnson",
+      content:
+        "Ut laoreet lobortis ornare,",
+    },
+    {
+      id: 10,
+      username: "Jashan",
+      content:
+        "Sed pretium erat eu turpis condimentum",
     },
   ];
 
-  
   const liveStreamRef = useRef(null);
   const scrollLeftLiveStream = () => {
     liveStreamRef.current.scrollBy({ left: -198, behavior: "smooth" });
@@ -73,6 +103,9 @@ const LiveOutput = () => {
   const scrollRightLiveStream = () => {
     liveStreamRef.current.scrollBy({ left: 198, behavior: "smooth" });
   };
+  if (!live) {
+    return null;
+  }
   return (
     <section className="liveoutput-frame-wrapper">
       <div className="liveoutput-frame-parent">
@@ -89,9 +122,13 @@ const LiveOutput = () => {
               ></iframe>
               <div className="liveoutput-streamer-info">
                 <div className="liveoutput-streamer-details">
-                  <img src={avatar} alt="" className="liveoutput-img-avatar" />
+                  <img
+                    src={live.live_details.thumbnails}
+                    alt=""
+                    className="liveoutput-img-avatar"
+                  />
                   <div className="liveoutput-streamer-name">
-                    <div className="liveoutput-heading-4">Jassica William</div>
+                    <div className="liveoutput-heading-4">{live.live_details.channelName}</div>
                     <button className="liveoutput-button">
                       <p className="liveoutput-subscribe">Subscribe</p>
                     </button>
@@ -102,28 +139,28 @@ const LiveOutput = () => {
                     <div className="liveoutput-streamer-action">
                       <IoEyeOutline className="liveoutput-icon-1" />
                     </div>
-                    <div className="liveoutput-empty-action">1452</div>
+                    <div className="liveoutput-empty-action">{live.live_details.viewCount}</div>
                   </div>
 
                   <div className="liveoutput-item-link">
                     <div className="liveoutput-streamer-action">
                       <AiOutlineLike className="liveoutput-icon-1" />
                     </div>
-                    <div className="liveoutput-empty-action">100</div>
+                    <div className="liveoutput-empty-action">{live.live_details.likeCount}</div>
                   </div>
 
                   <div className="liveoutput-item-link">
                     <div className="liveoutput-streamer-action">
                       <AiOutlineDislike className="liveoutput-icon-1" />
                     </div>
-                    <div className="liveoutput-empty-action">20</div>
+                    <div className="liveoutput-empty-action">{live.live_details.dislikeCount}</div>
                   </div>
 
                   <div className="liveoutput-item-link">
                     <div className="liveoutput-streamer-action">
                       <GoShareAndroid className="liveoutput-icon-1" />
                     </div>
-                    <div className="liveoutput-empty-action">9</div>
+                    <div className="liveoutput-empty-action">{live.live_details.shareCount}</div>
                   </div>
                 </div>
               </div>
@@ -181,7 +218,11 @@ const LiveOutput = () => {
               ></button>
               <div className="liveoutput-live-stream" ref={liveStreamRef}>
                 {liveStreams.map((stream) => (
-                  <div key={stream.id} className="liveoutput-stream-cards">
+                  <div
+                    key={stream.id}
+                    onClick={() => handleLiveStreamClick(stream.id)}
+                    className="liveoutput-stream-cards"
+                  >
                     <Link
                       to={PATH_NAME.LIVE_OUTPUT}
                       className="liveoutput-stream-links"

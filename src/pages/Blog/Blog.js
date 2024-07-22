@@ -6,18 +6,25 @@ import { RiFacebookBoxFill } from "react-icons/ri";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { AiOutlineSearch } from "react-icons/ai";
 import Footer from "../../components/Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogRequest } from "../../redux/reduxActions/blogActions/BlogAction";
 import numeral from "numeral";
 const Blog = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { blogs } = useSelector((state) => state.blogs);
 
   useEffect(() => {
     dispatch(fetchBlogRequest());
   }, [dispatch]);
+
+
+
+  const handleBlogClick = (id) => {
+    navigate(`${PATH_NAME.BLOG_SINGLE_VIEW.replace(":id", id)}`, { replace: true });
+  };
 
   return (
     <div className="blog">
@@ -115,7 +122,7 @@ const Blog = () => {
 
               <div className="blog-backgroundBorder-group">
                 {blogs.map((blog) => (
-                  <div key={blog.id} className="blog-backgroundBorder-1">
+                  <div key={blog.id} className="blog-backgroundBorder-1" onClick={()=>handleBlogClick(blog.id)}>
                     <div className="blog-link">
                       <Link to={PATH_NAME.BLOG_SINGLE_VIEW}>
                         <img

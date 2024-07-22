@@ -35,13 +35,22 @@ const Home = () => {
   const { liveStreams } = useSelector((state) => state.home_livestream);
   const { featuredCourses } = useSelector((state) => state.home_featuredcourse);
   const { newestCourses } = useSelector((state) => state.home_newestcourse);
-  const { popularInstructors } = useSelector((state) => state.home_popularinstructor);
+  const { popularInstructors } = useSelector(
+    (state) => state.home_popularinstructor
+  );
   const { studentThoughts } = useSelector((state) => state.home_studentthought);
   const searchQuery = useSelector(state => state.search.query);
   const navigate = useNavigate();
 
+  const handleLiveStreamClick = (id) => {
+    navigate(`${PATH_NAME.LIVE_OUTPUT.replace(":id", id)}`, { replace: true });
+  };
+
   const handleCoursesmoreClick = (id) => {
-    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(':id', id)}`);
+    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`);
+  };
+  const handleNewestCoursesmoreClick = (id) => {
+    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`);
   };
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
@@ -123,7 +132,8 @@ const Home = () => {
               ></button>
               <div className="live-streams" ref={liveStreamRef}>
                 {filteredLiveStreams.map((stream) => (
-                  <div key={stream.id} className="stream-card">
+                  <div key={stream.id} className="stream-card"
+                   onClick={() => handleLiveStreamClick(stream.id)}>
                     <Link to={PATH_NAME.LIVE_OUTPUT} className="stream-link">
                       <img src={stream.imgSrc} alt={stream.name} />
                       <h4>{stream.name}</h4>
@@ -162,7 +172,11 @@ const Home = () => {
                       <div className="home-course-overlay">
                         <div className="badge-seller">Best seller</div>
                         <div className="course-review">
-                          <img className="starIcon" src={ratingStar} alt="rating" />
+                          <img
+                            className="starIcon"
+                            src={ratingStar}
+                            alt="rating"
+                          />
                           {course.rating}
                         </div>
                         <div className="course-timer">{course.hours}</div>
@@ -173,24 +187,45 @@ const Home = () => {
                             {course.views} views • {course.date}
                           </p>
                           <div className="course-more-dropdown">
-                            <a href="#" className="dropdown-button">⋮</a>
+                            <a href="#" className="dropdown-button">
+                              ⋮
+                            </a>
                             <div className="course-more-dropdown-menu">
-                              <span><img src={share} alt="share" /> Share</span>
-                              <span><img src={saved_course} alt="save" /> Save</span>
-                              <span><img src={not_interested} alt="not interested" /> Not Interested</span>
-                              <span><img src={report} alt="report" /> Report</span>
+                              <span>
+                                <img src={share} alt="share" /> Share
+                              </span>
+                              <span>
+                                <img src={saved_course} alt="save" /> Save
+                              </span>
+                              <span>
+                                <img
+                                  src={not_interested}
+                                  alt="not interested"
+                                />{" "}
+                                Not Interested
+                              </span>
+                              <span>
+                                <img src={report} alt="report" /> Report
+                              </span>
                             </div>
                           </div>
                         </div>
-                        <a href="#" className="course-title">{course.title}</a>
-                        <a href="#" className="course-category">{course.category}</a>
+                        <a href="#" className="course-title">
+                          {course.title}
+                        </a>
+                        <a href="#" className="course-category">
+                          {course.category}
+                        </a>
                         <div className="course-info">
-                          <p className="course-author">By <a href="#">{course.author}</a></p>
+                          <p className="course-author">
+                            By <a href="#">{course.author}</a>
+                          </p>
                           <div className="course-price">{course.price}</div>
                         </div>
                       </div>
                     </div>
                   </li>
+
                 ))}
               </div>
               <button
@@ -214,7 +249,7 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={newestCoursesRef}>
                 {filteredNewestCourses.map((course) => (
-                  <div key={course.id} className="course-card">
+                  <div key={course.id} className="course-card"  onClick={() => handleNewestCoursesmoreClick(course.id)}>
                     <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
@@ -249,21 +284,21 @@ const Home = () => {
                             </span>
                           </div>
                         </div>
-                      </div>
-                      <a href="#" className="course-title">
-                        {course.title}
-                      </a>
-                      <a href="#" className="course-category">
-                        {course.category}
-                      </a>
-                      <div className="course-info">
-                        <p className="course-author">
-                          By <a href="#">{course.author}</a>
-                        </p>
-                        <div className="course-price">{course.price}</div>
+                        <a href="#" className="course-title">
+                          {course.title}
+                        </a>
+                        <a href="#" className="course-category">
+                          {course.category}
+                        </a>
+                        <div className="course-info">
+                          <p className="course-author">
+                            By <a href="#">{course.author}</a>
+                          </p>
+                          <div className="course-price">{course.price}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </li>
                 ))}
               </div>
               <button
@@ -328,7 +363,10 @@ const Home = () => {
                     </div>
                     <div className="popular-instructor-content">
                       <div className="popular-instructor-profile">
-                        <Link to={PATH_NAME.OTHER_INSTRUCTOR_VIEW} className="instructor-name">
+                        <Link
+                          to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
+                          className="instructor-name"
+                        >
                           {instructor.name}
                         </Link>
                         <div className="verified-badge"></div>
