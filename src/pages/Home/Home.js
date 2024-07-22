@@ -29,6 +29,7 @@ import { fetchHomeFeaturedCoursesRequest } from "../../redux/reduxActions/homeAc
 import { fetchHomeNewestCoursesRequest } from "../../redux/reduxActions/homeActions/HomeNewestCourseAction";
 import { fetchHomePopularInstructorRequest } from "../../redux/reduxActions/homeActions/HomePopularInstructorAction";
 import { fetchHomeStudentThoughtRequest } from "../../redux/reduxActions/homeActions/HomeStudentThoughtAction";
+
 const Home = () => {
   const dispatch = useDispatch();
   const { liveStreams } = useSelector((state) => state.home_livestream);
@@ -38,6 +39,7 @@ const Home = () => {
     (state) => state.home_popularinstructor
   );
   const { studentThoughts } = useSelector((state) => state.home_studentthought);
+  const searchQuery = useSelector(state => state.search.query);
   const navigate = useNavigate();
 
   const handleLiveStreamClick = (id) => {
@@ -47,6 +49,9 @@ const Home = () => {
   const handleCoursesmoreClick = (id) => {
     navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`);
   };
+  const handleNewestCoursesmoreClick = (id) => {
+    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`);
+  };
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
     dispatch(fetchHomeFeaturedCoursesRequest());
@@ -54,6 +59,17 @@ const Home = () => {
     dispatch(fetchHomePopularInstructorRequest());
     dispatch(fetchHomeStudentThoughtRequest());
   }, [dispatch]);
+  const filterData = (data, query) => {
+    if (!Array.isArray(data)) return [];
+    if (!query) return data;
+    return data.filter(item => JSON.stringify(item).toLowerCase().includes(query.toLowerCase()));
+  };
+
+  const filteredLiveStreams = filterData(liveStreams, searchQuery);
+  const filteredFeaturedCourses = filterData(featuredCourses, searchQuery);
+  const filteredNewestCourses = filterData(newestCourses, searchQuery);
+  const filteredPopularInstructors = filterData(popularInstructors, searchQuery);
+  const filteredStudentThoughts = filterData(studentThoughts, searchQuery);
 
   const liveStreamRef = useRef(null);
   const scrollLeftLiveStream = () => {
@@ -115,12 +131,9 @@ const Home = () => {
                 onClick={scrollLeftLiveStream}
               ></button>
               <div className="live-streams" ref={liveStreamRef}>
-                {liveStreams.map((stream) => (
-                  <div
-                    key={stream.id}
-                    className="stream-card"
-                    onClick={() => handleLiveStreamClick(stream.id)}
-                  >
+                {filteredLiveStreams.map((stream) => (
+                  <div key={stream.id} className="stream-card"
+                   onClick={() => handleLiveStreamClick(stream.id)}>
                     <Link to={PATH_NAME.LIVE_OUTPUT} className="stream-link">
                       <img src={stream.imgSrc} alt={stream.name} />
                       <h4>{stream.name}</h4>
@@ -152,12 +165,8 @@ const Home = () => {
                 onClick={() => scrollLeftCourse(featuredCoursesRef)}
               ></button>
               <div className="featured-courses" ref={featuredCoursesRef}>
-                {featuredCourses.map((course) => (
-                  <li
-                    className="course-card"
-                    key={course.id}
-                    onClick={() => handleCoursesmoreClick(course.id)}
-                  >
+                {filteredFeaturedCourses.map((course) => (
+                  <li  className="course-card" key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
                     <div>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
@@ -216,6 +225,7 @@ const Home = () => {
                       </div>
                     </div>
                   </li>
+
                 ))}
               </div>
               <button
@@ -238,8 +248,8 @@ const Home = () => {
                 onClick={() => scrollLeftNewestCourse(newestCoursesRef)}
               ></button>
               <div className="featured-courses" ref={newestCoursesRef}>
-                {newestCourses.map((course) => (
-                  <div key={course.id} className="course-card">
+                {filteredNewestCourses.map((course) => (
+                  <div key={course.id} className="course-card"  onClick={() => handleNewestCoursesmoreClick(course.id)}>
                     <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
@@ -274,21 +284,21 @@ const Home = () => {
                             </span>
                           </div>
                         </div>
-                      </div>
-                      <a href="#" className="course-title">
-                        {course.title}
-                      </a>
-                      <a href="#" className="course-category">
-                        {course.category}
-                      </a>
-                      <div className="course-info">
-                        <p className="course-author">
-                          By <a href="#">{course.author}</a>
-                        </p>
-                        <div className="course-price">{course.price}</div>
+                        <a href="#" className="course-title">
+                          {course.title}
+                        </a>
+                        <a href="#" className="course-category">
+                          {course.category}
+                        </a>
+                        <div className="course-info">
+                          <p className="course-author">
+                            By <a href="#">{course.author}</a>
+                          </p>
+                          <div className="course-price">{course.price}</div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </li>
                 ))}
               </div>
               <button
@@ -342,7 +352,7 @@ const Home = () => {
                 onClick={() => scrollLeftInstructor(popularInstructorRef)}
               ></button>
               <div className="popular-instructors" ref={popularInstructorRef}>
-                {popularInstructors.map((instructor) => (
+                {filteredPopularInstructors.map((instructor) => (
                   <div key={instructor.id} className="popular-instructors-card">
                     <div className="popular-instructor-image">
                       <img
@@ -364,7 +374,7 @@ const Home = () => {
                       <div className="popular-instructor-title">
                         {instructor.title}
                       </div>
-                      <ul className="social-icons">
+                      <ul className="social-icons-1">
                         <a href="#" className="sc-fb">
                           <img src={facebook} />
                         </a>
@@ -401,13 +411,15 @@ const Home = () => {
             </div>
             <div className="instructor-profile-content">
               <div className="instructor-profile-header">
-                <a href="#" className="instructor-name"></a>
+                <a href="#" className="instructor-name">
+                  John Doe
+                </a>
                 <div className="verified-badge"></div>
               </div>
               <div className="home-instructor-profile-title">
                 Web Developer, Designer, and Teacher
               </div>
-              <ul className="social-icons">
+              <ul className="social-icons-1">
                 <a href="#" className="sc-fb">
                   <img src={facebook} />
                 </a>
@@ -517,7 +529,7 @@ const Home = () => {
               onClick={scrollLeftStudent}
             ></button>
             <div className="student-thought" ref={studentThoughtRef}>
-              {studentThoughts.map((studentThought) => (
+              {filteredStudentThoughts.map((studentThought) => (
                 <div key={studentThought.id} className="student-thought-card">
                   <div className="student-thought-content">
                     <p>"{studentThought.quote}"</p>
