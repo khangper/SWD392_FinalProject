@@ -115,6 +115,9 @@ import {
   DELETE_ALL_SAVECOURSES_REQUEST,
   DELETE_ALL_SAVECOURSES_SUCCESS,
   DELETE_ALL_SAVECOURSES_FAILURE,
+  ADD_SAVECOURSE_REQUEST,
+  ADD_SAVECOURSE_FAILURE,
+  ADD_SAVECOURSE_SUCCESS,
 } from "../../../constant/data";
 
 const initialState = {
@@ -158,6 +161,16 @@ const saveCourseReducer = (state = initialState, action) => {
     case DELETE_SAVECOURSE_FAILURE:
     case DELETE_SAVECOURSES_FAILURE:
     case DELETE_ALL_SAVECOURSES_FAILURE:
+      return { ...state, loading: false, error: action.payload };
+    case ADD_SAVECOURSE_REQUEST:
+      return { ...state, loading: true, error: null };
+    case ADD_SAVECOURSE_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        courses: [...state.courses, action.payload],
+      };
+    case ADD_SAVECOURSE_FAILURE:
       return { ...state, loading: false, error: action.payload };
     default:
       return state;
