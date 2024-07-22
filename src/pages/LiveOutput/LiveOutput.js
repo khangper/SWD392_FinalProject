@@ -38,43 +38,61 @@ const LiveOutput = () => {
       id: 1,
       username: "John Doe",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet molestie leo ac pellentesque",
     },
     {
       id: 2,
-      username: "John Doe",
+      username: "Poonam",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Class aptent taciti sociosqu ad litora torquent per conubia nostra",
     },
     {
       id: 3,
-      username: "John Doe",
+      username: "Jass",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Nulla sollicitudin nec nisi at pellentesque. Cras fringilla est et sem tempor",
     },
     {
       id: 4,
-      username: "John Doe",
+      username: "Albert Smith",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Pellentesque ultricies risus sit amet congue euismod",
     },
     {
       id: 5,
-      username: "John Doe",
+      username: "Jassica William",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Nullam efficitur tristique consequat",
     },
     {
       id: 6,
-      username: "John Doe",
+      username: "Joy Dua",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Proin sed leo eleifend,",
     },
     {
       id: 7,
-      username: "John Doe",
+      username: "Zoena Singh",
       content:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eius voluptatibus provident",
+        "Aliquam dignissim elementum sem id rutrum",
+    },
+    {
+      id: 8,
+      username: "Amritpal Singh",
+      content:
+        "Fusce a elit at libero sollicitudin tincidunt",
+    },
+    {
+      id: 9,
+      username: "Johnson",
+      content:
+        "Ut laoreet lobortis ornare,",
+    },
+    {
+      id: 10,
+      username: "Jashan",
+      content:
+        "Sed pretium erat eu turpis condimentum",
     },
   ];
 
