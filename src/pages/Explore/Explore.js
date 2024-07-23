@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHomeLiveStreamsRequest } from "../../redux/reduxActions/homeActions/HomeLivestreamAction";
 import { fetchHomeFeaturedCoursesRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
 import { addSaveCourseRequest } from "../../redux/reduxActions/SaveCourseAction";
+import { useNavigate } from "react-router-dom";
+import { PATH_NAME } from "../../constant/pathname";
 
 const Explore = () => {
   const { liveStreams } = useSelector((state) => state.home_livestream);
@@ -38,6 +40,11 @@ const Explore = () => {
     };
 
     dispatch(addSaveCourseRequest(mappedCourse));
+  };
+
+  const navigate = useNavigate();
+  const handleLiveStreamClick = (id) => {
+    navigate(`${PATH_NAME.LIVE_OUTPUT.replace(":id", id)}`, { replace: true });
   };
 
   const liveStreamRef = useRef(null);
@@ -79,15 +86,15 @@ const Explore = () => {
           ></button>
           <div className="live-streams" ref={liveStreamRef}>
             {liveStreams.map((stream) => (
-              <div key={stream.id} className="stream-card">
-                <a href="/live_output" className="stream-link">
+              <div key={stream.id} className="stream-card" onClick={() => handleLiveStreamClick(stream.id)}>
+                <div className="stream-link">
                   <img src={stream.imgSrc} alt={stream.name} />
                   <h4>{stream.name}</h4>
                   <p>
                     live
                     <span></span>
                   </p>
-                </a>
+                </div>
               </div>
             ))}
           </div>
