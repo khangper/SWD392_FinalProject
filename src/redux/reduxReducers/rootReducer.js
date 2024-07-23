@@ -38,6 +38,8 @@ import livestreamById from "./reducers/liveOutputReducers/liveoutputLiveByIdRedu
 import blogDetailReducer from "./reducers/blogReducers/BlogDetailReducer";
 import ReviewReducer from "./reducers/reviewReducers/reviewReducer";
 import instructorByIdReducer from "./reducers/instructorReducers/instructorByIdReducer";
+import featureCoursesDetailReducer from "./reducers/coursesDetailReducers/featureCoursesDetailReducer";
+import newestCoursesDetailReducer from "./reducers/coursesDetailReducers/newestCoursesDetailReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
@@ -79,6 +81,8 @@ const rootReducer = combineReducers({
   blogDetail: blogDetailReducer,
   review: ReviewReducer,
   instructorById: instructorByIdReducer,
+  featureCoursesDetail: featureCoursesDetailReducer,
+  newestCoursesDetail: newestCoursesDetailReducer,
 });
 
 export default rootReducer;
