@@ -57,7 +57,7 @@ const Explore = () => {
       date: course.timeAgo || course.date,
       category: course.category,
       price: course.price,
-      hours: course.duration,
+      hours: course.hours,
       rating: course.rating,
       imgSrc: course.imgSrc,
     };

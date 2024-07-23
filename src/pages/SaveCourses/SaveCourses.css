@@ -235,5 +235,7 @@
 
 }
 .mip-oiv-course.selected {
-    opacity: 0.5; /* This makes the course appear faded */
+    opacity: 0.5;     
+    border-color: red;
+    border-width: 2px;
   }
