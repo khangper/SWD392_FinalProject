@@ -29,6 +29,7 @@ import { fetchHomeFeaturedCoursesRequest } from "../../redux/reduxActions/homeAc
 import { fetchHomeNewestCoursesRequest } from "../../redux/reduxActions/homeActions/HomeNewestCourseAction";
 import { fetchHomePopularInstructorRequest } from "../../redux/reduxActions/homeActions/HomePopularInstructorAction";
 import { fetchHomeStudentThoughtRequest } from "../../redux/reduxActions/homeActions/HomeStudentThoughtAction";
+import { addSaveCourseRequest } from "../../redux/reduxActions/SaveCourseAction";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const Home = () => {
     (state) => state.home_popularinstructor
   );
   const { studentThoughts } = useSelector((state) => state.home_studentthought);
-  const searchQuery = useSelector(state => state.search.query);
+  const searchQuery = useSelector((state) => state.search.query);
   const navigate = useNavigate();
 
   const handleLiveStreamClick = (id) => {
@@ -47,14 +48,36 @@ const Home = () => {
   };
 
   const handleCoursesmoreClick = (id) => {
-    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`);
+    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`, {replace: true});
   };
   const handleNewestCoursesmoreClick = (id) => {
-    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`);
+    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`, {replace: true});
   };
-  const handlePopularInstructorDetailClick = (id) => {
-    navigate(`${PATH_NAME.OTHER_POPULAR_INSTRUCTOR_VIEW.replace(':id', id)}`);
+
+  const handleSaveCourse = (course, event) => {
+    event.stopPropagation();
+
+    const mappedCourse = {
+      id: course.id,
+      title: course.title,
+      author: course.author || "Unknown Author",
+      views: course.views.replace(" Views", "").replace(" views", ""),
+      date: course.timeAgo || course.date,
+      category: course.category,
+      price: course.price,
+      hours: course.hours,
+      rating: course.rating,
+      imgSrc: course.imgSrc,
+    };
+
+    dispatch(addSaveCourseRequest(mappedCourse));
+
   };
+
+  const handleInstructorClick = (id) => {
+    navigate(`${PATH_NAME.OTHER_INSTRUCTOR_VIEW.replace(":id", id)}`, {replace: true});
+  };
+
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
     dispatch(fetchHomeFeaturedCoursesRequest());
@@ -65,13 +88,18 @@ const Home = () => {
   const filterData = (data, query) => {
     if (!Array.isArray(data)) return [];
     if (!query) return data;
-    return data.filter(item => JSON.stringify(item).toLowerCase().includes(query.toLowerCase()));
+    return data.filter((item) =>
+      JSON.stringify(item).toLowerCase().includes(query.toLowerCase())
+    );
   };
 
   const filteredLiveStreams = filterData(liveStreams, searchQuery);
   const filteredFeaturedCourses = filterData(featuredCourses, searchQuery);
   const filteredNewestCourses = filterData(newestCourses, searchQuery);
-  const filteredPopularInstructors = filterData(popularInstructors, searchQuery);
+  const filteredPopularInstructors = filterData(
+    popularInstructors,
+    searchQuery
+  );
   const filteredStudentThoughts = filterData(studentThoughts, searchQuery);
 
   const liveStreamRef = useRef(null);
@@ -135,8 +163,11 @@ const Home = () => {
               ></button>
               <div className="live-streams" ref={liveStreamRef}>
                 {filteredLiveStreams.map((stream) => (
-                  <div key={stream.id} className="stream-card"
-                    onClick={() => handleLiveStreamClick(stream.id)}>
+                  <div
+                    key={stream.id}
+                    className="stream-card"
+                    onClick={() => handleLiveStreamClick(stream.id)}
+                  >
                     <Link to={PATH_NAME.LIVE_OUTPUT} className="stream-link">
                       <img src={stream.imgSrc} alt={stream.name} />
                       <h4>{stream.name}</h4>
@@ -169,7 +200,11 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={featuredCoursesRef}>
                 {filteredFeaturedCourses.map((course) => (
-                  <li className="course-card" key={course.id} onClick={() => handleCoursesmoreClick(course.id)}>
+                  <li
+                    className="course-card"
+                    key={course.id}
+                    onClick={() => handleCoursesmoreClick(course.id)}
+                  >
                     <div>
                       <img src={course.imgSrc} alt={course.title} />
                       <div className="home-course-overlay">
@@ -197,7 +232,9 @@ const Home = () => {
                               <span>
                                 <img src={share} alt="share" /> Share
                               </span>
-                              <span>
+                              <span
+                                onClick={(e) => handleSaveCourse(course, e)}
+                              >
                                 <img src={saved_course} alt="save" /> Save
                               </span>
                               <span>
@@ -228,7 +265,6 @@ const Home = () => {
                       </div>
                     </div>
                   </li>
-
                 ))}
               </div>
               <button
@@ -252,8 +288,12 @@ const Home = () => {
               ></button>
               <div className="featured-courses" ref={newestCoursesRef}>
                 {filteredNewestCourses.map((course) => (
-                  <li key={course.id} className="course-card" onClick={() => handleNewestCoursesmoreClick(course.id)}>
-                    <div >
+                  <li
+                    key={course.id}
+                    className="course-card"
+                    onClick={() => handleNewestCoursesmoreClick(course.id)}
+                  >
+                    <div>
                       <Link to={PATH_NAME.COURSES_DETAIL_VIEW}>
                         <img src={course.imgSrc} alt={course.title} />
                         <div className="home-course-overlay">
@@ -274,7 +314,9 @@ const Home = () => {
                                 <img src={share} />
                                 Share
                               </span>
-                              <span>
+                              <span
+                                onClick={(e) => handleSaveCourse(course, e)}
+                              >
                                 <img src={saved_course} />
                                 Save
                               </span>
@@ -359,14 +401,13 @@ const Home = () => {
               <div className="popular-instructors" ref={popularInstructorRef}>
 
                 {filteredPopularInstructors.map((instructor) => (
-                  <div key={instructor.id} className="popular-instructors-card" onClick={() => handlePopularInstructorDetailClick(instructor.id)}>
-                    <div>
-                      <div className="popular-instructor-image">
-                        <img
-                          src={instructor.imgSrc}
-                          alt={instructor.name}
-                          className="popular-instructor-photo"
-                        />
+                  <div key={instructor.id} className="popular-instructors-card" onClick={() => handleInstructorClick(instructor.id)}>
+                    <div className="popular-instructor-image">
+                      <img
+                        src={instructor.imgSrc}
+                        alt={instructor.name}
+                        className="popular-instructor-photo"
+                      />
                       </div>
                       <div className="popular-instructor-content">
                         <div className="popular-instructor-profile">

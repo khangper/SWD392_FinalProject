@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./SaveCourses.css";
 import ratingStar from "../../assets/rating.png";
 import share from "../../assets/share.png";
-import saved_course from "../../assets/saved-course.png";
+import saved_course from "../../assets/Close-shopping.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
 import card_icon from "../../assets/cart-icon.png";
@@ -34,6 +34,10 @@ const SaveCourses = () => {
   const handleCourseClick = (event, id) => {
     event.preventDefault();
     toggleSelectCourse(id);
+  };
+
+  const removeCourse = (courseId) => {
+    dispatch(deleteSaveCoursesRequest(courseId));
   };
 
   const removeSelectedCourses = () => {
@@ -136,7 +140,8 @@ const SaveCourses = () => {
                                     </div>
                                   )}
                                   <div className="crse_timer">
-                                    {course.duration}
+                                    {/* {course.duration} */}
+                                    {course.hours}
                                   </div>
                                 </div>
                               </a>
@@ -159,22 +164,14 @@ const SaveCourses = () => {
                                       ⋮
                                     </a>
                                     <div className="oiv-dropdown-content">
-                                      <span>
-                                        <img src={share} alt="share" /> Share
-                                      </span>
-                                      <span>
+                                      <span
+                                        onClick={(e) => {
+                                          e.preventDefault();
+                                          removeCourse(course.id);
+                                        }}
+                                      >
                                         <img src={saved_course} alt="save" />{" "}
-                                        Save
-                                      </span>
-                                      <span>
-                                        <img
-                                          src={not_interested}
-                                          alt="not interested"
-                                        />{" "}
-                                        Not Interested
-                                      </span>
-                                      <span>
-                                        <img src={report} alt="report" /> Report
+                                        Remove
                                       </span>
                                     </div>
                                   </div>

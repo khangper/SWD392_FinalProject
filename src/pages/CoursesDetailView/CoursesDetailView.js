@@ -11,8 +11,7 @@ import star from "../../assets/star.png";
 import search from "../../assets/search.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchHomeFeaturedCoursesDetailRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
-import { fetchNewestCourseDetailRequest } from "../../redux/reduxActions/homeActions/HomeNewestCourseAction";
+import { fetchFeaturedCoursesDetailRequest } from "../../redux/reduxActions/coursesDetailActions/featureCoursesDetailAction";
 
 const CoursesDetailView = () => {
   const sections = [
@@ -544,23 +543,20 @@ const CoursesDetailView = () => {
 
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { loading, error, featuredCourses } = useSelector((state) => state.home_featuredcourse);
-  const { newestCourses } = useSelector((state) => state.home_newestcourse);
+  const { featureCourses } = useSelector((state) => state.featureCoursesDetail);
 
-  const currentCourseDetail = featuredCourses.find(courseDetail => courseDetail.id === id)
-  const newestCourseDetail = newestCourses.find(course => course.id === id)
-
-  useEffect(() => {
-    if (!currentCourseDetail) {
-      dispatch(fetchHomeFeaturedCoursesDetailRequest(id));
-    }
-  }, [dispatch, id, currentCourseDetail]);
+  // const currentCourseDetail = featuredCourses.find(courseDetail => courseDetail.id === id)
+  // const newestCourseDetail = newestCourses.find(course => course.id === id)
 
   useEffect(() => {
-    if (!newestCourseDetail) {
-      dispatch(fetchNewestCourseDetailRequest(id));
-    }
-  }, [dispatch, id, newestCourseDetail]);
+    dispatch(fetchFeaturedCoursesDetailRequest(id));
+  }, [dispatch, id]);
+
+  // useEffect(() => {
+  //   if (!newestCourseDetail) {
+  //     dispatch(fetchNewestCourseDetailRequest(id));
+  //   }
+  // }, [dispatch, id, newestCourseDetail]);
 
   const handleoivTabChange = (tab) => {
     setOivtab(tab);
@@ -571,9 +567,7 @@ const CoursesDetailView = () => {
     setAccordion(accordion === index ? null : index);
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!currentCourseDetail) return <div>Course not found</div>;
+  if (!featureCourses) return <div>Course not found</div>;
   return (
     <div>
       <div className="courses_detail_view-div1">
@@ -586,7 +580,7 @@ const CoursesDetailView = () => {
                     <div className="cdv-preview_video">
                       <a href="#" className="fcrse_img">
                         <img
-                          src={currentCourseDetail.imgSrc}
+                          src={featureCourses.feature_courses_detail?.imgSrc}
                           alt=""
                         />
                         <div className="cdv-course-overlay">
@@ -617,20 +611,26 @@ const CoursesDetailView = () => {
                   </div>
                   <div className="courses_detail_view-box2">
                     <div className="cdv-label1">
-                      <h2>{currentCourseDetail.title}</h2>
+                      <h2>{featureCourses.feature_courses_detail?.title}</h2>
                       <span className="cdv-label2">
-                        The only course you need to learn web development -
-                        HTML, CSS, JS, Node, and More!
+                        {
+                          featureCourses.feature_courses_detail
+                            .information_courses
+                        }
                       </span>
                     </div>
                     <div className="cdv-rate_star">
                       <div className="crse_reviews mr-2">
-                        <img className="starIcon" src={ratingStar}></img>{currentCourseDetail.rating}
+                        <img className="starIcon" src={ratingStar}></img>
+                        {featureCourses.feature_courses_detail?.rating}
                       </div>
-                      (81,665 ratings)
+                      (
+                      {featureCourses.feature_courses_detail?.ratingCount.toLocaleString()}{" "}
+                      ratings)
                     </div>
                     <div className="cdv-rate_star">
-                      {currentCourseDetail.views} students enrolled
+                      {featureCourses.feature_courses_detail?.enrollCount.toLocaleString()}{" "}
+                      students enrolled
                     </div>
                     <div className="cdv-language">
                       <div className="cdv-language-label1">
@@ -696,14 +696,14 @@ const CoursesDetailView = () => {
                     <div className="cdv-user_img">
                       <a href="#">
                         <img
-                          src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg    "
+                          src={featureCourses.feature_courses_detail?.imgChannel}
                           alt=""
                         />
                       </a>
                     </div>
                     <div className="cdv-user_cntnt">
                       <a href="#" className="cdv-user-name">
-                        Johnson Smith
+                        {featureCourses.feature_courses_detail?.author}
                       </a>
                       <button className="cdv-subscribe-btn">Subscribe</button>
                     </div>
@@ -712,19 +712,27 @@ const CoursesDetailView = () => {
                 <div className="cdv-contact_icon">
                   <a href="#" className="cdv-report1">
                     <img src={eyes} />
-                    <span>1452</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.viewCount}
+                    </span>
                   </a>
                   <a href="#" className="cdv-report1">
                     <img src={like} />
-                    <span>100</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.likeCount}
+                    </span>
                   </a>
                   <a href="#" className="cdv-report1">
                     <img src={dislike} />
-                    <span>20</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.dislikeCount}
+                    </span>
                   </a>
                   <a href="#" className="cdv-report1">
                     <img src={share} />
-                    <span>9</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.shareCount}
+                    </span>
                   </a>
                 </div>
               </div>

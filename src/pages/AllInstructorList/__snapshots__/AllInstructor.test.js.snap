@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllInstructor renders the AllInstructor component 1`] = `
+<div>
+  <div
+    class="NotFind-instructor"
+  >
+    <div
+      class="explore-container"
+    >
+      <section
+        class="search-box"
+      >
+        <img
+          alt="Search Icon"
+          class="search-icon"
+          src="search.png"
+        />
+        <input
+          placeholder="Search Tutors"
+          type="text"
+          value=""
+        />
+      </section>
+    </div>
+    <div
+      class="Notfindmessinstructor"
+    >
+      No instructors found.
+    </div>
+  </div>
+</div>
+`;
