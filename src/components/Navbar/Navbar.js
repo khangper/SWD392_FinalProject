@@ -10,7 +10,7 @@ import moon_image from "..//../assets/moon.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthContext";
 import { PATH_NAME } from "../../constant/pathname";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSearchQuery } from "../../redux/reduxReducers/reducers/searchReducers/SearchSlice";
 const Navbar = ({ setSidebar }) => {
   const sampleMessages = [
@@ -68,6 +68,7 @@ const Navbar = ({ setSidebar }) => {
   const mailDropdownRef = useRef(null);
   const notificationDropdownRef = useRef(null);
   const profileDropdownRef = useRef(null);
+  const cartCount = useSelector((state) => state.cart?.cartCount);
 
   const handleClickOutside = (event) => {
     if (
@@ -121,10 +122,10 @@ const Navbar = ({ setSidebar }) => {
 
   const { logout } = useContext(AuthContext);
 
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const handleSearch = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       dispatch(setSearchQuery(search));
     }
   };

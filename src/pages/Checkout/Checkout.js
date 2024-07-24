@@ -31,7 +31,8 @@ export default function Checkout() {
   const navigate = useNavigate();
   const location = useLocation();
   const { total } = location.state || { total: 0 };
-  const originalPrice = total + 2; // Assuming $2.00 is the GST
+  const GTX = total * 0.2;
+  const originalPrice = total + GTX;
 
   const handleInvoice = () => {
     navigate(PATH_NAME.INVOICE, {
@@ -839,7 +840,7 @@ export default function Checkout() {
                 </div>
                 <div className="order_title">
                   <h6>Taxes(GST)</h6>
-                  <div className="order_price">$2.00</div>
+                  <div className="order_price">{GTX.toFixed(2)}</div>
                 </div>
                 <div className="order_title">
                   <h3>Total</h3>
@@ -871,7 +872,7 @@ export default function Checkout() {
               </div>
               <div className="order_title">
                 <h6>Taxes(GST)</h6>
-                <div className="order_price">$2.00</div>
+                <div className="order_price">{GTX.toFixed(2)}</div>
               </div>
               <div className="order_title">
                 <h2>Total</h2>

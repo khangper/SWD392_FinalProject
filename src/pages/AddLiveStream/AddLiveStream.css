@@ -1,13 +1,13 @@
 /* AddLiveStream.css */
 
 /* Container */
-.container-fluid {
+.Live-container-fluid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     justify-content: center;
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Ensure container spans full viewport height */
+    align-items: center; 
+    min-height: 100vh; 
     user-select: none;
 }
 
