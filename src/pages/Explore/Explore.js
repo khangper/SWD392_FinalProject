@@ -65,7 +65,6 @@ const Explore = () => {
     dispatch(addSaveCourseRequest(mappedCourse));
   };
 
-  const navigate = useNavigate();
   const handleLiveStreamClick = (id) => {
     navigate(`${PATH_NAME.LIVE_OUTPUT.replace(":id", id)}`, { replace: true });
   };
