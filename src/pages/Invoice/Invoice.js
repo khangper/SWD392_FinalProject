@@ -60,7 +60,7 @@ const Invoice = () => {
     setTimeout(() => {
       setShowSuccessMessage(false);
       navigate(PATH_NAME.HOME);
-    }, 2000); // Show success message for 2 seconds before navigating
+    }, 2000);
   };
 
   const handleModalNo = () => {
