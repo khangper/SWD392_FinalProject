@@ -3,7 +3,6 @@ import "./AddLiveStream.css";
 
 export default function AddLiveStream() {
   const [activeTab, setActiveTab] = useState("add-streaming");
-  // Khởi tạo useState cho các checkbox ban đầu
   const [isChecked1, setIsChecked1] = useState(true);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
@@ -11,8 +10,27 @@ export default function AddLiveStream() {
   const [isChecked5, setIsChecked5] = useState(true);
   const [isChecked6, setIsChecked6] = useState(false);
   const [isChecked7, setIsChecked7] = useState(false);
+
+  const [serverUrl, setServerUrl] = useState(
+    "rtmps://live-api-s.edututs+.com:443/rtmp/"
+  );
+  const [streamKey, setStreamKey] = useState(
+    "592030151361629?s_bl=1&s_ps=1&s_sw=065&s_vt=api-s&a=AbzB7xYk7XdnKpBf"
+  );
+
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+  };
+
+  const handleCopy = (text) => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        alert("Copied to clipboard!");
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
   };
 
   return (
@@ -81,12 +99,13 @@ export default function AddLiveStream() {
                               type="text"
                               data-testid="server_url"
                               placeholder="Stream URL"
-                              value="rtmps://live-api-s.edututs+.com:443/rtmp/"
+                              value={serverUrl}
+                              onChange={(e) => setServerUrl(e.target.value)}
                             />
                             <button
                               className="_6tf7s red-button"
                               type="button"
-                              value="1"
+                              onClick={() => handleCopy(serverUrl)}
                             >
                               Copy
                             </button>
@@ -98,14 +117,15 @@ export default function AddLiveStream() {
                             <input
                               className="_dlor1"
                               type="text"
-                              data-testid="server_url"
-                              placeholder="Stream URL"
-                              value="592030151361629?s_bl=1&s_ps=1&s_sw=065&s_vt=api-s&a=AbzB7xYk7XdnKpBf"
+                              data-testid="stream_key"
+                              placeholder="Stream Key"
+                              value={streamKey}
+                              onChange={(e) => setStreamKey(e.target.value)}
                             />
                             <button
                               className="_6tf7s red-button"
                               type="button"
-                              value="1"
+                              onClick={() => handleCopy(streamKey)}
                             >
                               Copy
                             </button>
