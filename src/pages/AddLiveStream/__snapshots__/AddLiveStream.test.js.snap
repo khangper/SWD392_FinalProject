@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddLiveStream renders the AddLiveStream component 1`] = `
+<div>
+  <div
+    class="sa4d25"
+  >
+    <div
+      class="Live-container-fluid"
+    >
+      <div
+        class="row justify-content-md-center"
+      >
+        <div
+          class="col-lg-8 col-md-10"
+        >
+          <div
+            class="section3125 stream_tabs"
+          >
+            <ul
+              class="nav nav-tabs slive_tabs justify-content-center"
+              id="myTab"
+              role="tablist"
+            >
+              <li
+                class="nav-item"
+              >
+                <div
+                  aria-controls="add-streaming"
+                  aria-selected="true"
+                  class="nav-link active"
+                  role="tab"
+                >
+                  Add Streaming
+                </div>
+              </li>
+              <li
+                class="nav-item"
+              >
+                <div
+                  aria-controls="setting"
+                  aria-selected="false"
+                  class="nav-link "
+                  role="tab"
+                >
+                  Setting
+                </div>
+              </li>
+            </ul>
+            <div
+              class="tab-content"
+              id="myTabContent"
+            >
+              <div
+                class="tab-pane fade show active"
+                id="add-streaming"
+                role="tabpanel"
+              >
+                <div
+                  class="add_stream_content"
+                >
+                  <h4
+                    class="strm_title"
+                  >
+                    Connect your live stream to the Live API
+                  </h4>
+                  <div
+                    class="sf475"
+                  >
+                    Use live-streaming software or a hardware encoder.
+                     
+                    <a
+                      href="#"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                  <div
+                    class="stm_key"
+                  >
+                    Preview your broadcast with a stream key or paired encoder.
+                  </div>
+                  <div
+                    class="live_form"
+                  >
+                    <div
+                      class="group-form"
+                    >
+                      <label>
+                        Server URL*
+                      </label>
+                      <div
+                        class="input-group"
+                      >
+                        <input
+                          class="_dlor1"
+                          data-testid="server_url"
+                          placeholder="Stream URL"
+                          type="text"
+                          value="rtmps://live-api-s.edututs+.com:443/rtmp/"
+                        />
+                        <button
+                          class="_6tf7s red-button"
+                          type="button"
+                        >
+                          Copy
+                        </button>
+                      </div>
+                    </div>
+                    <div
+                      class="group-form"
+                    >
+                      <label>
+                        Persistent stream key*
+                      </label>
+                      <div
+                        class="input-group"
+                      >
+                        <input
+                          class="_dlor1"
+                          data-testid="stream_key"
+                          placeholder="Stream Key"
+                          type="text"
+                          value="592030151361629?s_bl=1&s_ps=1&s_sw=065&s_vt=api-s&a=AbzB7xYk7XdnKpBf"
+                        />
+                        <button
+                          class="_6tf7s red-button"
+                          type="button"
+                        >
+                          Copy
+                        </button>
+                      </div>
+                    </div>
+                    <button
+                      class="_145d1"
+                    >
+                      <i
+                        class="uil uil-video"
+                      />
+                      Go Live
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

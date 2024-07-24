@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllLiveStream renders the AllLiveStream component 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <div
+      class="sa4d25"
+    >
+      <div
+        class="ALL-Live-container-fluid"
+      >
+        <div
+          class="ALL-Live-grid-container"
+        >
+          <div
+            class="main-content"
+          >
+            <div
+              class="section3125"
+            >
+              <h4
+                class="item_title"
+              >
+                All Live Streams
+              </h4>
+              <div
+                class="la5lo1"
+              >
+                <div
+                  class="AllLive-grid-row"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="side-content"
+          >
+            <div
+              class="right_side"
+            >
+              <div
+                class="fcrse_3"
+              >
+                <div
+                  class="cater_ttle"
+                >
+                  <h4>
+                    Live Streaming
+                  </h4>
+                </div>
+                <div
+                  class="live_text"
+                >
+                  <div
+                    class="live_icon"
+                  >
+                    <img
+                      alt="Live Icon"
+                      src="kayak.png"
+                    />
+                  </div>
+                  <div
+                    class="live-content"
+                  >
+                    <p>
+                      Set up your channel and stream live to your students
+                    </p>
+                    <a
+                      href="/add_livestream"
+                    >
+                      <button
+                        class="live_link"
+                      >
+                        Get Started
+                      </button>
+                    </a>
+                    <span
+                      class="livinfo"
+                    >
+                      Info: This feature is only for 'Instructors'.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

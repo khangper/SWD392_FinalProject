@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Explore.css";
 import search_icon from "..//../assets/search.png";
 import ratingStar from "../../assets/rating.png";
@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHomeLiveStreamsRequest } from "../../redux/reduxActions/homeActions/HomeLivestreamAction";
 import { fetchHomeFeaturedCoursesRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
 import { addSaveCourseRequest } from "../../redux/reduxActions/SaveCourseAction";
+import { setSearchQuery } from "../../redux/reduxReducers/reducers/searchReducers/SearchSlice";
 import { useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 
@@ -17,11 +18,33 @@ const Explore = () => {
   const { liveStreams } = useSelector((state) => state.home_livestream);
   const { featuredCourses } = useSelector((state) => state.home_featuredcourse);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  const handleCoursesmoreClick = (id) => {
+    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`, {
+      replace: true,
+    });
+  };
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
     dispatch(fetchHomeFeaturedCoursesRequest());
   }, [dispatch]);
+
+  const filterData = (data, query) => {
+    if (!Array.isArray(data)) return [];
+    if (!query) return data;
+    return data.filter((item) =>
+      JSON.stringify(item).toLowerCase().includes(query.toLowerCase())
+    );
+  };
+  const searchQuery = useSelector((state) => state.search.query);
+  const filteredLiveStreams = filterData(liveStreams, searchQuery);
+  const filteredFeaturedCourses = filterData(featuredCourses, searchQuery);
+  const [search, setSearch] = useState("");
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      dispatch(setSearchQuery(search));
+    }
+  };
 
   const handleSaveCourse = (course, event) => {
     event.stopPropagation();
@@ -34,7 +57,7 @@ const Explore = () => {
       date: course.timeAgo || course.date,
       category: course.category,
       price: course.price,
-      hours: course.duration || course.hours,
+      hours: course.hours,
       rating: course.rating,
       imgSrc: course.imgSrc,
     };
@@ -70,6 +93,9 @@ const Explore = () => {
         <input
           type="text"
           placeholder="Search for Tuts Videos, Tutors, Tests and more..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyPress={handleSearch}
         />
       </section>
       <section className="live-streams-section">
@@ -85,7 +111,7 @@ const Explore = () => {
             onClick={scrollLeftLiveStream}
           ></button>
           <div className="live-streams" ref={liveStreamRef}>
-            {liveStreams.map((stream) => (
+            {filteredLiveStreams.map((stream) => (
               <div key={stream.id} className="stream-card" onClick={() => handleLiveStreamClick(stream.id)}>
                 <div className="stream-link">
                   <img src={stream.imgSrc} alt={stream.name} />
@@ -108,8 +134,12 @@ const Explore = () => {
       <section className="featured-courses-section">
         <div className="featured-courses-container">
           <div className="featured-courses">
-            {featuredCourses.map((course) => (
-              <div key={course.id} className="course-card">
+            {filteredFeaturedCourses.map((course) => (
+              <div
+                key={course.id}
+                className="course-card"
+                onClick={() => handleCoursesmoreClick(course.id)}
+              >
                 <a href="/courses-detail-view">
                   <img src={course.imgSrc} alt={course.title} />
                   <div className="course-overlay">
@@ -166,14 +196,6 @@ const Explore = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="load-more">
-        <div className="spinner">
-          <div className="bounce1"></div>
-          <div className="bounce2"></div>
-          <div className="bounce3"></div>
         </div>
       </section>
     </div>

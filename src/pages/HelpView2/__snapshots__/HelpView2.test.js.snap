@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelpView2 renders the HelpView2 component 1`] = `
+<div>
+  <div
+    class="HelpView2"
+  >
+    <header
+      class="header1"
+    >
+      <a
+        href="/home"
+      >
+        <button
+          class="header-link1"
+        >
+          Back To Cursus
+        </button>
+      </a>
+      <a
+        href="/home"
+      >
+        <img
+          alt=""
+          class="header-group-icon"
+          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+        />
+      </a>
+      <img
+        alt=""
+        class="header-avatar"
+        src="profile-img.jpg"
+      />
+    </header>
+    <div
+      class="HelpView1-grid-container"
+    >
+      <div
+        class="HelpView-title125"
+      >
+        <div
+          class="HelpView-titleleft"
+        >
+          <div
+            class="HelpView-ttl121"
+          >
+            <nav
+              aria-label="breadcrumb"
+            >
+              <ol
+                class="HelpView-breadcrumb"
+              >
+                <li
+                  class="HelpView-breadcrumb-item"
+                >
+                  <a
+                    href="index.html"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li
+                  class="HelpView-breadcrumb-item"
+                >
+                  <a
+                    href="help.html"
+                  >
+                    /Selling & Promotion
+                  </a>
+                </li>
+                <li
+                  aria-current="page"
+                  class="HelpView-breadcrumb-item active"
+                >
+                  /Pricing & Coupons
+                </li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+        <div
+          class="explore-container"
+        >
+          <section
+            class="search-box"
+          >
+            <img
+              alt="Search Icon"
+              class="search-icon"
+              src="search.png"
+            />
+            <input
+              placeholder="Search Tutors"
+              type="text"
+            />
+          </section>
+        </div>
+      </div>
+      <div
+        class="HelpView-title126"
+      >
+        <h2>
+          Payments
+        </h2>
+      </div>
+    </div>
+    <div
+      class="HelpView-grid-container"
+    >
+      <div
+        class="HelpView-grid-item"
+      >
+        <div
+          class="HelpView-fcrse_3 HelpView-frc123"
+        >
+          <div
+            class="HelpView-cater_ttle"
+          >
+            <h4>
+              Instructor Topics
+            </h4>
+          </div>
+          <ul
+            class="HelpView-allcate15"
+          >
+            <li>
+              <a
+                class="HelpView-ct_item active"
+                href="#"
+              >
+                <img
+                  alt="Search Icon"
+                  class="HelpView-icon"
+                  src="payment.png"
+                />
+                Payments
+              </a>
+            </li>
+            <li>
+              <a
+                class="HelpView-ct_item "
+                href="#"
+              >
+                <img
+                  alt="Search Icon"
+                  class="HelpView-icon"
+                  src="tablerow.png"
+                />
+                Selling & Promotion
+              </a>
+            </li>
+            <li>
+              <a
+                class="HelpView-ct_item"
+                href="#"
+              >
+                <img
+                  alt="Search Icon"
+                  class="HelpView-icon"
+                  src="helpdestop.png"
+                />
+                Quality Standards
+              </a>
+            </li>
+            <li>
+              <a
+                class="HelpView-ct_item"
+                href="#"
+              >
+                <img
+                  alt="Search Icon"
+                  class="HelpView-icon"
+                  src="ruler-help.png"
+                />
+                Course Building
+              </a>
+            </li>
+            <li>
+              <a
+                class="HelpView-ct_item"
+                href="#"
+              >
+                <img
+                  alt="Search Icon"
+                  class="HelpView-icon"
+                  src="trade.png"
+                />
+                Course Management
+              </a>
+            </li>
+            <li>
+              <a
+                class="HelpView-ct_item"
+                href="#"
+              >
+                <img
+                  alt="Search Icon"
+                  class="HelpView-icon"
+                  src="book-help.png"
+                />
+                Trust & Safety
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="HelpView-grid-item"
+      >
+        <div
+          class="HelpView-vew120 HelpView-frc123"
+        >
+          <h4>
+            Taxes
+          </h4>
+          <div
+            class="HelpView-ntt125"
+          >
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                Common Instructor Questions About The W-8BEN
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                Taxes: What do Instructors Need to Submit to Cursus?
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                What Does Cursus do With my Tax Information (i.e. Withholding)?
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                How do I Submit my Tax Forms to Cursus?
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                How Does Cursus Handle VAT / GST?
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="HelpView-vew120 mt-50 mb-30"
+        >
+          <h4>
+            Payments - General
+          </h4>
+          <div
+            class="HelpView-ntt125"
+          >
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                How do I Earn Revenue From Cursus for Business?
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                How to opt out of Cursus for Business
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                Payoneer FAQ
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                Missing Instructor Payments
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                Instructor Revenue Share
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                Instructor Revenue Report
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                Instructor Payment Overview
+              </a>
+            </div>
+            <div>
+              <a
+                class="HelpView-vew121"
+                href="help_faq_view.html"
+              >
+                How do I Opt Into the Affiliate Program?
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
