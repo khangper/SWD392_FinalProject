@@ -399,6 +399,7 @@ const Home = () => {
                 onClick={() => scrollLeftInstructor(popularInstructorRef)}
               ></button>
               <div className="popular-instructors" ref={popularInstructorRef}>
+
                 {filteredPopularInstructors.map((instructor) => (
                   <div key={instructor.id} className="popular-instructors-card" onClick={() => handleInstructorClick(instructor.id)}>
                     <div className="popular-instructor-image">
@@ -407,37 +408,38 @@ const Home = () => {
                         alt={instructor.name}
                         className="popular-instructor-photo"
                       />
-                    </div>
-                    <div className="popular-instructor-content">
-                      <div className="popular-instructor-profile">
-                        <Link
-                          to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
-                          className="instructor-name"
-                        >
-                          {instructor.name}
-                        </Link>
-                        <div className="verified-badge"></div>
                       </div>
-                      <div className="popular-instructor-title">
-                        {instructor.title}
-                      </div>
-                      <ul className="social-icons-1">
-                        <a href="#" className="sc-fb">
-                          <img src={facebook} />
-                        </a>
-                        <a href="#" className="sc-tw">
-                          <img src={x} />
-                        </a>
-                        <a href="#" className="sc-ln">
-                          <img src={linkedin} />
-                        </a>
-                        <a href="#" className="sc-yt">
-                          <img src={youtube} />
-                        </a>
-                      </ul>
-                      <div className="popular-instructor-stats">
-                        {instructor.students} Students • {instructor.courses}{" "}
-                        Courses
+                      <div className="popular-instructor-content">
+                        <div className="popular-instructor-profile">
+                          <Link
+                            to={PATH_NAME.OTHER_INSTRUCTOR_VIEW}
+                            className="instructor-name"
+                          >
+                            {instructor.name}
+                          </Link>
+                          <div className="verified-badge"></div>
+                        </div>
+                        <div className="popular-instructor-title">
+                          {instructor.title}
+                        </div>
+                        <ul className="social-icons-1">
+                          <a href="#" className="sc-fb">
+                            <img src={facebook} />
+                          </a>
+                          <a href="#" className="sc-tw">
+                            <img src={x} />
+                          </a>
+                          <a href="#" className="sc-ln">
+                            <img src={linkedin} />
+                          </a>
+                          <a href="#" className="sc-yt">
+                            <img src={youtube} />
+                          </a>
+                        </ul>
+                        <div className="popular-instructor-stats">
+                          {instructor.students} Students • {instructor.courses}{" "}
+                          Courses
+                        </div>
                       </div>
                     </div>
                   </div>
