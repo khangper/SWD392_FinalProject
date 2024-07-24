@@ -4,6 +4,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Help from "./Help1";
 
 describe("Help Component", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(console, "log").mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+    console.log.mockRestore();
+  });
   const renderWithRouter = (ui) => {
     return render(<Router>{ui}</Router>);
   };

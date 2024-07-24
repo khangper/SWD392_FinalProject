@@ -5,6 +5,15 @@ import "@testing-library/jest-dom/extend-expect";
 import { renderWithProviders } from "../../constant/test-util";
 
 describe("HelpView1", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(console, "log").mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+    console.log.mockRestore();
+  });
   it("renders the HelpView1 component", async () => {
     const { container } = renderWithProviders(<HelpView1 />);
     expect(container).toBeDefined();

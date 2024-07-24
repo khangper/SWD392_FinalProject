@@ -4,6 +4,15 @@ import { screen, fireEvent } from "@testing-library/react";
 import AllInstructor1 from "./AllInstructor1";
 
 describe("AllInstructor", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(console, "log").mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+    console.log.mockRestore();
+  });
   it("renders the AllInstructor component", () => {
     const { container } = renderWithProviders(<AllInstructor1 />);
     expect(container).toBeDefined();

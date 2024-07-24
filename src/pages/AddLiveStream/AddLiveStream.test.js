@@ -13,6 +13,15 @@ const mockClipboard = () => {
 };
 
 describe("AddLiveStream", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(console, "log").mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+    console.log.mockRestore();
+  });
   it("renders the AddLiveStream component", () => {
     const { container } = renderWithProviders(<AddLiveStream />);
     expect(container).toBeDefined();

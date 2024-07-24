@@ -4,6 +4,15 @@ import ReportHistory from "./ReportHistory";
 import { screen } from "@testing-library/react";
 
 describe("ReportHistory", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(console, "log").mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+    console.log.mockRestore();
+  });
   it("renders the ReportHistory component", async () => {
     const { container } = renderWithProviders(<ReportHistory />);
     expect(container).toBeDefined();
