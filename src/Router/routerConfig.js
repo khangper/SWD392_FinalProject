@@ -60,6 +60,7 @@ import StatementIS from "../pages/Statements/StatementIS/StatementIS";
 import StatementST from "../pages/Statements/StatementST/StatementST";
 import NotificationStudent from "../pages/Notification/NotificationStudent";
 import NewestCoursesDetailView from "../pages/CoursesDetailView/NewestCoursesDetailView";
+import OtherPopularInstructorView from "../pages/OtherInstructorView/OtherPopularInstructorView";
 
 const publicRoutes = [
   { path: PATH_NAME.LOGIN, element: <Login /> },
@@ -106,6 +107,7 @@ const privateRoutes = [
   { path: PATH_NAME.REPORT_HISTORY, element: <ReportHistory /> },
   { path: PATH_NAME.SEND_FEEDBACK, element: <SendFeedback /> },
   { path: PATH_NAME.OTHER_INSTRUCTOR_VIEW, element: <OtherInstructorView /> },
+  { path: PATH_NAME.OTHER_POPULAR_INSTRUCTOR_VIEW, element: <OtherPopularInstructorView /> },
   { path: PATH_NAME.MY_INSTRUCTOR_PROFILE, element: <MyInstructorProfile /> },
   { path: PATH_NAME.SAVE_COURSES, element: <SaveCourses /> },
   { path: PATH_NAME.SETTING, element: <Setting /> },
