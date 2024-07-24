@@ -65,6 +65,11 @@ const Explore = () => {
     dispatch(addSaveCourseRequest(mappedCourse));
   };
 
+  const navigate = useNavigate();
+  const handleLiveStreamClick = (id) => {
+    navigate(`${PATH_NAME.LIVE_OUTPUT.replace(":id", id)}`, { replace: true });
+  };
+
   const liveStreamRef = useRef(null);
   const scrollLeftLiveStream = () => {
     liveStreamRef.current.scrollBy({ left: -200, behavior: "smooth" });
@@ -107,15 +112,15 @@ const Explore = () => {
           ></button>
           <div className="live-streams" ref={liveStreamRef}>
             {filteredLiveStreams.map((stream) => (
-              <div key={stream.id} className="stream-card">
-                <a href="/live_output" className="stream-link">
+              <div key={stream.id} className="stream-card" onClick={() => handleLiveStreamClick(stream.id)}>
+                <div className="stream-link">
                   <img src={stream.imgSrc} alt={stream.name} />
                   <h4>{stream.name}</h4>
                   <p>
                     live
                     <span></span>
                   </p>
-                </a>
+                </div>
               </div>
             ))}
           </div>
@@ -193,14 +198,6 @@ const Explore = () => {
           </div>
         </div>
       </section>
-
-      {/* <section className="load-more">
-        <div className="spinner">
-          <div className="bounce1"></div>
-          <div className="bounce2"></div>
-          <div className="bounce3"></div>
-        </div>
-      </section> */}
     </div>
   );
 };

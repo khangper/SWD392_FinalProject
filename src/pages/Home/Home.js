@@ -48,10 +48,10 @@ const Home = () => {
   };
 
   const handleCoursesmoreClick = (id) => {
-    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`);
+    navigate(`${PATH_NAME.COURSES_DETAIL_VIEW.replace(":id", id)}`, {replace: true});
   };
   const handleNewestCoursesmoreClick = (id) => {
-    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(":id", id)}`);
+    navigate(`${PATH_NAME.NEWEST_COURSES_DETAIL_VIEW.replace(':id', id)}`, {replace: true});
   };
 
   const handleSaveCourse = (course, event) => {
@@ -71,7 +71,13 @@ const Home = () => {
     };
 
     dispatch(addSaveCourseRequest(mappedCourse));
+
   };
+
+  const handleInstructorClick = (id) => {
+    navigate(`${PATH_NAME.OTHER_INSTRUCTOR_VIEW.replace(":id", id)}`, {replace: true});
+  };
+
   useEffect(() => {
     dispatch(fetchHomeLiveStreamsRequest());
     dispatch(fetchHomeFeaturedCoursesRequest());
@@ -394,7 +400,7 @@ const Home = () => {
               ></button>
               <div className="popular-instructors" ref={popularInstructorRef}>
                 {filteredPopularInstructors.map((instructor) => (
-                  <div key={instructor.id} className="popular-instructors-card">
+                  <div key={instructor.id} className="popular-instructors-card" onClick={() => handleInstructorClick(instructor.id)}>
                     <div className="popular-instructor-image">
                       <img
                         src={instructor.imgSrc}
