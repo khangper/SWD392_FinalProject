@@ -9,6 +9,7 @@ export const PATH_NAME = {
   REPORT_HISTORY: "/reporthistory",
   SEND_FEEDBACK: "/sendfeedback",
   OTHER_INSTRUCTOR_VIEW: "/other-instructor-view/:id",
+  OTHER_POPULAR_INSTRUCTOR_VIEW: "/other-popular-instructor-view/:id",
   MY_INSTRUCTOR_PROFILE: "/my-instructor-profile",
   SAVE_COURSES: "/save-courses",
   SETTING: "/setting",
