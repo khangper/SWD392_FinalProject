@@ -10,6 +10,7 @@ export default function SendFeedback() {
     const [file, setFile] = useState(null);
     const [fileUrl, setFileUrl] = useState('');
     const [fileSelected, setFileSelected] = useState(false);
+    const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
 
     const uploadFileToCloudinary = async (file) => {
         const formData = new FormData();
@@ -46,6 +47,7 @@ export default function SendFeedback() {
                 setLoading(false);
                 return;
             }
+            setFileUrl(fileUploadedUrl);
         }
 
         const templateParams = {
@@ -62,7 +64,9 @@ export default function SendFeedback() {
                 setFile(null);
                 setFileUrl('');
                 setFileSelected(false);
+                setImagePreviewUrl(null);
                 console.log('Email sent successfully:', result.text);
+                alert('Successfully created a new Course! Please redirect back to Explore page to review');
             }, (error) => {
                 console.error('Error sending email:', error);
                 setLoading(false);
@@ -76,6 +80,14 @@ export default function SendFeedback() {
         } else {
             setFile(selectedFile);
             setFileSelected(true);
+
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setImagePreviewUrl(reader.result);
+            };
+            if (selectedFile) {
+                reader.readAsDataURL(selectedFile);
+            }
         }
     };
 
@@ -123,7 +135,7 @@ export default function SendFeedback() {
                                 id="file5" 
                                 name='attachment_url' 
                                 type="file" 
-                                accept="image/png" 
+                                accept="image/*" 
                                 onChange={handleFileChange} 
                             />
                             <div className="drag-text">
@@ -131,6 +143,11 @@ export default function SendFeedback() {
                                 <h4>{fileSelected ? "Screenshot selected" : "Select screenshots to upload"}</h4>
                                 <p>or drag and drop screenshots</p>
                             </div>
+                            {imagePreviewUrl && (
+                                <div className="image-preview">
+                                    <img src={imagePreviewUrl} alt="Selected Screenshot" />
+                                </div>
+                            )}
                         </div>
                     </div>
                     <button 
