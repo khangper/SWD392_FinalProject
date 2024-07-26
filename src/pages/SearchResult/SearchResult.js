@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './SearchResult.css';
 import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
+import Header from '../../components/Header-paidmember/Header';
 import Search from '../../assets/search.png';
 import dropdown from "../../assets/dropdown.png";
 import ratingStar from "../../assets/rating.png";

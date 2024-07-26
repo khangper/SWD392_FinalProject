@@ -1,0 +1,22 @@
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import SaveCourse from "../SaveCourses/SaveCourses";
+import "@testing-library/jest-dom/extend-expect";
+import { renderWithProviders } from "../../constant/test-util";
+
+describe("SaveCourse", () => {
+  beforeAll(() => {
+    jest.spyOn(console, "error").mockImplementation(() => {});
+    jest.spyOn(console, "log").mockImplementation(() => {});
+  });
+
+  afterAll(() => {
+    console.error.mockRestore();
+    console.log.mockRestore();
+  });
+  it("renders the SaveCourse component", async () => {
+    const { container } = renderWithProviders(<SaveCourse />);
+    expect(container).toBeDefined();
+    expect(container).toMatchSnapshot();
+  });
+});

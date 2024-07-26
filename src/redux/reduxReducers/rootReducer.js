@@ -40,6 +40,7 @@ import ReviewReducer from "./reducers/reviewReducers/reviewReducer";
 import instructorByIdReducer from "./reducers/instructorReducers/instructorByIdReducer";
 import featureCoursesDetailReducer from "./reducers/coursesDetailReducers/featureCoursesDetailReducer";
 import newestCoursesDetailReducer from "./reducers/coursesDetailReducers/newestCoursesDetailReducer";
+import createCourseReducer from "./reducers/CreateCourseReducer";
 
 const rootReducer = combineReducers({
   home_livestream: HomeLivestreamReducer,
@@ -83,6 +84,7 @@ const rootReducer = combineReducers({
   instructorById: instructorByIdReducer,
   featureCoursesDetail: featureCoursesDetailReducer,
   newestCoursesDetail: newestCoursesDetailReducer,
+  createCourse: createCourseReducer
 });
 
 export default rootReducer;
