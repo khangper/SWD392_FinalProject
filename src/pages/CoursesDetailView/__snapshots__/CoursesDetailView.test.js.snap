@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForgotPassword renders the ReportHistory component 1`] = `
+<div>
+  <div>
+    Course not found
+  </div>
+</div>
+`;

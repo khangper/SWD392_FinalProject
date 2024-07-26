@@ -5,8 +5,8 @@ import { screen } from "@testing-library/react";
 
 describe("ReportHistory", () => {
   beforeAll(() => {
-    jest.spyOn(console, "error").mockImplementation(() => {});
-    jest.spyOn(console, "log").mockImplementation(() => {});
+    jest.spyOn(console, "error").mockImplementation(() => { });
+    jest.spyOn(console, "log").mockImplementation(() => { });
   });
 
   afterAll(() => {
