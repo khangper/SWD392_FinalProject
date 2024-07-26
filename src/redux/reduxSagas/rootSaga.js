@@ -39,6 +39,7 @@ import { watchFetchReview } from "./sagas/reviewSagas/reviewSaga";
 import { watchInstructorById } from "./sagas/instructorSagas/instructorByIdSaga";
 import { watchFeatureCoursesDetail } from "./sagas/coursesDetailSagas/featureCoursesDetailSaga";
 import { watchNewestCoursesDetail } from "./sagas/coursesDetailSagas/newestCoursesDetailSaga";
+import handleCreateCourse from "./sagas/CreateCourseSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -81,5 +82,6 @@ export default function* rootSaga() {
     watchInstructorById(),
     watchFeatureCoursesDetail(),
     watchNewestCoursesDetail(),
+    handleCreateCourse(),
   ]);
 }

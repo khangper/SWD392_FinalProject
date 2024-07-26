@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './CertificationFillForm.css';
-import Header from '../../components/Header/Header';
+import Header from '../../components/Header-paidmember/Header';
 import Footer from '../../components/Footer/Footer';
 import { PATH_NAME } from '../../constant/pathname';
 import { Link } from 'react-router-dom';
@@ -656,7 +656,7 @@ const CertificationFillForm = () => {
                                 </div>
 
                                 <p className="CertificationFillForm_testtrm145">
-                                    By signing up, you agree to our 
+                                    By signing up, you agree to our
                                     <Link to={PATH_NAME.TERMS_OF_USE}> Privacy Policy</Link> and <Link to={PATH_NAME.TERMS_OF_USE}>Terms and Conditions</Link>.
                                 </p>
 

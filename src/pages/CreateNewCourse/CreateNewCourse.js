@@ -18,6 +18,8 @@ import Select from 'react-select';
 import LectureModal from "./components/lectureModal/LectureModal";
 import { LectureTab, LectureTabs } from "./components/lectureTab/LectureTabs";
 import PriceTabs from "./components/priceTab/PriceTabs";
+import { useDispatch, useSelector } from "react-redux";
+import { createCourseRequest } from "../../redux/reduxActions/CreateCourseAction";
 
 const CreateNewCourse = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -280,6 +282,48 @@ const CreateNewCourse = () => {
   const handleCloseLectureModal = () => {
     setShowLectureModal(false);
   };
+  const handleHoursChange = (e) => {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    setHours(value);
+  };
+  const [title, setTitle] = useState("");
+const [author, setAuthor] = useState("");
+const [date, setDate] = useState("");
+const [price, setPrice] = useState("");
+const [hours, setHours] = useState("");
+const dispatch = useDispatch();
+const handleSubmit = () => {
+  console.log("Title:", title);
+  console.log("Author:", author);
+  console.log("Date:", date);
+  console.log("Price:", price);
+  console.log("Hours:", hours);
+  console.log("Selected Category:", selectedCategory);
+
+  if (!title || !author || !date || !price || !hours || !selectedCategory) {
+    alert('Please fill out all required fields.');
+    return;
+  }
+  const courseData = {
+    title,
+    author,
+    date,
+    price: `$${price}`,
+    hours: `${hours} hours`,
+    category: selectedCategory.label,
+    imgSrc: 'https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg',
+    rating: '4',
+    views: '200k'
+  };
+  dispatch(createCourseRequest(courseData))
+}
+const { course } = useSelector(state => state.createCourse);
+useEffect(() => {
+  if (course) {
+    alert('Successfully created a new Course! Please redirect back to Explore page to review.');
+  }
+}, [course]);
+
 return (
     <div className="create-new-course-container">
       <div className="create-new-course-header">
@@ -330,9 +374,11 @@ return (
                     <div className="form-group">
                       <input
                         type="text"
-                        id="headline"
-                        name="headline"
+                        id="title"
+                        name="title"
                         placeholder="Course title here"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                       />
                       <div className="form-counter">60</div>
                     </div>
@@ -341,15 +387,17 @@ return (
                     </div>
                   </div>
                   <div className="content-tab-title">
-                    <h4>Short description*</h4>
+                    <h4>Author*</h4>
                   </div>
                   <div className="headline-group">
                     <div className="form-group">
                       <textarea
                         type="text"
-                        id="description"
-                        name="description"
-                        placeholder="Item description here..."
+                        id="author"
+                        name="author"
+                        placeholder="Author here..."
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
                       />
                       <div className="help-block">220 words.</div>
                     </div>
@@ -393,14 +441,16 @@ return (
                   <div className="content-tab-form-split">
                     <div className="content-tab-form-left">
                       <div className="content-tab-title">
-                        <h4>What will you learn in your course*</h4>
+                        <h4>Date*</h4>
                       </div>
                       <div className="headline-group">
                         <div className="form-group">
                           <textarea
                             type="text"
-                            id="description"
-                            name="description"
+                            id="date"
+                            name="date"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)}
                           />
                           <div className="help-block">Student will gain these skills and knowledge after completing this course. (One per line).</div>
                         </div>
@@ -408,14 +458,16 @@ return (
                     </div>
                     <div className="content-tab-form-left">
                       <div className="content-tab-title">
-                        <h4>Requirement*</h4>
+                        <h4>Hours*</h4>
                       </div>
                       <div className="headline-group">
                         <div className="form-group">
                           <textarea
                             type="text"
-                            id="description"
-                            name="description"
+                            id="hours"
+                            name="hours"
+                            value={hours}
+                            onChange={handleHoursChange}
                           />
                           <div className="help-block">What knowledge, technology, and tools are required by users to start this course. (One per line).</div>
                         </div>
@@ -763,7 +815,7 @@ return (
                 </h3>  
               </div>
               <div className="content-tab-content">
-                <PriceTabs/>
+                <PriceTabs price={price} setPrice={setPrice}/>
               </div>
             </div>}
           {currentStep === 4 && 
@@ -803,7 +855,7 @@ return (
             <button
               data-direction="finish"
               className="btn btn-default steps_btn"
-              onClick={() => alert('Submit for Review')}
+              onClick={handleSubmit}
             >
               Submit for Review
             </button>

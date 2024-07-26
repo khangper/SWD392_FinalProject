@@ -469,7 +469,7 @@ const Home = () => {
             <div className="instructor-profile-content">
               <div className="instructor-profile-header">
                 <a href="#" className="instructor-name">
-                  John Doe
+                Joginder Signh
                 </a>
                 <div className="verified-badge"></div>
               </div>
