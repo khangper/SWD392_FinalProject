@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './CertificationTest.css'
 import Footer from '../../components/Footer/Footer'
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header-paidmember/Header'
 import { PATH_NAME } from '../../constant/pathname'
 import { Link } from 'react-router-dom'
 
