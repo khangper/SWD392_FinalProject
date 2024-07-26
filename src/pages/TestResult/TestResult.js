@@ -1,6 +1,6 @@
 import React from 'react'
 import './TestResult.css'
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header-paidmember/Header'
 import Footer from '../../components/Footer/Footer'
 const TestResult = () => {
     return (
