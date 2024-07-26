@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StepSignUp renders the StepSignUp component 1`] = `
+<div>
+  <div
+    class="login-container"
+  >
+    <div
+      class="login-logo-container"
+    >
+      <a
+        href="/home"
+      >
+        <img
+          alt="Cursus Logo"
+          class="login-logo"
+          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      class="login-form-container"
+    >
+      <div
+        class="tablist"
+      >
+        <div
+          class="tab active"
+        >
+          <div
+            class="instructor-sign-up"
+          >
+            Instructor Sign Up
+          </div>
+        </div>
+        <div
+          class="tab "
+        >
+          <div
+            class="student-sign-up"
+          >
+            Student Sign Up
+          </div>
+        </div>
+      </div>
+      <div
+        class="instructor-sign-up-form"
+      >
+        <p
+          class="login-bannerInstructor"
+        >
+          Sign Up and Create Course!
+        </p>
+        <form>
+          <select
+            class="selectpicker"
+          >
+            <option
+              value=""
+            >
+              Select Category
+            </option>
+            <option
+              value="1"
+            >
+              Development
+            </option>
+            <option
+              value="2"
+            >
+              Business
+            </option>
+            <option
+              value="3"
+            >
+              Finance & Accounting
+            </option>
+            <option
+              value="4"
+            >
+              IT & Software
+            </option>
+            <option
+              value="5"
+            >
+              Office Productivity
+            </option>
+            <option
+              value="6"
+            >
+              Personal Development
+            </option>
+            <option
+              value="7"
+            >
+              Design
+            </option>
+            <option
+              value="8"
+            >
+              Marketing
+            </option>
+            <option
+              value="9"
+            >
+              Lifestyle
+            </option>
+            <option
+              value="10"
+            >
+              Photography
+            </option>
+            <option
+              value="11"
+            >
+              Health & Fitness
+            </option>
+            <option
+              value="12"
+            >
+              Music
+            </option>
+            <option
+              value="13"
+            >
+              Teaching & Academics
+            </option>
+          </select>
+          <div
+            class="ui search focus mt-15"
+          >
+            <div
+              class="ui form swdh30"
+            >
+              <div
+                class="singnupstep-field"
+              >
+                <textarea
+                  class="textarea"
+                  id="id_about"
+                  name="description"
+                  placeholder="Write a little description about you..."
+                  rows="3"
+                />
+              </div>
+            </div>
+            <div
+              class="help-block"
+            >
+              Your biography should have at least 12000 characters.
+            </div>
+          </div>
+          <button
+            class="loginSingUp-btn"
+            type="submit"
+          >
+            Instructor Sign Up Now
+          </button>
+        </form>
+        <p
+          class="top38px"
+        >
+          Already have an account?
+           
+          <a
+            class="LoginMove"
+            href="/Login"
+          >
+            Log In
+          </a>
+        </p>
+      </div>
+    </div>
+    <div
+      class="form-footer"
+    >
+      <img
+        alt=""
+        class="footer-logo"
+        src="https://gambolthemes.net/html-items/cursus-new-demo/images/sign_logo.png"
+      />
+      <span>
+        © 2024 
+        <strong>
+          Cursus
+        </strong>
+        . All Rights Reserved.
+      </span>
+    </div>
+  </div>
+</div>
+`;
