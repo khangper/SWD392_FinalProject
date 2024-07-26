@@ -1,7 +1,7 @@
 import React from 'react'
 import './TermsOfUse.css'
 import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
+import Header from '../../components/Header-paidmember/Header';
 import Search from '../../assets/search.png';
 
 const TermsOfUse = () => {

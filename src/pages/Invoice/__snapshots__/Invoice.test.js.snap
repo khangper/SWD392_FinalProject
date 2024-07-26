@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Invoice renders the Invoice component 1`] = `
+<div>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`ReportHistory renders the Invoice component 1`] = `
+<div>
+  <div>
+    Loading...
+  </div>
+</div>
+`;
