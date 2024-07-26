@@ -108,3 +108,16 @@
       margin-top: 38px;
     }
   
+    .ui.form .singnupstep-field {
+      margin-right: -8px;
+  }
+
+  .textarea {
+    padding: 10px; /* Adjust padding as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    font-size: 14px; /* Adjust font size as needed */
+    resize: none; /* Prevents resizing, optional */
+  }

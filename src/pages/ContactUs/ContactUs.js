@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactUs.css";
-import Header from "../../components/Header/Header";
+import Header from "../../components/Header-paidmember/Header";
 import Footer from "../../components/Footer/Footer";
 import facebook from "../../assets/facebook.png";
 import x from "../../assets/x.png";

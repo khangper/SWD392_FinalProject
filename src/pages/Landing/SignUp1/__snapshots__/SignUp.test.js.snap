@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp Component renders the SignUp component 1`] = `
+<div>
+  <div
+    class="login-container"
+  >
+    <div
+      class="login-logo-container"
+    >
+      <a
+        href="/home"
+      >
+        <img
+          alt="Cursus Logo"
+          class="login-logo"
+          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+        />
+      </a>
+    </div>
+    <div
+      class="login-form-container"
+    >
+      <h2>
+        Welcome Back
+      </h2>
+      <p
+        class="login-banner"
+      >
+        Sign Up and start learning
+      </p>
+      <div
+        class="SignUp-input-wrapper"
+      >
+        <input
+          class="SignUp-input-field"
+          placeholder="Full Name"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="SignUp-input-wrapper"
+      >
+        <input
+          class="SignUp-input-field"
+          placeholder="Email Address"
+          type="email"
+        />
+      </div>
+      <div
+        class="SignUp-input-wrapper"
+      >
+        <input
+          class="SignUp-input-field"
+          placeholder="Password"
+          type="password"
+        />
+      </div>
+      <div
+        class="remember-meSignUp"
+      >
+        <input
+          id="emailOptIn"
+          type="checkbox"
+        />
+        <label
+          class="Label-signup"
+          for="emailOptIn"
+        >
+          I’m in for emails with exciting discounts and personalized recommendations
+        </label>
+      </div>
+      <a
+        href="/SignUpStep"
+      >
+        <button
+          class="loginSingUp-btn"
+          type="submit"
+        >
+          Next
+        </button>
+      </a>
+      <p
+        class="By-signingup"
+      >
+        By signing up, you agree to our
+         
+        <a
+          href="terms_of_use.html"
+        >
+          Terms of Use
+        </a>
+         and
+         
+        <a
+          href="terms_of_use.html"
+        >
+          Privacy Policy
+        </a>
+        .
+      </p>
+      <p
+        class="mb-0 mt-30"
+      >
+        Already have an account?
+         
+        <a
+          class="LoginMove"
+          href="/login"
+        >
+          Log In
+        </a>
+      </p>
+    </div>
+    <div
+      class="form-footer"
+    >
+      <img
+        alt=""
+        class="footer-logo"
+        src="https://gambolthemes.net/html-items/cursus-new-demo/images/sign_logo.png"
+      />
+      <span>
+        © 2024 
+        <strong>
+          Cursus
+        </strong>
+        . All Rights Reserved.
+      </span>
+    </div>
+  </div>
+</div>
+`;
