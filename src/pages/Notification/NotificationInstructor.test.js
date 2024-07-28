@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Setting from "../Setting/Setting";
+import Notification from "../Notification/Notification";
 import "@testing-library/jest-dom/extend-expect";
 import { renderWithProviders } from "../../constant/test-util";
 
-describe("Setting", () => {
+describe("Notification", () => {
   beforeAll(() => {
     jest.spyOn(console, "error").mockImplementation(() => {});
     jest.spyOn(console, "log").mockImplementation(() => {});
@@ -14,8 +14,8 @@ describe("Setting", () => {
     console.error.mockRestore();
     console.log.mockRestore();
   });
-  it("renders the Setting component", async () => {
-    const { container } = renderWithProviders(<Setting />);
+  it("renders the Notification component", async () => {
+    const { container } = renderWithProviders(<Notification />);
     expect(container).toBeDefined();
     expect(container).toMatchSnapshot();
   });

@@ -17,10 +17,10 @@ export default function Checkout() {
   const handleChange = (event) => {
     setName(event.target.value);
   };
-  const [activeTab, setActiveTab] = useState("credit-method-tab"); // State để lưu trữ tab đang active
+  const [activeTab, setActiveTab] = useState("credit-method-tab");
 
   const openTab = (tabId) => {
-    setActiveTab(tabId); // Hàm mở tab
+    setActiveTab(tabId);
   };
 
   const [isOpen, setIsOpen] = useState(false);
