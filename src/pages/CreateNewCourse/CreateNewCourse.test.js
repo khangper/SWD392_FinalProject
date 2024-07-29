@@ -41,4 +41,30 @@ describe("CreateNewCourse", () => {
     userEvent.type(titleInput, "   !@#$%^&*()_+   ");
     expect(titleInput.value).toBe("   !@#$%^&*()_+   ");
   });
+
+  // Author here
+  it("handles text input in the author textarea", async () => {
+    renderWithProviders(<CreateNewCourse />);
+
+    const authorTextarea = screen.getByPlaceholderText("Author here...");
+
+    // Simulate entering text
+    userEvent.type(authorTextarea, "John Doe");
+    expect(authorTextarea.value).toBe("John Doe");
+
+    // Simulate entering whitespace
+    userEvent.clear(authorTextarea);
+    userEvent.type(authorTextarea, "   ");
+    expect(authorTextarea.value).toBe("   ");
+
+    // Simulate entering special characters
+    userEvent.clear(authorTextarea);
+    userEvent.type(authorTextarea, "!@#$%^&*()_+");
+    expect(authorTextarea.value).toBe("!@#$%^&*()_+");
+
+    // Simulate entering a mix of whitespace and special characters
+    userEvent.clear(authorTextarea);
+    userEvent.type(authorTextarea, "   !@#$%^&*()_+   ");
+    expect(authorTextarea.value).toBe("   !@#$%^&*()_+   ");
+  });
 });

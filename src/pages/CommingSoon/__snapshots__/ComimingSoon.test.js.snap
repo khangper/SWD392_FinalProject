@@ -64,7 +64,7 @@ exports[`CommingSoon renders the CommingSoon component 1`] = `
                 <span
                   class="cs_coming_title"
                 >
-                  54
+                  9
                    :
                 </span>
                 <label>
@@ -77,7 +77,7 @@ exports[`CommingSoon renders the CommingSoon component 1`] = `
                 <span
                   class="cs_coming_title"
                 >
-                  10
+                  59
                 </span>
                 <label>
                   Seconds
