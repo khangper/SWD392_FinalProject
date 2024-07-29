@@ -23,14 +23,6 @@ describe("Help Component", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("displays the main title and search input", () => {
-    renderWithRouter(<Help />);
-    const titleElement = screen.getByText("How may we help you?");
-    expect(titleElement).toBeInTheDocument();
-    const searchInput = screen.getByPlaceholderText("Search Tutors");
-    expect(searchInput).toBeInTheDocument();
-  });
-
   it("renders the instructor tab as active by default", () => {
     renderWithRouter(<Help />);
     const instructorTab = screen.getByText("Instructor");

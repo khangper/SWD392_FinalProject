@@ -42,8 +42,9 @@ exports[`Help Component renders the Help component 1`] = `
                           src="search.png"
                         />
                         <input
-                          placeholder="Search Tutors"
+                          placeholder="Search Instructor Help"
                           type="text"
+                          value=""
                         />
                       </section>
                     </div>
@@ -59,7 +60,7 @@ exports[`Help Component renders the Help component 1`] = `
       class="Help_215b15"
     >
       <div
-        class=".Help-grid-container-input"
+        class="Help-grid-container-input"
       >
         <div
           class="Help-grid-item-full"
@@ -193,7 +194,7 @@ exports[`Help Component renders the Help component 1`] = `
                           class="value_props50"
                         >
                           <a
-                            href="#"
+                            href="/"
                           >
                             <div
                               class="value_icon"
@@ -211,7 +212,7 @@ exports[`Help Component renders the Help component 1`] = `
                                 Quality Standards
                               </h4>
                               <p>
-                                Learn what it takes to create a high quality course.
+                                Learn what it takes to create a high-quality course.
                               </p>
                             </div>
                           </a>
@@ -220,7 +221,7 @@ exports[`Help Component renders the Help component 1`] = `
                           class="value_props50"
                         >
                           <a
-                            href="#"
+                            href="/"
                           >
                             <div
                               class="value_icon"
@@ -247,7 +248,7 @@ exports[`Help Component renders the Help component 1`] = `
                           class="value_props50"
                         >
                           <a
-                            href="#"
+                            href="/"
                           >
                             <div
                               class="value_icon"
@@ -274,7 +275,7 @@ exports[`Help Component renders the Help component 1`] = `
                           class="value_props50"
                         >
                           <a
-                            href="#"
+                            href="/"
                           >
                             <div
                               class="value_icon"
