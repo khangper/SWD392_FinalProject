@@ -2,6 +2,9 @@ import {
     FETCH_SEARCH_RESULT_REQUEST,
     FETCH_SEARCH_RESULT_SUCCESS,
     FETCH_SEARCH_RESULT_FAILURE,
+    SEARCH_SEARCH_RESULT_REQUEST,
+    SEARCH_SEARCH_RESULT_SUCCESS,
+    SEARCH_SEARCH_RESULT_FAILURE,
 } from "../../../constant/data";
 
 const initialState = {
@@ -18,6 +21,24 @@ const searchresultReducer = (state = initialState, action) => {
             return { ...state, loading: false, sr_course: action.payload };
         case FETCH_SEARCH_RESULT_FAILURE:
             return { ...state, loading: false, error: action.payload };
+        case SEARCH_SEARCH_RESULT_REQUEST:
+            return {
+                ...state,
+                loading: true,
+                error: null,
+            };
+        case SEARCH_SEARCH_RESULT_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                sr_course: action.payload,
+            };
+        case SEARCH_SEARCH_RESULT_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
         default:
             return state;
     }
