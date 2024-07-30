@@ -1,5 +1,4 @@
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Message.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { PiWechatLogoLight } from "react-icons/pi";
@@ -14,7 +13,12 @@ import { fetchChatMessagesRequest } from "../../redux/reduxActions/MessageAction
 
 const Message = () => {
   const dispatch = useDispatch();
-  const { loading, messages, error } = useSelector(state => state.message);
+  const { loading, messages, error } = useSelector((state) => state.message);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleItemClick = (index) => {
+    setSelectedIndex(index);
+  };
 
   useEffect(() => {
     dispatch(fetchChatMessagesRequest());
@@ -57,23 +61,28 @@ const Message = () => {
               </div>
               <div className="simplebar-content-wrapper">
                 <div className="group_messages">
-                  {messages.map((message) => (
-                    <div className="chat__message__dt active">
+                  {messages.map((message, index) => (
+                    <div
+                      key={index}
+                      className={`chat__message__dt ${
+                        selectedIndex === index ? "active" : ""
+                      }`}
+                      onClick={() => handleItemClick(index)}
+                    >
                       <div className="user-status">
                         <div className="user-avatar">
-                          <img
-                            src={message.image}
-                            alt=""
-                          />
+                          <img src={message.image} alt="" />
                           <div className="msg__badge">{message.id}</div>
                         </div>
-                        <p className="user-status-title">
-                          <span className="bold">{message.name}</span>
-                        </p>
-                        <p className="user-status-text">
-                          {message.text}
-                        </p>
-                        <p className="user-status-time floaty">{message.time}</p>
+                        <div className="message-user-name">
+                          <div className="message-name-time">
+                            <p className="user-status-title">{message.name}</p>
+                            <p className="user-status-time floaty">
+                              {message.time}
+                            </p>
+                          </div>
+                          <p className="user-status-text">{message.text}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
