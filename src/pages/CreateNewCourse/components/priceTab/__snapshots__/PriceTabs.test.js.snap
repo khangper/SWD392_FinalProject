@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PriceTabs renders the PriceTabs component 1`] = `
+<div>
+  <div
+    class="price-course-pricing-tabs"
+  >
+    <div
+      class="price-tab-buttons"
+    >
+      <button
+        class="price-tab-button price-active"
+      >
+        <i
+          class="fas fa-tag"
+        />
+         Free
+      </button>
+      <button
+        class="price-tab-button "
+      >
+        <i
+          class="fas fa-shopping-cart"
+        />
+         Paid
+      </button>
+    </div>
+    <div
+      class="price-tab-content"
+    >
+      <div
+        class="price-tab-block"
+      >
+        <div
+          class="price-tab-panel"
+        >
+          <label
+            class="lecture-switch"
+          >
+            <input
+              class="preview-op"
+              type="checkbox"
+              value=""
+            />
+            <span />
+          </label>
+          <label
+            class="lbl-quiz"
+            for="require-login"
+          >
+            Require Log in
+          </label>
+        </div>
+        <div
+          class="price-tab-panel mt-3"
+        >
+          <label
+            class="lecture-switch"
+          >
+            <input
+              class="preview-op"
+              type="checkbox"
+              value=""
+            />
+            <span />
+          </label>
+          <label
+            class="lbl-quiz"
+            for="require-login"
+          >
+            Require Enroll
+          </label>
+        </div>
+        <p>
+          If the course is free, if student require to enroll your course, if not required enroll, if students required sign in to your website to take this course.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HelpView1 renders the HelpView1 component 1`] = `
-<div>
-  <div>
-    Loading...
-  </div>
-</div>
-`;
-
 exports[`SaveCourse renders the SaveCourse component 1`] = `
 <div>
   <div>

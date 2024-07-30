@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InsDashboard renders the InsDashboard component 1`] = `
+<div>
+  <div
+    class="ins-dashboard-container"
+  >
+    <div
+      class="ins-dashboard-top"
+    >
+      <div
+        class="ins-dashboard-header"
+      >
+        <h2>
+          <img
+            alt=""
+            src="dashboard.png"
+          />
+           Instructor Dashboard
+        </h2>
+      </div>
+      <section
+        class="dashboard-cards"
+      />
+      <section
+        class="course-creation"
+      >
+        <div
+          class="course-creation-content"
+        >
+          <img
+            alt="Course Creation Icon"
+            class="course-creation-icon"
+            src="BookHelp.png"
+          />
+          <h3>
+            Jump Into Course Creation
+          </h3>
+          <button
+            class="course-creation-button"
+          >
+            Create Your Course
+          </button>
+        </div>
+      </section>
+    </div>
+    <div
+      class="ins-dashboard-bottom"
+    >
+      <div
+        class="ins-dashboard-left"
+      >
+        <section
+          class="course-and-news-section"
+        >
+          <section
+            class="course-performance-section"
+          >
+            <div
+              class="course-performance-header"
+            >
+              <h2
+                class="course-performance-title"
+              >
+                Latest Course Performance
+              </h2>
+              <div
+                class="course-performance-btn"
+              >
+                <button
+                  class="scroll-button left"
+                />
+                <button
+                  class="scroll-button right"
+                />
+              </div>
+            </div>
+            <div
+              class="course-performance-container"
+            />
+          </section>
+          <section
+            class="course-performance-section"
+          >
+            <div
+              class="course-performance-header"
+            >
+              <h2
+                class="course-performance-title"
+              >
+                News
+              </h2>
+              <div
+                class="course-performance-btn"
+              >
+                <button
+                  class="scroll-button left"
+                />
+                <button
+                  class="scroll-button right"
+                />
+              </div>
+            </div>
+            <div
+              class="course-performance-container"
+            />
+          </section>
+        </section>
+      </div>
+      <div
+        class="ins-dashboard-right"
+      >
+        <section
+          class="right-section"
+        >
+          <section
+            class="profile-analytics-section"
+          >
+            <div
+              class="course-performance-header"
+            >
+              <h2
+                class="course-performance-title"
+              >
+                Profile Analytics
+              </h2>
+            </div>
+            <div
+              class="profile-analytics-card"
+            >
+              <div
+                class="profile-analytics-content"
+              >
+                <h6
+                  class="current-subscribers-label"
+                >
+                  Current subscribers
+                </h6>
+                <h3
+                  class="current-subscribers"
+                >
+                  856
+                </h3>
+                <div
+                  class="analytics-stats"
+                >
+                  <div
+                    class="analytics-stat"
+                  >
+                    <div
+                      class="stat-left"
+                    >
+                       View
+                    </div>
+                    <div
+                      class="stat-right"
+                    >
+                      <span
+                        class="stat-value"
+                      >
+                        17k
+                      </span>
+                      <span
+                        class="stat-change down"
+                      >
+                        ▼ 75%
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="analytics-stat"
+                  >
+                    <div
+                      class="stat-left"
+                    >
+                       Purchased (per hour)
+                    </div>
+                    <div
+                      class="stat-right"
+                    >
+                      <span
+                        class="stat-value"
+                      >
+                        1
+                      </span>
+                      <span
+                        class="stat-change up"
+                      >
+                        ▲ 100%
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    class="analytics-stat"
+                  >
+                    <div
+                      class="stat-left"
+                    >
+                       Enroll (per hour)
+                    </div>
+                    <div
+                      class="stat-right"
+                    >
+                      <span
+                        class="stat-value"
+                      >
+                        50
+                      </span>
+                      <span
+                        class="stat-change down"
+                      >
+                        ▼ 70%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="course-performance-links"
+                >
+                  <a
+                    class="course-link"
+                    href="#"
+                  >
+                    GO TO PROFILE ANALYTICS
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="submit-course-section"
+          >
+            <div
+              class="course-performance-header"
+            >
+              <h2
+                class="course-performance-title"
+              >
+                Submit Courses
+              </h2>
+            </div>
+            <div
+              class="sc-card"
+            >
+              <a
+                class="pa-title"
+                href="#"
+              >
+                The Complete JavaScript Course 2020: Build Real Projects!
+                <span
+                  class="pa-pending-icon"
+                >
+                  Pending
+                </span>
+              </a>
+              <p
+                class="submit-course"
+              >
+                Submmited 
+                <span>
+                  1 days ago
+                </span>
+              </p>
+              <a
+                class="delete-link"
+                href="#"
+              >
+                Delete
+              </a>
+            </div>
+          </section>
+          <section
+            class="profile-analytics-section"
+          >
+            <div
+              class="course-performance-header"
+            >
+              <h2
+                class="course-performance-title"
+              >
+                What's new on Cursus
+              </h2>
+            </div>
+            <div
+              class="sc-card"
+            >
+              <a
+                class="news-link"
+                href="#"
+              >
+                Improved performance on Studio Dashboard
+              </a>
+              <a
+                class="news-link"
+                href="#"
+              >
+                See more Dashboard updates
+              </a>
+              <a
+                class="news-link"
+                href="#"
+              >
+                See issues-at-glance for Live
+              </a>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+`;
