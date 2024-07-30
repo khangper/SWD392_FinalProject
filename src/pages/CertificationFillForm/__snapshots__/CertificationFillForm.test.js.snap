@@ -52,7 +52,8 @@ exports[`CertificationFillForm renders the CertificationFillForm component 1`] =
             <a
               href="/certificationcenter"
             >
-               / Certification Center 
+               
+              / Certification Center 
             </a>
             <p>
                / Certification Fill Form
@@ -207,9 +208,11 @@ exports[`CertificationFillForm renders the CertificationFillForm component 1`] =
               <a
                 href="/termsofuse"
               >
-                 Privacy Policy
+                 
+                Privacy Policy
               </a>
-               and 
+               and
+               
               <a
                 href="/termsofuse"
               >
@@ -217,12 +220,16 @@ exports[`CertificationFillForm renders the CertificationFillForm component 1`] =
               </a>
               .
             </p>
-            <button
-              class="CertificationFillForm_login_btn"
-              type="submit"
+            <a
+              href="/certificates-test"
             >
-              Lets Go
-            </button>
+              <button
+                class="CertificationFillForm_login_btn"
+                type="submit"
+              >
+                Lets Go
+              </button>
+            </a>
             <p
               class="CertificationFillForm_questrm145"
             >
@@ -230,7 +237,8 @@ exports[`CertificationFillForm renders the CertificationFillForm component 1`] =
               <span>
                 20 questions
               </span>
-               within 
+               within
+               
               <span>
                 1 hours
               </span>
