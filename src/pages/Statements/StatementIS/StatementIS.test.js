@@ -1,9 +1,9 @@
 import React from "react";
-import { renderWithProviders } from "../../constant/test-util";
-import Thanks from "./Thanks";
+import { renderWithProviders } from "../../../constant/test-util";
+import StatementIS from "./StatementIS"
 import { screen } from "@testing-library/react";
 
-describe("Thanks", () => {
+describe("StatementIS", () => {
     beforeAll(() => {
         jest.spyOn(console, "error").mockImplementation(() => { });
         jest.spyOn(console, "log").mockImplementation(() => { });
@@ -13,8 +13,8 @@ describe("Thanks", () => {
         console.error.mockRestore();
         console.log.mockRestore();
     });
-    it("renders the Thanks component", async () => {
-        const { container } = renderWithProviders(<Thanks />);
+    it("renders the StatementIS component", async () => {
+        const { container } = renderWithProviders(<StatementIS />);
         expect(container).toBeDefined();
         expect(container).toMatchSnapshot();
     });
