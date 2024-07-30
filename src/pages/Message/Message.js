@@ -154,7 +154,7 @@ const Message = () => {
                           suscipit tortor eget felis porttitor.
                         </p>
                       </div>
-                      <span>Sat, April 10, 1:08 PM</span>
+                      <span>5 minutes ago</span>
                     </div>
                   </div>
                   <div className="main-message-box st3">
@@ -174,7 +174,7 @@ const Message = () => {
                           suscipit tortor eget felis porttitor.
                         </p>
                       </div>
-                      <span>Sat, April 10, 1:08 PM</span>
+                      <span>3 minutes ago</span>
                     </div>
                   </div>
                   <div className="main-message-box st3">
@@ -194,7 +194,7 @@ const Message = () => {
                           suscipit tortor eget felis porttitor.
                         </p>
                       </div>
-                      <span>Sat, April 10, 1:08 PM</span>
+                      <span>1 minutes ago</span>
                     </div>
                   </div>
                   <div className="main-message-box st3">
