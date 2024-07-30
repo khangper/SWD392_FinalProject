@@ -291,13 +291,22 @@
     width: 100%;
     text-align: center;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .live_icon {
-    float: left;
-    width: 100%;
+    width: 75px;
     text-align: center;
     margin-bottom: 20px;
+    background-color: #ffecec;
+    border-radius: 50%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .live_icon i {
@@ -314,7 +323,8 @@
 }
 
 .live_icon img {
-    width: 15%;
+    width: 25px;
+    height: 25px;
 }
 
 .live-content {
