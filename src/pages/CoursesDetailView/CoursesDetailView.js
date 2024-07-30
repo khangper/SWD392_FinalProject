@@ -696,7 +696,9 @@ const CoursesDetailView = () => {
                     <div className="cdv-user_img">
                       <a href="#">
                         <img
-                          src={featureCourses.feature_courses_detail?.imgChannel}
+                          src={
+                            featureCourses.feature_courses_detail?.imgChannel
+                          }
                           alt=""
                         />
                       </a>

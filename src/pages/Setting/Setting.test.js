@@ -4,7 +4,7 @@ import Setting from "../Setting/Setting";
 import "@testing-library/jest-dom/extend-expect";
 import { renderWithProviders } from "../../constant/test-util";
 
-describe("Explore", () => {
+describe("Setting", () => {
   beforeAll(() => {
     jest.spyOn(console, "error").mockImplementation(() => {});
     jest.spyOn(console, "log").mockImplementation(() => {});
@@ -14,7 +14,7 @@ describe("Explore", () => {
     console.error.mockRestore();
     console.log.mockRestore();
   });
-  it("renders the Explore component", async () => {
+  it("renders the Setting component", async () => {
     const { container } = renderWithProviders(<Setting />);
     expect(container).toBeDefined();
     expect(container).toMatchSnapshot();

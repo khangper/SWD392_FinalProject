@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationStudent renders the Notification component 1`] = `
+<div>
+  <div
+    class="NotificationPage"
+  >
+    <div
+      class="NT-grid-container"
+    >
+      <div
+        class="NT-grid-item"
+      >
+        <h2
+          class="NT-st_title"
+        >
+          <img
+            alt="Notification Icon"
+            class="Edit-icon"
+            src="notification-icon.png"
+          />
+           
+          Notifications
+        </h2>
+      </div>
+    </div>
+    <div
+      class="NT-grid-container"
+    >
+      <div
+        class="NT-grid-item"
+      >
+        <a
+          class="NT-setting_noti"
+          href="/setting"
+        >
+          Notification Setting
+        </a>
+        <div
+          class="NT-all_msg_bg"
+        >
+          <p>
+            Loading...
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
