@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Explore renders the Explore component 1`] = `
+exports[`SendFeedback Component renders the SendFeedback component 1`] = `
 <div>
   <div
     class="feedback-container"
