@@ -59,8 +59,9 @@ exports[`SearchResult renders the SearchResult component 1`] = `
             src="search.png"
           />
           <input
-            placeholder="Search "
+            placeholder="Search"
             type="text"
+            value=""
           />
         </div>
       </div>

@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Payout renders the Payout component 1`] = `
+<div>
+  <main
+    class="payout"
+  >
+    <div
+      class="payout-wrapper"
+    >
+      <div
+        class="payout-title"
+      >
+        <div
+          class="payout-label"
+        >
+          <div
+            class="payout-icon"
+          >
+            <svg
+              class="payout-wallet-icon"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 12V7H5a2 2 0 0 1 0-4h14v4"
+              />
+              <path
+                d="M3 5v14a2 2 0 0 0 2 2h16v-5"
+              />
+              <path
+                d="M18 12a2 2 0 0 0 0 4h4v-4Z"
+              />
+            </svg>
+          </div>
+          <h3
+            class="payout-payout"
+          >
+            Payout
+          </h3>
+        </div>
+      </div>
+      <div
+        class="payout-parent"
+      >
+        <div
+          class="payout-next-account-parent"
+        >
+          <div
+            class="payout-next-wrapper"
+          >
+            <div
+              class="payout-label-wrapper"
+            >
+              <div
+                class="payout-label"
+              >
+                Next payout
+              </div>
+            </div>
+            <div
+              class="payout-via-wrapper"
+            >
+              <div
+                class="payout-coin"
+              >
+                $4,568.50
+              </div>
+              <div
+                class="payout-via"
+              >
+                via Payoneer
+              </div>
+            </div>
+            <div
+              class="payout-day-wrapper"
+            >
+              <div
+                class="payout-day"
+              >
+                Your payout will be processed on 
+                <span>
+                  April 15, 2020
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="payout-account-wrapper"
+          >
+            <div
+              class="payout-label-wrapper"
+            >
+              <div
+                class="payout-label"
+              >
+                Payout account
+              </div>
+            </div>
+            <div
+              class="payout-added-wrapper"
+            >
+              <img
+                alt=""
+                class="payout-image"
+                src="https://gambolthemes.net/html-items/cursus-new-demo/images/payoneer.svg"
+              />
+              <div
+                class="payout-added"
+              >
+                Added: 
+                <span>
+                  01 Mar 2020
+                </span>
+              </div>
+            </div>
+            <div
+              class="payout-button-wrapper"
+            >
+              <a
+                href="/"
+              >
+                <button
+                  class="payout-button"
+                >
+                  Set Account
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="payout-table"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Amount
+                </th>
+                <th>
+                  Payout Method
+                </th>
+                <th>
+                  Date Processed
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+`;

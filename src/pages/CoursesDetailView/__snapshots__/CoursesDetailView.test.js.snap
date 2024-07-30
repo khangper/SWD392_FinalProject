@@ -7,11 +7,3 @@ exports[`CoursesDetailView renders the CoursesDetailView component 1`] = `
   </div>
 </div>
 `;
-
-exports[`ForgotPassword renders the ReportHistory component 1`] = `
-<div>
-  <div>
-    Course not found
-  </div>
-</div>
-`;
