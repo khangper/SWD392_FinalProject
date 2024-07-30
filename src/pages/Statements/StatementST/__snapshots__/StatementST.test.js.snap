@@ -1,0 +1,451 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForgotPassword renders the ReportHistory component 1`] = `
+<div>
+  <div
+    class="statementis"
+  >
+    <div
+      class="statementis-row"
+    >
+      <div
+        class="statementis-col-lg-12"
+      >
+        <h2
+          class="st_title"
+        >
+          <i
+            class="uil uil-file-alt"
+          />
+           Statements
+        </h2>
+      </div>
+    </div>
+    <div
+      class="statementis-row"
+    >
+      <div
+        class="statementis-col-lg-8"
+      >
+        <div
+          class="top_countries mt-30"
+        >
+          <div
+            class="top_countries_title"
+          >
+            <h2>
+              Earnings
+            </h2>
+          </div>
+          <div
+            class="statement_content"
+          >
+            <p
+              class="tt-body"
+            >
+              If you are not an instructor, you can't use this section.
+            </p>
+            <a
+              class="apply_instructor_btn"
+              href="#"
+            >
+              Become an Instructor
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="statementis-col-lg-4"
+      >
+        <div
+          class="top_countries mt-30"
+        >
+          <div
+            class="top_countries_title"
+          >
+            <h2>
+              View Invoices
+            </h2>
+          </div>
+          <div
+            class="statement_invoice_content"
+          >
+            <div
+              class="date_selector"
+            >
+              <div
+                class="ui selection"
+                tabindex="0"
+              >
+                <input
+                  name="date"
+                  type="hidden"
+                  value="Monthly Invoices"
+                />
+                <div
+                  class="sis-drop"
+                >
+                  <span
+                    class="section-title-wrapper"
+                  >
+                    <span
+                      class="section-title-text"
+                    >
+                      Monthly Invoices
+                    </span>
+                    <img
+                      alt="Dropdown Icon"
+                      class="sidebar-dropdown-caret-icon"
+                      src="dropdown.png"
+                    />
+                  </span>
+                </div>
+              </div>
+              <button
+                class="st_download_btn"
+              >
+                <i
+                  class="uil uil-download-alt"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="statementis-col-lg-12"
+      >
+        <div
+          class="more_options_tt"
+        >
+          <li>
+            <div>
+              <button
+                class="more_items_14 active"
+              >
+                This Month
+              </button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <button
+                class="more_items_14"
+              >
+                Last Month
+              </button>
+            </div>
+          </li>
+          <li>
+            <div
+              class="explore_search"
+            >
+              <div
+                class="sis-search-box"
+              >
+                <div
+                  class="sis-box-input"
+                >
+                  <input
+                    class="sis-search"
+                    placeholder="Document Number"
+                    type="text"
+                  />
+                  <i
+                    class="uil uil-search-alt icon icon8"
+                  />
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MyCourse-tab-pane active"
+      id="my-courses-tab"
+      role="tabpanel"
+    >
+      <div
+        class="MyCouser-container"
+      >
+        <div
+          class="MyCouser-table-container"
+        >
+          <table
+            class="MyCourse-table ucp-table"
+          >
+            <thead
+              class="MyCourse-thead-s"
+            >
+              <tr>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Date
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                >
+                  Order ID
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Type
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Title
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Amount
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Invoice
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`StatementST renders the ReportHistory component 1`] = `
+<div>
+  <div
+    class="statementis"
+  >
+    <div
+      class="statementis-row"
+    >
+      <div
+        class="statementis-col-lg-12"
+      >
+        <h2
+          class="st_title"
+        >
+          <i
+            class="uil uil-file-alt"
+          />
+           Statements
+        </h2>
+      </div>
+    </div>
+    <div
+      class="statementis-row"
+    >
+      <div
+        class="statementis-col-lg-8"
+      >
+        <div
+          class="top_countries mt-30"
+        >
+          <div
+            class="top_countries_title"
+          >
+            <h2>
+              Earnings
+            </h2>
+          </div>
+          <div
+            class="statement_content"
+          >
+            <p
+              class="tt-body"
+            >
+              If you are not an instructor, you can't use this section.
+            </p>
+            <a
+              class="apply_instructor_btn"
+              href="#"
+            >
+              Become an Instructor
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="statementis-col-lg-4"
+      >
+        <div
+          class="top_countries mt-30"
+        >
+          <div
+            class="top_countries_title"
+          >
+            <h2>
+              View Invoices
+            </h2>
+          </div>
+          <div
+            class="statement_invoice_content"
+          >
+            <div
+              class="date_selector"
+            >
+              <div
+                class="ui selection"
+                tabindex="0"
+              >
+                <input
+                  name="date"
+                  type="hidden"
+                  value="Monthly Invoices"
+                />
+                <div
+                  class="sis-drop"
+                >
+                  <span
+                    class="section-title-wrapper"
+                  >
+                    <span
+                      class="section-title-text"
+                    >
+                      Monthly Invoices
+                    </span>
+                    <img
+                      alt="Dropdown Icon"
+                      class="sidebar-dropdown-caret-icon"
+                      src="dropdown.png"
+                    />
+                  </span>
+                </div>
+              </div>
+              <button
+                class="st_download_btn"
+              >
+                <i
+                  class="uil uil-download-alt"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="statementis-col-lg-12"
+      >
+        <div
+          class="more_options_tt"
+        >
+          <li>
+            <div>
+              <button
+                class="more_items_14 active"
+              >
+                This Month
+              </button>
+            </div>
+          </li>
+          <li>
+            <div>
+              <button
+                class="more_items_14"
+              >
+                Last Month
+              </button>
+            </div>
+          </li>
+          <li>
+            <div
+              class="explore_search"
+            >
+              <div
+                class="sis-search-box"
+              >
+                <div
+                  class="sis-box-input"
+                >
+                  <input
+                    class="sis-search"
+                    placeholder="Document Number"
+                    type="text"
+                  />
+                  <i
+                    class="uil uil-search-alt icon icon8"
+                  />
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MyCourse-tab-pane active"
+      id="my-courses-tab"
+      role="tabpanel"
+    >
+      <div
+        class="MyCouser-container"
+      >
+        <div
+          class="MyCouser-table-container"
+        >
+          <table
+            class="MyCourse-table ucp-table"
+          >
+            <thead
+              class="MyCourse-thead-s"
+            >
+              <tr>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Date
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                >
+                  Order ID
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Type
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Title
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Amount
+                </th>
+                <th
+                  class="MyCourse-text-center"
+                  scope="col"
+                >
+                  Invoice
+                </th>
+              </tr>
+            </thead>
+            <tbody />
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

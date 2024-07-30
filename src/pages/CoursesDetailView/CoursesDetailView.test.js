@@ -3,7 +3,7 @@ import { renderWithProviders } from "../../constant/test-util";
 import CoursesDetailView from "./CoursesDetailView";
 import { screen } from "@testing-library/react";
 
-describe("ForgotPassword", () => {
+describe("CoursesDetailView", () => {
     beforeAll(() => {
         jest.spyOn(console, "error").mockImplementation(() => { });
         jest.spyOn(console, "log").mockImplementation(() => { });
@@ -13,7 +13,7 @@ describe("ForgotPassword", () => {
         console.error.mockRestore();
         console.log.mockRestore();
     });
-    it("renders the ReportHistory component", async () => {
+    it("renders the CoursesDetailView component", async () => {
         const { container } = renderWithProviders(<CoursesDetailView />);
         expect(container).toBeDefined();
         expect(container).toMatchSnapshot();

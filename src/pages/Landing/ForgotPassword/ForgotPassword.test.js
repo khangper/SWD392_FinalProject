@@ -19,3 +19,4 @@ describe("ForgotPassword", () => {
     expect(container).toMatchSnapshot();
   });
 });
+

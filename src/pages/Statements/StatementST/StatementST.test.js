@@ -1,9 +1,7 @@
 import React from "react";
-import { renderWithProviders } from "../../constant/test-util";
-import Thanks from "./Thanks";
-import { screen } from "@testing-library/react";
-
-describe("Thanks", () => {
+import { renderWithProviders } from "../../../constant/test-util";
+import StatementST from "./StatementST"
+describe("StatementST", () => {
     beforeAll(() => {
         jest.spyOn(console, "error").mockImplementation(() => { });
         jest.spyOn(console, "log").mockImplementation(() => { });
@@ -13,8 +11,8 @@ describe("Thanks", () => {
         console.error.mockRestore();
         console.log.mockRestore();
     });
-    it("renders the Thanks component", async () => {
-        const { container } = renderWithProviders(<Thanks />);
+    it("renders the ReportHistory component", async () => {
+        const { container } = renderWithProviders(<StatementST />);
         expect(container).toBeDefined();
         expect(container).toMatchSnapshot();
     });
