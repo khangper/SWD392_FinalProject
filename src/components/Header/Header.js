@@ -30,7 +30,7 @@ const Header = () => {
     setIsProfileDropdownOpen((prev) => !prev);
   };
 
-  const { logout } = useContext(AuthContext);
+  // const { logout } = useContext(AuthContext);
 
   return (
     <header className="header">
@@ -81,7 +81,7 @@ const Header = () => {
               </div>
             </div>
             <div className="profile-item"> Cursus Dashboard</div>
-            <div className="profile-item" onClick={logout}>
+            <div className="profile-item">
               Sign Out
             </div>
           </div>
