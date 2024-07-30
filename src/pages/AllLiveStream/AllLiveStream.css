@@ -367,6 +367,16 @@
     display: block;
 }
 
+@media screen and (max-width: 1050px) {
+    .ALL-Live-grid-container{
+        display: block;
+    }
+
+    .fcrse_3{
+        margin-top: 30px;
+    }
+}
+
 /*Loading*/
 
 /* .loading-live{
