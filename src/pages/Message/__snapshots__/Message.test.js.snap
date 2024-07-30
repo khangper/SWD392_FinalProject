@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForgotPassword renders the ReportHistory component 1`] = `
+<div>
+  <p>
+    Loading...
+  </p>
+</div>
+`;
+
+exports[`Message renders the Message component 1`] = `
+<div>
+  <p>
+    Loading...
+  </p>
+</div>
+`;

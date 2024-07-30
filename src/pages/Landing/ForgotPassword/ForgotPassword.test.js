@@ -13,7 +13,7 @@ describe("ForgotPassword", () => {
         console.error.mockRestore();
         console.log.mockRestore();
     });
-    it("renders the ReportHistory component", async () => {
+    it("renders the ForgotPassword component", async () => {
         const { container } = renderWithProviders(<ForgotPassword />);
         expect(container).toBeDefined();
         expect(container).toMatchSnapshot();
