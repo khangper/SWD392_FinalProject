@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Setting from "../Setting/Setting";
+import PriceTabs from "../priceTab/PriceTabs";
 import "@testing-library/jest-dom/extend-expect";
-import { renderWithProviders } from "../../constant/test-util";
+import { renderWithProviders } from "../../../../constant/test-util";
 
-describe("Setting", () => {
+describe("PriceTabs", () => {
   beforeAll(() => {
     jest.spyOn(console, "error").mockImplementation(() => {});
     jest.spyOn(console, "log").mockImplementation(() => {});
@@ -14,8 +14,8 @@ describe("Setting", () => {
     console.error.mockRestore();
     console.log.mockRestore();
   });
-  it("renders the Setting component", async () => {
-    const { container } = renderWithProviders(<Setting />);
+  it("renders the PriceTabs component", async () => {
+    const { container } = renderWithProviders(<PriceTabs />);
     expect(container).toBeDefined();
     expect(container).toMatchSnapshot();
   });

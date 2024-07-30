@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Setting from "../Setting/Setting";
+import DowloadCourse from "../DowloadCourse/DowloadCourse";
 import "@testing-library/jest-dom/extend-expect";
-import { renderWithProviders } from "../../constant/test-util";
+import { renderWithProviders } from "../../../constant/test-util";
 
-describe("Setting", () => {
+describe("DowloadCourse", () => {
   beforeAll(() => {
     jest.spyOn(console, "error").mockImplementation(() => {});
     jest.spyOn(console, "log").mockImplementation(() => {});
@@ -14,8 +14,8 @@ describe("Setting", () => {
     console.error.mockRestore();
     console.log.mockRestore();
   });
-  it("renders the Setting component", async () => {
-    const { container } = renderWithProviders(<Setting />);
+  it("renders the DowloadCourse component", async () => {
+    const { container } = renderWithProviders(<DowloadCourse />);
     expect(container).toBeDefined();
     expect(container).toMatchSnapshot();
   });

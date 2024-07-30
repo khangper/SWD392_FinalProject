@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StdDashboard renders the StdDashboard component 1`] = `
+<div>
+  <div
+    class="std-dashboard-container"
+  >
+    <div
+      class="std-dashboard-top"
+    >
+      <div
+        class="std-dashboard-header"
+      >
+        <h2>
+          <img
+            alt=""
+            src="dashboard.png"
+          />
+           Student Dashboard
+        </h2>
+      </div>
+      <section
+        class="dashboard-cards"
+      >
+        <div
+          class="dashboard-card"
+        >
+          <div
+            class="card-content"
+          >
+            <div
+              class="card-info"
+            >
+              <h3>
+                Total Purchased Courses
+              </h3>
+              <h1>
+                15
+              </h1>
+              <span
+                class="new-badge new-sales"
+              >
+                New 5
+              </span>
+            </div>
+            <div
+              class="card-icon"
+            >
+              <img
+                alt="Total Purchased Courses Icon"
+                src="https://gambolthemes.net/html-items/cursus-new-demo/images/dashboard/online-course.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="dashboard-card"
+        >
+          <div
+            class="card-content"
+          >
+            <div
+              class="card-info"
+            >
+              <h3>
+                Total Instructors Subcribing
+              </h3>
+              <h1>
+                45
+              </h1>
+              <span
+                class="new-badge new-enroll"
+              >
+                New 3
+              </span>
+            </div>
+            <div
+              class="card-icon"
+            >
+              <img
+                alt="Total Instructors Subcribing Icon"
+                src="https://gambolthemes.net/html-items/cursus-new-demo/images/dashboard/knowledge.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      class="std-dashboard-bottom"
+    >
+      <div
+        class="std-dashboard-left"
+      >
+        <section
+          class="course-and-news-section"
+        >
+          <section
+            class="course-performance-section"
+          >
+            <div
+              class="course-performance-header"
+            >
+              <h2
+                class="course-performance-title"
+              >
+                News
+              </h2>
+              <div
+                class="course-performance-btn"
+              >
+                <button
+                  class="scroll-button left"
+                />
+                <button
+                  class="scroll-button right"
+                />
+              </div>
+            </div>
+            <div
+              class="course-performance-container"
+            >
+              <div
+                class="course-performance-card"
+              >
+                <a>
+                  <img
+                    alt="COVID-19 Updates & Resources"
+                    src="https://gambolthemes.net/html-items/cursus-new-demo/images/blog/img-1.jpg"
+                  />
+                </a>
+                <div
+                  class="course-details"
+                >
+                  <div
+                    class="course-details-header"
+                  >
+                    <p
+                      class="course-title"
+                    >
+                      COVID-19 Updates & Resources
+                    </p>
+                  </div>
+                  <p
+                    class="news-content"
+                  >
+                    See the latest updates to coronavirus-related content, including changes to monetization, and access new Creator support resources.
+                  </p>
+                  <div
+                    class="course-performance-links"
+                  >
+                    <a
+                      class="course-link"
+                      href="#"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="course-performance-card"
+              >
+                <a>
+                  <img
+                    alt="New Features for Instructors"
+                    src="https://gambolthemes.net/html-items/cursus-new-demo/images/blog/img-2.jpg"
+                  />
+                </a>
+                <div
+                  class="course-details"
+                >
+                  <div
+                    class="course-details-header"
+                  >
+                    <p
+                      class="course-title"
+                    >
+                      New Features for Instructors
+                    </p>
+                  </div>
+                  <p
+                    class="news-content"
+                  >
+                    Discover the new features available to instructors, aimed at improving the teaching and learning experience.
+                  </p>
+                  <div
+                    class="course-performance-links"
+                  >
+                    <a
+                      class="course-link"
+                      href="#"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="course-performance-card"
+              >
+                <a>
+                  <img
+                    alt="Community Events and Meetups"
+                    src="https://gambolthemes.net/html-items/cursus-new-demo/images/blog/img-3.jpg"
+                  />
+                </a>
+                <div
+                  class="course-details"
+                >
+                  <div
+                    class="course-details-header"
+                  >
+                    <p
+                      class="course-title"
+                    >
+                      Community Events and Meetups
+                    </p>
+                  </div>
+                  <p
+                    class="news-content"
+                  >
+                    Join our community events and meetups to connect with other instructors and learners.
+                  </p>
+                  <div
+                    class="course-performance-links"
+                  >
+                    <a
+                      class="course-link"
+                      href="#"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="right-section"
+          >
+            <section
+              class="profile-analytics-section"
+            >
+              <div
+                class="course-performance-header"
+              >
+                <h2
+                  class="course-performance-title"
+                >
+                  What's new on Cursus
+                </h2>
+              </div>
+              <div
+                class="sc-card"
+              >
+                <a
+                  class="news-link"
+                  href="#"
+                >
+                  Improved performance on Studio Dashboard
+                </a>
+                <a
+                  class="news-link"
+                  href="#"
+                >
+                  See more Dashboard updates
+                </a>
+                <a
+                  class="news-link"
+                  href="#"
+                >
+                  See issues-at-glance for Live
+                </a>
+              </div>
+            </section>
+          </section>
+        </section>
+      </div>
+      <div
+        class="std-dashboard-right"
+      />
+    </div>
+  </div>
+</div>
+`;

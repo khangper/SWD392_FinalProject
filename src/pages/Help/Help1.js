@@ -1,25 +1,117 @@
 import React, { useState } from "react";
 import "./Help.css";
-import search_icon from "..//../assets/search.png";
-import Wallet from "..//../assets/Wallet.png";
-import Megaphone2 from "..//../assets/Megaphone2.png";
-import Filecheckale from "..//../assets/Filecheckale.png";
-import FileEdit from "..//../assets/FileEdit.png";
-import CourseManagement from "..//../assets/CourseManagement.png";
-import TrueFile from "..//../assets/TrueFile.png";
-import Account from "..//../assets/Account.png";
-import Destop from "..//../assets/Destop.png";
-import BookHelp from "..//../assets/BookHelp.png";
-import MobileHelp from "..//../assets/MobileHelp.png";
+import search_icon from "../../assets/search.png";
+import Wallet from "../../assets/Wallet.png";
+import Megaphone2 from "../../assets/Megaphone2.png";
+import Filecheckale from "../../assets/Filecheckale.png";
+import FileEdit from "../../assets/FileEdit.png";
+import CourseManagement from "../../assets/CourseManagement.png";
+import TrueFile from "../../assets/TrueFile.png";
+import Account from "../../assets/Account.png";
+import Destop from "../../assets/Destop.png";
+import BookHelp from "../../assets/BookHelp.png";
+import MobileHelp from "../../assets/MobileHelp.png";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 
 export default function Help() {
   const [activeTab, setActiveTab] = useState("instructor");
+  const [instructorSearchQuery, setInstructorSearchQuery] = useState("");
+  const [studentSearchQuery, setStudentSearchQuery] = useState("");
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
+  const handleSearchChange = (e) => {
+    if (activeTab === "instructor") {
+      setInstructorSearchQuery(e.target.value);
+    } else {
+      setStudentSearchQuery(e.target.value);
+    }
+  };
+
+  const filteredInstructorTopics = [
+    {
+      title: "Payments",
+      description: "Understand the revenue share and how to receive payments.",
+      link: PATH_NAME.HELP_VIEW_1,
+      icon: Wallet,
+    },
+    {
+      title: "Selling & Promotion",
+      description: "Learn about the announcement and promotional tools.",
+      link: PATH_NAME.HELP_VIEW_2,
+      icon: Megaphone2,
+    },
+    {
+      title: "Quality Standards",
+      description: "Learn what it takes to create a high-quality course.",
+      link: "#",
+      icon: Filecheckale,
+    },
+    {
+      title: "Course Building",
+      description: "Build your course curriculum and landing page.",
+      link: "#",
+      icon: FileEdit,
+    },
+    {
+      title: "Course Management",
+      description: "Maintain your course and engage with students.",
+      link: "#",
+      icon: CourseManagement,
+    },
+    {
+      title: "Trust & Safety",
+      description: "Policy and copyright questions and guidance.",
+      link: "#",
+      icon: TrueFile,
+    },
+  ].filter((topic) =>
+    topic.title.toLowerCase().includes(instructorSearchQuery.toLowerCase())
+  );
+
+  const filteredStudentTopics = [
+    {
+      title: "Getting Started",
+      description: "Learn how Cursus works and how to start learning.",
+      link: "#",
+      icon: Filecheckale,
+    },
+    {
+      title: "Account/Profile",
+      description: "Manage your account settings.",
+      link: "#",
+      icon: Account,
+    },
+    {
+      title: "Troubleshooting",
+      description: "Experiencing a bug? Check here.",
+      link: "#",
+      icon: Destop,
+    },
+    {
+      title: "Course Taking",
+      description: "Everything about taking a course on Udemy.",
+      link: "#",
+      icon: BookHelp,
+    },
+    {
+      title: "Purchase/Refunds",
+      description: "Learn about coupons, how to send gifts, and refunds.",
+      link: "#",
+      icon: Wallet,
+    },
+    {
+      title: "Mobile",
+      description: "On the go? Learn about our mobile app.",
+      link: "#",
+      icon: MobileHelp,
+    },
+  ].filter((topic) =>
+    topic.title.toLowerCase().includes(studentSearchQuery.toLowerCase())
+  );
 
   return (
     <div>
@@ -39,7 +131,20 @@ export default function Help() {
                             alt="Search Icon"
                             className="search-icon"
                           />
-                          <input type="text" placeholder="Search Tutors" />
+                          <input
+                            type="text"
+                            placeholder={`Search ${
+                              activeTab === "instructor"
+                                ? "Instructor"
+                                : "Student"
+                            } Help`}
+                            value={
+                              activeTab === "instructor"
+                                ? instructorSearchQuery
+                                : studentSearchQuery
+                            }
+                            onChange={handleSearchChange}
+                          />
                         </section>
                       </div>
                     </div>
@@ -52,7 +157,7 @@ export default function Help() {
       </div>
 
       <div className="Help_215b15">
-        <div className=".Help-grid-container-input">
+        <div className="Help-grid-container-input">
           <div className="Help-grid-item-full">
             <div className="col-lg-12">
               <div className="course_tabs">
@@ -108,115 +213,23 @@ export default function Help() {
                         </div>
                         <div className="section3126 mt-20">
                           <div className="Help1-Grid-container">
-                            <div className="value_props50">
-                              <Link to={PATH_NAME.HELP_VIEW_1}>
-                                <div className="value_icon">
-                                  <img
-                                    src={Wallet}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Payments</h4>
-                                  <p>
-                                    Understand the revenue share and how to
-                                    receive payments.
-                                  </p>
-                                </div>
-                              </Link>
-                            </div>
-
-                            <div className="value_props50">
-                              <Link to={PATH_NAME.HELP_VIEW_2}>
-                                <div className="value_icon">
-                                  <img
-                                    src={Megaphone2}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Selling & Promotion</h4>
-                                  <p>
-                                    Learn about the announcement and promotional
-                                    tools.
-                                  </p>
-                                </div>
-                              </Link>
-                            </div>
-
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={Filecheckale}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Quality Standards</h4>
-                                  <p>
-                                    Learn what it takes to create a high quality
-                                    course.
-                                  </p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={FileEdit}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Course Building</h4>
-                                  <p>
-                                    Build your course curriculum and landing
-                                    page.
-                                  </p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={CourseManagement}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Course Management</h4>
-                                  <p>
-                                    Maintain your course and engage with
-                                    students.
-                                  </p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={TrueFile}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Trust & Safety</h4>
-                                  <p>
-                                    Policy and copyright questions and guidance.
-                                  </p>
-                                </div>
-                              </a>
-                            </div>
+                            {filteredInstructorTopics.map((topic, index) => (
+                              <div className="value_props50" key={index}>
+                                <Link to={topic.link}>
+                                  <div className="value_icon">
+                                    <img
+                                      src={topic.icon}
+                                      alt=""
+                                      className="Help-icon-page"
+                                    />
+                                  </div>
+                                  <div className="value_content">
+                                    <h4>{topic.title}</h4>
+                                    <p>{topic.description}</p>
+                                  </div>
+                                </Link>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       </div>
@@ -267,108 +280,26 @@ export default function Help() {
                         </div>
                         <div className="section3126 mt-20">
                           <div className="Help1-Grid-container">
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={Filecheckale}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Getting Started</h4>
-                                  <p>
-                                    Learn how Cursus works and how to start
-                                    learning.
-                                  </p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={Account}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Account/Profile</h4>
-                                  <p>Manage your account settings.</p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={Destop}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Troubleshooting</h4>
-                                  <p>Experiencing a bug? Check here.</p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={BookHelp}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Course Taking</h4>
-                                  <p>
-                                    Everything about taking a course on Udemy.
-                                  </p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={Wallet}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Purchase/Refunds</h4>
-                                  <p>
-                                    Learn about coupons, how to send gifts, and
-                                    refunds.
-                                  </p>
-                                </div>
-                              </a>
-                            </div>
-                            <div className="value_props50">
-                              <a href="#">
-                                <div className="value_icon">
-                                  <img
-                                    src={MobileHelp}
-                                    alt=""
-                                    className="Help-icon-page"
-                                  />
-                                </div>
-                                <div className="value_content">
-                                  <h4>Mobile</h4>
-                                  <p>On the go? Learn about our mobile app.</p>
-                                </div>
-                              </a>
-                            </div>
+                            {filteredStudentTopics.map((topic, index) => (
+                              <div className="value_props50" key={index}>
+                                <a href={topic.link}>
+                                  <div className="value_icon">
+                                    <img
+                                      src={topic.icon}
+                                      alt=""
+                                      className="Help-icon-page"
+                                    />
+                                  </div>
+                                  <div className="value_content">
+                                    <h4>{topic.title}</h4>
+                                    <p>{topic.description}</p>
+                                  </div>
+                                </a>
+                              </div>
+                            ))}
                           </div>
                         </div>
                       </div>
-
                       <div className="Frequently-Quétion">
                         <div className="crse_content">
                           <h3>Frequently Asked Questions</h3>

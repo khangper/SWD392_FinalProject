@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PurchaseCourse renders the PurchaseCourse component 1`] = `
+<div>
+  <div
+    class="PurchaseCoursePage"
+  >
+    <div
+      class="MyCoursePage-grid-container"
+    >
+      <div
+        class="MyCoursePage-grid-item"
+      >
+        <div
+          class="MyCoursePage-st_title"
+        >
+          <img
+            class="Edit-icon"
+            src="MyCourse-Book.png"
+          />
+          Purchased Course
+        </div>
+      </div>
+    </div>
+    <div
+      class="MyCourse-container"
+    >
+      <div
+        class="MyCourse-table-container"
+      >
+        <table
+          class="MyCourse-table ucp-table"
+        >
+          <thead
+            class="MyCourse-thead-s"
+          >
+            <tr>
+              <th
+                class="MyCourse-text-center"
+                scope="col"
+              >
+                Item No.
+              </th>
+              <th
+                class="MyCourse-text-center"
+              >
+                Title
+              </th>
+              <th
+                class="MyCourse-text-center"
+                scope="col"
+              >
+                Vendor
+              </th>
+              <th
+                class="MyCourse-text-center"
+                scope="col"
+              >
+                Category
+              </th>
+              <th
+                class="MyCourse-text-center"
+                scope="col"
+              >
+                Delivery Type
+              </th>
+              <th
+                class="MyCourse-text-center"
+                scope="col"
+              >
+                Price
+              </th>
+              <th
+                class="MyCourse-text-center"
+                scope="col"
+              >
+                Purchase Date
+              </th>
+              <th
+                class="MyCourse-text-center"
+                scope="col"
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
