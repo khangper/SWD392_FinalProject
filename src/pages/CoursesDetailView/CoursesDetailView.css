@@ -14,7 +14,6 @@
 .courses_detail_view-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: space-between;
 }
 
@@ -204,9 +203,7 @@
     display: inline;
     justify-content: flex-start;
     padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
 }
-
 .courses_detail_view-nav {
     display: flex;
     justify-content: center;
@@ -219,10 +216,15 @@
     float: left;
     width: 100%;
     padding: 20px 0 0;
-    background: #fff;
-    margin-bottom: 17px;
-}
 
+}
+.cdv-label-learn{
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+}
 .cdv-user {
     float: left;
     width: 100%;
@@ -311,6 +313,7 @@
 
 .tab-pane {
     padding: 20px;
+    background-color: #f7f7f7;
 }
 
 ._htg451 {
@@ -404,21 +407,21 @@ ul._abcd145 {
     }
 }
 
-.box-div-cdv {
-    background-color: #f9f4f4;
+/* .box-div-cdv {
+    background-color: #f7f7f7 !important;
 }
 
 .cdv-label-requirement {
-    background-color: #f9f4f4;
+    background-color: #f7f7f7 !important;
 }
 
 .cdv-label-description {
-    background-color: #f9f4f4;
+    background-color: #f7f7f7 !important;
 }
 
 .cdv-label-who {
-    background-color: #f9f4f4;
-}
+    background-color: #f7f7f7 !important;
+} */
 
 .accordion-toggle {
     height: 0px;
@@ -510,6 +513,8 @@ ul._abcd145 {
     width: 100%;
     margin-top: 30px;
     margin-bottom: 20px;
+    background-color: #f7f7f7 !important;
+    border: none !important;
 }
 
 .reviews-container {
@@ -533,21 +538,29 @@ ul._abcd145 {
   .cdv-col-lg-7 {
     width: 70%;
   }
-
-  .reviews_left, .review_right {
-    background-color: #f9f9f9;
+  .reviews_left{
     padding: 20px;
-    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+  }
+  .review_right {
+    padding: 20px;
   }
   
   .total_rating {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    background: #f7f7f7;
+    padding: 8px;
+    border: solid 1px #efefef;
+    border-radius: 3px;
+
   }
   
   ._rate001 {
-    font-size: 2em;
+    font-size: 18px;
     margin-right: 10px;
   }
   
@@ -604,6 +617,7 @@ ul._abcd145 {
     border: 1px solid #ccc;
     border-radius: 4px;
     margin-right: 5px;
+    height: 34px;
   }
   
   .rvsrch_btn {
@@ -613,17 +627,24 @@ ul._abcd145 {
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    background-color: #ff0000;
   }
   .rvsrch_btn img{
     width: 20px;
   }
   .review_all120 {
-    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #efefef;
+    border-radius: 3px;
   }
   
   .review_item {
     padding: 15px 0;
     border-bottom: 1px solid #ddd;
+  }
+  .review_item_1{
+    padding: 15px 0;
   }
   
   .review_usr_dt {
