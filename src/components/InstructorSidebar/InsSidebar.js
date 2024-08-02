@@ -17,10 +17,23 @@ import settingIcon from "../../assets/setting.png";
 import feedbackIcon from "../../assets/send-feedback.png";
 import helpIcon from "../../assets/help.png";
 import { PATH_NAME } from "../../constant/pathname";
-
+import home from '../../assets/home.png'
+import livestream from '../../assets/livestream.png'
 const InsSidebar = ({ sidebar }) => {
   return (
     <div className={`ins-sidebar ${sidebar ? "" : "ins-small-sidebar"}`}>
+      <Link to={PATH_NAME.HOME} className="side-link">
+        <img className="sidebar-icon" src={home} alt="Home Icon" />
+        <p className={`${sidebar ? "" : "small"}`}>Home</p>
+      </Link>
+      <Link to={PATH_NAME.ALL_LIVE_STREAM} className="side-link">
+        <img
+          className="sidebar-icon"
+          src={livestream}
+          alt="Live Streams Icon"
+        />
+        <p className={`${sidebar ? "" : "small"}`}>Live Streams</p>
+      </Link>
       <Link to={PATH_NAME.INS_DASHBOARD} className="side-link">
         <img className="sidebar-icon" src={dashboardIcon} alt="Dashboard Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Dashboard</p>
