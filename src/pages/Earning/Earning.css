@@ -220,12 +220,10 @@
 
 .earning-table-1{
     flex: 0.328;
-    min-width: 330px;
 }
 
 .earning-table-2{
     flex: 0.672;
-    min-width: 680px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -242,7 +240,7 @@
     padding-left: 10px;
 }
 
-@media screen and (max-width:1350px){
+@media screen and (max-width:1050px){
     .earning-table-wrapper{
 
         display: block;
