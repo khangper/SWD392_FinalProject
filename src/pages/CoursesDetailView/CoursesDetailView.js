@@ -1344,14 +1344,11 @@ const CoursesDetailView = () => {
                                 <div className="total_rating">
                                   <div className="_rate001">4.6</div>
                                   <div className="rating-box">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star half-star"/>
                                   </div>
                                   <div className="_rate002">Course Rating</div>
                                 </div>
@@ -1361,26 +1358,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-70"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star"/>
                                     </div>
                                     <div className="_rate002">70%</div>
                                   </div>
@@ -1389,26 +1371,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-30"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">40%</div>
                                   </div>
@@ -1417,26 +1384,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-5"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">5%</div>
                                   </div>
@@ -1445,26 +1397,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-2"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">1%</div>
                                   </div>
@@ -1473,26 +1410,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-1"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                     <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">1%</div>
                                   </div>
@@ -1534,14 +1456,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1603,14 +1522,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1672,14 +1588,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1741,14 +1654,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1810,14 +1720,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
