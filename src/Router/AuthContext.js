@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PATH_NAME } from '../constant/pathname';
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -26,14 +27,7 @@ export const AuthProvider = ({ children }) => {
     if (foundUser) {
       setUser(foundUser);
       localStorage.setItem('currentUser', JSON.stringify(foundUser));
-
-      if (foundUser.role === 'instructor') {
-        navigate('/ins-dashboard');
-      } else if (foundUser.role === 'student') {
-        navigate('/student-dashboard');
-      } else {
-        navigate(PATH_NAME.HOME);
-      }
+      navigate(foundUser.role === 'instructor' ? PATH_NAME.INS_DASHBOARD : foundUser.role === 'student' ? PATH_NAME.STD_DASHBOARD : PATH_NAME.HOME);
     } else {
       console.error('Login failed: user not found');
     }
@@ -42,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setUser(null);
     localStorage.removeItem('currentUser');
-    navigate('/login');
+    navigate(PATH_NAME.LOGIN);
   };
 
   return (
