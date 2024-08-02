@@ -733,7 +733,7 @@ const NewestCoursesDetailView = () => {
                 </div>
               </div>
               <div className="courses_detail_view_tabs">
-                <nav>
+                <div>
                   <div className="courses_detail_view-nav">
                     <div
                       className={`tab ${oivtab === "about" ? "active" : ""}`}
@@ -1554,7 +1554,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1567,7 +1567,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1623,7 +1623,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1636,7 +1636,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1692,7 +1692,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1705,7 +1705,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1761,7 +1761,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1774,7 +1774,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1830,7 +1830,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1843,7 +1843,7 @@ const NewestCoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1855,7 +1855,7 @@ const NewestCoursesDetailView = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="review_item">
+                                <div className="review_item_1">
                                   <a href="#" className="more_reviews">
                                     See More Reviews
                                   </a>
@@ -1867,7 +1867,7 @@ const NewestCoursesDetailView = () => {
                       </div>
                     </div>
                   )}
-                </nav>
+                </div>
               </div>
             </div>
           </div>

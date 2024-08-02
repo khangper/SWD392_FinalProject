@@ -124,8 +124,7 @@ dispatch(fetchInstructorByIdRequest(id));
                       </ul>
                     </div>
                     <div className="other_instructor_view-col-lg-5">
-                      <a
-                        href="#"
+                      <div
                         className="other_instructor_view-report_profile"
                       >
                         <span>
@@ -137,7 +136,7 @@ dispatch(fetchInstructorByIdRequest(id));
                         >
                           Report Profile
                         </Link>
-                      </a>
+                      </div>
                       <div className="other_instructor_view-social">
                         <ul className="social-icons">
                           <a href="#" className="oiv-fb">
@@ -174,7 +173,7 @@ dispatch(fetchInstructorByIdRequest(id));
             <div className="other_instructor_view-row">
               <div className="other_instructor_view-col-lg-12">
                 <div className="other_instructor_view-course_tabs">
-                  <nav>
+                  <div>
                     <div className="other_instructor_view-nav">
                       <div
                         className={`tab ${oivtab === "about" ? "active" : ""}`}
@@ -504,7 +503,7 @@ dispatch(fetchInstructorByIdRequest(id));
                         </div>
                       </div>
                     )}
-                  </nav>
+                  </div>
                 </div>
               </div>
             </div>
