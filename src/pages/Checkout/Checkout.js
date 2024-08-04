@@ -6,21 +6,137 @@ import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
 import "./Checkout.css";
 export default function Checkout() {
-  const [selectedCountry, setSelectedCountry] = useState("1");
+  // const [selectedCountry, setSelectedCountry] = useState("1");
+  // const [activeTab, setActiveTab] = useState("credit-method-tab");
 
-  const handleChangeselect = (event) => {
-    setSelectedCountry(event.target.value);
+  // const openTab = (tabName) => {
+  //   setActiveTab(tabName);
+  // };
+
+  // const [formData, setFormData] = useState({
+  //   firstName: "Joginder",
+  //   lastName: "Singh",
+  //   academyName: "Gambolthemes",
+  //   country: "India",
+  //   postalCode: "302012",
+  //   city: "Jaipur",
+  //   address1: "B-778, JMD, Sitapura, Near Genpact",
+  //   address2: "",
+  // });
+
+  // const [addressText, setAddressText] = useState(`
+  //   Joginder Singh
+  //   #1234 Street No. 45, Ward No. 60, Phase 3,
+  //   Shahid Karnail Singh Nagar, Near Pakhowal
+  //   Road.
+  //   Ludhiana, Punjab, 141013
+  //   India
+  // `);
+
+  // const [name, setName] = useState("Joginder");
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData({
+  //     ...formData,
+  //     [name]: value,
+  //   });
+  // };
+
+  // const handleChangeselect = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     country: e.target.value,
+  //   });
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setAddressText(`
+  //     ${formData.firstName} ${formData.lastName}
+  //     ${formData.address1}${formData.address2 ? ", " + formData.address2 : ""}
+  //     ${formData.city}, ${formData.country}, ${formData.postalCode}
+  //     India
+  //   `);
+  //   setIsOpen(false);
+  // };
+  // const [isOpen, setIsOpen] = useState(false);
+
+  // const toggleDropdown = () => {
+  //   setIsOpen(!isOpen);
+  // };
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const { total } = location.state || { total: 0 };
+  // const GTX = total * 0.2;
+  // const originalPrice = total + GTX;
+
+  // const handleInvoice = () => {
+  //   navigate(PATH_NAME.INVOICE, {
+  //     state: {
+  //       originalPrice: originalPrice,
+  //       address: address,
+  //     },
+  //   });
+  // };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { total } = location.state || { total: 0 };
+  const GTX = total * 0.2;
+  const originalPrice = total + GTX;
+
+  const [selectedCountry, setSelectedCountry] = useState("1");
+  const [activeTab, setActiveTab] = useState("credit-method-tab");
+
+  const openTab = (tabName) => {
+    setActiveTab(tabName);
   };
+
+  const [formData, setFormData] = useState({
+    firstName: "Joginder",
+    lastName: "Singh",
+    academyName: "Gambolthemes",
+    country: "India",
+    postalCode: "302012",
+    city: "Jaipur",
+    address1: "B-778, JMD, Sitapura, Near Genpact",
+    address2: "",
+  });
+
+  const [addressText, setAddressText] = useState(`
+    Joginder Singh
+    #1234 Street No. 45, Ward No. 60, Phase 3,
+    Shahid Karnail Singh Nagar, Near Pakhowal
+    Road.
+    Ludhiana, Punjab, 141013
+    India
+  `);
 
   const [name, setName] = useState("Joginder");
 
-  const handleChange = (event) => {
-    setName(event.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
-  const [activeTab, setActiveTab] = useState("credit-method-tab");
 
-  const openTab = (tabId) => {
-    setActiveTab(tabId);
+  const handleChangeselect = (e) => {
+    setFormData({
+      ...formData,
+      country: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setAddressText(`
+      ${formData.firstName} ${formData.lastName}
+      ${formData.address1}${formData.address2 ? ", " + formData.address2 : ""}
+      ${formData.city}, ${formData.country}, ${formData.postalCode}
+    `);
+    setIsOpen(false);
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -28,19 +144,16 @@ export default function Checkout() {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { total } = location.state || { total: 0 };
-  const GTX = total * 0.2;
-  const originalPrice = total + GTX;
 
   const handleInvoice = () => {
     navigate(PATH_NAME.INVOICE, {
       state: {
         originalPrice: originalPrice,
+        address: addressText,
       },
     });
   };
+
   return (
     <div className="CheckoutPage">
       <Header />
@@ -75,7 +188,7 @@ export default function Checkout() {
 
       <div className="Checkout-Container">
         <div className="Billing-Details-GridContainer">
-          <div className="Billing-Details">
+          {/* <div className="Billing-Details">
             <div className="checkout_titie">
               <h4>Billing Details</h4>
               <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg" />
@@ -530,6 +643,179 @@ export default function Checkout() {
               <br />
               India
             </div>
+          </div> */}
+          <div className="Billing-Details">
+            <div className="checkout_titie">
+              <h4>Billing Details</h4>
+              <img
+                src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg"
+                alt="line"
+              />
+            </div>
+
+            <div className="panel-group">
+              <div className=" panel-default">
+                <div
+                  className="panel-heading-checkout"
+                  onClick={toggleDropdown}
+                >
+                  <span className="edit-title">Edit Address</span>
+                  <span className="edit-icon">{isOpen ? "−" : "✚"}</span>
+                </div>
+                <div className={`panel-collapse ${isOpen ? "show" : ""}`}>
+                  <div className="panel-body basic_form">
+                    <form onSubmit={handleSubmit}>
+                      <div className="grid-container">
+                        <div className="Gridcheckout">
+                          <div className="ui search focus mt-30 lbel25">
+                            <label>First Name*</label>
+                            <div className="ui left icon input swdh11 swdh19">
+                              <input
+                                className="prompt srch_explore"
+                                type="text"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}
+                                placeholder="First Name"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="Gridcheckout">
+                          <div className="ui search focus mt-30 lbel25">
+                            <label>Last Name*</label>
+                            <div className="ui left icon input swdh11 swdh19">
+                              <input
+                                className="prompt srch_explore"
+                                type="text"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={handleChange}
+                                placeholder="Last Name"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="Gridcheckout-full">
+                          <div className="ui search focus mt-30 lbel25">
+                            <label>Academy Name*</label>
+                            <div className="ui left icon input swdh11 swdh19">
+                              <input
+                                className="prompt srch_explore"
+                                type="text"
+                                name="academyName"
+                                value={formData.academyName}
+                                onChange={handleChange}
+                                placeholder="Academy Name"
+                              />
+                            </div>
+                            <div className="help-block">
+                              If you want your invoices addressed to an academy,
+                              leave blank to use your full name.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="Gridcheckout-full">
+                          <div className="mt-30 lbel25">
+                            <label>Country*</label>
+                          </div>
+                          <input
+                            className="prompt srch_explore"
+                            type="text"
+                            name="country"
+                            value={formData.country}
+                            onChange={handleChange}
+                            placeholder="Country"
+                          />
+                        </div>
+
+                        <div className="Gridcheckout">
+                          <div className="ui search focus mt-30 lbel25">
+                            <label>Postal Code*</label>
+                            <div className="ui left icon input swdh11 swdh19">
+                              <input
+                                className="prompt srch_explore"
+                                type="text"
+                                name="postalCode"
+                                value={formData.postalCode}
+                                onChange={handleChange}
+                                placeholder="Postal Code"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="Gridcheckout">
+                          <div className="ui search focus mt-30 lbel25">
+                            <label>City*</label>
+                            <div className="ui left icon input swdh11 swdh19">
+                              <input
+                                className="prompt srch_explore"
+                                type="text"
+                                name="city"
+                                value={formData.city}
+                                onChange={handleChange}
+                                placeholder="City"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="Gridcheckout-full">
+                          <div className="ui search focus mt-30 lbel25">
+                            <label>Address Line 1*</label>
+                            <div className="ui left icon input swdh11 swdh19">
+                              <input
+                                className="prompt srch_explore"
+                                type="text"
+                                name="address1"
+                                value={formData.address1}
+                                onChange={handleChange}
+                                placeholder="Address 1"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="Gridcheckout-full">
+                          <div className="ui search focus mt-30 lbel25">
+                            <label>Address Line 2</label>
+                            <div className="ui left icon input swdh11 swdh19">
+                              <input
+                                className="prompt srch_explore"
+                                type="text"
+                                name="address2"
+                                value={formData.address2}
+                                onChange={handleChange}
+                                placeholder="Address 2"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="Gridcheckout-full">
+                          <button className="save_address_btn" type="submit">
+                            Save Changes
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="address_text">
+              {addressText.split("\n").map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
+            </div>
           </div>
 
           <div className="Billing-Details">
@@ -540,7 +826,7 @@ export default function Checkout() {
               </div>
 
               <div className="Select-custom-tabs-container">
-                <ul className="Select-custom-tabs-nav" role="tablist">
+                {/* <ul className="Select-custom-tabs-nav" role="tablist">
                   <li className="Select-custom-tabs-item">
                     <a
                       href="#credit-method-tab"
@@ -572,6 +858,50 @@ export default function Checkout() {
                   <li className="Select-custom-tabs-item">
                     <a
                       href="#paypal-method-tab"
+                      className={
+                        activeTab === "paypal-method-tab"
+                          ? "Select-custom-tabs-link active"
+                          : "Select-custom-tabs-link"
+                      }
+                      onClick={() => openTab("paypal-method-tab")}
+                    >
+                      <i className="fa fa-paypal"></i>
+                      <br /> Paypal
+                    </a>
+                  </li>
+                </ul> */}
+                <ul className="Select-custom-tabs-nav" role="tablist">
+                  <li className="Select-custom-tabs-item">
+                    <a
+                      href="#"
+                      className={
+                        activeTab === "credit-method-tab"
+                          ? "Select-custom-tabs-link active"
+                          : "Select-custom-tabs-link"
+                      }
+                      onClick={() => openTab("credit-method-tab")}
+                    >
+                      <i className="fa fa-credit-card"></i>
+                      <br /> Credit/Debit Card
+                    </a>
+                  </li>
+                  <li className="Select-custom-tabs-item">
+                    <a
+                      href="#"
+                      className={
+                        activeTab === "bank-method-tab"
+                          ? "Select-custom-tabs-link active"
+                          : "Select-custom-tabs-link"
+                      }
+                      onClick={() => openTab("bank-method-tab")}
+                    >
+                      <i className="fa fa-university"></i>
+                      <br /> Bank Transfer
+                    </a>
+                  </li>
+                  <li className="Select-custom-tabs-item">
+                    <a
+                      href="#"
                       className={
                         activeTab === "paypal-method-tab"
                           ? "Select-custom-tabs-link active"
