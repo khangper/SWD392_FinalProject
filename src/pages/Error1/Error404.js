@@ -1,6 +1,7 @@
 import React from 'react'
 import './Error404.css'
 import { Link } from 'react-router-dom'
+import { PATH_NAME } from '../../constant/pathname'
 export const Error404 = () => {
     return (
         <div className="wrapper error_wrapper">
@@ -9,7 +10,7 @@ export const Error404 = () => {
                     <div className="col-md-12">
                         <div className="cmtk_group">
                             <div className="ct-logo">
-                                <a href="index.html"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></a>
+                                <Link to={PATH_NAME.LOGIN}><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></Link>
                             </div>
                             <div className="cmtk_dt">
                                 <h1 className="thnk_coming_title">404</h1>
