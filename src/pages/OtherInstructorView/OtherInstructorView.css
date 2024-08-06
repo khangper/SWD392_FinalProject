@@ -28,8 +28,6 @@
   padding-left: 0 !important;
 }
 
-.other_instructor_view-social {
-}
 
 .other_instructor_view-report_profile span i {
   color: #fff;
@@ -250,9 +248,6 @@
 
 .about-tab {
   padding: 20px;
-  background-color: #f9f9f9; /* Light background color */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .other_instructor_view-about_me {
@@ -563,6 +558,8 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  background-color: #fff;
+  padding: 15px;
 }
 
 .cmnt_group {
@@ -586,6 +583,7 @@
   font-size: 14px;
   outline: none;
   resize: none;
+  background: #f7f7f7;
 }
 
 .oiv-cmnt-btn {
@@ -604,15 +602,15 @@
 }
 
 .oiv-review_item {
-  background-color: #f9f9f9;
-  border: 1px solid #e6e6e6;
-  border-radius: 4px;
   padding: 15px;
-  margin-bottom: 10px;
+  background-color: #fff;
 }
-
+.oiv-review_item:first-child{
+  border-bottom: 1px solid #efefef;
+}
 .oiv-review_reply {
-  margin-left: 50px;
+  padding-left: 50px;
+  background-color: #fff;
 }
 
 .oiv-review_usr_dt {

@@ -13,7 +13,7 @@ export default function SendFeedback() {
     const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
 
     const uploadFileToCloudinary = async (file) => {
-        const formData = new FormData();
+        const formData = new FormData();    
         formData.append('file', file);
         formData.append('upload_preset', 'attachment'); 
 
