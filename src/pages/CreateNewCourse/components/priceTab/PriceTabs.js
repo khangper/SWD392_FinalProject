@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './PriceTabs.css';
 
-const PriceTabs = () => {
+const PriceTabs = ({price, setPrice}) => {
   const [activeTab, setActiveTab] = useState('free');
-
+  const handlePriceChange = (e) => {
+    const value = e.target.value.replace(/[^0-9]/g, ''); 
+    setPrice(value);
+  };
   return (
     <div className="price-course-pricing-tabs">
       <div className="price-tab-buttons">
@@ -60,9 +63,11 @@ const PriceTabs = () => {
                     <div className="form-group">
                       <input
                         type="text"
-                        id="headline"
-                        name="headline"
+                        id="price"
+                        name="price"
                         placeholder="$0"
+                        value={price}
+                        onChange={handlePriceChange}
                       />
                       <div className="form-counter">USD</div>
                     </div>

@@ -11,8 +11,7 @@ import star from "../../assets/star.png";
 import search from "../../assets/search.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchHomeFeaturedCoursesDetailRequest } from "../../redux/reduxActions/homeActions/HomeFeaturedCourseAction";
-import { fetchNewestCourseDetailRequest } from "../../redux/reduxActions/homeActions/HomeNewestCourseAction";
+import { fetchFeaturedCoursesDetailRequest } from "../../redux/reduxActions/coursesDetailActions/featureCoursesDetailAction";
 
 const CoursesDetailView = () => {
   const sections = [
@@ -544,23 +543,20 @@ const CoursesDetailView = () => {
 
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { loading, error, featuredCourses } = useSelector((state) => state.home_featuredcourse);
-  const { newestCourses } = useSelector((state) => state.home_newestcourse);
+  const { featureCourses } = useSelector((state) => state.featureCoursesDetail);
 
-  const currentCourseDetail = featuredCourses.find(courseDetail => courseDetail.id === id)
-  const newestCourseDetail = newestCourses.find(course => course.id === id)
-
-  useEffect(() => {
-    if (!currentCourseDetail) {
-      dispatch(fetchHomeFeaturedCoursesDetailRequest(id));
-    }
-  }, [dispatch, id, currentCourseDetail]);
+  // const currentCourseDetail = featuredCourses.find(courseDetail => courseDetail.id === id)
+  // const newestCourseDetail = newestCourses.find(course => course.id === id)
 
   useEffect(() => {
-    if (!newestCourseDetail) {
-      dispatch(fetchNewestCourseDetailRequest(id));
-    }
-  }, [dispatch, id, newestCourseDetail]);
+    dispatch(fetchFeaturedCoursesDetailRequest(id));
+  }, [dispatch, id]);
+
+  // useEffect(() => {
+  //   if (!newestCourseDetail) {
+  //     dispatch(fetchNewestCourseDetailRequest(id));
+  //   }
+  // }, [dispatch, id, newestCourseDetail]);
 
   const handleoivTabChange = (tab) => {
     setOivtab(tab);
@@ -571,9 +567,7 @@ const CoursesDetailView = () => {
     setAccordion(accordion === index ? null : index);
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!currentCourseDetail) return <div>Course not found</div>;
+  if (!featureCourses) return <div>Course not found</div>;
   return (
     <div>
       <div className="courses_detail_view-div1">
@@ -586,7 +580,7 @@ const CoursesDetailView = () => {
                     <div className="cdv-preview_video">
                       <a href="#" className="fcrse_img">
                         <img
-                          src={currentCourseDetail.imgSrc}
+                          src={featureCourses.feature_courses_detail?.imgSrc}
                           alt=""
                         />
                         <div className="cdv-course-overlay">
@@ -617,20 +611,26 @@ const CoursesDetailView = () => {
                   </div>
                   <div className="courses_detail_view-box2">
                     <div className="cdv-label1">
-                      <h2>{currentCourseDetail.title}</h2>
+                      <h2>{featureCourses.feature_courses_detail?.title}</h2>
                       <span className="cdv-label2">
-                        The only course you need to learn web development -
-                        HTML, CSS, JS, Node, and More!
+                        {
+                          featureCourses.feature_courses_detail
+                            .information_courses
+                        }
                       </span>
                     </div>
                     <div className="cdv-rate_star">
                       <div className="crse_reviews mr-2">
-                        <img className="starIcon" src={ratingStar}></img>{currentCourseDetail.rating}
+                        <img className="starIcon" src={ratingStar}></img>
+                        {featureCourses.feature_courses_detail?.rating}
                       </div>
-                      (81,665 ratings)
+                      (
+                      {featureCourses.feature_courses_detail?.ratingCount.toLocaleString()}{" "}
+                      ratings)
                     </div>
                     <div className="cdv-rate_star">
-                      {currentCourseDetail.views} students enrolled
+                      {featureCourses.feature_courses_detail?.enrollCount.toLocaleString()}{" "}
+                      students enrolled
                     </div>
                     <div className="cdv-language">
                       <div className="cdv-language-label1">
@@ -696,14 +696,16 @@ const CoursesDetailView = () => {
                     <div className="cdv-user_img">
                       <a href="#">
                         <img
-                          src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg    "
+                          src={
+                            featureCourses.feature_courses_detail?.imgChannel
+                          }
                           alt=""
                         />
                       </a>
                     </div>
                     <div className="cdv-user_cntnt">
                       <a href="#" className="cdv-user-name">
-                        Johnson Smith
+                        {featureCourses.feature_courses_detail?.author}
                       </a>
                       <button className="cdv-subscribe-btn">Subscribe</button>
                     </div>
@@ -712,24 +714,32 @@ const CoursesDetailView = () => {
                 <div className="cdv-contact_icon">
                   <a href="#" className="cdv-report1">
                     <img src={eyes} />
-                    <span>1452</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.viewCount}
+                    </span>
                   </a>
                   <a href="#" className="cdv-report1">
                     <img src={like} />
-                    <span>100</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.likeCount}
+                    </span>
                   </a>
                   <a href="#" className="cdv-report1">
                     <img src={dislike} />
-                    <span>20</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.dislikeCount}
+                    </span>
                   </a>
                   <a href="#" className="cdv-report1">
                     <img src={share} />
-                    <span>9</span>
+                    <span>
+                      {featureCourses.feature_courses_detail?.shareCount}
+                    </span>
                   </a>
                 </div>
               </div>
               <div className="courses_detail_view_tabs">
-                <nav>
+                <div>
                   <div className="courses_detail_view-nav">
                     <div
                       className={`tab ${oivtab === "about" ? "active" : ""}`}
@@ -1334,14 +1344,11 @@ const CoursesDetailView = () => {
                                 <div className="total_rating">
                                   <div className="_rate001">4.6</div>
                                   <div className="rating-box">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star half-star"/>
                                   </div>
                                   <div className="_rate002">Course Rating</div>
                                 </div>
@@ -1351,26 +1358,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-70"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star"/>
                                     </div>
                                     <div className="_rate002">70%</div>
                                   </div>
@@ -1379,26 +1371,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-30"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">40%</div>
                                   </div>
@@ -1407,26 +1384,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-5"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">5%</div>
                                   </div>
@@ -1435,26 +1397,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-2"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">1%</div>
                                   </div>
@@ -1463,26 +1410,11 @@ const CoursesDetailView = () => {
                                       <div className="progress-bar w-1"></div>
                                     </div>
                                     <div className="rating-box">
-                                      <img
-                                        src={star}
-                                        className="cdv-rate-star"
-                                      />
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
-                                      <img
-                                        className="starIcon"
-                                        src={ratingStar}
-                                      ></img>
+                                     <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                     </div>
                                     <div className="_rate002">1%</div>
                                   </div>
@@ -1524,14 +1456,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1550,7 +1479,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1563,7 +1492,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1593,14 +1522,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1619,7 +1545,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1632,7 +1558,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1662,14 +1588,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1688,7 +1611,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1701,7 +1624,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1731,14 +1654,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1757,7 +1677,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1770,7 +1690,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1800,14 +1720,11 @@ const CoursesDetailView = () => {
                                     </div>
                                   </div>
                                   <div className="rating-box ">
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img src={star} className="cdv-rate-star" />
-                                    <img
-                                      className="starIcon"
-                                      src={ratingStar}
-                                    ></img>
+                                  <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star" />
+                                    <span className="cdv-rate-star empty-star"/>
                                   </div>
                                   <p className="cdv-cmnt_text_message">
                                     Nam gravida elit a velit rutrum, eget
@@ -1826,7 +1743,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-1"
+                                          htmlFor="radio-1"
                                           className="radio-label"
                                         >
                                           Yes
@@ -1839,7 +1756,7 @@ const CoursesDetailView = () => {
                                           type="radio"
                                         />
                                         <label
-                                          for="radio-2"
+                                          htmlFor="radio-2"
                                           className="radio-label"
                                         >
                                           No
@@ -1851,7 +1768,7 @@ const CoursesDetailView = () => {
                                     </a>
                                   </div>
                                 </div>
-                                <div className="review_item">
+                                <div className="review_item_1">
                                   <a href="#" className="more_reviews">
                                     See More Reviews
                                   </a>
@@ -1863,7 +1780,7 @@ const CoursesDetailView = () => {
                       </div>
                     </div>
                   )}
-                </nav>
+                </div>
               </div>
             </div>
           </div>

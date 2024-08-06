@@ -18,25 +18,22 @@ import deletee from "../../assets/delete.png";
 import { Link, useParams } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchInstructorByIdRequest } from "../../redux/reduxActions/instructorActions";
 import { fetchCoursesDRequest } from "../../redux/reduxActions/CoursesDAction";
 import { fetchCommentsRequest } from "../../redux/reduxActions/CommentAction";
+import { fetchInstructorByIdRequest } from "../../redux/reduxActions/instructorActions/instructorByIdAction";
 const OtherInstructorView = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const { instructors, loading, error } = useSelector(
-    (state) => state.allinstructor
-  );
+  const { instructor} = useSelector((state) => state.instructorById);
 
-  const instructorDetail = instructors.find(instructor => instructor.id === id);
   const [oivtab, setOivtab] = useState("about");
   const [selectOptions, setSelectOptions] = useState("");
 
-  useEffect(() => {
-    if (!instructorDetail) {
-      dispatch(fetchInstructorByIdRequest(id));
-    }
-  }, [dispatch, id, instructorDetail]);
+
+   useEffect(() => {
+dispatch(fetchInstructorByIdRequest(id));
+    
+  }, [dispatch, id]);
 
   const { coursesd } = useSelector((state) => state.coursesd);
 
@@ -57,6 +54,10 @@ const OtherInstructorView = () => {
   const handleSelectChange = (event) => {
     setSelectOptions(event.target.value);
   };
+
+  if (!instructor) {
+    return null;
+  }
   return (
     <div>
       <div className="other_instructor_view-wrapper">
@@ -69,11 +70,14 @@ const OtherInstructorView = () => {
                     <div className="other_instructor_view-col-lg-6">
                       <div className="other_instructor_view-avatar">
                         <div className="other_instructor_view-img">
-                          <img src={instructorDetail.image} alt={instructorDetail.name} />
+                          <img
+                            src={instructor.instructordetail.img}
+                            alt={instructor.instructordetail.name}
+                          />
                         </div>
                         <div className="other_instructor_view-name-career">
-                          <h2>{instructorDetail.name}</h2>
-                          <span>{instructorDetail.category}</span>
+                          <h2>{instructor.instructordetail.name}</h2>
+                          <span>{instructor.instructordetail.category}</span>
                         </div>
                       </div>
                       <ul className="other_instructor_view-more_info">
@@ -120,17 +124,19 @@ const OtherInstructorView = () => {
                       </ul>
                     </div>
                     <div className="other_instructor_view-col-lg-5">
-                      <a
-                        href="#"
+                      <div
                         className="other_instructor_view-report_profile"
                       >
                         <span>
                           <i className="uil uil-windsock"></i>
                         </span>
-                        <Link to={PATH_NAME.REPORT_HISTORY} className="report-profile">
+                        <Link
+                          to={PATH_NAME.REPORT_HISTORY}
+                          className="report-profile"
+                        >
                           Report Profile
                         </Link>
-                      </a>
+                      </div>
                       <div className="other_instructor_view-social">
                         <ul className="social-icons">
                           <a href="#" className="oiv-fb">
@@ -167,7 +173,7 @@ const OtherInstructorView = () => {
             <div className="other_instructor_view-row">
               <div className="other_instructor_view-col-lg-12">
                 <div className="other_instructor_view-course_tabs">
-                  <nav>
+                  <div>
                     <div className="other_instructor_view-nav">
                       <div
                         className={`tab ${oivtab === "about" ? "active" : ""}`}
@@ -176,15 +182,17 @@ const OtherInstructorView = () => {
                         <div className="oiv-nav-about">About</div>
                       </div>
                       <div
-                        className={`tab ${oivtab === "courses" ? "active" : ""
-                          }`}
+                        className={`tab ${
+                          oivtab === "courses" ? "active" : ""
+                        }`}
                         onClick={() => handleoivTabChange("courses")}
                       >
                         <div className="oiv-nav-courses">Courses</div>
                       </div>
                       <div
-                        className={`tab ${oivtab === "discussion" ? "active" : ""
-                          }`}
+                        className={`tab ${
+                          oivtab === "discussion" ? "active" : ""
+                        }`}
                         onClick={() => handleoivTabChange("discussion")}
                       >
                         <div className="oiv-nav-discussion">Discussion</div>
@@ -241,36 +249,77 @@ const OtherInstructorView = () => {
                               {coursesd.map((course) => (
                                 <div className="oiv-course" key={course.id}>
                                   <div className="oiv-course-detail">
-                                    <a href="course_detail_view.html" className="fcrse_img">
-                                      <img src={course.image} alt='' />
+                                    <a
+                                      href="course_detail_view.html"
+                                      className="fcrse_img"
+                                    >
+                                      <img src={course.image} alt="" />
                                       <div className="oiv-course-overlay">
                                         {course.bestseller && (
-                                          <div className="oiv-badge_seller">Bestseller</div>
+                                          <div className="oiv-badge_seller">
+                                            Bestseller
+                                          </div>
                                         )}
                                         <div className="crse_reviews">
-                                          <img className="starIcon" src={ratingStar} alt="rating" />
+                                          <img
+                                            className="starIcon"
+                                            src={ratingStar}
+                                            alt="rating"
+                                          />
                                           {course.ratingStar}
                                         </div>
-                                        <div className="crse_timer">{course.time}</div>
+                                        <div className="crse_timer">
+                                          {course.time}
+                                        </div>
                                       </div>
                                     </a>
                                     <div className="fcrse_contents">
                                       <div className="fcrse_content">
                                         <div className="other_instructor_view-time_view">
-                                          <span className="view">{course.view} • </span>
-                                          <span className="time">{course.day}</span>
+                                          <span className="view">
+                                            {course.view} •{" "}
+                                          </span>
+                                          <span className="time">
+                                            {course.day}
+                                          </span>
                                         </div>
                                         <div className="eps_dots more_dropdown">
-                                          <a href="#" className="oiv-dropdown-button">⋮</a>
+                                          <a
+                                            href="#"
+                                            className="oiv-dropdown-button"
+                                          >
+                                            ⋮
+                                          </a>
                                           <div className="oiv-dropdown-content">
-                                            <span><img src={share} alt="share" />Share</span>
-                                            <span><img src={saved_course} alt="save" />Save</span>
-                                            <span><img src={not_interested} alt="not interested" />Not Interested</span>
-                                            <span><img src={report} alt="report" />Report</span>
+                                            <span>
+                                              <img src={share} alt="share" />
+                                              Share
+                                            </span>
+                                            <span>
+                                              <img
+                                                src={saved_course}
+                                                alt="save"
+                                              />
+                                              Save
+                                            </span>
+                                            <span>
+                                              <img
+                                                src={not_interested}
+                                                alt="not interested"
+                                              />
+                                              Not Interested
+                                            </span>
+                                            <span>
+                                              <img src={report} alt="report" />
+                                              Report
+                                            </span>
                                           </div>
                                         </div>
                                       </div>
-                                      <a href="course_detail_view.html" className="oiv-detail">
+                                      <a
+                                        href="course_detail_view.html"
+                                        className="oiv-detail"
+                                      >
                                         {course.detail}
                                       </a>
                                       <a href="#" className="oiv-career">
@@ -280,16 +329,24 @@ const OtherInstructorView = () => {
                                         <p className="oiv-publisher">
                                           By <a href="#">{course.author}</a>
                                         </p>
-                                        <div className="oiv-price">{course.price}</div>
-                                        <button className="oiv-cart" title="cart">
-                                          <img src={card_icon} alt="cart" className="oiv-cart-icon" />
+                                        <div className="oiv-price">
+                                          {course.price}
+                                        </div>
+                                        <button
+                                          className="oiv-cart"
+                                          title="cart"
+                                        >
+                                          <img
+                                            src={card_icon}
+                                            alt="cart"
+                                            className="oiv-cart-icon"
+                                          />
                                         </button>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               ))}
-
                             </div>
                           </div>
                         </div>
@@ -323,56 +380,122 @@ const OtherInstructorView = () => {
                                 </button>
                               </div>
                               {comments.map((comment) => (
-                                <div className="oiv-history-comment" key={comment.id}>
+                                <div
+                                  className="oiv-history-comment"
+                                  key={comment.id}
+                                >
                                   <div className="oiv-review_item">
                                     <div className="oiv-review_usr_dt">
                                       <img src={comment.userImage} alt="" />
                                       <div className="oiv-cmnt_name">
-                                        <h4 className="oiv-tutor_name">{comment.userName}</h4>
-                                        <span className="oiv-cmnt_time">{comment.timeAgo}</span>
+                                        <h4 className="oiv-tutor_name">
+                                          {comment.userName}
+                                        </h4>
+                                        <span className="oiv-cmnt_time">
+                                          {comment.timeAgo}
+                                        </span>
                                       </div>
                                       <div className="eps_dots more_dropdown">
-                                        <a href="#" className="oiv-dropdown-button">⋮</a>
+                                        <a
+                                          href="#"
+                                          className="oiv-dropdown-button"
+                                        >
+                                          ⋮
+                                        </a>
                                         <div className="oiv-dropdown-content">
-                                          <span><img src={edit} alt="edit" /> Edit</span>
-                                          <span><img src={deletee} alt="delete" /> Delete</span>
+                                          <span>
+                                            <img src={edit} alt="edit" /> Edit
+                                          </span>
+                                          <span>
+                                            <img src={deletee} alt="delete" />{" "}
+                                            Delete
+                                          </span>
                                         </div>
                                       </div>
                                     </div>
-                                    <p className="oiv-cmnt_text_message">{comment.message}</p>
+                                    <p className="oiv-cmnt_text_message">
+                                      {comment.message}
+                                    </p>
                                     <div className="oiv-contact_icon">
-                                      <a href="#" className="oiv-report"><img src={like} alt="like" /> {comment.likes}</a>
-                                      <a href="#" className="oiv-report"><img src={dislike} alt="dislike" /> {comment.dislikes}</a>
-                                      <a href="#" className="oiv-report"><img src={heart} alt="heart" /></a>
-                                      <a href="#" className="oiv-report ml-3">Reply</a>
+                                      <a href="#" className="oiv-report">
+                                        <img src={like} alt="like" />{" "}
+                                        {comment.likes}
+                                      </a>
+                                      <a href="#" className="oiv-report">
+                                        <img src={dislike} alt="dislike" />{" "}
+                                        {comment.dislikes}
+                                      </a>
+                                      <a href="#" className="oiv-report">
+                                        <img src={heart} alt="heart" />
+                                      </a>
+                                      <a href="#" className="oiv-report ml-3">
+                                        Reply
+                                      </a>
                                     </div>
                                   </div>
-                                  {comment.replies && comment.replies.map((reply) => (
-                                    <div className="oiv-review_reply" key={reply.id}>
-                                      <div className="oiv-review_item">
-                                        <div className="oiv-review_usr_dt">
-                                          <img src={reply.userImage} alt="" />
-                                          <div className="oiv-cmnt_name">
-                                            <h4 className="oiv-tutor_name">{reply.userName}</h4>
-                                            <span className="oiv-cmnt_time">{reply.timeAgo}</span>
-                                          </div>
-                                          <div className="eps_dots more_dropdown">
-                                            <a href="#" className="oiv-dropdown-button">⋮</a>
-                                            <div className="oiv-dropdown-content">
-                                              <span><img src={deletee} alt="delete" /> Delete</span>
+                                  {comment.replies &&
+                                    comment.replies.map((reply) => (
+                                      <div
+                                        className="oiv-review_reply"
+                                        key={reply.id}
+                                      >
+                                        <div className="oiv-review_item">
+                                          <div className="oiv-review_usr_dt">
+                                            <img src={reply.userImage} alt="" />
+                                            <div className="oiv-cmnt_name">
+                                              <h4 className="oiv-tutor_name">
+                                                {reply.userName}
+                                              </h4>
+                                              <span className="oiv-cmnt_time">
+                                                {reply.timeAgo}
+                                              </span>
+                                            </div>
+                                            <div className="eps_dots more_dropdown">
+                                              <a
+                                                href="#"
+                                                className="oiv-dropdown-button"
+                                              >
+                                                ⋮
+                                              </a>
+                                              <div className="oiv-dropdown-content">
+                                                <span>
+                                                  <img
+                                                    src={deletee}
+                                                    alt="delete"
+                                                  />{" "}
+                                                  Delete
+                                                </span>
+                                              </div>
                                             </div>
                                           </div>
-                                        </div>
-                                        <p className="oiv-cmnt_text_message">{reply.message}</p>
-                                        <div className="oiv-contact_icon">
-                                          <a href="#" className="oiv-report"><img src={like} alt="like" /> {reply.likes}</a>
-                                          <a href="#" className="oiv-report"><img src={dislike} alt="dislike" /> {reply.dislikes}</a>
-                                          <a href="#" className="oiv-report"><img src={heart} alt="heart" /></a>
-                                          <a href="#" className="oiv-report ml-3">Reply</a>
+                                          <p className="oiv-cmnt_text_message">
+                                            {reply.message}
+                                          </p>
+                                          <div className="oiv-contact_icon">
+                                            <a href="#" className="oiv-report">
+                                              <img src={like} alt="like" />{" "}
+                                              {reply.likes}
+                                            </a>
+                                            <a href="#" className="oiv-report">
+                                              <img
+                                                src={dislike}
+                                                alt="dislike"
+                                              />{" "}
+                                              {reply.dislikes}
+                                            </a>
+                                            <a href="#" className="oiv-report">
+                                              <img src={heart} alt="heart" />
+                                            </a>
+                                            <a
+                                              href="#"
+                                              className="oiv-report ml-3"
+                                            >
+                                              Reply
+                                            </a>
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                  ))}
+                                    ))}
                                 </div>
                               ))}
                             </div>
@@ -380,7 +503,7 @@ const OtherInstructorView = () => {
                         </div>
                       </div>
                     )}
-                  </nav>
+                  </div>
                 </div>
               </div>
             </div>

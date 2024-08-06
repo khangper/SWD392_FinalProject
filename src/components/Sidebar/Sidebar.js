@@ -133,7 +133,6 @@ const Sidebar = ({ sidebar }) => {
           <Link to={PATH_NAME.ERROR_404}>Error 404</Link>
           <Link to={PATH_NAME.VERTIFICATION}>Vertification</Link>
           <Link to={PATH_NAME.MYCERTIFICATIONS}>My Certifications</Link>
-          <Link to={PATH_NAME.CREATE_NEW_COURSE}>Create Course</Link>
         </div>
       )}
       <hr />

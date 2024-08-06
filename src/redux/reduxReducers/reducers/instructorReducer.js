@@ -1,7 +1,4 @@
 import {
-  FETCH_INSTRUCTOR_BY_ID_REQUEST,
-  FETCH_INSTRUCTOR_BY_ID_SUCCESS,
-  FETCH_INSTRUCTOR_BY_ID_FAILURE,
   FETCH_INSTRUCTORS_MORE_FAILURE,
   FETCH_INSTRUCTORS_MORE_REQUEST,
   FETCH_INSTRUCTORS_MORE_SUCCESS,
@@ -14,7 +11,7 @@ import {
 const initialState = {
   instructors: [],
   instructorsmore: [],
-  instructorDetail: null,
+  // instructorDetail: null,
   loading: false,
   error: null,
 };
@@ -28,12 +25,7 @@ const instructorReducer = (state = initialState, action) => {
       return { ...state, loading: false, instructors: action.payload };
     case FETCH_INSTRUCTORS_FAILURE:
       return { ...state, loading: false, error: action.payload };
-    case FETCH_INSTRUCTOR_BY_ID_REQUEST:
-      return { ...state, loading: true, error: null };
-    case FETCH_INSTRUCTOR_BY_ID_SUCCESS:
-      return { ...state, loading: false, instructorDetail: action.payload };
-    case FETCH_INSTRUCTOR_BY_ID_FAILURE:
-      return { ...state, loading: false, error: action.payload };
+    
     case FETCH_INSTRUCTORS_MORE_REQUEST:
       return { ...state, loading: true, error: null };
     case FETCH_INSTRUCTORS_MORE_SUCCESS:

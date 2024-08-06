@@ -1,0 +1,1174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Setting renders the Setting component 1`] = `
+<div>
+  <div
+    class="setting-container"
+  >
+    <section
+      class="setting-header"
+    >
+      <img
+        src="setting.png"
+      />
+      Setting
+    </section>
+    <section
+      class="setting-tabs"
+    >
+      <div
+        class="setting-tab"
+      >
+        <button
+          class="tablinks active"
+        >
+          Account
+        </button>
+        <button
+          class="tablinks "
+        >
+          Notification
+        </button>
+        <button
+          class="tablinks "
+        >
+          Privacy
+        </button>
+        <button
+          class="tablinks "
+        >
+          Billing and Payouts
+        </button>
+        <button
+          class="tablinks "
+        >
+          API Clients
+        </button>
+        <button
+          class="tablinks "
+        >
+          Close Account
+        </button>
+      </div>
+      <section
+        class="setting-tabcontent active"
+        id="Account"
+      >
+        <h4>
+          Your Cursus Account
+        </h4>
+        <p>
+          This is your public presence on Cursus.You need an account to upload your paid courses, comment on courses, purchased by students, or earning.
+        </p>
+        <div
+          class="basic-profile"
+        >
+          <div
+            class="basic-profile-header"
+          >
+            <h4>
+              Basic Profile
+            </h4>
+            <p>
+              Add information about yourself
+            </p>
+          </div>
+          <div
+            class="basic-profile-form"
+          >
+            <div
+              class="name-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  type="text"
+                />
+              </div>
+              <div
+                class="form-group"
+              >
+                <input
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last Name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="Headline"
+                  type="text"
+                />
+                <div
+                  class="form-counter"
+                >
+                  36
+                </div>
+              </div>
+              <div
+                class="help-block"
+              >
+                Add a professional headline like, "Engineerat Cursus" or "Architect"
+              </div>
+            </div>
+            <div
+              class="description-group"
+            >
+              <div
+                class="form-group"
+              >
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="Write a little description about you..."
+                  type="text"
+                />
+                <div
+                  class="help-block"
+                >
+                  Links and coupon codes are not permitted in this section.
+                </div>
+              </div>
+            </div>
+            <div
+              class="divider"
+            />
+          </div>
+          <div
+            class="basic-profile"
+          >
+            <div
+              class="basic-profile-header"
+            >
+              <h4>
+                Profile Links
+              </h4>
+            </div>
+            <div
+              class="basic-profile-form"
+            >
+              <div
+                class="link-group"
+              >
+                <div
+                  class="form-group"
+                >
+                  <div
+                    class="link-label-group"
+                  >
+                    <div
+                      class="link-label"
+                    >
+                      https://
+                    </div>
+                    <input
+                      id="website"
+                      name="website"
+                      placeholder="Website"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="form-group"
+                >
+                  <div
+                    class="link-label-group"
+                  >
+                    <div
+                      class="link-label"
+                    >
+                      https://facebook.com/
+                    </div>
+                    <input
+                      id="facebook"
+                      name="facebook"
+                      placeholder="Facebook Profile"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="help-block"
+                  >
+                    Add your Facebook username (e.g. John Doe).
+                  </div>
+                </div>
+                <div
+                  class="form-group"
+                >
+                  <div
+                    class="link-label-group"
+                  >
+                    <div
+                      class="link-label"
+                    >
+                      https://facebook.com/
+                    </div>
+                    <input
+                      id="facebook"
+                      name="facebook"
+                      placeholder="Facebook Profile"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="help-block"
+                  >
+                    Add your Facebook username (e.g. John Doe).
+                  </div>
+                </div>
+                <div
+                  class="form-group"
+                >
+                  <div
+                    class="link-label-group"
+                  >
+                    <div
+                      class="link-label"
+                    >
+                      https://x.com/
+                    </div>
+                    <input
+                      id="x"
+                      name="x"
+                      placeholder="X Profile"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="help-block"
+                  >
+                    Add your X username (e.g. John Doe).
+                  </div>
+                </div>
+                <div
+                  class="form-group"
+                >
+                  <div
+                    class="link-label-group"
+                  >
+                    <div
+                      class="link-label"
+                    >
+                      https://www.linkedin.com/
+                    </div>
+                    <input
+                      id="linkedin"
+                      name="linkedin"
+                      placeholder="Linkedin Profile"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="help-block"
+                  >
+                    Add your LinkedIn resource (e.g. in/John Doe).
+                  </div>
+                </div>
+                <div
+                  class="form-group"
+                >
+                  <div
+                    class="link-label-group"
+                  >
+                    <div
+                      class="link-label"
+                    >
+                      https://www.youtube.com/
+                    </div>
+                    <input
+                      id="youtube"
+                      name="youtube"
+                      placeholder="Youtube Profile"
+                      type="text"
+                    />
+                  </div>
+                  <div
+                    class="help-block"
+                  >
+                    Add your Youtube username (e.g. John Doe).
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="save-changes-button"
+          >
+            Save Changes
+          </button>
+        </div>
+      </section>
+      <section
+        class="setting-tabcontent "
+        id="Notification"
+      >
+        <h4>
+          Notifications - Choose when and how to be notified
+        </h4>
+        <p>
+          Select push and email notifications you'd like to receive
+        </p>
+        <div
+          class="basic-profile"
+        >
+          <div
+            class="basic-profile-header"
+          >
+            <h4>
+              Choose when and how to be notified
+            </h4>
+          </div>
+          <div
+            class="basic-profile-form"
+          >
+            <div
+              class="checkbox-content "
+            >
+              <input
+                class="hidden"
+                id="subscriptions"
+                name="subscriptions"
+                type="checkbox"
+              />
+              <label
+                for="subscriptions"
+              />
+              <div
+                class="label-text"
+              >
+                <span
+                  class="label-title"
+                >
+                  Subscriptions
+                </span>
+                <p>
+                  Notify me about activity from the profiles I'm subscribed to
+                </p>
+              </div>
+            </div>
+            <div
+              class="checkbox-content "
+            >
+              <input
+                class="hidden"
+                id="recommended-courses"
+                name="recommended-courses"
+                type="checkbox"
+              />
+              <label
+                for="recommended-courses"
+              />
+              <div
+                class="label-text"
+              >
+                <span
+                  class="label-title"
+                >
+                  Recommended Courses
+                </span>
+                <p>
+                  Notify me of courses I might like based on what I watch
+                </p>
+              </div>
+            </div>
+            <div
+              class="checkbox-content "
+            >
+              <input
+                class="hidden"
+                id="activity-on-my-comments"
+                name="activity-on-my-comments"
+                type="checkbox"
+              />
+              <label
+                for="activity-on-my-comments"
+              />
+              <div
+                class="label-text"
+              >
+                <span
+                  class="label-title"
+                >
+                  Activity on my comments
+                </span>
+                <p>
+                  Notify me about activity on my comments on others' courses
+                </p>
+              </div>
+            </div>
+            <div
+              class="checkbox-content "
+            >
+              <input
+                class="hidden"
+                id="replies-to-my-comments"
+                name="replies-to-my-comments"
+                type="checkbox"
+              />
+              <label
+                for="replies-to-my-comments"
+              />
+              <div
+                class="label-text"
+              >
+                <span
+                  class="label-title"
+                >
+                  Replies to my comments
+                </span>
+                <p>
+                  Notify me about replies to my comments
+                </p>
+              </div>
+            </div>
+            <div
+              class="divider"
+            />
+          </div>
+          <div
+            class="basic-profile"
+          >
+            <div
+              class="basic-profile-header"
+            >
+              <h4>
+                Email notifications
+              </h4>
+              <p>
+                Your emails are sent to gambol943@gmail.com. To unsubcribe from an email, click the 'Unsubscribe" link at the bottom of it. 
+                <a
+                  href="#"
+                >
+                  Learn more
+                </a>
+                 about emails from Edututs+.
+              </p>
+            </div>
+            <div
+              class="basic-profile-form"
+            >
+              <div
+                class="checkbox-content "
+              >
+                <input
+                  class="hidden"
+                  id="cursus-activity"
+                  name="cursus-activity"
+                  type="checkbox"
+                />
+                <label
+                  for="cursus-activity"
+                />
+                <div
+                  class="label-text"
+                >
+                  <span
+                    class="label-title"
+                  >
+                    Send me emails about my Cursus activity and updates I requested
+                  </span>
+                  <p>
+                    If this setting is turned off, Cursus may still send you messages regarding your account, required service announcements, legal notifications, and privacy matters.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="checkbox-content "
+              >
+                <input
+                  class="hidden"
+                  id="promotions"
+                  name="promotions"
+                  type="checkbox"
+                />
+                <label
+                  for="promotions"
+                />
+                <div
+                  class="label-text"
+                >
+                  <span
+                    class="label-title"
+                  >
+                    Promotions, course recommendations, and helpful resources from Cursus.
+                  </span>
+                </div>
+              </div>
+              <div
+                class="checkbox-content "
+              >
+                <input
+                  class="hidden"
+                  id="instructor-announcements"
+                  name="instructor-announcements"
+                  type="checkbox"
+                />
+                <label
+                  for="instructor-announcements"
+                />
+                <div
+                  class="label-text"
+                >
+                  <span
+                    class="label-title"
+                  >
+                    Announcements from instructors whose course(s) I’m enrolled in.
+                  </span>
+                  <p>
+                    To adjust this preference by course, leave this box checked and go to the course dashboard and click on "Options" to opt in or out of specific announcements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="save-changes-button"
+          >
+            Save Changes
+          </button>
+        </div>
+      </section>
+      <section
+        class="setting-tabcontent "
+        id="Privacy"
+      >
+        <h4>
+          Privacy
+        </h4>
+        <p>
+          Modify your privacy settings here.
+        </p>
+        <div
+          class="basic-profile"
+        >
+          <div
+            class="basic-profile-header"
+          >
+            <h4>
+              Profile page settings
+            </h4>
+          </div>
+          <div
+            class="basic-profile-form"
+          >
+            <div
+              class="checkbox-content "
+            >
+              <input
+                class="hidden"
+                id="showonOnSearch"
+                name="showonOnSearch"
+                type="checkbox"
+              />
+              <label
+                for="showonOnSearch"
+              />
+              <div
+                class="label-text-privacy"
+              >
+                <p>
+                  Show your profile on search engines.
+                </p>
+              </div>
+            </div>
+            <div
+              class="checkbox-content "
+            >
+              <input
+                class="hidden"
+                id="show-courses"
+                name="show-courses"
+                type="checkbox"
+              />
+              <label
+                for="show-courses"
+              />
+              <div
+                class="label-text-privacy"
+              >
+                <p>
+                  Show courses you're taking on your profile page
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="save-changes-button"
+          >
+            Save Changes
+          </button>
+        </div>
+      </section>
+      <section
+        class="setting-tabcontent "
+        id="Billing"
+      >
+        <h4>
+          Billing and Payouts
+        </h4>
+        <p>
+          Want to charge for a course? Provide your payment info and opt in for our promotional programs
+        </p>
+        <div
+          class="basic-profile"
+        >
+          <div
+            class="basic-profile-header"
+          >
+            <h4>
+              Basic Profile
+            </h4>
+            <p>
+              Add information about yourself
+            </p>
+          </div>
+          <div
+            class="basic-profile-form"
+          >
+            <div
+              class="name-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="firstName"
+                  name="firstName"
+                  placeholder="First Name"
+                  type="text"
+                />
+              </div>
+              <div
+                class="form-group"
+              >
+                <input
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Last Name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="Academy Name"
+                  type="text"
+                />
+              </div>
+              <div
+                class="help-block"
+              >
+                If you want your invoices addressed to a academy. Leave blank to use your full name.
+              </div>
+            </div>
+            <div>
+              <div
+                class="billing-dropdown"
+              >
+                <button
+                  class="dropdown-toggle "
+                >
+                  India
+                   
+                  <span
+                    class="arrow"
+                  />
+                </button>
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="Address Line 1"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="Address Line 2"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="City"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="State/ Province/ Region"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="Zip/ Postal Code"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="headline-group"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  id="headline"
+                  name="headline"
+                  placeholder="Phone Number"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="divider"
+            />
+            <div
+              class="basic-profile"
+            >
+              <div
+                class="basic-profile-header"
+              >
+                <h4>
+                  Exclusive Sales
+                </h4>
+                <p>
+                  Sell more of your exclusive products of this type (equal to the amount on the left) to get % cut from further exclusive sales
+                </p>
+              </div>
+              <div
+                class="basic-profile-form"
+              >
+                <div
+                  class="sales-grid"
+                >
+                  <div
+                    class="sales-grid-row"
+                  >
+                    <div
+                      class="sales-grid-item highlight"
+                    >
+                      $0
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $2,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $8,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $18,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $40,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $75,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $100,000
+                    </div>
+                  </div>
+                  <div
+                    class="sales-grid-row"
+                  >
+                    <div
+                      class="sales-grid-item highlight"
+                    >
+                      50%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      53%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      55%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      58%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      62%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      70%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      80%
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="basic-profile-header"
+              >
+                <h4>
+                  Non-Exclusive Sales
+                </h4>
+                <p>
+                  Sell more of your non-exclusive products of this type (equal to the amount on the left) to get 70% cut from further non-exclusive sales
+                </p>
+              </div>
+              <div
+                class="basic-profile-form"
+              >
+                <div
+                  class="sales-grid"
+                >
+                  <div
+                    class="sales-grid-row"
+                  >
+                    <div
+                      class="sales-grid-item highlight"
+                    >
+                      $0
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $2,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $8,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $18,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $40,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $75,000
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      $100,000
+                    </div>
+                  </div>
+                  <div
+                    class="sales-grid-row"
+                  >
+                    <div
+                      class="sales-grid-item highlight"
+                    >
+                      30%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      30%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      30%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      30%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      30%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      30%
+                    </div>
+                    <div
+                      class="sales-grid-item"
+                    >
+                      30%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="divider"
+            />
+            <div
+              class="basic-profile"
+            >
+              <div
+                class="basic-profile-header"
+              >
+                <h4>
+                  Withdrawal Method
+                </h4>
+                <p>
+                  Add information about yourself
+                </p>
+              </div>
+              <div
+                class="basic-profile-form"
+              >
+                <div
+                  class="withdrawal-method"
+                >
+                  <h4>
+                    Withdrawal Method
+                  </h4>
+                  <div
+                    class="radio-group"
+                  >
+                    <label
+                      class="radio-button selected"
+                    >
+                      <input
+                        checked=""
+                        name="withdrawal"
+                        type="radio"
+                        value="paypal"
+                      />
+                      Paypal
+                    </label>
+                    <label
+                      class="radio-button "
+                    >
+                      <input
+                        name="withdrawal"
+                        type="radio"
+                        value="payoneer"
+                      />
+                      Payoneer
+                    </label>
+                    <label
+                      class="radio-button "
+                    >
+                      <input
+                        name="withdrawal"
+                        type="radio"
+                        value="swift"
+                      />
+                      Swift
+                    </label>
+                  </div>
+                  <div
+                    class="account-details-wrapper"
+                  >
+                    <div
+                      class="account-details fade-out"
+                    >
+                      <h4>
+                        Your PayPal Account
+                      </h4>
+                      <p
+                        class="price"
+                      >
+                        Minimum - $50.00
+                      </p>
+                      <p>
+                        Get paid by credit or debit card, PayPal transfer or even via bank account in just a few clicks. All you need is your email address or mobile number. 
+                        <a
+                          href="#"
+                        >
+                          More about PayPal
+                        </a>
+                         | 
+                        <a
+                          href="#"
+                        >
+                          Create an account
+                        </a>
+                      </p>
+                      <input
+                        placeholder="Email address"
+                        type="email"
+                      />
+                      <input
+                        placeholder="Confirm email address"
+                        type="email"
+                      />
+                      <button
+                        class="set-payout-btn"
+                      >
+                        Set Payout Account
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="save-changes-button"
+          >
+            Save Changes
+          </button>
+        </div>
+      </section>
+      <section
+        class="setting-tabcontent "
+        id="API"
+      >
+        <h4>
+          Affiliate API
+        </h4>
+        <p>
+          The Cursus Affiliate API exposes functionalities of Cursus to help developers build client applications and intergrations with Cursus.
+        </p>
+        <p
+          class="api-text"
+        >
+          To see more details, please visit 
+          <a
+            href="#"
+          >
+            Cursus Affiliate API
+          </a>
+        </p>
+        <button
+          class="api-btn"
+        >
+          Request Affiliate API Client
+        </button>
+        <div
+          class="nt_apt"
+        >
+          <div
+            class="info-icon"
+          >
+            i
+          </div>
+          You don't have any API clients yet.
+        </div>
+      </section>
+      <section
+        class="setting-tabcontent "
+        id="CloseAccount"
+      >
+        <h4>
+          Close account
+        </h4>
+        <p>
+          <strong>
+            Warning:
+          </strong>
+           If you close your account, you will be unsubcribed from all your 5 courses, and will lose access forever.
+        </p>
+        <div
+          class="close-account-group"
+        >
+          <div
+            class="form-group"
+          >
+            <input
+              id="headline"
+              name="headline"
+              placeholder="Enter your password"
+              type="text"
+            />
+          </div>
+          <div
+            class="help-block"
+          >
+            Are you sure you want to close your account?
+          </div>
+          <button
+            class="close-account-btn"
+          >
+            Close Account
+          </button>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
+`;

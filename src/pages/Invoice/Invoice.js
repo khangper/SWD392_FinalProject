@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Invoice.css";
 import { PATH_NAME } from "../../constant/pathname";
 
 const Invoice = () => {
   const location = useLocation();
-  const { originalPrice } = location.state || { originalPrice: 0 };
+  const navigate = useNavigate();
+  const { originalPrice, address } = location.state || { originalPrice: 0 };
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const ShoppingCart_API_URL =
     "https://66908916c0a7969efd9c67ed.mockapi.io/ojt-repo/ShoppingCart";
 
@@ -32,6 +35,7 @@ const Invoice = () => {
   }, []);
 
   if (loading) {
+    return <div>Loading...</div>;
   }
 
   if (error) {
@@ -45,6 +49,23 @@ const Invoice = () => {
     const total = price + vat;
     return acc + total;
   }, 0);
+
+  const handlePrintClick = () => {
+    setShowModal(true);
+  };
+
+  const handleModalYes = () => {
+    setShowModal(false);
+    setShowSuccessMessage(true);
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+      navigate(PATH_NAME.HOME);
+    }, 2000);
+  };
+
+  const handleModalNo = () => {
+    setShowModal(false);
+  };
 
   return (
     <div className="Invoice_Container">
@@ -91,11 +112,9 @@ const Invoice = () => {
           <div className="Inv_Detail_Row">
             <div className="Inv_Detail_Content-To">
               <h4>To</h4>
-              <div className="vdt-list">Rock William</div>
-              <div className="vdt-list">133, Dracut</div>
-              <div className="vdt-list">Massachusetts</div>
-              <div className="vdt-list">01826</div>
-              <div className="vdt-list">United States</div>
+              <div className="vdt-list" style={{ whiteSpace: "pre-line" }}>
+                {address}
+              </div>
             </div>
             <div className="Inv_Detail_Content-Cursus">
               <h4>Cursus</h4>
@@ -119,7 +138,7 @@ const Invoice = () => {
           {courses.map((course) => {
             const price = parseFloat(course.price.replace("$", ""));
             const vat = price * 0.2;
-            const totalAmount = price + vat;
+            const totalAmount = price + vat + 2;
             return (
               <div className="user_dt_trans" key={course.id}>
                 <p>{course.title}</p>
@@ -141,12 +160,26 @@ const Invoice = () => {
             <p>Thanks for buying</p>
           </div>
           <div className="Right_Footer">
-            <a className="print_btn" href="#">
+            <button className="print_btn" onClick={handlePrintClick}>
               Print
-            </a>
+            </button>
           </div>
         </div>
       </div>
+      {showModal && (
+        <div className="modal">
+          <div className="modal_content">
+            <p>Do you want to print the invoice?</p>
+            <button onClick={handleModalYes}>Yes</button>
+            <button onClick={handleModalNo}>No</button>
+          </div>
+        </div>
+      )}
+      {showSuccessMessage && (
+        <div className="invoice_success_message">
+          <p>Invoice printed successfully!</p>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './SearchResult.css';
 import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
+import Header from '../../components/Header-paidmember/Header';
 import Search from '../../assets/search.png';
 import dropdown from "../../assets/dropdown.png";
 import ratingStar from "../../assets/rating.png";
@@ -10,12 +10,13 @@ import saved_course from "../../assets/saved-course.png";
 import not_interested from "../../assets/not-interested.png";
 import report from "../../assets/report.png";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSearchResultRequest } from '../../redux/reduxActions/searchresultAction'
+import { fetchSearchResultRequest, searchSearchResultRequest } from '../../redux/reduxActions/searchresultAction';
 
 const SearchResult = () => {
     const dispatch = useDispatch();
-    const { sr_course } = useSelector((state) => state.searchresult);
+    const { sr_course, error } = useSelector((state) => state.searchresult);
 
+    const [searchQuery, setSearchQuery] = useState("");
     const [isOpen, setIsOpen] = useState(false);
     const [selectedSort, setSelectedSort] = useState('Sort');
     const [visibleSection, setVisibleSection] = useState(null);
@@ -201,6 +202,24 @@ const SearchResult = () => {
         };
     }, []);
 
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            if (!searchQuery.trim()) {
+                // Optionally handle empty search query case
+            } else {
+                dispatch(searchSearchResultRequest(searchQuery));
+            }
+        }
+    };
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     return (
         <>
             <Header />
@@ -213,7 +232,13 @@ const SearchResult = () => {
                         </div>
                         <div className='Small_SR_Title_Right'>
                             <img src={Search} alt="" className="search-icon" />
-                            <input type="text" placeholder="Search " />
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                value={searchQuery}
+                                onChange={handleSearchChange}
+                                onKeyDown={handleKeyDown}
+                            />
                         </div>
                     </div>
                     <div className='Main_Title'>

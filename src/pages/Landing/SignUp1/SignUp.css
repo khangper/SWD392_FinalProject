@@ -3,7 +3,11 @@
     width: 100%;
     margin-bottom: 20px;
 }
-
+.login-logo-container1{
+    text-align: center;
+    margin-bottom: 35px; 
+    margin-top: 140px;
+}
 .SignUp-input-field {
     width: 80%;
     padding: 10px 10px 10px 10px;
@@ -128,3 +132,4 @@
 .remember-meSignUp input[type="checkbox"]:checked + label:after {
     opacity: 1;
 }
+

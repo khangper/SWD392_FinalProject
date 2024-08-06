@@ -1,14 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.49d7aeec.css",
-    "main.js": "/static/js/main.3ba99fcd.js",
+    "main.css": "/static/css/main.2cbf7fb9.css",
+    "main.js": "/static/js/main.d3f8cef3.js",
     "static/js/453.79ef8a5e.chunk.js": "/static/js/453.79ef8a5e.chunk.js",
     "static/media/big_blog.jpg": "/static/media/big_blog.a13838bddb8677ec0743.jpg",
+    "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/fa-brands-400.ttf": "/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
     "static/media/background_about.jpg": "/static/media/background_about.94bc36225f563739a337.jpg",
     "static/media/Brazil.png": "/static/media/Brazil.b72510d55c60bed25f53.png",
+    "static/media/fa-solid-900.woff2": "/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
     "static/media/India.png": "/static/media/India.6178615d6399024b6149.png",
     "static/media/Cali.png": "/static/media/Cali.bbd294a719d3095193a0.png",
+    "static/media/fa-brands-400.woff2": "/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
     "static/media/star.png": "/static/media/star.8fb4765dba0a2e4ba1ad.png",
+    "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
     "static/media/tablerow.png": "/static/media/tablerow.2eb8c58cf183bd8e4a82.png",
     "static/media/Learners.png": "/static/media/Learners.10ff8a7dea24d57ec50e.png",
     "static/media/DowLoadMyCourse.png": "/static/media/DowLoadMyCourse.be324ef5f6dad1b99784.png",
@@ -16,6 +21,7 @@
     "static/media/DowLoadMyCourse1.png": "/static/media/DowLoadMyCourse1.556434f1348b14033750.png",
     "static/media/Edit-mycourse.png": "/static/media/Edit-mycourse.76955ea597937763d77a.png",
     "static/media/uploadmc1.png": "/static/media/uploadmc1.b5bef55fba96cb5e3340.png",
+    "static/media/fa-regular-400.woff2": "/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
     "static/media/kayak.png": "/static/media/kayak.ec7f1108bc484f0f1a04.png",
     "static/media/RPH.png": "/static/media/RPH.c070cf89cbdb3127de05.png",
     "static/media/Destop.png": "/static/media/Destop.88ca2357d20e325658f9.png",
@@ -36,13 +42,15 @@
     "static/media/Close-shopping.png": "/static/media/Close-shopping.daaa592c1ea0005696ce.png",
     "static/media/rating.png": "/static/media/rating.b47e6e2c848cd0fe8ae1.png",
     "static/media/notification-icon.png": "/static/media/notification-icon.b6e1be4108a318e88bd9.png",
+    "static/media/fa-v4compatibility.ttf": "/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
     "index.html": "/index.html",
-    "main.49d7aeec.css.map": "/static/css/main.49d7aeec.css.map",
-    "main.3ba99fcd.js.map": "/static/js/main.3ba99fcd.js.map",
+    "main.2cbf7fb9.css.map": "/static/css/main.2cbf7fb9.css.map",
+    "main.d3f8cef3.js.map": "/static/js/main.d3f8cef3.js.map",
     "453.79ef8a5e.chunk.js.map": "/static/js/453.79ef8a5e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.49d7aeec.css",
-    "static/js/main.3ba99fcd.js"
+    "static/css/main.2cbf7fb9.css",
+    "static/js/main.d3f8cef3.js"
   ]
 }

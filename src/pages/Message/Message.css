@@ -106,17 +106,19 @@
 
 .message-box1 {
   border: 1px solid #e5e5e5;
-  border-radius: 3px;
+  border-radius: 3px 0 0 3px;
   background-color: #fff;
   height: fit-content;
   width: 35%;
+  border-right: none;
+
 }
 
 .message-chat-right {
   height: 518.2px;
   background-color: #fff;
   border: 1px solid #e5e5e5;
-  border-radius: 3px;
+  border-radius: 0 3px 3px 0;
 }
 
 .m-row {
@@ -133,7 +135,7 @@
 
 .chat__message__dt {
   display: flex;
-  padding: 10px;
+  padding: 17.5px;
   cursor: pointer;
 }
 
@@ -159,6 +161,7 @@
   margin-top: 0px;
   float: left;
   position: relative;
+  margin-right: 20px;
 }
 
 .user-avatar img {
@@ -166,19 +169,24 @@
   height: 50px;
   border-radius: 50%;
   border: 2px solid #fff;
-  box-shadow: 0 1px 4px 4px rgba(0, 0, 0, 0.02) inset;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
 .msg__badge {
   position: absolute;
-  bottom: -5px;
-  right: -5px;
-  background-color: #ff5656;
+  bottom: 2px;
+  right: -7px;
+  background-color: #ed2a26;
   color: #fff;
   border-radius: 50%;
-  padding: 5px 8px;
   font-size: 12px;
   font-weight: bold;
+  border: 2px solid;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .message-user-status-title {
@@ -198,9 +206,29 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin-right: -110px;
-  margin-bottom: 0;
-  margin-left: 65px;
+}
+
+.user-status-time {
+  color: #afafaf !important;
+  font-size: 12px !important;
+}
+
+.user-status-title {
+  font-weight: 550 !important;
+  font-size: 16px !important;
+  color: #333 !important;
+}
+
+.message-name-time {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.message-user-name {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .eps_dots .dropdown-content {
@@ -237,7 +265,7 @@
   color: #686f7a;
 }
 
-.message-dropdown-item:hover{
+.message-dropdown-item:hover {
   background-color: #ffecec;
   color: #333;
   cursor: pointer;
@@ -258,18 +286,21 @@
 .message-user-status-box1 {
   display: flex;
   justify-content: flex-start;
-  gap: 20px;
 }
 
 .message-user-status-tag-online {
-  font-size: 10px;
-  width: 50px;
-  color: #fff;
-  background-color: #4caf50;
-  border-radius: 3px;
-  display: flex;
-  text-transform: uppercase;
-  justify-content: center;
+    display: inline-block;
+    font-size: 11px;
+    height: 20px;
+    color: #fff;
+    background-color: #40d04f;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 0 8px;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .message-user-parent {
@@ -294,7 +325,7 @@
 .messages-line {
   height: 370px; /* Adjust this height as needed */
   overflow-y: auto;
-  padding: 10px;
+  padding: 15px;
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
   background-color: transparent;
@@ -340,7 +371,7 @@
 .message-main-message-box-ta-right span,
 .message-dt.st3 span {
   font-size: 12px;
-  color: #686f7a;
+  color: #afafaf;
   margin-top: 5px;
 }
 
@@ -373,7 +404,7 @@
 .message-chat {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .m-field {
@@ -423,9 +454,19 @@
   .message-box1 {
     width: 100%;
     margin-bottom: 20px;
+    border-right: 1px solid #e5e5e5;
   }
 
   .message-section {
     padding: 0;
   }
+
+  .message-chat{
+    gap: 0px;
+  }
+
+  .message-box1, .message-chat-right{
+    border-radius: 3px;
+  }
+
 }

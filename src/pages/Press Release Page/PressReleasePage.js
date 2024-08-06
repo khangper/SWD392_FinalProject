@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./PressReleasePage.css";
 import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
+import Header from "../../components/Header-paidmember/Header";
 import { FaTwitter } from "react-icons/fa";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
