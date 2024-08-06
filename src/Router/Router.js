@@ -62,7 +62,7 @@ const Router = () => {
             ))}
           </Route>
         ) : (
-          <Route path="*" element={<Navigate to={PATH_NAME.LOGIN} replace />} />
+          <Route path="/" element={<Navigate to={PATH_NAME.LOGIN} replace />} />
         )}
 
         {/* Default Redirect */}
