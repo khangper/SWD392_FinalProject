@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vertification renders the Vertification component 1`] = `
+<div>
+  <div
+    class="Vertification_Container"
+  >
+    <div
+      class="Vertification_Header"
+    >
+      <h2
+        class="Vertification_Header_Title"
+      >
+        Verification
+      </h2>
+    </div>
+    <div
+      class="Vertification_Body"
+    >
+      <div
+        class="Vertification_Body_Col"
+      >
+        <div
+          class="Vertification_Body_Content"
+        >
+          <img
+            alt=""
+            src="https://gambolthemes.net/html-items/cursus-new-demo/images/verified-account.svg"
+          />
+          <h4>
+            Verification with Edututs+
+          </h4>
+          <p>
+            Praesent sed sapien gravida, tempus nunc nec, euismod turpis. Mauris quis scelerisque arcu. Quisque et aliquet nisl, id placerat est. Morbi quis imperdiet nulla.
+          </p>
+          <div
+            class="Alert_Vertification"
+          >
+            <div
+              class="Alert_Vertification_Container"
+            >
+              <div
+                class="Vertification_required_group"
+              >
+                <div
+                  class="Vertification_edututs_required_img"
+                >
+                  <i
+                    class="uil uil-dashboard"
+                  />
+                </div>
+                <div
+                  class="Vertification_edututs_required"
+                >
+                  <span>
+                    <strong>
+                      14 subscribers
+                    </strong>
+                  </span>
+                  <span>
+                    500 required
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="Alert_Vertification_Container"
+            >
+              <div
+                class="Vertification_required_group"
+              >
+                <div
+                  class="Vertification_edututs_required_img"
+                >
+                  <i
+                    class="uil uil-dashboard"
+                  />
+                </div>
+                <div
+                  class="Vertification_edututs_required"
+                >
+                  <span>
+                    <strong>
+                      10 public watch hours
+                    </strong>
+                  </span>
+                  <span>
+                    1,500 required
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="Vertification_apply_verify_text"
+          >
+            <i
+              class="uil uil-check-circle"
+            />
+            We'll send you an email when you're eligible to apply
+          </div>
+          <div
+            class="Verification_form"
+          >
+            <h4>
+              Verify Your ID
+            </h4>
+            <form>
+              <div
+                class="Verification_Form_CT Verti_mt_50 Verti_lbel25"
+              >
+                <label>
+                  Course Title*
+                </label>
+                <div
+                  class="Verti_Textbox_Fullname Verti_swdh19"
+                >
+                  <input
+                    class="Verti_prompt Verti_srch_explore"
+                    id="full[name]"
+                    name="fullname"
+                    placeholder="Full Name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="Verification_Form_UD Verti_mt_30 Verti_lbel25"
+              >
+                <label>
+                  Upload Document*
+                </label>
+                <div
+                  class="Verti_input_group"
+                >
+                  <div
+                    class="Verti_custom_file"
+                  >
+                    <input
+                      class="Verti_custom_file_input"
+                      id="inputGroupFile06"
+                      type="file"
+                    />
+                    <label
+                      class="Verti_custom_file_label"
+                    >
+                      No Choose
+                      <button
+                        class="Verti_custom_file_label_btn"
+                      >
+                        Upload File
+                      </button>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="Verify_submit_btn"
+                type="submit"
+              >
+                Submit Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

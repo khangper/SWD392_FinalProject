@@ -6,7 +6,7 @@ import { PATH_NAME } from "../../constant/pathname";
 const Invoice = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { originalPrice } = location.state || { originalPrice: 0 };
+  const { originalPrice, address } = location.state || { originalPrice: 0 };
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -112,11 +112,9 @@ const Invoice = () => {
           <div className="Inv_Detail_Row">
             <div className="Inv_Detail_Content-To">
               <h4>To</h4>
-              <div className="vdt-list">Rock William</div>
-              <div className="vdt-list">133, Dracut</div>
-              <div className="vdt-list">Massachusetts</div>
-              <div className="vdt-list">01826</div>
-              <div className="vdt-list">United States</div>
+              <div className="vdt-list" style={{ whiteSpace: "pre-line" }}>
+                {address}
+              </div>
             </div>
             <div className="Inv_Detail_Content-Cursus">
               <h4>Cursus</h4>
