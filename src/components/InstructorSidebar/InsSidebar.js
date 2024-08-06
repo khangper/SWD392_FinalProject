@@ -105,6 +105,28 @@ const InsSidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={verificationIcon} alt="Verification Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Verification</p>
       </Link>
+      <div className="subscriptions">
+        <p className="subscriptions-title">SUBSCRIPTIONS</p>
+        <Link to="/other-instructor-view/2" className="subscription-link">
+          <img
+            className="subscription-icon"
+            src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg"
+            alt="Rock Smith"
+          />
+          <p>Rock Smith</p>
+          <span className="subscription-status"></span>
+        </Link>
+
+        <Link to="/other-instructor-view/3" className="subscription-link">
+          <img
+            className="subscription-icon"
+            src="https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg"
+            alt="Jassica William"
+          />
+          <p>Jassica William</p>
+          <span className="subscription-status"></span>
+        </Link>
+      </div>
       <Link to={PATH_NAME.ALL_INSTRUCTOR_LIST}>
         <div className="side-link">
           <img
@@ -129,7 +151,39 @@ const InsSidebar = ({ sidebar }) => {
         <img className="sidebar-icon" src={feedbackIcon} alt="Send Feedback Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
       </Link>
-   
+      <hr />
+      <div className="-sidebar-footer">
+        <div className="sidebar-footer-links">
+          <Link to={PATH_NAME.ABOUT_US}>
+            <div>About</div>
+          </Link>
+          <Link to={PATH_NAME.PRESS}>
+            <div>Press</div>
+          </Link>
+          <Link to={PATH_NAME.CONTACT_US}>
+            <div>Contact Us</div>
+          </Link>
+          <Link to={PATH_NAME.COMING_SOON}>
+            <div>Advertise</div>
+          </Link>
+          <Link to={PATH_NAME.COMING_SOON}>
+            <div>Developers</div>
+          </Link>
+          <Link to={PATH_NAME.TERMS_OF_USE}>
+            <div>Copyright</div>
+          </Link>
+          <Link to={PATH_NAME.TERMS_OF_USE}>
+            <div>Privacy Policy</div>
+          </Link>
+          <Link to={PATH_NAME.TERMS_OF_USE}>
+            <div>Terms</div>
+          </Link>
+        </div>
+        <div className="sidebar-footer-copyright">
+          © 2024 <span className="sidebar-footer-brand">Cursus</span>. All
+          Rights Reserved.
+        </div>
+      </div>
     </div>
   );
 };

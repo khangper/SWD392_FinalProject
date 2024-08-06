@@ -147,7 +147,7 @@ const Navbar = ({ setSidebar }) => {
             placeholder="Search for Tuts Videos, Tutors, Tests and more..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            onKeyPress={handleSearch}
+            onKeyDown={handleSearch}
           />
         </div>
       </div>

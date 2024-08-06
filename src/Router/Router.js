@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import { publicRoutes, privateRoutes } from './routerConfig';
@@ -13,37 +13,41 @@ const Router = () => {
   const [warning, setWarning] = useState('');
   const location = useLocation();
 
+  const filteredPrivateRoutes = useMemo(() => {
+    return privateRoutes.map(({ path, element, roles }) => {
+      const hasAccess = roles ? roles.includes(user?.role) : true;
+
+      if (!hasAccess && user) {
+        return { path, element: <Navigate to={PATH_NAME.HOME} replace /> };
+      }
+
+      return { path, element };
+    });
+  }, [user]);
+
   useEffect(() => {
     if (warning) {
-      const timer = setTimeout(() => setWarning(''), 3000);
+      const timer = setTimeout(() => {
+        setWarning('');
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [warning]);
 
-  const renderRoutes = (routes) => {
-    return routes.map(({ path, element, roles }) => {
+  useEffect(() => {
+    const deniedRoute = privateRoutes.find(({ path, roles }) => {
       const hasAccess = roles ? roles.includes(user?.role) : true;
-
-      if (!hasAccess && user) {
-        return (
-          <Route
-            key={path}
-            path={path}
-            element={<Navigate to={PATH_NAME.HOME} replace />}
-            onEnter={() => setWarning('You do not have access to this page')}
-          />
-        );
-      }
-
-      return <Route key={path} path={path} element={element} />;
+      return !hasAccess && location.pathname === path;
     });
-  };
+
+    if (deniedRoute) {
+      setWarning('You do not have permission to access to this page');
+    }
+  }, [location.pathname, user]);
 
   return (
     <div>
-      {warning && (
-        <Warning message={warning} onClose={() => setWarning('')} />
-      )}
+      {warning && <Warning message={warning} />}
       <Routes>
         {/* Public Routes */}
         {publicRoutes.map(({ path, element }) => (
@@ -53,10 +57,12 @@ const Router = () => {
         {/* Private Routes */}
         {isAuthenticated ? (
           <Route element={<Layout sidebar={sidebar} setSidebar={setSidebar} />}>
-            {renderRoutes(privateRoutes)}
+            {filteredPrivateRoutes.map(({ path, element }) => (
+              <Route key={path} path={path} element={element} />
+            ))}
           </Route>
         ) : (
-          <Route path="*" element={<Navigate to={PATH_NAME.LOGIN} replace />} />
+          <Route path="/" element={<Navigate to={PATH_NAME.LOGIN} replace />} />
         )}
 
         {/* Default Redirect */}

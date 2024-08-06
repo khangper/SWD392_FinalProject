@@ -1,19 +1,32 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
-import facebook from "../../../assets/facebook.png";
-import x from "../../../assets/x.png";
-import google from "../../../assets/google.png";
 import emailIcon from "../../../assets/email.png";
 import passwordIcon from "../../../assets/password.png";
 import { AuthContext } from "../../../Router/AuthContext";
 import { PATH_NAME } from "../../../constant/pathname";
+import Warning from "../../../components/Warning/Warning";
+
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [warning, setWarning] = useState(""); 
+  useEffect(() => {
+    if (warning) {
+      const timer = setTimeout(() => {
+        setWarning('');
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [warning]);
   const handleLogin = (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      setWarning("Please fill in all data!");
+      return;
+    }
+    setWarning(""); 
     login(email, password);
   };
 
@@ -31,18 +44,7 @@ const Login = () => {
       <div className="login-form-container">
         <h2>Welcome Back</h2>
         <p className="login-banner">Log In to Your Cursus Account!</p>
-        <button className="login-btn fb">
-          <img className="btn-icon" alt="Facebook Icon" src={facebook} />
-          Continue with Facebook
-        </button>
-        <button className="login-btn x">
-          <img className="btn-icon" alt="X Icon" src={x} />
-          Continue with X
-        </button>
-        <button className="login-btn google">
-          <img className="btn-icon" alt="Google Icon" src={google} />
-          Continue with Google
-        </button>
+        {warning && <Warning message={warning} />}
         <form onSubmit={handleLogin}>
           <div className="login-input-wrapper">
             <img src={emailIcon} alt="Email" className="login-input-icon" />
