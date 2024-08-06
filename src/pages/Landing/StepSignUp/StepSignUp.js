@@ -1,13 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./StepSignUp.css";
+import { AuthContext } from "../../../Router/AuthContext";
 import { PATH_NAME } from "../../../constant/pathname";
 
 export default function StepSignUp() {
-  const [activeTab, setActiveTab] = useState("instructor"); // State to store the active tab
-  const [selectedOption, setSelectedOption] = useState(""); // State to store the selected option
-  const [description, setDescription] = useState(""); // State to store the description
-  const [warningMessage, setWarningMessage] = useState(""); // State to store the warning message
+  const { signUp } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { email, password } = location.state || {};
+  const [activeTab, setActiveTab] = useState("instructor"); // Default active tab
+  const [selectedOption, setSelectedOption] = useState(""); 
+  const [description, setDescription] = useState(""); 
+  const [warningMessage, setWarningMessage] = useState("");
+  const [optionError, setOptionError] = useState("");
+  const [descriptionError, setDescriptionError] = useState("");
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
@@ -15,6 +23,9 @@ export default function StepSignUp() {
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
+    if (event.target.value) {
+      setOptionError("");
+    }
   };
 
   const handleInputChange = (event) => {
@@ -27,18 +38,33 @@ export default function StepSignUp() {
     } else {
       setWarningMessage("");
     }
+
+    if (value.length < 12000) {
+      setDescriptionError("Description must be at least 12000 characters.");
+    } else {
+      setDescriptionError("");
+    }
+  };
+
+  const handleSignUp = (e) => {
+    if (email == null || password == null) {
+      navigate(PATH_NAME.LOGIN);
+      return;
+    }
+    e.preventDefault();
+    const role = activeTab === "instructor" ? "instructor" : "student";
+    signUp(email, password, role);
+    navigate(PATH_NAME.HOME); 
   };
 
   return (
     <div className="login-container">
       <div className="login-logo-container">
-        <Link to={PATH_NAME.HOME}>
-          <img
-            src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
-            alt="Cursus Logo"
-            className="login-logo"
-          />
-        </Link>
+        <img
+          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+          alt="Cursus Logo"
+          className="login-logo"
+        />
       </div>
       <div className="login-form-container">
         <div className="tablist">
@@ -58,7 +84,7 @@ export default function StepSignUp() {
         {activeTab === "instructor" && (
           <div className="instructor-sign-up-form">
             <p className="login-bannerInstructor">Sign Up and Create Course!</p>
-            <form>
+            <form onSubmit={handleSignUp}>
               <select
                 className="selectpicker"
                 onChange={handleSelectChange}
@@ -79,6 +105,7 @@ export default function StepSignUp() {
                 <option value="12">Music</option>
                 <option value="13">Teaching & Academics</option>
               </select>
+              {optionError && <p className="error-message">{optionError}</p>}
               <div className="ui search focus mt-15">
                 <div className="ui form swdh30">
                   <div className="singnupstep-field">
@@ -98,9 +125,11 @@ export default function StepSignUp() {
                     {warningMessage}
                   </div>
                 )}
-                <div className="help-block">
-                  Your biography should have at least 12000 characters.
-                </div>
+                {descriptionError && (
+                  <div className="help-block description-error">
+                    {descriptionError}
+                  </div>
+                )}
               </div>
               <button className="loginSingUp-btn" type="submit">
                 Instructor Sign Up Now
@@ -116,45 +145,20 @@ export default function StepSignUp() {
         )}
         {activeTab === "student" && (
           <div className="student-sign-up-form">
-            <div className="instructor-sign-up-form">
-              <p className="login-bannerInstructor">
-                Sign Up and Start Learning
-              </p>
-              <form>
-                <div className="ui search focus mt-15">
-                  <div className="ui form swdh30">
-                    <div className="singnupstep-field">
-                      <textarea
-                        rows="3"
-                        name="description"
-                        id="id_about"
-                        placeholder="Write a little description about you..."
-                        className="textarea"
-                        value={description}
-                        onChange={handleInputChange}
-                      ></textarea>
-                    </div>
-                  </div>
-                  {warningMessage && (
-                    <div className="help-block special-char-warning">
-                      {warningMessage}
-                    </div>
-                  )}
-                  <div className="help-block">
-                    Your biography should have at least 12000 characters.
-                  </div>
-                </div>
-                <button className="loginSingUp-btn" type="submit">
-                  Student Sign Up Now
-                </button>
-              </form>
-              <p className="top38px">
-                Already have an account?{" "}
-                <Link to="/Login" className="LoginMove">
-                  Log In
-                </Link>
-              </p>
-            </div>
+            <p className="login-bannerInstructor">
+              Sign Up and Start Learning
+            </p>
+            <form onSubmit={handleSignUp}>
+              <button className="loginSingUp-btn" type="submit">
+                Student Sign Up Now
+              </button>
+            </form>
+            <p className="top38px">
+              Already have an account?{" "}
+              <Link to="/Login" className="LoginMove">
+                Log In
+              </Link>
+            </p>
           </div>
         )}
       </div>
