@@ -47,6 +47,10 @@ export default function StepSignUp() {
   };
 
   const handleSignUp = (e) => {
+    if (email == null || password == null) {
+      navigate(PATH_NAME.LOGIN);
+      return;
+    }
     e.preventDefault();
     const role = activeTab === "instructor" ? "instructor" : "student";
     signUp(email, password, role);
