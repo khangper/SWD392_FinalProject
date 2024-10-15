@@ -171,6 +171,12 @@ table.MyCourse-table.ucp-table {
     color: #4183c4;
 }
 
+.MyCourse-th-text{
+    background-color: #eafbff !important;
+    text-align: center;
+    padding: 20px;
+}
+
 b.MyCourse-course_active {
     color: #F9BF4B;
 }
