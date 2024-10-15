@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./StepSignUp.css";
 import { AuthContext } from "../../../Router/AuthContext";
 import { PATH_NAME } from "../../../constant/pathname";
+import hakaFull_logo from "../../../assets/Haka_Online_Learning_System_logo.png"
 
 export default function StepSignUp() {
   const { signUp } = useContext(AuthContext);
@@ -61,8 +62,8 @@ export default function StepSignUp() {
     <div className="login-container">
       <div className="login-logo-container">
         <img
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
-          alt="Cursus Logo"
+          src={hakaFull_logo}
+          alt="Haka Logo"
           className="login-logo"
         />
       </div>
@@ -166,10 +167,10 @@ export default function StepSignUp() {
         <img
           alt=""
           className="footer-logo"
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/sign_logo.png"
+          src={hakaFull_logo}
         />
         <span>
-          © 2024 <strong>Cursus</strong>. All Rights Reserved.
+          © 2024 <strong>Haka</strong>. All Rights Reserved.
         </span>
       </div>
     </div>

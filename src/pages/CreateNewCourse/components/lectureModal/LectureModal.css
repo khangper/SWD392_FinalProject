@@ -65,7 +65,7 @@
   }
   
   .lecture-modal-body .tab.active {
-    background: red;
+    background: #F9BF4B;
     color: white;
   }
   .lecture-content-tab-title{
@@ -152,8 +152,8 @@
     transition: all ease-in-out .3s;
 }
   .lecture-switch input[type=checkbox]:checked + span::before {
-    border-color: #ed2a26;
-    background: #ed2a26;
+    border-color: #196c7e;
+    background: #0d3842;
   }
   .lecture-switch input[type=checkbox]:checked + span::after {
     left: 17px;
@@ -183,7 +183,7 @@
     border: none;
   }
   .lecture-modal-footer button:hover{
-    color:black;
+    color: black;
   }
   .lecture-modal-footer .main-btn{
     height: 40px;
@@ -191,14 +191,14 @@
     font-size: 14px;
     color: #fff;
     border: 0;
-    background: #ed2a26;
+    background: #196c7e;
     border-radius: 3px;
     margin-right: 5px;
     font-weight: bold;
     font-family: "Roboto";
   }
   .lecture-modal-footer .main-btn:hover{
-    background: black;
+    background: #0d3842;
     color: #fff;
   }
   .no-scroll {
@@ -250,7 +250,7 @@
     transition: all 0.3s;
     vertical-align: middle;
     margin: 0 0 17px;
-    color: #ed2a26;
+    color: #196c7e;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 2px 3px 0px rgba(20, 47, 219, 0.11);
     border: 0;
@@ -258,7 +258,7 @@
     font-weight: bold;
     height: 40px;
     padding: 10px 25px;
-    border: 1px solid #ed2a26;
+    border: 1px solid #196c7e;
     border-radius: 3px;
     text-transform: uppercase;
 }

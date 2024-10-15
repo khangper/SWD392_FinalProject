@@ -51,13 +51,13 @@ const MyCertifications = () => {
                             <table className="MyCertifications_table MyCertifications_ucp_table" id="content_table">
                                 <thead className="MyCertifications_thead_s">
                                     <tr>
-                                        <th className="MyCertifications_text_center" scope="col">Item No.</th>
-                                        <th scope="col">Title</th>
-                                        <th className="MyCertifications_text_center" scope="col">Marks</th>
-                                        <th className="MyCertifications_text_center" scope="col">Out Of</th>
-                                        <th className="MyCertifications_text_center" scope="col">Upload Date</th>
-                                        <th className="MyCertifications_text_center" scope="col">Certificate</th>
-                                        <th className="MyCertifications_text_center" scope="col">Controls</th>
+                                        <th className="MyCertifications_thead_text_center" scope="col">Item No.</th>
+                                        <th className="MyCertifications_thead_text_center" scope="col">Title</th>
+                                        <th className="MyCertifications_thead_text_center" scope="col">Marks</th>
+                                        <th className="MyCertifications_thead_text_center" scope="col">Out Of</th>
+                                        <th className="MyCertifications_thead_text_center" scope="col">Upload Date</th>
+                                        <th className="MyCertifications_thead_text_center" scope="col">Certificate</th>
+                                        <th className="MyCertifications_thead_text_center" scope="col">Controls</th>
                                     </tr>
                                 </thead>
                                 <tbody>

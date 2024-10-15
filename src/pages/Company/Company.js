@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 import India from "../../assets/India.png";
 import Cali from "../../assets/Cali.png";
 import Brazil from "../../assets/Brazil.png";
+import hakaFull_logo from "../../assets/Haka_Online_Learning_System_logo.png"
 import { FiPhone } from "react-icons/fi";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
@@ -88,21 +89,21 @@ const Company = () => {
                 </div>
                 <div className="company-our-story-container">
                   <p className="company-our-story-content">
-                    Cursus was founded in 2020 by computer science instructor
+                    Haka was founded in 2020 by computer science instructor
                     with a vision to provide anyone, anywhere with access to the
                     world’s best education. Now many instructors put their
                     courses online for anyone to take and taught more learners
                     in a few months than they could over an entire lifetime in
-                    the classroom. Today, Cursus has expanded to reach more than
+                    the classroom. Today, Haka has expanded to reach more than
                     40 million people and 2,300 businesses around the world. On
-                    Cursus you can find online courses, instructors, and
-                    certificates from Cursus.
+                    Haka you can find online courses, instructors, and
+                    certificates from Haka.
                   </p>
                 </div>
               </div>
             </div>
             <img
-              src="https://gambolthemes.net/html-items/cursus-new-demo/images/about/company.jpg"
+              src={hakaFull_logo}
               alt=""
               className="company-story-img"
             />
@@ -117,7 +118,7 @@ const Company = () => {
                   </div>
                   <div className="company-office-one-description">
                     <div className="company-cursus-branches-around">
-                      Cursus branches around the world
+                      Haka branches around the world
                     </div>
                     <div className="company-line-wrapper"></div>
                   </div>

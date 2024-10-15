@@ -22,7 +22,7 @@
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #196c7e;
     border-radius: 3px;
     text-align: center;
     border: 0;
@@ -42,7 +42,7 @@
 }
 
 .By-signingup a {
-    color: #ed2a26;
+    color: #196c7e;
 }
 
 .By-signingup a:hover {
@@ -112,7 +112,7 @@
 }
 
 .remember-meSignUp input[type="checkbox"]:checked + label:before {
-    border-color: red;
+    border-color: #F9BF4B;
     background-color: rgb(255, 255, 255);
 }
 
@@ -124,7 +124,7 @@
     transform: translateY(-50%) rotate(45deg);
     width: 2px;
     height: 7px;
-    border: solid red;
+    border: solid #F9BF4B;
     border-width: 0 3px 3px 0;
     opacity: 0;
 }

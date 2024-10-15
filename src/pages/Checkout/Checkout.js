@@ -118,10 +118,7 @@ export default function Checkout() {
           <div className="Billing-Details">
             <div className="checkout_titie">
               <h4>Billing Details</h4>
-              <img
-                src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg"
-                alt="line"
-              />
+              <div className="about-line-detail"></div>
             </div>
 
             <div className="panel-group">
@@ -293,7 +290,7 @@ export default function Checkout() {
             <div className="Select-Payment-Method ">
               <div className="checkout_titie">
                 <h4>Select Payment Method</h4>
-                <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg" />
+                <div className="about-line-detail"></div>
               </div>
 
               <div className="Select-custom-tabs-container">
@@ -629,10 +626,7 @@ export default function Checkout() {
             <div className="OrderDetail">
               <div className="checkout_titie">
                 <h4>Order Detail</h4>
-                <img
-                  src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg"
-                  alt="line"
-                />
+                <div className="about-line-detail"></div>
               </div>
               <div className="order_dt_section">
                 <div className="order_title">
@@ -663,7 +657,7 @@ export default function Checkout() {
           <div className="OrderSumury">
             <div className="checkout_titie">
               <h4>OrderSumury</h4>
-              <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg" />
+              <div className="about-line-detail"></div>
             </div>
 
             <div className="order_dt_section">

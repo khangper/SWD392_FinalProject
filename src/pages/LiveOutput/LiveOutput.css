@@ -52,7 +52,7 @@
 }
 
 .liveoutput-button:hover {
-  background-color: #ff524d;
+  background-color: #cb0d06;
 }
 
 .liveoutput-button,
@@ -263,14 +263,14 @@
   align-items: center;
   flex-shrink: 0;
   border-radius: 3px;
-  background: #ed2a26;
+  background: #196c7e;
   border: 0;
   font-weight: bold;
   cursor: pointer;
 }
 
 .liveoutput-button-icon:hover {
-  background: black;
+  background: #0d3842;
 }
 
 .liveoutput-icon-2 {

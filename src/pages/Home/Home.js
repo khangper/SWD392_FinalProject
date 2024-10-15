@@ -572,7 +572,7 @@ const Home = () => {
               Top instructors from around the world teach millions of students
               on Cursus. We provide the tools and skills to teach what you love.
             </p>
-            <button className="get-started-btn">Start teaching</button>
+            <button className="start-teaching-btn">Start teaching</button>
           </section>
         </div>
       </div>

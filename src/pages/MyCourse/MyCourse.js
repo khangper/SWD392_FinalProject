@@ -520,7 +520,7 @@ function MyCourse() {
                             <a href="#">{course.Category}</a>
                           </td>
                           <td className="MyCourse-text-center">
-                            <b className="MyCourse-course_active">
+                            <b className="MyPurchase-course_active">
                               {course.DeliveryType}
                             </b>
                           </td>
@@ -621,7 +621,7 @@ function MyCourse() {
                             {course.Purchase}
                           </td>
                           <td className="MyCourse-text-center">
-                            <b className="MyCourse-course_active">
+                            <b className="UpCourse-course_active">
                               {course.Status}
                             </b>
                           </td>
@@ -877,7 +877,7 @@ function MyCourse() {
                             {discount.Discount}
                           </td>
                           <td className="MyCourse-text-center">
-                            <b className="MyCourse-course_active">
+                            <b className="Discount-course_active">
                               {discount.Status}
                             </b>
                           </td>

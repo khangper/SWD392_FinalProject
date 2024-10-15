@@ -44,7 +44,7 @@
 }
 
 .setting-tabs .setting-tab button.active {
-    background-color: #ed2a26; 
+    background-color: #fdc50d; 
     color: #fff; 
 }
 
@@ -153,7 +153,7 @@
     height: 80px;
 }
 .save-changes-button {
-    background-color: #f00; 
+    background-color: #196c7e; 
     color: #fff; 
     padding: 10px 16px;
     border: none;
@@ -171,7 +171,7 @@
     margin-top: 50px;
 }
 .save-changes-button:hover {
-    background-color: black;
+    background-color: #0d3842;
 }
 .basic-profile-links{
     margin-top: 47px;
@@ -241,7 +241,7 @@
 }
 
 .checkbox-content input:checked + label {
-    background: #ed2a26;
+    background: #FFE559;
 }
 
 .checkbox-content input:checked + label::before {
@@ -489,7 +489,7 @@
   }
   
   .set-payout-btn {
-    background-color: #f00;
+    background-color: #F9BF4B;
     color: #fff;
     padding: 10px 16px;
     border: none;
@@ -502,7 +502,7 @@
   }
   
   .set-payout-btn:hover {
-    background-color: #d00;
+    background-color: #e3a62b;
   }
   .api-text a{
         color:#4183c4;
@@ -555,7 +555,7 @@
     width: 33%;
   }
   .close-account-btn{
-    background-color: #f00;
+    background-color: #F9BF4B;
     color: #fff;
     padding: 10px 16px;
     border: none;
@@ -565,4 +565,8 @@
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     margin: 20px 0;
+  }
+
+  .close-account-btn:hover{
+    background-color: #e3a62b;
   }

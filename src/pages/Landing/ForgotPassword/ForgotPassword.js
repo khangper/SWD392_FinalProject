@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./ForgotPassword.css";
 import email from "../../../assets/email.png";
+import hakaFull_logo from "../../../assets/Haka_Online_Learning_System_logo.png"
+
 const ForgotPassword = () => {
   return (
     <div className="reset-container">
       <div className="reset-logo-container">
         <Link to="/home">
           <img
-            src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+            src={hakaFull_logo}
             alt="Cursus Logo"
             className="reset-logo"
           />{" "}
@@ -35,11 +37,11 @@ const ForgotPassword = () => {
       <div className="form-footer">
         <img
           alt=""
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/sign_logo.png"
+          src={hakaFull_logo}
           className="footer-logo"
         />
         <span>
-          © 2024 <strong>Cursus</strong>. All Rights Reserved.
+          © 2024 <strong>Haka</strong>. All Rights Reserved.
         </span>
       </div>
     </div>

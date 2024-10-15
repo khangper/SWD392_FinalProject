@@ -4,6 +4,7 @@ import avatar from "../../assets/profile-img.jpg";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 import moon_image from "../../assets/moon.png";
+import hakaFull_logo from "../../assets/Haka_Online_Learning_System_logo.png"
 import { AuthContext } from "../../Router/AuthContext";
 
 const Header = () => {
@@ -35,11 +36,11 @@ const Header = () => {
   return (
     <header className="header">
       <Link to={PATH_NAME.HOME}>
-        <button className="header-link1">Back To Cursus</button>
+        <button className="header-link1">Back To Haka</button>
       </Link>
       <Link to={PATH_NAME.HOME}>
         <img
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+          src={hakaFull_logo}
           alt=""
           className="header-group-icon"
         />
@@ -80,7 +81,7 @@ const Header = () => {
                 </span>
               </div>
             </div>
-            <div className="profile-item"> Cursus Dashboard</div>
+            <div className="profile-item"> Haka Dashboard</div>
             <div className="profile-item">
               Sign Out
             </div>

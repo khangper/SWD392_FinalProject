@@ -52,6 +52,16 @@
     line-height: 26px;
 }
 
+.about-line-detail {
+    padding: 5px;
+    border-bottom: 3px solid #196c7e;
+    width: 60px;
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
 
 .grid-container {
     display: grid;
@@ -173,12 +183,12 @@
     border-radius: 3px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #ed2a26;
+    background: #196c7e;
     display: block;
 }
 
 .save_address_btn:hover{
-    background-color: #333;
+    background-color: #0d3842;
 }
 
 .address_text {
@@ -240,7 +250,7 @@
     transform: translateX(-50%);
     width: 100%;
     height: 2px;
-    background-color: red;
+    background-color: #FFE599;
 }
 
 .Select-custom-tabs-content {
@@ -448,13 +458,13 @@
     border-radius: 3px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #ed2a26;
+    background: #196c7e;
 	display: block;
 }
 
 .chckot_btn:hover {
     color: #fff !important;
-    background: #333;
+    background: #0d3842;
 }
 
 .order_title .order_price5 {

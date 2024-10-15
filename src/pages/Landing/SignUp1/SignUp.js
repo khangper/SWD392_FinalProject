@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { PATH_NAME } from "../../../constant/pathname";
+import hakaFull_logo from "../../../assets/Haka_Online_Learning_System_logo.png"
 
 export default function SignUp() {
   const [fullName, setFullName] = useState("");
@@ -82,8 +83,8 @@ export default function SignUp() {
       <div className="login-logo-container1">
         <Link to={PATH_NAME.HOME}>
           <img
-            src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
-            alt="Cursus Logo"
+            src={hakaFull_logo}
+            alt="Haka Logo"
             className="login-logo"
           />
         </Link>
@@ -162,10 +163,10 @@ export default function SignUp() {
         <img
           alt=""
           className="footer-logo"
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/sign_logo.png"
+          src={hakaFull_logo}
         ></img>
         <span>
-          © 2024 <strong>Cursus</strong>. All Rights Reserved.
+          © 2024 <strong>Haka</strong>. All Rights Reserved.
         </span>
       </div>
     </div>

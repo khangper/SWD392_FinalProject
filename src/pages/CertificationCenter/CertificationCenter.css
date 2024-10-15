@@ -78,7 +78,7 @@
     font-family: 'Roboto', sans-serif;
     color: #fff;
     border-radius: 3px;
-    background: #ed2a26;
+    background: #F9BF4B;
 }
 .CC-certi-btn:hover{
     cursor: pointer;
@@ -128,7 +128,7 @@
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #196c7e;
     border-radius: 3px;
     text-align: center;
     border: 0;
@@ -136,7 +136,7 @@
     height: 40px;
 }
 .CC-login-btn:hover{
-    background-color: #333;
+    background-color: #0d3842;
     cursor: pointer;
 }
 .CC-title589 h2 {
@@ -177,14 +177,14 @@
 }
 .CC-tabs li:hover {
     color: white;
-    background-color: red;
+    background-color: #F9BF4B;
     padding: 10px;
     border-radius: 3px;
     font-weight: 600;
 }
 .CC-tabs li.active {
     color: white;
-    background-color: red;
+    background-color: #F9BF4B;
     padding: 10px;
     border-radius: 3px;
     font-weight: 600;
@@ -231,7 +231,7 @@
 
 .CC-certilink__152:hover {
     color: #fff !important;
-	background: #ed2a26 ;
+	background: #196c7e ;
 }
 
 
@@ -363,7 +363,7 @@
     font-family: 'Roboto', sans-serif;
     color: #fff;
     border-radius: 3px;
-    background: #ed2a26;
+    background: #196c7e;
 }
 
 .CC-knowledge_btn:hover {

@@ -159,10 +159,7 @@ function ShoppingCart() {
             <div className="membership_chk_bg rght1528">
               <div className="checkout_title">
                 <h4>Total</h4>
-                <img
-                  src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg"
-                  alt="line"
-                />
+                <div className="total-line-story"></div>
               </div>
               <div className="order_dt_section">
                 <div className="order_title">

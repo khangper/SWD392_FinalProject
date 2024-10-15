@@ -71,7 +71,7 @@
     font-size: 14px;
     font-weight: 500;
     color: #fff;
-    background: #ed2a26;
+    background: #F9BF4B;
     font-family: 'Roboto', sans-serif;
     padding: 10px 30px;
     border-radius: 3px;
@@ -93,7 +93,7 @@
   }
   
   .st_download_btn {
-    background-color: #f44336;
+    background-color: #F9BF4B;
     color: #fff;
     border: none;
     padding: 10px;
@@ -245,4 +245,10 @@
 
 .js-earnings__fees-wrapper {
   color: #ed2a26;
+}
+
+.Statement-th-text{
+  text-align: center; /* Căn giữa nội dung của các cột */
+  padding: 10px;
+  background-color: #eafbff !important;
 }

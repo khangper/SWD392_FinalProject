@@ -5,8 +5,9 @@ import search_icon from "..//../assets/search.png";
 import card_icon from "..//../assets/cart-icon.png";
 import mail_icon from "..//../assets/mail-icon.png";
 import notification_icon from "..//../assets/notification-icon.png";
-import profile_image from "..//../assets/profile-img.jpg";
+import profile_image from "../../assets/profile-img.jpg";
 import moon_image from "..//../assets/moon.png";
+import Haka_Online_Learning_System_logo from "..//../assets/Haka_Online_Learning_System_logo.png";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthContext";
 import { PATH_NAME } from "../../constant/pathname";
@@ -136,7 +137,7 @@ const Navbar = ({ setSidebar }) => {
           <img src={menu_icon} alt="" className="menu-icon" />
         </div>
         <img
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+          src={Haka_Online_Learning_System_logo}
           alt=""
           className="logo"
         />
@@ -270,7 +271,7 @@ const Navbar = ({ setSidebar }) => {
                 </div>
               </div>
               <Link to={PATH_NAME.INS_DASHBOARD}>
-                <div className="profile-item"> Cursus Dashboard</div>
+                <div className="profile-item"> Haka Dashboard</div>
               </Link>
               <Link to={PATH_NAME.PAID_MEMBERSHIP}>
                 <div className="profile-item"> Paid Memberships</div>

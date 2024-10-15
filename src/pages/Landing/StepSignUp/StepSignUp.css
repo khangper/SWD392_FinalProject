@@ -13,7 +13,7 @@
 }
 
 .tab.active {
-  border-bottom-color: red; /* Màu sắc cho tab active */
+  border-bottom-color: #196c7e; /* Màu sắc cho tab active */
 }
 
 .tab .instructor-sign-up,
@@ -42,8 +42,8 @@
     cursor: pointer; /* Show pointer cursor on hover */
 }
 
-.selectpicker option.red {
-    color: red;
+.selectpicker option.blue {
+    color: #196c7e;
   }
 
   .selectpicker option {

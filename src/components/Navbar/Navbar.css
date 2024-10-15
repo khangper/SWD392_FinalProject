@@ -13,10 +13,10 @@ nav{
     justify-content: center; 
     align-items: center;
     padding: 19px;
-    background-color: #ff0000;
+    background-color: #196c7e;
   }
   .nav-left .menu-container:hover {
-    background-color: #9a0606; 
+    background-color: #0d3842; 
     cursor: pointer;
     user-select: none;
   }
@@ -62,18 +62,18 @@ nav{
     margin-right: 25px;
 }
 .nav-right .course-button{
-    background-color: #ff0000;
-    color: #fff;
-    font-size: 16px;
-    padding: 7px 10px;
-    border-radius: 3px;
-    border: none;
-    position: relative;
-    margin-right: 20px;
+  background-color: #196c7e;
+  color: #fff;
+  font-size: 16px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  border: none;
+  position: relative;
+  margin-right: 20px;
 }
 .nav-right .course-button:hover{
+  background-color: #0d3842;
   cursor: pointer;
-  background-color: #000000;
   color: #fff;
 }
 
@@ -140,7 +140,7 @@ nav{
 }
 .icon .dropdown-item:hover,
 .profile .dropdown-item:hover {
-background: #ffecec;
+background: #eafbff;
 }
 
 .icon .dropdown-item:last-child {
@@ -198,7 +198,7 @@ background: #ffecec;
     text-align: center;
     float: left;
     padding: 15px 0;
-    background: #ffecec;
+    background: #eafbff;
     font-size: 14px;
     color: #333 !important;
     font-family: 'Roboto', sans-serif;
@@ -271,7 +271,7 @@ background: #ffecec;
   font-size: 120%;
   height: 30px;
   width: 30px;
-  background: #ffecec;
+  background: #eafbff;
   border-radius: 100%;
   margin-right: 10px;
   padding: 6px 4px 0;
@@ -339,6 +339,6 @@ background: #ffecec;
     font-family: 'Roboto', sans-serif;
 }
 .dropdown .profile-item:hover{
-  background: #ffecec;
+  background: #eafbff;
   cursor: pointer;
 }

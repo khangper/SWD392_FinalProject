@@ -4,6 +4,7 @@ import Header from "../../components/Header-paidmember/Header";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
+import haka_logo from "../../assets/Haka_logo.png"
 
 function CertificationCenter() {
   const [activeTab, setActiveTab] = useState("development");
@@ -48,7 +49,7 @@ function CertificationCenter() {
               <li>
                 <a href="#" className="CC-edttslogo">
                   <img
-                    src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg"
+                    src={haka_logo}
                     alt=""
                   />
                 </a>

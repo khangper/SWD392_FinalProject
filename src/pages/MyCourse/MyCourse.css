@@ -33,12 +33,12 @@
   }
   
   .MyCourse-nav-item a:hover {
-    background-color: #ed2a26;
+    background-color: #FFE599;
     color: #fff;
   }
   
   .MyCourse-nav-item a.active {
-    background-color: #ed2a26;
+    background-color: #F9BF4B;
     color: #fff;
   
   }
@@ -128,8 +128,20 @@ table {
     border-bottom: 0 !important;
 }
 
-.course_active {
-    color: #ed2a26;
+.MyCourse-course_active {
+    color: #02dd5a !important;
+}
+
+.MyPurchase-course_active {
+    color: #196c7e !important;
+}
+
+.UpCourse-course_active {
+    color: #fdc50d !important;
+}
+
+.Discount-course_active {
+    color: #02dd5a !important;
 }
 
 .ucp-table tbody tr td {
@@ -160,7 +172,7 @@ table.MyCourse-table.ucp-table {
 }
 
 b.MyCourse-course_active {
-    color: #ed2a26;
+    color: #F9BF4B;
 }
 
 .ucp-table thead tr th {
@@ -272,7 +284,7 @@ th.MyCourse-text-center {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #196c7e;
     padding: 0px 20px;
     border-radius: 3px;
     border: 0;
@@ -281,7 +293,7 @@ th.MyCourse-text-center {
 
 .MyCoursePage1-create_btn_dash:hover {
     color: #fff;
-    background: #333;
+    background: #0d3842;
 }
 
 
@@ -332,14 +344,14 @@ th.MyCourse-text-center {
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #ed2a26;
+    background: #F9BF4B;
 	text-align: center;
 	padding: 0 30px;
 }
 
 .MyCourse-plan_link_btn:hover {
     color: #fff;
-    background: #333;
+    background: #e3a62b;
 }
 
 .Mt-30 {
@@ -453,14 +465,14 @@ th.MyCourse-text-center {
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #ed2a26;
+    background: #196c7e;
 	width: 80%;
 	text-align: center;
 }
 
 .Mc-discount_btn:hover {
     color: #fff;
-    background: #333;
+    background: #0d3842;
 }
 
 .Mc-panel-default.Mt-30 {
@@ -513,7 +525,7 @@ th.MyCourse-text-center {
   }
   
   .edit-form button {
-    background-color: #ed2a26;
+    background-color: #196c7e;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -525,7 +537,7 @@ th.MyCourse-text-center {
   
   .edit-form button:hover {
     color: #fff;
-    background: #333;
+    background: #0d3842;
   }
   
   .edit-form button[type="button"] {

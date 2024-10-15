@@ -95,13 +95,13 @@ const BlogDetail = () => {
                   </p>
                 </div>
                 <div className="blog-detail-heading-2">
-                  Why did you decide to teach on Cursus?
+                  Why did you decide to teach on Haka?
                 </div>
                 <div className="blog-detail-content-container">
                   <p className="blog-detail-paragraph">
                     Nam a egestas libero, eget eleifend turpis. Sed id ipsum a
                     ipsum aliquam laoreet sit amet sit amet nibh. Proin dapibus,
-                    libero sed posuere rhoncus, orci mi cursus enim, at accumsan
+                    libero sed posuere rhoncus, orci mi haka enim, at accumsan
                     eros massa lacinia mi. Nunc eget finibus felis, volutpat
                     malesuada sem. Aliquam ac nisl pellentesque, varius neque
                     sit amet, porttitor nunc. Nullam elit tellus, dapibus non
@@ -123,13 +123,13 @@ const BlogDetail = () => {
                     Etiam lobortis dictum tincidunt. Interdum et malesuada fames
                     ac ante ipsum primis in faucibus. Suspendisse ultricies
                     efficitur dui, suscipit tempus elit condimentum quis. Duis
-                    sed vestibulum tortor, eget cursus odio.
+                    sed vestibulum tortor, eget haka odio.
                   </p>
                 </div>
 
                 <div className="blog-detail-heading-2">
                   Did you have any prior on- or offline teaching experience
-                  prior to publishing your first Cursus course?
+                  prior to publishing your first Haka course?
                 </div>
                 <div className="blog-detail-content-container">
                   <p className="blog-detail-paragraph">
@@ -138,18 +138,18 @@ const BlogDetail = () => {
                     pulvinar sit amet pretium a, malesuada sed tellus. Aliquam
                     ultrices elit neque, quis lacinia ex porttitor non. Donec ac
                     iaculis turpis. Nulla lacinia enim quis orci aliquam, non
-                    cursus urna pellentesque. Class aptent taciti sociosqu ad
+                    haka urna pellentesque. Class aptent taciti sociosqu ad
                     litora torquent per conubia nostra, per inceptos himenaeos.
                     Phasellus in mi a nisi auctor interdum. Vivamus faucibus
                     magna sed elit interdum consequat. Vestibulum eu tortor vel
                     ante feugiat faucibus quis et urna. Quisque interdum ac enim
-                    eu tempus. Fusce viverra, lectus egestas tincidunt cursus,
+                    eu tempus. Fusce viverra, lectus egestas tincidunt haka,
                     tortor sapien convallis metus, vitae auctor risus metus vel
                     nisi. Aenean dapibus bibendum mauris ut iaculis.
                   </p>
                 </div>
                 <div className="blog-detail-heading-2">
-                  What are the most rewarding aspects of teaching on Cursus?
+                  What are the most rewarding aspects of teaching on Haka?
                 </div>
 
                 <div className="blog-detail-content-container">
