@@ -101,9 +101,9 @@
   color: #196c7e;
 }
 
-.content-section {
+/* .content-section {
   padding-top: 60px;
-}
+} */
 
 .content-tab-header {
   display: flex;
@@ -255,6 +255,7 @@
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 16px;
   transition: background-color 0.3s, color 0.3s;
 }
 

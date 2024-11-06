@@ -34,6 +34,11 @@ const CreateNewCourse = () => {
   const [closeCaption, setCloseCaption] = useState([]);
   const [categories, setCategories] = useState([]);
 
+  const [activeTab, setActiveTab] = useState("free");
+  const handlePriceChange = (e) => {
+    const value = e.target.value.replace(/[^0-9]/g, "");
+    setPrice(value);
+  };
   useEffect(() => {
     // Sample data for course levels
     const sampleCourseLevels = [
@@ -49,127 +54,12 @@ const CreateNewCourse = () => {
       { value: "portuguese", label: "Português" },
       { value: "japanese", label: "日本語" },
       { value: "german", label: "Deutsch" },
-      { value: "french", label: "Français" },
-      { value: "turkish", label: "Türkçe" },
-      { value: "italian", label: "Italiano" },
-      { value: "polish", label: "Polski" },
-      { value: "tamil", label: "Tamil" },
-      { value: "marathi", label: "मराठी" },
-      { value: "telugu", label: "Telugu" },
-      { value: "romanian", label: "Română" },
     ];
 
     // Sample data for categories
     const sampleCategories = [
       { value: "web-development", label: "Web Development" },
       { value: "data-science", label: "Data Science" },
-      { value: "programming-languages", label: "Programming Languages" },
-      { value: "mobile-apps", label: "Mobile Apps" },
-      { value: "game-development", label: "Game Development" },
-      { value: "databases", label: "Databases" },
-      { value: "software-testing", label: "Software Testing" },
-      { value: "software-engineering", label: "Software Engineering" },
-      { value: "development-tools", label: "Development Tools" },
-      { value: "e-commerce", label: "E-Commerce" },
-      { value: "finance", label: "Finance" },
-      { value: "entrepreneurship", label: "Entrepreneurship" },
-      { value: "communications", label: "Communications" },
-      { value: "management", label: "Management" },
-      { value: "sales", label: "Sales" },
-      { value: "strategy", label: "Strategy" },
-      { value: "operations", label: "Operations" },
-      { value: "project-management", label: "Project Management" },
-      { value: "business-law", label: "Business Law" },
-      { value: "data-analytics", label: "Data & Analytics" },
-      { value: "home-business", label: "Home Business" },
-      { value: "human-resources", label: "Human Resources" },
-      { value: "industry", label: "Industry" },
-      { value: "media", label: "Media" },
-      { value: "real-estate", label: "Real Estate" },
-      { value: "accounting", label: "Accounting & Bookkeeping" },
-      { value: "compliance", label: "Compliance" },
-      { value: "cryptocurrency", label: "Cryptocurrency & Blockchain" },
-      { value: "economics", label: "Economics" },
-      { value: "finance-cert", label: "Finance Cert & Exam Prep" },
-      { value: "financial-modeling", label: "Financial Modeling & Analysis" },
-      { value: "investing", label: "Investing & Trading" },
-      { value: "money-management", label: "Money Management Tools" },
-      { value: "taxes", label: "Taxes" },
-      { value: "other-finance", label: "Other Finance & Economics" },
-      { value: "it-software", label: "IT & Software" },
-      { value: "hardware", label: "Hardware" },
-      { value: "operating-systems", label: "Operating Systems" },
-      { value: "office-productivity", label: "Office Productivity" },
-      { value: "microsoft", label: "Microsoft" },
-      { value: "apple", label: "Apple" },
-      { value: "google", label: "Google" },
-      { value: "sap", label: "SAP" },
-      { value: "oracle", label: "Oracle" },
-      { value: "personal-development", label: "Personal Development" },
-      { value: "personal-transformation", label: "Personal Transformation" },
-      { value: "productivity", label: "Productivity" },
-      { value: "leadership", label: "Leadership" },
-      { value: "personal-finance", label: "Personal Finance" },
-      { value: "career-development", label: "Career Development" },
-      { value: "parenting", label: "Parenting & Relationships" },
-      { value: "happiness", label: "Happiness" },
-      { value: "religion", label: "Religion & Spirituality" },
-      { value: "personal-brand", label: "Personal Brand Building" },
-      { value: "creativity", label: "Creativity" },
-      { value: "influence", label: "Influence" },
-      { value: "self-esteem", label: "Self Esteem" },
-      { value: "stress-management", label: "Stress Management" },
-      { value: "memory-skills", label: "Memory & Study Skills" },
-      { value: "motivation", label: "Motivation" },
-      { value: "design", label: "Design" },
-      { value: "web-design", label: "Web Design" },
-      { value: "graphic-design", label: "Graphic Design" },
-      { value: "design-tools", label: "Design Tools" },
-      { value: "user-experience", label: "User Experience" },
-      { value: "game-design", label: "Game Design" },
-      { value: "design-thinking", label: "Design Thinking" },
-      { value: "animation", label: "3D & Animation" },
-      { value: "fashion", label: "Fashion" },
-      { value: "marketing", label: "Marketing" },
-      { value: "digital-marketing", label: "Digital Marketing" },
-      { value: "seo", label: "Search Engine Optimization" },
-      { value: "social-media", label: "Social Media Marketing" },
-      { value: "branding", label: "Branding" },
-      { value: "marketing-fundamentals", label: "Marketing Fundamentals" },
-      { value: "analytics", label: "Analytics & Automation" },
-      { value: "public-relations", label: "Public Relations" },
-      { value: "advertising", label: "Advertising" },
-      { value: "video-marketing", label: "Video & Mobile Marketing" },
-      { value: "content-marketing", label: "Content Marketing" },
-      { value: "growth-hacking", label: "Growth Hacking" },
-      { value: "affiliate-marketing", label: "Affiliate Marketing" },
-      { value: "product-marketing", label: "Product Marketing" },
-      { value: "lifestyle", label: "Lifestyle" },
-      { value: "arts-crafts", label: "Arts & Crafts" },
-      { value: "food-beverage", label: "Food & Beverage" },
-      { value: "beauty", label: "Beauty & Makeup" },
-      { value: "travel", label: "Travel" },
-      { value: "gaming", label: "Gaming" },
-      { value: "home-improvement", label: "Home Improvement" },
-      { value: "pet-care", label: "Pet Care & Training" },
-      { value: "photography", label: "Photography" },
-      { value: "digital-photography", label: "Digital Photography" },
-      { value: "photography-fundamentals", label: "Photography Fundamentals" },
-      { value: "portraits", label: "Portraits" },
-      { value: "photography-tools", label: "Photography Tools" },
-      { value: "commercial-photography", label: "Commercial Photography" },
-      { value: "video-design", label: "Video Design" },
-      { value: "self-defense", label: "Self Defense" },
-      { value: "safety", label: "Safety & First Aid" },
-      { value: "dance", label: "Dance" },
-      { value: "meditation", label: "Meditation" },
-      { value: "music", label: "Music" },
-      { value: "instruments", label: "Instruments" },
-      { value: "production", label: "Production" },
-      { value: "music-fundamentals", label: "Music Fundamentals" },
-      { value: "vocal", label: "Vocal" },
-      { value: "music-techniques", label: "Music Techniques" },
-      { value: "music-software", label: "Music Software" },
     ];
 
     setCourseLevels(sampleCourseLevels);
@@ -282,6 +172,7 @@ const CreateNewCourse = () => {
     const value = e.target.value.replace(/[^0-9]/g, "");
     setHours(value);
   };
+  const [imgSrc, setImgSrc] = useState("");
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
@@ -307,8 +198,8 @@ const CreateNewCourse = () => {
       price: `$${price}`,
       hours: `${hours} hours`,
       category: selectedCategory.label,
-      imgSrc:
-        "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
+      imgSrc,
+      // "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
       rating: "4",
       views: "200k",
     };
@@ -332,7 +223,7 @@ const CreateNewCourse = () => {
         </h2>
       </div>
       <div className="create-new-course-body">
-        <ul className="step-steps">
+        {/* <ul className="step-steps">
           {steps.map((step, index) => (
             <li
               key={index}
@@ -354,7 +245,7 @@ const CreateNewCourse = () => {
               </a>
             </li>
           ))}
-        </ul>
+        </ul> */}
         <section className="content-section">
           {currentStep === 0 && (
             <div className="content-tab-container">
@@ -401,7 +292,7 @@ const CreateNewCourse = () => {
                       <div className="help-block">220 words.</div>
                     </div>
                   </div>
-                  <div className="content-tab-title">
+                  {/* <div className="content-tab-title">
                     <h4>Course description*</h4>
                   </div>
                   <div className="headline-group">
@@ -436,6 +327,23 @@ const CreateNewCourse = () => {
                         console.log("Focus.", editor);
                       }}
                     />
+                  </div> */}
+
+                  <div className="content-tab-title">
+                    <h4>Regular Price*</h4>
+                  </div>
+                  <div className="headline-group-2">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        id="price"
+                        name="price"
+                        placeholder="$0"
+                        value={price}
+                        onChange={handlePriceChange}
+                      />
+                      <div className="form-counter">USD</div>
+                    </div>
                   </div>
                   <div className="content-tab-form-split">
                     <div className="content-tab-form-left">
@@ -480,7 +388,7 @@ const CreateNewCourse = () => {
                     </div>
                   </div>
                   <div className="content-tab-form-split">
-                    <div className="content-tab-form-left">
+                    {/* <div className="content-tab-form-left">
                       <div className="content-tab-title">
                         <h4>Course level*</h4>
                       </div>
@@ -498,8 +406,8 @@ const CreateNewCourse = () => {
                           />
                         </div>
                       </div>
-                    </div>
-                    <div className="content-tab-form-left">
+                    </div> */}
+                    {/* <div className="content-tab-form-left">
                       <div className="content-tab-title">
                         <h4>Audio language*</h4>
                       </div>
@@ -518,10 +426,10 @@ const CreateNewCourse = () => {
                           />
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div className="content-tab-form-split">
-                    <div className="content-tab-form-left">
+                    {/* <div className="content-tab-form-left">
                       <div className="content-tab-title">
                         <h4>Close caption*</h4>
                       </div>
@@ -540,7 +448,8 @@ const CreateNewCourse = () => {
                           />
                         </div>
                       </div>
-                    </div>
+                    </div> */}
+
                     <div className="content-tab-form-left">
                       <div className="content-tab-title">
                         <h4>Course category*</h4>
@@ -559,13 +468,34 @@ const CreateNewCourse = () => {
                           />
                         </div>
                       </div>
+                      <div className="content-tab-title">
+                        <h4>Input link img*</h4>
+                      </div>
+                      <div className="headline-group">
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            placeholder="Image URL"
+                            value={imgSrc}
+                            onChange={(e) => setImgSrc(e.target.value)}
+                            className="react-select-container"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <button
+                data-direction="finish"
+                className="btn btn-default steps_btn"
+                onClick={handleSubmit}
+              >
+                Submit for Review
+              </button>
             </div>
           )}
-          {currentStep === 1 && (
+          {/* {currentStep === 1 && (
             <div className="content-tab-container">
               <div className="content-tab-header">
                 <h3>
@@ -632,8 +562,8 @@ const CreateNewCourse = () => {
                 />
               </div>
             </div>
-          )}
-          {currentStep === 2 && (
+          )} */}
+          {/* {currentStep === 2 && (
             <div className="content-tab-container">
               <div className="content-tab-header">
                 <h3>
@@ -823,8 +753,8 @@ const CreateNewCourse = () => {
                 </div>
               </div>
             </div>
-          )}
-          {currentStep === 3 && (
+          )} */}
+          {/* {currentStep === 3 && (
             <div className="content-tab-container">
               <div className="content-tab-header">
                 <h3>
@@ -836,7 +766,7 @@ const CreateNewCourse = () => {
                 <PriceTabs price={price} setPrice={setPrice} />
               </div>
             </div>
-          )}
+          )} */}
           {currentStep === 4 && (
             <div className="content-tab-container">
               <div className="content-tab-header">
@@ -866,7 +796,7 @@ const CreateNewCourse = () => {
           >
             PREVIOUS
           </button>
-          {currentStep < steps.length - 1 && (
+          {/* {currentStep < steps.length - 1 && (
             <button
               data-direction="next"
               className="btn btn-default steps_btn"
@@ -874,7 +804,7 @@ const CreateNewCourse = () => {
             >
               Next
             </button>
-          )}
+          )} */}
           {currentStep === steps.length - 1 && (
             <button
               data-direction="finish"
