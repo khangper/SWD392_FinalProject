@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import logo_bw from "../../assets/Haka_logo_bw.png";
 import facebook from "../../assets/facebook.png";
 import x from "../../assets/x.png";
 import google from "../../assets/google+.png";
@@ -46,8 +47,8 @@ const Footer = ({ sidebar }) => {
       </div>
       <div className="footer-bottom">
         <div className="footer-copy">
-          <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg"  alt=""/>
-          &copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
+          <img src={logo_bw}  alt=""/>
+          &copy; 2024 <strong>Haka</strong>. All Rights Reserved.
         </div>
         <div className="footer-social">
           <Link to={PATH_NAME.HOME}>

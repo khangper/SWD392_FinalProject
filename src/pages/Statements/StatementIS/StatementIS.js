@@ -177,13 +177,13 @@ const StatementIS = () => {
                         <table className="MyCourse-table ucp-table">
                             <thead className="MyCourse-thead-s">
                                 <tr>
-                                    <th className="MyCourse-text-center" scope="col">Date</th>
-                                    <th className="MyCourse-text-center">Order ID</th>
-                                    <th className="MyCourse-text-center" scope="col">Type</th>
-                                    <th className="MyCourse-text-center" scope="col">Title</th>
-                                    <th className="MyCourse-text-center" scope="col">Amount</th>
-                                    <th className="MyCourse-text-center" scope="col">Fees</th>
-                                    <th className="MyCourse-text-center" scope="col">Invoice</th>
+                                    <th className="Statement-th-text" scope="col">Date</th>
+                                    <th className="Statement-th-text">Order ID</th>
+                                    <th className="Statement-th-text" scope="col">Type</th>
+                                    <th className="Statement-th-text" scope="col">Title</th>
+                                    <th className="Statement-th-text" scope="col">Amount</th>
+                                    <th className="Statement-th-text" scope="col">Fees</th>
+                                    <th className="Statement-th-text" scope="col">Invoice</th>
 
                                 </tr>
                             </thead>

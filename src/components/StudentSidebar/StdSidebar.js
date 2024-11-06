@@ -168,7 +168,7 @@ const StdSidebar = ({ sidebar }) => {
           </Link>
         </div>
         <div className="sidebar-footer-copyright">
-          © 2024 <span className="sidebar-footer-brand">Cursus</span>. All
+          © 2024 <span className="sidebar-footer-brand">Haka</span>. All
           Rights Reserved.
         </div>
       </div>

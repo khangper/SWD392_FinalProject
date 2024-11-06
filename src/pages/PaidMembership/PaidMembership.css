@@ -155,7 +155,7 @@
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 10px !important;
-    color: #ed2a26;
+    color: #e3a62b;
     text-align: left;
     line-height: 26px;
   }
@@ -219,7 +219,7 @@
     height: 50px;
     border-radius: 3px;
     border: 0;
-    background: #ed2a26;
+    background: #196c7e;
     color: #fff;
     font-size: 14px;
     font-weight: 500;
@@ -229,7 +229,7 @@
     background-color: #313437;
   }
   .chck_icon_1 {
-    color: red;
+    color: blue;
   }
   .Member-icon {
     width: 69px;
@@ -318,7 +318,7 @@ summary.details-summary1 {
   height: 50px;
   border-radius: 3px;
   border: 0;
-  background: #ed2a26;
+  background: #196c7e;
   color: #fff;
   font-size: 14px;
   font-weight: 500;

@@ -6,6 +6,7 @@ import google from "../../assets/google+.png";
 import linkedin from "../../assets/linkedin.png";
 import insta from "../../assets/insta.png";
 import pinterest from "../../assets/pinterest.png";
+import hakaBW_logo from "../../assets/Haka_logo_bw.png"
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
 const InsAStdFooter = ({ sidebar }) => {
@@ -24,8 +25,8 @@ const InsAStdFooter = ({ sidebar }) => {
       </div>
       <div className="footer-bottom">
         <div className="footer-copy">
-          <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo1.svg" alt=""/>
-          &copy; 2024 <strong>Cursus</strong>. All Rights Reserved.
+          <img src={hakaBW_logo} alt=""/>
+          &copy; 2024 <strong>Haka</strong>. All Rights Reserved.
         </div>
         <div className="footer-social">
         <Link to={PATH_NAME.HOME}>

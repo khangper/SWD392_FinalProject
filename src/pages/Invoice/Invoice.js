@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Invoice.css";
 import { PATH_NAME } from "../../constant/pathname";
+import hakaFull_logo from "../../assets/Haka_Online_Learning_System_logo.png"
 
 const Invoice = () => {
   const location = useLocation();
@@ -74,7 +75,7 @@ const Invoice = () => {
           <div className="Header_Logo">
             <Link to={PATH_NAME.HOME}>
               <img
-                src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg"
+                src={hakaFull_logo}
                 alt="Logo"
               />
             </Link>
@@ -117,8 +118,8 @@ const Invoice = () => {
               </div>
             </div>
             <div className="Inv_Detail_Content-Cursus">
-              <h4>Cursus</h4>
-              <div className="vdt-list">Cursus LTD</div>
+              <h4>Haka</h4>
+              <div className="vdt-list">Haka LTD</div>
               <div className="vdt-list">#1234, Shahid Karnail Singh Nagar,</div>
               <div className="vdt-list">Near MBD Mall,</div>
               <div className="vdt-list">141001</div>

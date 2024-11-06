@@ -2,6 +2,8 @@ import React from 'react'
 import './Error404.css'
 import { Link } from 'react-router-dom'
 import { PATH_NAME } from '../../constant/pathname'
+import hakaFull_logo from "../../assets/Haka_Online_Learning_System_logo.png"
+
 export const Error404 = () => {
     return (
         <div className="wrapper error_wrapper">
@@ -10,7 +12,7 @@ export const Error404 = () => {
                     <div className="col-md-12">
                         <div className="cmtk_group">
                             <div className="ct-logo">
-                                <Link to={PATH_NAME.LOGIN}><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></Link>
+                                <Link to={PATH_NAME.LOGIN}><img src={hakaFull_logo} alt="" /></Link>
                             </div>
                             <div className="cmtk_dt">
                                 <h1 className="thnk_coming_title">404</h1>

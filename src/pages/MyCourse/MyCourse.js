@@ -294,26 +294,26 @@ function MyCourse() {
                   <table className="MyCourse-table ucp-table">
                     <thead className="MyCourse-thead-s">
                       <tr>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Item No.
                         </th>
-                        <th className="MyCourse-text-center">Title</th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text">Title</th>
+                        <th className="MyCourse-th-text" scope="col">
                           Publish Date
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Sales
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Parts
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Category
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Status
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Action
                         </th>
                       </tr>
@@ -472,26 +472,26 @@ function MyCourse() {
                   <table className="MyCourse-table ucp-table">
                     <thead className="MyCourse-thead-s">
                       <tr>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Item No.
                         </th>
-                        <th className="MyCourse-text-center">Title</th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text">Title</th>
+                        <th className="MyCourse-th-text" scope="col">
                           Vendor
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Category
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Delivery Type
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Price
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Purchase Date
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Action
                         </th>
                       </tr>
@@ -520,7 +520,7 @@ function MyCourse() {
                             <a href="#">{course.Category}</a>
                           </td>
                           <td className="MyCourse-text-center">
-                            <b className="MyCourse-course_active">
+                            <b className="MyPurchase-course_active">
                               {course.DeliveryType}
                             </b>
                           </td>
@@ -567,26 +567,26 @@ function MyCourse() {
                   <table className="MyCourse-table ucp-table">
                     <thead className="MyCourse-thead-s">
                       <tr>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Item No.
                         </th>
-                        <th className="MyCourse-text-center">Title</th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text">Title</th>
+                        <th className="MyCourse-th-text" scope="col">
                           Thumbnail
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Category
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Price
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Date
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Status
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Action
                         </th>
                       </tr>
@@ -621,7 +621,7 @@ function MyCourse() {
                             {course.Purchase}
                           </td>
                           <td className="MyCourse-text-center">
-                            <b className="MyCourse-course_active">
+                            <b className="UpCourse-course_active">
                               {course.Status}
                             </b>
                           </td>
@@ -829,23 +829,23 @@ function MyCourse() {
                   <table className="MyCourse-table ucp-table">
                     <thead className="MyCourse-thead-s">
                       <tr>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Item No.
                         </th>
-                        <th className="MyCourse-text-center">Title</th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text">Title</th>
+                        <th className="MyCourse-th-text" scope="col">
                           Start Date
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           End Date
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Discount
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Status
                         </th>
-                        <th className="MyCourse-text-center" scope="col">
+                        <th className="MyCourse-th-text" scope="col">
                           Action
                         </th>
                       </tr>
@@ -877,7 +877,7 @@ function MyCourse() {
                             {discount.Discount}
                           </td>
                           <td className="MyCourse-text-center">
-                            <b className="MyCourse-course_active">
+                            <b className="Discount-course_active">
                               {discount.Status}
                             </b>
                           </td>

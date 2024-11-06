@@ -31,7 +31,7 @@ html, body {
 }
 
 .Thanks-ct-logo {
-    padding-bottom: 80px;
+    padding-bottom: 70px;
     width: 100%;
     text-align: center;
 }
@@ -81,11 +81,11 @@ html, body {
 }
 
 .thnk_des span {
-    color: red;
+    color: #196c7e;
 }
 
 .thnk_des a {
-    color: red;
+    color: #F9BF4B;
     text-decoration: none;
 }
 

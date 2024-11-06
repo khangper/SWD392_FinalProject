@@ -41,11 +41,11 @@
   }
   
   .side-link:hover {
-    background-color: #FFECEC;
+    background-color: #eafbff;
   }
   
   .side-link.active {
-    background-color: #FFECEC;
+    background-color: #eafbff;
     color: #ff0000;
   }
   

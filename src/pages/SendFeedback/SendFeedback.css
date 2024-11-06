@@ -86,9 +86,13 @@
     border-radius: 3px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    background: #ed2a26;
+    background: #F9BF4B;
     display: block;
     width: 27%;
+}
+
+.SendFeedback_btn:hover{
+    background: #e3a62b;
 }
 
 .Email-Sendfeeback{

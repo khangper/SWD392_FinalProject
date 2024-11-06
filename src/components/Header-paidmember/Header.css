@@ -1,7 +1,7 @@
 
 .header-link1{
     cursor: pointer;
-    border: 1px solid #efefef;
+    border: 1px solid #FFE599;
     padding: 6px 19px 8px 21px;
     background-color: #fff;
     border-radius: 20px;
@@ -39,7 +39,7 @@
     border-radius: 50px;
     flex-shrink: 0;
     object-fit: cover;
-    border: 2px solid #efefef;
+    border: 2px solid #FFE599;
 }
 
 

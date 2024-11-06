@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./CommingSoon.css";
 import { Link } from "react-router-dom";
 import { PATH_NAME } from "../../constant/pathname";
+import hakaFull_logo from "../../assets/Haka_Online_Learning_System_logo.png"
+
 const CommingSoon = () => {
   const calculateTimeLeft = () => {
     const difference = +new Date("2025-01-01") - +new Date();
@@ -37,7 +39,7 @@ const CommingSoon = () => {
             <Link to={PATH_NAME.HOME}>
               <div className="Thanks-ct-logo">
                 <img
-                  src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg"
+                  src={hakaFull_logo}
                   alt=""
                 />
               </div>
@@ -123,7 +125,7 @@ const CommingSoon = () => {
               </div>
               <div className="Thanks-tc_footer_right">
                 <p>
-                  © 2024 <strong>Cursus</strong>. All Rights Reserved.
+                  © 2024 <strong>Haka</strong>. All Rights Reserved.
                 </p>
               </div>
             </div>

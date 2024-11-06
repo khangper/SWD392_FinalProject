@@ -70,3 +70,32 @@
 .mip-oiv-course-detail:hover .mip-cart {
   display: block;
 }
+
+.subscribe-btn {
+  background: #F9BF4B !important;
+  color: #fff;
+}
+
+.subscribe-btn:hover {
+  background: #e3a62b !important;
+}
+
+.other_instructor_view-nav .tab.active {
+  border-bottom: 4px solid #196c7e !important;
+}
+
+.tab.active::after{
+  background: none !important;
+}
+
+.oiv-cmnt-btn{
+  background: #196c7e !important;
+}
+
+.oiv-badge_seller{
+  background-color: #02dd5a !important;
+}
+
+.crse_reviews{
+  background-color: #e3a62b;
+}

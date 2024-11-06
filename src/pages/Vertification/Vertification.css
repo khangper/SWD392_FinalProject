@@ -235,7 +235,7 @@ strong {
     line-height: 0;
     color: #fff;
     content: "Upload File";
-    background-color: #ed2a26;
+    background-color: #196c7e;
     border-left: inherit;
     border-radius: 0 3px 3px 0;
     border: none;
@@ -247,7 +247,7 @@ strong {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #196c7e;
     padding: 0px 30px;
     border-radius: 3px;
     border: 0;

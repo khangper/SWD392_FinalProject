@@ -266,7 +266,7 @@ const InsDashboard = () => {
             <section className="profile-analytics-section">
               <div className="course-performance-header">
                 <h2 className="course-performance-title">
-                  What's new on Cursus
+                  What's new on Haka
                 </h2>
               </div>
               <div className="sc-card">

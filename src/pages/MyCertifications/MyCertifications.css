@@ -64,11 +64,16 @@
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background: #ed2a26;
+    background: #196c7e;
     padding: 0px 20px;
     border-radius: 3px;
     border: 0;
     height: 40px;
+    cursor: pointer;
+}
+
+.MyCertifications_create_btn_dash:hover {
+    background: #0d3842;
 }
 
 .MyCertifications_table_cerificate {
@@ -154,7 +159,12 @@
 }
 
 .MyCertifications_thead_s {
-    background-color: #ffdddd;
+    background-color: #eafbff !important;
+}
+
+.MyCertifications_thead_text_center{
+    background-color: #eafbff !important;
+    text-align: center;
 }
 
 .MyCertifications_text_center {

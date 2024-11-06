@@ -128,7 +128,7 @@ const PressReleasePage = () => {
                     <p className="press-learn-more">Learn More</p>
                   </div>
                   <a href="#" className="press-help-center">
-                    Cursus Help Center
+                    Haka Help Center
                   </a>
                 </div>
               </div>
@@ -136,10 +136,10 @@ const PressReleasePage = () => {
 
             <div className="press-col-right-parent">
               <div className="press-label-parent">
-                <h3>Cursus in the News</h3>
+                <h3>Haka in the News</h3>
                 <p>
                   For media interviews and inquiries, please send an email to
-                  <Link to="#">press@cursus.com</Link>
+                  <Link to="#">press@haka.com</Link>
                 </p>
               </div>
 
@@ -165,7 +165,7 @@ const PressReleasePage = () => {
 
               <div className="press-label-parent">
                 <h3>Press Releases</h3>
-                <p>For Release from Cursus</p>
+                <p>For Release from Haka</p>
               </div>
 
               <div className="press-release-title-parent">

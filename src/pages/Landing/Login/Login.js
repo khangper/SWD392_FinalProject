@@ -6,6 +6,7 @@ import passwordIcon from "../../../assets/password.png";
 import { AuthContext } from "../../../Router/AuthContext";
 import { PATH_NAME } from "../../../constant/pathname";
 import Warning from "../../../components/Warning/Warning";
+import hakaFull_logo from "../../../assets/Haka_Online_Learning_System_logo.png"
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -35,7 +36,7 @@ const Login = () => {
       <div className="login-logo-container">
         <Link to={PATH_NAME.HOME}>
           <img
-            src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
+            src={hakaFull_logo}
             alt="Cursus Logo"
             className="login-logo"
           />
@@ -43,7 +44,7 @@ const Login = () => {
       </div>
       <div className="login-form-container">
         <h2>Welcome Back</h2>
-        <p className="login-banner">Log In to Your Cursus Account!</p>
+        <p className="login-banner">Log In to Your Haka Account!</p>
         {warning && <Warning message={warning} />}
         <form onSubmit={handleLogin}>
           <div className="login-input-wrapper">
@@ -92,10 +93,10 @@ const Login = () => {
         <img
           alt=""
           className="footer-logo"
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/sign_logo.png"
+          src={hakaFull_logo}
         ></img>
         <span>
-          © 2024 <strong>Cursus</strong>. All Rights Reserved.
+          © 2024 <strong>Haka</strong>. All Rights Reserved.
         </span>
       </div>
     </div>

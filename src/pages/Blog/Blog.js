@@ -114,7 +114,7 @@ const Blog = () => {
                       <p className="blog-learn-more">Learn More</p>
                     </div>
                     <Link to="#" className="blog-help-center">
-                      Cursus Help Center
+                      Haka Help Center
                     </Link>
                   </div>
                 </div>

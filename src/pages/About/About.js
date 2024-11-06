@@ -8,6 +8,8 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { SlGlobe } from "react-icons/sl";
 import Footer from "../../components/Footer/Footer";
 import { PATH_NAME } from "../../constant/pathname";
+import hakaFull_logo from "../../assets/Haka_Online_Learning_System_logo.png"
+
 const About = () => {
   return (
     <div className="about">
@@ -56,7 +58,7 @@ const About = () => {
                   </div>
                   <div className="about-on-cursus-parent">
                     <div className="about-on-cursus">
-                      On Cursus, you have access to:
+                      On Haka, you have access to:
                     </div>
                     <div className="about-line-wrapper"></div>
                   </div>
@@ -165,7 +167,7 @@ const About = () => {
               </div>
             </div>
             <img
-              src="https://gambolthemes.net/html-items/cursus-new-demo/images/about/stroy_img.png"
+              src={hakaFull_logo}
               alt=""
               className="about-story-img"
             />
@@ -180,7 +182,7 @@ const About = () => {
                   </div>
                   <div className="about-our-global-parent">
                     <div className="about-on-cursus">
-                      Cursus is the leading global marketplace for teaching and
+                      Haka is the leading global marketplace for teaching and
                       learning, connecting millions of students to the skills
                       they need to succeed.
                     </div>
@@ -303,7 +305,7 @@ const About = () => {
                 </button>
               </div>
               <img
-                src="https://gambolthemes.net/html-items/cursus-new-demo/images/about/team.jpg"
+                src={hakaFull_logo}
                 alt=""
                 className="about-team-img"
               />

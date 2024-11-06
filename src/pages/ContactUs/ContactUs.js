@@ -81,10 +81,7 @@ const ContactUs = () => {
           <div className="Contact_Information">
             <div className="Contact_Checkout_Title">
               <h4>Contact Information</h4>
-              <img
-                src="https://gambolthemes.net/html-items/cursus-new-demo/images/line.svg"
-                alt=""
-              />
+              <div className="contact-line-story"></div>
             </div>
             <div className="Contact_Detail_Inf">
               <div className="Contact_txt_cntct">

@@ -140,13 +140,13 @@
 }
 
 .chat__message__dt.active {
-  background-color: #ffecec;
-  border-left: 4px solid #ed2a26;
+  background-color: #eafbff;
+  border-left: 4px solid #196c7e;
 }
 
 .chat__message__dt:hover {
-  background-color: #ffecec;
-  border-left: 4px solid #ed2a26;
+  background-color: #eafbff;
+  border-left: 4px solid #196c7e;
 }
 
 .user-status {
@@ -176,7 +176,7 @@
   position: absolute;
   bottom: 2px;
   right: -7px;
-  background-color: #ed2a26;
+  background-color: #F9BF4B;
   color: #fff;
   border-radius: 50%;
   font-size: 12px;
@@ -266,7 +266,7 @@
 }
 
 .message-dropdown-item:hover {
-  background-color: #ffecec;
+  background-color: #eafbff;
   color: #333;
   cursor: pointer;
 }
@@ -356,12 +356,12 @@
 .message-inner-dt {
   padding: 15px;
   border-radius: 3px;
-  background-color: #ffecec;
+  background-color: #FFE599;
   font-size: 14px;
 }
 
 .message-main-message-box-ta-right .message-inner-dt {
-  background-color: #ed2a26;
+  background-color: #F9BF4B;
 }
 
 .message-main-message-box-ta-right .message-inner-dt p {
@@ -419,7 +419,7 @@
 .m-send_button {
   width: 60px;
   height: 38px;
-  background-color: #ed2a26; /* Màu đỏ */
+  background-color: #196c7e; /* Màu xanh */
   display: flex;
   justify-content: center;
   align-items: center;

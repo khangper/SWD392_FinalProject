@@ -206,7 +206,7 @@ const Career = () => {
             <div className="career-story-content">
               <div className="career-story-wrapper">
                 <div className="career-heading-2-our-story">
-                  <h2 className="career-heading-23">Working at Cursus</h2>
+                  <h2 className="career-heading-23">Working at Haka</h2>
                   <div className="career-line-story"></div>
                 </div>
                 <div className="career-our-story-container">
@@ -266,7 +266,7 @@ const Career = () => {
                   </div>
                   <div className="career-on-cursus-parent">
                     <div className="career-on-cursus">
-                      Cursus culture is something special, and to complement and
+                      Haka culture is something special, and to complement and
                       support that culture we have some amazing benefits.
                     </div>
                     <div className="career-line-wrapper"></div>
@@ -300,7 +300,7 @@ const Career = () => {
                   </div>
                   <div className="career-on-cursus-parent">
                     <div className="career-on-cursus">
-                      Cursus is a fast growing company and we're expanding both
+                      Haka is a fast growing company and we're expanding both
                       our Punjab office and international offices.
                     </div>
                     <div className="career-line-wrapper"></div>

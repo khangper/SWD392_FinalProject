@@ -26,25 +26,29 @@
 
 .p-progress-bar {
     height: 10px;
-    background-color: red;
+    background-color: #02dd5a;
 }
 .p-progress-bar1 {
     height: 10px;
-    background-color: red;
+    background-color: #02dd5a;
     width: 80%;
 }
 .p-progress-bar2 {
     height: 10px;
-    background-color: red;
+    background-color: #02dd5a;
     width: 60%;
 }
 .p-progress-bar3 {
     height: 10px;
-    background-color: red;
+    background-color: #02dd5a;
     width: 40%;
 }
 .p-progress-bar4 {
     height: 10px;
-    background-color: red;
+    background-color: #02dd5a;
     width: 20%;
+}
+
+.rvsrch_btn{
+    background-color: #196c7e;
 }

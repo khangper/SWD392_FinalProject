@@ -170,16 +170,16 @@
 .live_stream .owl-nav .owl-prev:hover {
     color: #fff !important;
     opacity: 1;
-    background: #ed2a26 !important;
-    border: 1px solid #ed2a26 !important;
+    background: #196c7e !important;
+    border: 1px solid #0d3842 !important;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }
 
 .live_stream .owl-nav .owl-next:hover {
     color: #fff !important;
     opacity: 1;
-    border: 1px solid #ed2a26 !important;
-    background: #ed2a26 !important;
+    background: #196c7e !important;
+    border: 1px solid #0d3842 !important;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }
 
@@ -301,7 +301,7 @@
     width: 75px;
     text-align: center;
     margin-bottom: 20px;
-    background-color: #ffecec;
+    background-color: #FFE599;
     border-radius: 50%;
     height: 75px;
     display: flex;
@@ -317,7 +317,7 @@
     font-size: 30px;
     text-align: center;
     padding: 14px 0;
-    background: #ffecec;
+    background: #FFE599;
     border-radius: 100%;
     border-bottom: 1px solid #efefef;
 }
@@ -345,7 +345,7 @@
 
 .live_link {
     height: 40px;
-    background: #ed2a26;
+    background: #196c7e;
     border: 0;
     border-radius: 3px;
     padding: 10px 20px;
@@ -354,7 +354,7 @@
 
 .live_link:hover {
     color: #fff;
-    background: #333;
+    background: #0d3842;
 }
 
 .livinfo {

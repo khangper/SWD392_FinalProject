@@ -1,6 +1,8 @@
 import React from 'react'
 import './Thanks.css'
 import { Link } from 'react-router-dom'
+import hakaFull_logo from "../../assets/Haka_Online_Learning_System_logo.png"
+
 const Thanks = () => {
     return (
         <div className="Thanks-wrapper">
@@ -10,7 +12,7 @@ const Thanks = () => {
                     <div className="Thanks-cmtk_group">
                         <Link to="/home">
                             <div className="Thanks-ct-logo">
-                                <a href="index.html"><img src="https://gambolthemes.net/html-items/cursus-new-demo/images/ct_logo.svg" alt="" /></a>
+                                <a href="index.html"><img src={hakaFull_logo} alt="" /></a>
                             </div>
                         </Link>
 
@@ -33,7 +35,7 @@ const Thanks = () => {
                                 </ul>
                             </div>
                             <div className="Thanks-tc_footer_right">
-                                <p>© 2024 <strong>Cursus</strong>. All Rights Reserved.</p>
+                                <p>© 2024 <strong>Haka</strong>. All Rights Reserved.</p>
                             </div>
                         </div>
                     </div>

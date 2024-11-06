@@ -59,7 +59,7 @@
 
 .step-steps li.done:not(:first-child)::before,
 .step-steps li.active:not(:first-child)::before {
-  background-color: #ed2a26;
+  background-color: #FFE599;
 }
 
 .step-steps li a {
@@ -86,7 +86,7 @@
 
 .step-steps li.active .number,
 .step-steps li.done .number {
-  background-color: #ed2a26;
+  background-color: #F9BF4B;
   box-shadow: 0 0 0 5px rgba(237, 42, 38, 0.3);
 }
 
@@ -98,12 +98,12 @@
 
 .step-steps li.active .step-name,
 .step-steps li.done .step-name {
-  color: #ed2a26;
+  color: #196c7e;
 }
 
-.content-section {
+/* .content-section {
   padding-top: 60px;
-}
+} */
 
 .content-tab-header {
   display: flex;
@@ -163,7 +163,7 @@
 }
 
 .content-tab-form .headline-group .form-group .form-counter {
-  background: #ed2a26;
+  background: #196c7e;
   color: #fff;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
@@ -255,11 +255,12 @@
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 16px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .steps_btn:hover {
-  background-color: black;
+  background-color: gray;
   color: #fff;
 }
 
@@ -303,7 +304,7 @@
   font-size: 14px;
   color: #fff;
   border: 0;
-  background: #ed2a26;
+  background: #196c7e;
   border-radius: 3px;
   margin-right: 5px;
   font-weight: 500;
@@ -311,7 +312,7 @@
   cursor: pointer;
 }
 .curriculum-btn:hover{
-  background-color: black;
+  background-color: #0d3842;
   color: #fff;
 }
 .added-section-item{

@@ -24,7 +24,7 @@
 }
 
 .sidebar::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #eafbff; 
   border-radius: 10px; 
 }
 .small-sidebar {
@@ -41,11 +41,11 @@
 }
 
 .side-link:hover {
-  background-color: #FFECEC;
+  background-color: #eafbff;
 }
 
 .side-link.active {
-  background-color: #FFECEC;
+  background-color: #eafbff;
   color: #ff0000;
 }
 
@@ -94,7 +94,7 @@
 .sidebar-dropdown-menu {
   display: flex;
   flex-direction: column;
-  background-color: #FFECEC;
+  background-color: #FFE599;
 }
 
 .sidebar-dropdown-menu a {
@@ -112,7 +112,7 @@
   margin-right: 15px;
 }
 .sidebar-dropdown-menu a:hover {
-  background-color: #FFECEC;
+  background-color: #FFE599;
   color: red;
 }
 
