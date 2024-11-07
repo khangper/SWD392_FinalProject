@@ -173,11 +173,28 @@ const CreateNewCourse = () => {
     setHours(value);
   };
   const [imgSrc, setImgSrc] = useState("");
+  const [information_courses, setinformation_courses] = useState("");
+  const [Linkyoutube, setLinkyoutube] = useState("");
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState("");
   const [price, setPrice] = useState("");
   const [hours, setHours] = useState("");
+  const [imgChannel, setimgChannel] = useState("");
+  const [featureCoursesDetail, setFeatureCoursesDetail] = useState({
+    title: "",
+    information_courses: "",
+    rating: 4.5,
+    ratingCount: 0,
+    enrollCount: 0,
+    viewCount: 0,
+    dislikeCount: 0,
+    likeCount: 0,
+    shareCount: 0,
+    author: "",
+    imgSrc: "",
+    Linkyoutube: "",
+  });
   const dispatch = useDispatch();
   const handleSubmit = () => {
     console.log("Title:", title);
@@ -199,9 +216,25 @@ const CreateNewCourse = () => {
       hours: `${hours} hours`,
       category: selectedCategory.label,
       imgSrc,
-      // "https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-1.jpg",
       rating: "4",
       views: "200k",
+
+      feature_courses_detail: {
+        title,
+        information_courses,
+        rating: featureCoursesDetail.rating,
+        ratingCount: featureCoursesDetail.ratingCount,
+        enrollCount: featureCoursesDetail.enrollCount,
+        viewCount: featureCoursesDetail.viewCount,
+        dislikeCount: featureCoursesDetail.dislikeCount,
+        likeCount: featureCoursesDetail.likeCount,
+        shareCount: featureCoursesDetail.shareCount,
+        author,
+        imgSrc,
+        Linkyoutube,
+        imgChannel:
+          "data:image/jpeg;base64,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",
+      },
     };
     dispatch(createCourseRequest(courseData));
   };
@@ -288,6 +321,22 @@ const CreateNewCourse = () => {
                         placeholder="Author here..."
                         value={author}
                         onChange={(e) => setAuthor(e.target.value)}
+                      />
+                      <div className="help-block">220 words.</div>
+                    </div>
+                  </div>
+                  <div className="content-tab-title">
+                    <h4>Describe*</h4>
+                  </div>
+                  <div className="headline-group">
+                    <div className="form-group">
+                      <textarea
+                        type="text"
+                        id="author"
+                        name="author"
+                        placeholder="Describe here..."
+                        value={information_courses}
+                        onChange={(e) => setinformation_courses(e.target.value)}
                       />
                       <div className="help-block">220 words.</div>
                     </div>
@@ -478,6 +527,20 @@ const CreateNewCourse = () => {
                             placeholder="Image URL"
                             value={imgSrc}
                             onChange={(e) => setImgSrc(e.target.value)}
+                            className="react-select-container"
+                          />
+                        </div>
+                      </div>
+                      <div className="content-tab-title">
+                        <h4>Input link video*</h4>
+                      </div>
+                      <div className="headline-group">
+                        <div className="form-group">
+                          <input
+                            type="text"
+                            placeholder="Video URL"
+                            value={Linkyoutube}
+                            onChange={(e) => setLinkyoutube(e.target.value)}
                             className="react-select-container"
                           />
                         </div>

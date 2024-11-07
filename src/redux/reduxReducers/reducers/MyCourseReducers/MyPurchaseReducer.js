@@ -8,6 +8,9 @@ import {
   DELETE_MYPURCHASECOURSE_REQUEST,
   DELETE_MYPURCHASECOURSE_SUCCESS,
   DELETE_MYPURCHASECOURSE_FAILURE,
+  ADD_MYPURCHASECOURSE_REQUEST,
+  ADD_MYPURCHASECOURSE_SUCCESS,
+  ADD_MYPURCHASECOURSE_FAILURE,
 } from "../../../../constant/data";
 
 const initialState = {
@@ -46,6 +49,17 @@ const myPurchaseCourseReducer = (state = initialState, action) => {
       return { ...state, loading: false, error: action.payload };
     default:
       return state;
+
+    case ADD_MYPURCHASECOURSE_REQUEST:
+      return { ...state, loading: true, error: null };
+    case ADD_MYPURCHASECOURSE_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        myPurchaseCourses: [...state.myPurchaseCourses, action.payload],
+      };
+    case ADD_MYPURCHASECOURSE_FAILURE:
+      return { ...state, loading: false, error: action.payload };
   }
 };
 

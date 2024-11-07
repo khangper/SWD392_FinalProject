@@ -22,9 +22,6 @@ function PurchaseCourse() {
     dispatchPurchase(fetchMyPurchaseCoursesRequest());
   }, [dispatchPurchase]);
 
-  const handleDeletePurchase = (courseId) => {
-    dispatchPurchase(deleteMyPurchaseCourseRequest(courseId));
-  };
   return (
     <div className="PurchaseCoursePage">
       <div className="MyCoursePage-grid-container">
@@ -92,19 +89,17 @@ function PurchaseCourse() {
                       {course.DeliveryType}
                     </b>
                   </td>
-                  <td className="MyCourse-text-center">{course.Price}</td>
+                  <td className="MyCourse-text-center">{course.Price}$</td>
                   <td className="MyCourse-text-center">{course.Purchase}</td>
                   <td className="MyCourse-text-center">
-                    <Link to={PATH_NAME.DOWLOADCOURSE}>
-                      <img src={DowLoadMyCourse} className="Edit-icon" />
+                    <Link
+                      to={`${PATH_NAME.VIEWlISTCOURSE.replace(
+                        ":id",
+                        course.id
+                      )}`}
+                    >
+                      View
                     </Link>
-                    <img
-                      src={DeleteMyCourse}
-                      className="Edit-icon"
-                      onClick={() => handleDeletePurchase(course.itemNo)}
-                      alt="Delete"
-                    />
-                    <img src={Printer} className="Edit-icon" />
                   </td>
                 </tr>
               ))}

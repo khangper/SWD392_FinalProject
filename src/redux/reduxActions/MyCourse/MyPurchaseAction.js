@@ -8,6 +8,9 @@ import {
   DELETE_MYPURCHASECOURSE_REQUEST,
   DELETE_MYPURCHASECOURSE_SUCCESS,
   DELETE_MYPURCHASECOURSE_FAILURE,
+  ADD_MYPURCHASECOURSE_REQUEST,
+  ADD_MYPURCHASECOURSE_SUCCESS,
+  ADD_MYPURCHASECOURSE_FAILURE,
 } from "../../../constant/data";
 
 export const fetchMyPurchaseCoursesRequest = () => ({
@@ -45,5 +48,19 @@ export const deleteMyPurchaseCourseSuccess = (courseId) => ({
 });
 export const deleteMyPurchaseCourseFailure = (error) => ({
   type: DELETE_MYPURCHASECOURSE_FAILURE,
+  payload: error,
+});
+export const addMyPurchaseCourseRequest = (course) => ({
+  type: ADD_MYPURCHASECOURSE_REQUEST,
+  payload: course,
+});
+
+export const addMyPurchaseCourseSuccess = (course) => ({
+  type: ADD_MYPURCHASECOURSE_SUCCESS,
+  payload: course,
+});
+
+export const addMyPurchaseCourseFailure = (error) => ({
+  type: ADD_MYPURCHASECOURSE_FAILURE,
   payload: error,
 });

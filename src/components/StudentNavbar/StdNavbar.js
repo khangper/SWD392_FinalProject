@@ -12,6 +12,8 @@ import { AuthContext } from "../../Router/AuthContext";
 import { PATH_NAME } from "../../constant/pathname";
 import { useDispatch } from "react-redux";
 import { setSearchQuery } from "../../redux/reduxReducers/reducers/searchReducers/SearchSlice";
+import Haka_Online_Learning_System_logo from "..//../assets/Haka_Online_Learning_System_logo.png";
+
 const StdNavbar = ({ setSidebar }) => {
   const sampleMessages = [
     {
@@ -133,11 +135,7 @@ const StdNavbar = ({ setSidebar }) => {
         <div className="menu-container" onClick={sidebar_toggle}>
           <img src={menu_icon} alt="" className="menu-icon" />
         </div>
-        <img
-          src="https://gambolthemes.net/html-items/cursus-new-demo/images/logo.svg"
-          alt=""
-          className="logo"
-        />
+        <img src={Haka_Online_Learning_System_logo} alt="" className="logo" />
         <div className="search-box flex-div">
           <img src={search_icon} alt="" className="search-icon" />
           <input
@@ -244,7 +242,10 @@ const StdNavbar = ({ setSidebar }) => {
                     <span>gambol943@gmail.com</span>
                   </div>
                 </div>
-                <Link to={PATH_NAME.MY_INSTRUCTOR_PROFILE} className="profile-link">
+                <Link
+                  to={PATH_NAME.MY_INSTRUCTOR_PROFILE}
+                  className="profile-link"
+                >
                   View Instructor Profile
                 </Link>
               </div>
