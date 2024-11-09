@@ -17,8 +17,8 @@ import settingIcon from "../../assets/setting.png";
 import feedbackIcon from "../../assets/send-feedback.png";
 import helpIcon from "../../assets/help.png";
 import { PATH_NAME } from "../../constant/pathname";
-import home from '../../assets/home.png'
-import livestream from '../../assets/livestream.png'
+import home from "../../assets/home.png";
+import livestream from "../../assets/livestream.png";
 import explore from "../../assets/explore.png";
 import category from "../../assets/category.png";
 import test from "../../assets/test.png";
@@ -50,19 +50,31 @@ const InsSidebar = ({ sidebar }) => {
         <p className={`${sidebar ? "" : "small"}`}>Explore</p>
       </Link>
       <Link to={PATH_NAME.INS_DASHBOARD} className="side-link">
-        <img className="sidebar-icon" src={dashboardIcon} alt="Dashboard Icon" />
+        <img
+          className="sidebar-icon"
+          src={dashboardIcon}
+          alt="Dashboard Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>Dashboard</p>
       </Link>
-      <Link to={PATH_NAME.MY_COURSE} className="side-link">
+      {/* <Link to={PATH_NAME.MY_COURSE} className="side-link">
         <img className="sidebar-icon" src={coursesIcon} alt="Courses Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Courses</p>
-      </Link>
+      </Link> */}
       <Link to={PATH_NAME.ANALYTICS} className="side-link">
-        <img className="sidebar-icon" src={analyticsIcon} alt="Analytics Icon" />
+        <img
+          className="sidebar-icon"
+          src={analyticsIcon}
+          alt="Analytics Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>Analytics</p>
       </Link>
       <Link to={PATH_NAME.CREATE_NEW_COURSE} className="side-link">
-        <img className="sidebar-icon" src={createCourseIcon} alt="Create Course Icon" />
+        <img
+          className="sidebar-icon"
+          src={createCourseIcon}
+          alt="Create Course Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>Create Course</p>
       </Link>
       <Link to={PATH_NAME.MESSAGE} className="side-link">
@@ -70,13 +82,21 @@ const InsSidebar = ({ sidebar }) => {
         <p className={`${sidebar ? "" : "small"}`}>Messages</p>
       </Link>
       <Link to={PATH_NAME.NOTIFICATON} className="side-link">
-        <img className="sidebar-icon" src={notificationsIcon} alt="Notifications Icon" />
+        <img
+          className="sidebar-icon"
+          src={notificationsIcon}
+          alt="Notifications Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>Notifications</p>
       </Link>
-      <Link to={PATH_NAME.MYCERTIFICATIONS} className="side-link">
-        <img className="sidebar-icon" src={certificatesIcon} alt="Certificates Icon" />
+      {/* <Link to={PATH_NAME.MYCERTIFICATIONS} className="side-link">
+        <img
+          className="sidebar-icon"
+          src={certificatesIcon}
+          alt="Certificates Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>My Certificates</p>
-      </Link>
+      </Link> */}
       <Link to={PATH_NAME.PREVIEWS} className="side-link">
         <img className="sidebar-icon" src={reviewsIcon} alt="Reviews Icon" />
         <p className={`${sidebar ? "" : "small"}`}>Reviews</p>
@@ -98,11 +118,19 @@ const InsSidebar = ({ sidebar }) => {
         <p className={`${sidebar ? "" : "small"}`}>Payout</p>
       </Link>
       <Link to={PATH_NAME.STATEMENTIS} className="side-link">
-        <img className="sidebar-icon" src={statementsIcon} alt="Statements Icon" />
+        <img
+          className="sidebar-icon"
+          src={statementsIcon}
+          alt="Statements Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>Statements</p>
       </Link>
       <Link to={PATH_NAME.VERTIFICATION} className="side-link">
-        <img className="sidebar-icon" src={verificationIcon} alt="Verification Icon" />
+        <img
+          className="sidebar-icon"
+          src={verificationIcon}
+          alt="Verification Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>Verification</p>
       </Link>
       <div className="subscriptions">
@@ -137,7 +165,7 @@ const InsSidebar = ({ sidebar }) => {
           <p className={`${sidebar ? "" : "small"}`}>Browse Instructor</p>
         </div>
       </Link>
-      
+
       <hr />
       <Link to={PATH_NAME.SETTING} className="side-link">
         <img className="sidebar-icon" src={settingIcon} alt="Setting Icon" />
@@ -148,7 +176,11 @@ const InsSidebar = ({ sidebar }) => {
         <p className={`${sidebar ? "" : "small"}`}>Help</p>
       </Link>
       <Link to={PATH_NAME.SEND_FEEDBACK} className="side-link">
-        <img className="sidebar-icon" src={feedbackIcon} alt="Send Feedback Icon" />
+        <img
+          className="sidebar-icon"
+          src={feedbackIcon}
+          alt="Send Feedback Icon"
+        />
         <p className={`${sidebar ? "" : "small"}`}>Send Feedback</p>
       </Link>
       <hr />
@@ -180,8 +212,8 @@ const InsSidebar = ({ sidebar }) => {
           </Link>
         </div>
         <div className="sidebar-footer-copyright">
-          © 2024 <span className="sidebar-footer-brand">Haka</span>. All
-          Rights Reserved.
+          © 2024 <span className="sidebar-footer-brand">Haka</span>. All Rights
+          Reserved.
         </div>
       </div>
     </div>

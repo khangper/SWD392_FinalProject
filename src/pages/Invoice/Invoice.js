@@ -390,6 +390,7 @@ const Invoice = () => {
           title: course.title,
           price: course.price,
           id: course.id,
+          imgSrc: course.imgSrc,
           Linkyoutube: filteredLinkyoutube[index] || null, // Gán Linkyoutube tương ứng hoặc null
         })),
         address: address,

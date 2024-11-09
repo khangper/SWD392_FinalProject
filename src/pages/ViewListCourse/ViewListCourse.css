@@ -127,4 +127,10 @@
   .close-button:hover {
     background-color: #c0c0c0;
   }
+  .course-image {
+    width: 100%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Limit the maximum width */
+    margin-bottom: 10px; /* Space below the image */
+  }
   
